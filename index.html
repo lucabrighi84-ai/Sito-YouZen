@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouZen — Piani e Prezzi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #080e1f;
+  --bg2:    #0a1120;
+  --card:   #0e1627;
+  --orange: #F97316;
+  --green:  #22C55E;
+  --amber:  #FBBF24;
+  --red:    #EF4444;
+  --blue:   #60A5FA;
+  --border: rgba(255,255,255,.07);
+  --borderl:rgba(255,255,255,.13);
+  --muted:  #475569;
+  --dim:    #94A3B8;
+  --fd: 'Playfair Display', serif;
+  --fb: 'DM Sans', sans-serif;
+  --fm: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  font-family: var(--fb);
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(249,115,22,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 5% 90%, rgba(96,165,250,.04) 0%, transparent 60%);
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
+section { padding: 100px 0; }
+
+.eyebrow {
+  font-family: var(--fm); font-size: 10px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--orange);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+  justify-content: center;
+}
+.eyebrow::before { content: ''; width: 20px; height: 1.5px; background: var(--orange); border-radius: 99px; }
+
+.section-intro { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+.section-intro h2 {
+  font-family: var(--fd); font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800; letter-spacing: -.025em; margin-bottom: 14px; line-height: 1.08;
+}
+.section-intro p { font-size: 16px; color: var(--dim); font-weight: 300; }
+
+/* ══ SLIDER MINUTI ══ */
+.min-selector {
+  background: linear-gradient(160deg, #0d1828 0%, #0a1220 100%);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 24px;
+  padding: 36px 48px 32px;
+  margin-bottom: 48px;
+  position: relative; z-index: 1;
+  box-shadow: 0 0 0 1px rgba(249,115,22,.05), 0 24px 60px rgba(0,0,0,.4);
+}
+
+.min-selector-row {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px; margin-bottom: 28px;
+}
+
+.min-label-col {}
+.min-eyebrow {
+  font-family: var(--fm); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--orange);
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+}
+.min-eyebrow::before { content:''; width:16px; height:1.5px; background:var(--orange); border-radius:99px; }
+
+.min-display {
+  display: flex; align-items: baseline; gap: 8px;
+}
+.min-display-num {
+  font-family: var(--fd); font-size: 56px; font-weight: 800;
+  color: #fff; line-height: 1; letter-spacing: -.03em;
+  transition: color .3s;
+}
+.min-display-unit {
+  font-family: var(--fm); font-size: 15px; color: #64748B;
+}
+
+/* Toggle mensile/annuale */
+.billing-toggle {
+  display: inline-flex; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12); overflow: hidden;
+  background: rgba(0,0,0,.2); align-self: flex-start; margin-top: 4px;
+}
+.billing-btn {
+  padding: 10px 28px; font-family: var(--fm); font-size: 11px; letter-spacing: .08em;
+  background: transparent; color: #5A7A9A; border: none; cursor: pointer; transition: all .2s;
+  white-space: nowrap;
+}
+.billing-btn.active { background: var(--orange); color: #fff; }
+.billing-discount {
+  font-size: 9px; background: rgba(34,197,94,.15);
+  color: #4ADE80; border-radius: 999px; padding: 2px 7px;
+  margin-left: 5px; vertical-align: middle;
+}
+
+/* Range slider */
+.min-track-wrap { position: relative; }
+input[type=range].min-range {
+  -webkit-appearance: none; width: 100%; height: 6px;
+  background: rgba(255,255,255,.1); border-radius: 99px; outline: none; cursor: pointer;
+}
+input[type=range].min-range::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 4px rgba(249,115,22,.2), 0 0 20px rgba(249,115,22,.5);
+  cursor: pointer; transition: transform .15s, box-shadow .15s;
+}
+input[type=range].min-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(249,115,22,.2), 0 0 30px rgba(249,115,22,.7);
+}
+input[type=range].min-range::-moz-range-thumb {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--orange); border: none; cursor: pointer;
+}
+
+.min-steps {
+  display: flex; justify-content: space-between; margin-top: 10px;
+  font-family: var(--fm); font-size: 10px; color: #3D5570; letter-spacing: .04em;
+  user-select: none;
+}
+.min-steps span { cursor: pointer; transition: color .2s; padding: 2px 0; }
+.min-steps span:hover { color: var(--dim); }
+.min-steps span.active-step { color: var(--orange); font-weight: 700; }
+
+/* ══ COMPARE GRID — 4 colonne: label | starter | pro | enterprise ══ */
+.compare-grid {
+  display: grid;
+  grid-template-columns: minmax(150px, 1.2fr) 1fr 1.08fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+/* Setup rects — colonne 2,3,4 */
+.setup-rect {
+  border-radius: 14px 14px 0 0;
+  padding: 14px 20px;
+  border: 1px solid;
+  border-bottom: none;
+  display: flex; align-items: center; gap: 12px;
+}
+.setup-rect--starter { grid-column: 2; background: rgba(96,165,250,.08); border-color: rgba(96,165,250,.22); }
+.setup-rect--pro     { grid-column: 3; background: linear-gradient(90deg,rgba(249,115,22,.14),rgba(249,115,22,.07)); border-color: rgba(249,115,22,.38); }
+.setup-rect--enterprise { grid-column: 4; background: rgba(251,191,36,.08); border-color: rgba(251,191,36,.28); }
+
+/* Header cards — colonne 2,3,4 */
+.cg-card {
+  padding: 24px 20px 20px;
+  border-left: 1px solid; border-right: 1px solid;
+  border-top: none; position: relative;
+}
+.cg-card.cg-starter    { grid-column: 2; border-color: var(--border); background: var(--card); }
+.cg-card.cg-pro        { grid-column: 3; border-color: rgba(249,115,22,.35); background: linear-gradient(160deg,#131d2e 0%,#0e1627 100%); }
+.cg-card.cg-enterprise { grid-column: 4; border-color: rgba(251,191,36,.2); background: linear-gradient(160deg,#14130a 0%,#0e1120 100%); }
+
+/* Row labels — colonna 1 */
+.cg-row-label {
+  grid-column: 1;
+  display: flex; align-items: center;
+  padding: 0 16px 0 0;
+  font-size: 12.5px; color: var(--dim);
+  border-bottom: 1px solid var(--border);
+  min-height: 44px;
+}
+
+/* Feature cells — colonne 2,3,4 */
+.cg-cell {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 44px;
+  border-left: 1px solid; border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+.cg-cell.cg-starter    { grid-column: 2; border-color: var(--border); background: var(--card); }
+.cg-cell.cg-pro        { grid-column: 3; border-color: rgba(249,115,22,.25); border-bottom-color: rgba(249,115,22,.1); background: linear-gradient(160deg,#131d2e 0%,#0e1627 100%); }
+.cg-cell.cg-enterprise { grid-column: 4; border-color: rgba(251,191,36,.15); border-bottom-color: rgba(251,191,36,.08); background: linear-gradient(160deg,#14130a 0%,#0e1120 100%); }
+.cg-text { color: rgba(255,255,255,.7); font-family: var(--fm); font-size: 11px; letter-spacing: .04em; text-align: center; }
+.cg-highlight { color: var(--amber) !important; font-weight: 600; }
+
+/* CTA row */
+.cg-cta-cell {
+  padding: 20px 20px 24px;
+  border: 1px solid; border-top: none;
+}
+.cg-cta-cell.cg-starter    { grid-column: 2; border-color: var(--border); background: var(--card); border-radius: 0 0 18px 18px; }
+.cg-cta-cell.cg-pro        { grid-column: 3; border-color: rgba(249,115,22,.35); background: linear-gradient(160deg,#131d2e 0%,#0e1627 100%); border-radius: 0 0 22px 22px; box-shadow: 0 12px 32px rgba(249,115,22,.1); }
+.cg-cta-cell.cg-enterprise { grid-column: 4; border-color: rgba(251,191,36,.2); background: linear-gradient(160deg,#14130a 0%,#0e1120 100%); border-radius: 0 0 18px 18px; }
+
+/* Riga vuota nella colonna 1 per header e CTA */
+.cg-empty { grid-column: 1; }
+
+@media (max-width: 960px) {
+  .compare-grid { display: none; }
+}
+
+.pricing-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:24px; padding:32px 28px 28px;
+  display:flex; flex-direction:column;
+  transition:border-color .25s,box-shadow .25s; position:relative;
+}
+.pricing-card:hover { border-color:var(--borderl); }
+
+.plan-popular {
+  position:absolute; top:14px; right:16px;
+  font-family:var(--fm); font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+  background:var(--orange); color:#fff; padding:4px 14px; border-radius:999px; white-space:nowrap;
+}
+
+.pro-card {
+  border-color:rgba(249,115,22,.35);
+  background:linear-gradient(160deg,#131d2e 0%,#0e1627 100%);
+  box-shadow:0 0 0 1px rgba(249,115,22,.12),0 32px 80px rgba(0,0,0,.5),0 0 60px rgba(249,115,22,.06);
+  padding:32px 32px 32px; margin-top:0; border-radius:0 0 28px 28px; z-index:1;
+}
+
+.enterprise-card {
+  border-color:rgba(251,191,36,.2);
+  background:linear-gradient(160deg,#14130a 0%,#0e1120 100%);
+}
+
+.plan-label-row { margin-bottom:16px; }
+.plan-badge { font-family:var(--fm); font-size:10px; letter-spacing:.12em; text-transform:uppercase; padding:4px 12px; border-radius:999px; }
+.plan-badge.starter    { background:rgba(96,165,250,.1);  color:var(--blue);   border:1px solid rgba(96,165,250,.2);   }
+.plan-badge.pro        { background:rgba(249,115,22,.1);  color:var(--orange); border:1px solid rgba(249,115,22,.25);  }
+.plan-badge.enterprise { background:rgba(251,191,36,.1);  color:var(--amber);  border:1px solid rgba(251,191,36,.22); }
+.plan-badge.custom     { background:rgba(167,139,250,.1); color:#A78BFA;       border:1px solid rgba(167,139,250,.2); }
+
+/* Prezzo dinamico */
+.plan-price-wrap { margin-bottom: 6px; }
+.plan-price {
+  font-family:var(--fd); font-size:52px; font-weight:800;
+  line-height:1; letter-spacing:-.03em;
+  transition: color .3s;
+}
+.plan-period { font-family:var(--fm); font-size:13px; color:var(--muted); letter-spacing:.04em; font-weight:400; margin-left:4px; }
+
+.plan-rate-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--fm); font-size: 10px; letter-spacing: .06em;
+  color: var(--green); background: rgba(34,197,94,.08);
+  border: 1px solid rgba(34,197,94,.18); border-radius: 999px;
+  padding: 3px 10px; margin-bottom: 14px;
+}
+.plan-rate-chip::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--green); flex-shrink:0; }
+
+.plan-base-info {
+  font-family: var(--fm); font-size: 10px; color: var(--muted);
+  letter-spacing: .04em; margin-bottom: 4px;
+}
+
+.plan-desc { font-size:13.5px; color:var(--dim); line-height:1.65; margin-bottom:20px; margin-top: 8px; }
+.plan-divider { height:1px; background:var(--border); margin-bottom:20px; }
+
+/* ══ SETUP BANNER ══ */
+.setup-banner {
+  display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center; gap: 0;
+  background: linear-gradient(135deg, rgba(15,22,40,.9) 0%, rgba(12,18,34,.9) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px; padding: 28px 32px;
+  margin-bottom: 32px; position: relative; z-index: 1;
+}
+.setup-banner-item {
+  display: flex; align-items: flex-start; gap: 14px; padding: 0 20px;
+}
+.setup-banner-item:first-child { padding-left: 0; }
+.setup-banner-item:last-child  { padding-right: 0; }
+.setup-banner-icon {
+  font-size: 22px; flex-shrink: 0; margin-top: 1px;
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.setup-banner-title {
+  font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,.9);
+  margin-bottom: 5px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.setup-badge {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  background: rgba(249,115,22,.12); color: var(--orange);
+  border: 1px solid rgba(249,115,22,.25); border-radius: 999px;
+  padding: 2px 8px; font-weight: 400;
+}
+.setup-banner-desc {
+  font-size: 12.5px; color: var(--dim); line-height: 1.55;
+}
+.setup-banner-sep {
+  width: 1px; height: 56px;
+  background: rgba(255,255,255,.07); flex-shrink: 0;
+}
+
+/* Self-service chip (Starter) */
+.selfservice-chip {
+  display: flex; align-items: flex-start; gap: 9px;
+  background: rgba(96,165,250,.06); border: 1px solid rgba(96,165,250,.15);
+  border-radius: 10px; padding: 10px 12px; margin-bottom: 20px;
+  font-size: 12.5px; color: #93C5FD; line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .setup-banner { grid-template-columns: 1fr; gap: 20px; }
+  .setup-banner-sep { display: none; }
+  .setup-banner-item { padding: 0; }
+}
+
+/* Cerchio + V verde / Cerchio + X rosso */
+.plan-features { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:24px; flex:1; }
+.plan-features li { font-size:13.5px; color:var(--dim); display:flex; align-items:flex-start; gap:10px; line-height:1.45; }
+.plan-features li::before {
+  content:''; flex-shrink:0; margin-top:2px;
+  width:17px; height:17px; border-radius:50%;
+  background: rgba(34,197,94,.15);
+  border: 1.5px solid rgba(34,197,94,.45);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%2322C55E' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 10px 10px;
+}
+.plan-features li.no {
+  color: rgba(255,255,255,.25);
+}
+.plan-features li.no::before {
+  background: rgba(239,68,68,.12);
+  border-color: rgba(239,68,68,.35);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 3l6 6M9 3l-6 6' stroke='%23EF4444' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 9px 9px;
+}
+.plan-features li.highlight { color:rgba(255,255,255,.88); }
+
+.services-label {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.plan-services {
+  list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;
+}
+.plan-services li {
+  font-size: 13px; color: rgba(255,255,255,.75);
+  display: flex; align-items: flex-start; gap: 10px; line-height: 1.4;
+}
+.plan-services li::before {
+  content:''; flex-shrink:0; margin-top:2px;
+  width:17px; height:17px; border-radius:50%;
+  background: rgba(34,197,94,.15);
+  border: 1.5px solid rgba(34,197,94,.45);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%2322C55E' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center; background-size: 10px 10px;
+}
+
+/* ══ SETUP RECT — sopra ogni card ══ */
+.setup-rect {
+  border-radius: 14px 14px 0 0;
+  padding: 14px 20px;
+  border: 1px solid;
+  border-bottom: none;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: -1px; position: relative; z-index: 2;
+}
+.setup-rect--starter {
+  background: rgba(96,165,250,.08);
+  border-color: rgba(96,165,250,.22);
+}
+.setup-rect--pro {
+  background: linear-gradient(90deg, rgba(249,115,22,.14) 0%, rgba(249,115,22,.07) 100%);
+  border-color: rgba(249,115,22,.38);
+}
+.setup-rect--enterprise {
+  background: rgba(251,191,36,.08);
+  border-color: rgba(251,191,36,.28);
+}
+.setup-rect-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  background: rgba(255,255,255,.06);
+}
+.setup-rect-icon svg { width: 16px; height: 16px; }
+.setup-rect-body { flex: 1; min-width: 0; }
+.setup-rect-label {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .13em;
+  text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 2px;
+}
+.setup-rect-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.setup-rect-price {
+  font-family: var(--fd); font-size: 26px; font-weight: 800; letter-spacing: -.03em; line-height: 1;
+}
+.setup-rect--starter .setup-rect-price { color: var(--blue); }
+.setup-rect--pro     .setup-rect-price { color: var(--orange); }
+.setup-rect--enterprise .setup-rect-price { color: var(--amber); }
+.setup-rect-sub {
+  font-size: 11px; color: rgba(255,255,255,.35); font-style: italic;
+}
+
+
+/* icone SVG nei feature */
+.feat-icon {
+  flex-shrink: 0; margin-top: 1px;
+  width: 17px; height: 17px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.feat-icon svg { width: 9px; height: 9px; }
+.feat-icon--yes { background: rgba(34,197,94,.15); border: 1.5px solid rgba(34,197,94,.45); }
+.feat-icon--yes svg { stroke: #22C55E; }
+.feat-icon--no  { background: rgba(239,68,68,.12); border: 1.5px solid rgba(239,68,68,.35); }
+.feat-icon--no  svg { stroke: #EF4444; }
+
+/* override pseudo-element bullets — li useranno elementi reali */
+.plan-features li::before { display: none; }
+.plan-features li { gap: 10px; }
+
+.plan-cta {
+  display:block; text-align:center; padding:13px 20px; border-radius:10px;
+  font-family:var(--fd); font-size:14px; font-weight:800; text-decoration:none;
+  transition:transform .2s,box-shadow .2s,opacity .2s,background .2s; margin-bottom:10px;
+}
+.starter-cta    { background:rgba(96,165,250,.12);  color:var(--blue);   border:1px solid rgba(96,165,250,.25);  }
+.starter-cta:hover    { background:rgba(96,165,250,.2);  transform:translateY(-1px); }
+.pro-cta        { background:var(--orange); color:#fff; box-shadow:0 6px 20px rgba(249,115,22,.25); }
+.pro-cta:hover        { opacity:.9; transform:translateY(-2px); box-shadow:0 10px 28px rgba(249,115,22,.35); }
+.enterprise-cta { background:rgba(251,191,36,.12);  color:var(--amber);  border:1px solid rgba(251,191,36,.25); }
+.enterprise-cta:hover { background:rgba(251,191,36,.2);  transform:translateY(-1px); }
+.custom-cta     { background:rgba(167,139,250,.1);  color:#A78BFA;       border:1px solid rgba(167,139,250,.2); }
+.custom-cta:hover     { background:rgba(167,139,250,.18); transform:translateY(-1px); }
+
+.plan-note { font-family:var(--fm); font-size:10px; color:var(--muted); text-align:center; letter-spacing:.04em; }
+
+.custom-banner {
+  margin-top:24px;
+  display:flex; align-items:center; justify-content:space-between; gap:32px;
+  background:rgba(167,139,250,.05); border:1px solid rgba(167,139,250,.15);
+  border-radius:16px; padding:24px 28px;
+}
+.custom-banner-left { flex:1; }
+.custom-banner-title { font-family:var(--fd); font-size:18px; font-weight:800; margin-bottom:6px; }
+.custom-banner-desc { font-size:14px; color:var(--dim); line-height:1.6; }
+.custom-banner-cta { white-space:nowrap; flex-shrink:0; }
+
+@media (max-width: 960px) {
+  .wrap { padding: 0 28px; }
+  .compare-grid { display: none; }
+  .min-selector { padding: 28px 28px 24px; }
+  .min-selector-row { flex-direction: column; gap: 16px; }
+  .custom-banner { flex-direction: column; align-items: flex-start; }
+  section { padding: 72px 0; }
+  .mobile-plans { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  .min-display-num { font-size: 42px; }
+  .min-steps { font-size: 9px; gap: 0; justify-content: space-between; }
+  .mob-price { font-size: 36px; }
+  .mob-setup-price { font-size: 17px; }
+}
+@media (min-width: 961px) {
+  .mobile-plans { display: none; }
+}
+
+/* ── Card mobile ── */
+.mob-card {
+  border-radius: 20px; border: 1px solid var(--border);
+  background: var(--card); overflow: hidden;
+}
+.mob-card--pro {
+  border-color: rgba(249,115,22,.4);
+  background: linear-gradient(160deg,#131d2e 0%,#0e1627 100%);
+  box-shadow: 0 0 0 1px rgba(249,115,22,.1), 0 16px 40px rgba(0,0,0,.4);
+}
+.mob-card--enterprise {
+  border-color: rgba(251,191,36,.25);
+  background: linear-gradient(160deg,#14130a 0%,#0e1120 100%);
+}
+.mob-setup {
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.mob-setup--starter    { background: rgba(96,165,250,.08); }
+.mob-setup--pro        { background: rgba(249,115,22,.1); }
+.mob-setup--enterprise { background: rgba(251,191,36,.07); }
+.mob-setup-label {
+  font-family: var(--fm); font-size: 9px; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.4);
+}
+.mob-setup-price {
+  font-family: var(--fd); font-size: 20px; font-weight: 800; letter-spacing: -.02em;
+}
+.mob-card--starter    .mob-setup-price { color: var(--blue); }
+.mob-card--pro        .mob-setup-price { color: var(--orange); }
+.mob-card--enterprise .mob-setup-price { color: var(--amber); }
+.mob-setup-sub { font-size: 10px; color: rgba(255,255,255,.3); font-style: italic; }
+.mob-header {
+  padding: 20px 20px 16px; position: relative;
+}
+.mob-price {
+  font-family: var(--fd); font-size: 42px; font-weight: 800;
+  line-height: 1; letter-spacing: -.03em; margin-bottom: 4px;
+}
+.mob-desc { font-size: 13px; color: var(--dim); line-height: 1.55; margin-top: 8px; }
+.mob-popular {
+  position: absolute; top: 16px; right: 16px;
+  font-family: var(--fm); font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+  background: var(--orange); color: #fff; padding: 3px 12px; border-radius: 999px;
+}
+.mob-features {
+  list-style: none; padding: 0 20px 4px; display: flex; flex-direction: column; gap: 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.mob-features li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 0; font-size: 13px; color: rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.mob-features li:last-child { border-bottom: none; }
+.mob-features li.no { color: rgba(255,255,255,.25); }
+.mob-cta { padding: 16px 20px 20px; }
+</style>
+</head>
+<body>
+
+<section id="prezzi">
+  <div class="wrap">
+
+    <div class="section-intro">
+      <div class="eyebrow">Piani e prezzi</div>
+      <h2>Paga solo quello che parla.</h2>
+      <p>Nessun canone fisso nascosto, nessuna sorpresa in fattura. Solo minuti veri, usati davvero.</p>
+    </div>
+
+    <!-- ── SLIDER MINUTI ── -->
+    <div class="min-selector">
+      <div class="min-selector-row">
+        <div class="min-label-col">
+          <div class="min-eyebrow">Minuti di conversazione mensili</div>
+          <div class="min-display">
+            <span class="min-display-num" id="minNum">500</span>
+            <span class="min-display-unit">min/mese</span>
+          </div>
+        </div>
+        <div>
+          <div class="billing-toggle">
+            <button class="billing-btn active" id="btnMonth" onclick="setBilling('month')">Mensile</button>
+            <button class="billing-btn" id="btnYear" onclick="setBilling('year')">Annuale <span class="billing-discount">−10%</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="min-track-wrap">
+        <input type="range" class="min-range" id="minRange"
+          min="0" max="12" value="4" step="1"
+          oninput="updatePricing()">
+        <div class="min-steps" id="minSteps"></div>
+      </div>
+    </div>
+
+    <!-- ── PIANI ── -->
+      <!-- griglia comparativa flat: 4 colonne label+3piani, righe allineate -->
+      <div class="compare-grid">
+
+        <!-- ── SETUP RECTS (riga 1) ── -->
+        <div class="cg-empty"></div>
+        <div class="setup-rect setup-rect--starter">
+          <div class="setup-rect-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2L9.5 6H14L10.5 8.5L12 13L8 10.5L4 13L5.5 8.5L2 6H6.5L8 2Z" stroke="#60A5FA" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="setup-rect-body">
+            <div class="setup-rect-label">Setup iniziale</div>
+            <div class="setup-rect-row">
+              <span class="setup-rect-price">€150</span>
+              <span class="setup-rect-sub">una tantum · fai da te, ci sei quasi</span>
+            </div>
+          </div>
+        </div>
+        <div class="setup-rect setup-rect--pro">
+          <div class="setup-rect-icon">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#F97316" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="#F97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="setup-rect-body">
+            <div class="setup-rect-label">Setup + onboarding</div>
+            <div class="setup-rect-row">
+              <span class="setup-rect-price">€500</span>
+              <span class="setup-rect-sub">una tantum · ci pensiamo noi</span>
+            </div>
+          </div>
+        </div>
+        <div class="setup-rect setup-rect--enterprise">
+          <div class="setup-rect-icon">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 13V7l5-4 5 4v6" stroke="#FBBF24" stroke-width="1.4" stroke-linejoin="round"/><rect x="5.5" y="9" width="2" height="4" rx="0.5" stroke="#FBBF24" stroke-width="1.2"/><rect x="8.5" y="9" width="2" height="4" rx="0.5" stroke="#FBBF24" stroke-width="1.2"/></svg>
+          </div>
+          <div class="setup-rect-body">
+            <div class="setup-rect-label">Setup + onboarding full</div>
+            <div class="setup-rect-row">
+              <span class="setup-rect-price">Su preventivo</span>
+              <span class="setup-rect-sub">tanto lo sai già che non è €500</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── HEADER CARDS (riga 2) ── -->
+        <div class="cg-empty"></div>
+        <div class="cg-card cg-starter" id="plan-starter">
+          <div class="plan-label-row"><span class="plan-badge starter">Starter</span></div>
+          <div class="plan-price" id="price-starter">€—<span class="plan-period">/mese</span></div>
+          <div class="plan-base-info" id="base-starter"></div>
+          <div class="plan-desc">Il piano per chi vuole testare il terreno prima di buttarsi. Niente nanny, solo tu e il manuale.</div>
+        </div>
+        <div class="cg-card cg-pro" id="plan-pro">
+          <div class="plan-popular">Più scelto</div>
+          <div class="plan-label-row"><span class="plan-badge pro">Pro</span></div>
+          <div class="plan-price" id="price-pro">€—<span class="plan-period">/mese</span></div>
+          <div class="plan-base-info" id="base-pro"></div>
+          <div class="plan-desc">Per chi ha capito che il proprio tempo vale più di €0,30 al minuto.</div>
+        </div>
+        <div class="cg-card cg-enterprise" id="plan-enterprise">
+          <div class="plan-label-row"><span class="plan-badge enterprise">Enterprise</span></div>
+          <div class="plan-price" id="price-enterprise">€—<span class="plan-period">/mese</span></div>
+          <div class="plan-base-info" id="base-enterprise"></div>
+          <div class="plan-desc">Per le strutture grandi che vogliono tutto.</div>
+        </div>
+
+        <!-- ── FEATURE ROWS ── -->
+        <div class="cg-row-label">Chiamate inbound gestite</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Dashboard dedicata</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Integrazioni calendario</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Intake + recap WhatsApp</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Notifiche WhatsApp</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Supporto</div>
+        <div class="cg-cell cg-starter cg-text">Email</div>
+        <div class="cg-cell cg-pro cg-text">Prioritario</div>
+        <div class="cg-cell cg-enterprise cg-text">Account manager</div>
+
+        <div class="cg-row-label">Agenti AI</div>
+        <div class="cg-cell cg-starter cg-text">1</div>
+        <div class="cg-cell cg-pro cg-text">2</div>
+        <div class="cg-cell cg-enterprise cg-text cg-highlight">Illimitati</div>
+
+        <div class="cg-row-label">Numero VoIP dedicato</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Agente AI su sito web</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Campagne outbound</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Campagne WhatsApp</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Integrazioni custom (CRM)</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <div class="cg-row-label">Multi-sede / multi-utente</div>
+        <div class="cg-cell cg-starter"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-pro"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+        <div class="cg-cell cg-enterprise"><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+
+        <!-- ── CTA ROW ── -->
+        <div class="cg-empty"></div>
+        <div class="cg-cta-cell cg-starter">
+          <a href="#" class="plan-cta starter-cta">Inizia con Starter</a>
+          <div class="plan-note">Nessuna carta per il trial</div>
+        </div>
+        <div class="cg-cta-cell cg-pro">
+          <a href="#" class="plan-cta pro-cta">Inizia con Pro</a>
+          <div class="plan-note">Nessuna carta per il trial</div>
+        </div>
+        <div class="cg-cta-cell cg-enterprise">
+          <a href="#" class="plan-cta enterprise-cta">Inizia con Enterprise</a>
+          <div class="plan-note">Nessuna carta per il trial</div>
+        </div>
+
+      </div>
+
+    <!-- ── MOBILE CARDS ── -->
+    <div class="mobile-plans">
+
+      <!-- Starter mobile -->
+      <div class="mob-card mob-card--starter">
+        <div class="mob-setup mob-setup--starter">
+          <div><div class="mob-setup-label">Setup iniziale</div><div class="mob-setup-sub">una tantum · fai da te, ci sei quasi</div></div>
+          <div class="mob-setup-price">€150</div>
+        </div>
+        <div class="mob-header">
+          <span class="plan-badge starter">Starter</span>
+          <div class="mob-price" id="mob-price-starter">€—<span class="plan-period">/mese</span></div>
+          <div class="plan-base-info" id="mob-base-starter"></div>
+          <div class="mob-desc">Il piano per chi vuole testare il terreno prima di buttarsi. Niente nanny, solo tu e il manuale.</div>
+        </div>
+        <ul class="mob-features">
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Chiamate inbound gestite</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Dashboard dedicata</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integrazioni calendario</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Intake + recap WhatsApp</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Supporto via email</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>1 agente AI</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Notifiche WhatsApp</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Numero VoIP dedicato</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Agente AI su sito web</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Campagne outbound / WhatsApp</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Integrazioni custom, multi-sede</li>
+        </ul>
+        <div class="mob-cta">
+          <a href="#" class="plan-cta starter-cta">Inizia con Starter</a>
+          <div class="plan-note">Nessuna carta per il trial</div>
+        </div>
+      </div>
+
+      <!-- Pro mobile -->
+      <div class="mob-card mob-card--pro">
+        <div class="mob-setup mob-setup--pro">
+          <div><div class="mob-setup-label">Setup + onboarding</div><div class="mob-setup-sub">una tantum · ci pensiamo noi</div></div>
+          <div class="mob-setup-price">€500</div>
+        </div>
+        <div class="mob-header">
+          <div class="mob-popular">Più scelto</div>
+          <span class="plan-badge pro">Pro</span>
+          <div class="mob-price" id="mob-price-pro">€—<span class="plan-period">/mese</span></div>
+          <div class="plan-base-info" id="mob-base-pro"></div>
+          <div class="mob-desc">Per chi ha capito che il proprio tempo vale più di €0,30 al minuto.</div>
+        </div>
+        <ul class="mob-features">
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Chiamate inbound gestite</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Dashboard dedicata</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integrazioni calendario</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Intake + recap + prenotazione</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Notifiche WhatsApp</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Supporto prioritario</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>2 agenti AI</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Numero VoIP dedicato</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Agente AI su sito web</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Campagne outbound / WhatsApp</li>
+          <li class="no"><span class="feat-icon feat-icon--no"><svg viewBox="0 0 12 12" fill="none"><path d="M3 3l6 6M9 3l-6 6" stroke-width="1.8" stroke-linecap="round"/></svg></span>Integrazioni custom, multi-sede</li>
+        </ul>
+        <div class="mob-cta">
+          <a href="#" class="plan-cta pro-cta">Inizia con Pro</a>
+          <div class="plan-note">Nessuna carta per il trial</div>
+        </div>
+      </div>
+
+      <!-- Enterprise mobile -->
+      <div class="mob-card mob-card--enterprise">
+        <div class="mob-setup mob-setup--enterprise">
+          <div><div class="mob-setup-label">Setup + onboarding full</div><div class="mob-setup-sub">tanto lo sai già che non è €500</div></div>
+          <div class="mob-setup-price">Su preventivo</div>
+        </div>
+        <div class="mob-header">
+          <span class="plan-badge enterprise">Enterprise</span>
+          <div class="mob-price" id="mob-price-enterprise">€—<span class="plan-period">/mese</span></div>
+          <div class="plan-base-info" id="mob-base-enterprise"></div>
+          <div class="mob-desc">Per le strutture grandi che vogliono tutto.</div>
+        </div>
+        <ul class="mob-features">
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Chiamate inbound gestite</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Dashboard dedicata</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integrazioni calendario</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Intake + recap + prenotazione</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Notifiche WhatsApp</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Account manager dedicato</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Agenti AI illimitati</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Numero VoIP dedicato</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Agente AI su sito web</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Campagne outbound automatizzate</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Campagne WhatsApp</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integrazioni custom (CRM, gestionali)</li>
+          <li><span class="feat-icon feat-icon--yes"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Multi-sede / multi-utente</li>
+        </ul>
+        <div class="mob-cta">
+          <a href="#" class="plan-cta enterprise-cta">Inizia con Enterprise</a>
+          <div class="plan-note">Nessuna carta per il trial</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="custom-banner">
+      <div class="custom-banner-left">
+        <span class="plan-badge custom" style="display:inline-block;margin-bottom:10px">Su misura</span>
+        <div class="custom-banner-title">Volumi fuori standard o esigenze specifiche?</div>
+        <div class="custom-banner-desc">Costruiamo un piano su misura — minuti, flussi, integrazioni e SLA definiti insieme.</div>
+      </div>
+      <a href="#" class="plan-cta custom-cta custom-banner-cta">Parliamone →</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Step del range: valori in minuti
+const STEPS = [100, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
+
+const PLANS = [
+  { id: 'starter',    rate: 0.20 },
+  { id: 'pro',        rate: 0.30 },
+  { id: 'enterprise', rate: 0.42 },
+];
+
+let billing = 'month'; // 'month' | 'year'
+
+// Costruisce le etichette sotto lo slider
+function buildSteps() {
+  const wrap = document.getElementById('minSteps');
+  wrap.innerHTML = STEPS.map((v, i) => {
+    const label = v >= 1000 ? (v/1000) + 'k' : v;
+    return `<span data-idx="${i}" onclick="jumpTo(${i})">${label}</span>`;
+  }).join('');
+}
+
+function jumpTo(idx) {
+  document.getElementById('minRange').value = idx;
+  updatePricing();
+}
+
+function setBilling(b) {
+  billing = b;
+  document.getElementById('btnMonth').classList.toggle('active', b === 'month');
+  document.getElementById('btnYear').classList.toggle('active',  b === 'year');
+  updatePricing();
+}
+
+function fmtPrice(n) {
+  return '€' + Math.round(n).toLocaleString('it-IT');
+}
+
+function updatePricing() {
+  const idx  = +document.getElementById('minRange').value;
+  const mins = STEPS[idx];
+  const disc = billing === 'year' ? 0.9 : 1;
+
+  // Aggiorna numero grande
+  document.getElementById('minNum').textContent = mins >= 1000 ? (mins/1000).toFixed(mins%1000===0?0:1) + 'k' : mins;
+
+  // Aggiorna step attivo
+  document.querySelectorAll('#minSteps span').forEach((s, i) => {
+    s.classList.toggle('active-step', i === idx);
+  });
+
+  // Aggiorna ogni piano — desktop + mobile
+  PLANS.forEach(plan => {
+    const total = mins * plan.rate * disc;
+    const priceStr = fmtPrice(total) + '<span class="plan-period">/mese</span>';
+    const discNote = billing === 'year' ? '−10% annuale' : '';
+
+    // Desktop
+    const priceEl = document.getElementById('price-' + plan.id);
+    const baseEl  = document.getElementById('base-' + plan.id);
+    if (priceEl) priceEl.innerHTML = priceStr;
+    if (baseEl)  baseEl.textContent = discNote;
+
+    // Mobile
+    const mobPriceEl = document.getElementById('mob-price-' + plan.id);
+    const mobBaseEl  = document.getElementById('mob-base-' + plan.id);
+    if (mobPriceEl) mobPriceEl.innerHTML = priceStr;
+    if (mobBaseEl)  mobBaseEl.textContent = discNote;
+  });
+}
+
+// Init
+buildSteps();
+updatePricing();
+</script>
+</body>
+</html>
