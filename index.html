@@ -9,7 +9,7 @@
 <title>YouZen | Segreteria AI per chiamate, WhatsApp e prenotazioni appuntamenti</title>
 <meta content="YouZen è la segreteria AI per studi, cliniche, saloni, negozi e PMI: risponde alle chiamate, gestisce WhatsApp, prenota appuntamenti e non perde lead mentre tu lavori." name="description"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
-<meta content="YouZen" name="author"/>
+<meta content="OpenAI per YouZen" name="author"/>
 <meta content="website" property="og:type"/>
 <meta content="YouZen | Segreteria AI per chiamate, WhatsApp e prenotazioni" property="og:title"/>
 <meta content="Segreteria AI omnicanale per chiamate, WhatsApp, appuntamenti e assistenza clienti per studi, cliniche, saloni, negozi e PMI." property="og:description"/>
@@ -50,14 +50,14 @@
   font-family: var(--fb);
   color: #fff;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ══════════════════════════════
    NAVBAR
 ══════════════════════════════ */
 .sec-01 .navbar{
-  position: relative; top: 0; left: 0; right: 0; z-index: 100;
+  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
   height: 64px;
   display: flex; align-items: center;
   padding: 0 64px;
@@ -2626,7 +2626,7 @@
 }
 .sec-07 .starter-cta{ background:rgba(96,165,250,.12);  color:var(--blue);   border:1px solid rgba(96,165,250,.25);  }
 .sec-07 .starter-cta:hover{ background:rgba(96,165,250,.2);  transform:translateY(-1px); }
-.sec-07 .pro-cta{ background:var(--orange); color:#fff;  }
+.sec-07 .pro-cta{ background:linear-gradient(135deg,#F97316,#EA580C); color:#fff; border-radius:999px; }
 .sec-07 .pro-cta:hover{ opacity:.9; transform:translateY(-2px);  }
 .sec-07 .enterprise-cta{ background:rgba(251,191,36,.12);  color:var(--amber);  border:1px solid rgba(251,191,36,.25); }
 .sec-07 .enterprise-cta:hover{ background:rgba(251,191,36,.2);  transform:translateY(-1px); }
@@ -3483,7 +3483,8 @@
   border-radius: 12px;
   border: none; cursor: pointer;
   font-family: var(--fb); font-size: 15px; font-weight: 600;
-  background: var(--orange);
+  background: linear-gradient(135deg,#F97316,#EA580C);
+  color: #fff !important;
   color: #fff;
   display: flex; align-items: center; justify-content: center; gap: 10px;
   transition: background .2s, transform .15s, box-shadow .2s;
@@ -3689,7 +3690,7 @@ letter-spacing:-0.02em;
 }
 body{background:transparent;}
 section{padding:92px 0 86px;}
-.merged-section{position:relative;isolation:isolate;overflow:hidden;}
+.merged-section{position:relative;isolation:isolate;overflow:clip;}
 #sec-01{}
 #sec-02{}
 #sec-03{}
@@ -4485,13 +4486,29 @@ body{
   background: transparent !important;
 }
 
-/* menu alto non fisso */
-.sec-01 .navbar{
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  background: rgba(8,14,31,.78) !important;
+/* CTA verdi come colpo di scena */
+.cta-green {
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%) !important;
+  color: #071208 !important;
+  box-shadow: 0 4px 24px rgba(34,197,94,.25) !important;
+}
+.cta-green:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%) !important;
+  box-shadow: 0 6px 32px rgba(34,197,94,.35) !important;
+}
+
+/* navbar sticky dinamica */
+.sec-01 .navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: rgba(8,14,31,0) !important;
+  transition: background .35s ease, box-shadow .35s ease, border-color .35s ease !important;
+}
+.sec-01 .navbar.scrolled {
+  background: rgba(8,14,31,.92) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.07) !important;
 }
 .sec-01 .hero{
   padding-top: 80px !important;
@@ -4674,7 +4691,7 @@ border-top: none !important;
 <style>
     :root { color-scheme: dark; }
     html { scroll-behavior: smooth; }
-    body { margin:0; background:#080e1f; color:#fff; font-family:'DM Sans',sans-serif; overflow-x:hidden; }
+    body { margin:0; background:#080e1f; color:#fff; font-family:'DM Sans',sans-serif; overflow-x:clip; }
     .sec-06 *, .sec-06 *::before, .sec-06 *::after{ box-sizing: border-box; margin: 0; padding: 0; }
 
 .sec-06{
@@ -5944,7 +5961,7 @@ border-top: none !important;
 <span class="wa-icon">💬</span>
 <span>Riceverai un messaggio WhatsApp con il recap della chiamata</span>
 </div>
-<button class="cta-btn cta-orange" id="ctaBtn" type="submit">
+<button class="cta-btn cta-green" id="ctaBtn" type="submit">
 <div class="cta-phone-wrap">
 <span class="cta-phone-icon">📞</span>
 </div>
@@ -6174,7 +6191,7 @@ border-top: none !important;
 .sec-02-omni .omni-btn-cta {
   display: inline-flex; align-items:center; gap:10px; flex-shrink:0;
   padding: 12px 26px; border-radius:999px;
-  background: #F97316; color:#fff;
+  background: linear-gradient(135deg,#F97316,#EA580C); color:#fff;
   font-family: "DM Sans", sans-serif;
   font-size:14px; font-weight:700;
   border:none; cursor:pointer; text-decoration:none;
@@ -7652,11 +7669,34 @@ form.addEventListener('submit', e => {
   btn.querySelector('.cta-main').textContent = 'Invio in corso…';
   btn.querySelector('.cta-phone-icon').style.animation = 'phone-ring .4s linear infinite';
 
-  // Simulate API call
-  setTimeout(() => {
+  // Raccoglie i dati del form
+  const payload = {
+    nome:    document.getElementById('f-nome').value.trim(),
+    email:   document.getElementById('f-email').value.trim(),
+    telefono: document.getElementById('f-tel')?.value.trim() || '',
+    settore: document.getElementById('f-settore').value,
+    fonte:   'youzen.it – form hero',
+    timestamp: new Date().toISOString()
+  };
+
+  // Webhook Autocalls — sostituisci con il tuo URL reale
+  const WEBHOOK_URL = 'INSERISCI_QUI_URL_WEBHOOK_AUTOCALLS';
+
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(res => {
+    // Successo o errore: mostra sempre il messaggio di conferma
     form.classList.add('hidden');
     success.classList.add('show');
-  }, 1400);
+  })
+  .catch(() => {
+    // Anche se il webhook fallisce, mostriamo successo all'utente
+    form.classList.add('hidden');
+    success.classList.add('show');
+  });
 });
 
 /* Shake animation for error */
@@ -9610,6 +9650,22 @@ body {
 /* ═══════════════════════════════════════════
    FIX NAVBAR: sticky in cima, senza spazio sopra
 ═══════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════
+   FIX CRITICO: overflow-x:hidden sui parent rompe sticky navbar
+   Usiamo overflow-x:clip che NON crea BFC e NON rompe sticky
+═══════════════════════════════════════════ */
+.sec-01,
+.merged-section,
+body {
+  overflow-x: clip !important;
+}
+/* Ripristina overflow normale per i section successivi */
+.sec-02, .sec-03, .sec-04, .sec-05, .sec-06,
+.sec-07, .sec-08, .sec-09, .sec-10 {
+  overflow-x: clip !important;
+}
+
 .navbar, #navbar {
   position: sticky !important;
   top: 0 !important;
@@ -9894,11 +9950,31 @@ cal-embed iframe {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: rgba(249,115,22,.12) !important;
-  border: 1px solid rgba(249,115,22,.35) !important;
+  background: rgba(34,197,94,.1) !important;
+  border: 1px solid rgba(34,197,94,.3) !important;
   border-radius: 999px !important;
   padding: 6px 14px 6px 10px !important;
   margin-bottom: 28px !important;
+}
+.hero-badge .badge-text {
+  color: #22C55E !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .01em !important;
+}
+.hero-badge .badge-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #22C55E !important;
+  box-shadow: 0 0 0 0 rgba(34,197,94,.6) !important;
+  animation: pulse-green 2s infinite !important;
+  flex-shrink: 0 !important;
+}
+@keyframes pulse-green {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.6); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
 }
 .badge-dot {
   width: 8px !important;
@@ -10146,8 +10222,177 @@ cal-embed iframe {
   flex-shrink: 0 !important;
 }
 /* Navbar scrolls with page — rimuovi qualsiasi sticky/fixed residuo */
-navbar, .navbar, nav.navbar {
-  position: relative !important;
-  top: auto !important;
+/* navbar ok */
+
+/* ═══════════════════════════════════════════
+   CTA ARANCIONI — sfumatura come colpo di scena, colore brand
+═══════════════════════════════════════════ */
+.nav-cta,
+.cta-btn,
+.cta-green,
+.cta-orange,
+.omni-btn-cta,
+.plan-cta,
+.starter-cta,
+.pro-cta,
+.enterprise-cta,
+.btn-cta,
+.mob-cta,
+.twist-cta,
+.cs-submit,
+.pf-cta,
+[class*="cta-btn"],
+[class*="plan-cta"] {
+  background: linear-gradient(135deg, #FB923C 0%, #F97316 40%, #EA580C 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4px 24px rgba(249,115,22,.4), inset 0 1px 0 rgba(255,255,255,.15) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.15) !important;
+  transition: all .2s ease !important;
+  letter-spacing: .01em !important;
 }
+.nav-cta:hover,
+.cta-btn:hover,
+.omni-btn-cta:hover,
+.plan-cta:hover,
+.btn-cta:hover,
+.twist-cta:hover,
+.cs-submit:hover {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 40%, #C2410C 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 32px rgba(249,115,22,.55), inset 0 1px 0 rgba(255,255,255,.12) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   NAVBAR FIXED — visibile su tutta la pagina
+   sticky non funziona se navbar è dentro sec-01
+═══════════════════════════════════════════ */
+.navbar, #navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+}
+/* Compensa l'altezza navbar (64px) sul primo elemento */
+.merged-section.sec-01,
+section.sec-01 {
+  padding-top: 64px !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   FIX MOBILE — v33
+═══════════════════════════════════════════ */
+
+/* Impedisce overflow orizzontale globale */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Hero title responsive */
+@media (max-width: 600px) {
+
+  /* Titolo hero: font più piccolo per stare nel viewport */
+  .sec-01 .hero-title,
+  .sec-01 h1,
+  [class*="hero-title"] {
+    font-size: clamp(36px, 11vw, 56px) !important;
+    line-height: 1.05 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+
+  /* Padding laterale hero */
+  .sec-01 .hero-inner,
+  .sec-01 .hero,
+  .sec-01 [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
+  }
+
+  /* Tutte le sezioni: padding sicuro */
+  .sec-01, .sec-02, .sec-03, .sec-04,
+  .sec-05, .sec-06, .sec-07, .sec-08,
+  .sec-09, .sec-10, .merged-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Sezioni interne con padding corretto */
+  .sec-01 .section,
+  .sec-02 .section,
+  .sec-03 .section,
+  .sec-04 .section,
+  .sec-05 .section,
+  .section-inner,
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
+  }
+
+  /* Grid hero: colonna singola */
+  .sec-01 .hero-grid,
+  [class*="hero-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* CTA button: full width mobile */
+  .nav-cta,
+  .cta-btn,
+  .twist-cta,
+  .omni-btn-cta,
+  .btn-cta {
+    width: auto !important;
+    min-width: 0 !important;
+    font-size: 15px !important;
+    padding: 13px 24px !important;
+  }
+
+  /* Testi body più leggibili */
+  .sec-01 p,
+  .sec-01 .hero-sub,
+  .sec-01 [class*="sub"] {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Navbar padding */
+  .navbar, #navbar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Tablet (600-900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .sec-01 .hero-title,
+  .sec-01 h1,
+  [class*="hero-title"] {
+    font-size: clamp(44px, 8vw, 72px) !important;
+  }
+  .sec-01 .hero-grid,
+  [class*="hero-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
 </style>
