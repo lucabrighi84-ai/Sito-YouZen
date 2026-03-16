@@ -5782,7 +5782,7 @@ section.sec-05 > section.section {
   padding-right: 0 !important;
   margin: 0 !important;
   padding-top: 48px !important;
-  padding-bottom: 48px !important;
+  padding-bottom: 0 !important;
 }
 
 /* container centrato uguale alle altre sezioni */
@@ -6050,63 +6050,34 @@ section.sec-05 > section.section {
 .sec-07 .section-intro p  { text-align: left !important; }
 .sec-07 .eyebrow { justify-content: flex-start !important; }
 
-/* ── quickwins: identici al badge "Segreteria AI attiva" ── */
+/* ── quickwins: cloni esatti del badge verde ── */
 .hero-quickwins {
   display: flex !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
   gap: 10px !important;
   margin: 22px 0 18px !important;
+  overflow-x: auto !important;
 }
-.hero-quickwins .qw {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  padding: 7px 16px 7px 10px !important;
-  border-radius: 999px !important;
-  font-family: "DM Mono", monospace !important;
-  font-size: 11px !important;
-  font-weight: 400 !important;
-  letter-spacing: .10em !important;
-  cursor: default !important;
-  border-width: 1px !important;
-  border-style: solid !important;
-}
-.qw-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  flex-shrink: 0 !important;
-  display: inline-block !important;
-  animation: s01-pulse-dot 2s ease-in-out infinite !important;
-}
-/* Giallo/ambra — "24/7" */
-.qw-amber {
-  background: rgba(251,191,36,.08) !important;
-  border-color: rgba(251,191,36,.25) !important;
-  color: #FDE68A !important;
-}
-.qw-amber .qw-dot { background: #FBBF24 !important; animation-delay: 0s !important; }
-/* Verde — "Operativo in 14 giorni" */
-.qw-green {
-  background: rgba(34,197,94,.08) !important;
-  border-color: rgba(34,197,94,.22) !important;
-  color: #86EFAC !important;
-}
-.qw-green .qw-dot { background: #22C55E !important; animation-delay: .5s !important; }
-/* Blu — "Parla italiano" */
-.qw-blue {
-  background: rgba(96,165,250,.08) !important;
-  border-color: rgba(96,165,250,.22) !important;
-  color: #93C5FD !important;
-}
-.qw-blue .qw-dot { background: #60A5FA !important; animation-delay: 1s !important; }
-/* Arancione — "Prezzi fissi" */
-.qw-orange {
-  background: rgba(249,115,22,.08) !important;
-  border-color: rgba(249,115,22,.22) !important;
-  color: #FDB47A !important;
-}
-.qw-orange .qw-dot { background: #F97316 !important; animation-delay: 1.5s !important; }
+/* resetta margin-bottom ereditato dalla classe hero-badge */
+.hero-quickwins .hero-badge { margin-bottom: 0 !important; animation: none !important; }
+
+/* Tutti bianchi con sfumature arancioni diverse */
+.hb-amber  { background: rgba(251,191,36,.10) !important; border-color: rgba(251,191,36,.30) !important; }
+.hb-green  { background: rgba(249,115,22,.08) !important; border-color: rgba(249,115,22,.25) !important; }
+.hb-blue   { background: rgba(234,88,12,.12)  !important; border-color: rgba(234,88,12,.32)  !important; }
+.hb-orange { background: rgba(194,65,12,.15)  !important; border-color: rgba(194,65,12,.38)  !important; }
+
+/* testo bianco su tutti */
+.hb-amber .badge-text,
+.hb-green .badge-text,
+.hb-blue  .badge-text,
+.hb-orange .badge-text { color: #ffffff !important; }
+
+/* dot: sfumature arancioni scalate */
+.hb-dot-amber  { background: #FBBF24 !important; animation-delay: 0s   !important; }
+.hb-green  .badge-dot { background: #F97316 !important; animation-delay: .5s  !important; }
+.hb-dot-blue   { background: #EA580C !important; animation-delay: 1s   !important; }
+.hb-dot-orange { background: #C2410C !important; animation-delay: 1.5s !important; }
 
 /* "Prezzi chiari. Il caos..." + "24/7" */
 .hero-sub { font-size: 19px !important; line-height: 1.6 !important; }
@@ -6148,7 +6119,7 @@ section.sec-05 > section.section {
 .merged-section { margin: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
 .sec-03 .section, .sec-04 .section,
 .sec-05 > .section, section.sec-05 > section.section,
-.sec-06 { padding-top: 60px !important; padding-bottom: 60px !important; }
+.sec-06 { padding-top: 0 !important; padding-bottom: 60px !important; }
 .sec-07 .wrap, .sec-08 .section, .sec-09 .section,
 .sec-10 .cu-wrap { padding-top: 60px !important; padding-bottom: 60px !important; }
 section { padding-top: 0 !important; padding-bottom: 0 !important; }
@@ -6253,10 +6224,10 @@ section { padding-top: 0 !important; padding-bottom: 0 !important; }
         Rispondiamo a <strong>chiamate, WhatsApp e appuntamenti</strong> mentre sei concentrato su quello che conta davvero.
       </p>
 <div class="hero-quickwins">
-  <div class="qw qw-amber"><span class="qw-dot"></span>24/7, senza pause caffè</div>
-  <div class="qw qw-green"><span class="qw-dot"></span>Operativo in 14 giorni</div>
-  <div class="qw qw-blue"><span class="qw-dot"></span>Parla italiano, non robotese</div>
-  <div class="qw qw-orange"><span class="qw-dot"></span>Prezzi fissi, zero sorprese</div>
+  <div class="hero-badge hb-amber"><span class="badge-dot hb-dot-amber"></span><span class="badge-text hb-text-amber">24/7, senza pause caffè</span></div>
+  <div class="hero-badge hb-green"><span class="badge-dot"></span><span class="badge-text">Operativo in 14 giorni</span></div>
+  <div class="hero-badge hb-blue"><span class="badge-dot hb-dot-blue"></span><span class="badge-text hb-text-blue">Parla italiano, non robotese</span></div>
+  <div class="hero-badge hb-orange"><span class="badge-dot hb-dot-orange"></span><span class="badge-text hb-text-orange">Prezzi fissi, zero sorprese</span></div>
 </div>
 <!-- Trust pills -->
 <div class="hero-trust">
