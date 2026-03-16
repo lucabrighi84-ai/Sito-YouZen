@@ -3646,1047 +3646,30 @@
     "provider":{"@type":"Organization","name":"YouZen","url":"https://youzen.ai/"}
   }</script>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<style>
-:root{
---sectionA:#081426;
---sectionB:#0c1b33;
-}
 
-section{
-position:relative;
-padding:120px 0;
-}
 
-section:nth-of-type(even){
-background:var(--sectionA);
-}
 
-section:nth-of-type(odd){
-background:var(--sectionB);
-}
 
 
-h1,h2,h3{
-font-family:"Better Sans","Be Vietnam Pro",sans-serif;
-font-weight:700;
-font-size:clamp(40px,3vw,52px);
-letter-spacing:-0.02em;
-}
-</style>
-<style>
-@font-face{font-family:"Better Sans";src:local("Better Sans"),local("BetterSans");font-display:swap;}
-:root{
-  --sec1:#071224;
-  --sec2:#0d1f38;
-  --sec3:#09172b;
-  --sec4:#10223c;
-  --sec5:#08172c;
-  --sec6:#0f2138;
-  --sec7:#08152a;
-  --sec8:#10203a;
-  --sec9:#0a1830;
-  --sec10:#0f2137;
-  --divider:rgba(255,255,255,.08);
-}
-body{background:transparent;}
-section{padding:92px 0 86px;}
-.merged-section{position:relative;isolation:isolate;overflow:clip;}
-#sec-01{}
-#sec-02{}
-#sec-03{}
-#sec-04{}
-#sec-05{}
-#sec-06{}
-#sec-07{}
-#sec-08{}
-#sec-09{}
-#sec-10{}
 
-.section-index{display:none !important;}
-.merged-section::after, section::after{display:none !important; content:none !important;}
-.sec-04 .twist-card, .sec-09 .twist{clip-path:none !important; transform:none !important;}
 
-h1,h2,h3,.hero-title,.section-title,.title{font-family:"Better Sans","Be Vietnam Pro",sans-serif !important;font-weight:700;letter-spacing:-.025em;}
-.hero{padding-top:34px;}
-.hero-grid{align-items:center;}
-.hero-left{max-width:640px;}
-.hero-badge{margin-bottom:22px;}
-.hero-title{font-size:clamp(54px,6.3vw,96px) !important;line-height:.94;}
-.hero-sub{max-width:58ch;font-size:20px !important;line-height:1.55;color:rgba(255,255,255,.86)!important;}
-.hero-quickwins{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 18px;}
-.hero-quickwins .qw{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:999px;font-size:14px;font-weight:600;color:#dbe8ff;}
-.hero-quickwins .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;}
-.hero-proof-copy{margin-top:14px;font-size:14px;color:rgba(255,255,255,.72);}
-.card-title{font-size:34px !important;line-height:1.05;}
-.cta-btn .cta-main{font-size:18px !important;}
-.cta-btn .cta-sub-text{font-size:13px !important;}
-.sec-05 .section-inner{max-width:1320px;}
-.sec-05 .section-head{display:grid;grid-template-columns:minmax(0,740px) auto;gap:20px;align-items:end;margin-bottom:42px;}
-.sec-05 .section-head::after{content:"Scegli il tuo settore e guarda come lavora YouZen.";justify-self:end;max-width:360px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.68);text-align:right;}
-.sec-05 .section-title{max-width:620px;}
-.sec-05 .section-head .eyebrow{margin-bottom:16px !important;}
-.sec-05 .section-title{max-width:620px !important;}
-.sec-05 .section-bottom{justify-content:flex-start !important;}
-.sec-05 .section-bottom .btn-cta{display:none !important;}
 
-.sec-05 .body-wrap{display:grid;grid-template-columns:minmax(360px,430px) minmax(0,1fr);gap:0;border:1px solid rgba(255,255,255,.08);border-radius:28px;overflow:hidden;min-height:460px;background:rgba(5,10,20,.16);backdrop-filter:blur(8px);}
-.sec-05 .list-col{padding:18px 0;background:rgba(5,10,20,.18);}
-.sec-05 .list-item{padding:22px 26px;display:grid;grid-template-columns:72px 58px minmax(0,1fr) 32px;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer;transition:.25s ease;}
-.sec-05 .list-item:hover{background:rgba(255,255,255,.03);}
-.sec-05 .list-item.active{}
-.sec-05 .li-num{font-family:"Better Sans","Be Vietnam Pro",sans-serif !important;font-size:15px;color:rgba(255,255,255,.44);}
-.sec-05 .li-name{font-size:30px !important;line-height:.98;font-family:"Better Sans","Be Vietnam Pro",sans-serif !important;}
-.sec-05 .li-sub{margin-top:8px;font-size:15px;line-height:1.45;color:rgba(255,255,255,.64);}
-.sec-05 .detail-col{padding:34px 34px 28px;min-height:460px;}
-.sec-05 .detail-bg-num{display:none !important;}
-.sec-05 .detail-panel{height:100%;display:none;justify-content:space-between;gap:28px;}
-.sec-05 .detail-panel.active{display:flex;}
-.sec-05 .dp-eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px;}
-.sec-05 .dp-title{font-size:56px !important;line-height:.94;font-family:"Better Sans","Be Vietnam Pro",sans-serif !important;}
-.sec-05 .dp-desc{max-width:60ch;font-size:19px;line-height:1.65;color:rgba(255,255,255,.84);margin:26px 0 0;}
-.sec-05 .dp-chips{align-self:flex-end;display:flex;flex-wrap:wrap;gap:12px;}
-.sec-05 .chip{padding:12px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:14px;}
-.sec-05 .section-bottom{margin-top:26px;padding-top:0;}
-.sec-05 .bottom-note{font-size:14px;color:rgba(255,255,255,.64);}
-@media (max-width: 1100px){
-  section{padding:78px 0 72px;}
-  .hero-title{font-size:clamp(42px,9vw,74px)!important;}
-  .sec-05 .section-head{grid-template-columns:1fr;}
-  .sec-05 .section-head::after{text-align:left;justify-self:start;max-width:none;}
-  .sec-05 .body-wrap{grid-template-columns:1fr;}
-  .sec-05 .detail-col{padding:26px 22px 24px;}
-  .sec-05 .dp-title{font-size:42px!important;}
-}
-@media (max-width: 720px){
-  .hero-quickwins{gap:10px;}
-  .hero-quickwins .qw{width:100%;justify-content:flex-start;border-radius:16px;}
-  .sec-05 .list-item{grid-template-columns:52px 48px minmax(0,1fr) 22px;padding:18px 18px;}
-  .sec-05 .li-name{font-size:22px!important;}
-  .sec-05 .dp-title{font-size:34px!important;}
-}
-</style>
-<style>
-/* === layout fixes v6 === */
-body{background:transparent;}
-section{padding:54px 0;}
-.hero{padding:42px 0 36px;}
-.merged-section::after{display:none !important;}
-.master-toc{
-  right:16px; top:50%; transform:translateY(-50%);
-  gap:10px; padding:10px;
-  background:rgba(7,17,31,.58);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-}
-.master-toc a{
-  width:auto; min-width:44px; height:40px; padding:0 12px;
-  justify-content:flex-end; display:flex; align-items:center; gap:10px;
-  border-radius:12px; overflow:hidden;
-}
-.master-toc .toc-num{
-  width:22px; text-align:center; font:700 11px "DM Mono", monospace; color:#c9d6ea;
-}
-.master-toc .toc-label{
-  font:600 12px "DM Sans", sans-serif; color:#e8eef9; white-space:nowrap;
-  max-width:0; opacity:0; transform:translateX(8px); transition:.22s ease;
-}
-.master-toc a:hover .toc-label,
-.master-toc a.active .toc-label{
-  max-width:110px; opacity:1; transform:none;
-}
-@media (max-width:1100px){ .master-toc{display:none;} }
 
-#sec-01{}
-#sec-02{}
-#sec-03{}
-#sec-04{}
-#sec-05{}
-#sec-06{}
-#sec-07{}
-#sec-08{}
-#sec-09{}
-#sec-10{}
 
-h1,h2,h3,.hero-title,.section-title,.title{
-  font-family:"Better Sans","Be Vietnam Pro",sans-serif !important;
-  font-weight:700; letter-spacing:-.025em;
-}
 
-.hero-inner, .sec-03 .section, .sec-04 .section, .sec-05 .section-inner, .sec-06 .wrap, .sec-08 .section, .sec-09 .section, .sec-10 .footer-wrap{
-  max-width:1240px !important; margin:0 auto !important; padding-left:24px !important; padding-right:24px !important;
-}
-.sec-07 .pricing-container, .sec-07 .section, .sec-07 .wrap{
-  max-width:1240px !important; margin:0 auto !important; padding-left:24px !important; padding-right:24px !important;
-}
-.sec-02-omni{
-  max-width:1240px !important; margin:0 auto !important; padding-left:24px !important; padding-right:24px !important;
-}
-.sec-06 .wrap{padding-top:0 !important; padding-bottom:0 !important;}
-.sec-09 .section-head{padding:0 !important; margin-bottom:42px !important;}
-.sec-09 .list-footer{padding:0 !important;}
 
-.hero-grid{
-  display:grid !important;
-  grid-template-columns:minmax(0,1.05fr) minmax(380px,460px) !important;
-  gap:36px !important;
-  align-items:center !important;
-}
-.hero-left{max-width:none !important;}
-.hero-form{width:100%; max-width:460px; justify-self:end;}
-.demo-card{margin:0 !important;}
-.hero-title{font-size:clamp(48px,5vw,78px) !important; line-height:.95 !important;}
-.hero-sub{margin-top:16px !important; max-width:56ch !important; font-size:18px !important; line-height:1.5 !important;}
-.hero-trust{margin-top:18px !important;}
-.hero-proof{margin-top:20px !important;}
 
-.sec-03 .section, .sec-04 .section, .sec-08 .section, .sec-09 .section{padding-top:0 !important; padding-bottom:0 !important;}
-.sec-05 .section{padding-top:8px !important; padding-bottom:0 !important;}
 
-.sec-05 .section-inner{max-width:1240px !important;}
-.sec-05 .section-head{
-  display:grid !important;
-  grid-template-columns:minmax(0,560px) auto !important;
-  gap:18px !important; align-items:end !important;
-  margin-bottom:28px !important;
-}
-.sec-05 .section-head::after{
-  content:"Scegli il tuo settore e guarda come lavora YouZen.";
-  justify-self:end; max-width:320px; text-align:right;
-  font-size:15px; line-height:1.55; color:rgba(255,255,255,.66);
-}
-.sec-05 .section-title{
-  max-width:560px !important;
-  font-size:clamp(42px,4.4vw,62px) !important;
-  line-height:.98 !important;
-}
-.sec-05 .body-wrap{
-  grid-template-columns:minmax(320px,380px) minmax(0,1fr) !important;
-  min-height:380px !important;
-  border-radius:24px !important;
-}
-.sec-05 .list-col{padding:10px 0 !important;}
-.sec-05 .list-item{
-  grid-template-columns:48px 50px minmax(0,1fr) 24px !important;
-  padding:18px 22px !important; gap:14px !important;
-}
-.sec-05 .li-num{font-size:12px !important; opacity:.65;}
-.sec-05 .li-name{font-size:22px !important; line-height:1.02 !important;}
-.sec-05 .li-sub{margin-top:6px !important; font-size:14px !important; line-height:1.4 !important;}
-.sec-05 .detail-col{padding:28px !important; min-height:380px !important;}
-.sec-05 .dp-title{font-size:42px !important; line-height:.96 !important;}
-.sec-05 .dp-desc{font-size:17px !important; line-height:1.58 !important; margin-top:18px !important;}
-.sec-05 .chip{padding:10px 12px !important; font-size:13px !important;}
-.sec-05 .section-bottom{margin-top:18px !important; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
 
-@media (max-width:1100px){
-  section{padding:48px 0;}
-  .hero{padding:32px 0 30px;}
-  .hero-grid{grid-template-columns:1fr !important; gap:24px !important;}
-  .hero-form{max-width:none; justify-self:stretch;}
-  .sec-05 .section-head{grid-template-columns:1fr !important;}
-  .sec-05 .section-head::after{justify-self:start; text-align:left; max-width:none;}
-  .sec-05 .body-wrap{grid-template-columns:1fr !important;}
-}
-@media (max-width:720px){
-  section{padding:40px 0;}
-  .hero-title{font-size:clamp(38px,10vw,56px) !important;}
-  .sec-05 .section-title{font-size:clamp(34px,9vw,48px) !important;}
-  .sec-05 .dp-title{font-size:32px !important;}
-  .sec-05 .list-item{grid-template-columns:42px 42px minmax(0,1fr) 18px !important; padding:16px !important;}
-  .sec-05 .li-name{font-size:19px !important;}
-}
-</style>
-<style id="compact-sec05-v8">
-/* Compact Sect 05 */
-.sec-05 .section-inner{max-width:1000px;margin:0 auto;padding:0 20px;}
-.sec-05 .section-head{margin-bottom:28px;}
-.sec-05 .section-title{font-size:clamp(28px,3vw,42px);line-height:1.02;max-width:700px;}
-.sec-05 .body-wrap{grid-template-columns:330px 1fr;min-height:420px;border-radius:24px;}
-.sec-05 .list-item{gap:14px;padding:16px 18px;}
-.sec-05 .li-num{width:18px;font-size:10px;}
-.sec-05 .li-icon{width:34px;height:34px;border-radius:10px;font-size:16px;}
-.sec-05 .li-title{font-size:17px;line-height:1.05;}
-.sec-05 .li-sub{font-size:11px;line-height:1.35;max-width:170px;}
-.sec-05 .detail-bg-num{display:none!important;}
-.sec-05 .detail-glow{width:260px;height:260px;top:-70px;right:-70px;filter:blur(72px);opacity:.12;}
-.sec-05 .detail-content{padding:28px 32px;}
-.sec-05 .dp-eyebrow{margin-bottom:12px;font-size:9px;}
-.sec-05 .dp-icon-row{gap:14px;margin-bottom:18px;}
-.sec-05 .dp-icon{width:52px;height:52px;border-radius:14px;font-size:24px;}
-.sec-05 .dp-title{font-size:clamp(26px,2.3vw,34px);line-height:1.08;}
-.sec-05 .dp-desc{font-size:14px;line-height:1.6;max-width:420px;}
-.sec-05 .dp-pills{gap:10px;margin-top:18px;}
-.sec-05 .dp-pill{padding:9px 14px;font-size:11px;}
-.sec-05 .section-bottom{padding-top:12px;}
-.sec-05 .bottom-note{font-size:10px;}
-@media (max-width: 980px){
-  .sec-05 .body-wrap{grid-template-columns:300px 1fr;min-height:390px;}
-  .sec-05 .li-sub{max-width:150px;}
-}
-@media (max-width: 820px){
-  .sec-05 .section-head{margin-bottom:20px;}
-  .sec-05 .body-wrap{grid-template-columns:1fr;min-height:auto;}
-  .sec-05 .list-item{padding:14px 16px;}
-  .sec-05 .detail-content{padding:24px 22px;}
-}
-</style>
-<style id="v9-readability-overrides">
-  /* v9 readability + palette simplification */
-  :root{
-    --yz-bg-deep:#081223;
-    --yz-bg-mid:#10233f;
-    --yz-text:#F8FAFC;
-    --yz-body:#CBD5E1;
-    --yz-muted:#A8B4C7;
-    --yz-accent:#F97316;
-    --yz-accent-soft:rgba(249,115,22,.12);
-    --yz-border:rgba(255,255,255,.08);
-  }
-  body{background:var(--yz-bg-deep)!important;color:var(--yz-text)!important;}
 
-  /* Keep copy to two text colors: white + orange accent */
-  .sec-05 .section-title em,
-  .sec-05 .list-item.active .li-name,
-  .sec-05 .list-item.active .li-num,
-  .sec-05 .list-item.active .li-arrow,
-  .sec-05 .dp-title em,
-  .sec-07 .eyebrow,
-  .sec-08 .section-title em,
-  .sec-08 .eyebrow,
-  .sec-08 .faq-punchline,
-  .sec-08 .faq-item.open .faq-toggle,
-  .sec-08 .faq-shy,
-  .sec-09 .title-cross,
-  .sec-09 .eyebrow,
-  .sec-10 .eyebrow,
-  .sec-10 .contact-title em,
-  .sec-10 .cta-copy em{
-    color:var(--yz-accent)!important;
-  }
 
-  /* Remove green text from cards/twist/hero snippets */
-  .sec-05 .section-title em,
-  .sec-08 .section-title em{
-    color:var(--yz-accent)!important;
-  }
 
-  /* Improve readability */
-  .sec-05 .li-sub,
-  .sec-05 .dp-desc,
-  .sec-05 .bottom-note,
-  .sec-06 .subtitle,
-  .sec-06 .phase-desc,
-  .sec-06 .phase-name,
-  .sec-06 .dstep-desc,
-  .sec-06 .cta-text .small,
-  .sec-06 .event-text,
-  .sec-06 .event-meta,
-  .sec-06 .twist-sub,
-  .sec-07 .section-intro p,
-  .sec-07 .min-eyebrow,
-  .sec-07 .plan-desc,
-  .sec-07 .feature-name,
-  .sec-07 .feature-value,
-  .sec-07 .custom-banner-desc,
-  .sec-08 .section-sub,
-  .sec-08 .faq-answer,
-  .sec-09 .section-sub,
-  .sec-10 .contact-sub,
-  .sec-10 .contact-meta,
-  .sec-10 .contact-note{
-    color:var(--yz-body)!important;
-    opacity:1!important;
-  }
 
-  .sec-08 .faq-shy,
-  .sec-08 .faq-punchline{
-    background:var(--yz-accent-soft)!important;
-    border-color:rgba(249,115,22,.24)!important;
-  }
 
-  .sec-06 .phase-name,
-  .sec-06 .detail-title,
-  .sec-06 .twist-title,
-  .sec-07 .section-intro h2,
-  .sec-08 .section-title,
-  .sec-08 .faq-question,
-  .sec-09 .section-title,
-  .sec-10 .contact-title{
-    color:var(--yz-text)!important;
-  }
 
-  /* Buttons only orange for consistency */
-  .sec-06 .btn,
-  .sec-06 .btn-cta,
-  .sec-07 .plan-cta,
-  .sec-08 .btn-cta,
-  .sec-10 .contact-cta,
-  .sec-01 .nav-cta,
-  .sec-01 .hero-cta .btn-primary{
-    background:var(--yz-accent)!important;
-    color:#fff!important;
-    border-color:rgba(249,115,22,.35)!important;
-    
-  }
-  .sec-07, .sec-07 #prezzi, .sec-07 .wrap{ background:transparent!important; }
-  .sec-07 .custom-banner{ 
-    background:var(--yz-bg-mid)!important;
-    border:1px solid var(--yz-border)!important;
-    
-  }
-  .sec-08, .sec-08 .section{ background:var(--yz-bg-mid)!important; }
-  .sec-08 .faq-list,
-  .sec-08 .faq-item,
-  .sec-08 .faq-footer,
-  .sec-08 .section{ border-color:var(--yz-border)!important; }
-  .sec-08 .faq-item{ background:rgba(8,18,35,.16)!important; }
-  .sec-08 .faq-item.open{ background:rgba(8,18,35,.28)!important; }
 
-  /* FAQ color cleanup: one accent only */
-  .sec-08 .c-blue .faq-item.open .faq-toggle,
-  .sec-08 .c-purple .faq-item.open .faq-toggle,
-  .sec-08 .c-green .faq-item.open .faq-toggle,
-  .sec-08 .c-amber .faq-item.open .faq-toggle,
-  .sec-08 .c-red .faq-item.open .faq-toggle,
-  .sec-08 .c-orange .faq-item.open .faq-toggle{
-    color:var(--yz-accent)!important;
-    border-color:rgba(249,115,22,.32)!important;
-    background:var(--yz-accent-soft)!important;
-  }
-  .sec-08 .c-blue .faq-shy,
-  .sec-08 .c-purple .faq-shy,
-  .sec-08 .c-green .faq-shy,
-  .sec-08 .c-amber .faq-shy,
-  .sec-08 .c-red .faq-shy,
-  .sec-08 .c-orange .faq-shy,
-  .sec-08 .c-blue .faq-punchline,
-  .sec-08 .c-purple .faq-punchline,
-  .sec-08 .c-green .faq-punchline,
-  .sec-08 .c-amber .faq-punchline,
-  .sec-08 .c-red .faq-punchline,
-  .sec-08 .c-orange .faq-punchline{
-    color:#FDBA74!important;
-    background:var(--yz-accent-soft)!important;
-    border:1px solid rgba(249,115,22,.22)!important;
-  }
 
-  /* Pricing readability */
-  .sec-07 .min-display-num,
-  .sec-07 .plan-price,
-  .sec-07 .plan-name,
-  .sec-07 .custom-banner-title,
-  .sec-07 .feature-check,
-  .sec-07 .feature-cross,
-  .sec-07 .plan-card strong{
-    color:var(--yz-text)!important;
-  }
-  .sec-07 .plan-setup,
-  .sec-07 .plan-setup-note,
-  .sec-07 .billing-btn,
-  .sec-07 .billing-discount,
-  .sec-07 .scale-label,
-  .sec-07 .scale-mark,
-  .sec-07 .min-display-unit{
-    color:var(--yz-body)!important;
-  }
-  .sec-07 .billing-btn.active,
-  .sec-07 .scale-mark.active,
-  .sec-07 .plan-card.featured .plan-name,
-  .sec-07 .plan-card.enterprise .plan-name{
-    color:#fff!important;
-  }
 
-  /* sector section copy less washed out */
-  .sec-05 .eyebrow,
-  .sec-05 .dp-eyebrow{color:#FDBA74!important;}
-  .sec-05 .list-item:hover .li-sub, .sec-05 .list-item.active .li-sub{color:var(--yz-body)!important;}
-
-  /* remove stray low-contrast tags if any */
-  [style*="color:#22C55E"], [style*="color: #22C55E"]{ color:var(--yz-accent)!important; }
-</style>
-<style id="v10-polish-overrides">
-:root{
-  --v10-bg-1:#081426;
-  --v10-bg-2:#0b1a31;
-  --v10-bg-3:#0d1f39;
-  --v10-card:#0c1830;
-  --v10-card-soft:#10233f;
-  --v10-text:#f8fafc;
-  --v10-body:#d7dfeb;
-  --v10-muted:#aab7c9;
-  --v10-accent:#f97316;
-  --v10-border:rgba(255,255,255,.08);
-}
-body{background:var(--v10-bg-1)!important;color:var(--v10-text)!important;}
-section{padding:42px 0!important;}
-#sec-01{}
-#sec-02{}
-#sec-03{}
-#sec-04{}
-#sec-05{}
-#sec-06{}
-#sec-07{}
-#sec-08{}
-#sec-09{}
-#sec-10{}
-
-/* titoli uniformi */
-.hero-title,.section-title,.chart-title,.title,.contact-title,.card-title,.custom-banner-title,.faq-question,.dp-title,.detail-title,.twist-title{
-  font-family:"Be Vietnam Pro","Better Sans",sans-serif!important;
-  letter-spacing:-.028em!important;
-}
-.section-title,.chart-title,.title,.contact-title,.custom-banner-title,.detail-title,.twist-title{
-  font-size:clamp(30px,3.2vw,48px)!important;
-  line-height:1.04!important;
-}
-.sec-05 .dp-title{font-size:clamp(28px,2.4vw,40px)!important;line-height:1.04!important;}
-.sec-01 .hero-title{font-family:"Be Vietnam Pro","Better Sans",sans-serif!important;font-size:clamp(46px,5vw,72px)!important;line-height:.96!important;}
-
-/* testo leggibile e palette ridotta */
-.sec-05 .li-sub,.sec-05 .dp-desc,.sec-05 .bottom-note,
-
-
-/* tabella settori più compatta */
-.sec-05 .section{padding-top:5px!important;padding-bottom:0!important;}
-.sec-05 .section-inner{max-width:920px!important;padding-left:20px!important;padding-right:20px!important;}
-.sec-05 .section-head{grid-template-columns:minmax(0,520px) auto!important;margin-bottom:18px!important;gap:14px!important;}
-.sec-05 .section-head::after{max-width:260px!important;font-size:14px!important;line-height:1.45!important;color:var(--v10-body)!important;}
-.sec-05 .body-wrap{max-width:920px!important;margin:0 auto!important;grid-template-columns:290px minmax(0,1fr)!important;min-height:330px!important;border-radius:20px!important;background:rgba(8,20,38,.46)!important;}
-.sec-05 .list-col{display:flex!important;flex-direction:column!important;gap:5px!important;padding:8px!important;background:rgba(255,255,255,.02)!important;}
-.sec-05 .list-item{padding:14px 14px!important;gap:12px!important;border-bottom:none!important;border-radius:14px!important;background:transparent!important;grid-template-columns:34px 42px minmax(0,1fr) 18px!important;}
-.sec-05 .list-item:hover{background:rgba(255,255,255,.035)!important;}
-.sec-05 .list-item.active{background:rgba(255,255,255,.06)!important;}
-.sec-05 .li-num{font-size:11px!important;}
-.sec-05 .li-icon{width:42px!important;height:42px!important;border-radius:12px!important;}
-.sec-05 .li-name{font-size:16px!important;line-height:1.05!important;}
-.sec-05 .li-sub{margin-top:4px!important;font-size:11px!important;line-height:1.35!important;max-width:150px!important;}
-.sec-05 .li-arrow{font-size:14px!important;color:rgba(255,255,255,.36)!important;}
-.sec-05 .detail-col{padding:22px!important;min-height:330px!important;}
-.sec-05 .detail-panel{gap:18px!important;}
-.sec-05 .dp-eyebrow{margin-bottom:10px!important;font-size:10px!important;color:rgba(255,255,255,.46)!important;}
-.sec-05 .dp-desc{font-size:15px!important;line-height:1.56!important;margin-top:14px!important;max-width:46ch!important;}
-.sec-05 .dp-chips{gap:8px!important;align-self:flex-start!important;margin-top:auto!important;}
-.sec-05 .chip{padding:8px 10px!important;font-size:12px!important;color:var(--v10-body)!important;background:rgba(255,255,255,.03)!important;}
-.sec-05 .section-bottom{margin-top:10px!important;padding-top:0!important;}
-.sec-05 .bottom-note{font-size:12px!important;}
-
-/* continuità colori tra sezioni adiacenti */
-.sec-07 .custom-banner{}
-#sec-07 .pricing-card,#sec-07 .min-selector,#sec-07 .custom-banner{border-color:var(--v10-border)!important;}
-#sec-08 .section,#sec-08 .faq-list,#sec-08 .faq-item,#sec-08 .faq-footer{background:transparent!important;border-color:var(--v10-border)!important;}
-#sec-09 .twist{border-color:var(--v10-border)!important;clip-path:none!important;transform:none!important;}
-#sec-10 .cs-form-card,#sec-10 .cu-card{border-color:var(--v10-border)!important;}
-
-/* compatta verticalmente varie sezioni */
-
-
-.sec-07 section{padding-bottom:8px!important;}
-.sec-08 .section{padding-bottom:10px!important;}
-.sec-09 .section-head{margin-bottom:32px!important;}
-
-@media (max-width:1100px){
-  .sec-05 .section-head{grid-template-columns:1fr!important;}
-  .sec-05 .section-head::after{justify-self:start!important;text-align:left!important;max-width:none!important;}
-  .sec-05 .body-wrap{grid-template-columns:1fr!important;max-width:760px!important;}
-}
-@media (max-width:720px){
-  section{padding:34px 0!important;}
-  .sec-05 .section-inner{padding-left:16px!important;padding-right:16px!important;}
-  .sec-05 .list-col{gap:5px!important;}
-  .sec-05 .list-item{grid-template-columns:28px 38px minmax(0,1fr) 16px!important;padding:12px!important;}
-  .sec-05 .li-name{font-size:15px!important;}
-  .sec-05 .li-sub{font-size:10px!important;max-width:none!important;}
-  .sec-05 .detail-col{padding:18px!important;}
-}
-</style>
-<style id="v11-refactor-overrides">
-:root{
-  --v11-bg:#081223;
-  --v11-bg-soft:#0d1a30;
-  --v11-card:#101b30;
-  --v11-card-2:#12203a;
-  --v11-border:rgba(255,255,255,.08);
-  --v11-text:#F8FAFC;
-  --v11-muted:#CBD5E1;
-  --v11-dim:#94A3B8;
-  --v11-accent:#F97316;
-  --v11-accent-soft:rgba(249,115,22,.12);
-}
-body{background:var(--v11-bg)!important;color:var(--v11-text)!important;}
-.merged-section{background:var(--v11-bg)!important;}
-section{padding:58px 0!important;}
-.sec-02,.sec-03,.sec-04,.sec-05,.sec-08,.sec-09,.sec-10{min-height:auto!important;background:var(--v11-bg)!important;}
-
-.sec-03 .section-title,
-.sec-04 .section-title,
-.sec-05 .section-title,
-.sec-08 .section-title,
-.sec-09 .section-title,
-.sec-10 .pf-title{
-  font-family:"Syne",sans-serif!important;
-  font-size:clamp(30px,3.4vw,44px)!important;
-  line-height:1.04!important;
-  letter-spacing:-.028em!important;
-}
-.sec-03 .section-sub,
-.sec-04 .section-sub,
-.sec-05 .section-sub,
-.sec-08 .section-sub,
-.sec-09 .section-sub,
-.sec-10 .pf-sub{
-  color:var(--v11-dim)!important;
-  line-height:1.72!important;
-  margin-bottom:40px!important;
-  max-width:620px!important;
-}
-.sec-03 .section,
-.sec-04 .section,
-.sec-08 .section{padding-top:0!important;padding-bottom:0!important;}
-.sec-02 .card,
-.sec-03 .card-outer,
-.sec-04 .twist-card,
-.sec-05 .body-wrap,
-
-.sec-08 .faq-item,
-.sec-07 .compare-grid,
-.sec-07 .setup-rect,
-.sec-07 .plan-card{border-color:var(--v11-border)!important;}
-.sec-08 .faq-item{background:rgba(255,255,255,.02)!important;}
-.sec-08 .faq-item.open{background:rgba(255,255,255,.04)!important;}
-.sec-05 .section{padding:0!important;}
-.sec-05 .section-inner{max-width:1060px!important;padding:0 24px!important;}
-.sec-05 .section-head{margin-bottom:24px!important;}
-.sec-05 .body-wrap{grid-template-columns:320px 1fr!important;min-height:430px!important;border-radius:24px!important;}
-.sec-05 .list-col{gap:5px!important;padding:5px!important;border-right:1px solid var(--v11-border)!important;background:rgba(255,255,255,.015)!important;}
-.sec-05 .list-item{display:grid!important;grid-template-columns:18px 38px minmax(0,1fr) 14px!important;align-items:center!important;gap:12px!important;padding:13px 14px!important;margin:0!important;border:1px solid var(--v11-border)!important;border-radius:16px!important;background:rgba(255,255,255,.018)!important;}
-.sec-05 .list-item:last-child{border-bottom:1px solid var(--v11-border)!important;}
-.sec-05 .list-item::before{border-radius:16px 0 0 16px!important;}
-.sec-05 .li-num{width:auto!important;font-size:10px!important;}
-.sec-05 .li-icon{width:38px!important;height:38px!important;border-radius:11px!important;font-size:17px!important;}
-.sec-05 .li-name{font-size:16px!important;line-height:1.05!important;color:rgba(255,255,255,.84)!important;}
-.sec-05 .list-item.active .li-name{color:var(--v11-accent)!important;}
-.sec-05 .li-sub{margin-top:3px!important;font-size:11px!important;line-height:1.35!important;color:var(--v11-dim)!important;max-width:none!important;}
-.sec-05 .li-arrow{font-size:12px!important;}
-.sec-05 .detail-col{min-height:430px!important;}
-.sec-05 .detail-content{padding:28px 30px!important;}
-.sec-05 .dp-eyebrow{margin-bottom:10px!important;}
-.sec-05 .dp-icon-row{gap:14px!important;margin-bottom:16px!important;}
-.sec-05 .dp-icon{width:54px!important;height:54px!important;border-radius:16px!important;font-size:24px!important;}
-.sec-05 .dp-title{font-size:clamp(26px,2.3vw,34px)!important;line-height:1.03!important;}
-.sec-05 .dp-desc{font-size:14px!important;line-height:1.62!important;margin-bottom:22px!important;max-width:460px!important;}
-.sec-05 .dp-chips{gap:8px!important;}
-.sec-05 .chip{padding:8px 12px!important;font-size:11px!important;}
-.sec-05 .section-bottom{margin-top:14px!important;gap:12px!important;padding-top:10px!important;}
-.sec-05 .bottom-note{font-size:11px!important;color:var(--v11-dim)!important;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.sec-07 section{padding-top:0!important;padding-bottom:0!important;}
-.sec-08 .section{padding-top:0!important;padding-bottom:0!important;}
-.sec-09 .section-head{margin-bottom:28px!important;}
-.sec-09 .twist{margin-top:34px!important;padding:30px 32px!important;}
-.sec-10 .cta-unified{padding:54px 0!important;}
-.sec-10 .cu-wrap{gap:32px!important;}
-@media (max-width:1100px){
-  section{padding:48px 0!important;}
-  .sec-05 .body-wrap{grid-template-columns:1fr!important;min-height:auto!important;}
-  .sec-05 .list-col{border-right:none!important;border-bottom:1px solid var(--v11-border)!important;}
-  .sec-05 .detail-col{min-height:auto!important;}
-  
-}
-@media (max-width:720px){
-  section{padding:38px 0!important;}
-  .sec-05 .section-inner,
-  .sec-05 .list-col{gap:5px!important;padding:5px!important;}
-  .sec-05 .list-item{grid-template-columns:18px 36px minmax(0,1fr) 12px!important;padding:12px!important;}
-  .sec-05 .li-name{font-size:15px!important;}
-  .sec-05 .detail-content{padding:22px 18px!important;}
-  
-  
-  
-  
-  
-  
-}
-</style>
-<style id="v11-1-targeted-overrides">
-:root{
-  --v11x-green:#22C55E;
-  --v11x-green-dark:#16A34A;
-  --v11x-green-soft:rgba(34,197,94,.14);
-}
-/* Settori: header più pulito e centrato */
-.sec-05 .section-head{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  text-align:center!important;
-  gap:10px!important;
-  margin-bottom:22px!important;
-}
-.sec-05 .section-head::after{
-  content:"Scegli il tuo settore e guarda come lavora YouZen."!important;
-  display:block!important;
-  max-width:560px!important;
-  text-align:center!important;
-  font-size:14px!important;
-  line-height:1.55!important;
-  color:var(--v11-dim)!important;
-  margin:0 auto!important;
-}
-.sec-05 .section-head .eyebrow{margin:0!important;}
-.sec-05 .section-title{max-width:700px!important;margin:0 auto!important;font-size:clamp(38px,6vw,68px)!important;font-weight:900!important;line-height:1.0!important;letter-spacing:-.04em!important;}
-.sec-05 .body-wrap{max-width:980px!important;grid-template-columns:300px minmax(0,1fr)!important;min-height:360px!important;}
-.sec-05 .list-col{padding:6px!important;gap:5px!important;}
-.sec-05 .list-item{padding:12px 13px!important;}
-.sec-05 .detail-col{min-height:360px!important;padding:20px!important;}
-.sec-05 .detail-content{padding:24px 26px!important;}
-.sec-05 .dp-title{font-size:clamp(24px,2.1vw,32px)!important;}
-.sec-05 .dp-desc{font-size:14px!important;line-height:1.58!important;max-width:44ch!important;}
-.sec-05 .dp-chips{gap:7px!important;}
-.sec-05 .chip{font-size:11px!important;padding:7px 10px!important;}
-
-/* Banner pricing più compatto e uniforme */
-.sec-07 .custom-banner{
-  max-width:900px!important;
-  margin:24px auto 0!important;
-  padding:18px 20px!important;
-  border-radius:20px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:18px!important;
-  border:1px solid rgba(34,197,94,.24)!important;
-}
-.sec-07 .custom-banner-left{display:flex!important;flex-direction:column!important;gap:6px!important;}
-.sec-07 .custom-banner .plan-badge.custom{
-  margin-bottom:2px!important;
-  width:fit-content!important;
-  padding:6px 10px!important;
-  font-size:10px!important;
-  line-height:1!important;
-  letter-spacing:.08em!important;
-  text-transform:uppercase!important;
-  color:#dcfce7!important;
-  background:rgba(34,197,94,.16)!important;
-  border:1px solid rgba(34,197,94,.28)!important;
-}
-.sec-07 .custom-banner-title{font-size:clamp(22px,2.2vw,28px)!important;line-height:1.06!important;color:#f0fdf4!important;}
-.sec-07 .custom-banner-desc{font-size:14px!important;line-height:1.55!important;color:#d1fae5!important;max-width:560px!important;}
-.sec-07 .custom-banner-cta,
-.sec-07 .custom-cta{
-  padding:12px 18px!important;
-  border-radius:999px!important;
-  border:1px solid rgba(34,197,94,.32)!important;
-  color:#052e16!important;
-  
-  white-space:nowrap!important;
-}
-.sec-07 .custom-banner-cta:hover,.sec-07 .custom-cta:hover{transform:translateY(-1px)!important;}
-
-/* FIT più compatta e leggibile */
-.sec-09 .section{max-width:1020px!important;margin:0 auto!important;padding-left:24px!important;padding-right:24px!important;}
-.sec-09 .section-head{
-  max-width:760px!important;
-  margin:0 auto 22px!important;
-  text-align:center!important;
-}
-.sec-09 .section-sub{margin:12px auto 0!important;max-width:620px!important;font-size:14px!important;line-height:1.65!important;color:var(--v11-muted)!important;}
-.sec-09 .list{border-radius:22px!important;overflow:hidden!important;border:1px solid var(--v11-border)!important;background:rgba(255,255,255,.02)!important;}
-.sec-09 .row{
-  grid-template-columns:42px minmax(0,1fr) 150px!important;
-  min-height:unset!important;
-  padding:0 18px!important;
-  gap:14px!important;
-  background:transparent!important;
-}
-.sec-09 .row + .row{border-top:1px solid rgba(255,255,255,.06)!important;}
-.sec-09 .row-content{padding:18px 0!important;}
-.sec-09 .row-x{font-size:14px!important;color:rgba(248,113,113,.8)!important;}
-.sec-09 .row-title{font-size:18px!important;line-height:1.15!important;color:#f8fafc!important;}
-.sec-09 .row-quip{
-  margin-top:6px!important;
-  font-size:13px!important;
-  line-height:1.55!important;
-  color:rgba(226,232,240,.82)!important;
-}
-.sec-09 .row-tag{font-size:11px!important;color:rgba(248,113,113,.72)!important;justify-self:end!important;}
-.sec-09 .row:hover{background:rgba(248,113,113,.045)!important;}
-.sec-09 .row:hover .row-title{color:#fff!important;}
-.sec-09 .row:hover .row-quip{color:#f1f5f9!important;}
-.sec-09 .row:hover .row-tag{color:#fca5a5!important;}
-.sec-09 .row-strike{opacity:.6!important;}
-.sec-09 .twist{
-  max-width:760px!important;
-  margin:22px auto 0!important;
-  padding:22px 24px!important;
-  border-radius:22px!important;
-}
-.sec-09 .twist-title{font-size:clamp(24px,2.4vw,30px)!important;line-height:1.08!important;}
-.sec-09 .twist-sub{font-size:14px!important;line-height:1.62!important;color:var(--v11-muted)!important;}
-.sec-09 .twist-cta{padding:12px 18px!important;border-radius:999px!important;}
-
-@media (max-width:1100px){
-  .sec-07 .custom-banner{max-width:none!important;}
-  .sec-09 .row{grid-template-columns:36px minmax(0,1fr) 120px!important;}
-}
-@media (max-width:720px){
-  .sec-05 .section-head::after{max-width:360px!important;font-size:13px!important;}
-  .sec-05 .body-wrap{grid-template-columns:1fr!important;min-height:auto!important;}
-  .sec-05 .detail-col,.sec-05 .detail-content{padding:18px!important;}
-  .sec-07 .custom-banner{padding:16px!important;align-items:flex-start!important;}
-  .sec-07 .custom-banner-title{font-size:20px!important;}
-  .sec-07 .custom-banner-desc{font-size:13px!important;}
-  .sec-07 .custom-banner-cta,.sec-07 .custom-cta{width:100%!important;justify-content:center!important;}
-  .sec-09 .section{padding-left:16px!important;padding-right:16px!important;}
-  .sec-09 .row{grid-template-columns:30px 1fr!important;padding:0 14px!important;}
-  .sec-09 .row-tag{display:none!important;}
-  .sec-09 .row-title{font-size:16px!important;}
-  .sec-09 .row-quip{font-size:12px!important;color:#e2e8f0!important;}
-  .sec-09 .twist{padding:18px!important;}
-}
-</style>
-<style>
-/* === v11.2 unified background + navigation cleanup === */
-body{
-  background:
-    radial-gradient(1200px 700px at 18% 8%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 60%),
-    radial-gradient(900px 540px at 82% 14%, rgba(249,115,22,.10) 0%, rgba(249,115,22,0) 58%),
-    linear-gradient(180deg, #08111f 0%, #091427 38%, #0a1322 100%) !important;
-}
-#sec-01,#sec-02,#sec-03,#sec-04,#sec-05,#sec-06,#sec-07,#sec-08,#sec-09,#sec-10{
-  background: transparent !important;
-}
-.merged-section{
-  background: transparent !important;
-}
-
-/* CTA verdi come colpo di scena */
-.cta-green {
-  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%) !important;
-  color: #071208 !important;
-  box-shadow: 0 4px 24px rgba(34,197,94,.25) !important;
-}
-.cta-green:hover {
-  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%) !important;
-  box-shadow: 0 6px 32px rgba(34,197,94,.35) !important;
-}
-
-/* navbar sticky dinamica */
-.sec-01 .navbar {
-  position: sticky !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  background: rgba(8,14,31,0) !important;
-  transition: background .35s ease, box-shadow .35s ease, border-color .35s ease !important;
-}
-.sec-01 .navbar.scrolled {
-  background: rgba(8,14,31,.92) !important;
-  box-shadow: 0 1px 0 rgba(255,255,255,.07) !important;
-}
-.sec-01 .hero{
-  padding-top: 80px !important;
-}
-
-/* indice con nomi sezione */
-.master-toc{
-  gap: 8px !important;
-  padding: 10px !important;
-}
-.master-toc a{
-  min-width: 140px !important;
-  width: 140px !important;
-  justify-content: flex-start !important;
-  padding: 0 14px !important;
-}
-.master-toc .toc-num{
-  display: none !important;
-}
-.master-toc .toc-label{
-  max-width: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-  color: #eaf1fb !important;
-}
-.master-toc a.active,
-.master-toc a:hover{
-  background: rgba(34,197,94,.14) !important;
-  border-color: rgba(34,197,94,.22) !important;
-}
-
-/* contatti più neutri */
-.sec-10 .pf-eyebrow{
-  color: #86efac !important;
-}
-</style>
-<style id="v11_3_global_bg_override">
-body, html {
-  background:#0b1626 !important;
-}
-section{
-  background:transparent !important;
-}
-.sector-section, .settori, #settori{
-  background:transparent !important;
-}
-</style>
-<style>
-/* v11.5 flatten onboarding section into page background */
-.onboarding, .onboarding-section, .onboarding-wrapper{
-background: transparent !important;
-border: none !important;
-
-}
-
-.onboarding .container,
-.onboarding-section .container,
-.onboarding-wrapper .container{
-background: transparent !important;
-border: none !important;
-
-padding: 0 !important;
-}
-
-section.onboarding{
-background: transparent !important;
-}
-
-/* extend main gradient to footer */
-footer{
-background: transparent !important;
-border-top: none !important;
-}
-</style>
-
-
-
-
-
-
-<style id="v12-final-overrides">
-.sec-05 .section-title{
-  font-size:clamp(30px,3.4vw,44px)!important;
-  line-height:1.04!important;
-  max-width:560px!important;
-}
-.sec-05 .section-head{align-items:end!important;}
-.sec-10 #cal-embed iframe{
-  width:100%!important;
-  min-height:720px!important;
-  border:0!important;
-  border-radius:18px!important;
-  background:transparent!important;
-}
-.sec-10 .pf-cal-link{
-  margin-top:12px;
-  text-align:center;
-}
-.sec-10 .pf-cal-link a{
-  color:#94A3B8;
-  text-decoration:none;
-  font-size:13px;
-}
-.sec-10 .pf-cal-link a:hover{color:#fff;}
-@media (max-width:720px){
-  .sec-05 .section-title{font-size:clamp(28px,7.4vw,38px)!important;}
-  .sec-10 #cal-embed iframe{min-height:640px!important;}
-}
-</style>
-
-
-
-
-
-<style id="sec06-final-clean-rebuild-v2">
-/* SEC-06 FINAL PATCH V2 */
-
-/* Full-width section + timeline */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* PHASE 1 = blue */
-
-
-
-
-
-
-
-/* PHASE 2 = purple */
-
-
-
-
-
-
-
-/* PHASE 3 = orange */
-
-
-
-
-
-
-
-
-
-@media (max-width: 1200px){
-  
-  
-}
-@media (max-width: 760px){
-  
-  
-  
-}
-</style>
 
 <style>
     :root { color-scheme: dark; }
@@ -5691,97 +4674,1517 @@ border-top: none !important;
 }
   
 </style>
-<style id="sec06-onboarding-passthrough">
-/* Ensure onboarding sec-06 renders exactly as standalone */
+
+
+
+
+
+<style id="youzen-overrides">
+/* ═══════════════════════════════════════════════════
+   YOUZEN — Override consolidato (sostituisce v1–v35)
+   Unico blocco. Cascata lineare. Niente conflitti.
+═══════════════════════════════════════════════════ */
+
+/* === v11.2 unified background + navigation cleanup === */
+body{
+  background:
+    radial-gradient(1200px 700px at 18% 8%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 60%),
+    radial-gradient(900px 540px at 82% 14%, rgba(249,115,22,.10) 0%, rgba(249,115,22,0) 58%),
+    linear-gradient(180deg, #08111f 0%, #091427 38%, #0a1322 100%) !important;
+}
+#sec-01,#sec-02,#sec-03,#sec-04,#sec-05,#sec-06,#sec-07,#sec-08,#sec-09,#sec-10{
+  background: transparent !important;
+}
+.merged-section{
+  background: transparent !important;
+}
+
+/* CTA verdi come colpo di scena */
+.cta-green {
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%) !important;
+  color: #071208 !important;
+  box-shadow: 0 4px 24px rgba(34,197,94,.25) !important;
+}
+.cta-green:hover {
+  background: linear-gradient(135deg, #16A34A 0%, #15803D 100%) !important;
+  box-shadow: 0 6px 32px rgba(34,197,94,.35) !important;
+}
+
+/* navbar sticky dinamica */
+.sec-01 .navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: rgba(8,14,31,0) !important;
+  transition: background .35s ease, box-shadow .35s ease, border-color .35s ease !important;
+}
+.sec-01 .navbar.scrolled {
+  background: rgba(8,14,31,.92) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.07) !important;
+}
+.sec-01 .hero{
+  padding-top: 80px !important;
+}
+
+/* indice con nomi sezione */
+.master-toc{
+  gap: 8px !important;
+  padding: 10px !important;
+}
+.master-toc a{
+  min-width: 140px !important;
+  width: 140px !important;
+  justify-content: flex-start !important;
+  padding: 0 14px !important;
+}
+.master-toc .toc-num{
+  display: none !important;
+}
+.master-toc .toc-label{
+  max-width: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  color: #eaf1fb !important;
+}
+.master-toc a.active,
+.master-toc a:hover{
+  background: rgba(34,197,94,.14) !important;
+  border-color: rgba(34,197,94,.22) !important;
+}
+
+/* contatti più neutri */
+.sec-10 .pf-eyebrow{
+  color: #86efac !important;
+}
+
+body, html {
+  background:#0b1626 !important;
+}
+section{
+  background:transparent !important;
+}
+.sector-section, .settori, #settori{
+  background:transparent !important;
+}
+
+/* ═══════════════════════════════════════════
+   FIX BODY: ripristina layout normale
+   Il body:flex rompe sticky navbar e layout
+═══════════════════════════════════════════ */
+body {
+  display: block !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  gap: unset !important;
+  flex-wrap: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ═══════════════════════════════════════════
+   FIX NAVBAR: sticky in cima, senza spazio sopra
+═══════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════
+   FIX CRITICO: overflow-x:hidden sui parent rompe sticky navbar
+   Usiamo overflow-x:clip che NON crea BFC e NON rompe sticky
+═══════════════════════════════════════════ */
+.sec-01,
+.merged-section,
+body {
+  overflow-x: clip !important;
+}
+/* Ripristina overflow normale per i section successivi */
+.sec-02, .sec-03, .sec-04, .sec-05, .sec-06,
+.sec-07, .sec-08, .sec-09, .sec-10 {
+  overflow-x: clip !important;
+}
+
+.navbar, #navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* sec-01 (wrapper della navbar + hero) non deve avere padding sopra */
+.merged-section.sec-01 {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* ═══════════════════════════════════════════
+   FIX sec-06: titolo a sinistra
+   margin:0 auto su flex-child lo centra anche con justify-content:flex-start
+   → usare margin-left:0; margin-right:0 e width:100%
+═══════════════════════════════════════════ */
 .sec-06 {
-  background: #080e1f !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 60px 24px !important;
-  min-height: auto !important;
+  display: block !important;  /* cambia da flex a block → .wrap non è più flex-child */
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }
 .sec-06 .wrap {
   width: 100% !important;
-  max-width: 900px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-.sec-06 .header {
-  text-align: center !important;
-  margin-bottom: 64px !important;
-  display: block !important;
-}
-.sec-06 .header .eyebrow,
-.sec-06 .header .title,
-.sec-06 .header .subtitle {
-  text-align: center !important;
+  max-width: 1060px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
 }
-/* Restore detail-panel styling */
-.sec-06 .detail-panel {
-  margin-top: 56px !important;
-  background: #0c1627 !important;
-  border: 1px solid rgba(255,255,255,.07) !important;
-  border-radius: 24px !important;
-  overflow: hidden !important;
+.sec-06 .header {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-bottom: 32px !important;
 }
-.sec-06 .detail-panel::before {
+.sec-06 .eyebrow {
+  display: inline-flex !important;
+  justify-content: flex-start !important;
+  margin-left: 0 !important;
+}
+.sec-06 .eyebrow::after {
+  display: none !important;
+  content: none !important;
+}
+.sec-06 .title {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+.sec-06 .subtitle {
+  text-align: left !important;
+  margin-left: 0 !important;
+  max-width: 560px !important;
+}
+
+/* ═══════════════════════════════════════════
+   FIX CAL.COM: iframe visibile
+═══════════════════════════════════════════ */
+cal-embed {
   display: block !important;
-}
-.sec-06 .detail-inner {
-  display: none;
-  padding: 40px 44px !important;
-}
-.sec-06 .detail-inner.visible {
-  display: block !important;
-}
-.sec-06 .dstep {
-  background: rgba(255,255,255,.03) !important;
-  border: 1px solid rgba(255,255,255,.05) !important;
-  border-top: unset !important;
+  width: 100% !important;
+  height: 660px !important;
+  min-height: 660px !important;
   border-radius: 16px !important;
-  padding: 20px !important;
-}
-.sec-06 .detail-steps {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  gap: 16px !important;
-  margin-top: 28px !important;
-}
-/* Timeline centered */
-.sec-06 .timeline {
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,.1) !important;
+  background: #0c1627 !important;
   position: relative !important;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr !important;
-  gap: 0 !important;
 }
-.sec-06 .phase {
+cal-embed iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 660px !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  cal-embed,
+  cal-embed iframe {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   HERO LAYOUT — come da foto
+═══════════════════════════════════════════ */
+.hero {
+  padding: 60px 0 60px !important;
+  min-height: calc(100vh - 64px) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.sec-01 .hero-inner {
+  padding: 0 48px !important;
+  width: 100% !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 460px !important;
+  gap: 60px !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* ═══════════════════════════════════════════
+   FORM CARD — valorizzata
+═══════════════════════════════════════════ */
+.demo-card {
+  background: #0d1b35 !important;
+  border: 1px solid rgba(249,115,22,.25) !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 0 0 40px rgba(249,115,22,.08), 0 24px 48px rgba(0,0,0,.4) !important;
+}
+
+/* Card eyebrow — "Chiamata gratuita" */
+.card-eyebrow {
+  font-size: 10px !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: #F97316 !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+/* Card title */
+.card-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  line-height: 1.25 !important;
+}
+.card-title em {
+  color: #F97316 !important;
+  font-style: normal !important;
+}
+
+/* WhatsApp note */
+.whatsapp-note {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  background: rgba(37,211,102,.08) !important;
+  border: 1px solid rgba(37,211,102,.2) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  margin-bottom: 12px !important;
+  font-size: 12px !important;
+  color: rgba(255,255,255,.75) !important;
+  line-height: 1.45 !important;
+}
+.wa-icon {
+  font-size: 16px !important;
+  flex-shrink: 0 !important;
+  margin-top: 1px !important;
+}
+
+/* CTA button — arancione pieno */
+.cta-btn.cta-orange,
+.cta-btn {
+  background: #F97316 !important;
+  background-image: linear-gradient(135deg, #F97316 0%, #ea6a0a 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  width: 100% !important;
+  padding: 14px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  cursor: pointer !important;
+  transition: transform .15s, box-shadow .15s !important;
+  box-shadow: 0 4px 20px rgba(249,115,22,.35) !important;
+}
+.cta-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 28px rgba(249,115,22,.5) !important;
+}
+.cta-phone-wrap {
+  background: rgba(255,255,255,.15) !important;
+  border-radius: 8px !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+.cta-main {
+  display: block !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: -.01em !important;
+}
+.cta-sub-text {
+  display: block !important;
+  font-size: 11px !important;
+  opacity: .75 !important;
+  font-weight: 400 !important;
+}
+.cta-arrow {
+  margin-left: auto !important;
+  font-size: 18px !important;
+  opacity: .8 !important;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero {
+    padding: 40px 0 40px !important;
+    align-items: flex-start !important;
+  }
+  .sec-01 .hero-inner {
+    padding: 0 20px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   HERO TITLE — font bold display come da foto
+   Syne 900 + lettera-spacing stretto + maiuscole
+═══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
+
+.hero-title {
+  font-family: 'Syne', 'Arial Black', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: clamp(52px, 7.5vw, 96px) !important;
+  line-height: 1.0 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: none !important;
+  margin-bottom: 24px !important;
+}
+.hero-title .line-1,
+.hero-title .line-2,
+.hero-title .line-3 {
+  display: block !important;
+}
+
+/* line-1: bianco */
+.hero-title .hl-problem {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+/* line-2 + line-3: arancione */
+.hero-title .hl-solution,
+.hero-title .hl-breath {
+  color: #F97316 !important;
+  font-weight: 800 !important;
+}
+
+/* ═══════════════════════════════════════════
+   BADGE — arancione invece di verde
+═══════════════════════════════════════════ */
+.hero-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(34,197,94,.1) !important;
+  border: 1px solid rgba(34,197,94,.3) !important;
+  border-radius: 999px !important;
+  padding: 6px 14px 6px 10px !important;
+  margin-bottom: 28px !important;
+}
+.hero-badge .badge-text {
+  color: #22C55E !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .01em !important;
+}
+.hero-badge .badge-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #22C55E !important;
+  box-shadow: 0 0 0 0 rgba(34,197,94,.6) !important;
+  animation: pulse-green 2s infinite !important;
+  flex-shrink: 0 !important;
+}
+@keyframes pulse-green {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.6); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+.badge-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #F97316 !important;
+  box-shadow: 0 0 8px #F97316 !important;
+  animation: pulse-orange 2s infinite !important;
+  flex-shrink: 0 !important;
+}
+.badge-text {
+  color: #F97316 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: .04em !important;
+}
+@keyframes pulse-orange {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .6; transform: scale(1.2); }
+}
+
+/* ═══════════════════════════════════════════
+   HERO SUBTITLE — tono simpatico
+═══════════════════════════════════════════ */
+.hero-sub {
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  color: rgba(255,255,255,.72) !important;
+  max-width: 520px !important;
+  margin-bottom: 0 !important;
+}
+.hero-sub-accent {
+  color: #F97316 !important;
+  font-weight: 600 !important;
+}
+.hero-sub strong {
+  color: rgba(255,255,255,.92) !important;
+  font-weight: 600 !important;
+}
+
+/* ═══════════════════════════════════════════
+   QUICKWINS — pill arancione extra
+═══════════════════════════════════════════ */
+.hero-quickwins .qw-orange {
+  border-color: rgba(249,115,22,.3) !important;
+  background: rgba(249,115,22,.08) !important;
+  color: #F97316 !important;
+}
+.hero-quickwins .dot-orange {
+  background: #F97316 !important;
+}
+
+/* ═══════════════════════════════════════════
+   Hero title — stesso font di "È un'orchestra"
+   font-family: Syne 800, letter-spacing: -.03em, line-height: 1.04
+═══════════════════════════════════════════ */
+.hero-title,
+.hero-title .hl-problem,
+.hero-title .hl-solution,
+.hero-title .hl-breath,
+.hero-title .line-1,
+.hero-title .line-2,
+.hero-title .line-3 {
+  font-family: "Syne", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -.03em !important;
+  line-height: 1.04 !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+.hero-title {
+  font-size: clamp(52px, 7.5vw, 88px) !important;
+  margin-bottom: 24px !important;
+  text-transform: none !important;
+}
+.hero-title .line-1,
+.hero-title .line-2,
+.hero-title .line-3 {
+  display: block !important;
+  font-size: inherit !important;
+}
+/* line-1: bianco */
+.hero-title .hl-problem { color: #ffffff !important; }
+/* line-2 + 3: arancione come em di orchestra */
+.hero-title .hl-solution,
+.hero-title .hl-breath {
+  color: #F97316 !important;
+  -webkit-text-fill-color: #F97316 !important;
+}
+
+/* ═══════════════════════════════════════════
+   "Tu respiri." — sfumatura animata arancione→giallo→arancione
+═══════════════════════════════════════════ */
+@keyframes breath-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-title .hl-breath {
+  background: linear-gradient(90deg, #F97316, #FBBF24, #ef4444, #F97316, #FBBF24) !important;
+  background-size: 300% 300% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: breath-gradient 3s ease infinite !important;
+  display: inline !important;
+}
+
+/* ═══════════════════════════════════════════
+   FIX: Padding verticale 48px per tutte le sezioni
+═══════════════════════════════════════════ */
+.sec-03 .section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+.sec-05 .section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+.sec-06 {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+.sec-07 .wrap {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+.sec-08 .section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+.sec-09 .section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+/* ═══════════════════════════════════════════
+   FIX: sec-06 eyebrow e titolo come gli altri
+   → rimuovi ::after line, mantieni solo ::before a sx
+═══════════════════════════════════════════ */
+.sec-06 .eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-bottom: 16px !important;
+}
+/* Mantieni solo la linea a SINISTRA (::before), nascondi ::after */
+.sec-06 .eyebrow::after {
+  display: none !important;
+  content: none !important;
+}
+.sec-06 .eyebrow::before {
+  content: "" !important;
+  display: block !important;
+  width: 24px !important;
+  height: 2px !important;
+  background: var(--orange, #F97316) !important;
+  opacity: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Titolo e subtitle allineati a sinistra come sec-02/sec-03 */
+.sec-06 .header {
+  text-align: left !important;
+  display: block !important;
+  margin-bottom: 40px !important;
+  margin-left: 0 !important;
+}
+.sec-06 .title {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-bottom: 12px !important;
+}
+.sec-06 .subtitle {
+  text-align: left !important;
+  margin: 0 !important;
+  max-width: 580px !important;
+}
+
+/* Ensure .wrap starts at top-left within the flex section */
+.sec-06 .wrap {
+  align-self: flex-start !important;
+  width: 100% !important;
+  max-width: 1060px !important;
+  margin: 0 auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
+}
+
+/* ═══════════════════════════════════════════
+   Mobile
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .sec-03 .section,
+  .sec-05 .section,
+  .sec-07 .wrap,
+  .sec-08 .section,
+  .sec-09 .section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .sec-06 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   CAL.COM — fix definitivo
+   Il container è <div id="cal-embed">, NON <cal-embed>
+═══════════════════════════════════════════ */
+#cal-embed {
+  display: block !important;
+  width: 100% !important;
+  height: 700px !important;
+  min-height: 700px !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,.1) !important;
+  background: #0c1627 !important;
+  position: relative !important;
+}
+#cal-embed iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 700px !important;
+  min-height: 700px !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+.sec-10 .cu-cal {
+  min-height: 720px !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
-  padding: 0 16px !important;
-  text-align: center !important;
-  cursor: pointer !important;
+  gap: 16px !important;
 }
-.sec-06 .phase-name { text-align: center !important; }
-.sec-06 .phase-desc { text-align: center !important; }
-.sec-06 .phase-label { text-align: center !important; }
-.sec-06 .phase-day-bubble {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+@media (max-width: 768px) {
+  #cal-embed,
+  #cal-embed iframe {
+    height: 560px !important;
+    min-height: 560px !important;
+  }
+  .sec-10 .cu-cal {
+    min-height: 580px !important;
+  }
 }
-.sec-06 .phase.active .phase-day-bubble {
-  transform: translateX(-50%) translateY(0) !important;
-  opacity: 1 !important;
+
+/* ═══════════════════════════════════════════
+   "Esiste una versione di te / più zen." — 2 righe
+═══════════════════════════════════════════ */
+.sec-05 h2.section-title {
+  display: block !important;
+  white-space: normal !important;
 }
-/* Nav dots */
-.sec-06 .nav-dots {
+.sec-05 .section-title br {
+  display: block !important;
+}
+.sec-05 .section-title em {
+  display: block !important;
+  color: #F97316 !important;
+  font-style: normal !important;
+}
+
+/* ═══════════════════════════════════════════
+   Problemi nel panel destra
+═══════════════════════════════════════════ */
+.dp-problems {
+  margin-top: 20px !important;
+  margin-bottom: 8px !important;
+}
+.dp-problems-label {
+  font-size: 10px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.4) !important;
+  margin-bottom: 10px !important;
+  font-weight: 600 !important;
+}
+.dp-problem-item {
   display: flex !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  margin-top: 32px !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  padding: 9px 12px !important;
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.07) !important;
+  border-radius: 10px !important;
+  margin-bottom: 7px !important;
+  transition: background .2s !important;
+}
+.dp-problem-item:hover {
+  background: rgba(255,255,255,.07) !important;
+}
+.dp-problem-icon {
+  font-size: 16px !important;
+  flex-shrink: 0 !important;
+  margin-top: 1px !important;
+}
+.dp-problem-text {
+  font-size: 13px !important;
+  color: rgba(255,255,255,.75) !important;
+  line-height: 1.45 !important;
+  font-weight: 500 !important;
+}
+
+/* sec-05 title: 3 righe — "Esiste una versione / di te / più zen." */
+.sec-05 h2.section-title {
+  line-height: 1.15 !important;
+}
+.sec-05 h2.section-title br {
+  display: block !important;
+}
+.sec-05 h2.section-title em {
+  display: block !important;
+  color: #F97316 !important;
+  -webkit-text-fill-color: #F97316 !important;
+  font-style: normal !important;
+}
+
+/* Logo immagine nella navbar */
+.nav-logo-img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+  flex-shrink: 0 !important;
+}
+/* Navbar scrolls with page — rimuovi qualsiasi sticky/fixed residuo */
+/* navbar ok */
+
+/* ═══════════════════════════════════════════
+   CTA ARANCIONI — sfumatura come colpo di scena, colore brand
+═══════════════════════════════════════════ */
+.nav-cta,
+.cta-btn,
+.cta-green,
+.cta-orange,
+.omni-btn-cta,
+.plan-cta,
+.starter-cta,
+.pro-cta,
+.enterprise-cta,
+.btn-cta,
+.mob-cta,
+.twist-cta,
+.cs-submit,
+.pf-cta,
+[class*="cta-btn"],
+[class*="plan-cta"] {
+  background: linear-gradient(135deg, #FB923C 0%, #F97316 40%, #EA580C 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4px 24px rgba(249,115,22,.4), inset 0 1px 0 rgba(255,255,255,.15) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.15) !important;
+  transition: all .2s ease !important;
+  letter-spacing: .01em !important;
+}
+.nav-cta:hover,
+.cta-btn:hover,
+.omni-btn-cta:hover,
+.plan-cta:hover,
+.btn-cta:hover,
+.twist-cta:hover,
+.cs-submit:hover {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 40%, #C2410C 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 32px rgba(249,115,22,.55), inset 0 1px 0 rgba(255,255,255,.12) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   NAVBAR FIXED — visibile su tutta la pagina
+   sticky non funziona se navbar è dentro sec-01
+═══════════════════════════════════════════ */
+.navbar, #navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+}
+/* Compensa l'altezza navbar (64px) sul primo elemento */
+.merged-section.sec-01,
+section.sec-01 {
+  padding-top: 64px !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   FIX MOBILE — v33
+═══════════════════════════════════════════ */
+
+/* Impedisce overflow orizzontale globale */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Hero title responsive */
+@media (max-width: 600px) {
+
+  /* Titolo hero: font più piccolo per stare nel viewport */
+  .sec-01 .hero-title,
+  .sec-01 h1,
+  [class*="hero-title"] {
+    font-size: clamp(36px, 11vw, 56px) !important;
+    line-height: 1.05 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+
+  /* Padding laterale hero */
+  .sec-01 .hero-inner,
+  .sec-01 .hero,
+  .sec-01 [class*="hero"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
+  }
+
+  /* Tutte le sezioni: padding sicuro */
+  .sec-01, .sec-02, .sec-03, .sec-04,
+  .sec-05, .sec-06, .sec-07, .sec-08,
+  .sec-09, .sec-10, .merged-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Sezioni interne con padding corretto */
+  .sec-01 .section,
+  .sec-02 .section,
+  .sec-03 .section,
+  .sec-04 .section,
+  .sec-05 .section,
+  .section-inner,
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
+  }
+
+  /* Grid hero: colonna singola */
+  .sec-01 .hero-grid,
+  [class*="hero-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* CTA button: full width mobile */
+  .nav-cta,
+  .cta-btn,
+  .twist-cta,
+  .omni-btn-cta,
+  .btn-cta {
+    width: auto !important;
+    min-width: 0 !important;
+    font-size: 15px !important;
+    padding: 13px 24px !important;
+  }
+
+  /* Testi body più leggibili */
+  .sec-01 p,
+  .sec-01 .hero-sub,
+  .sec-01 [class*="sub"] {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Navbar padding */
+  .navbar, #navbar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Tablet (600-900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .sec-01 .hero-title,
+  .sec-01 h1,
+  [class*="hero-title"] {
+    font-size: clamp(44px, 8vw, 72px) !important;
+  }
+  .sec-01 .hero-grid,
+  [class*="hero-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/*
+ * ALLINEAMENTO DEFINITIVO — v2
+ *
+ * Riferimento: .sec-01 .nav-inner → max-width:1280px, padding:0, margin:0 auto
+ * Il logo della navbar parte esattamente a (viewport − 1280px) / 2.
+ *
+ * Tutti i container di contenuto devono partire dallo stesso punto:
+ * max-width: 1280px + padding: 0 48px
+ * → il testo inizia a (viewport − 1280) / 2 + 48px
+ *
+ * La navbar wrapper ha già padding: 0 64px sul .navbar,
+ * ma il nav-inner è max-width:1280px senza padding proprio,
+ * quindi il logo è a (viewport−1280)/2 = 80px su 1440px.
+ *
+ * Per allineare navbar e contenuto:
+ * nav-inner padding-left: 48px  →  logo a 80+48 = 128px
+ * sezioni   padding-left: 48px  →  testo a 80+48 = 128px  ✓
+ */
+
+/* ── Navbar inner: allinea logo al testo delle sezioni ── */
+.sec-01 .nav-inner,
+#navbar .nav-inner,
+.navbar .nav-inner {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
+}
+
+/* ── sec-05: annulla max-width/padding su section.section (wrapper intermedio)
+   La struttura di sec-05 è doppia: section.section > div.section-inner
+   section.section deve essere full-width, section-inner fa il centering ── */
+.sec-05 > .section,
+.sec-05 .section.sec-05-section,
+section.sec-05 > section.section {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ── Container principale di ogni sezione ── */
+.sec-01 .hero-inner,
+.sec-02-omni,
+.sec-03 .section,
+.sec-04 .section,
+.sec-05 .section-inner,
+.sec-06 .wrap,
+.sec-07 .wrap,
+.sec-07 .pricing-container,
+.sec-07 .section,
+.sec-08 .section,
+.sec-09 .section,
+.sec-10 .cu-wrap,
+.sec-10 .ft-wrap,
+.sec-10 .footer-wrap {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* sec-06: blocco anziché flex, così margin:auto funziona */
+.sec-06 {
+  display: block !important;
+}
+
+/* ── Tablet 900–1100px ── */
+@media (max-width: 1100px) {
+  .sec-01 .nav-inner,
+  #navbar .nav-inner,
+  .navbar .nav-inner {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sec-01 .hero-inner,
+  .sec-02-omni,
+  .sec-03 .section,
+  .sec-04 .section,
+  .sec-05 .section-inner,
+  .sec-06 .wrap,
+  .sec-07 .wrap,
+  .sec-07 .pricing-container,
+  .sec-07 .section,
+  .sec-08 .section,
+  .sec-09 .section,
+  .sec-10 .cu-wrap,
+  .sec-10 .ft-wrap,
+  .sec-10 .footer-wrap {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .sec-01 .nav-inner,
+  #navbar .nav-inner,
+  .navbar .nav-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .sec-01 .hero-inner,
+  .sec-02-omni,
+  .sec-03 .section,
+  .sec-04 .section,
+  .sec-05 .section-inner,
+  .sec-06 .wrap,
+  .sec-07 .wrap,
+  .sec-07 .pricing-container,
+  .sec-07 .section,
+  .sec-08 .section,
+  .sec-09 .section,
+  .sec-10 .cu-wrap,
+  .sec-10 .ft-wrap,
+  .sec-10 .footer-wrap {
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+</style>
+<style id="youzen-final-fix">
+/* ═══════════════════════════════════════════════════════
+   FINAL FIX — sec-05 settori + allineamento hero/omnicanale
+═══════════════════════════════════════════════════════ */
+
+/* ── 1. Hero e omnicanale: stesso bordo sinistro ───────
+   hero-inner: max-width 1280px + padding 0 48px
+   sec-02-omni: stessa larghezza
+──────────────────────────────────────────────────────── */
+.sec-01 .hero-inner {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+.sec-02-omni {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+/* Rimuovi il padding esterno di sec-02-omni che duplicava l'offset */
+.sec-02-omni > * { }
+
+/* ── 2. Sec-05 settori: layout e stile definitivo ───── */
+
+/* wrapper intermedio full-width */
+.sec-05 > .section,
+section.sec-05 > section.section {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+/* container centrato uguale alle altre sezioni */
+.sec-05 .section-inner {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* header: allineato a sinistra */
+.sec-05 .section-head {
+  display: block !important;
+  text-align: left !important;
+  margin: 0 0 32px 0 !important;
+}
+.sec-05 .section-head::after { display: none !important; content: none !important; }
+.sec-05 .eyebrow {
+  display: inline-flex !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  color: #F97316 !important;
+  margin-bottom: 16px !important;
+}
+.sec-05 h2.section-title {
+  font-family: "Syne", sans-serif !important;
+  font-size: clamp(36px, 4.5vw, 58px) !important;
+  font-weight: 800 !important;
+  line-height: 1.06 !important;
+  letter-spacing: -.03em !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-align: left !important;
+  display: block !important;
+  margin: 0 !important;
+}
+.sec-05 h2.section-title br { display: block !important; }
+.sec-05 h2.section-title em {
+  color: #F97316 !important;
+  -webkit-text-fill-color: #F97316 !important;
+  font-style: normal !important;
+  display: block !important;
+}
+
+/* body-wrap: 2 colonne */
+.sec-05 .body-wrap {
+  display: grid !important;
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  gap: 0 !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  min-height: 400px !important;
+  background: rgba(8,20,38,.5) !important;
+  width: 100% !important;
+}
+
+/* lista sinistra */
+.sec-05 .list-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  padding: 8px !important;
+  border-right: 1px solid rgba(255,255,255,.07) !important;
+  background: rgba(255,255,255,.015) !important;
+}
+
+/* ogni item della lista */
+.sec-05 .list-item {
+  display: grid !important;
+  grid-template-columns: 18px 34px minmax(0,1fr) 12px !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 10px 11px !important;
+  border-radius: 12px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  transition: background .18s, border-color .18s !important;
+  position: relative;
+  overflow: hidden;
+}
+.sec-05 .list-item:hover  { background: rgba(255,255,255,.05) !important; }
+.sec-05 .list-item.active {
+  background: rgba(255,255,255,.07) !important;
+  border-color: rgba(255,255,255,.1) !important;
+}
+.sec-05 .list-item::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--c, transparent);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform .28s cubic-bezier(.22,.68,0,1.1);
+  border-radius: 3px 0 0 3px;
+}
+.sec-05 .list-item.active::before { transform: scaleY(1); }
+
+.sec-05 .li-num {
+  font-size: 10px;
+  color: rgba(255,255,255,.3);
+  font-family: "DM Mono", monospace;
+  letter-spacing: .08em;
+}
+.sec-05 .list-item.active .li-num { color: var(--c, #F97316); }
+
+.sec-05 .li-icon {
+  width: 34px; height: 34px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+  background: rgba(255,255,255,.05);
+  transition: transform .22s cubic-bezier(.22,.68,0,1.4), background .2s;
+}
+.sec-05 .list-item:hover  .li-icon { transform: scale(1.08) rotate(-3deg); }
+.sec-05 .list-item.active .li-icon { background: var(--ic-bg, rgba(249,115,22,.14)); }
+
+.sec-05 .li-text { min-width: 0; }
+.sec-05 .li-name {
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,.7);
+  line-height: 1.1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color .18s;
+}
+.sec-05 .list-item:hover  .li-name { color: #fff; }
+.sec-05 .list-item.active .li-name { color: var(--c, #F97316); }
+
+.sec-05 .li-sub {
+  font-size: 10px; color: #64748B;
+  margin-top: 1px; line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.sec-05 .li-arrow {
+  font-size: 11px; color: rgba(255,255,255,.18);
+  transition: color .18s, transform .2s;
+}
+.sec-05 .list-item:hover  .li-arrow { color: rgba(255,255,255,.4); transform: translateX(2px); }
+.sec-05 .list-item.active .li-arrow { color: var(--c, #F97316); transform: translateX(3px); }
+
+/* colonna destra — dettaglio */
+.sec-05 .detail-col {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px !important;
+}
+.sec-05 .detail-glow {
+  position: absolute; width: 280px; height: 280px; border-radius: 50%;
+  top: -70px; right: -70px; pointer-events: none;
+  filter: blur(72px); opacity: .14;
+  transition: background .4s ease;
+}
+.sec-05 .detail-bg-num { display: none !important; }
+.sec-05 .detail-content {
+  position: relative; z-index: 1;
+  padding: 28px 32px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* panel */
+.sec-05 .detail-panel {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  gap: 14px;
+}
+.sec-05 .detail-panel.active {
+  display: flex !important;
+  animation: s05-slide-in .3s cubic-bezier(.22,.68,0,1.1) both;
+}
+@keyframes s05-slide-in {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.sec-05 .dp-eyebrow {
+  font-family: "DM Mono", monospace;
+  font-size: 10px; letter-spacing: .13em; text-transform: uppercase;
+  color: rgba(255,255,255,.36); margin-bottom: 6px;
+}
+.sec-05 .dp-icon-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+}
+.sec-05 .dp-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.sec-05 .dp-title {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 800; letter-spacing: -.025em; line-height: 1.05;
+}
+.sec-05 .dp-desc {
+  font-size: 14px; line-height: 1.6;
+  color: rgba(255,255,255,.76);
+  max-width: 46ch; flex: 1; margin: 0;
+}
+.sec-05 .dp-problems { margin-top: 10px; }
+.sec-05 .dp-problems-label {
+  font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.3); margin-bottom: 7px; font-weight: 600;
+}
+.sec-05 .dp-problem-item {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 7px 10px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 9px; margin-bottom: 5px;
+}
+.sec-05 .dp-problem-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+.sec-05 .dp-problem-text { font-size: 12px; color: rgba(255,255,255,.68); line-height: 1.4; }
+
+.sec-05 .dp-chips {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-top: auto; padding-top: 10px;
+}
+.sec-05 .chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 9px; border-radius: 999px;
+  font-size: 11px; font-family: "DM Mono", monospace; letter-spacing: .03em;
+  border: 1px solid rgba(255,255,255,.09);
+  background: rgba(255,255,255,.04); color: rgba(255,255,255,.65);
+  white-space: nowrap; transition: all .18s;
+}
+.sec-05 .chip:hover { background: rgba(255,255,255,.08); color: #fff; }
+.sec-05 .chip-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+
+.sec-05 .dp-link {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 14px; padding: 9px 14px; border-radius: 999px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  color: #fff; text-decoration: none; font-size: 12px; font-weight: 600;
+  transition: .18s ease;
+}
+.sec-05 .dp-link:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
+
+/* bottom note */
+.sec-05 .section-bottom {
+  display: flex; align-items: center; margin-top: 14px;
+}
+.sec-05 .bottom-note {
+  font-family: "DM Mono", monospace; font-size: 10px;
+  color: rgba(255,255,255,.3); letter-spacing: .06em;
+}
+.sec-05 .section-bottom .btn-cta { display: none !important; }
+
+/* ── sec-07 header allineato a sinistra ── */
+.sec-07 .section-intro {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.sec-07 .section-intro h2 { text-align: left !important; }
+.sec-07 .section-intro h2 em {
+  font-style: normal !important;
+  color: #F97316 !important;
+  -webkit-text-fill-color: #F97316 !important;
+}
+.sec-07 .section-intro p  { text-align: left !important; }
+.sec-07 .eyebrow { justify-content: flex-start !important; }
+
+/* ── quickwins: identici al badge "Segreteria AI attiva" ── */
+.hero-quickwins {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin: 22px 0 18px !important;
+}
+.hero-quickwins .qw {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 7px 16px 7px 10px !important;
+  border-radius: 999px !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: .10em !important;
+  cursor: default !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+.qw-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  animation: s01-pulse-dot 2s ease-in-out infinite !important;
+}
+/* Giallo/ambra — "24/7" */
+.qw-amber {
+  background: rgba(251,191,36,.08) !important;
+  border-color: rgba(251,191,36,.25) !important;
+  color: #FDE68A !important;
+}
+.qw-amber .qw-dot { background: #FBBF24 !important; animation-delay: 0s !important; }
+/* Verde — "Operativo in 14 giorni" */
+.qw-green {
+  background: rgba(34,197,94,.08) !important;
+  border-color: rgba(34,197,94,.22) !important;
+  color: #86EFAC !important;
+}
+.qw-green .qw-dot { background: #22C55E !important; animation-delay: .5s !important; }
+/* Blu — "Parla italiano" */
+.qw-blue {
+  background: rgba(96,165,250,.08) !important;
+  border-color: rgba(96,165,250,.22) !important;
+  color: #93C5FD !important;
+}
+.qw-blue .qw-dot { background: #60A5FA !important; animation-delay: 1s !important; }
+/* Arancione — "Prezzi fissi" */
+.qw-orange {
+  background: rgba(249,115,22,.08) !important;
+  border-color: rgba(249,115,22,.22) !important;
+  color: #FDB47A !important;
+}
+.qw-orange .qw-dot { background: #F97316 !important; animation-delay: 1.5s !important; }
+
+/* "Prezzi chiari. Il caos..." + "24/7" */
+.hero-sub { font-size: 19px !important; line-height: 1.6 !important; }
+.hero-sub-accent {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+}
+.hero-sub-247 {
+  color: #F97316 !important;
+  font-weight: 700 !important;
+}
+
+/* Quickwins pill */
+.hero-quickwins .qw {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 13px 18px !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.14) !important;
+}
+.hero-quickwins .qw-orange {
+  background: rgba(249,115,22,.12) !important;
+  border-color: rgba(249,115,22,.35) !important;
+  color: #FB923C !important;
+}
+.dot-orange { background: #F97316 !important; }
+
+/* Font settori selezionabili più grande */
+.sec-05 .li-name { font-size: 15px !important; }
+.sec-05 .li-sub  { font-size: 12px !important; }
+.sec-05 .list-item {
+  grid-template-columns: 20px 38px minmax(0,1fr) 14px !important;
+  padding: 13px 13px !important;
+  gap: 11px !important;
+}
+.hero { padding-bottom: 60px !important; }
+.sec-02-omni { padding-top: 60px !important; padding-bottom: 60px !important; }
+.merged-section { margin: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+.sec-03 .section, .sec-04 .section,
+.sec-05 > .section, section.sec-05 > section.section,
+.sec-06 { padding-top: 60px !important; padding-bottom: 60px !important; }
+.sec-07 .wrap, .sec-08 .section, .sec-09 .section,
+.sec-10 .cu-wrap { padding-top: 60px !important; padding-bottom: 60px !important; }
+section { padding-top: 0 !important; padding-bottom: 0 !important; }
+
+
+@media (max-width: 1100px) {
+  .sec-01 .hero-inner,
+  .sec-02-omni {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sec-05 .section-inner {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sec-05 .body-wrap {
+    grid-template-columns: 240px minmax(0,1fr) !important;
+  }
+}
+@media (max-width: 860px) {
+  .sec-05 .body-wrap {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .sec-05 .list-col {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,.07) !important;
+  }
+}
+@media (max-width: 768px) {
+  .sec-01 .hero-inner,
+  .sec-02-omni,
+  .sec-05 .section-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
 </style>
 </head>
@@ -5812,22 +6215,17 @@ border-top: none !important;
 </svg>
 </button>
 <div class="nav-dropdown">
-<a data-sector="0" href="#sec-05"><span class="dd-icon">🏪</span><span class="dd-label"><strong>PMI &amp; Commercianti</strong><span>Negozi, artigiani, servizi locali</span></span></a>
-<a data-sector="1" href="#sec-05"><span class="dd-icon">⚖️</span><span class="dd-label"><strong>Avvocati &amp; Notai</strong><span>Studi legali e notarili</span></span></a>
-<a data-sector="2" href="#sec-05"><span class="dd-icon">🩺</span><span class="dd-label"><strong>Medici &amp; Poliambulatori</strong><span>Cliniche, studi medici, ambulatori</span></span></a>
-<a data-sector="3" href="#sec-05"><span class="dd-icon">✂️</span><span class="dd-label"><strong>Saloni &amp; SPA</strong><span>Parrucchieri, estetiste, centri benessere</span></span></a>
-<a data-sector="4" href="#sec-05"><span class="dd-icon">🏠</span><span class="dd-label"><strong>Agenzie Immobiliari</strong><span>Agenti, mediatori, property manager</span></span></a>
-<a data-sector="5" href="#sec-05"><span class="dd-icon">🎓</span><span class="dd-label"><strong>Formatori &amp; Coach</strong><span>Corsi, accademie, consulenti</span></span></a>
+<a data-sector="0" href="settori/problemi_artigiani.html"><span class="dd-icon">🛠️</span><span class="dd-label"><strong>Artigiani</strong><span>Impiantisti, officine, servizi sul territorio</span></span></a>
+<a data-sector="1" href="settori/problemi_professionisti.html"><span class="dd-icon">🧑‍💼</span><span class="dd-label"><strong>Professionisti</strong><span>Consulenti, studi e servizi professionali</span></span></a>
+<a data-sector="2" href="settori/problemi_PMI.html"><span class="dd-icon">🏪</span><span class="dd-label"><strong>PMI</strong><span>Negozi, attività locali e piccole imprese</span></span></a>
+<a data-sector="3" href="settori/problemi_salone.html"><span class="dd-icon">✂️</span><span class="dd-label"><strong>Salone</strong><span>Parrucchieri, estetica e benessere</span></span></a>
+<a data-sector="4" href="settori/problemi_legale.html"><span class="dd-icon">⚖️</span><span class="dd-label"><strong>Studio Legale</strong><span>Avvocati, pratiche e appuntamenti</span></span></a>
+<a data-sector="5" href="settori/problemi_realestate.html"><span class="dd-icon">🏠</span><span class="dd-label"><strong>Real Estate</strong><span>Agenzie, visite e richieste immobiliari</span></span></a>
 </div>
 </li>
 </ul>
 <!-- Right -->
-<div class="nav-right">
-<a class="nav-login" href="#login">Accedi</a>
-<a class="nav-cta" href="https://cal.com/luca-brighi-drauee" target="_blank" rel="noopener">
-        Inizia gratis →
-      </a>
-</div>
+
 <!-- Hamburger -->
 <button aria-label="Menu" class="nav-hamburger" id="navHamburger">
 <span></span><span></span><span></span>
@@ -5852,10 +6250,14 @@ border-top: none !important;
 </h1>
 <!-- Subtitle -->
 <p class="hero-sub">
-        Rispondiamo a <strong>chiamate, WhatsApp e appuntamenti</strong> mentre sei concentrato su quello che conta davvero.<br/>
-        <span class="hero-sub-accent">Prezzi chiari. Il caos, quello resta ai tuoi clienti.</span> 24/7, senza pause caffè.
+        Rispondiamo a <strong>chiamate, WhatsApp e appuntamenti</strong> mentre sei concentrato su quello che conta davvero.
       </p>
-<div class="hero-quickwins"><div class="qw"><span class="dot"></span>Attivo in 14 giorni</div><div class="qw"><span class="dot"></span>Italiano, non da robot</div><div class="qw qw-orange"><span class="dot dot-orange"></span>Prezzi chiari, zero sorprese</div></div>
+<div class="hero-quickwins">
+  <div class="qw qw-amber"><span class="qw-dot"></span>24/7, senza pause caffè</div>
+  <div class="qw qw-green"><span class="qw-dot"></span>Operativo in 14 giorni</div>
+  <div class="qw qw-blue"><span class="qw-dot"></span>Parla italiano, non robotese</div>
+  <div class="qw qw-orange"><span class="qw-dot"></span>Prezzi fissi, zero sorprese</div>
+</div>
 <!-- Trust pills -->
 <div class="hero-trust">
 <div class="trust-item">
@@ -5898,7 +6300,7 @@ border-top: none !important;
 <div class="card-header-left">
 <div class="card-eyebrow">Chiamata gratuita</div>
 <div class="card-title">
-            Attiva YouZen in <em>14 giorni</em>
+            Mettici alla prova
 </div>
 </div>
 <div class="card-live">
@@ -5940,11 +6342,11 @@ border-top: none !important;
 <option disabled="" selected="" value="">Seleziona…</option>
 <option>Avvocato / Notaio</option>
 <option>Medico / Poliambulatorio</option>
-<option>Salone / SPA / Estetica</option>
-<option>Agenzia Immobiliare</option>
-<option>PMI / Commerciante</option>
+<option>Salone</option>
+<option>Real Estate</option>
+<option>PMI</option>
 <option>Ristorante / Hospitality</option>
-<option>Altro</option>
+<option>Artigiani</option>
 </select>
 </div>
 </div>
@@ -5966,7 +6368,7 @@ border-top: none !important;
 <span class="cta-phone-icon">📞</span>
 </div>
 <div class="cta-text-wrap">
-<span class="cta-main">Prenota la tua chiamata gratuita</span>
+<span class="cta-main">Guarda la Magia</span>
 <span class="cta-sub-text">Ti ricontattiamo entro 2 ore lavorative</span>
 </div>
 <span class="cta-arrow">→</span>
@@ -6485,312 +6887,464 @@ function toggleOmni2(item) {
 })();
 </script>
 </section>
-</section><section class="merged-section sec-03" data-source="3 youzen-problems (1).html" id="sec-03">
+</section><section class="merged-section sec-03" data-source="3-problemi-comparison-table-2.html" id="sec-03">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange: #F97316;
+  --bg: #080e1f;
+  --bg-row: #0b1323;
+  --border: rgba(255,255,255,0.07);
+  --border-lit: rgba(255,255,255,0.13);
+  --text: #ffffff;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+  --green: #22C55E;
+  --red: #EF4444;
+  --font-d: 'Syne', sans-serif;
+  --font-b: 'DM Sans', sans-serif;
+  --font-m: 'DM Mono', monospace;
+}
+html, body {
+  background: var(--bg);
+  font-family: var(--font-b);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.section {
+  padding: 96px 24px 120px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.section-label {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-m); font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 20px;
+}
+.section-label::before { content:''; width:28px; height:2px; background:var(--orange); }
+.section-title {
+  font-family: var(--font-d);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 800; line-height: 1.08; margin-bottom: 14px;
+}
+.section-title em { font-style: normal; color: var(--orange); }
+.section-sub {
+  font-size: 16px; color: var(--text-dim);
+  max-width: 500px; line-height: 1.75; margin-bottom: 60px;
+}
+
+/* ════════════════════════════════
+   TABLE WRAPPER
+════════════════════════════════ */
+.comp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-row);
+}
+
+/* ── THEAD ── */
+.comp-table thead tr th {
+  padding: 20px 28px;
+  font-family: var(--font-m); font-size: 10px;
+  letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+}
+.th-topic {
+  width: 30%;
+  text-align: left;
+  color: var(--text-muted);
+}
+.th-bad {
+  width: 35%;
+  text-align: center;
+  color: #FCA5A5;
+  background: rgba(239,68,68,.04);
+  border-left: 1px solid rgba(239,68,68,.1);
+  border-right: 1px solid rgba(239,68,68,.1);
+}
+.th-bad span {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 999px;
+  background: rgba(239,68,68,.1);
+  border: 1px solid rgba(239,68,68,.2);
+  color: #FCA5A5;
+}
+.th-good {
+  width: 35%;
+  text-align: center;
+  color: #86EFAC;
+  background: rgba(34,197,94,.04);
+  border-left: 1px solid rgba(34,197,94,.1);
+}
+.th-good span {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 999px;
+  background: rgba(34,197,94,.1);
+  border: 1px solid rgba(34,197,94,.2);
+  color: #86EFAC;
+}
+.th-good span::before,
+.th-bad span::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+}
+.th-bad span::before  { background: #EF4444; }
+.th-good span::before { background: #22C55E; }
+
+/* ── TBODY ROWS ── */
+.comp-table tbody tr {
+  cursor: default;
+  transition: background .22s;
+  position: relative;
+}
+.comp-table tbody tr:hover {
+  background: rgba(255,255,255,.025);
+}
+
+/* Separatore tra righe */
+.comp-table tbody tr + tr td {
+  border-top: 1px solid var(--border);
+}
+
+/* Celle */
+.comp-table tbody td {
+  padding: 26px 28px;
+  vertical-align: middle;
+}
+
+/* TOPIC cell */
+.td-topic {
+  width: 30%;
+}
+.topic-inner {
+  display: flex; align-items: center; gap: 14px;
+}
+.topic-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border-lit);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+  transition: background .22s, border-color .22s;
+}
+tbody tr:hover .topic-icon {
+  background: rgba(249,115,22,.08);
+  border-color: rgba(249,115,22,.3);
+}
+.topic-name {
+  font-family: var(--font-d); font-size: 15px;
+  font-weight: 800; line-height: 1.2; color: var(--text);
+}
+.topic-sub {
+  font-size: 11px; color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* BAD cell */
+.td-bad {
+  width: 35%;
+  text-align: center;
+  background: rgba(239,68,68,.02);
+  border-left: 1px solid rgba(239,68,68,.06);
+  border-right: 1px solid rgba(239,68,68,.06);
+  transition: background .22s;
+}
+tbody tr:hover .td-bad {
+  background: rgba(239,68,68,.05);
+}
+.cell-bad {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+}
+.cell-stat-bad {
+  font-family: var(--font-d); font-size: 26px;
+  font-weight: 800; color: #EF4444;
+  line-height: 1;
+}
+.cell-label-bad {
+  font-size: 12px; color: #FCA5A5;
+  line-height: 1.5; max-width: 180px;
+}
+.cell-tag-bad {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 999px;
+  font-family: var(--font-m); font-size: 10px;
+  background: rgba(239,68,68,.1);
+  border: 1px solid rgba(239,68,68,.2);
+  color: #FCA5A5; margin-top: 2px;
+}
+.cell-tag-bad::before { content:'✕'; font-size:9px; }
+
+/* GOOD cell */
+.td-good {
+  width: 35%;
+  text-align: center;
+  background: rgba(34,197,94,.02);
+  border-left: 1px solid rgba(34,197,94,.06);
+  transition: background .22s;
+}
+tbody tr:hover .td-good {
+  background: rgba(34,197,94,.05);
+}
+.cell-good {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+}
+.cell-stat-good {
+  font-family: var(--font-d); font-size: 26px;
+  font-weight: 800; color: var(--green);
+  line-height: 1;
+}
+.cell-label-good {
+  font-size: 12px; color: #86EFAC;
+  line-height: 1.5; max-width: 180px;
+}
+.cell-tag-good {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 999px;
+  font-family: var(--font-m); font-size: 10px;
+  background: rgba(34,197,94,.1);
+  border: 1px solid rgba(34,197,94,.2);
+  color: #86EFAC; margin-top: 2px;
+}
+.cell-tag-good::before { content:'✓'; font-size:9px; }
+
+/* Highlight bar sinistra al hover */
+.comp-table tbody td.td-topic {
+  position: relative;
+}
+.comp-table tbody td.td-topic::before {
+  content: '';
+  position: absolute; left: 0; top: 20%; bottom: 20%;
+  width: 3px; border-radius: 0 2px 2px 0;
+  background: var(--orange);
+  opacity: 0; transition: opacity .22s;
+}
+.comp-table tbody tr:hover td.td-topic::before { opacity: 1; }
+
+/* ── FOOTER ROW (CTA) ── */
+.tfoot-row td {
+  padding: 28px 28px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.tfoot-label {
+  font-size: 13px; color: var(--text-muted); margin-bottom: 16px;
+}
+.tfoot-label strong { color: var(--text); font-weight: 600; }
+.tfoot-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--orange); color: #fff;
+  font-family: var(--font-d); font-size: 14px; font-weight: 800;
+  padding: 14px 32px; border-radius: 999px; cursor: pointer;
+  border: none; box-shadow: 0 0 28px rgba(249,115,22,.3);
+  transition: transform .2s, box-shadow .2s;
+}
+.tfoot-cta:hover { transform: scale(1.04); box-shadow: 0 0 44px rgba(249,115,22,.5); }
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .comp-table, .comp-table thead, .comp-table tbody, .comp-table tfoot,
+  .comp-table tr, .comp-table td, .comp-table th { display: block; width: 100%; }
+  .comp-table thead tr { display: flex; gap: 0; }
+  .comp-table thead tr th { flex: 1; padding: 14px 12px; font-size: 9px; }
+  .th-topic { display: none; }
+  .comp-table tbody tr { padding: 0; }
+  .comp-table tbody td { padding: 14px 12px; }
+  .td-topic { display: none; }
+  .comp-table tbody tr + tr td { border-top: none; }
+  .comp-table tbody tr { border-top: 1px solid var(--border); }
+  /* Mostra topic inline */
+  .comp-table tbody tr::before {
+    content: attr(data-topic);
+    display: flex; align-items: center; gap: 10px;
+    padding: 16px 16px 0;
+    font-family: var(--font-d); font-size: 14px; font-weight: 800;
+  }
+  .td-bad, .td-good { border-left: none; border-right: none; }
+  .comp-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; }
+  .tfoot-row td { grid-column: 1 / -1; }
+  .cell-stat-bad, .cell-stat-good { font-size: 20px; }
+  .cell-label-bad, .cell-label-good { font-size: 11px; }
+}
+</style>
 <section class="section">
-<!-- Header -->
-<div class="section-label">Il problema (che conosci bene)</div>
-<h2 class="section-title">
-    Troppo telefono.<br/>
-<em>Poco lavoro vero.</em>
-</h2>
-<p class="section-sub">
-    Trascina lo slider per vedere cosa cambia quando YouZen prende il controllo dei tuoi canali.
-  </p>
-<!-- Step tabs -->
-<div class="step-tabs">
-<button class="step-tab active" data-step="0" onclick="setStep(0)">
-<span class="step-tab-num">01</span> Chiamate perse
-    </button>
-<button class="step-tab" data-step="1" onclick="setStep(1)">
-<span class="step-tab-num">02</span> Agenda nel caos
-    </button>
-<button class="step-tab" data-step="2" onclick="setStep(2)">
-<span class="step-tab-num">03</span> WhatsApp infinito
-    </button>
-</div>
-<!-- Card -->
-<div class="card-outer step-1" id="cardOuter">
-<!-- Step 0: Chiamate perse -->
-<div class="card-split step-content active" id="step-0">
-<div class="pane pane-before">
-<div class="pane-badge pane-badge--before">
-<span class="pane-badge-dot"></span> Senza YouZen
-        </div>
-<h3 class="pane-problem">Il telefono squilla<br/>mentre sei con un cliente.</h3>
-<p class="pane-desc">Il 67% delle chiamate senza risposta non richiama mai. Ogni squillo ignorato è un cliente che va dal concorrente.</p>
-<div class="points">
-<div class="point">
-<div class="point-icon">📵</div>
-<div class="point-text">
-<div class="point-title">Chiamate perse invisibili</div>
-<div class="point-desc">Non sai chi ha chiamato, quando, o perché. Il dato sparisce nel nulla.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">😤</div>
-<div class="point-text">
-<div class="point-title">Cliente frustrato, già andato</div>
-<div class="point-desc">Hai richiamato dopo 20 minuti. Lui aveva già preso appuntamento altrove.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">🔁</div>
-<div class="point-text">
-<div class="point-title">Loop senza fine</div>
-<div class="point-desc">Provi a richiamare, non risponde. Lasci un messaggio che non sente mai.</div>
-</div>
-</div>
-</div>
-<div class="stat-pill">
-<strong>67%</strong> dei chiamanti non riprova
-        </div>
-<div class="pane-visual">
-<div class="visual-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span style="font-size:10px;color:#475569;margin-left:4px;font-family:var(--font-mono)">missed_calls.log</span></div>
-<div class="visual-content">
-<div class="notif-stack">
-<div class="notif missed" style="animation-delay:.05s"><span class="notif-icon">📵</span><div class="notif-text">Chiamata persa — +39 333 ****</div><div class="notif-icon-dot" style="background:var(--red)"></div><div class="notif-time">09:14</div></div>
-<div class="notif missed" style="animation-delay:.15s"><span class="notif-icon">📵</span><div class="notif-text">Chiamata persa — +39 347 ****</div><div class="notif-icon-dot" style="background:var(--red)"></div><div class="notif-time">10:02</div></div>
-<div class="notif missed" style="animation-delay:.25s"><span class="notif-icon">📵</span><div class="notif-text">Chiamata persa — numero sconosciuto</div><div class="notif-icon-dot" style="background:var(--red)"></div><div class="notif-time">10:47</div></div>
-<div class="notif missed" style="animation-delay:.35s"><span class="notif-icon">📵</span><div class="notif-text">Chiamata persa — +39 320 ****</div><div class="notif-icon-dot" style="background:var(--red)"></div><div class="notif-time">11:23</div></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pane pane-after">
-<div class="pane-badge pane-badge--after">
-<span class="pane-badge-dot"></span> Con YouZen
-        </div>
-<h3 class="pane-problem">L'AI risponde<br/>entro 2 squilli. Sempre.</h3>
-<p class="pane-desc">Ogni chiamata viene gestita, registrata e riassunta. Tu ritrovi tutto nella dashboard quando hai tempo.</p>
-<div class="points">
-<div class="point">
-<div class="point-icon">⚡</div>
-<div class="point-text">
-<div class="point-title">Risposta immediata 24/7</div>
-<div class="point-desc">L'AI si presenta con il nome del tuo studio e gestisce la chiamata in modo naturale.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">📅</div>
-<div class="point-text">
-<div class="point-title">Appuntamento fissato in diretta</div>
-<div class="point-desc">Accede al tuo calendario e propone slot liberi. Il cliente prenota senza aspettare.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">📝</div>
-<div class="point-text">
-<div class="point-title">Trascrizione e recap istantaneo</div>
-<div class="point-desc">Ricevi una notifica con chi ha chiamato, cosa voleva e cosa è stato concordato.</div>
-</div>
-</div>
-</div>
-<div class="stat-pill">
-<strong>98%</strong> delle chiamate gestite
-        </div>
-<div class="pane-visual">
-<div class="visual-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span style="font-size:10px;color:#475569;margin-left:4px;font-family:var(--font-mono)">youzen_calls.log</span></div>
-<div class="visual-content">
-<div class="notif-stack">
-<div class="notif ok" style="animation-delay:.05s"><span class="notif-icon">✅</span><div class="notif-text">Chiamata gestita — Marco R. — Appuntamento fissato</div><div class="notif-time">09:14</div></div>
-<div class="notif ok" style="animation-delay:.15s"><span class="notif-icon">✅</span><div class="notif-text">Chiamata gestita — Laura M. — Info richiesta</div><div class="notif-time">10:02</div></div>
-<div class="notif ok" style="animation-delay:.25s"><span class="notif-icon">✅</span><div class="notif-text">Chiamata gestita — Giulio P. — Preventivo richiesto</div><div class="notif-time">10:47</div></div>
-<div class="notif ok" style="animation-delay:.35s"><span class="notif-icon">✅</span><div class="notif-text">Chiamata gestita — Anna C. — Appuntamento fissato</div><div class="notif-time">11:23</div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Step 1: Agenda nel caos -->
-<div class="card-split step-content" id="step-1">
-<div class="pane pane-before">
-<div class="pane-badge pane-badge--before"><span class="pane-badge-dot"></span> Senza YouZen</div>
-<h3 class="pane-problem">L'agenda è un enigma.<br/>Doppie prenotazioni. Buchi.</h3>
-<p class="pane-desc">Gestire il calendario a mano via telefono, WhatsApp e email porta invariabilmente al disastro organizzativo.</p>
-<div class="points">
-<div class="point">
-<div class="point-icon">💥</div>
-<div class="point-text">
-<div class="point-title">Doppia prenotazione</div>
-<div class="point-desc">Due clienti presentati nello stesso slot. Imbarazzo garantito, uno dei due se ne va.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">🕳️</div>
-<div class="point-text">
-<div class="point-title">Buchi non riempiti</div>
-<div class="point-desc">Un cliente disdice. Lo slot resta vuoto. Nessuno in lista d'attesa avvisato.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">👻</div>
-<div class="point-text">
-<div class="point-title">No-show continui</div>
-<div class="point-desc">Nessun reminder inviato. Il cliente si dimentica. Tu aspetti per niente.</div>
-</div>
-</div>
-</div>
-<div class="stat-pill"><strong>30%</strong> di no-show senza reminder</div>
-<div class="pane-visual">
-<div class="visual-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span style="font-size:10px;color:#475569;margin-left:4px;font-family:var(--font-mono)">agenda_oggi.cal</span></div>
-<div class="visual-content">
-<div class="progress-visual">
-<div class="prog-row"><span class="prog-label" style="color:#FCA5A5">09:00 ⚠️</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(239,68,68,.5)"></div></div><span class="prog-val" style="color:#FCA5A5">×2</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#64748B">10:30</span><div class="prog-track"><div class="prog-fill" style="width:0%;background:rgba(100,116,139,.3)"></div></div><span class="prog-val" style="color:#64748B">—</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#FCA5A5">11:00 ⚠️</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(239,68,68,.5)"></div></div><span class="prog-val" style="color:#FCA5A5">×2</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#64748B">14:00</span><div class="prog-track"><div class="prog-fill" style="width:0%"></div></div><span class="prog-val" style="color:#64748B">—</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#FBBF24">15:30 👻</span><div class="prog-track"><div class="prog-fill" style="width:40%;background:rgba(251,191,36,.3)"></div></div><span class="prog-val" style="color:#FBBF24">?</span></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pane pane-after">
-<div class="pane-badge pane-badge--after"><span class="pane-badge-dot"></span> Con YouZen</div>
-<h3 class="pane-problem">Calendario sincronizzato.<br/>Zero conflitti. Zero buchi.</h3>
-<p class="pane-desc">YouZen vede il tuo calendario in tempo reale e gestisce ogni prenotazione, modifica e cancellazione in autonomia.</p>
-<div class="points">
-<div class="point">
-<div class="point-icon">🔄</div>
-<div class="point-text">
-<div class="point-title">Sincronizzazione totale</div>
-<div class="point-desc">Google Calendar, iCal o il tuo gestionale: sempre aggiornati, mai in conflitto.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">📲</div>
-<div class="point-text">
-<div class="point-title">Reminder automatici</div>
-<div class="point-desc">SMS e WhatsApp 24h prima. Il no-show rate crolla fino all'80% in meno.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">⏱️</div>
-<div class="point-text">
-<div class="point-title">Lista d'attesa attiva</div>
-<div class="point-desc">Se qualcuno disdice, YouZen avvisa automaticamente chi era in lista. Slot mai vuoti.</div>
-</div>
-</div>
-</div>
-<div class="stat-pill"><strong>−80%</strong> di no-show con reminder</div>
-<div class="pane-visual">
-<div class="visual-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span style="font-size:10px;color:#475569;margin-left:4px;font-family:var(--font-mono)">youzen_agenda.cal</span></div>
-<div class="visual-content">
-<div class="progress-visual">
-<div class="prog-row"><span class="prog-label" style="color:#86EFAC">09:00 ✓</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(34,197,94,.4)"></div></div><span class="prog-val" style="color:#86EFAC">Marco</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#86EFAC">10:30 ✓</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(34,197,94,.4)"></div></div><span class="prog-val" style="color:#86EFAC">Laura</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#86EFAC">11:00 ✓</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(34,197,94,.4)"></div></div><span class="prog-val" style="color:#86EFAC">Giulio</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#86EFAC">14:00 ✓</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(34,197,94,.4)"></div></div><span class="prog-val" style="color:#86EFAC">Anna</span></div>
-<div class="prog-row"><span class="prog-label" style="color:#86EFAC">15:30 ✓</span><div class="prog-track"><div class="prog-fill" style="width:100%;background:rgba(34,197,94,.4)"></div></div><span class="prog-val" style="color:#86EFAC">Sofia</span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Step 2: WhatsApp -->
-<div class="card-split step-content" id="step-2">
-<div class="pane pane-before">
-<div class="pane-badge pane-badge--before"><span class="pane-badge-dot"></span> Senza YouZen</div>
-<h3 class="pane-problem">WhatsApp come<br/>secondo lavoro full-time.</h3>
-<p class="pane-desc">100 messaggi al giorno, nessun sistema. Rispondi quando puoi, dimentichi qualcuno, perdi clienti senza saperlo.</p>
-<div class="points">
-<div class="point">
-<div class="point-icon">🌊</div>
-<div class="point-text">
-<div class="point-title">Flood ingestibile</div>
-<div class="point-desc">Messaggi da clienti, fornitori, nuovi contatti — tutto nello stesso thread caotico.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">😶</div>
-<div class="point-text">
-<div class="point-title">Messaggi dimenticati</div>
-<div class="point-desc">Quel cliente che aspettava risposta da ieri? Te ne accorgi tre giorni dopo.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">🌙</div>
-<div class="point-text">
-<div class="point-title">Notifiche a ogni ora</div>
-<div class="point-desc">Cena, weekend, vacanze: il telefono non smette mai. Il confine vita-lavoro scompare.</div>
-</div>
-</div>
-</div>
-<div class="stat-pill"><strong>3h+</strong> al giorno su messaggi</div>
-<div class="pane-visual">
-<div class="visual-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span style="font-size:10px;color:#475569;margin-left:4px;font-family:var(--font-mono)">whatsapp_chaos</span></div>
-<div class="visual-content">
-<div class="chat-stack">
-<div class="bubble bubble-chaos" style="animation-delay:.05s">Buongiorno! Avete posto domani mattina? 🙏</div>
-<div class="bubble bubble-chaos" style="animation-delay:.12s">Scusate disturbo ancora — avete risposto?</div>
-<div class="bubble bubble-chaos" style="animation-delay:.2s">Ciao ho mandato msg ieri nessuna risposta</div>
-<div class="bubble bubble-user" style="animation-delay:.3s">Scusa il ritardo! Vediamo... domani alle 10?</div>
-<div class="bubble bubble-chaos" style="animation-delay:.4s">No grazie ho trovato altro :(</div>
-<div class="bubble-meta" style="animation-delay:.4s">Cliente perso</div>
-</div>
-</div>
-</div>
-</div>
-<div class="pane pane-after">
-<div class="pane-badge pane-badge--after"><span class="pane-badge-dot"></span> Con YouZen</div>
-<h3 class="pane-problem">Ogni messaggio risposto.<br/>Nessun cliente perso.</h3>
-<p class="pane-desc">YouZen risponde istantaneamente con il tuo tono, categorizza le richieste e ti avvisa solo quando serve davvero il tuo intervento.</p>
-<div class="points">
-<div class="point">
-<div class="point-icon">🤖</div>
-<div class="point-text">
-<div class="point-title">Risposta in pochi secondi</div>
-<div class="point-desc">L'AI usa il linguaggio e il tono del tuo brand. Il cliente non si accorge della differenza.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">🏷️</div>
-<div class="point-text">
-<div class="point-title">Categorizzazione automatica</div>
-<div class="point-desc">Info, prenotazione, urgenza, reclamo — ogni messaggio etichettato e prioritizzato.</div>
-</div>
-</div>
-<div class="point">
-<div class="point-icon">🛡️</div>
-<div class="point-text">
-<div class="point-title">Tu intervieni solo se serve</div>
-<div class="point-desc">YouZen ti coinvolge solo per le situazioni che richiedono la tua presenza umana.</div>
-</div>
-</div>
-</div>
-<div class="stat-pill"><strong>−90%</strong> tempo su messaggi</div>
-<div class="pane-visual">
-<div class="visual-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><span style="font-size:10px;color:#475569;margin-left:4px;font-family:var(--font-mono)">youzen_whatsapp</span></div>
-<div class="visual-content">
-<div class="chat-stack">
-<div class="bubble bubble-chaos" style="animation-delay:.05s">Buongiorno! Avete posto domani mattina? 🙏</div>
-<div class="bubble bubble-ai" style="animation-delay:.15s">Ciao! 👋 Certo, ho disponibilità domani alle 9:30 e alle 11:00. Quale preferisci?</div>
-<div class="bubble bubble-chaos" style="animation-delay:.28s">Perfetto le 9:30!</div>
-<div class="bubble bubble-ai" style="animation-delay:.38s">✅ Prenotato! Ti mando conferma e ti ricordo domani mattina. A presto!</div>
-<div class="bubble-meta" style="animation-delay:.38s;color:#86EFAC">Cliente acquisito in 40 secondi</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Bottom progress bar -->
-<div class="progress-strip" id="progressStrip">
-<div class="progress-seg active" id="prog-0"></div>
-<div class="progress-seg" id="prog-1"></div>
-<div class="progress-seg" id="prog-2"></div>
-</div>
-<!-- Divider / slider -->
-<div class="divider" id="divider">
-<div class="divider-handle">
-<span class="divider-arrows">⇄</span>
-</div>
-</div>
-</div><!-- /card-outer -->
-</section><section class="merged-section sec-05" data-source="5 youzen-6_categorie_v2.html" id="sec-05">
+  <div class="section-label">Confronto diretto</div>
+  <h2 class="section-title">Prima e dopo.<br><em>Riga per riga.</em></h2>
+  <p class="section-sub">Ogni problema che affronti ogni giorno ha una soluzione precisa. Passa il mouse su ogni riga per vederla.</p>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th class="th-topic"></th>
+        <th class="th-bad"><span>Senza YouZen</span></th>
+        <th class="th-good"><span>Con YouZen</span></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- ROW 1: Chiamate -->
+      <tr data-topic="📞 Chiamate perse">
+        <td class="td-topic">
+          <div class="topic-inner">
+            <div class="topic-icon">📞</div>
+            <div>
+              <div class="topic-name">Chiamate perse</div>
+              <div class="topic-sub">Risposta & disponibilità</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-bad">
+          <div class="cell-bad">
+            <div class="cell-stat-bad">67%</div>
+            <div class="cell-label-bad">dei clienti non richiama dopo una mancata risposta</div>
+            <div class="cell-tag-bad">Entrate perse</div>
+          </div>
+        </td>
+        <td class="td-good">
+          <div class="cell-good">
+            <div class="cell-stat-good">98%</div>
+            <div class="cell-label-good">delle chiamate gestite dall'AI entro 2 squilli</div>
+            <div class="cell-tag-good">Zero chiamate perse</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- ROW 2: No-show -->
+      <tr data-topic="📅 No-show & agenda">
+        <td class="td-topic">
+          <div class="topic-inner">
+            <div class="topic-icon">📅</div>
+            <div>
+              <div class="topic-name">No-show & agenda</div>
+              <div class="topic-sub">Prenotazioni & reminder</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-bad">
+          <div class="cell-bad">
+            <div class="cell-stat-bad">30%</div>
+            <div class="cell-label-bad">degli appuntamenti finisce in no-show senza reminder</div>
+            <div class="cell-tag-bad">Agenda nel caos</div>
+          </div>
+        </td>
+        <td class="td-good">
+          <div class="cell-good">
+            <div class="cell-stat-good">−80%</div>
+            <div class="cell-label-good">di no-show grazie a reminder SMS + WhatsApp automatici</div>
+            <div class="cell-tag-good">Agenda perfetta</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- ROW 3: WhatsApp -->
+      <tr data-topic="💬 Messaggi WhatsApp">
+        <td class="td-topic">
+          <div class="topic-inner">
+            <div class="topic-icon">💬</div>
+            <div>
+              <div class="topic-name">Messaggi WhatsApp</div>
+              <div class="topic-sub">Comunicazione clienti</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-bad">
+          <div class="cell-bad">
+            <div class="cell-stat-bad">3h</div>
+            <div class="cell-label-bad">al giorno perse a rispondere manualmente ai messaggi</div>
+            <div class="cell-tag-bad">Vita-lavoro azzerata</div>
+          </div>
+        </td>
+        <td class="td-good">
+          <div class="cell-good">
+            <div class="cell-stat-good">−90%</div>
+            <div class="cell-label-good">del tempo su messaggi grazie all'AI che risponde col tuo tono</div>
+            <div class="cell-tag-good">Rispondi sempre</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- ROW 4: Disponibilità -->
+      <tr data-topic="🌙 Orario">
+        <td class="td-topic">
+          <div class="topic-inner">
+            <div class="topic-icon">🌙</div>
+            <div>
+              <div class="topic-name">Disponibilità oraria</div>
+              <div class="topic-sub">Orari fuori studio</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-bad">
+          <div class="cell-bad">
+            <div class="cell-stat-bad">0h</div>
+            <div class="cell-label-bad">di copertura la sera, nei weekend e nei giorni festivi</div>
+            <div class="cell-tag-bad">Clienti senza risposta</div>
+          </div>
+        </td>
+        <td class="td-good">
+          <div class="cell-good">
+            <div class="cell-stat-good">24/7</div>
+            <div class="cell-label-good">YouZen attivo ogni giorno, ogni ora, senza riposi</div>
+            <div class="cell-tag-good">Sempre operativo</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- ROW 5: Costo -->
+      <tr data-topic="💶 Costo operativo">
+        <td class="td-topic">
+          <div class="topic-inner">
+            <div class="topic-icon">💶</div>
+            <div>
+              <div class="topic-name">Costo operativo</div>
+              <div class="topic-sub">Segreteria & gestione</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-bad">
+          <div class="cell-bad">
+            <div class="cell-stat-bad">€2.000+</div>
+            <div class="cell-label-bad">al mese per una segretaria a tempo pieno</div>
+            <div class="cell-tag-bad">Costo fisso alto</div>
+          </div>
+        </td>
+        <td class="td-good">
+          <div class="cell-good">
+            <div class="cell-stat-good">€99</div>
+            <div class="cell-label-good">al mese per copertura completa, senza contributi né ferie</div>
+            <div class="cell-tag-good">−95% costo</div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <tr class="tfoot-row">
+        <td colspan="3">
+          <div class="tfoot-label">Attiva YouZen oggi — <strong>15 giorni gratis, nessuna carta richiesta</strong></div>
+          <button class="tfoot-cta">Inizia gratis →</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+</section>
+</section>
+<section class="merged-section sec-05" data-source="5 youzen-6_categorie_v2.html" id="sec-05">
 <section class="section">
 <div class="section-inner">
 <div class="section-head">
 <div class="eyebrow">Per chi è YouZen</div>
-<h2 class="section-title">Esiste una versione<br/>di te<br/><em>più zen.</em></h2>
+<h2 class="section-title">Esiste una versione di te<br/><em>più zen.</em></h2>
 </div>
 <div class="body-wrap">
 <!-- Left list -->
@@ -6967,42 +7521,12 @@ function toggleOmni2(item) {
 
 
 </section>
-<script>
-function selectPhase(idx) {
-  const phases = document.querySelectorAll('.phase');
-  const panels = document.querySelectorAll('.detail-inner');
-  const dots   = document.querySelectorAll('.nav-dot');
-  const panel  = document.getElementById('detailPanel');
-
-  phases.forEach((p, i) => {
-    p.classList.remove('active', 'done');
-    if (i < idx)       p.classList.add('done');
-    else if (i === idx) p.classList.add('active');
-  });
-
-  panels.forEach((p, i) => {
-    p.classList.toggle('visible', i === idx);
-  });
-
-  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-
-  // Fill track
-  document.getElementById('timelineFill').style.width = FILL_POSITIONS[idx] + '%';
-
-  // Glow position on panel
-  panel.style.setProperty('--glow-x', GLOW_X[idx]);
-  panel.style.setProperty('--glow-c', GLOW_C[idx]);
-
-  current = idx;
-}
-selectPhase(0);
-</script>
 <section class="merged-section sec-07" data-source="7 youzen-prezzi (2).html" id="sec-07">
 <section id="prezzi">
 <div class="wrap">
 <div class="section-intro">
-<div class="eyebrow">Piani e prezzi</div>
-<h2>Prezzi chiari. Il caos, quello resta ai tuoi clienti.</h2>
+<div class="eyebrow">Quanto costa la pace?</div>
+<h2>Prezzi chiari.<br/><em>Nessuna sorpresa.</em></h2>
 <p>Nessun canone fisso nascosto, nessuna sorpresa in fattura. Solo minuti veri, usati davvero.</p>
 </div>
 <!-- ── SLIDER MINUTI ── -->
@@ -7592,12 +8116,12 @@ selectPhase(0);
 <div>
 <div class="ft-col-title">Settori</div>
 <div class="ft-links">
-<a href="/salone">Salone di Bellezza</a>
-<a href="/legale">Studio Legale</a>
-<a href="/realestate">Real Estate</a>
-<a href="/pmi">PMI &amp; Servizi</a>
-<a href="/poliambulatorio">Poliambulatorio</a>
-<a href="/professionisti">Professionisti</a>
+<a href="settori/problemi_artigiani.html">Artigiani</a>
+<a href="settori/problemi_professionisti.html">Professionisti</a>
+<a href="settori/problemi_PMI.html">PMI</a>
+<a href="settori/problemi_salone.html">Salone</a>
+<a href="settori/problemi_legale.html">Studio Legale</a>
+<a href="settori/problemi_realestate.html">Real Estate</a>
 </div>
 </div>
 <!-- Legale -->
@@ -7679,8 +8203,7 @@ form.addEventListener('submit', e => {
     timestamp: new Date().toISOString()
   };
 
-  // Webhook Autocalls — sostituisci con il tuo URL reale
-  const WEBHOOK_URL = 'INSERISCI_QUI_URL_WEBHOOK_AUTOCALLS';
+  const WEBHOOK_URL = 'https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn';
 
   fetch(WEBHOOK_URL, {
     method: 'POST',
@@ -7807,6 +8330,11 @@ document.getElementById('f-settore').addEventListener('change', function() {
 })();
 
 </script><script>
+// Guard: element 'three-wrap' may not exist in this page variant
+if (document.getElementById('three-wrap')) {
+
+try {
+
 
 // ─────────────────────────────────────────────────────────
 // DATA
@@ -8292,7 +8820,16 @@ window.addEventListener('resize', () => {
   renderer.setSize(W, H);
 });
 
+
+} catch(e) { /* element not in DOM */ }
+
+}
 </script><script>
+// Guard: element 'cardOuter' may not exist in this page variant
+if (document.getElementById('cardOuter')) {
+
+try {
+
 
 // ── Step switching ─────────────────────────────────────────
 let currentStep = 0;
@@ -8399,7 +8936,16 @@ document.querySelectorAll('.step-tab').forEach(t =>
   t.addEventListener('click', () => clearInterval(autoTimer))
 );
 
+
+} catch(e) { /* element not in DOM */ }
+
+}
 </script><script>
+// Guard: element 'timelineGrid' may not exist in this page variant
+if (document.getElementById('timelineGrid')) {
+
+try {
+
 
 // ── Intersection Observer: animate events in ──
 const observer = new IntersectionObserver(entries => {
@@ -8429,91 +8975,101 @@ document.querySelectorAll('.time-marker').forEach((m, i) => {
   });
 });
 
+
+} catch(e) { /* element not in DOM */ }
+
+}
 </script><script>
 
 const SECTORS = [
   {
-    id: 0, icon: '🏪', name: 'PMI & Commercianti',
-    sub: 'Negozi, artigiani, servizi locali',
-    color: '#FBBF24', iconBg: 'rgba(251,191,36,.14)',
-    glowBg: 'rgba(251,191,36,1)',
-    num: '01',
-    desc: 'Ordini, info prodotti, prenotazioni di servizi — gestiti in automatico su chiamata, WhatsApp e web chat. Cresci senza assumere una segreteria e senza pagare costi fissi aggiuntivi.',
-    chips: ['Omnicanale', 'Scala con te', 'Setup in 15 min'],
-    problems: [
-      { icon: '📵', text: 'Perdi clienti mentre servi altri' },
-      { icon: '💸', text: 'Costi fissi di una segreteria non sostenibili' },
-      { icon: '😤', text: 'WhatsApp e telefono sempre accesi, zero pace' },
-    ],
-  },
-  {
-    id: 1, icon: '⚖️', name: 'Avvocati & Notai',
-    sub: 'Studi legali e notarili',
+    id: 0, icon: '🛠️', name: 'Artigiani',
+    sub: 'Impiantisti, officine, servizi sul territorio',
+    url: 'settori/problemi_artigiani.html',
     color: '#F97316', iconBg: 'rgba(249,115,22,.14)',
     glowBg: 'rgba(249,115,22,1)',
+    num: '01',
+    desc: 'Le richieste entrano anche mentre sei sul campo. YouZen risponde, qualifica il bisogno e raccoglie i dettagli giusti senza interrompere il lavoro operativo.',
+    chips: ['Richieste filtrate', 'Zero interruzioni', 'Più preventivi gestiti'],
+    problems: [
+      { icon: '📞', text: 'Il telefono squilla mentre stai lavorando' },
+      { icon: '🧾', text: 'Richieste incomplete, poi perdi tempo a rincorrerle' },
+      { icon: '⏰', text: 'Fuori orario nessuno risponde e il cliente va altrove' },
+    ],
+  },
+  {
+    id: 1, icon: '🧑‍💼', name: 'Professionisti',
+    sub: 'Consulenti, studi e servizi professionali',
+    url: 'settori/problemi_professionisti.html',
+    color: '#2DD4BF', iconBg: 'rgba(45,212,191,.14)',
+    glowBg: 'rgba(45,212,191,1)',
     num: '02',
-    desc: 'Nessuna chiamata persa mentre sei in udienza. YouZen risponde, qualifica la richiesta e fissa il primo appuntamento — con il tuo tono, il tuo nome, la tua professionalità. Il cliente non sa che sta parlando con un\'AI.',
-    chips: ['Gestione appuntamenti', 'Prima impressione ok', 'GDPR compliant'],
+    desc: 'YouZen gestisce prime richieste, richiami e appuntamenti con tono professionale. Il cliente riceve risposta subito, senza farti interrompere consulenze e meeting.',
+    chips: ['Tono professionale', 'Appuntamenti gestiti', 'Lead seguiti'],
     problems: [
-      { icon: '⏸️', text: 'Il telefono squilla in udienza, perdi il cliente' },
-      { icon: '📋', text: 'Richieste non qualificate che sprecano ore' },
-      { icon: '🌙', text: 'Fuori orario, nessuno risponde — lead perso' },
+      { icon: '📅', text: 'Interruzioni continue tra call e appuntamenti' },
+      { icon: '📋', text: 'Contatti non filtrati che rubano tempo' },
+      { icon: '🔁', text: 'Follow-up saltati su lead interessanti' },
     ],
   },
   {
-    id: 2, icon: '🩺', name: 'Medici & Poliambulatori',
-    sub: 'Cliniche, studi medici, ambulatori',
-    color: '#60A5FA', iconBg: 'rgba(96,165,250,.14)',
-    glowBg: 'rgba(96,165,250,1)',
+    id: 2, icon: '🏪', name: 'PMI',
+    sub: 'Negozi, attività locali e piccole imprese',
+    url: 'settori/problemi_PMI.html',
+    color: '#FBBF24', iconBg: 'rgba(251,191,36,.14)',
+    glowBg: 'rgba(251,191,36,1)',
     num: '03',
-    desc: 'Prenotazioni 24/7, reminder automatici, gestione disdette in tempo reale. La segreteria non va più in tilt — YouZen assorbe il picco di chiamate del lunedì mattina senza stress.',
-    chips: ['Prenotazioni 24/7', 'Reminder automatici', '−80% no-show'],
+    desc: 'Ordini, richieste, appuntamenti e assistenza entrano in un flusso unico. YouZen aiuta la tua attività a rispondere subito senza aggiungere costi fissi da segreteria.',
+    chips: ['Omnicanale', 'Più richieste gestite', 'Setup rapido'],
     problems: [
-      { icon: '📞', text: 'Il lunedì mattina: 40 chiamate in un\'ora' },
-      { icon: '❌', text: 'No-show e disdette last minute senza preavviso' },
-      { icon: '🔁', text: 'Segreteria impegnata → pazienti che richiamano' },
+      { icon: '📵', text: 'Perdi contatti mentre servi altri clienti' },
+      { icon: '💸', text: 'Una segreteria fissa pesa troppo sui margini' },
+      { icon: '💬', text: 'WhatsApp e telefono esplodono negli orari di punta' },
     ],
   },
   {
-    id: 3, icon: '✂️', name: 'Saloni & SPA',
-    sub: 'Parrucchieri, estetiste, centri benessere',
+    id: 3, icon: '✂️', name: 'Salone',
+    sub: 'Parrucchieri, estetica e benessere',
+    url: 'settori/problemi_salone.html',
     color: '#A78BFA', iconBg: 'rgba(167,139,250,.14)',
     glowBg: 'rgba(167,139,250,1)',
     num: '04',
-    desc: 'L\'agenda si riempie da sola mentre sei con il cliente. Niente interruzioni, niente telefono in mano durante il servizio. YouZen gestisce prenotazioni e disdette su WhatsApp — tu pensa solo alla tua arte.',
-    chips: ['Agenda automatica', 'WhatsApp integrato', 'Zero interruzioni'],
+    desc: "L'agenda si riempie mentre lavori. YouZen risponde alle richieste, gestisce prenotazioni e disdette e riduce le interruzioni durante il servizio.",
+    chips: ['Agenda ordinata', 'WhatsApp integrato', 'Meno buchi'],
     problems: [
-      { icon: '✋', text: 'Interrompi il servizio per rispondere al telefono' },
-      { icon: '📅', text: 'Buchi in agenda per disdette non gestite' },
-      { icon: '😟', text: 'Cliente su WhatsApp, nessuno risponde' },
+      { icon: '✋', text: 'Interrompi il servizio per rispondere' },
+      { icon: '📅', text: 'Disdette e vuoti in agenda gestiti male' },
+      { icon: '😟', text: 'Cliente scrive, ma nessuno risponde in tempo' },
     ],
   },
   {
-    id: 4, icon: '🏠', name: 'Agenzie Immobiliari',
-    sub: 'Agenti, mediatori, property manager',
+    id: 4, icon: '⚖️', name: 'Studio Legale',
+    sub: 'Avvocati, pratiche e appuntamenti',
+    url: 'settori/problemi_legale.html',
+    color: '#FB7185', iconBg: 'rgba(251,113,133,.14)',
+    glowBg: 'rgba(251,113,133,1)',
+    num: '05',
+    desc: 'Le nuove richieste vengono accolte con ordine e professionalità. YouZen raccoglie le prime informazioni e organizza gli appuntamenti senza disturbare il lavoro in studio.',
+    chips: ['Prima accoglienza', 'Richieste qualificate', 'Più ordine'],
+    problems: [
+      { icon: '⚖️', text: 'Chiamate perse durante udienze o appuntamenti' },
+      { icon: '🗂️', text: 'Prime richieste non strutturate e dispersive' },
+      { icon: '🌙', text: 'Fuori orario il contatto resta senza risposta' },
+    ],
+  },
+  {
+    id: 5, icon: '🏠', name: 'Real Estate',
+    sub: 'Agenzie, visite e richieste immobiliari',
+    url: 'settori/problemi_realestate.html',
     color: '#22C55E', iconBg: 'rgba(34,197,94,.14)',
     glowBg: 'rgba(34,197,94,1)',
-    num: '05',
-    desc: 'Ogni richiesta di visita gestita istantaneamente mentre sei in sopralluogo. I clienti caldi vengono qualificati e seguiti — non persi nel dimenticatoio di un voicemail che nessuno ascolta.',
-    chips: ['Lead sempre seguiti', 'Visite programmate', 'Multi-agente'],
-    problems: [
-      { icon: '🏃', text: 'In sopralluogo → chiamata persa → lead freddo' },
-      { icon: '🔇', text: 'Voicemail che nessuno riascolta mai' },
-      { icon: '⏰', text: 'Richieste di visita la sera: risposta il giorno dopo' },
-    ],
-  },
-  {
-    id: 5, icon: '🎓', name: 'Formatori & Coach',
-    sub: 'Corsi, accademie, consulenti',
-    color: '#2DD4BF', iconBg: 'rgba(45,212,191,.14)',
-    glowBg: 'rgba(45,212,191,1)',
     num: '06',
-    desc: 'Iscrizioni ai corsi, domande sui programmi, richieste di colloquio — gestite in automatico. I potenziali studenti ricevono risposta immediata, anche mentre tieni lezione o sei in aula.',
-    chips: ['Iscrizioni automatiche', 'Info corsi 24/7', 'Follow-up immediato'],
+    desc: 'Le richieste di visita non si fermano quando sei fuori ufficio. YouZen filtra il lead, raccoglie i dettagli e accelera il contatto commerciale.',
+    chips: ['Lead più caldi', 'Visite organizzate', 'Risposta immediata'],
     problems: [
-      { icon: '🎓', text: 'In aula → iscrizioni perse nel frattempo' },
-      { icon: '❓', text: 'Domande sui corsi: rispondi tu, ore perse' },
-      { icon: '🔗', text: 'Follow-up mancati = studenti che vanno altrove' },
+      { icon: '🏃', text: 'Sei in visita e perdi nuovi contatti' },
+      { icon: '🔇', text: 'Voicemail e richiami restano indietro' },
+      { icon: '⏰', text: 'Le richieste serali ricevono risposta troppo tardi' },
     ],
   },
 ];
@@ -8523,9 +9079,10 @@ let activeId = -1;
 function buildList() {
   const col = document.getElementById('listCol');
   SECTORS.forEach(s => {
-    const el = document.createElement('div');
+    const el = document.createElement('a');
     el.className = 'list-item';
     el.id = `li-${s.id}`;
+    el.href = s.url || '#';
     el.style.setProperty('--c', s.color);
     el.style.setProperty('--ic-bg', s.iconBg);
     el.innerHTML = `
@@ -8537,7 +9094,8 @@ function buildList() {
       </div>
       <div class="li-arrow">→</div>
     `;
-    el.addEventListener('click', () => activate(s.id));
+    el.addEventListener('mouseenter', () => activate(s.id));
+    el.addEventListener('focus', () => activate(s.id));
     col.appendChild(el);
   });
 }
@@ -8566,6 +9124,7 @@ function buildPanels() {
         </div>
         <p class="dp-desc">${s.desc}</p>
         ${problemsHtml}
+        <a class="dp-link" href="${s.url || '#'}">Apri la pagina del settore <span aria-hidden="true">→</span></a>
       </div>
       <div class="dp-chips">
         ${s.chips.map(c => `<div class="chip"><span class="chip-dot" style="background:${s.color}"></span>${c}</div>`).join('')}
@@ -8606,70 +9165,6 @@ document.querySelectorAll('[data-sector]').forEach(link => {
     const id = Number(link.getAttribute('data-sector'));
     setTimeout(() => activate(id), 80);
   });
-});
-
-</script><script>
-
-let current = 0;
-const FILL_POSITIONS = [0, 50, 100]; // % fill per phase
-const GLOW_X = ['20%', '50%', '80%'];
-const GLOW_C = [
-  'rgba(96,165,250,.09)',
-  'rgba(167,139,250,.09)',
-  'rgba(34,197,94,.09)'
-];
-
-function selectPhase(idx) {
-  const phases = document.querySelectorAll('.phase');
-  const panels = document.querySelectorAll('.detail-inner');
-  const dots   = document.querySelectorAll('.nav-dot');
-  const panel  = document.getElementById('detailPanel');
-
-  phases.forEach((p, i) => {
-    p.classList.remove('active', 'done');
-    if (i < idx)       p.classList.add('done');
-    else if (i === idx) p.classList.add('active');
-  });
-
-  panels.forEach((p, i) => {
-    p.classList.toggle('visible', i === idx);
-  });
-
-  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-
-  // Fill track
-  document.getElementById('timelineFill').style.width = FILL_POSITIONS[idx] + '%';
-
-  // Glow position on panel
-  panel.style.setProperty('--glow-x', GLOW_X[idx]);
-  panel.style.setProperty('--glow-c', GLOW_C[idx]);
-
-  current = idx;
-}
-
-// Auto-cycle demo (pauses on interaction)
-let autoCycle = null;
-
-function startAutoCycle() {
-  autoCycle = setInterval(() => {
-    selectPhase((current + 1) % 3);
-  }, 3800);
-}
-
-function stopAutoCycle() {
-  clearInterval(autoCycle);
-}
-
-document.querySelectorAll('.phase, .nav-dot').forEach(el => {
-  el.addEventListener('click', () => {
-    stopAutoCycle();
-  });
-});
-
-// Init
-window.addEventListener('load', () => {
-  selectPhase(0);
-  setTimeout(startAutoCycle, 2000);
 });
 
 </script><script>
@@ -8777,48 +9272,26 @@ if (first) {
 }
 
 </script><script>
+if (document.getElementById('cs-name')) {
+  document.querySelector('form[onsubmit]') &&
+    document.querySelector('form[onsubmit]').addEventListener('submit', handleContactSubmit);
 
-function handleContactSubmit(e) {
-  e.preventDefault();
-  const name    = document.getElementById('cs-name').value.trim();
-  const email   = document.getElementById('cs-email').value.trim();
-  const sector  = document.getElementById('cs-sector').value;
-  const message = document.getElementById('cs-message').value.trim();
-  const btn = document.getElementById('cs-btn');
-  btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#fff"><path d="M2 8h12M9 3l5 5-5 5" stroke-width="1.7"/></svg> Invio in corso…`;
-  btn.disabled = true;
-  const subject = encodeURIComponent(`[YouZen] Richiesta da ${name} — ${sector}`);
-  const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\nSettore: ${sector}\n\n${message}`);
-  window.location.href = `mailto:ciao@yo
-<script>
-function selectPhase(idx) {
-  const phases = document.querySelectorAll('.phase');
-  const panels = document.querySelectorAll('.detail-inner');
-  const dots   = document.querySelectorAll('.nav-dot');
-  const panel  = document.getElementById('detailPanel');
-
-  phases.forEach((p, i) => {
-    p.classList.remove('active', 'done');
-    if (i < idx)       p.classList.add('done');
-    else if (i === idx) p.classList.add('active');
-  });
-
-  panels.forEach((p, i) => {
-    p.classList.toggle('visible', i === idx);
-  });
-
-  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-
-  // Fill track
-  document.getElementById('timelineFill').style.width = FILL_POSITIONS[idx] + '%';
-
-  // Glow position on panel
-  panel.style.setProperty('--glow-x', GLOW_X[idx]);
-  panel.style.setProperty('--glow-c', GLOW_C[idx]);
-
-  current = idx;
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    const name    = document.getElementById('cs-name').value.trim();
+    const email   = document.getElementById('cs-email').value.trim();
+    const sector  = document.getElementById('cs-sector').value;
+    const message = document.getElementById('cs-message').value.trim();
+    const btn = document.getElementById('cs-btn');
+    if (btn) {
+      btn.innerHTML = 'Invio in corso…';
+      btn.disabled = true;
+    }
+    const subject = encodeURIComponent('[YouZen] Richiesta da ' + name + ' — ' + sector);
+    const body    = encodeURIComponent('Nome: ' + name + '\nEmail: ' + email + '\nSettore: ' + sector + '\n\n' + message);
+    window.location.href = 'mailto:ciao@youzen.ai?subject=' + subject + '&body=' + body;
+  }
 }
-selectPhase(0);
 </script>
 <script id="onboarding-sec06-js">
 (function() {
@@ -8945,1454 +9418,31 @@ selectPhase(0);
   background: #080e1f !important;
 }
 </style>
-<style id="youzen-v19-unified">
-/*
- * YOUZEN V19 — UNIFIED SECTION LAYOUT
- * All section containers: same max-width + padding = headers always aligned left
- * Reference header style: sec-03 "Il problema / Troppo telefono."
- */
 
-/* ── 1. Uniform container width ── */
-.sec-03 .section,
-.sec-05 .section-inner,
-.sec-07 .wrap,
-.sec-07 .pricing-container,
-.sec-07 .section,
-.sec-08 .section,
-.sec-09 .section,
-.sec-10 .cu-wrap,
-.sec-10 .footer-wrap,
-.sec-10 .ft-wrap {
-  max-width: 1060px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
 
-/* sec-02 omni card centered — narrower by design */
-.sec-02-omni {
-  max-width: 1060px !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
 
-/* ── 2. Section header typography — same as sec-03 reference ── */
 
-/* Eyebrow: orange, mono, uppercase, left, line before */
-.sec-02 .omni-eyebrow,
-.sec-03 .section-label,
-.sec-05 .eyebrow,
-.sec-07 .eyebrow,
-.sec-08 .eyebrow,
-.sec-09 .eyebrow,
-.sec-10 .pf-eyebrow {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 12px !important;
-  font-family: "DM Mono", monospace !important;
-  font-size: 11px !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-  color: #F97316 !important;
-  margin-bottom: 20px !important;
-  text-align: left !important;
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  width: auto !important;
-}
 
-/* Orange line ONLY on left */
-.sec-02 .omni-eyebrow::before,
-.sec-03 .section-label::before,
-.sec-05 .eyebrow::before,
-.sec-07 .eyebrow::before,
-.sec-08 .eyebrow::before,
-.sec-09 .eyebrow::before,
-.sec-10 .pf-eyebrow::before {
-  content: "" !important;
-  display: inline-block !important;
-  width: 28px !important;
-  height: 2px !important;
-  background: #F97316 !important;
-  flex-shrink: 0 !important;
-}
-/* Remove right line (::after) from any eyebrow */
-.sec-02 .omni-eyebrow::after,
-.sec-05 .eyebrow::after,
-.sec-07 .eyebrow::after,
-.sec-08 .eyebrow::after,
-.sec-09 .eyebrow::after,
-.sec-10 .pf-eyebrow::after {
-  display: none !important;
-  content: none !important;
-}
 
-/* H2 section titles */
-.sec-02 .omni-section-title,
-.sec-03 .section-title,
-.sec-05 h2.section-title,
-.sec-05 .section-title,
-.sec-07 .section-intro h2,
-.sec-08 h2.section-title,
-.sec-08 .section-title,
-.sec-09 h2.section-title,
-.sec-09 .section-title,
-.sec-10 h2.pf-title {
-  font-family: "Syne", sans-serif !important;
-  font-size: clamp(30px, 3.4vw, 44px) !important;
-  font-weight: 800 !important;
-  line-height: 1.04 !important;
-  letter-spacing: -.028em !important;
-  margin-bottom: 16px !important;
-  text-align: left !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
 
-/* em in titles → orange */
-.sec-02 .omni-section-title em,
-.sec-03 .section-title em,
-.sec-05 .section-title em,
-.sec-07 .section-intro h2 em,
-.sec-08 .section-title em,
-.sec-09 .section-title em,
-.sec-10 h2.pf-title em {
-  font-style: normal !important;
-  color: #F97316 !important;
-  -webkit-text-fill-color: #F97316 !important;
-}
 
-/* Subtitle text */
-.sec-02 .omni-intro,
-.sec-03 .section-sub,
-.sec-05 .section-sub,
-.sec-07 .section-intro p,
-.sec-08 .section-sub,
-.sec-09 .section-sub,
-.sec-10 .pf-sub {
-  font-size: 17px !important;
-  color: rgba(230,237,243,.72) !important;
-  max-width: 520px !important;
-  line-height: 1.7 !important;
-  text-align: left !important;
-}
 
-/* Header containers → left */
-.sec-02 .omni-header,
-.sec-05 .section-head,
-.sec-05 .section-intro,
-.sec-07 .section-intro,
-.sec-08 .section-head,
-.sec-09 .section-head,
-.sec-10 .pf-head {
-  text-align: left !important;
-  align-items: flex-start !important;
-  display: block !important;
-}
 
-/* sec-05 specific: remove the grid/flex centering from section-head */
-.sec-05 .section-head {
-  margin-bottom: 28px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-.sec-05 .section-head .eyebrow {
-  justify-content: flex-start !important;
-}
-.sec-05 .section-head::after {
-  text-align: left !important;
-  justify-self: start !important;
-  max-width: 520px !important;
-  margin-left: 0 !important;
-  display: block !important;
-  font-size: 17px !important;
-  line-height: 1.7 !important;
-  color: rgba(230,237,243,.72) !important;
-  margin-top: 12px !important;
-}
 
-/* sec-06: keep its own centered onboarding layout, but left-align header */
-.sec-06 .header {
-  text-align: left !important;
-  margin-bottom: 48px !important;
-}
-.sec-06 .eyebrow {
-  justify-content: flex-start !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-.sec-06 .eyebrow::after {
-  display: none !important;
-  content: none !important;
-}
-.sec-06 .eyebrow::before {
-  content: "" !important;
-  display: inline-block !important;
-  width: 28px !important;
-  height: 2px !important;
-  background: #F97316 !important;
-  flex-shrink: 0 !important;
-}
-.sec-06 .title {
-  text-align: left !important;
-  font-family: "Syne", sans-serif !important;
-  font-size: clamp(30px, 3.4vw, 44px) !important;
-  font-weight: 800 !important;
-  line-height: 1.04 !important;
-  letter-spacing: -.028em !important;
-}
-.sec-06 .subtitle {
-  text-align: left !important;
-  margin-left: 0 !important;
-  max-width: 520px !important;
-}
-.sec-06 .wrap {
-  max-width: 1060px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
 
-/* Mobile */
-@media (max-width: 768px) {
-  .sec-03 .section,
-  .sec-05 .section-inner,
-  .sec-06 .wrap,
-  .sec-07 .wrap,
-  .sec-08 .section,
-  .sec-09 .section,
-  .sec-10 .cu-wrap,
-  .sec-10 .ft-wrap {
-    max-width: 100% !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .sec-02 .omni-section-title,
-  .sec-03 .section-title,
-  .sec-05 .section-title,
-  .sec-07 .section-intro h2,
-  .sec-08 .section-title,
-  .sec-09 .section-title,
-  .sec-10 h2.pf-title {
-    font-size: clamp(26px, 7vw, 36px) !important;
-  }
-}
-</style>
 
-<style id="youzen-v20-final-align">
-/*
- * V20 FINAL ALIGNMENT FIX
- * Force all section headers to match sec-02 (Sistema omnicanale) left position.
- * sec-02-omni: max-width 1060px, padding 0 48px → content left = (viewport-1060)/2 + 48px
- */
 
-/* ── sec-02 omni container ── */
-.sec-02-omni {
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
 
-/* ── sec-05 "Esiste una versione di te più zen." ── */
-.sec-05 .section-inner {
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
-/* Remove the 2-column grid from section-head → simple block layout */
-.sec-05 .section-head {
-  display: block !important;
-  text-align: left !important;
-  margin: 0 0 48px 0 !important;
-}
-/* Disable the ::after pseudo-element that created the right-side subtitle */
-.sec-05 .section-head::after {
-  display: none !important;
-  content: none !important;
-}
-.sec-05 .eyebrow {
-  display: inline-flex !important;
-  justify-content: flex-start !important;
-  text-align: left !important;
-}
-.sec-05 .section-title {
-  text-align: left !important;
-  max-width: 680px !important;
-  margin-left: 0 !important;
-}
 
-/* ── sec-06 "Operativo in 15 giorni." ── */
-/* sec-06 outer is display:flex justify-content:center → wrap is auto-centered */
-.sec-06 {
-  justify-content: flex-start !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.sec-06 .wrap {
-  width: 100% !important;
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  box-sizing: border-box !important;
-}
-.sec-06 .header {
-  text-align: left !important;
-  margin-bottom: 48px !important;
-}
-.sec-06 .eyebrow {
-  display: inline-flex !important;
-  justify-content: flex-start !important;
-  text-align: left !important;
-}
-.sec-06 .title {
-  text-align: left !important;
-}
-.sec-06 .subtitle {
-  text-align: left !important;
-  margin-left: 0 !important;
-  max-width: 580px !important;
-}
 
-/* ── sec-07 "Piani e prezzi / Prezzi chiari." ── */
-.sec-07 .wrap {
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
-.sec-07 .pricing-container,
-.sec-07 .section {
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-}
-.sec-07 .section-intro {
-  text-align: left !important;
-  margin-left: 0 !important;
-  max-width: 100% !important;
-}
-.sec-07 .eyebrow {
-  display: inline-flex !important;
-  justify-content: flex-start !important;
-}
-.sec-07 .section-intro h2 {
-  text-align: left !important;
-  margin-left: 0 !important;
-}
-.sec-07 .section-intro p {
-  text-align: left !important;
-  margin-left: 0 !important;
-}
 
-/* ── Mobile fallback ── */
-@media (max-width: 768px) {
-  .sec-02-omni,
-  .sec-05 .section-inner,
-  .sec-06 .wrap,
-  .sec-07 .wrap,
-  .sec-07 .pricing-container {
-    max-width: 100% !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-}
-</style>
 
-<style id="youzen-v21-fixes">
 
-/* ═══════════════════════════════════════════
-   FIX 1: Remove min-height:100vh from sections
-   → eliminates "troppo spazio tra le sezioni"
-═══════════════════════════════════════════ */
-.sec-03,
-.sec-05,
-.sec-06,
-.sec-07,
-.sec-08,
-.sec-09 {
-  min-height: 0 !important;
-  height: auto !important;
-}
 
-/* Keep reasonable vertical padding per section */
-.sec-03 .section {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-}
-.sec-05 .section {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-}
-.sec-06 {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-}
-.sec-07 .wrap {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-}
-.sec-08 .section {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-}
 
-/* ═══════════════════════════════════════════
-   FIX 2: sec-06 header LEFT alignment
-   (force override all centering)
-═══════════════════════════════════════════ */
-.sec-06 .wrap {
-  width: 100% !important;
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  box-sizing: border-box !important;
-  align-self: flex-start !important;
-}
-.sec-06 .header {
-  text-align: left !important;
-  margin-bottom: 48px !important;
-  display: block !important;
-}
-.sec-06 .eyebrow {
-  display: inline-flex !important;
-  justify-content: flex-start !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-}
-.sec-06 .title {
-  text-align: left !important;
-  margin-left: 0 !important;
-}
-.sec-06 .subtitle {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-  max-width: 560px !important;
-}
 
-/* ═══════════════════════════════════════════
-   FIX 3: cal.com embed visible
-═══════════════════════════════════════════ */
-/* cal-embed as block container */
-cal-embed {
-  display: block !important;
-  width: 100% !important;
-  min-height: 520px !important;
-  height: 620px !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(255,255,255,.1) !important;
-  background: #0c1627 !important;
-  position: relative !important;
-}
 
-/* iframe fills the container */
-cal-embed iframe {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 620px !important;
-  border: 0 !important;
-  border-radius: 16px !important;
-  position: absolute !important;
-  inset: 0 !important;
-}
 
-/* cu-cal column: give it proper height */
-.sec-10 .cu-cal {
-  min-height: 640px !important;
-}
 
-/* ═══════════════════════════════════════════
-   MOBILE
-═══════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .sec-03 .section,
-  .sec-05 .section,
-  .sec-07 .wrap,
-  .sec-08 .section {
-    padding-top: 56px !important;
-    padding-bottom: 56px !important;
-  }
-  .sec-06 {
-    padding-top: 56px !important;
-    padding-bottom: 56px !important;
-  }
-  cal-embed,
-  cal-embed iframe {
-    min-height: 480px !important;
-    height: 500px !important;
-  }
-}
-</style>
 
-<style id="youzen-v22-spacing">
 
-/* ═══════════════════════════════════════════
-   FIX: Padding verticale 48px per tutte le sezioni
-═══════════════════════════════════════════ */
-.sec-03 .section {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-}
-.sec-05 .section {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-}
-.sec-06 {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-}
-.sec-07 .wrap {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-}
-.sec-08 .section {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-}
-.sec-09 .section {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
-}
-
-/* ═══════════════════════════════════════════
-   FIX: sec-06 eyebrow e titolo come gli altri
-   → rimuovi ::after line, mantieni solo ::before a sx
-═══════════════════════════════════════════ */
-.sec-06 .eyebrow {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 10px !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-bottom: 16px !important;
-}
-/* Mantieni solo la linea a SINISTRA (::before), nascondi ::after */
-.sec-06 .eyebrow::after {
-  display: none !important;
-  content: none !important;
-}
-.sec-06 .eyebrow::before {
-  content: "" !important;
-  display: block !important;
-  width: 24px !important;
-  height: 2px !important;
-  background: var(--orange, #F97316) !important;
-  opacity: 1 !important;
-  flex-shrink: 0 !important;
-}
-
-/* Titolo e subtitle allineati a sinistra come sec-02/sec-03 */
-.sec-06 .header {
-  text-align: left !important;
-  display: block !important;
-  margin-bottom: 40px !important;
-  margin-left: 0 !important;
-}
-.sec-06 .title {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-bottom: 12px !important;
-}
-.sec-06 .subtitle {
-  text-align: left !important;
-  margin: 0 !important;
-  max-width: 580px !important;
-}
-
-/* Ensure .wrap starts at top-left within the flex section */
-.sec-06 .wrap {
-  align-self: flex-start !important;
-  width: 100% !important;
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  box-sizing: border-box !important;
-}
-
-/* ═══════════════════════════════════════════
-   Mobile
-═══════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .sec-03 .section,
-  .sec-05 .section,
-  .sec-07 .wrap,
-  .sec-08 .section,
-  .sec-09 .section {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-  }
-  .sec-06 {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-  }
-}
-</style>
-
-<style id="youzen-v23-spacing">
-
-/* ═══════════════════════════════════════════
-   Spazio verticale 15px tra sezioni
-═══════════════════════════════════════════ */
-.sec-02-omni  { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-03 .section { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-05 .section { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-06        { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-07 .wrap  { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-08 .section { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-09 .section { padding-top: 15px !important; padding-bottom: 15px !important; }
-.sec-10 .cu-wrap { padding-top: 15px !important; padding-bottom: 15px !important; }
-
-/* ═══════════════════════════════════════════
-   sec-09: allinea header come gli altri titoli
-   Reference: max-width 1060px, padding-left 48px
-═══════════════════════════════════════════ */
-.sec-09 .section {
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  box-sizing: border-box !important;
-}
-/* Rimuovi il padding orizzontale interno dell'header (non ne ha bisogno) */
-.sec-09 .section-head {
-  padding: 0 !important;
-  margin-bottom: 40px !important;
-}
-/* Eyebrow stile standard: linea a sx + testo */
-.sec-09 .eyebrow {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  margin-bottom: 12px !important;
-  text-align: left !important;
-}
-/* Titolo left */
-.sec-09 .section-title {
-  text-align: left !important;
-  margin-left: 0 !important;
-}
-.sec-09 .section-sub {
-  text-align: left !important;
-  margin-left: 0 !important;
-  max-width: 580px !important;
-}
-
-/* ═══════════════════════════════════════════
-   sec-06: mantieni allineamento left già fixato
-═══════════════════════════════════════════ */
-.sec-06 {
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-}
-.sec-06 .wrap {
-  max-width: 1060px !important;
-  margin: 0 auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  align-self: flex-start !important;
-}
-.sec-06 .header { text-align: left !important; margin-bottom: 32px !important; }
-.sec-06 .title  { text-align: left !important; }
-.sec-06 .subtitle { text-align: left !important; margin: 0 !important; max-width: 560px !important; }
-.sec-06 .eyebrow { display: inline-flex !important; justify-content: flex-start !important; }
-.sec-06 .eyebrow::after { display: none !important; content: none !important; }
-
-@media (max-width: 768px) {
-  .sec-02-omni,
-  .sec-03 .section,
-  .sec-05 .section,
-  .sec-07 .wrap,
-  .sec-08 .section,
-  .sec-09 .section { padding-top: 15px !important; padding-bottom: 15px !important; }
-  .sec-06 { padding-top: 15px !important; padding-bottom: 15px !important; }
-  .sec-09 .section { padding-left: 20px !important; padding-right: 20px !important; }
-}
-</style>
-
-<style id="youzen-v24-final">
-
-/* ═══════════════════════════════════════════
-   FIX BODY: ripristina layout normale
-   Il body:flex rompe sticky navbar e layout
-═══════════════════════════════════════════ */
-body {
-  display: block !important;
-  flex-direction: unset !important;
-  align-items: unset !important;
-  justify-content: unset !important;
-  gap: unset !important;
-  flex-wrap: unset !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* ═══════════════════════════════════════════
-   FIX NAVBAR: sticky in cima, senza spazio sopra
-═══════════════════════════════════════════ */
-
-/* ═══════════════════════════════════════════
-   FIX CRITICO: overflow-x:hidden sui parent rompe sticky navbar
-   Usiamo overflow-x:clip che NON crea BFC e NON rompe sticky
-═══════════════════════════════════════════ */
-.sec-01,
-.merged-section,
-body {
-  overflow-x: clip !important;
-}
-/* Ripristina overflow normale per i section successivi */
-.sec-02, .sec-03, .sec-04, .sec-05, .sec-06,
-.sec-07, .sec-08, .sec-09, .sec-10 {
-  overflow-x: clip !important;
-}
-
-.navbar, #navbar {
-  position: sticky !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 9999 !important;
-  width: 100% !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* sec-01 (wrapper della navbar + hero) non deve avere padding sopra */
-.merged-section.sec-01 {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* ═══════════════════════════════════════════
-   FIX sec-06: titolo a sinistra
-   margin:0 auto su flex-child lo centra anche con justify-content:flex-start
-   → usare margin-left:0; margin-right:0 e width:100%
-═══════════════════════════════════════════ */
-.sec-06 {
-  display: block !important;  /* cambia da flex a block → .wrap non è più flex-child */
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
-}
-.sec-06 .wrap {
-  width: 100% !important;
-  max-width: 1060px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  box-sizing: border-box !important;
-}
-.sec-06 .header {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-bottom: 32px !important;
-}
-.sec-06 .eyebrow {
-  display: inline-flex !important;
-  justify-content: flex-start !important;
-  margin-left: 0 !important;
-}
-.sec-06 .eyebrow::after {
-  display: none !important;
-  content: none !important;
-}
-.sec-06 .title {
-  text-align: left !important;
-  margin-left: 0 !important;
-}
-.sec-06 .subtitle {
-  text-align: left !important;
-  margin-left: 0 !important;
-  max-width: 560px !important;
-}
-
-/* ═══════════════════════════════════════════
-   FIX CAL.COM: iframe visibile
-═══════════════════════════════════════════ */
-cal-embed {
-  display: block !important;
-  width: 100% !important;
-  height: 660px !important;
-  min-height: 660px !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(255,255,255,.1) !important;
-  background: #0c1627 !important;
-  position: relative !important;
-}
-cal-embed iframe {
-  display: block !important;
-  width: 100% !important;
-  height: 660px !important;
-  border: 0 !important;
-  border-radius: 16px !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-}
-
-@media (max-width: 768px) {
-  cal-embed,
-  cal-embed iframe {
-    height: 500px !important;
-    min-height: 500px !important;
-  }
-}
-</style>
-
-<style id="youzen-v25-hero">
-
-/* ═══════════════════════════════════════════
-   HERO LAYOUT — come da foto
-═══════════════════════════════════════════ */
-.hero {
-  padding: 60px 0 60px !important;
-  min-height: calc(100vh - 64px) !important;
-  display: flex !important;
-  align-items: center !important;
-}
-.sec-01 .hero-inner {
-  padding: 0 48px !important;
-  width: 100% !important;
-  max-width: 1280px !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-}
-.hero-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 460px !important;
-  gap: 60px !important;
-  align-items: center !important;
-  width: 100% !important;
-}
-
-/* ═══════════════════════════════════════════
-   FORM CARD — valorizzata
-═══════════════════════════════════════════ */
-.demo-card {
-  background: #0d1b35 !important;
-  border: 1px solid rgba(249,115,22,.25) !important;
-  border-radius: 20px !important;
-  padding: 28px !important;
-  box-shadow: 0 0 40px rgba(249,115,22,.08), 0 24px 48px rgba(0,0,0,.4) !important;
-}
-
-/* Card eyebrow — "Chiamata gratuita" */
-.card-eyebrow {
-  font-size: 10px !important;
-  letter-spacing: .15em !important;
-  text-transform: uppercase !important;
-  color: #F97316 !important;
-  font-weight: 600 !important;
-  margin-bottom: 4px !important;
-}
-
-/* Card title */
-.card-title {
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  color: #fff !important;
-  line-height: 1.25 !important;
-}
-.card-title em {
-  color: #F97316 !important;
-  font-style: normal !important;
-}
-
-/* WhatsApp note */
-.whatsapp-note {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 8px !important;
-  background: rgba(37,211,102,.08) !important;
-  border: 1px solid rgba(37,211,102,.2) !important;
-  border-radius: 10px !important;
-  padding: 10px 14px !important;
-  margin-bottom: 12px !important;
-  font-size: 12px !important;
-  color: rgba(255,255,255,.75) !important;
-  line-height: 1.45 !important;
-}
-.wa-icon {
-  font-size: 16px !important;
-  flex-shrink: 0 !important;
-  margin-top: 1px !important;
-}
-
-/* CTA button — arancione pieno */
-.cta-btn.cta-orange,
-.cta-btn {
-  background: #F97316 !important;
-  background-image: linear-gradient(135deg, #F97316 0%, #ea6a0a 100%) !important;
-  border: none !important;
-  border-radius: 12px !important;
-  color: #fff !important;
-  width: 100% !important;
-  padding: 14px 20px !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  cursor: pointer !important;
-  transition: transform .15s, box-shadow .15s !important;
-  box-shadow: 0 4px 20px rgba(249,115,22,.35) !important;
-}
-.cta-btn:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 8px 28px rgba(249,115,22,.5) !important;
-}
-.cta-phone-wrap {
-  background: rgba(255,255,255,.15) !important;
-  border-radius: 8px !important;
-  width: 36px !important;
-  height: 36px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-}
-.cta-main {
-  display: block !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  letter-spacing: -.01em !important;
-}
-.cta-sub-text {
-  display: block !important;
-  font-size: 11px !important;
-  opacity: .75 !important;
-  font-weight: 400 !important;
-}
-.cta-arrow {
-  margin-left: auto !important;
-  font-size: 18px !important;
-  opacity: .8 !important;
-}
-
-/* ═══════════════════════════════════════════
-   MOBILE
-═══════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-  .hero {
-    padding: 40px 0 40px !important;
-    align-items: flex-start !important;
-  }
-  .sec-01 .hero-inner {
-    padding: 0 20px !important;
-  }
-}
-</style>
-
-<style id="youzen-v26-hero-font">
-
-/* ═══════════════════════════════════════════
-   HERO TITLE — font bold display come da foto
-   Syne 900 + lettera-spacing stretto + maiuscole
-═══════════════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
-
-.hero-title {
-  font-family: 'Syne', 'Arial Black', sans-serif !important;
-  font-weight: 800 !important;
-  font-size: clamp(52px, 7.5vw, 96px) !important;
-  line-height: 1.0 !important;
-  letter-spacing: -0.03em !important;
-  text-transform: none !important;
-  margin-bottom: 24px !important;
-}
-.hero-title .line-1,
-.hero-title .line-2,
-.hero-title .line-3 {
-  display: block !important;
-}
-
-/* line-1: bianco */
-.hero-title .hl-problem {
-  color: #ffffff !important;
-  font-weight: 800 !important;
-}
-/* line-2 + line-3: arancione */
-.hero-title .hl-solution,
-.hero-title .hl-breath {
-  color: #F97316 !important;
-  font-weight: 800 !important;
-}
-
-/* ═══════════════════════════════════════════
-   BADGE — arancione invece di verde
-═══════════════════════════════════════════ */
-.hero-badge {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  background: rgba(34,197,94,.1) !important;
-  border: 1px solid rgba(34,197,94,.3) !important;
-  border-radius: 999px !important;
-  padding: 6px 14px 6px 10px !important;
-  margin-bottom: 28px !important;
-}
-.hero-badge .badge-text {
-  color: #22C55E !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  letter-spacing: .01em !important;
-}
-.hero-badge .badge-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  background: #22C55E !important;
-  box-shadow: 0 0 0 0 rgba(34,197,94,.6) !important;
-  animation: pulse-green 2s infinite !important;
-  flex-shrink: 0 !important;
-}
-@keyframes pulse-green {
-  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.6); }
-  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
-  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
-}
-.badge-dot {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  background: #F97316 !important;
-  box-shadow: 0 0 8px #F97316 !important;
-  animation: pulse-orange 2s infinite !important;
-  flex-shrink: 0 !important;
-}
-.badge-text {
-  color: #F97316 !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: .04em !important;
-}
-@keyframes pulse-orange {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: .6; transform: scale(1.2); }
-}
-
-/* ═══════════════════════════════════════════
-   HERO SUBTITLE — tono simpatico
-═══════════════════════════════════════════ */
-.hero-sub {
-  font-size: 17px !important;
-  line-height: 1.65 !important;
-  color: rgba(255,255,255,.72) !important;
-  max-width: 520px !important;
-  margin-bottom: 0 !important;
-}
-.hero-sub-accent {
-  color: #F97316 !important;
-  font-weight: 600 !important;
-}
-.hero-sub strong {
-  color: rgba(255,255,255,.92) !important;
-  font-weight: 600 !important;
-}
-
-/* ═══════════════════════════════════════════
-   QUICKWINS — pill arancione extra
-═══════════════════════════════════════════ */
-.hero-quickwins .qw-orange {
-  border-color: rgba(249,115,22,.3) !important;
-  background: rgba(249,115,22,.08) !important;
-  color: #F97316 !important;
-}
-.hero-quickwins .dot-orange {
-  background: #F97316 !important;
-}
-</style>
-
-<style id="youzen-calcom-final">
-/* ═══════════════════════════════════════════
-   CAL.COM — fix definitivo
-   Il container è <div id="cal-embed">, NON <cal-embed>
-═══════════════════════════════════════════ */
-#cal-embed {
-  display: block !important;
-  width: 100% !important;
-  height: 700px !important;
-  min-height: 700px !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(255,255,255,.1) !important;
-  background: #0c1627 !important;
-  position: relative !important;
-}
-#cal-embed iframe {
-  display: block !important;
-  width: 100% !important;
-  height: 700px !important;
-  min-height: 700px !important;
-  border: 0 !important;
-  border-radius: 16px !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-}
-.sec-10 .cu-cal {
-  min-height: 720px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 16px !important;
-}
-@media (max-width: 768px) {
-  #cal-embed,
-  #cal-embed iframe {
-    height: 560px !important;
-    min-height: 560px !important;
-  }
-  .sec-10 .cu-cal {
-    min-height: 580px !important;
-  }
-}
-</style>
-
-<style id="youzen-v27-hero-font-match">
-/* ═══════════════════════════════════════════
-   Hero title — stesso font di "È un'orchestra"
-   font-family: Syne 800, letter-spacing: -.03em, line-height: 1.04
-═══════════════════════════════════════════ */
-.hero-title,
-.hero-title .hl-problem,
-.hero-title .hl-solution,
-.hero-title .hl-breath,
-.hero-title .line-1,
-.hero-title .line-2,
-.hero-title .line-3 {
-  font-family: "Syne", sans-serif !important;
-  font-weight: 800 !important;
-  letter-spacing: -.03em !important;
-  line-height: 1.04 !important;
-  -webkit-font-smoothing: antialiased !important;
-}
-.hero-title {
-  font-size: clamp(52px, 7.5vw, 88px) !important;
-  margin-bottom: 24px !important;
-  text-transform: none !important;
-}
-.hero-title .line-1,
-.hero-title .line-2,
-.hero-title .line-3 {
-  display: block !important;
-  font-size: inherit !important;
-}
-/* line-1: bianco */
-.hero-title .hl-problem { color: #ffffff !important; }
-/* line-2 + 3: arancione come em di orchestra */
-.hero-title .hl-solution,
-.hero-title .hl-breath {
-  color: #F97316 !important;
-  -webkit-text-fill-color: #F97316 !important;
-}
-</style>
-
-<style id="youzen-v27-breath-anim">
-/* ═══════════════════════════════════════════
-   "Tu respiri." — sfumatura animata arancione→giallo→arancione
-═══════════════════════════════════════════ */
-@keyframes breath-gradient {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.hero-title .hl-breath {
-  background: linear-gradient(90deg, #F97316, #FBBF24, #ef4444, #F97316, #FBBF24) !important;
-  background-size: 300% 300% !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
-  animation: breath-gradient 3s ease infinite !important;
-  display: inline !important;
-}
-</style>
-
-<style id="youzen-v28-sectors">
-
-/* ═══════════════════════════════════════════
-   "Esiste una versione di te / più zen." — 2 righe
-═══════════════════════════════════════════ */
-.sec-05 h2.section-title {
-  display: block !important;
-  white-space: normal !important;
-}
-.sec-05 .section-title br {
-  display: block !important;
-}
-.sec-05 .section-title em {
-  display: block !important;
-  color: #F97316 !important;
-  font-style: normal !important;
-}
-
-/* ═══════════════════════════════════════════
-   Problemi nel panel destra
-═══════════════════════════════════════════ */
-.dp-problems {
-  margin-top: 20px !important;
-  margin-bottom: 8px !important;
-}
-.dp-problems-label {
-  font-size: 10px !important;
-  letter-spacing: .12em !important;
-  text-transform: uppercase !important;
-  color: rgba(255,255,255,.4) !important;
-  margin-bottom: 10px !important;
-  font-weight: 600 !important;
-}
-.dp-problem-item {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 10px !important;
-  padding: 9px 12px !important;
-  background: rgba(255,255,255,.04) !important;
-  border: 1px solid rgba(255,255,255,.07) !important;
-  border-radius: 10px !important;
-  margin-bottom: 7px !important;
-  transition: background .2s !important;
-}
-.dp-problem-item:hover {
-  background: rgba(255,255,255,.07) !important;
-}
-.dp-problem-icon {
-  font-size: 16px !important;
-  flex-shrink: 0 !important;
-  margin-top: 1px !important;
-}
-.dp-problem-text {
-  font-size: 13px !important;
-  color: rgba(255,255,255,.75) !important;
-  line-height: 1.45 !important;
-  font-weight: 500 !important;
-}
-</style>
-
-<style id="youzen-v28b-title">
-/* sec-05 title: 3 righe — "Esiste una versione / di te / più zen." */
-.sec-05 h2.section-title {
-  line-height: 1.15 !important;
-}
-.sec-05 h2.section-title br {
-  display: block !important;
-}
-.sec-05 h2.section-title em {
-  display: block !important;
-  color: #F97316 !important;
-  -webkit-text-fill-color: #F97316 !important;
-  font-style: normal !important;
-}
-</style>
-
-<style id="youzen-v28-logo">
-/* Logo immagine nella navbar */
-.nav-logo-img {
-  width: 32px !important;
-  height: 32px !important;
-  object-fit: contain !important;
-  border-radius: 8px !important;
-  flex-shrink: 0 !important;
-}
-/* Navbar scrolls with page — rimuovi qualsiasi sticky/fixed residuo */
-/* navbar ok */
-
-/* ═══════════════════════════════════════════
-   CTA ARANCIONI — sfumatura come colpo di scena, colore brand
-═══════════════════════════════════════════ */
-.nav-cta,
-.cta-btn,
-.cta-green,
-.cta-orange,
-.omni-btn-cta,
-.plan-cta,
-.starter-cta,
-.pro-cta,
-.enterprise-cta,
-.btn-cta,
-.mob-cta,
-.twist-cta,
-.cs-submit,
-.pf-cta,
-[class*="cta-btn"],
-[class*="plan-cta"] {
-  background: linear-gradient(135deg, #FB923C 0%, #F97316 40%, #EA580C 100%) !important;
-  color: #fff !important;
-  border: none !important;
-  box-shadow: 0 4px 24px rgba(249,115,22,.4), inset 0 1px 0 rgba(255,255,255,.15) !important;
-  border-radius: 999px !important;
-  font-weight: 700 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.15) !important;
-  transition: all .2s ease !important;
-  letter-spacing: .01em !important;
-}
-.nav-cta:hover,
-.cta-btn:hover,
-.omni-btn-cta:hover,
-.plan-cta:hover,
-.btn-cta:hover,
-.twist-cta:hover,
-.cs-submit:hover {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 40%, #C2410C 100%) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 32px rgba(249,115,22,.55), inset 0 1px 0 rgba(255,255,255,.12) !important;
-  transform: translateY(-2px) scale(1.02) !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
-}
-
-
-/* ═══════════════════════════════════════════
-   NAVBAR FIXED — visibile su tutta la pagina
-   sticky non funziona se navbar è dentro sec-01
-═══════════════════════════════════════════ */
-.navbar, #navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 9999 !important;
-}
-/* Compensa l'altezza navbar (64px) sul primo elemento */
-.merged-section.sec-01,
-section.sec-01 {
-  padding-top: 64px !important;
-}
-
-
-/* ═══════════════════════════════════════════
-   FIX MOBILE — v33
-═══════════════════════════════════════════ */
-
-/* Impedisce overflow orizzontale globale */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
-
-/* Hero title responsive */
-@media (max-width: 600px) {
-
-  /* Titolo hero: font più piccolo per stare nel viewport */
-  .sec-01 .hero-title,
-  .sec-01 h1,
-  [class*="hero-title"] {
-    font-size: clamp(36px, 11vw, 56px) !important;
-    line-height: 1.05 !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    white-space: normal !important;
-    max-width: 100% !important;
-  }
-
-  /* Padding laterale hero */
-  .sec-01 .hero-inner,
-  .sec-01 .hero,
-  .sec-01 [class*="hero"] {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    box-sizing: border-box !important;
-    max-width: 100vw !important;
-  }
-
-  /* Tutte le sezioni: padding sicuro */
-  .sec-01, .sec-02, .sec-03, .sec-04,
-  .sec-05, .sec-06, .sec-07, .sec-08,
-  .sec-09, .sec-10, .merged-section {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Sezioni interne con padding corretto */
-  .sec-01 .section,
-  .sec-02 .section,
-  .sec-03 .section,
-  .sec-04 .section,
-  .sec-05 .section,
-  .section-inner,
-  .container {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    box-sizing: border-box !important;
-    max-width: 100vw !important;
-  }
-
-  /* Grid hero: colonna singola */
-  .sec-01 .hero-grid,
-  [class*="hero-grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-
-  /* CTA button: full width mobile */
-  .nav-cta,
-  .cta-btn,
-  .twist-cta,
-  .omni-btn-cta,
-  .btn-cta {
-    width: auto !important;
-    min-width: 0 !important;
-    font-size: 15px !important;
-    padding: 13px 24px !important;
-  }
-
-  /* Testi body più leggibili */
-  .sec-01 p,
-  .sec-01 .hero-sub,
-  .sec-01 [class*="sub"] {
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-  }
-
-  /* Navbar padding */
-  .navbar, #navbar {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-}
-
-/* Tablet (600-900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .sec-01 .hero-title,
-  .sec-01 h1,
-  [class*="hero-title"] {
-    font-size: clamp(44px, 8vw, 72px) !important;
-  }
-  .sec-01 .hero-grid,
-  [class*="hero-grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-}
-
-</style>
