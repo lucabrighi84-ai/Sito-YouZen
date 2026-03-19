@@ -2,6 +2,7 @@
 
 <html lang="it">
 <head>
+<script type="text/javascript" src="https://embeds.iubenda.com/widgets/323c6c28-a8a3-4164-bdaf-4d33583a0378.js"></script>
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
@@ -3202,7 +3203,18 @@
 }
 .sec-10 .ft-legal a:hover{ color: #475569; }
 
-.sec-10 .ft-made{
+.sec-10 
+.ft-legal{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  align-items:center;
+}
+.ft-legal a{
+  white-space:nowrap;
+}
+
+.ft-made{
   font-family: var(--fm); font-size: 10px; color: #1e3050;
   letter-spacing: .04em; display: flex; align-items: center; gap: 6px;
 }
@@ -6788,7 +6800,7 @@ section#sec-02,
 <div class="privacy-row">
 <input class="privacy-checkbox" id="privacy" required="" type="checkbox"/>
 <label class="privacy-text" for="privacy">
-            Accetto la <a href="#">Privacy Policy</a> e il trattamento dei dati per ricevere informazioni su YouZen.
+            Accetto la <a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">Privacy Policy</a> e il trattamento dei dati per ricevere informazioni su YouZen.
             Ti richiamiamo noi. Niente spam, niente carte, niente sorprese.
           </label>
 </div>
@@ -8524,19 +8536,20 @@ tbody tr:hover .td-good {
 <div>
 <div class="ft-col-title">Legale</div>
 <div class="ft-links">
-<a href="/privacy">Privacy Policy</a>
-<a href="/termini">Termini di servizio</a>
-<a href="/cookie">Cookie Policy</a>
-<a href="/gdpr">GDPR &amp; Dati</a>
+<a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">Privacy Policy</a>
+<a href="https://www.iubenda.com/privacy-policy/72921216/cookie-policy" rel="nofollow noopener" target="_blank">Cookie Policy</a>
+<a href="/Sito-YouZen/termini/">Termini e condizioni</a>
+<a href="/Sito-YouZen/GDPR/">Diritti privacy (GDPR)</a>
 </div>
 </div>
 </div>
 <div class="ft-bottom">
 <div class="ft-legal">
-        © 2025 YouZen — Partita IVA 04855440402 · lucabrighi84@pec.it
-        <a href="/privacy">Privacy</a>
-<a href="/termini">Termini</a>
-<a href="/cookie">Cookie</a>
+        © 2025 YouZen — Partita IVA 04855440402 · <a href="mailto:info@youzen.it">info@youzen.it</a> · <a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a>
+        <a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">Privacy Policy</a>
+<a href="https://www.iubenda.com/privacy-policy/72921216/cookie-policy" rel="nofollow noopener" target="_blank">Cookie Policy</a>
+<a href="/Sito-YouZen/termini/">Termini e condizioni</a>
+<a href="/Sito-YouZen/GDPR/">Diritti privacy (GDPR)</a>
 </div>
 <div class="ft-made">Fatto con <span>♥</span> in Italia</div>
 </div>
@@ -9983,4 +9996,40 @@ section {
   });
 })();
 </script>
-<script id="keyboard-a11y-patch">(function(){document.querySelectorAll('[onclick][role="button"]').forEach(function(el){el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});var hamburger=document.getElementById('navHamburger');var navbar=document.getElementById('navbar');if(hamburger&&navbar){hamburger.addEventListener('click',function(){hamburger.setAttribute('aria-expanded',navbar.classList.contains('nav-mobile-open')?'true':'false');});}})();</script></body></html>
+<script id="keyboard-a11y-patch">(function(){document.querySelectorAll('[onclick][role="button"]').forEach(function(el){el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});var hamburger=document.getElementById('navHamburger');var navbar=document.getElementById('navbar');if(hamburger&&navbar){hamburger.addEventListener('click',function(){hamburger.setAttribute('aria-expanded',navbar.classList.contains('nav-mobile-open')?'true':'false');});}})();</script>
+<script id="iubenda-safe-hide-bar">
+window.addEventListener('load', function () {
+  function hideOnlyLargeIubendaBar() {
+    var all = Array.from(document.querySelectorAll('body *'));
+    all.forEach(function (el) {
+      var txt = (el.textContent || '').trim();
+      if (!txt) return;
+      if (txt.indexOf('Informativa sulla raccolta') !== -1) {
+        var target = el;
+        // climb to a likely banner container, but avoid tiny floating buttons
+        for (var i = 0; i < 6 && target && target.parentElement; i++) {
+          var style = window.getComputedStyle(target);
+          var rect = target.getBoundingClientRect();
+          var looksLikeBottomBar =
+            (style.position === 'fixed' || style.position === 'sticky' || target.parentElement === document.body) &&
+            rect.width > 300 &&
+            rect.height < 120 &&
+            rect.bottom >= (window.innerHeight - 30);
+
+          if (looksLikeBottomBar) {
+            target.style.display = 'none';
+            return;
+          }
+          target = target.parentElement;
+        }
+      }
+    });
+  }
+
+  hideOnlyLargeIubendaBar();
+  setTimeout(hideOnlyLargeIubendaBar, 800);
+  setTimeout(hideOnlyLargeIubendaBar, 1800);
+});
+</script>
+
+</body></html>
