@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Termini e condizioni | YouZen</title>
+  <meta name="description" content="Termini e condizioni del sito e dei servizi YouZen: uso del sito, area riservata, abbonamenti, rinnovi, rimborsi, responsabilità e legge applicabile.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.youzen.it/termini">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YouZen">
+  <meta property="og:title" content="Termini e condizioni | YouZen">
+  <meta property="og:description" content="Termini e condizioni del sito e dei servizi YouZen: uso del sito, area riservata, abbonamenti, rinnovi, rimborsi, responsabilità e legge applicabile.">
+  <meta property="og:url" content="https://www.youzen.it/termini">
+  <meta name="theme-color" content="#080e1f">
+  <style>
+:root{--bg:#080e1f;--panel:#0f172a;--panel-2:#111c34;--text:#e6edf3;--muted:#94a3b8;--border:rgba(255,255,255,.08);--orange:#f97316;--orange-2:#ea580c;--max:980px}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 700px at 20% -10%, rgba(34,197,94,.15), transparent 45%),radial-gradient(1000px 600px at 100% 0%, rgba(249,115,22,.18), transparent 40%),var(--bg);line-height:1.65}
+a{color:#ffb37a} a:hover{color:#ffd0ae} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+header{padding:28px 24px 8px}.topbar{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:800;letter-spacing:.02em;color:#fff;text-decoration:none}.back{color:var(--muted);text-decoration:none}.back:hover{color:#fff}
+.hero{padding:18px 24px 10px}.hero-card,.card{max-width:var(--max);margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:20px;padding:28px}
+h1{margin:0 0 8px;font-size:clamp(2rem,4vw,3rem);line-height:1.05}.lede{color:var(--muted);max-width:75ch}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.pill{display:inline-flex;padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:#cbd5e1;font-size:.95rem}
+main{padding:18px 24px 56px} h2{margin:0 0 10px;font-size:1.4rem} h3{margin:22px 0 8px;font-size:1.05rem}.card{margin-top:18px}.muted{color:var(--muted)} ul{padding-left:1.1rem} li+li{margin-top:6px} .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.note{border-left:3px solid var(--orange);padding-left:14px;color:#dbe5f0}.table{width:100%;border-collapse:collapse;margin-top:12px}.table th,.table td{padding:12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}.footer{max-width:var(--max);margin:0 auto;padding:0 24px 40px;color:var(--muted);font-size:.95rem}
+@media (max-width:760px){.grid{grid-template-columns:1fr}.hero-card,.card{padding:22px}.wrap,header,.hero,main,.footer{padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="https://www.youzen.it/">YouZen</a>
+      <a class="back" href="https://www.youzen.it/">← Torna al sito</a>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Termini e condizioni</h1>
+      <p class="lede">Testo personalizzato per il sito YouZen e per i servizi B2B collegati a richieste demo, area riservata e piani in abbonamento.</p>
+      <div class="meta">
+        <span class="pill">Ultimo aggiornamento: 19 marzo 2026</span>
+        <span class="pill">Titolare: YouZen di Luca Brighi</span>
+      </div>
+    </div>
+  </section>
+  <main>
+    
+<section class="card">
+  <h2>1. Ambito di applicazione</h2>
+  <p>I presenti Termini e Condizioni disciplinano l'accesso e l'uso del sito <strong>www.youzen.it</strong>, delle eventuali aree riservate, dei moduli di contatto, delle richieste di demo e, ove applicabile, dei servizi digitali offerti con il marchio YouZen. Il sito è rivolto principalmente a clienti <strong>business (B2B)</strong>.</p>
+  <p>Salvo diverso accordo scritto, l'invio di una richiesta tramite il sito non conclude automaticamente un contratto: costituisce una richiesta di informazioni, una richiesta di demo o l'avvio di una fase precontrattuale.</p>
+</section>
+<section class="card">
+  <h2>2. Titolare del sito e riferimenti</h2>
+  <table class="table">
+    <tr><th>Impresa</th><td>YouZen di Luca Brighi</td></tr>
+    <tr><th>Forma giuridica</th><td>Impresa individuale</td></tr>
+    <tr><th>P.IVA</th><td>04855440402</td></tr>
+    <tr><th>REA</th><td>RN - 446631</td></tr>
+    <tr><th>Sede</th><td>Via del Pino 13, 47923 Rimini (RN)</td></tr>
+    <tr><th>Email</th><td><a href="mailto:info@youzen.it">info@youzen.it</a></td></tr>
+    <tr><th>PEC</th><td><a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a></td></tr>
+  </table>
+</section>
+<section class="card">
+  <h2>3. Natura del servizio e richieste dal sito</h2>
+  <p>YouZen offre soluzioni software e servizi collegati alla gestione di contatti, richieste, appuntamenti, comunicazioni e processi operativi per aziende e studi. Le funzionalità effettivamente incluse dipendono dal piano scelto, dall'offerta commerciale pubblicata o dal preventivo concordato.</p>
+  <ul>
+    <li>Le informazioni presenti sul sito hanno natura informativa e commerciale.</li>
+    <li>I prezzi pubblicati, ove presenti, possono riferirsi a piani standard e non includere personalizzazioni, configurazioni, canoni di terze parti o attività extra progetto.</li>
+    <li>L'accesso a demo, preventivi, aree riservate o servizi può essere subordinato a verifica, approvazione tecnica e accettazione dell'offerta.</li>
+  </ul>
+</section>
+<section class="card">
+  <h2>4. Account, area riservata e credenziali</h2>
+  <p>Quando previsto, il cliente può ricevere credenziali per accedere ad aree riservate, dashboard o ambienti di gestione dedicati alla consultazione delle chiamate e delle interazioni collegate al servizio. L'utente è responsabile della riservatezza delle credenziali, delle attività compiute tramite il proprio account e dell'uso conforme del servizio da parte dei propri collaboratori autorizzati.</p>
+  <ul>
+    <li>È vietato condividere accessi con soggetti non autorizzati.</li>
+    <li>È vietato tentare accessi abusivi, scansioni, reverse engineering o interferenze tecniche sul sito o sui servizi.</li>
+    <li>YouZen può sospendere o disattivare accessi in caso di rischio sicurezza, inadempimento, uso illecito o violazione dei presenti Termini.</li>
+  </ul>
+</section>
+<section class="card">
+  <h2>5. Uso consentito del sito e del servizio</h2>
+  <p>L'utente si impegna a usare il sito e i servizi in modo lecito, corretto e conforme alla normativa applicabile. In particolare è vietato:</p>
+  <ul>
+    <li>utilizzare il sito o il servizio per spam, phishing, frodi o attività ingannevoli;</li>
+    <li>inserire dati falsi, contenuti illeciti, diffamatori o in violazione di diritti di terzi;</li>
+    <li>usare il servizio in violazione di norme su privacy, comunicazioni commerciali, consensi o contatti indesiderati;</li>
+    <li>riprodurre, copiare o sfruttare il sito oltre quanto strettamente necessario all'uso consentito.</li>
+  </ul>
+</section>
+<section class="card">
+  <h2>6. Corrispettivi, rinnovi e rimborsi</h2>
+  <p>Se l'utente sottoscrive un piano a pagamento, i corrispettivi, la periodicità, le funzionalità incluse, gli eventuali extra e le condizioni economiche applicabili sono indicati nell'offerta commerciale, nel checkout o nei documenti contrattuali.</p>
+  <div class="grid">
+    <div>
+      <h3>Abbonamenti e rinnovi</h3>
+      <p>Salvo diversa indicazione contrattuale, i piani in abbonamento hanno periodicità mensile e si rinnovano automaticamente per successivi periodi mensili, con addebito tramite il metodo di pagamento indicato dal cliente o concordato contrattualmente.</p>
+    </div>
+    <div>
+      <h3>Rimborsi e recesso</h3>
+      <p>Salvo diverso accordo scritto o diverso obbligo inderogabile di legge, i corrispettivi versati non sono rimborsabili. Il cliente può recedere o disdire il servizio secondo quanto previsto nell'offerta accettata o nelle condizioni economiche applicabili; in difetto di diversa previsione, la cessazione produce effetti alla fine del periodo mensile già pagato. In ambito B2B non si applica automaticamente il diritto di recesso previsto per i consumatori.</p>
+    </div>
+  </div>
+  <p class="note">Se vendi a soggetti non professionali o attivi un checkout consumer, questa sezione va rivista perché cambiano obblighi informativi e diritto di recesso.</p>
+</section>
+<section class="card">
+  <h2>7. Proprietà intellettuale</h2>
+  <p>Il marchio YouZen, il sito, il design, i testi, il software, la documentazione, i contenuti grafici e gli elementi distintivi restano di titolarità di YouZen o dei rispettivi aventi diritto. Nessuna disposizione dei presenti Termini trasferisce diritti di proprietà intellettuale all'utente, salvo licenza d'uso limitata e non esclusiva strettamente necessaria alla fruizione del servizio.</p>
+</section>
+<section class="card">
+  <h2>8. Contenuti e dati forniti dall'utente</h2>
+  <p>L'utente resta responsabile dei dati, dei testi, dei materiali, delle istruzioni operative e dei contenuti caricati o trasmessi tramite il sito o i servizi. L'utente dichiara di avere i diritti, i poteri e le basi giuridiche necessari per utilizzare tali contenuti e per farli trattare a YouZen o ai suoi fornitori.</p>
+</section>
+<section class="card">
+  <h2>9. Disponibilità del sito e limitazioni di responsabilità</h2>
+  <p>Il sito e i servizi vengono forniti secondo disponibilità. YouZen adotta misure ragionevoli per assicurare continuità, sicurezza e corretto funzionamento, ma non garantisce l'assenza assoluta di interruzioni, errori, ritardi, vulnerabilità o incompatibilità con sistemi di terzi. In particolare, il cliente riconosce che il servizio può dipendere anche da infrastrutture, API, operatori, browser, servizi cloud, piattaforme di messaggistica, email provider, gateway di pagamento e altri fornitori terzi, rispetto ai quali YouZen non assume obblighi di disponibilità illimitata.</p>
+  <ul>
+    <li>YouZen non risponde di danni indiretti, perdita di profitto, perdita di chance, perdita di dati o interruzioni imputabili a fattori esterni, terzi fornitori, uso non conforme o indisponibilità di reti e servizi non sotto il suo controllo.</li>
+    <li>Nei limiti consentiti dalla legge, l'eventuale responsabilità contrattuale complessiva di YouZen, per i servizi a pagamento, non potrà eccedere gli importi corrisposti dal cliente nei 12 mesi precedenti il fatto che ha generato la contestazione.</li>
+  </ul>
+</section>
+<section class="card">
+  <h2>10. Privacy e protezione dei dati</h2>
+  <p>Il trattamento dei dati personali effettuato tramite il sito è disciplinato dalla <a href="/privacy">Privacy Policy</a> e, per i diritti dell'interessato, dalla pagina <a href="/gdpr">GDPR</a>. L'utente resta responsabile, per quanto di propria competenza, del rispetto delle norme applicabili ai dati che conferisce o fa trattare nell'ambito del servizio.</p>
+</section>
+<section class="card">
+  <h2>11. Sospensione, modifiche e cessazione</h2>
+  <p>YouZen può aggiornare il sito, modificare funzionalità, prezzi, documentazione o presenti Termini per ragioni tecniche, normative, organizzative o commerciali. Le versioni aggiornate saranno pubblicate su questa pagina con data di ultimo aggiornamento. In caso di violazione dei Termini o rischio concreto per il servizio, YouZen può sospendere temporaneamente accessi e operatività.</p>
+</section>
+<section class="card">
+  <h2>12. Legge applicabile e foro competente</h2>
+  <p>I presenti Termini sono disciplinati dalla legge italiana. Per le controversie relative all'uso del sito o dei servizi, salvo inderogabili disposizioni di legge, è competente in via esclusiva il foro del luogo in cui ha sede il titolare del sito.</p>
+</section>
+
+  </main>
+  <div class="footer wrap">YouZen di Luca Brighi · P.IVA 04855440402 · Via del Pino 13, 47923 Rimini (RN) · <a href="mailto:info@youzen.it">info@youzen.it</a> · PEC: <a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a></div>
+</body>
+</html>
