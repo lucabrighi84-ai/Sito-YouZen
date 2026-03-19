@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diritti privacy e GDPR | YouZen</title>
+  <meta name="description" content="Pagina GDPR di YouZen con diritti dell’interessato, tempi di risposta, modalità di richiesta e tempi di conservazione principali.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.youzen.it/gdpr">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YouZen">
+  <meta property="og:title" content="Diritti privacy e GDPR | YouZen">
+  <meta property="og:description" content="Pagina GDPR di YouZen con diritti dell’interessato, tempi di risposta, modalità di richiesta e tempi di conservazione principali.">
+  <meta property="og:url" content="https://www.youzen.it/gdpr">
+  <meta name="theme-color" content="#080e1f">
+  <style>
+:root{--bg:#080e1f;--panel:#0f172a;--panel-2:#111c34;--text:#e6edf3;--muted:#94a3b8;--border:rgba(255,255,255,.08);--orange:#f97316;--orange-2:#ea580c;--max:980px}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 700px at 20% -10%, rgba(34,197,94,.15), transparent 45%),radial-gradient(1000px 600px at 100% 0%, rgba(249,115,22,.18), transparent 40%),var(--bg);line-height:1.65}
+a{color:#ffb37a} a:hover{color:#ffd0ae} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+header{padding:28px 24px 8px}.topbar{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:800;letter-spacing:.02em;color:#fff;text-decoration:none}.back{color:var(--muted);text-decoration:none}.back:hover{color:#fff}
+.hero{padding:18px 24px 10px}.hero-card,.card{max-width:var(--max);margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:20px;padding:28px}
+h1{margin:0 0 8px;font-size:clamp(2rem,4vw,3rem);line-height:1.05}.lede{color:var(--muted);max-width:75ch}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.pill{display:inline-flex;padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:#cbd5e1;font-size:.95rem}
+main{padding:18px 24px 56px} h2{margin:0 0 10px;font-size:1.4rem} h3{margin:22px 0 8px;font-size:1.05rem}.card{margin-top:18px}.muted{color:var(--muted)} ul{padding-left:1.1rem} li+li{margin-top:6px} .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.note{border-left:3px solid var(--orange);padding-left:14px;color:#dbe5f0}.table{width:100%;border-collapse:collapse;margin-top:12px}.table th,.table td{padding:12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}.footer{max-width:var(--max);margin:0 auto;padding:0 24px 40px;color:var(--muted);font-size:.95rem}
+@media (max-width:760px){.grid{grid-template-columns:1fr}.hero-card,.card{padding:22px}.wrap,header,.hero,main,.footer{padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="https://www.youzen.it/">YouZen</a>
+      <a class="back" href="https://www.youzen.it/">← Torna al sito</a>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Diritti privacy e GDPR</h1>
+      <p class="lede">Pagina operativa per esercitare i diritti previsti dal GDPR nei confronti di YouZen, con contatti, tempi di risposta e indicazioni pratiche.</p>
+      <div class="meta">
+        <span class="pill">Ultimo aggiornamento: 19 marzo 2026</span>
+        <span class="pill">Titolare: YouZen di Luca Brighi</span>
+      </div>
+    </div>
+  </section>
+  <main>
+    
+<section class="card">
+  <h2>1. Chi è il titolare del trattamento</h2>
+  <table class="table">
+    <tr><th>Titolare</th><td>YouZen di Luca Brighi</td></tr>
+    <tr><th>Sede</th><td>Via del Pino 13, 47923 Rimini (RN)</td></tr>
+    <tr><th>P.IVA</th><td>04855440402</td></tr>
+    <tr><th>Email privacy</th><td><a href="mailto:luca@youzen.it">luca@youzen.it</a></td></tr>
+    <tr><th>PEC</th><td><a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a></td></tr>
+    <tr><th>Email ordinaria</th><td><a href="mailto:info@youzen.it">info@youzen.it</a></td></tr>
+    <tr><th>Tempo ordinario di risposta</th><td>Entro 1 mese dal ricevimento della richiesta, salvo proroghe consentite dalla legge</td></tr>
+  </table>
+</section>
+<section class="card">
+  <h2>2. A cosa serve questa pagina</h2>
+  <p>Questa pagina spiega in modo pratico come esercitare i diritti previsti dal Regolamento (UE) 2016/679 (“GDPR”) nei confronti di YouZen. Non sostituisce la <a href="/privacy">Privacy Policy</a>, ma la integra sul piano operativo.</p>
+</section>
+<section class="card">
+  <h2>3. I tuoi diritti</h2>
+  <div class="grid">
+    <div>
+      <h3>Accesso</h3>
+      <p>Puoi chiedere conferma che sia o meno in corso un trattamento di dati personali che ti riguarda e ottenere copia dei dati trattati, nei limiti previsti dalla legge.</p>
+      <h3>Rettifica</h3>
+      <p>Puoi chiedere la correzione o l'aggiornamento di dati inesatti o incompleti.</p>
+      <h3>Cancellazione</h3>
+      <p>Puoi chiedere la cancellazione dei dati quando ricorrono i presupposti di legge e non sussistono obblighi di conservazione o altri motivi legittimi che ne impongano il mantenimento.</p>
+      <h3>Limitazione</h3>
+      <p>Puoi chiedere la limitazione del trattamento nei casi previsti dal GDPR.</p>
+    </div>
+    <div>
+      <h3>Opposizione</h3>
+      <p>Puoi opporti al trattamento fondato sul legittimo interesse del titolare quando ricorrono le condizioni previste dalla legge.</p>
+      <h3>Portabilità</h3>
+      <p>Puoi ricevere i dati forniti in un formato strutturato, di uso comune e leggibile da dispositivo automatico, quando il trattamento si basa sul consenso o su un contratto ed è effettuato con mezzi automatizzati.</p>
+      <h3>Revoca del consenso</h3>
+      <p>Quando il trattamento si basa sul consenso, puoi revocarlo in qualsiasi momento senza pregiudicare la liceità del trattamento precedente alla revoca.</p>
+      <h3>Reclamo</h3>
+      <p>Puoi proporre reclamo al Garante per la protezione dei dati personali o all'autorità competente del tuo luogo di residenza, se ritieni che il trattamento violi la normativa applicabile.</p>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <h2>4. Come esercitare i tuoi diritti</h2>
+  <p>Per esercitare i tuoi diritti puoi inviare una richiesta a <a href="mailto:luca@youzen.it">luca@youzen.it</a>. Per velocizzare la gestione, indica almeno:</p>
+  <ul>
+    <li>nome e recapito con cui hai interagito con YouZen;</li>
+    <li>diritto che vuoi esercitare;</li>
+    <li>descrizione chiara della richiesta;</li>
+    <li>eventuali riferimenti utili per identificare la pratica o il rapporto (ad esempio email usata, azienda, data del contatto).</li>
+  </ul>
+  <p>YouZen può chiedere informazioni aggiuntive per verificare l'identità del richiedente, quando necessario per prevenire accessi indebiti ai dati.</p>
+</section>
+<section class="card">
+  <h2>5. Tempi di risposta</h2>
+  <p>Le richieste vengono gestite, di regola, entro <strong>1 mese</strong> dal ricevimento. In caso di richieste particolarmente complesse o numerose, il termine può essere prorogato nei limiti consentiti dal GDPR; in tal caso l'interessato riceverà comunicazione motivata.</p>
+</section>
+<section class="card">
+  <h2>6. Dati trattati e principali tempi di conservazione</h2>
+  <p>Tra i dati trattati possono rientrare anche informazioni connesse all'area riservata clienti, utilizzata per consultare chiamate e interazioni collegate al servizio.</p>
+  <table class="table">
+    <tr><th>Categoria</th><th>Tempo indicativo</th></tr>
+    <tr><td>Richieste di contatto o demo</td><td>fino a 12 mesi</td></tr>
+    <tr><td>Lead non convertiti in CRM</td><td>fino a 12 mesi</td></tr>
+    <tr><td>Dati clienti operativi</td><td>durata del rapporto + fino a 12 mesi</td></tr>
+    <tr><td>Dati amministrativi, contabili e fiscali</td><td>fino a 10 anni o per il diverso termine previsto dalla legge</td></tr>
+    <tr><td>Log tecnici e sicurezza</td><td>fino a 6 mesi</td></tr>
+    <tr><td>Dati analytics</td><td>fino a 14 mesi</td></tr>
+    <tr><td>Trascrizioni operative relative a chiamate o interazioni cliente</td><td>fino a 6 mesi, salvo diversa necessità contrattuale o difensiva</td></tr>
+  </table>
+</section>
+<section class="card">
+  <h2>7. Quando una richiesta può essere limitata o respinta</h2>
+  <p>Alcune richieste potrebbero essere limitate o non accolte integralmente quando:</p>
+  <ul>
+    <li>i dati devono essere conservati per obblighi di legge, fiscali, contabili o difensivi;</li>
+    <li>la richiesta è manifestamente infondata, eccessiva o ripetitiva;</li>
+    <li>non è possibile identificare con sufficiente certezza il richiedente;</li>
+    <li>l'accoglimento integrale pregiudicherebbe diritti e libertà altrui.</li>
+  </ul>
+</section>
+<section class="card">
+  <h2>8. Categorie di destinatari</h2>
+  <p>I dati possono essere trattati, nei limiti delle finalità dichiarate, da collaboratori autorizzati e da fornitori che supportano l'operatività di YouZen, come servizi di hosting, analytics, strumenti di automazione e integrazione, comunicazione, calendario, pagamenti e assistenza tecnica. Ulteriori dettagli sono disponibili nella <a href="/privacy">Privacy Policy</a> o possono essere richiesti al titolare nei limiti consentiti dalla normativa applicabile.</p>
+</section>
+<section class="card">
+  <h2>9. Contatti</h2>
+  <p>Per richieste privacy o GDPR: <a href="mailto:luca@youzen.it">luca@youzen.it</a><br>PEC: <a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a></p>
+</section>
+
+  </main>
+  <div class="footer wrap">YouZen di Luca Brighi · P.IVA 04855440402 · Via del Pino 13, 47923 Rimini (RN) · <a href="mailto:info@youzen.it">info@youzen.it</a> · Privacy: <a href="mailto:luca@youzen.it">luca@youzen.it</a> · PEC: <a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a></div>
+</body>
+</html>
