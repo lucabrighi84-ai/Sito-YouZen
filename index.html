@@ -24,7 +24,7 @@
   <meta content="Segreteria AI omnicanale per chiamate, WhatsApp, appuntamenti e assistenza clienti per studi, cliniche, saloni, negozi e PMI." property="og:description"/>
   <meta content="it_IT" property="og:locale"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <link href="https://youzen.ai/" rel="canonical"/>
+  <link href="https://youzen.it/" rel="canonical"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Sans:wght@300;400;500;600;700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -3968,6 +3968,198 @@ footer.site-footer .ft-made span{
     font-size: 15px !important;
   }
 }
+  
+/* ── Pricing help popups ── */
+.sec-07 .cg-row-label,
+.sec-07 .cg-cell.cg-text,
+.sec-07 .mob-features li{
+  position: relative;
+}
+.sec-07 .cg-row-label{
+  justify-content: space-between;
+  gap: 10px;
+}
+.sec-07 .cg-cell.cg-text.yz-help-cell{
+  gap: 8px;
+}
+.sec-07 .mob-features li.yz-help-feature{
+  align-items: center;
+  gap: 10px;
+}
+.sec-07 .yz-help-actions{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.sec-07 .cg-cell.cg-text .yz-help-actions{
+  margin-left: 0;
+}
+.sec-07 .yz-help-trigger{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+  color: #cbd5e1;
+  cursor: pointer;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  line-height: 1;
+  transition: transform .2s, border-color .2s, background .2s, color .2s;
+}
+.sec-07 .yz-help-trigger:hover,
+.sec-07 .yz-help-trigger:focus-visible{
+  background: rgba(249,115,22,.12);
+  border-color: rgba(249,115,22,.4);
+  color: #fff;
+  outline: none;
+  transform: translateY(-1px);
+}
+.sec-07 .yz-help-trigger--chip{
+  width: auto;
+  min-width: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+.yz-help-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+.yz-help-modal.is-open{
+  display: block;
+}
+.yz-help-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(2,6,23,.72);
+  backdrop-filter: blur(10px);
+}
+.yz-help-modal__dialog{
+  position: relative;
+  width: min(560px, calc(100vw - 32px));
+  margin: min(10vh, 72px) auto 24px;
+  background: #081226;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 24px;
+  box-shadow: 0 32px 80px rgba(0,0,0,.4);
+  overflow: hidden;
+}
+.yz-help-modal__header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 24px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.yz-help-modal__eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #f97316;
+}
+.yz-help-modal__eyebrow::before{
+  content: "";
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #f97316;
+}
+.yz-help-modal__title{
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: #fff;
+}
+.yz-help-modal__close{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform .2s, border-color .2s, background .2s, color .2s;
+}
+.yz-help-modal__close:hover,
+.yz-help-modal__close:focus-visible{
+  background: rgba(249,115,22,.12);
+  border-color: rgba(249,115,22,.4);
+  color: #fff;
+  outline: none;
+  transform: translateY(-1px);
+}
+.yz-help-modal__body{
+  padding: 22px 24px 26px;
+}
+.yz-help-modal__text{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+.yz-help-modal__footer{
+  padding: 0 24px 24px;
+}
+.yz-help-modal__hint{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: #94a3b8;
+}
+.yz-help-modal__hint::before{
+  content: "ⓘ";
+  color: #f97316;
+}
+
+@media (max-width: 640px){
+  .yz-help-modal{
+    padding: 12px;
+  }
+  .yz-help-modal__dialog{
+    width: 100%;
+    margin: auto 0 0;
+    border-radius: 24px 24px 18px 18px;
+  }
+  .yz-help-modal__header{
+    padding: 20px 18px 16px;
+  }
+  .yz-help-modal__body{
+    padding: 18px 18px 22px;
+  }
+  .yz-help-modal__footer{
+    padding: 0 18px 20px;
+  }
+  .yz-help-modal__text{
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}
+
   </style>
   <script type="application/ld+json">
    {
@@ -3979,7 +4171,7 @@ footer.site-footer .ft-made span{
     "inLanguage":"it-IT",
     "description":"Segreteria AI omnicanale per chiamate, WhatsApp, prenotazioni e gestione richieste clienti.",
     "offers":{"@type":"Offer","priceCurrency":"EUR","availability":"https://schema.org/InStock"},
-    "provider":{"@type":"Organization","name":"YouZen","url":"https://youzen.ai/"}
+    "provider":{"@type":"Organization","name":"YouZen","url":"https://youzen.it/"}
   }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
@@ -6635,7 +6827,7 @@ section#sec-02,
   <meta content="#080e1f" name="theme-color"/>
   <meta content="telephone=no" name="format-detection"/>
   <meta content="YouZen" property="og:site_name"/>
-  <meta content="https://youzen.ai/" property="og:url"/>
+  <meta content="https://youzen.it/" property="og:url"/>
   <meta content="YouZen | Segreteria AI per chiamate, WhatsApp e prenotazioni" name="twitter:title"/>
   <meta content="Segreteria AI per chiamate, WhatsApp, appuntamenti e assistenza clienti per aziende e studi." name="twitter:description"/>
   <style id="youzen-seo-accessibility-enhancements">
@@ -6643,126 +6835,6 @@ section#sec-02,
   </style>
   <style id="final-mobile-hero-fixes">
    /* Final cleanup — hero mobile + remove sec-09 leftovers */
-@media (max-width: 768px) {
-  .sec-01 .hero {
-    padding-top: 104px !important;
-    padding-bottom: 28px !important;
-    min-height: auto !important;
-  }
-
-  .sec-01 .hero-inner,
-  .hero-inner {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  .sec-01 .hero-grid,
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-    align-items: start !important;
-  }
-
-  .sec-01 .hero-left,
-  .sec-01 .hero-form,
-  .sec-01 .hero-right {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  .sec-01 .hero-title,
-  .hero-title {
-    max-width: 100% !important;
-    width: 100% !important;
-    font-size: clamp(54px, 14vw, 72px) !important;
-    line-height: .92 !important;
-    letter-spacing: -0.05em !important;
-    margin-bottom: 18px !important;
-    word-break: normal !important;
-    overflow-wrap: normal !important;
-    hyphens: none !important;
-    text-wrap: balance !important;
-  }
-
-  .sec-01 .hero-title .line-1,
-  .sec-01 .hero-title .line-2,
-  .sec-01 .hero-title .line-3,
-  .hero-title .line-1,
-  .hero-title .line-2,
-  .hero-title .line-3 {
-    display: block !important;
-    margin-top: 0 !important;
-  }
-
-  .sec-01 .hero-sub,
-  .hero-sub {
-    max-width: 100% !important;
-    font-size: clamp(18px, 4.9vw, 22px) !important;
-    line-height: 1.45 !important;
-    margin-bottom: 18px !important;
-  }
-
-  .hero-quickwins {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    overflow: visible !important;
-    gap: 10px !important;
-    margin: 18px 0 16px !important;
-  }
-
-  .hero-quickwins .hero-badge {
-    max-width: 100% !important;
-    width: auto !important;
-    padding: 8px 12px 8px 10px !important;
-    gap: 8px !important;
-    white-space: normal !important;
-  }
-
-  .hero-quickwins .hero-badge .badge-text {
-    font-size: 12px !important;
-    line-height: 1.25 !important;
-    letter-spacing: .02em !important;
-    white-space: normal !important;
-  }
-
-  .sec-01 .hero-trust {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    margin-top: 8px !important;
-  }
-
-  .sec-01 .trust-item {
-    width: 100% !important;
-    min-width: 0 !important;
-    line-height: 1.4 !important;
-  }
-
-  .sec-01 .trust-sep {
-    display: none !important;
-  }
-
-  .sec-01 .hero-proof {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-  }
-
-  .sec-01 .hero-proof-copy {
-    font-size: 13px !important;
-    line-height: 1.45 !important;
-  }
-
-  .sec-01 .demo-card,
-  .demo-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-}
-
 /* Remove hidden target spacing if browser cached anchors */
 #non-youzen,
 .sec-09 {
@@ -7177,6 +7249,143 @@ section {
    }
   </style>
 
+ 
+  <style id="hero-form-prefix-and-mobile-fixes">
+   .form-alert{
+    display:block;
+    margin:0 0 14px;
+    padding:12px 14px;
+    border:1px solid rgba(239,68,68,.28);
+    border-radius:12px;
+    background:rgba(239,68,68,.08);
+    color:#fecaca;
+    font-size:12px;
+    line-height:1.5;
+   }
+   .form-alert[hidden]{
+    display:none !important;
+   }
+   .sec-01 .field input[aria-invalid="true"],
+   .sec-01 .field select[aria-invalid="true"],
+   .sec-01 .privacy-row[aria-invalid="true"]{
+    border-color:rgba(239,68,68,.5) !important;
+    background:rgba(239,68,68,.06) !important;
+   }
+   .field-wrap--phone .field-prefix{
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:40px;
+    height:28px;
+    padding:0 10px;
+    border-radius:8px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    color:rgba(255,255,255,.8);
+    font-family:"DM Mono", monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+    pointer-events:none;
+    z-index:1;
+   }
+   .field-wrap--phone input{
+    padding-left:66px !important;
+   }
+   .field-wrap--phone .field-check{
+    right:14px;
+   }
+
+   
+
+   @media (max-width: 560px){
+    .field-wrap--phone .field-prefix{
+      left:12px;
+      min-width:38px;
+      padding:0 8px;
+      font-size:11px;
+    }
+    .field-wrap--phone input{
+      padding-left:62px !important;
+    }
+    .form-alert{
+      font-size:11.5px;
+      padding:11px 12px;
+    }
+   }
+  </style>
+
+ 
+  <style id="youzen-user-request-fixes">
+   /* Modifiche richieste: hero mobile + titoli fasi più grandi */
+   @media (max-width: 820px) {
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+    }
+    .sec-01,
+    .sec-01 .hero,
+    .sec-01 .hero-inner,
+    .sec-01 .hero-grid,
+    .sec-01 .hero-left,
+    .sec-01 .demo-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      transform: none !important;
+      box-sizing: border-box !important;
+    }
+    .sec-01 .hero-inner,
+    .hero-inner {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    .sec-01 .hero-grid {
+      gap: 24px !important;
+      justify-items: stretch !important;
+    }
+    .sec-01 .hero-grid > * {
+      min-width: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      justify-self: stretch !important;
+    }
+    .sec-01 .hero-badge,
+    .sec-01 .hero-title,
+    .sec-01 .hero-sub,
+    .sec-01 .hero-trust,
+    .sec-01 .hero-proof {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 100% !important;
+    }
+   }
+
+   .sec-06 .yzs-step h3,
+   .sec-06 .yzs-step h4 {
+    font-family: "Syne", sans-serif !important;
+    font-size: clamp(38px, 5.8vw, 68px) !important;
+    line-height: .95 !important;
+    letter-spacing: -.05em !important;
+    max-width: 10ch !important;
+    margin: 0 0 14px !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+   }
+
+   @media (max-width: 820px) {
+    .sec-06 .yzs-step h3,
+    .sec-06 .yzs-step h4 {
+      font-size: clamp(34px, 10vw, 52px) !important;
+      max-width: 100% !important;
+    }
+   }
+  </style>
+
  </head>
  <body>
   <a class="skip-link" href="#main-content">
@@ -7482,6 +7691,8 @@ section {
         <form action="https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn" class="demo-form" id="demoForm" method="post" novalidate="">
          <!-- Honeypot anti-spam: campo nascosto, i bot lo compilano, gli umani no -->
          <input aria-hidden="true" autocomplete="off" id="f-honeypot" name="website" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" tabindex="-1" type="text"/>
+         <div aria-live="polite" class="form-alert" hidden="" id="formAlert" role="alert">
+         </div>
          <!-- Row 1: Nome + Email -->
          <div class="field-row">
           <div class="field">
@@ -7492,7 +7703,7 @@ section {
             Nome
            </label>
            <div class="field-wrap">
-            <input autocomplete="name" id="f-nome" name="name" placeholder="Mario Rossi" type="text"/>
+            <input autocomplete="name" id="f-nome" name="name" placeholder="Mario Rossi" required="" type="text"/>
             <span class="field-check">
              &checkmark;
             </span>
@@ -7506,7 +7717,7 @@ section {
             Email
            </label>
            <div class="field-wrap">
-            <input autocomplete="email" id="f-email" name="email" placeholder="mario@studio.it" type="email"/>
+            <input autocomplete="email" id="f-email" name="email" placeholder="mario@studio.it" required="" type="email"/>
             <span class="field-check">
              &checkmark;
             </span>
@@ -7522,8 +7733,11 @@ section {
             </span>
             Telefono
            </label>
-           <div class="field-wrap">
-            <input autocomplete="tel" id="f-tel" name="phone_number" placeholder="+39 333 000 0000" type="tel"/>
+           <div class="field-wrap field-wrap--phone">
+            <span aria-hidden="true" class="field-prefix">
+             +39
+            </span>
+            <input autocomplete="tel-national" id="f-tel" inputmode="numeric" maxlength="12" name="phone_number" placeholder="333 000 0000" required="" type="tel"/>
             <span class="field-check">
              &checkmark;
             </span>
@@ -7536,7 +7750,7 @@ section {
             </span>
             Settore
            </label>
-           <select id="f-settore" name="settore">
+           <select id="f-settore" name="settore" required="">
             <option disabled="" selected="" value="">
              Seleziona&hellip;
             </option>
@@ -9725,33 +9939,6 @@ tbody tr:hover .td-good {
         Illimitati
        </div>
        <div class="cg-row-label">
-        Numero VoIP dedicato
-       </div>
-       <div class="cg-cell cg-starter">
-        <span class="feat-icon feat-icon--no">
-         <svg fill="none" viewbox="0 0 12 12">
-          <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-          </path>
-         </svg>
-        </span>
-       </div>
-       <div class="cg-cell cg-pro">
-        <span class="feat-icon feat-icon--yes">
-         <svg fill="none" viewbox="0 0 12 12">
-          <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-          </path>
-         </svg>
-        </span>
-       </div>
-       <div class="cg-cell cg-enterprise">
-        <span class="feat-icon feat-icon--yes">
-         <svg fill="none" viewbox="0 0 12 12">
-          <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-          </path>
-         </svg>
-        </span>
-       </div>
-       <div class="cg-row-label">
         Agente AI su sito web
        </div>
        <div class="cg-cell cg-starter">
@@ -9948,364 +10135,9 @@ tbody tr:hover .td-good {
          </div>
         </div>
         <ul class="mob-features">
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Chiamate inbound gestite
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Dashboard dedicata
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Integrazioni calendario
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Intake + recap WhatsApp
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Supporto via email
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          1 agente AI
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Notifiche WhatsApp
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Numero VoIP dedicato
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Agente AI su sito web
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Campagne outbound / WhatsApp
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Integrazioni custom, multi-sede
-         </li>
-        </ul>
-        <div class="mob-cta">
-         <a class="plan-cta starter-cta" href="#">
-          Inizia con Starter
-         </a>
-         <div class="plan-note">
-          Nessuna carta per il trial
-         </div>
-        </div>
-       </div>
-       <!-- Pro mobile -->
-       <div class="mob-card mob-card--pro">
-        <div class="mob-setup mob-setup--pro">
-         <div>
-          <div class="mob-setup-label">
-           Setup + onboarding
-          </div>
-          <div class="mob-setup-sub">
-           una tantum &middot; ci pensiamo noi
-          </div>
-         </div>
-         <div class="mob-setup-price">
-          &euro;500
-         </div>
-        </div>
-        <div class="mob-header">
-         <div class="mob-popular">
-          Pi&ugrave; scelto
-         </div>
-         <span class="plan-badge pro">
-          Pro
-         </span>
-         <div class="mob-price" id="mob-price-pro">
-          &euro;&mdash;
-          <span class="plan-period">
-           /mese
-          </span>
-         </div>
-         <div class="plan-base-info" id="mob-base-pro">
-         </div>
-         <div class="mob-desc">
-          Per chi ha capito che il proprio tempo vale pi&ugrave; di &euro;0,30 al minuto.
-         </div>
-        </div>
-        <ul class="mob-features">
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Chiamate inbound gestite
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Dashboard dedicata
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Integrazioni calendario
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Intake + recap + prenotazione
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Notifiche WhatsApp
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Supporto prioritario
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          2 agenti AI
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Numero VoIP dedicato
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Agente AI su sito web
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Campagne outbound / WhatsApp
-         </li>
-         <li class="no">
-          <span class="feat-icon feat-icon--no">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M3 3l6 6M9 3l-6 6" stroke-linecap="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Integrazioni custom, multi-sede
-         </li>
-        </ul>
-        <div class="mob-cta">
-         <a class="plan-cta pro-cta" href="#">
-          Inizia con Pro
-         </a>
-         <div class="plan-note">
-          Nessuna carta per il trial
-         </div>
-        </div>
-       </div>
-       <!-- Enterprise mobile -->
-       <div class="mob-card mob-card--enterprise">
-        <div class="mob-setup mob-setup--enterprise">
-         <div>
-          <div class="mob-setup-label">
-           Setup + onboarding full
-          </div>
-          <div class="mob-setup-sub">
-           tanto lo sai gi&agrave; che non &egrave; &euro;500
-          </div>
-         </div>
-         <div class="mob-setup-price">
-          Su preventivo
-         </div>
-        </div>
-        <div class="mob-header">
-         <span class="plan-badge enterprise">
-          Enterprise
-         </span>
-         <div class="mob-price" id="mob-price-enterprise">
-          &euro;&mdash;
-          <span class="plan-period">
-           /mese
-          </span>
-         </div>
-         <div class="plan-base-info" id="mob-base-enterprise">
-         </div>
-         <div class="mob-desc">
-          Per le strutture grandi che vogliono tutto.
-         </div>
-        </div>
-        <ul class="mob-features">
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Chiamate inbound gestite
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Dashboard dedicata
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Integrazioni calendario
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Intake + recap + prenotazione
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Notifiche WhatsApp
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Account manager dedicato
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Agenti AI illimitati
-         </li>
-         <li>
-          <span class="feat-icon feat-icon--yes">
-           <svg fill="none" viewbox="0 0 12 12">
-            <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-            </path>
-           </svg>
-          </span>
-          Numero VoIP dedicato
-         </li>
-         <li>
+
+
+<li>
           <span class="feat-icon feat-icon--yes">
            <svg fill="none" viewbox="0 0 12 12">
             <path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
@@ -11016,71 +10848,164 @@ tbody tr:hover .td-good {
   </script>
   <script>
    /* ── Live validation ── */
-const nome  = document.getElementById('f-nome');
+const nome = document.getElementById('f-nome');
 const email = document.getElementById('f-email');
-const tel   = document.getElementById('f-tel');
-
-nome.addEventListener('input', () => {
-  const ok = nome.value.trim().length >= 2;
-  nome.classList.toggle('valid', ok);
-});
-
-email.addEventListener('input', () => {
-  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-  email.classList.toggle('valid', ok);
-});
-
-tel.addEventListener('input', () => {
-  const cleaned = tel.value.replace(/\D/g, '');
-  const ok = cleaned.length >= 9;
-  tel.classList.toggle('valid', ok);
-});
-
-/* ── CTA loading / submit ── */
-const form    = document.getElementById('demoForm');
-const btn     = document.getElementById('ctaBtn');
+const tel = document.getElementById('f-tel');
+const settore = document.getElementById('f-settore');
+const privacy = document.getElementById('privacy');
+const form = document.getElementById('demoForm');
+const btn = document.getElementById('ctaBtn');
 const success = document.getElementById('formSuccess');
+const alertBox = document.getElementById('formAlert');
+
 // Anti-spam: timestamp caricamento pagina
 const _formLoadTime = Date.now();
 
+function setFieldState(field, isValid) {
+  if (!field) return;
+  field.classList.toggle('valid', Boolean(isValid));
+  field.setAttribute('aria-invalid', String(!isValid));
+}
+
+function sanitizePhoneValue(value) {
+  let digits = String(value || '').replace(/\D/g, '');
+  if (digits.startsWith('39') && digits.length > 10) {
+    digits = digits.slice(2);
+  }
+  return digits.slice(0, 10);
+}
+
+function formatPhoneValue(value) {
+  const digits = sanitizePhoneValue(value);
+  const parts = [];
+  if (digits.length > 0) parts.push(digits.slice(0, 3));
+  if (digits.length > 3) parts.push(digits.slice(3, 6));
+  if (digits.length > 6) parts.push(digits.slice(6, 10));
+  return parts.join(' ');
+}
+
+function validateName() {
+  const ok = nome.value.trim().length >= 2;
+  setFieldState(nome, ok);
+  return ok;
+}
+
+function validateEmail() {
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+  setFieldState(email, ok);
+  return ok;
+}
+
+function validatePhone() {
+  const digits = sanitizePhoneValue(tel.value);
+  const ok = digits.length >= 9;
+  setFieldState(tel, ok);
+  return ok;
+}
+
+function validateSettore() {
+  const ok = settore.value !== '';
+  settore.setAttribute('aria-invalid', String(!ok));
+  return ok;
+}
+
+function validatePrivacy() {
+  const ok = privacy.checked;
+  const privacyRow = document.querySelector('.privacy-row');
+  if (privacyRow) {
+    privacyRow.setAttribute('aria-invalid', String(!ok));
+  }
+  return ok;
+}
+
+function hideFormAlert() {
+  if (!alertBox) return;
+  alertBox.hidden = true;
+  alertBox.textContent = '';
+}
+
+function showFormAlert(message) {
+  if (!alertBox) return;
+  alertBox.textContent = message;
+  alertBox.hidden = false;
+}
+
+function getMissingFields() {
+  const missing = [];
+  if (!validateName()) missing.push('nome');
+  if (!validateEmail()) missing.push('email');
+  if (!validatePhone()) missing.push('telefono');
+  if (!validateSettore()) missing.push('settore');
+  if (!validatePrivacy()) missing.push('consenso privacy');
+  return missing;
+}
+
+nome.addEventListener('input', () => {
+  validateName();
+  hideFormAlert();
+});
+
+email.addEventListener('input', () => {
+  validateEmail();
+  hideFormAlert();
+});
+
+tel.addEventListener('input', () => {
+  tel.value = formatPhoneValue(tel.value);
+  validatePhone();
+  hideFormAlert();
+});
+
+settore.addEventListener('change', function() {
+  this.style.color = '#fff';
+  validateSettore();
+  hideFormAlert();
+});
+
+privacy.addEventListener('change', () => {
+  validatePrivacy();
+  hideFormAlert();
+});
+
+/* ── CTA loading / submit ── */
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  // Anti-spam 1: honeypot — se compilato è un bot
   const honeypot = document.getElementById('f-honeypot');
   if (honeypot && honeypot.value.trim() !== '') return;
-
-  // Anti-spam 2: throttle — se inviato entro 2 secondi dal caricamento è un bot
   if (Date.now() - _formLoadTime < 2000) return;
 
-  // Basic check
-  const privacyOk = document.getElementById('privacy').checked;
-  const settoreOk = document.getElementById('f-settore').value !== '';
+  const missingFields = getMissingFields();
 
-  if (!nome.classList.contains('valid')) { shake(nome); return; }
-  if (!email.classList.contains('valid')) { shake(email); return; }
-  if (!privacyOk) { shake(document.querySelector('.privacy-row')); return; }
+  if (missingFields.length) {
+    showFormAlert(`Compila tutti i campi obbligatori: ${missingFields.join(', ')}.`);
+    const firstInvalid = form.querySelector('[aria-invalid="true"]');
+    if (firstInvalid) {
+      shake(firstInvalid.closest('.privacy-row') || firstInvalid);
+      firstInvalid.focus({ preventScroll: false });
+    }
+    return;
+  }
 
-  // Loading state
+  hideFormAlert();
+
   btn.disabled = true;
   btn.style.transform = 'scale(.98)';
   btn.querySelector('.cta-main').textContent = 'Invio in corso…';
   btn.querySelector('.cta-phone-icon').style.animation = 'phone-ring .4s linear infinite';
 
-  // Raccoglie i dati del form
+  const phoneDigits = sanitizePhoneValue(tel.value);
   const payload = {
-    nome:    document.getElementById('f-nome').value.trim(),
-    email:   document.getElementById('f-email').value.trim(),
-    telefono: document.getElementById('f-tel')?.value.trim() || '',
-    settore: document.getElementById('f-settore').value,
-    fonte:   'youzen.it – form hero',
+    nome: document.getElementById('f-nome').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    telefono: phoneDigits ? `+39 ${phoneDigits}` : '',
+    settore: settore.value,
+    fonte: 'youzen.it – form hero',
     timestamp: new Date().toISOString()
   };
 
   const WEBHOOK_URL = form.getAttribute('action') || 'https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn';
 
-  // Usiamo un hidden iframe come target per bypassare il CORS completamente
-  // Il form posta direttamente senza JavaScript fetch/XHR
   let iframe = document.getElementById('_webhook_iframe');
   if (!iframe) {
     iframe = document.createElement('iframe');
@@ -11096,7 +11021,6 @@ form.addEventListener('submit', e => {
   tempForm.target = '_webhook_iframe';
   tempForm.style.display = 'none';
 
-  // Aggiungi i campi come hidden inputs
   const fields = {
     phone_number: payload.telefono,
     name: payload.nome,
@@ -11118,7 +11042,6 @@ form.addEventListener('submit', e => {
   tempForm.submit();
   document.body.removeChild(tempForm);
 
-  // Mostra sempre il messaggio di successo
   setTimeout(() => {
     form.classList.add('hidden');
     success.classList.add('show');
@@ -11128,12 +11051,10 @@ form.addEventListener('submit', e => {
 /* Shake animation for error */
 function shake(el) {
   el.style.animation = 'none';
-  el.offsetHeight; // reflow
+  el.offsetHeight;
   el.style.animation = 'shake .4s ease';
-  el.style.borderColor = '#EF4444';
   setTimeout(() => {
     el.style.animation = '';
-    el.style.borderColor = '';
   }, 600);
 }
 
@@ -11148,11 +11069,6 @@ shakeStyle.textContent = `
   80%{transform:translateX(4px)}
 }`;
 document.head.appendChild(shakeStyle);
-
-/* ── Select color fix ── */
-document.getElementById('f-settore').addEventListener('change', function() {
-  this.style.color = '#fff';
-});
 
 /* ══════════════════════════════
    NAVBAR JS
@@ -12142,5 +12058,182 @@ if (first) {
   setTimeout(hideOnlyLargeIubendaBar, 1800);
 });
   </script>
+ 
+  <script id="pricing-help-popups-js">
+   (function () {
+  if (window.__YZ_PRICING_HELP_INIT__) return;
+  window.__YZ_PRICING_HELP_INIT__ = true;
+
+  const root = document.querySelector('.sec-07');
+  if (!root) return;
+
+  const helpMap = {
+    inbound: { desc: 'In pratica: quando qualcuno chiama, risponde YouZen. Così tu lavori e il telefono smette di fare il protagonista.' },
+    dashboard: { desc: 'Hai una schermata unica dove trovi chiamate, contatti e appuntamenti. Tutto lì, senza caccia al tesoro.' },
+    calendar: { desc: 'Colleghiamo il calendario e gli appuntamenti finiscono nel posto giusto. Finalmente senza acrobazie.' },
+    intake: { desc: 'YouZen raccoglie le info del cliente, capisce cosa serve e ti manda il riassunto. E se previsto, prenota pure: mica si tira indietro.' },
+    whatsapp_notifications: { desc: 'Ti arrivano avvisi automatici su WhatsApp quando succede qualcosa di importante. Così non scopri le cose tre ore dopo.' },
+    support: { desc: 'È il tipo di aiuto che ti diamo quando serve una mano o una modifica. Sì, rispondiamo davvero.' },
+    email: { desc: 'Ci scrivi via email e ti rispondiamo lì. Lineare, vecchia scuola, ma funziona.' },
+    priority: { desc: 'Le tue richieste passano avanti in fila. In pratica: meno attesa, meno sospiri.' },
+    account_manager: { desc: 'Hai una persona di riferimento che conosce il progetto e ti segue da vicino. Niente rimbalzi da un umano all’altro.' },
+    ai_agents: { desc: 'Indica quanti assistenti AI puoi tenere attivi. Più flussi, meno mal di testa.' },
+    one_agent: { desc: 'Hai 1 agente AI attivo. Fa il suo lavoro senza chiedere la pausa caffè.' },
+    two_agents: { desc: 'Hai 2 agenti AI attivi. Uno è utile, due iniziano a farsi notare.' },
+    unlimited_agents: { desc: 'Puoi attivare tutti gli agenti AI che ti servono. Qui il limite non è il piano, semmai la fantasia.' },
+    website_agent: { desc: 'L’assistente AI può rispondere anche sul tuo sito, oltre che al telefono o su WhatsApp. Insomma, presidia più porte.' },
+    outbound: { desc: 'L’AI può anche scrivere o chiamare per richiami, conferme e follow-up. In pratica non aspetta sempre che sia il cliente a farsi vivo.' },
+    whatsapp_campaigns: { desc: 'Puoi inviare messaggi WhatsApp automatici a contatti o liste, in modo ordinato. Quindi no, non è il solito caos da copia-incolla.' },
+    crm: { desc: 'Colleghiamo YouZen ai tuoi software o gestionali, così i dati vanno dove devono andare. Senza pellegrinaggi manuali.' },
+    multisite: { desc: 'Puoi usare lo stesso sistema per più sedi o più persone del team. Così non ognuno fa la sua versione del Far West.' },
+    campaigns_combined: { desc: 'Questa voce copre sia i contatti in uscita sia i messaggi WhatsApp automatici. Due cose utili, una riga sola.' },
+    crm_multisite_combined: { desc: 'Qui dentro ci sono integrazioni con altri software e gestione multi-sede o multi-utente. In breve: più ordine, meno incastri strani.' }
+  };
+
+  function normalize(text) {
+    return (text || '')
+      .replace(/\s+/g, ' ')
+      .replace(/\u00a0/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  function getHelpEntries(label) {
+    const text = normalize(label);
+
+    if (text.includes('chiamate inbound gestite')) return [{ key: 'inbound', title: 'Chiamate inbound gestite' }];
+    if (text.includes('dashboard dedicata')) return [{ key: 'dashboard', title: 'Dashboard dedicata' }];
+    if (text.includes('integrazioni calendario')) return [{ key: 'calendar', title: 'Integrazioni calendario' }];
+    if (text.includes('intake + recap whatsapp')) return [{ key: 'intake', title: 'Intake + recap WhatsApp' }];
+    if (text.includes('intake + recap + prenotazione')) return [{ key: 'intake', title: 'Intake + recap + prenotazione' }];
+    if (text.includes('notifiche whatsapp')) return [{ key: 'whatsapp_notifications', title: 'Notifiche WhatsApp' }];
+    if (text === 'supporto') return [{ key: 'support', title: 'Supporto' }];
+    if (text === 'email' || text.includes('supporto via email')) return [{ key: 'email', title: text.includes('supporto') ? 'Supporto via email' : 'Email' }];
+    if (text === 'prioritario' || text.includes('supporto prioritario')) return [{ key: 'priority', title: text.includes('supporto') ? 'Supporto prioritario' : 'Prioritario' }];
+    if (text === 'account manager' || text.includes('account manager dedicato')) return [{ key: 'account_manager', title: text.includes('dedicato') ? 'Account manager dedicato' : 'Account manager' }];
+    if (text === 'agenti ai') return [{ key: 'ai_agents', title: 'Agenti AI' }];
+    if (text === '1' || text.includes('1 agente ai')) return [{ key: 'one_agent', title: text.includes('agente') ? '1 agente AI' : '1' }];
+    if (text === '2' || text.includes('2 agenti ai')) return [{ key: 'two_agents', title: text.includes('agenti') ? '2 agenti AI' : '2' }];
+    if (text === 'illimitati' || text.includes('agenti ai illimitati')) return [{ key: 'unlimited_agents', title: text.includes('agenti') ? 'Agenti AI illimitati' : 'Illimitati' }];
+    if (text.includes('agente ai su sito web')) return [{ key: 'website_agent', title: 'Agente AI su sito web' }];
+    if (text === 'campagne outbound' || text.includes('campagne outbound automatizzate')) return [{ key: 'outbound', title: text.includes('automatizzate') ? 'Campagne outbound automatizzate' : 'Campagne outbound' }];
+    if (text === 'campagne whatsapp') return [{ key: 'whatsapp_campaigns', title: 'Campagne WhatsApp' }];
+    if (text.includes('campagne outbound / whatsapp')) return [{ key: 'campaigns_combined', title: 'Campagne outbound / WhatsApp' }];
+    if (text === 'integrazioni custom (crm)' || text.includes('integrazioni custom (crm, gestionali)')) return [{ key: 'crm', title: text.includes('gestionali') ? 'Integrazioni custom (CRM, gestionali)' : 'Integrazioni custom (CRM)' }];
+    if (text.includes('integrazioni custom, multi-sede')) return [{ key: 'crm_multisite_combined', title: 'Integrazioni custom, multi-sede' }];
+    if (text.includes('multi-sede / multi-utente')) return [{ key: 'multisite', title: 'Multi-sede / multi-utente' }];
+
+    return [];
+  }
+
+  function ensureModal() {
+    let modal = document.getElementById('yzFeatureHelpModal');
+    if (modal) return modal;
+
+    modal = document.createElement('div');
+    modal.id = 'yzFeatureHelpModal';
+    modal.className = 'yz-help-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+      <div class="yz-help-modal__backdrop" data-yz-help-close="true"></div>
+      <div class="yz-help-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="yzHelpTitle">
+        <div class="yz-help-modal__header">
+          <div>
+            <div class="yz-help-modal__eyebrow">Spiegazione semplice</div>
+            <h3 class="yz-help-modal__title" id="yzHelpTitle"></h3>
+          </div>
+          <button type="button" class="yz-help-modal__close" aria-label="Chiudi spiegazione" data-yz-help-close="true">×</button>
+        </div>
+        <div class="yz-help-modal__body">
+          <p class="yz-help-modal__text" id="yzHelpText"></p>
+        </div>
+              </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', function (event) {
+      if (event.target && event.target.dataset && event.target.dataset.yzHelpClose === 'true') {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    return modal;
+  }
+
+  function openModal(key, title) {
+    const modal = ensureModal();
+    const data = helpMap[key];
+    if (!data) return;
+
+    modal.querySelector('#yzHelpTitle').textContent = title || 'Dettaglio';
+    modal.querySelector('#yzHelpText').textContent = data.desc;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('yzFeatureHelpModal');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function createButton(entry) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'yz-help-trigger';
+    button.setAttribute('aria-label', 'Spiega: ' + entry.title);
+    button.dataset.helpKey = entry.key;
+    button.dataset.helpTitle = entry.title;
+    button.textContent = '?';
+    return button;
+  }
+
+  function decorateTarget(target) {
+    if (!target || target.dataset.helpDecorated === 'true') return;
+
+    const label = target.textContent;
+    const entries = getHelpEntries(label);
+    if (!entries.length) return;
+
+    const actions = document.createElement('span');
+    actions.className = 'yz-help-actions';
+
+    entries.forEach(function (entry) {
+      actions.appendChild(createButton(entry));
+    });
+
+    target.appendChild(actions);
+    target.dataset.helpDecorated = 'true';
+
+    if (target.matches('.cg-cell.cg-text')) {
+      target.classList.add('yz-help-cell');
+    }
+    if (target.closest('.mob-features')) {
+      target.classList.add('yz-help-feature');
+    }
+  }
+
+  root.querySelectorAll('.compare-grid .cg-row-label').forEach(decorateTarget);
+  root.querySelectorAll('.compare-grid .cg-cell.cg-text').forEach(decorateTarget);
+  root.querySelectorAll('.mobile-plans .mob-features li').forEach(decorateTarget);
+
+  root.addEventListener('click', function (event) {
+    const trigger = event.target.closest('.yz-help-trigger');
+    if (!trigger) return;
+    event.preventDefault();
+    openModal(trigger.dataset.helpKey, trigger.dataset.helpTitle);
+  });
+})();
+  </script>
+
  </body>
 </html>
