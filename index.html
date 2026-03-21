@@ -3124,107 +3124,217 @@
 /* ══════════════════════════════
    FOOTER
 ══════════════════════════════ */
-.sec-10 footer.site-footer{
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  padding: 64px 0 0;
+footer.site-footer{
+  background: #080e1f;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 64px 0 28px;
   margin-top: 0;
 }
 
-.sec-10 .ft-wrap{
-  max-width: 1060px; margin: 0 auto; padding: 0 48px;
+footer.site-footer .ft-wrap{
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 48px;
 }
 
-.sec-10 .ft-top{
+footer.site-footer .ft-top{
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid var(--border);
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: 32px 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-/* Brand col */
-.sec-10 .ft-logo{
-  display: inline-flex; align-items: center; gap: 9px;
-  font-family: var(--fd); font-size: 22px; font-weight: 800;
-  letter-spacing: -.03em; text-decoration: none; color: #fff;
+footer.site-footer .ft-brand{
+  max-width: 320px;
+}
+
+footer.site-footer .ft-logo{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   margin-bottom: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.03em;
 }
-.sec-10 .ft-logo-dot{
-  width: 9px; height: 9px; border-radius: 50%;
+
+footer.site-footer .ft-logo-dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
   background: var(--orange);
-  
 }
-.sec-10 .ft-brand-desc{
-  font-size: 13.5px; color: #334155; line-height: 1.75;
-  max-width: 260px; margin-bottom: 24px;
+
+footer.site-footer .ft-brand-desc{
+  max-width: 280px;
+  margin-bottom: 24px;
+  color: #94A3B8;
+  font-size: 13.5px;
+  line-height: 1.75;
 }
-.sec-10 .ft-socials{
-  display: flex; gap: 8px;
+
+footer.site-footer .ft-socials{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.sec-10 .ft-social{
-  width: 36px; height: 36px; border-radius: 10px;
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; text-decoration: none; color: var(--muted);
-  transition: border-color .2s, background .2s, color .2s;
+
+footer.site-footer .ft-social{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: border-color .2s, background .2s, color .2s, transform .2s;
 }
-.sec-10 .ft-social:hover{
+
+footer.site-footer .ft-social:hover,
+footer.site-footer .ft-social:focus-visible{
   border-color: rgba(249,115,22,.4);
   background: rgba(249,115,22,.08);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+footer.site-footer .ft-column{
+  min-width: 0;
+}
+
+footer.site-footer .ft-col-title{
+  margin-bottom: 16px;
+  color: #64748B;
+  font-family: var(--fm);
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+footer.site-footer .ft-links{
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+footer.site-footer .ft-links a{
+  color: #94A3B8;
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+footer.site-footer .ft-links a:hover,
+footer.site-footer .ft-links a:focus-visible{
+  color: #fff;
+}
+
+footer.site-footer .ft-bottom{
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+  gap: 18px 24px;
+  align-items: start;
+  padding-top: 24px;
+}
+
+footer.site-footer .ft-bottom-primary{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+footer.site-footer .ft-legal-copy,
+footer.site-footer .ft-made{
+  color: #64748B;
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: .04em;
+  line-height: 1.7;
+}
+
+footer.site-footer .ft-contacts,
+footer.site-footer .ft-legal-nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-width: 0;
+}
+
+footer.site-footer .ft-contacts a,
+footer.site-footer .ft-legal-nav a{
+  color: #94A3B8;
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: .04em;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: color .2s ease;
+  white-space: nowrap;
+}
+
+footer.site-footer .ft-contacts a:hover,
+footer.site-footer .ft-contacts a:focus-visible,
+footer.site-footer .ft-legal-nav a:hover,
+footer.site-footer .ft-legal-nav a:focus-visible{
+  color: #fff;
+}
+
+footer.site-footer .ft-made{
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+footer.site-footer .ft-made span{
   color: var(--orange);
 }
 
-/* Nav cols */
-.sec-10 .ft-col-title{
-  font-family: var(--fm); font-size: 9px; letter-spacing: .18em;
-  text-transform: uppercase; color: #334155;
-  margin-bottom: 18px;
-}
-.sec-10 .ft-links{
-  display: flex; flex-direction: column; gap: 11px;
-}
-.sec-10 .ft-links a{
-  font-size: 13.5px; color: #475569;
-  text-decoration: none; transition: color .2s;
-}
-.sec-10 .ft-links a:hover{ color: #fff; }
-
-/* Bottom bar */
-.sec-10 .ft-bottom{
-<div style="font-family: 'DM Mono', monospace; font-size: 10px; color: #1e3050; letter-spacing: .04em; margin-top: 8px;">YouZen Partita IVA 04855440402 <a href="mailto:lucabrighi84@pec.it" style="color: #2a4060; text-decoration: none;">lucabrighi84@pec.it</a></div>  padding: 24px 0 32px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; flex-wrap: wrap;
-}
-.sec-10 .ft-legal{
-  font-family: var(--fm); font-size: 10px;
-  color: #1e3050; letter-spacing: .04em;
-}
-.sec-10 .ft-legal a{
-  color: #2a4060; text-decoration: none; margin-left: 16px;
-  transition: color .2s;
-}
-.sec-10 .ft-legal a:hover{ color: #475569; }
-
-.sec-10 
-.ft-legal{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 18px;
-  align-items:center;
-}
-.ft-legal a{
-  white-space:nowrap;
+@media (max-width: 980px){
+  footer.site-footer .ft-wrap{ padding: 0 28px; }
+  footer.site-footer .ft-top{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  footer.site-footer .ft-bottom{
+    grid-template-columns: 1fr;
+  }
+  footer.site-footer .ft-made{
+    justify-self: start;
+  }
 }
 
-.ft-made{
-  font-family: var(--fm); font-size: 10px; color: #1e3050;
-  letter-spacing: .04em; display: flex; align-items: center; gap: 6px;
+@media (max-width: 640px){
+  footer.site-footer{
+    padding: 48px 0 22px;
+  }
+  footer.site-footer .ft-wrap{
+    padding: 0 20px;
+  }
+  footer.site-footer .ft-top{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 28px;
+  }
+  footer.site-footer .ft-brand-desc{
+    max-width: none;
+  }
+  footer.site-footer .ft-contacts,
+  footer.site-footer .ft-legal-nav{
+    gap: 6px 14px;
+  }
 }
-.sec-10 .ft-made span{ color: var(--orange); }
 
-/* ── Responsive ── */
-  .sec-10 background: var(--card); border: 1px solid var(--borderl); border-radius: 24px; padding: 36px 36px 32px; } .cs-form{
+.cs-form{
   display: flex; flex-direction: column; gap: 20px;
 }
 
@@ -6659,16 +6769,424 @@ section#sec-02,
   display: none !important;
 }
   </style>
+  <style id="cta-typography-tune-final">
+   /* Final CTA cleanup: smaller typography + better balance */
+.omni-footer-title,
+.footer-title,
+.custom-banner-title,
+.twist-title,
+.yzs-cta-shell h3{
+  font-size: clamp(22px, 2.4vw, 34px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em !important;
+  max-width: 18ch !important;
+  text-wrap: balance !important;
+  margin-bottom: 10px !important;
+}
+
+.omni-footer-subtitle,
+.footer-subtitle,
+.custom-banner-desc,
+.custom-banner-sub,
+.twist-sub,
+.omni-footer-text,
+.footer-text,
+.twist p,
+.yzs-cta-shell p{
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,.84) !important;
+}
+
+.omni-footer-text,
+.footer-text,
+.custom-banner-left,
+.twist.cta-shell-like .cta-box-copy{
+  max-width: 560px !important;
+}
+
+.omni-footer-box.cta-shell-like .cta-box-shell,
+.faq-footer.cta-shell-like .cta-box-shell,
+.custom-banner.cta-shell-like .cta-box-shell,
+.twist.cta-shell-like .cta-box-shell{
+  gap: 20px !important;
+  align-items: center !important;
+}
+
+.twist.cta-shell-like .twist-title{
+  max-width: 16ch !important;
+}
+
+.twist.cta-shell-like .twist-sub{
+  max-width: 44ch !important;
+}
+
+.omni-btn-cta,
+.btn-cta,
+.custom-banner-cta,
+.
+
+@media (max-width: 960px){
+  .omni-footer-title,
+  .footer-title,
+  .custom-banner-title,
+  .twist-title,
+  .yzs-cta-shell h3{
+    font-size: clamp(20px, 5vw, 28px) !important;
+    max-width: none !important;
+  }
+
+  .omni-footer-subtitle,
+  .footer-subtitle,
+  .custom-banner-desc,
+  .custom-banner-sub,
+  .twist-sub,
+  .omni-footer-text,
+  .footer-text,
+  .twist p,
+  .yzs-cta-shell p{
+    font-size: 14px !important;
+  }
+}
+
+/* Uniform CTA boxes */
+.yzs-cta-shell, .cta-unified, .twist, .faq-footer, .custom-banner, .omni-footer-box {
+  padding: 28px 32px !important;
+  border-radius: 28px !important;
+  background: linear-gradient(135deg, #FB923C 0%, #F97316 50%, #EA580C 100%) !important;
+  box-shadow: 0 8px 32px rgba(249,115,22,0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  border: 1px solid rgba(249,115,22,0.3) !important;
+  transition: all 0.3s ease !important;
+}
+.yzs-cta-shell:hover, .cta-unified:hover, .custom-banner:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(249,115,22,0.5) !important;
+}
+
+/* === final contact section aligned to landing background === */
+.pf-eyebrow {
+  color: #F97316 !important;
+}
+
+.sec-10 .pf-eyebrow,
+.sec-10 .pf-eyebrow::before {
+  color: #F97316 !important;
+  background: #F97316 !important;
+}
+
+.pf-title {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.pf-title em {
+  color: #F97316 !important;
+  -webkit-text-fill-color: #F97316 !important;
+}
+
+.pf-sub {
+  color: rgba(255,255,255,0.72) !important;
+}
+
+.sec-10 .cta-unified,
+.sec-10 .cu-wrap,
+.sec-10 .cu-left,
+.sec-10 .cu-cal {
+  background: transparent !important;
+}
+
+.sec-10 .cta-unified,
+.sec-10 .cu-wrap {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.sec-10 .cu-wrap {
+  background:
+    radial-gradient(1200px 700px at 18% 8%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 60%),
+    linear-gradient(180deg, #08111f 0%, #091427 38%, #0a1322 100%) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+}
+
+.sec-10 .cu-wrap::before,
+.sec-10 .cu-wrap::after,
+.sec-10 .cta-unified::before,
+.sec-10 .cta-unified::after {
+  display: none !important;
+}
+
+.sec-10 .pf-badge,
+.sec-10 .pf-contact-item {
+  background: rgba(255,255,255,.04) !important;
+  border-color: rgba(255,255,255,.08) !important;
+}
+
+
+/* === navbar visibility fix === */
+.sec-01 .navbar,
+#navbar,
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  display: flex !important;
+}
+
+.sec-01 .nav-inner,
+#navbar .nav-inner,
+.navbar .nav-inner {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body .sec-01 .navbar.scrolled {
+  background: rgba(8,14,31,.92) !important;
+}
+
+/* Prevent accidental clipping by parent containers */
+.sec-01,
+.merged-section,
+body {
+  overflow-x: clip;
+}
+
+
+/* === menu final fix: no top gap + always visible === */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  padding-top: 0 !important;
+}
+
+.sec-01 {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.sec-01 .navbar,
+#navbar,
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  margin-top: 0 !important;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+.sec-01 .hero {
+  padding-top: 76px !important;
+}
+
+.sec-01 .navbar.scrolled,
+#navbar.scrolled,
+.navbar.scrolled {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  background: rgba(8,14,31,.92) !important;
+}
+
+/* neutralize any script-added hiding states */
+.sec-01 .navbar[style*="display: none"],
+#navbar[style*="display: none"],
+.navbar[style*="display: none"] {
+  display: flex !important;
+}
+
+.sec-01 .navbar[style*="opacity: 0"],
+#navbar[style*="opacity: 0"],
+.navbar[style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
+.sec-01 .navbar[style*="visibility: hidden"],
+#navbar[style*="visibility: hidden"],
+.navbar[style*="visibility: hidden"] {
+  visibility: visible !important;
+}
+
+.sec-01 .navbar[style*="transform"],
+#navbar[style*="transform"],
+.navbar[style*="transform"] {
+  transform: translateY(0) !important;
+}
+
+
+/* === final navbar + hero cleanup === */
+
+/* menu always visible on every section */
+.sec-01 .navbar,
+#navbar,
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  display: flex !important;
+  will-change: auto !important;
+}
+
+/* neutralize any hide-on-scroll behavior */
+.sec-01 .navbar.scrolled,
+#navbar.scrolled,
+.navbar.scrolled,
+.sec-01 .navbar.hide,
+#navbar.hide,
+.navbar.hide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  top: 0 !important;
+}
+
+/* first section sits correctly below the fixed menu */
+.sec-01 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.sec-01 .hero {
+  padding-top: 72px !important;
+  margin-top: 0 !important;
+  min-height: calc(100vh - 72px) !important;
+}
+
+/* remove top blank/gap feeling under menu */
+.sec-01::before,
+.sec-01::after,
+.sec-01 .hero::before,
+.sec-01 .hero::after {
+  background-position: top center !important;
+}
+
+/* keep menu visible over pricing and all following sections */
+#sec-07,
+#sec-08,
+#sec-09,
+#sec-10,
+.merged-section,
+section {
+  position: relative;
+}
+
+.sec-01 .navbar,
+#navbar,
+.navbar,
+.sec-01 .nav-inner {
+  pointer-events: auto !important;
+}
+
+/* hard override in case inline JS writes hidden styles */
+.sec-01 .navbar[style],
+#navbar[style],
+.navbar[style] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  display: flex !important;
+  top: 0 !important;
+}
+
+
+/* === REMOVE GREEN BAR ABOVE HERO === */
+.sec-01 {
+  background: #08111f !important;
+}
+
+.sec-01::before,
+.sec-01::after,
+.sec-01 .hero::before,
+.sec-01 .hero::after {
+  display: none !important;
+  content: none !important;
+}
+  </style>
+ 
+  <style id="mobile-footer-optimizations">
+   body{overflow-x:hidden;}
+   img, iframe{max-width:100%;}
+   @media (max-width: 1024px){
+    .sec-01 .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .sec-01 .hero-inner,
+    .sec-05 .section-inner,
+    .sec-10 .cu-wrap{padding-left:28px;padding-right:28px;}
+    .sec-02 .card{padding:36px 28px 32px;}
+    .sec-05 .detail-content{padding:40px 32px;}
+   }
+   @media (max-width: 820px){
+    .sec-01 .navbar{height:60px;padding:0 18px;}
+    .sec-01 .nav-inner{max-width:none;}
+    .sec-01 .nav-logo{margin-right:0;}
+    .sec-01 .nav-mobile-open .nav-links{
+      top:60px;
+      max-height:calc(100vh - 128px);
+      overflow:auto;
+      padding:12px 18px 18px;
+    }
+    .sec-01 .nav-mobile-open .nav-right{
+      padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    }
+    .sec-01 .hero{min-height:auto;padding:88px 0 48px;}
+    .sec-01 .hero-inner{padding:0 20px;}
+    .sec-01 .hero-title{font-size:clamp(34px,11vw,54px);}
+    .sec-01 .hero-sub{max-width:none;font-size:15px;line-height:1.75;}
+    .sec-01 .hero-trust{gap:12px;}
+    .sec-01 .hero-proof{align-items:flex-start;flex-wrap:wrap;}
+    .sec-01 .demo-card{max-width:100%;padding:26px 20px 22px;border-radius:22px;}
+    .sec-01 .card-header{flex-direction:column;align-items:flex-start;}
+    .sec-02{padding:24px 16px 48px;}
+    .sec-02 .card{padding:28px 18px 24px;border-radius:24px;}
+    .sec-02 #three-wrap{width:100%;height:320px;}
+    .sec-03 .section{padding:72px 20px;}
+    .sec-05 .section{padding:84px 0 72px;}
+    .sec-05 .section-inner{padding:0 20px;}
+    .sec-05 .list-item{padding:18px;gap:14px;}
+    .sec-05 .detail-content{padding:28px 20px;}
+    .sec-10 .cu-wrap{grid-template-columns:1fr;gap:28px;padding:0 20px;}
+   }
+   @media (max-width: 560px){
+    .sec-01 .field-row,
+    .sec-10 .cs-row{grid-template-columns:1fr;}
+    .sec-01 .cta-btn{padding:14px 16px;}
+    .sec-01 .cta-arrow{display:none;}
+    .sec-02 .chart-title,
+    .sec-03 .section-title,
+    .sec-05 .section-title,
+    .sec-10 .pf-title{font-size:clamp(28px,9vw,40px)!important;}
+    .sec-02 .stat-v{font-size:20px;}
+    .sec-05 .body-wrap{border-radius:22px;}
+    .sec-05 .dp-icon{width:56px;height:56px;font-size:26px;border-radius:16px;}
+    .sec-05 .dp-title{font-size:24px;}
+    .sec-10 #cal-embed,
+    .sec-10 .cu-cal #cal-embed{min-height:560px;}
+   }
+  </style>
+
  </head>
  <body>
   <a class="skip-link" href="#main-content">
    Vai al contenuto principale
   </a>
-  <div class="seo-copy">
+  <p class="seo-copy">
    YouZen &egrave; una segreteria AI per centralino virtuale, risposta telefonica automatica, gestione WhatsApp Business, prenotazione appuntamenti, reminder e assistenza clienti per studi professionali, cliniche, saloni, negozi e PMI.
-  </div>
+  </p>
   <!-- HERO / NAV -->
-  <section class="merged-section sec-01" data-source="1 _youzen-hero (4).html" id="sec-01">
+  <header aria-labelledby="hero-title" class="merged-section sec-01" data-source="1 _youzen-hero (4).html" id="sec-01">
    <nav aria-label="Navigazione principale" class="navbar" id="navbar">
     <div class="nav-inner">
      <!-- Logo -->
@@ -6699,14 +7217,14 @@ section#sec-02,
        </a>
       </li>
       <li class="nav-item" id="dd-settori">
-       <button aria-expanded="false" aria-haspopup="true" class="nav-link" type="button">
+       <button aria-controls="nav-settori-dropdown" aria-expanded="false" aria-haspopup="true" class="nav-link" type="button">
         Settori
         <svg fill="none" viewbox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
          <path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-width="1.5">
          </path>
         </svg>
        </button>
-       <div class="nav-dropdown">
+       <div class="nav-dropdown" id="nav-settori-dropdown">
         <a data-sector="0" href="#settore-artigiani">
          <span class="dd-icon">
           🛠️
@@ -6847,7 +7365,7 @@ section#sec-02,
         </span>
        </div>
        <!-- Title -->
-       <h1 class="hero-title">
+       <h1 class="hero-title" id="hero-title">
         <span class="line-1">
          <span class="hl-problem">
           Squilla.
@@ -6961,34 +7479,34 @@ section#sec-02,
          </div>
         </div>
         <!-- Form -->
-        <form class="demo-form" id="demoForm" novalidate="">
+        <form action="https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn" class="demo-form" id="demoForm" method="post" novalidate="">
          <!-- Honeypot anti-spam: campo nascosto, i bot lo compilano, gli umani no -->
          <input aria-hidden="true" autocomplete="off" id="f-honeypot" name="website" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" tabindex="-1" type="text"/>
          <!-- Row 1: Nome + Email -->
          <div class="field-row">
           <div class="field">
-           <label>
+           <label for="f-nome">
             <span class="field-icon">
              👤
             </span>
             Nome
            </label>
            <div class="field-wrap">
-            <input autocomplete="given-name" id="f-nome" placeholder="Mario Rossi" type="text"/>
+            <input autocomplete="name" id="f-nome" name="name" placeholder="Mario Rossi" type="text"/>
             <span class="field-check">
              &checkmark;
             </span>
            </div>
           </div>
           <div class="field">
-           <label>
+           <label for="f-email">
             <span class="field-icon">
              ✉️
             </span>
             Email
            </label>
            <div class="field-wrap">
-            <input autocomplete="email" id="f-email" placeholder="mario@studio.it" type="email"/>
+            <input autocomplete="email" id="f-email" name="email" placeholder="mario@studio.it" type="email"/>
             <span class="field-check">
              &checkmark;
             </span>
@@ -6998,27 +7516,27 @@ section#sec-02,
          <!-- Row 2: Telefono + Settore -->
          <div class="field-row">
           <div class="field">
-           <label>
+           <label for="f-tel">
             <span class="field-icon">
              📱
             </span>
             Telefono
            </label>
            <div class="field-wrap">
-            <input autocomplete="tel" id="f-tel" placeholder="+39 333 000 0000" type="tel"/>
+            <input autocomplete="tel" id="f-tel" name="phone_number" placeholder="+39 333 000 0000" type="tel"/>
             <span class="field-check">
              &checkmark;
             </span>
            </div>
           </div>
           <div class="field">
-           <label>
+           <label for="f-settore">
             <span class="field-icon">
              🏢
             </span>
             Settore
            </label>
-           <select id="f-settore">
+           <select id="f-settore" name="settore">
             <option disabled="" selected="" value="">
              Seleziona&hellip;
             </option>
@@ -7068,19 +7586,19 @@ section#sec-02,
           </span>
          </div>
          <button class="cta-btn cta-green" id="ctaBtn" type="submit">
-          <div class="cta-phone-wrap">
+          <span class="cta-phone-wrap">
            <span class="cta-phone-icon">
             📞
            </span>
-          </div>
-          <div class="cta-text-wrap">
+          </span>
+          <span class="cta-text-wrap">
            <span class="cta-main">
             Guarda la Magia
            </span>
            <span class="cta-sub-text">
             Ti ricontattiamo entro 2 ore lavorative
            </span>
-          </div>
+          </span>
           <span class="cta-arrow">
            &rarr;
           </span>
@@ -7105,7 +7623,7 @@ section#sec-02,
         </div>
         <!-- Footer -->
         <div class="card-footer">
-         <div class="card-footer-icons">
+         <div aria-hidden="true" class="card-footer-icons">
           <div class="footer-icon">
            🔒
           </div>
@@ -7120,7 +7638,7 @@ section#sec-02,
           GDPR &middot; Server EU &middot; Made in Italy
          </span>
          <div class="card-footer-right">
-          <span class="star">
+          <span aria-hidden="true" class="star">
            &starf;
           </span>
           <span class="rating-text">
@@ -7136,11 +7654,11 @@ section#sec-02,
     </div>
     <!-- /hero-inner -->
    </section>
-  </section>
+  </header>
   <!-- MAIN CONTENT -->
-  <main id="main-content">
+  <main id="main-content" role="main">
    <!-- OMNICANALE / BENEFICI -->
-   <section class="merged-section sec-02" data-source="2_omnicanale_faq_layout.html" id="sec-02">
+   <section aria-labelledby="sec-02-title" class="merged-section sec-02" data-source="2_omnicanale_faq_layout.html" id="sec-02">
     <style>
      .sec-02-omni *, .sec-02-omni *::before, .sec-02-omni *::after { box-sizing: border-box; }
 .sec-02-omni {
@@ -7403,7 +7921,7 @@ section#sec-02,
      <div class="omni-eyebrow">
       Sistema omnicanale
      </div>
-     <h2 class="omni-section-title">
+     <h2 class="omni-section-title" id="sec-02-title">
       &Egrave; un'orchestra.
       <br/>
       <em>
@@ -7868,7 +8386,7 @@ section#sec-02,
     </script>
    </section>
    <!-- PROBLEMI VS SOLUZIONE -->
-   <section class="merged-section sec-03" data-source="3-problemi-comparison-table-2.html" id="sec-03">
+   <section aria-labelledby="sec-03-title" class="merged-section sec-03" data-source="3-problemi-comparison-table-2.html" id="sec-03">
     <style>
      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -8172,285 +8690,290 @@ tbody tr:hover .td-good {
 }
     </style>
     <section class="section">
-     <div class="section-label">
-      Confronto diretto
-     </div>
-     <h2 class="section-title">
-      Prima e dopo.
-      <br/>
-      <em>
-       Riga per riga.
-      </em>
-     </h2>
-     <p class="section-sub">
-      Ogni problema che affronti ogni giorno ha una soluzione precisa. Passa il mouse su ogni riga per vederla.
-     </p>
-     <table class="comp-table">
-      <thead>
-       <tr>
-        <th class="th-topic">
-        </th>
-        <th class="th-bad">
-         <span>
-          Senza YouZen
-         </span>
-        </th>
-        <th class="th-good">
-         <span>
-          Con YouZen
-         </span>
-        </th>
-       </tr>
-      </thead>
-      <tbody>
-       <!-- ROW 1: Chiamate -->
-       <tr data-topic="📞 Chiamate perse">
-        <td class="td-topic">
-         <div class="topic-inner">
-          <div class="topic-icon">
-           📞
-          </div>
-          <div>
-           <div class="topic-name">
-            Chiamate perse
+     <header>
+      <div class="section-label">
+       Confronto diretto
+      </div>
+      <h2 class="section-title" id="sec-03-title">
+       Prima e dopo.
+       <br/>
+       <em>
+        Riga per riga.
+       </em>
+      </h2>
+      <p class="section-sub">
+       Ogni problema che affronti ogni giorno ha una soluzione precisa. Passa il mouse su ogni riga per vederla.
+      </p>
+      <table class="comp-table">
+       <caption class="seo-copy">
+        Prima e dopo. Riga per riga.
+       </caption>
+       <thead>
+        <tr>
+         <th class="th-topic">
+         </th>
+         <th class="th-bad">
+          <span>
+           Senza YouZen
+          </span>
+         </th>
+         <th class="th-good">
+          <span>
+           Con YouZen
+          </span>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <!-- ROW 1: Chiamate -->
+        <tr data-topic="📞 Chiamate perse">
+         <td class="td-topic">
+          <div class="topic-inner">
+           <div class="topic-icon">
+            📞
            </div>
-           <div class="topic-sub">
-            Risposta &amp; disponibilit&agrave;
-           </div>
-          </div>
-         </div>
-        </td>
-        <td class="td-bad">
-         <div class="cell-bad">
-          <div class="cell-stat-bad">
-           67%
-          </div>
-          <div class="cell-label-bad">
-           dei clienti non richiama dopo una mancata risposta
-          </div>
-          <div class="cell-tag-bad">
-           Entrate perse
-          </div>
-         </div>
-        </td>
-        <td class="td-good">
-         <div class="cell-good">
-          <div class="cell-stat-good">
-           98%
-          </div>
-          <div class="cell-label-good">
-           delle chiamate gestite dall'AI entro 2 squilli
-          </div>
-          <div class="cell-tag-good">
-           Zero chiamate perse
-          </div>
-         </div>
-        </td>
-       </tr>
-       <!-- ROW 2: No-show -->
-       <tr data-topic="📅 No-show &amp; agenda">
-        <td class="td-topic">
-         <div class="topic-inner">
-          <div class="topic-icon">
-           📅
-          </div>
-          <div>
-           <div class="topic-name">
-            No-show &amp; agenda
-           </div>
-           <div class="topic-sub">
-            Prenotazioni &amp; reminder
+           <div>
+            <div class="topic-name">
+             Chiamate perse
+            </div>
+            <div class="topic-sub">
+             Risposta &amp; disponibilit&agrave;
+            </div>
            </div>
           </div>
-         </div>
-        </td>
-        <td class="td-bad">
-         <div class="cell-bad">
-          <div class="cell-stat-bad">
-           30%
-          </div>
-          <div class="cell-label-bad">
-           degli appuntamenti finisce in no-show senza reminder
-          </div>
-          <div class="cell-tag-bad">
-           Agenda nel caos
-          </div>
-         </div>
-        </td>
-        <td class="td-good">
-         <div class="cell-good">
-          <div class="cell-stat-good">
-           &minus;80%
-          </div>
-          <div class="cell-label-good">
-           di no-show grazie a reminder SMS + WhatsApp automatici
-          </div>
-          <div class="cell-tag-good">
-           Agenda perfetta
-          </div>
-         </div>
-        </td>
-       </tr>
-       <!-- ROW 3: WhatsApp -->
-       <tr data-topic="💬 Messaggi WhatsApp">
-        <td class="td-topic">
-         <div class="topic-inner">
-          <div class="topic-icon">
-           💬
-          </div>
-          <div>
-           <div class="topic-name">
-            Messaggi WhatsApp
+         </td>
+         <td class="td-bad">
+          <div class="cell-bad">
+           <div class="cell-stat-bad">
+            67%
            </div>
-           <div class="topic-sub">
-            Comunicazione clienti
+           <div class="cell-label-bad">
+            dei clienti non richiama dopo una mancata risposta
+           </div>
+           <div class="cell-tag-bad">
+            Entrate perse
            </div>
           </div>
-         </div>
-        </td>
-        <td class="td-bad">
-         <div class="cell-bad">
-          <div class="cell-stat-bad">
-           3h
-          </div>
-          <div class="cell-label-bad">
-           al giorno perse a rispondere manualmente ai messaggi
-          </div>
-          <div class="cell-tag-bad">
-           Vita-lavoro azzerata
-          </div>
-         </div>
-        </td>
-        <td class="td-good">
-         <div class="cell-good">
-          <div class="cell-stat-good">
-           &minus;90%
-          </div>
-          <div class="cell-label-good">
-           del tempo su messaggi grazie all'AI che risponde col tuo tono
-          </div>
-          <div class="cell-tag-good">
-           Rispondi sempre
-          </div>
-         </div>
-        </td>
-       </tr>
-       <!-- ROW 4: Disponibilità -->
-       <tr data-topic="🌙 Orario">
-        <td class="td-topic">
-         <div class="topic-inner">
-          <div class="topic-icon">
-           🌙
-          </div>
-          <div>
-           <div class="topic-name">
-            Disponibilit&agrave; oraria
+         </td>
+         <td class="td-good">
+          <div class="cell-good">
+           <div class="cell-stat-good">
+            98%
            </div>
-           <div class="topic-sub">
-            Orari fuori studio
+           <div class="cell-label-good">
+            delle chiamate gestite dall'AI entro 2 squilli
+           </div>
+           <div class="cell-tag-good">
+            Zero chiamate perse
            </div>
           </div>
-         </div>
-        </td>
-        <td class="td-bad">
-         <div class="cell-bad">
-          <div class="cell-stat-bad">
-           0h
-          </div>
-          <div class="cell-label-bad">
-           di copertura la sera, nei weekend e nei giorni festivi
-          </div>
-          <div class="cell-tag-bad">
-           Clienti senza risposta
-          </div>
-         </div>
-        </td>
-        <td class="td-good">
-         <div class="cell-good">
-          <div class="cell-stat-good">
-           24/7
-          </div>
-          <div class="cell-label-good">
-           YouZen attivo ogni giorno, ogni ora, senza riposi
-          </div>
-          <div class="cell-tag-good">
-           Sempre operativo
-          </div>
-         </div>
-        </td>
-       </tr>
-       <!-- ROW 5: Costo -->
-       <tr data-topic="💶 Costo operativo">
-        <td class="td-topic">
-         <div class="topic-inner">
-          <div class="topic-icon">
-           💶
-          </div>
-          <div>
-           <div class="topic-name">
-            Costo operativo
+         </td>
+        </tr>
+        <!-- ROW 2: No-show -->
+        <tr data-topic="📅 No-show &amp; agenda">
+         <td class="td-topic">
+          <div class="topic-inner">
+           <div class="topic-icon">
+            📅
            </div>
-           <div class="topic-sub">
-            Segreteria &amp; gestione
+           <div>
+            <div class="topic-name">
+             No-show &amp; agenda
+            </div>
+            <div class="topic-sub">
+             Prenotazioni &amp; reminder
+            </div>
            </div>
           </div>
-         </div>
-        </td>
-        <td class="td-bad">
-         <div class="cell-bad">
-          <div class="cell-stat-bad">
-           &euro;2.000+
+         </td>
+         <td class="td-bad">
+          <div class="cell-bad">
+           <div class="cell-stat-bad">
+            30%
+           </div>
+           <div class="cell-label-bad">
+            degli appuntamenti finisce in no-show senza reminder
+           </div>
+           <div class="cell-tag-bad">
+            Agenda nel caos
+           </div>
           </div>
-          <div class="cell-label-bad">
-           al mese per una segretaria a tempo pieno
+         </td>
+         <td class="td-good">
+          <div class="cell-good">
+           <div class="cell-stat-good">
+            &minus;80%
+           </div>
+           <div class="cell-label-good">
+            di no-show grazie a reminder SMS + WhatsApp automatici
+           </div>
+           <div class="cell-tag-good">
+            Agenda perfetta
+           </div>
           </div>
-          <div class="cell-tag-bad">
-           Costo fisso alto
+         </td>
+        </tr>
+        <!-- ROW 3: WhatsApp -->
+        <tr data-topic="💬 Messaggi WhatsApp">
+         <td class="td-topic">
+          <div class="topic-inner">
+           <div class="topic-icon">
+            💬
+           </div>
+           <div>
+            <div class="topic-name">
+             Messaggi WhatsApp
+            </div>
+            <div class="topic-sub">
+             Comunicazione clienti
+            </div>
+           </div>
           </div>
-         </div>
-        </td>
-        <td class="td-good">
-         <div class="cell-good">
-          <div class="cell-stat-good">
-           &euro;99
+         </td>
+         <td class="td-bad">
+          <div class="cell-bad">
+           <div class="cell-stat-bad">
+            3h
+           </div>
+           <div class="cell-label-bad">
+            al giorno perse a rispondere manualmente ai messaggi
+           </div>
+           <div class="cell-tag-bad">
+            Vita-lavoro azzerata
+           </div>
           </div>
-          <div class="cell-label-good">
-           al mese per copertura completa, senza contributi n&eacute; ferie
+         </td>
+         <td class="td-good">
+          <div class="cell-good">
+           <div class="cell-stat-good">
+            &minus;90%
+           </div>
+           <div class="cell-label-good">
+            del tempo su messaggi grazie all'AI che risponde col tuo tono
+           </div>
+           <div class="cell-tag-good">
+            Rispondi sempre
+           </div>
           </div>
-          <div class="cell-tag-good">
-           &minus;95% costo
+         </td>
+        </tr>
+        <!-- ROW 4: Disponibilità -->
+        <tr data-topic="🌙 Orario">
+         <td class="td-topic">
+          <div class="topic-inner">
+           <div class="topic-icon">
+            🌙
+           </div>
+           <div>
+            <div class="topic-name">
+             Disponibilit&agrave; oraria
+            </div>
+            <div class="topic-sub">
+             Orari fuori studio
+            </div>
+           </div>
           </div>
-         </div>
-        </td>
-       </tr>
-      </tbody>
-      <tfoot>
-       <tr class="tfoot-row">
-        <td colspan="3">
-         <div class="tfoot-label">
-          Attiva YouZen oggi &mdash;
-          <strong>
-           15 giorni gratis, nessuna carta richiesta
-          </strong>
-         </div>
-         <button class="tfoot-cta" type="button">
-          Inizia gratis &rarr;
-         </button>
-        </td>
-       </tr>
-      </tfoot>
-     </table>
+         </td>
+         <td class="td-bad">
+          <div class="cell-bad">
+           <div class="cell-stat-bad">
+            0h
+           </div>
+           <div class="cell-label-bad">
+            di copertura la sera, nei weekend e nei giorni festivi
+           </div>
+           <div class="cell-tag-bad">
+            Clienti senza risposta
+           </div>
+          </div>
+         </td>
+         <td class="td-good">
+          <div class="cell-good">
+           <div class="cell-stat-good">
+            24/7
+           </div>
+           <div class="cell-label-good">
+            YouZen attivo ogni giorno, ogni ora, senza riposi
+           </div>
+           <div class="cell-tag-good">
+            Sempre operativo
+           </div>
+          </div>
+         </td>
+        </tr>
+        <!-- ROW 5: Costo -->
+        <tr data-topic="💶 Costo operativo">
+         <td class="td-topic">
+          <div class="topic-inner">
+           <div class="topic-icon">
+            💶
+           </div>
+           <div>
+            <div class="topic-name">
+             Costo operativo
+            </div>
+            <div class="topic-sub">
+             Segreteria &amp; gestione
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="td-bad">
+          <div class="cell-bad">
+           <div class="cell-stat-bad">
+            &euro;2.000+
+           </div>
+           <div class="cell-label-bad">
+            al mese per una segretaria a tempo pieno
+           </div>
+           <div class="cell-tag-bad">
+            Costo fisso alto
+           </div>
+          </div>
+         </td>
+         <td class="td-good">
+          <div class="cell-good">
+           <div class="cell-stat-good">
+            &euro;99
+           </div>
+           <div class="cell-label-good">
+            al mese per copertura completa, senza contributi n&eacute; ferie
+           </div>
+           <div class="cell-tag-good">
+            &minus;95% costo
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+       <tfoot>
+        <tr class="tfoot-row">
+         <td colspan="3">
+          <div class="tfoot-label">
+           Attiva YouZen oggi &mdash;
+           <strong>
+            15 giorni gratis, nessuna carta richiesta
+           </strong>
+          </div>
+          <button class="tfoot-cta" type="button">
+           Inizia gratis &rarr;
+          </button>
+         </td>
+        </tr>
+       </tfoot>
+      </table>
+     </header>
     </section>
    </section>
    <!-- SETTORI -->
-   <section class="merged-section sec-05" id="sec-05">
+   <section aria-labelledby="sec-05-title" class="merged-section sec-05" id="sec-05">
     <section class="section sectors-v3">
      <div class="section-inner sectors-shell">
-      <div class="section-head sectors-head">
+      <header class="section-head sectors-head">
        <div class="eyebrow">
         Settori
        </div>
-       <h2 class="section-title">
+       <h2 class="section-title" id="sec-05-title">
         Un agente AI che si adatta
         <br/>
         <em>
@@ -8460,7 +8983,7 @@ tbody tr:hover .td-good {
        <p class="sectors-intro">
         Stesso obiettivo: meno richieste perse, meno interruzioni, pi&ugrave; contatti gestiti bene. Ogni box mette in evidenza un caso d&rsquo;uso reale e una metrica semplice, credibile e immediata.
        </p>
-      </div>
+      </header>
       <div class="sector-grid sector-grid-editorial">
        <a class="sector-card sector-box sector-xxl sector-artigiani" href="settori/problemi_artigiani.html" id="settore-artigiani">
         <div class="sector-topline">
@@ -8659,7 +9182,7 @@ tbody tr:hover .td-good {
     </section>
    </section>
    <!-- ONBOARDING / PERCORSO -->
-   <section class="merged-section sec-06" data-source="6 youzen-timeline-v2 (1).html" id="sec-06">
+   <section aria-labelledby="sec-06-title" class="merged-section sec-06" data-source="6 youzen-timeline-v2 (1).html" id="sec-06">
     <div class="yzs-story-wrap" id="yzs-story">
      <div class="yzs-hero">
       <div class="yzs-container">
@@ -8669,7 +9192,7 @@ tbody tr:hover .td-good {
           <div class="yzs-eyebrow">
            Onboarding YouZen
           </div>
-          <h2>
+          <h2 id="sec-06-title">
            Operativo in
            <span>
             15 giorni.
@@ -8731,9 +9254,9 @@ tbody tr:hover .td-good {
              Giorni 1&ndash;10
             </span>
            </div>
-           <h4>
+           <h3>
             Setup operativo.
-           </h4>
+           </h3>
            <p class="yzs-lead">
             Configuriamo tutto noi. Tu ci spieghi solo come lavori, quali richieste ricevi e dove deve intervenire l'automazione.
            </p>
@@ -8766,9 +9289,9 @@ tbody tr:hover .td-good {
              Giorni 11&ndash;13
             </span>
            </div>
-           <h4>
+           <h3>
             Prove reali.
-           </h4>
+           </h3>
            <p class="yzs-lead">
             Chiami, scrivi, provi scenari veri. L'obiettivo non &egrave; mostrare una demo carina: &egrave; far emergere tutto quello che va corretto prima del go-live.
            </p>
@@ -8801,9 +9324,9 @@ tbody tr:hover .td-good {
              Giorni 14&ndash;15
             </span>
            </div>
-           <h4>
+           <h3>
             Attivazione.
-           </h4>
+           </h3>
            <p class="yzs-lead">
             Ultimi check, attivazione canali e primo giorno reale. Da qui non stai pi&ugrave; "provando": stai gi&agrave; usando il sistema con i tuoi clienti.
            </p>
@@ -8853,13 +9376,13 @@ tbody tr:hover .td-good {
    </section>
    <!-- PRICING -->
    <section class="merged-section sec-07" data-source="7 youzen-prezzi (2).html" id="sec-07">
-    <section id="prezzi">
+    <section aria-labelledby="sec-07-title" id="prezzi">
      <div class="wrap">
-      <div class="section-intro">
+      <header class="section-intro">
        <div class="eyebrow">
         Quanto costa la pace?
        </div>
-       <h2>
+       <h2 id="sec-07-title">
         Prezzi chiari.
         <br/>
         <em>
@@ -8869,7 +9392,7 @@ tbody tr:hover .td-good {
        <p>
         Nessun canone fisso nascosto, nessuna sorpresa in fattura. Solo minuti veri, usati davvero.
        </p>
-      </div>
+      </header>
       <!-- ── SLIDER MINUTI ── -->
       <div class="min-selector">
        <div class="min-selector-row">
@@ -9858,26 +10381,28 @@ tbody tr:hover .td-good {
     </section>
    </section>
    <!-- FAQ -->
-   <section class="merged-section sec-08" data-source="8 youzen-faq.html" id="sec-08">
+   <section aria-labelledby="sec-08-title" class="merged-section sec-08" data-source="8 youzen-faq.html" id="sec-08">
     <div id="faq">
     </div>
     <section class="section">
-     <div class="eyebrow">
-      Domande scomode
-     </div>
-     <h2 class="section-title">
-      Le domande che fai sempre.
-      <br/>
-      <em>
-       Solo dopo il terzo caff&egrave;.
-      </em>
-     </h2>
-     <p class="section-sub">
-      Risposte oneste. Senza marketing. Se hai una domanda che ti sembra stupida,
-      <strong>
-       &egrave; probabilmente qui sotto.
-      </strong>
-     </p>
+     <header>
+      <div class="eyebrow">
+       Domande scomode
+      </div>
+      <h2 class="section-title" id="sec-08-title">
+       Le domande che fai sempre.
+       <br/>
+       <em>
+        Solo dopo il terzo caff&egrave;.
+       </em>
+      </h2>
+      <p class="section-sub">
+       Risposte oneste. Senza marketing. Se hai una domanda che ti sembra stupida,
+       <strong>
+        &egrave; probabilmente qui sotto.
+       </strong>
+      </p>
+     </header>
      <div class="faq-list">
       <!-- 1 -->
       <div aria-expanded="false" class="faq-item c-orange" onclick="toggle(this)" role="button" tabindex="0">
@@ -10141,7 +10666,11 @@ tbody tr:hover .td-good {
           S&igrave;. YouZen pu&ograve; gestire anche richieste da WhatsApp, raccogliere informazioni utili e instradare meglio i contatti in ingresso.
           <br/>
           <br/>
-          L'idea non &egrave; aggiungere un altro canale da controllare, ma <strong>evitare che telefono e messaggi diventino due caos separati</strong>. Tutto resta pi&ugrave; ordinato e pi&ugrave; semplice da seguire.
+          L'idea non &egrave; aggiungere un altro canale da controllare, ma
+          <strong>
+           evitare che telefono e messaggi diventino due caos separati
+          </strong>
+          . Tutto resta pi&ugrave; ordinato e pi&ugrave; semplice da seguire.
          </div>
          <div class="faq-punchline">
           // Se il cliente scrive invece di chiamare, non merita di essere perso per strada.
@@ -10168,7 +10697,11 @@ tbody tr:hover .td-good {
        <div class="faq-a">
         <div class="faq-a-inner">
          <div class="faq-answer">
-          In molti casi s&igrave;. Dipende dagli strumenti che usi oggi, ma l'obiettivo &egrave; sempre lo stesso: <strong>far entrare le richieste nel tuo flusso senza costringerti a ricopiare tutto a mano</strong>.
+          In molti casi s&igrave;. Dipende dagli strumenti che usi oggi, ma l'obiettivo &egrave; sempre lo stesso:
+          <strong>
+           far entrare le richieste nel tuo flusso senza costringerti a ricopiare tutto a mano
+          </strong>
+          .
           <br/>
           <br/>
           Durante la demo guardiamo il tuo caso reale e ti diciamo subito cosa si pu&ograve; collegare, cosa no e qual &egrave; la soluzione pi&ugrave; pulita.
@@ -10201,7 +10734,11 @@ tbody tr:hover .td-good {
           Non mesi. Non un progetto enterprise infinito. Nella maggior parte dei casi si parte in tempi rapidi perch&eacute; la configurazione viene costruita sul tuo flusso, non da zero come un software custom.
           <br/>
           <br/>
-          La parte importante non &egrave; "accendere il sistema", ma <strong>farlo rispondere bene sulle richieste vere che ricevi ogni giorno</strong>. Ed &egrave; l&igrave; che concentriamo il lavoro.
+          La parte importante non &egrave; "accendere il sistema", ma
+          <strong>
+           farlo rispondere bene sulle richieste vere che ricevi ogni giorno
+          </strong>
+          . Ed &egrave; l&igrave; che concentriamo il lavoro.
          </div>
          <div class="faq-punchline">
           // Il difficile non &egrave; metterlo online. &Egrave; farlo sembrare utile dal giorno uno.
@@ -10231,7 +10768,11 @@ tbody tr:hover .td-good {
           Non tutte le richieste vanno trattate allo stesso modo, ed &egrave; proprio per questo che YouZen viene configurato con regole precise.
           <br/>
           <br/>
-          Se una situazione va passata subito a una persona, pu&ograve; raccogliere le informazioni essenziali e inoltrarla nel modo corretto. <strong>L'obiettivo non &egrave; trattenere tutto, ma capire quando &egrave; il momento di escalare</strong>.
+          Se una situazione va passata subito a una persona, pu&ograve; raccogliere le informazioni essenziali e inoltrarla nel modo corretto.
+          <strong>
+           L'obiettivo non &egrave; trattenere tutto, ma capire quando &egrave; il momento di escalare
+          </strong>
+          .
          </div>
          <div class="faq-punchline">
           // L'automazione intelligente non fa tutto. Sa anche quando farsi da parte.
@@ -10261,7 +10802,11 @@ tbody tr:hover .td-good {
           Te ne accorgi da cose molto concrete: meno chiamate perse, meno interruzioni, pi&ugrave; richieste raccolte bene e meno messaggi lasciati a met&agrave;.
           <br/>
           <br/>
-          Non serve inventarsi KPI da slide. <strong>Se a fine giornata hai meno caos operativo e pi&ugrave; richieste gestite bene, il vantaggio si vede subito</strong>.
+          Non serve inventarsi KPI da slide.
+          <strong>
+           Se a fine giornata hai meno caos operativo e pi&ugrave; richieste gestite bene, il vantaggio si vede subito
+          </strong>
+          .
          </div>
          <div class="faq-punchline">
           // Se ti fa lavorare meglio, non hai bisogno di un TED Talk per capirlo.
@@ -10288,7 +10833,7 @@ tbody tr:hover .td-good {
    </section>
    <!-- CTA FINALE / FOOTER -->
    <section class="merged-section sec-10" data-source="10 youzen-footer (2).html" id="sec-10">
-    <section class="cta-unified" id="contatto">
+    <section aria-labelledby="sec-10-title" class="cta-unified" id="contatto">
      <div id="contatti">
      </div>
      <div class="cu-wrap">
@@ -10297,7 +10842,7 @@ tbody tr:hover .td-good {
        <div class="pf-eyebrow">
         Parliamoci. &rarr; ti mostro tutto in 2 minuti
        </div>
-       <h2 class="pf-title">
+       <h2 class="pf-title" id="sec-10-title">
         Basta perder chiamate.
         <br/>
         <em>
@@ -10310,7 +10855,7 @@ tbody tr:hover .td-good {
          Spoiler: funziona davvero.
         </strong>
        </p>
-       <div class="pf-contacts">
+       <address class="pf-contacts">
         <div class="pf-contact-item">
          <div class="pf-contact-icon">
           📧
@@ -10352,7 +10897,7 @@ tbody tr:hover .td-good {
           </span>
          </div>
         </div>
-       </div>
+       </address>
        <div class="pf-badges">
         <div class="pf-badge">
          <div class="pf-badge-dot">
@@ -10394,140 +10939,77 @@ tbody tr:hover .td-good {
      </div>
     </section>
     <!-- FOOTER -->
-    <footer class="site-footer">
-     <div class="ft-wrap">
-      <div class="ft-top">
-       <!-- Brand -->
-       <div>
-        <a class="ft-logo" href="/">
-         <div class="ft-logo-dot">
-         </div>
-         YouZen
-        </a>
-        <p class="ft-brand-desc">
-         La segreteria AI che risponde sempre &mdash; su chiamata, WhatsApp e web chat.
-          Personalizzata per il tuo studio, negozio o azienda.
-        </p>
-        <div class="ft-socials">
-         <a aria-label="X / Twitter" class="ft-social" href="#">
-          &Xopf;
-         </a>
-         <a aria-label="LinkedIn" class="ft-social" href="#">
-          in
-         </a>
-         <a aria-label="YouTube" class="ft-social" href="#">
-          ▶
-         </a>
-         <a aria-label="Instagram" class="ft-social" href="#">
-          ◎
-         </a>
-        </div>
-       </div>
-       <!-- Prodotto -->
-       <div>
-        <div class="ft-col-title">
-         Prodotto
-        </div>
-        <div class="ft-links">
-         <a href="#sec-06">
-          Come funziona
-         </a>
-         <a href="#sec-05">
-          Settori
-         </a>
-         <a href="#prezzi">
-          Prezzi
-         </a>
-         <a href="#faq">
-          FAQ
-         </a>
-         <a href="#sec-10">
-          Contatti
-         </a>
-        </div>
-       </div>
-       <!-- Settori -->
-       <div>
-        <div class="ft-col-title">
-         Settori
-        </div>
-        <div class="ft-links">
-         <a href="settori/problemi_artigiani.html">
-          Artigiani
-         </a>
-         <a href="settori/problemi_professionisti.html">
-          Professionisti
-         </a>
-         <a href="settori/problemi_PMI.html">
-          PMI
-         </a>
-         <a href="settori/problemi_salone.html">
-          Salone
-         </a>
-         <a href="settori/problemi_legale.html">
-          Studio Legale
-         </a>
-         <a href="settori/problemi_realestate.html">
-          Real Estate
-         </a>
-        </div>
-       </div>
-       <!-- Legale -->
-       <div>
-        <div class="ft-col-title">
-         Legale
-        </div>
-        <div class="ft-links">
-         <a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">
-          Privacy Policy
-         </a>
-         <a href="https://www.iubenda.com/privacy-policy/72921216/cookie-policy" rel="nofollow noopener" target="_blank">
-          Cookie Policy
-         </a>
-         <a href="/Sito-YouZen/termini/">
-          Termini e condizioni
-         </a>
-         <a href="/Sito-YouZen/GDPR/">
-          Diritti privacy (GDPR)
-         </a>
-        </div>
-       </div>
-      </div>
-      <div class="ft-bottom">
-       <div class="ft-legal">
-        &copy; 2025 YouZen &mdash; Partita IVA 04855440402 &middot;
-        <a href="mailto:info@youzen.it">
-         info@youzen.it
-        </a>
-        &middot;
-        <a href="mailto:lucabrighi84@pec.it">
-         lucabrighi84@pec.it
-        </a>
-        <a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">
-         Privacy Policy
-        </a>
-        <a href="https://www.iubenda.com/privacy-policy/72921216/cookie-policy" rel="nofollow noopener" target="_blank">
-         Cookie Policy
-        </a>
-        <a href="/Sito-YouZen/termini/">
-         Termini e condizioni
-        </a>
-        <a href="/Sito-YouZen/GDPR/">
-         Diritti privacy (GDPR)
-        </a>
-       </div>
-       <div class="ft-made">
-        Fatto con
-        <span>
-         &hearts;
-        </span>
-        in Italia
-       </div>
-      </div>
-     </div>
-    </footer>
    </section>
   </main>
+  <footer class="site-footer" role="contentinfo">
+   <div class="ft-wrap">
+    <div class="ft-top">
+     <section class="ft-brand" aria-labelledby="footer-brand-title">
+      <p class="seo-copy" id="footer-brand-title">YouZen</p>
+      <a class="ft-logo" href="/">
+       <span class="ft-logo-dot" aria-hidden="true"></span>
+       <span>YouZen</span>
+      </a>
+      <p class="ft-brand-desc">
+       La segreteria AI che risponde sempre &mdash; su chiamata, WhatsApp e web chat.
+       Personalizzata per il tuo studio, negozio o azienda.
+      </p>
+      <div class="ft-socials">
+       <a aria-label="X / Twitter" class="ft-social" href="#">&Xopf;</a>
+       <a aria-label="LinkedIn" class="ft-social" href="#">in</a>
+       <a aria-label="YouTube" class="ft-social" href="#">▶</a>
+       <a aria-label="Instagram" class="ft-social" href="#">◎</a>
+      </div>
+     </section>
+     <nav class="ft-column" aria-labelledby="footer-product-title">
+      <p class="ft-col-title" id="footer-product-title">Prodotto</p>
+      <div class="ft-links">
+       <a href="#sec-06">Come funziona</a>
+       <a href="#sec-05">Settori</a>
+       <a href="#prezzi">Prezzi</a>
+       <a href="#faq">FAQ</a>
+       <a href="#sec-10">Contatti</a>
+      </div>
+     </nav>
+     <nav class="ft-column" aria-labelledby="footer-sectors-title">
+      <p class="ft-col-title" id="footer-sectors-title">Settori</p>
+      <div class="ft-links">
+       <a href="settori/problemi_artigiani.html">Artigiani</a>
+       <a href="settori/problemi_professionisti.html">Professionisti</a>
+       <a href="settori/problemi_PMI.html">PMI</a>
+       <a href="settori/problemi_salone.html">Salone</a>
+       <a href="settori/problemi_legale.html">Studio Legale</a>
+       <a href="settori/problemi_realestate.html">Real Estate</a>
+      </div>
+     </nav>
+     <nav class="ft-column" aria-labelledby="footer-legal-title">
+      <p class="ft-col-title" id="footer-legal-title">Legale</p>
+      <div class="ft-links">
+       <a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">Privacy Policy</a>
+       <a href="https://www.iubenda.com/privacy-policy/72921216/cookie-policy" rel="nofollow noopener" target="_blank">Cookie Policy</a>
+       <a href="/Sito-YouZen/termini/">Termini e condizioni</a>
+       <a href="/Sito-YouZen/GDPR/">Diritti privacy (GDPR)</a>
+      </div>
+     </nav>
+    </div>
+    <div class="ft-bottom">
+     <div class="ft-bottom-primary">
+      <p class="ft-legal-copy">&copy; 2025 YouZen &mdash; Partita IVA 04855440402</p>
+      <div class="ft-contacts">
+       <a href="mailto:info@youzen.it">info@youzen.it</a>
+       <a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a>
+      </div>
+     </div>
+     <nav class="ft-legal-nav" aria-label="Link legali secondari">
+      <a href="https://www.iubenda.com/privacy-policy/72921216" rel="nofollow noopener" target="_blank">Privacy Policy</a>
+      <a href="https://www.iubenda.com/privacy-policy/72921216/cookie-policy" rel="nofollow noopener" target="_blank">Cookie Policy</a>
+      <a href="/Sito-YouZen/termini/">Termini e condizioni</a>
+      <a href="/Sito-YouZen/GDPR/">Diritti privacy (GDPR)</a>
+     </nav>
+     <p class="ft-made">Fatto con <span>&hearts;</span> in Italia</p>
+    </div>
+   </div>
+  </footer>
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
@@ -10595,7 +11077,7 @@ form.addEventListener('submit', e => {
     timestamp: new Date().toISOString()
   };
 
-  const WEBHOOK_URL = 'https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn';
+  const WEBHOOK_URL = form.getAttribute('action') || 'https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn';
 
   // Usiamo un hidden iframe come target per bypassare il CORS completamente
   // Il form posta direttamente senza JavaScript fetch/XHR
@@ -11592,353 +12074,6 @@ if (first) {
   renderStep(0);
 })();
   </script>
-  <style id="cta-typography-tune-final">
-   /* Final CTA cleanup: smaller typography + better balance */
-.omni-footer-title,
-.footer-title,
-.custom-banner-title,
-.twist-title,
-.yzs-cta-shell h3{
-  font-size: clamp(22px, 2.4vw, 34px) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -.035em !important;
-  max-width: 18ch !important;
-  text-wrap: balance !important;
-  margin-bottom: 10px !important;
-}
-
-.omni-footer-subtitle,
-.footer-subtitle,
-.custom-banner-desc,
-.custom-banner-sub,
-.twist-sub,
-.omni-footer-text,
-.footer-text,
-.twist p,
-.yzs-cta-shell p{
-  font-size: 15px !important;
-  line-height: 1.5 !important;
-  color: rgba(255,255,255,.84) !important;
-}
-
-.omni-footer-text,
-.footer-text,
-.custom-banner-left,
-.twist.cta-shell-like .cta-box-copy{
-  max-width: 560px !important;
-}
-
-.omni-footer-box.cta-shell-like .cta-box-shell,
-.faq-footer.cta-shell-like .cta-box-shell,
-.custom-banner.cta-shell-like .cta-box-shell,
-.twist.cta-shell-like .cta-box-shell{
-  gap: 20px !important;
-  align-items: center !important;
-}
-
-.twist.cta-shell-like .twist-title{
-  max-width: 16ch !important;
-}
-
-.twist.cta-shell-like .twist-sub{
-  max-width: 44ch !important;
-}
-
-.omni-btn-cta,
-.btn-cta,
-.custom-banner-cta,
-.
-
-@media (max-width: 960px){
-  .omni-footer-title,
-  .footer-title,
-  .custom-banner-title,
-  .twist-title,
-  .yzs-cta-shell h3{
-    font-size: clamp(20px, 5vw, 28px) !important;
-    max-width: none !important;
-  }
-
-  .omni-footer-subtitle,
-  .footer-subtitle,
-  .custom-banner-desc,
-  .custom-banner-sub,
-  .twist-sub,
-  .omni-footer-text,
-  .footer-text,
-  .twist p,
-  .yzs-cta-shell p{
-    font-size: 14px !important;
-  }
-}
-
-/* Uniform CTA boxes */
-.yzs-cta-shell, .cta-unified, .twist, .faq-footer, .custom-banner, .omni-footer-box {
-  padding: 28px 32px !important;
-  border-radius: 28px !important;
-  background: linear-gradient(135deg, #FB923C 0%, #F97316 50%, #EA580C 100%) !important;
-  box-shadow: 0 8px 32px rgba(249,115,22,0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
-  border: 1px solid rgba(249,115,22,0.3) !important;
-  transition: all 0.3s ease !important;
-}
-.yzs-cta-shell:hover, .cta-unified:hover, .custom-banner:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 40px rgba(249,115,22,0.5) !important;
-}
-
-/* === final contact section aligned to landing background === */
-.pf-eyebrow {
-  color: #F97316 !important;
-}
-
-.sec-10 .pf-eyebrow,
-.sec-10 .pf-eyebrow::before {
-  color: #F97316 !important;
-  background: #F97316 !important;
-}
-
-.pf-title {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-
-.pf-title em {
-  color: #F97316 !important;
-  -webkit-text-fill-color: #F97316 !important;
-}
-
-.pf-sub {
-  color: rgba(255,255,255,0.72) !important;
-}
-
-.sec-10 .cta-unified,
-.sec-10 .cu-wrap,
-.sec-10 .cu-left,
-.sec-10 .cu-cal {
-  background: transparent !important;
-}
-
-.sec-10 .cta-unified,
-.sec-10 .cu-wrap {
-  box-shadow: none !important;
-  filter: none !important;
-}
-
-.sec-10 .cu-wrap {
-  background:
-    radial-gradient(1200px 700px at 18% 8%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 60%),
-    linear-gradient(180deg, #08111f 0%, #091427 38%, #0a1322 100%) !important;
-  border: 1px solid rgba(255,255,255,.08) !important;
-}
-
-.sec-10 .cu-wrap::before,
-.sec-10 .cu-wrap::after,
-.sec-10 .cta-unified::before,
-.sec-10 .cta-unified::after {
-  display: none !important;
-}
-
-.sec-10 .pf-badge,
-.sec-10 .pf-contact-item {
-  background: rgba(255,255,255,.04) !important;
-  border-color: rgba(255,255,255,.08) !important;
-}
-
-
-/* === navbar visibility fix === */
-.sec-01 .navbar,
-#navbar,
-.navbar {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 9999 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  display: flex !important;
-}
-
-.sec-01 .nav-inner,
-#navbar .nav-inner,
-.navbar .nav-inner {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-body .sec-01 .navbar.scrolled {
-  background: rgba(8,14,31,.92) !important;
-}
-
-/* Prevent accidental clipping by parent containers */
-.sec-01,
-.merged-section,
-body {
-  overflow-x: clip;
-}
-
-
-/* === menu final fix: no top gap + always visible === */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-body {
-  padding-top: 0 !important;
-}
-
-.sec-01 {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-.sec-01 .navbar,
-#navbar,
-.navbar {
-  position: sticky !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 99999 !important;
-  margin-top: 0 !important;
-  transform: translateY(0) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: flex !important;
-}
-
-.sec-01 .hero {
-  padding-top: 76px !important;
-}
-
-.sec-01 .navbar.scrolled,
-#navbar.scrolled,
-.navbar.scrolled {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
-  background: rgba(8,14,31,.92) !important;
-}
-
-/* neutralize any script-added hiding states */
-.sec-01 .navbar[style*="display: none"],
-#navbar[style*="display: none"],
-.navbar[style*="display: none"] {
-  display: flex !important;
-}
-
-.sec-01 .navbar[style*="opacity: 0"],
-#navbar[style*="opacity: 0"],
-.navbar[style*="opacity: 0"] {
-  opacity: 1 !important;
-}
-
-.sec-01 .navbar[style*="visibility: hidden"],
-#navbar[style*="visibility: hidden"],
-.navbar[style*="visibility: hidden"] {
-  visibility: visible !important;
-}
-
-.sec-01 .navbar[style*="transform"],
-#navbar[style*="transform"],
-.navbar[style*="transform"] {
-  transform: translateY(0) !important;
-}
-
-
-/* === final navbar + hero cleanup === */
-
-/* menu always visible on every section */
-.sec-01 .navbar,
-#navbar,
-.navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 999999 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  display: flex !important;
-  will-change: auto !important;
-}
-
-/* neutralize any hide-on-scroll behavior */
-.sec-01 .navbar.scrolled,
-#navbar.scrolled,
-.navbar.scrolled,
-.sec-01 .navbar.hide,
-#navbar.hide,
-.navbar.hide {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  top: 0 !important;
-}
-
-/* first section sits correctly below the fixed menu */
-.sec-01 {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.sec-01 .hero {
-  padding-top: 72px !important;
-  margin-top: 0 !important;
-  min-height: calc(100vh - 72px) !important;
-}
-
-/* remove top blank/gap feeling under menu */
-.sec-01::before,
-.sec-01::after,
-.sec-01 .hero::before,
-.sec-01 .hero::after {
-  background-position: top center !important;
-}
-
-/* keep menu visible over pricing and all following sections */
-#sec-07,
-#sec-08,
-#sec-09,
-#sec-10,
-.merged-section,
-section {
-  position: relative;
-}
-
-.sec-01 .navbar,
-#navbar,
-.navbar,
-.sec-01 .nav-inner {
-  pointer-events: auto !important;
-}
-
-/* hard override in case inline JS writes hidden styles */
-.sec-01 .navbar[style],
-#navbar[style],
-.navbar[style] {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  display: flex !important;
-  top: 0 !important;
-}
-
-
-/* === REMOVE GREEN BAR ABOVE HERO === */
-.sec-01 {
-  background: #08111f !important;
-}
-
-.sec-01::before,
-.sec-01::after,
-.sec-01 .hero::before,
-.sec-01 .hero::after {
-  display: none !important;
-  content: none !important;
-}
-  </style>
   <script>
    (function() {
   const navbar = document.getElementById('navbar');
