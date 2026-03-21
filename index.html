@@ -11227,8 +11227,8 @@ tbody tr:hover .td-good {
 <div class="ft-bottom-primary">
 <p class="ft-legal-copy">© 2025 YouZen — Partita IVA 04855440402</p>
 <div class="ft-contacts">
-<a href="mailto:info@youzen.it">info@youzen.it</a>
-<a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a>
+<a href="/cdn-cgi/l/email-protection#fc95929a93bc859389869992d29588"><span class="__cf_email__" data-cfemail="c1a8afa7ae81b8aeb4bba4afefa8b5">[email&#160;protected]</span></a>
+<a href="/cdn-cgi/l/email-protection#a8c4ddcbc9cadac1cfc0c1909ce8d8cdcb86c1dc"><span class="__cf_email__" data-cfemail="771b02141615051e101f1e4f4337071214591e03">[email&#160;protected]</span></a>
 </div>
 </div>
 <nav aria-label="Link legali secondari" class="ft-legal-nav">
@@ -11241,7 +11241,7 @@ tbody tr:hover .td-good {
 </div>
 </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
 </script>
@@ -11397,7 +11397,7 @@ form.addEventListener('submit', e => {
   const payload = {
     nome: document.getElementById('f-nome').value.trim(),
     email: document.getElementById('f-email').value.trim(),
-    telefono: phoneDigits ? `+39 ${phoneDigits}` : '',
+    telefono: phoneDigits ? `+39${phoneDigits}` : '',
     settore: settore.value,
     fonte: 'youzen.it – form hero',
     timestamp: new Date().toISOString()
@@ -12621,16 +12621,4 @@ if (first) {
   }
 
   root.querySelectorAll('.compare-grid .cg-row-label').forEach(decorateTarget);
-  root.querySelectorAll('.compare-grid .cg-cell.cg-text').forEach(decorateTarget);
-  root.querySelectorAll('.mobile-plans .mob-features li').forEach(decorateTarget);
-
-  root.addEventListener('click', function (event) {
-    const trigger = event.target.closest('.yz-help-trigger');
-    if (!trigger) return;
-    event.preventDefault();
-    openModal(trigger.dataset.helpKey, trigger.dataset.helpTitle);
-  });
-})();
-  </script>
-</body>
-</html>
+  root.querySelectorAll('.compare-grid .cg-cell.cg-text').forEach(decorate
