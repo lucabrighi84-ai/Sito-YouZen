@@ -5023,14 +5023,24 @@ html, body {
     max-width: 100% !important;
   }
 
-  /* Padding laterale hero */
-  .sec-01 .hero-inner,
-  .sec-01 .hero,
-  .sec-01 [class*="hero"] {
+  /* Padding laterale hero — solo sul container, NON sui figli */
+  .sec-01 .hero-inner {
     padding-left: 20px !important;
     padding-right: 20px !important;
     box-sizing: border-box !important;
     max-width: 100vw !important;
+  }
+  .sec-01 .hero {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    max-width: 100vw !important;
+  }
+  .sec-01 .hero-grid,
+  .sec-01 .hero-left,
+  .sec-01 .hero-form {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   /* Tutte le sezioni: padding sicuro */
@@ -7337,8 +7347,8 @@ section {
     }
     .sec-01 .hero-inner,
     .hero-inner {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
     }
     .sec-01 .hero-grid {
       gap: 24px !important;
@@ -7415,8 +7425,8 @@ section {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     box-sizing: border-box !important;
     gap: 12px !important;
   }
@@ -7446,8 +7456,8 @@ section {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     box-sizing: border-box !important;
   }
 
@@ -11227,8 +11237,8 @@ tbody tr:hover .td-good {
 <div class="ft-bottom-primary">
 <p class="ft-legal-copy">© 2025 YouZen — Partita IVA 04855440402</p>
 <div class="ft-contacts">
-<a href="mailto:info@youzen.it">info@youzen.it</a>
-<a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a>
+<a href="/cdn-cgi/l/email-protection#2e474048416e57415b544b4000475a"><span class="__cf_email__" data-cfemail="e1888f878ea1988e949b848fcf8895">[email&#160;protected]</span></a>
+<a href="/cdn-cgi/l/email-protection#7e120b1d1f1c0c17191617464a3e0e1b1d50170a"><span class="__cf_email__" data-cfemail="f29e87919390809b959a9bcac6b2829791dc9b86">[email&#160;protected]</span></a>
 </div>
 </div>
 <nav aria-label="Link legali secondari" class="ft-legal-nav">
@@ -11241,7 +11251,7 @@ tbody tr:hover .td-good {
 </div>
 </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
 </script>
@@ -11397,7 +11407,7 @@ form.addEventListener('submit', e => {
   const payload = {
     nome: document.getElementById('f-nome').value.trim(),
     email: document.getElementById('f-email').value.trim(),
-    telefono: phoneDigits ? `+39 ${phoneDigits}` : '',
+    telefono: phoneDigits ? `+39${phoneDigits}` : '',
     settore: settore.value,
     fonte: 'youzen.it – form hero',
     timestamp: new Date().toISOString()
@@ -12621,16 +12631,4 @@ if (first) {
   }
 
   root.querySelectorAll('.compare-grid .cg-row-label').forEach(decorateTarget);
-  root.querySelectorAll('.compare-grid .cg-cell.cg-text').forEach(decorateTarget);
-  root.querySelectorAll('.mobile-plans .mob-features li').forEach(decorateTarget);
-
-  root.addEventListener('click', function (event) {
-    const trigger = event.target.closest('.yz-help-trigger');
-    if (!trigger) return;
-    event.preventDefault();
-    openModal(trigger.dataset.helpKey, trigger.dataset.helpTitle);
-  });
-})();
-  </script>
-</body>
-</html>
+  root.querySelectorAll('.compare-grid .cg-cell.cg-text').forEach(decorate
