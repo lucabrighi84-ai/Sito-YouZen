@@ -1,0 +1,13 @@
+# robots.txt — youzen.it
+# Ultimo aggiornamento: 2026-03-22
+
+User-agent: *
+Allow: /
+
+# Blocca risorse non indicizzabili
+Disallow: /cdn-cgi/
+Disallow: /Sito-YouZen/GDPR/
+Disallow: /Sito-YouZen/termini/
+
+# Sitemap
+Sitemap: https://youzen.it/sitemap.xml
