@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouZen - Automation</title>
+    <title>YouZen - Automazione</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -17,104 +17,122 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
+            width: 90%;
             position: relative;
+            z-index: 10;
         }
 
-        /* Il cavo */
-        .wire {
-            position: absolute;
-            top: -250px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 200px;
-            background: #222;
-        }
-
-        /* La lampadina con animazione sfarfallio */
-        .bulb {
-            position: absolute;
-            bottom: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 45px;
-            height: 45px;
-            background: #fff;
-            border-radius: 50%;
-            z-index: 2;
-            animation: flicker 4s infinite alternate;
-        }
-
-        /* Definizione dello sfarfallio */
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                box-shadow: 
-                    0 0 60px 25px rgba(255, 255, 255, 0.7),
-                    0 0 120px 60px rgba(255, 255, 255, 0.2);
-                opacity: 1;
-            }
-            20%, 24%, 55% {
-                box-shadow: none;
-                opacity: 0.4;
-            }
-        }
-
-        h1 {
-            font-size: 5.5rem;
-            font-weight: 700;
-            letter-spacing: 15px;
-            margin: 0;
-            color: #fff;
-            text-transform: uppercase;
-            /* Il testo reagisce alla luce della lampadina */
-            animation: text-flicker 4s infinite alternate;
-        }
-
-        @keyframes text-flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-            }
-            20%, 24%, 55% {
-                text-shadow: none;
-            }
-        }
-
-        p {
-            font-size: 1rem;
-            font-weight: 300;
-            letter-spacing: 6px;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
-
-        /* Luce soffusa sullo sfondo */
-        .glow {
+        /* Logo di sfondo */
+        .background-logo {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 85vw;
+            max-width: 450px;
+            opacity: 0.08;
+            z-index: 1;
+            pointer-events: none;
+            filter: sepia(1) saturate(5) hue-rotate(-10deg);
+        }
+
+        /* Filo */
+        .wire {
+            position: absolute;
+            top: -180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5px;
+            height: 140px;
+            background: linear-gradient(to bottom, #000, #555);
+        }
+
+        /* Lampadina con intermittenza accentuata */
+        .bulb {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 32px;
+            background: #ff9d00;
+            border-radius: 50%;
+            box-shadow: 0 0 50px 20px rgba(255, 157, 0, 0.7);
+            z-index: 3;
+            animation: glitch-flicker 3s infinite; /* Più veloce e irregolare */
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 12vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 12px;
+            margin: 0;
+            text-transform: uppercase;
+            animation: text-glitch 3s infinite;
+        }
+
+        h2 {
+            font-size: clamp(0.9rem, 4.5vw, 1.3rem);
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+        }
+
+        /* ANIMAZIONE INTERMITTENZA ACCENTUATA */
+        @keyframes glitch-flicker {
+            0%, 10%, 12%, 25%, 27%, 30%, 70%, 72%, 100% { 
+                opacity: 1; 
+                box-shadow: 0 0 50px 20px rgba(255, 157, 0, 0.7);
+                transform: translateX(-50%) scale(1);
+            }
+            11%, 26%, 29%, 71%, 73% { 
+                opacity: 0.1; 
+                box-shadow: none;
+                transform: translateX(-51%) scale(0.95);
+            }
+        }
+
+        @keyframes text-glitch {
+            0%, 10%, 12%, 25%, 27%, 30%, 70%, 72%, 100% { 
+                text-shadow: 0 0 20px rgba(255, 157, 0, 0.6);
+                color: #fff;
+            }
+            11%, 26%, 29%, 71%, 73% { 
+                text-shadow: none; 
+                color: #333; /* Quasi nero durante l'intermittenza */
+            }
+        }
+
+        .ambient-glow {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 100vw;
             height: 100vh;
-            background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(255,100,0,0.05) 0%, rgba(0,0,0,0) 70%);
+            z-index: 0;
             pointer-events: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="glow"></div>
+    <div class="ambient-glow"></div>
+    <img src="logo.webp" alt="YouZen Logo" class="background-logo">
 
     <div class="container">
         <div class="wire">
             <div class="bulb"></div>
         </div>
         <h1>YouZen</h1>
-        <p>Automazione Intelligente</p>
+        <h2>Stiamo Arrivando</h2>
     </div>
 
 </body>
