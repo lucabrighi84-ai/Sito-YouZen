@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouZen | Feedback post chiamata</title>
+  <meta name="description" content="Pagina feedback post chiamata YouZen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #ffffff; --muted: #94a3b8; --dim: #64748b; --orange: #f97316; --orange-2: #ea580c;
+      --card: rgba(255,255,255,.03); --line: rgba(255,255,255,.10); --radius: 28px;
+      --shadow: 0 24px 70px rgba(0,0,0,.28);
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      font-family: 'Outfit', sans-serif; color: var(--text);
+      background: radial-gradient(circle at top, rgba(249,115,22,.14), transparent 30%),
+                  radial-gradient(circle at 80% 20%, rgba(96,165,250,.10), transparent 26%),
+                  linear-gradient(180deg, #08111f 0%, #091427 40%, #0a1322 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, textarea { font: inherit; }
+
+    .page { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 40px; }
+
+    /* ── NAV ── */
+    .site-header { position: sticky; top: 14px; z-index: 20; margin-bottom: 24px; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 16px 20px; border: 1px solid rgba(255,255,255,.08);
+      background: rgba(8,17,31,.82); backdrop-filter: blur(14px);
+      border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,.18);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 52px; height: 52px; object-fit: contain; filter: drop-shadow(0 8px 18px rgba(0,0,0,.18)); }
+    .brand-name { font-size: 28px; font-weight: 900; line-height: 1; letter-spacing: -.03em; }
+    .brand-name span { color: var(--orange); }
+    .brand-sub { margin-top: 6px; font-size: 11px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+    .nav-pill {
+      border: 1px solid rgba(52,211,153,.18); background: rgba(52,211,153,.10);
+      color: #a7f3d0; padding: 10px 14px; border-radius: 999px;
+      font-size: 13px; font-weight: 700;
+    }
+
+    /* ── HERO PANEL ── */
+    .panel {
+      border: 1px solid var(--line); background: var(--card);
+      backdrop-filter: blur(14px); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 34px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: .24em; color: var(--orange); margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ""; width: 30px; height: 2px; border-radius: 999px; background: var(--orange); }
+    h1 { font-size: clamp(38px, 6vw, 64px); line-height: .95; letter-spacing: -.05em; font-weight: 900; }
+    h1 .accent { color: var(--orange); }
+    .lead { margin: 16px 0 0; max-width: 760px; font-size: 17px; line-height: 1.75; color: var(--muted); }
+
+    /* ── SCALE BAR ── */
+    .scale { margin-top: 24px; }
+    .scale-bar { height: 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); overflow: hidden; }
+    .scale-fill { width: 100%; height: 100%; background: linear-gradient(90deg, #34d399 0%, #a3e635 22%, #fcd34d 50%, #fb923c 74%, #f43f5e 100%); }
+    .scale-labels { margin-top: 8px; display: flex; justify-content: space-between; color: #64748b; font-size: 10px; text-transform: uppercase; letter-spacing: .18em; }
+
+    /* ── OPTIONS GRID ── */
+    .options-wrapper {
+      margin-top: 24px;
+      position: relative;
+    }
+    .options {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+      transition: gap .5s cubic-bezier(.4,0,.2,1);
+    }
+    .options.has-selection {
+      grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px;
+    }
+
+    .option {
+      width: 100%; text-align: left; cursor: pointer; border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10); padding: 18px;
+      color: inherit;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      transition: all .45s cubic-bezier(.4,0,.2,1);
+      transform-origin: center center;
+      position: relative;
+      overflow: hidden;
+    }
+    .option::after {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.06), transparent 70%);
+      opacity: 0; transition: opacity .4s ease;
+    }
+    .option:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.22); }
+    .option:hover::after { opacity: 1; }
+
+    /* SELECTED STATE */
+    .option.active {
+      transform: translateY(-2px) scale(1.02);
+      z-index: 2;
+    }
+    .option.active .choose { display: none; }
+    .option.active .chosen-badge { display: inline-flex; }
+
+    /* DIMMED STATE */
+    .option.dimmed {
+      opacity: .18;
+      filter: saturate(.3) blur(1px);
+      transform: scale(.92);
+      pointer-events: none;
+      border-color: rgba(255,255,255,.04);
+    }
+    .option.dimmed .option-desc { display: none; }
+
+    .option-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .emoji { font-size: 28px; transition: transform .4s cubic-bezier(.4,0,.2,1); }
+    .option.active .emoji { transform: scale(1.25); }
+
+    .choose {
+      border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);
+      padding: 6px 10px; border-radius: 999px; font-size: 10px; color: #cbd5e1;
+      letter-spacing: .18em; text-transform: uppercase; font-weight: 800;
+      transition: all .3s ease;
+    }
+    .option:hover .choose { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); }
+
+    .chosen-badge {
+      display: none; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 999px; font-size: 10px;
+      font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+      animation: badgePop .4s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes badgePop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    .positive .chosen-badge { background: rgba(52,211,153,.2); color: #6ee7b7; border: 1px solid rgba(52,211,153,.3); }
+    .warm .chosen-badge { background: rgba(163,230,53,.2); color: #bef264; border: 1px solid rgba(163,230,53,.3); }
+    .neutral .chosen-badge { background: rgba(252,211,77,.2); color: #fde68a; border: 1px solid rgba(252,211,77,.3); }
+    .negative .chosen-badge { background: rgba(251,146,60,.2); color: #fdba74; border: 1px solid rgba(251,146,60,.3); }
+    .confused .chosen-badge { background: rgba(251,113,133,.2); color: #fda4af; border: 1px solid rgba(251,113,133,.3); }
+
+    .option-title { font-size: 20px; line-height: 1.1; letter-spacing: -.03em; font-weight: 800; transition: font-size .4s ease; }
+    .option.dimmed .option-title { font-size: 14px; }
+    .option-desc { margin-top: 8px; color: #cbd5e1; font-size: 13px; line-height: 1.55; transition: all .3s ease; }
+
+    /* Color accents */
+    .positive { background: linear-gradient(180deg, rgba(16,185,129,.22), rgba(16,185,129,.04)); border-color: rgba(52,211,153,.22); }
+    .warm { background: linear-gradient(180deg, rgba(132,204,22,.20), rgba(132,204,22,.04)); border-color: rgba(163,230,53,.22); }
+    .neutral { background: linear-gradient(180deg, rgba(251,191,36,.20), rgba(251,191,36,.04)); border-color: rgba(252,211,77,.22); }
+    .negative { background: linear-gradient(180deg, rgba(249,115,22,.20), rgba(249,115,22,.04)); border-color: rgba(251,146,60,.22); }
+    .confused { background: linear-gradient(180deg, rgba(244,63,94,.20), rgba(244,63,94,.04)); border-color: rgba(251,113,133,.22); }
+
+    .positive.active { border-color: rgba(52,211,153,.55); box-shadow: 0 0 0 2px rgba(52,211,153,.2) inset, 0 20px 50px rgba(16,185,129,.15); }
+    .warm.active { border-color: rgba(163,230,53,.55); box-shadow: 0 0 0 2px rgba(163,230,53,.2) inset, 0 20px 50px rgba(132,204,22,.15); }
+    .neutral.active { border-color: rgba(252,211,77,.55); box-shadow: 0 0 0 2px rgba(252,211,77,.2) inset, 0 20px 50px rgba(251,191,36,.15); }
+    .negative.active { border-color: rgba(251,146,60,.55); box-shadow: 0 0 0 2px rgba(251,146,60,.2) inset, 0 20px 50px rgba(249,115,22,.15); }
+    .confused.active { border-color: rgba(251,113,133,.55); box-shadow: 0 0 0 2px rgba(251,113,133,.2) inset, 0 20px 50px rgba(244,63,94,.15); }
+
+    /* ── FOLLOWUP ZONE ── */
+    .followup-zone {
+      margin-top: 0; max-height: 0; opacity: 0; overflow: hidden;
+      transition: max-height .6s cubic-bezier(.4,0,.2,1), opacity .5s ease .1s, margin-top .5s ease;
+    }
+    .followup-zone.visible {
+      max-height: 800px; opacity: 1; margin-top: 24px;
+    }
+    .followup-inner {
+      border: 1px solid var(--line); background: var(--card);
+      backdrop-filter: blur(14px); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 30px;
+    }
+
+    .followup-header {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      margin-bottom: 20px;
+    }
+    .followup-header h2 {
+      font-size: 28px; line-height: 1.05; letter-spacing: -.04em; font-weight: 900;
+      animation: slideUp .4s cubic-bezier(.4,0,.2,1);
+    }
+    .followup-header p {
+      margin: 8px 0 0; color: var(--muted); font-size: 15px; line-height: 1.7;
+      animation: slideUp .5s cubic-bezier(.4,0,.2,1);
+    }
+    .reset-btn {
+      flex-shrink: 0; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04);
+      color: var(--muted); padding: 8px 14px; border-radius: 999px; font-size: 11px;
+      font-weight: 700; letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+      transition: all .3s ease;
+    }
+    .reset-btn:hover { background: rgba(255,255,255,.08); color: var(--text); border-color: rgba(255,255,255,.2); }
+
+    @keyframes slideUp { 0% { transform: translateY(12px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .chip {
+      border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);
+      color: #e2e8f0; border-radius: 999px; padding: 10px 16px; font-size: 13px;
+      cursor: pointer; transition: all .25s ease; font-weight: 500;
+      animation: chipIn .4s cubic-bezier(.4,0,.2,1) backwards;
+    }
+    .chip:nth-child(1) { animation-delay: .05s; }
+    .chip:nth-child(2) { animation-delay: .1s; }
+    .chip:nth-child(3) { animation-delay: .15s; }
+    .chip:nth-child(4) { animation-delay: .2s; }
+    .chip:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); transform: translateY(-1px); }
+    .chip.active { border-color: rgba(249,115,22,.45); background: rgba(249,115,22,.12); color: #fdba74; }
+    @keyframes chipIn { 0% { transform: translateY(8px) scale(.95); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+
+    .comment-area {
+      border-radius: 20px; border: 1px solid rgba(255,255,255,.10);
+      background: rgba(8,17,31,.6); padding: 18px;
+      animation: slideUp .5s cubic-bezier(.4,0,.2,1) .15s backwards;
+    }
+    .comment-label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .22em;
+      color: var(--dim); font-weight: 800; margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%; min-height: 120px; resize: vertical;
+      border: 1px dashed rgba(255,255,255,.10); background: rgba(255,255,255,.02);
+      color: #e2e8f0; border-radius: 16px; padding: 16px; outline: none;
+      font-size: 15px; line-height: 1.6;
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+    textarea:focus {
+      border-color: rgba(249,115,22,.3);
+      box-shadow: 0 0 0 3px rgba(249,115,22,.08);
+    }
+    textarea::placeholder { color: #475569; }
+
+    .actions {
+      display: flex; align-items: center; gap: 14px; margin-top: 16px;
+      animation: slideUp .5s cubic-bezier(.4,0,.2,1) .25s backwards;
+    }
+    .cta {
+      flex: 1; border: 0; cursor: pointer; border-radius: 999px; padding: 16px 20px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      color: white; font-size: 15px; font-weight: 800; letter-spacing: .01em;
+      box-shadow: 0 12px 30px rgba(249,115,22,.22);
+      transition: all .3s ease; position: relative; overflow: hidden;
+    }
+    .cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+      opacity: 0; transition: opacity .3s ease;
+    }
+    .cta:hover::before { opacity: 1; }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(249,115,22,.3); }
+    .cta:disabled { cursor: not-allowed; opacity: .5; transform: none !important; }
+    .cta:active { transform: translateY(0) scale(.98); }
+
+    .char-count { font-size: 12px; color: var(--dim); font-weight: 600; white-space: nowrap; }
+
+    .toast {
+      margin-top: 14px; border-radius: 16px; padding: 14px 18px; font-size: 14px; font-weight: 700;
+      display: none;
+      animation: toastIn .4s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes toastIn { 0% { transform: translateY(8px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    .toast.success { display: block; border: 1px solid rgba(52,211,153,.20); background: rgba(52,211,153,.10); color: #86efac; }
+    .toast.error { display: block; border: 1px solid rgba(251,113,133,.20); background: rgba(251,113,133,.10); color: #fda4af; }
+
+    /* ── FOOTER ── */
+    .site-footer { margin-top: 24px; padding: 24px 0 8px; }
+    .footer-shell {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 18px 20px; border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03);
+      backdrop-filter: blur(12px);
+    }
+    .footer-left { display: flex; align-items: center; gap: 12px; }
+    .footer-left img { width: 38px; height: 38px; object-fit: contain; }
+    .footer-brand { font-size: 22px; line-height: 1; letter-spacing: -.03em; font-weight: 900; }
+    .footer-brand span { color: var(--orange); }
+    .footer-meta { margin-top: 4px; color: var(--dim); font-size: 12px; line-height: 1.7; }
+    .footer-right { color: var(--muted); font-size: 13px; text-align: right; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 980px) {
+      .options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .options.has-selection { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .page { width: min(100% - 20px, 1180px); padding-top: 14px; }
+      .nav { padding: 14px; align-items: flex-start; flex-direction: column; }
+      .brand-name { font-size: 24px; }
+      .nav-pill { width: 100%; text-align: center; }
+      .panel { padding: 20px; }
+      .options { grid-template-columns: 1fr; }
+      .options.has-selection { grid-template-columns: 1fr; }
+      .option.dimmed { max-height: 0; padding: 0; margin: 0; border: 0; opacity: 0; overflow: hidden; }
+      .option-title { font-size: 18px; }
+      .followup-inner { padding: 20px; }
+      .followup-header h2 { font-size: 24px; }
+      .followup-header { flex-direction: column; }
+      .footer-shell { align-items: flex-start; flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="nav">
+        <a class="brand" href="https://www.youzen.it">
+          <img src="logo.webp" alt="Logo YouZen" />
+          <div>
+            <div class="brand-name">You<span>Zen</span></div>
+            <div class="brand-sub">feedback post chiamata</div>
+          </div>
+        </a>
+        <div class="nav-pill">10 secondi, Promesso.</div>
+      </div>
+    </header>
+
+    <main>
+      <div class="panel">
+        <div class="eyebrow">feedback post chiamata</div>
+        <h1>Com'è andata <span class="accent">la chiamata?</span></h1>
+        <p class="lead">Hai appena provato il nostro assistente virtuale. Bello, brutto, interessante, confuso, da rivedere: ci va bene tutto. Ci basta che sia sincero.</p>
+
+        <div class="scale">
+          <div class="scale-bar"><div class="scale-fill"></div></div>
+          <div class="scale-labels"><span>molto positivo</span><span>molto negativo</span></div>
+        </div>
+
+        <div class="options-wrapper">
+          <div class="options" id="options">
+            <button class="option positive" data-key="positive">
+              <div class="option-top">
+                <div class="emoji">🔥</div>
+                <div class="choose">scegli</div>
+                <div class="chosen-badge">✓ scelto</div>
+              </div>
+              <div class="option-title">Mi è piaciuta un botto</div>
+              <div class="option-desc">Onestamente? Molto meglio di quanto pensassi.</div>
+            </button>
+            <button class="option warm" data-key="warm">
+              <div class="option-top">
+                <div class="emoji">👀</div>
+                <div class="choose">scegli</div>
+                <div class="chosen-badge">✓ scelto</div>
+              </div>
+              <div class="option-title">Molto interessante</div>
+              <div class="option-desc">C'è roba buona. Voglio capire meglio come si usa davvero.</div>
+            </button>
+            <button class="option neutral" data-key="neutral">
+              <div class="option-top">
+                <div class="emoji">🤔</div>
+                <div class="choose">scegli</div>
+                <div class="chosen-badge">✓ scelto</div>
+              </div>
+              <div class="option-title">Carino, ma ho dubbi</div>
+              <div class="option-desc">L'idea c'è, però mi serve un pezzo in più per convincermi.</div>
+            </button>
+            <button class="option negative" data-key="negative">
+              <div class="option-top">
+                <div class="emoji">😬</div>
+                <div class="choose">scegli</div>
+                <div class="chosen-badge">✓ scelto</div>
+              </div>
+              <div class="option-title">Non mi ha convinto</div>
+              <div class="option-desc">Capisco il concetto, ma non lo vedo bene per il mio lavoro.</div>
+            </button>
+            <button class="option confused" data-key="confused">
+              <div class="option-top">
+                <div class="emoji">🫠</div>
+                <div class="choose">scegli</div>
+                <div class="chosen-badge">✓ scelto</div>
+              </div>
+              <div class="option-title">Non ho capito bene</div>
+              <div class="option-desc">Forse ero di corsa. Forse il caffè era scarso. Va rispiegato.</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOLLOWUP SLIDES IN BELOW -->
+      <div class="followup-zone" id="followup-zone">
+        <div class="followup-inner">
+          <div class="followup-header">
+            <div>
+              <h2 id="followup-title"></h2>
+              <p id="followup-subtitle"></p>
+            </div>
+            <button class="reset-btn" id="reset-btn">↻ Cambia</button>
+          </div>
+          <div class="chips" id="chips"></div>
+          <div class="comment-area">
+            <div class="comment-label">commento libero</div>
+            <textarea id="comment" placeholder="Scrivi qui quello che pensi davvero. Anche in modo brutale. Anzi: meglio."></textarea>
+          </div>
+          <div class="actions">
+            <button class="cta" id="cta-btn">Invia feedback</button>
+            <div class="char-count" id="char-count"></div>
+          </div>
+          <div class="toast" id="toast"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div class="footer-left">
+          <img src="logo.webp" alt="Logo YouZen" />
+          <div>
+            <div class="footer-brand">You<span>Zen</span></div>
+            <div class="footer-meta">Partita IVA 04855440402<br/>info@youzen.it</div>
+          </div>
+        </div>
+        <div class="footer-right">www.youzen.it<br/>Feedback post chiamata</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://hook.eu2.make.com/nfstsmo8m0s7hakgff6t1shnocg8razh";
+
+    const followups = {
+      positive: { title: "Molto bene. Ci piaci.", subtitle: "Adesso dicci al volo cosa ti ha colpito di più. Così capiamo cosa spinge davvero.", chips: ["Sembrava naturale", "Molto utile", "Mi farebbe risparmiare tempo", "Lo vedo bene nel mio lavoro"], rating: 1 },
+      warm: { title: "Ottimo. Sei caldo.", subtitle: "Dicci cosa ti manca per fare quel piccolo salto da \"interessante\" a \"ok, voglio provarlo\".", chips: ["Vorrei capire il prezzo", "Voglio un caso reale", "Mi interessa ma ho poco tempo", "Devo capire se vale per il mio settore"], rating: 2 },
+      neutral: { title: "Perfetto. I dubbi servono.", subtitle: "Meglio un dubbio sincero che un complimento di cortesia. Qual è il punto che ti frena di più?", chips: ["Sembrava troppo generico", "Non so se fa per me", "Non era chiarissimo", "Vorrei una prova concreta"], rating: 3 },
+      negative: { title: "Onesto. E ci piace così.", subtitle: "Se non ti ha convinto, diccelo senza filtri. È il feedback più utile che puoi darci.", chips: ["Non sembrava naturale", "Non risolve un problema reale", "Troppo complicato", "Non mi interessa adesso"], rating: 4 },
+      confused: { title: "Succede ai migliori.", subtitle: "Se non era chiaro, la colpa è nostra. Aiutaci a capire quale pezzo va spiegato meglio.", chips: ["Non ho capito cosa fa", "Non ho capito per chi è", "Non ho capito il vantaggio", "Non ho capito come si attiva"], rating: 5 }
+    };
+
+    const optionsGrid = document.getElementById('options');
+    const optionButtons = document.querySelectorAll('.option');
+    const followupZone = document.getElementById('followup-zone');
+    const followupTitle = document.getElementById('followup-title');
+    const followupSubtitle = document.getElementById('followup-subtitle');
+    const chipsContainer = document.getElementById('chips');
+    const ctaBtn = document.getElementById('cta-btn');
+    const commentEl = document.getElementById('comment');
+    const charCount = document.getElementById('char-count');
+    const toast = document.getElementById('toast');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let selectedKey = null;
+    let isSending = false;
+
+    function selectOption(button) {
+      selectedKey = button.dataset.key;
+      const data = followups[selectedKey];
+      if (!data) return;
+
+      // Update cards
+      optionsGrid.classList.add('has-selection');
+      optionButtons.forEach(btn => {
+        btn.classList.remove('active', 'dimmed');
+        if (btn === button) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.add('dimmed');
+        }
+      });
+
+      // Show followup
+      followupTitle.textContent = data.title;
+      followupSubtitle.textContent = data.subtitle;
+
+      // Build chips
+      chipsContainer.innerHTML = '';
+      data.chips.forEach((text, i) => {
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'chip';
+        el.textContent = text;
+        el.style.animationDelay = `${i * .06}s`;
+        el.addEventListener('click', () => el.classList.toggle('active'));
+        chipsContainer.appendChild(el);
+      });
+
+      // Reset state
+      toast.className = 'toast';
+      ctaBtn.disabled = false;
+      ctaBtn.textContent = 'Invia feedback';
+      isSending = false;
+
+      // Slide in
+      followupZone.classList.add('visible');
+
+      // Smooth scroll to followup
+      setTimeout(() => {
+        followupZone.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 200);
+    }
+
+    function resetSelection() {
+      selectedKey = null;
+      optionsGrid.classList.remove('has-selection');
+      optionButtons.forEach(btn => btn.classList.remove('active', 'dimmed'));
+      followupZone.classList.remove('visible');
+      commentEl.value = '';
+      charCount.textContent = '';
+      toast.className = 'toast';
+    }
+
+    // Event listeners
+    optionButtons.forEach(button => {
+      button.addEventListener('click', () => selectOption(button));
+    });
+
+    resetBtn.addEventListener('click', resetSelection);
+
+    commentEl.addEventListener('input', () => {
+      const len = commentEl.value.length;
+      charCount.textContent = len > 0 ? `${len} caratteri` : '';
+    });
+
+    ctaBtn.addEventListener('click', async () => {
+      if (!selectedKey || isSending) return;
+      const data = followups[selectedKey];
+
+      const activeChips = [...chipsContainer.querySelectorAll('.chip.active')].map(c => c.textContent);
+      const payload = {
+        rating: data.rating,
+        label: selectedKey,
+        chips: activeChips,
+        comment: commentEl.value.trim()
+      };
+
+      isSending = true;
+      ctaBtn.disabled = true;
+      ctaBtn.textContent = 'Invio in corso…';
+      toast.className = 'toast';
+
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error('Webhook non raggiungibile');
+        toast.textContent = '✓ Messaggio inviato. Grazie, feedback ricevuto.';
+        toast.className = 'toast success';
+        ctaBtn.textContent = 'Inviato ✓';
+      } catch (e) {
+        toast.textContent = 'C\'è stato un piccolo problema nell\'invio. Riprova tra un attimo.';
+        toast.className = 'toast error';
+        isSending = false;
+        ctaBtn.disabled = false;
+        ctaBtn.textContent = 'Riprova';
+      }
+    });
+  </script>
+</body>
+</html>
