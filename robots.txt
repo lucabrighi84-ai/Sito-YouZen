@@ -1,14 +1,28 @@
-# robots.txt — youzen.it
-# Ultimo aggiornamento: 2026-03-24
+# ==============================
+# YouZen - Robots.txt
+# https://youzen.it
+# ==============================
 
+# Permetti a tutti i crawler di indicizzare tutto
 User-agent: *
 Allow: /
 
-# Blocca risorse non indicizzabili
-Disallow: /cdn-cgi/
-Disallow: /Sito-YouZen/GDPR/
-Disallow: /Sito-YouZen/termini/
-Disallow: /Sito-YouZen/tracker/
+# Blocca aree private (se esistono)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /tmp/
+Disallow: /private/
+
+# Blocca crawler aggressivi noti
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
 
 # Sitemap
 Sitemap: https://youzen.it/sitemap.xml

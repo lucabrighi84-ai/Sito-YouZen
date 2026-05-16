@@ -1,55 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- Homepage -->
   <url>
     <loc>https://youzen.it/</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Settori -->
+  <!-- Pagine principali -->
   <url>
-    <loc>https://youzen.it/settori/problemi_artigiani.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://youzen.it/prezzi</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://youzen.it/contatti</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pagine settori -->
+  <url>
+    <loc>https://youzen.it/settori/legale</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://youzen.it/settori/problemi_professionisti.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://youzen.it/settori/medico</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://youzen.it/settori/problemi_PMI.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://youzen.it/settori/beauty</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://youzen.it/settori/problemi_salone.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://youzen.it/settori/pmi</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://youzen.it/settori/problemi_legale.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://youzen.it/settori/finance</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://youzen.it/settori/problemi_realestate.html</loc>
-    <lastmod>2026-03-22</lastmod>
+    <loc>https://youzen.it/settori/artigiani</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://youzen.it/settori/realestate</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pagine legali -->
+  <url>
+    <loc>https://youzen.it/privacy</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://youzen.it/cookie-policy</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://youzen.it/termini</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
