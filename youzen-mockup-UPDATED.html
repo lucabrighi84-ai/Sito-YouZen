@@ -4,6 +4,34 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- ============================ GOOGLE ANALYTICS 4 + CONSENT MODE v2 ============================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consenso negato di default finché l'utente non accetta (GDPR / Consent Mode v2)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-S3XZKEZSFF', { 'anonymize_ip': true });
+  // Ripristina il consenso eventualmente già dato
+  try {
+    if (localStorage.getItem('yz-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    }
+  } catch (e) {}
+</script>
+
 <!-- ============================ SEO PRIMARY ============================ -->
 <title>YouZen · Segretaria AI per chiamate, WhatsApp e appuntamenti</title>
 <meta name="description" content="Segreteria AI italiana 24/7 per studi legali, cliniche, saloni, agenzie immobiliari e PMI. Risponde alle chiamate, gestisce WhatsApp, prenota appuntamenti automaticamente." />
@@ -35,15 +63,15 @@
 <meta name="twitter:image" content="https://youzen.it/og-image.jpg" />
 <meta name="twitter:image:alt" content="YouZen - Segretaria AI italiana" />
 
-<!-- ============================ FAVICON SET ============================ -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/web-app-manifest-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/web-app-manifest-512x512.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+<!-- ============================ FAVICON SET (path relativi: funzionano sia in locale sia in PROD) ============================ -->
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
 <meta name="msapplication-TileColor" content="#F97316" />
-<meta name="msapplication-TileImage" content="/web-app-manifest-192x192.png" />
+<meta name="msapplication-TileImage" content="web-app-manifest-192x192.png" />
 
 <!-- ============================ STRUCTURED DATA (JSON-LD) ============================ -->
 <script type="application/ld+json">
@@ -80,6 +108,31 @@
 }
 </script>
 
+<!-- ============================ STRUCTURED DATA: WEBSITE ============================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "YouZen",
+  "url": "https://youzen.it/",
+  "inLanguage": "it-IT",
+  "publisher": { "@type": "Organization", "name": "YouZen" }
+}
+</script>
+
+<!-- ============================ STRUCTURED DATA: BREADCRUMB ============================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://youzen.it/" },
+    { "@type": "ListItem", "position": 2, "name": "Settori", "item": "https://youzen.it/#sec-05" },
+    { "@type": "ListItem", "position": 3, "name": "Prezzi", "item": "https://youzen.it/#sec-07" }
+  ]
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,11 +165,6 @@
       "description": "Piano top · agenti AI illimitati + multi-sede"
     }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "127"
-  },
   "featureList": [
     "Risposta automatica alle chiamate 24/7",
     "Gestione WhatsApp Business",
@@ -318,8 +366,8 @@ body::before {
 .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 @media (min-width: 1024px) { .container { padding: 0 40px; } }
 
-.section { position: relative; padding: 15px 0; }
-@media (min-width: 1024px) { .section { padding: 15px 0; } }
+.section { position: relative; padding: 64px 0; }
+@media (min-width: 1024px) { .section { padding: 96px 0; } }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -340,18 +388,25 @@ body::before {
 
 h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.05; font-weight: 700; }
 h1 { font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -0.03em; line-height: 0.95; font-weight: 800; }
-h2 { font-size: clamp(2.25rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 4.4vw, 3.5rem); }
 
 .title-problem {
   color: rgba(255,255,255,0.95);
   display: block;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .title-solution {
   color: var(--accent);
   display: block;
   line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* su schermi stretti lascia andare a capo per non sforare */
+@media (max-width: 560px) {
+  .title-problem, .title-solution { white-space: normal; }
 }
 h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
 h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
@@ -549,9 +604,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 /* === 20px di gap dopo la CTA prima della sezione adiacente === */
-.section.has-cta { padding-bottom: 15px; }
+.section.has-cta { padding-bottom: 120px; }
 .section.has-cta + .section,
-.section.has-cta + .cta-final { padding-top: 15px; }
+.section.has-cta + .cta-final { padding-top: 48px; }
 
 /* ====================================================================
    NAVBAR
@@ -695,12 +750,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 /* ====================================================================
    HERO (sec-01)
    ==================================================================== */
-.hero { 
+.hero {
   height: 100vh;
   min-height: 600px;
-  position: relative; 
+  position: relative;
   overflow: hidden;
-  background: #000000;
+  background: #080E1F;
 }
 
 #fog-container {
@@ -711,7 +766,16 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   height: 100%;
   z-index: 0 !important;
   overflow: hidden;
-  background: #050510;
+  background: #080E1F;
+}
+
+#thpace-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* Aurora blobs (sostituiscono Vanta FOG) */
@@ -763,6 +827,21 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 /* Rimuovo regola Vanta canvas (non più usata) */
+
+/* Sfumatura morbida in basso: i triangoli si dissolvono in #080E1F senza linea di stacco */
+.hero-bottom-fade {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  z-index: 50;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(8,14,31,0) 0%,
+    rgba(8,14,31,0.6) 60%,
+    #080E1F 100%);
+}
 
 /* Layer di isolamento tra nebbia e testo */
 .hero-isolation-layer {
@@ -1045,31 +1124,113 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .demo-call-section {
   background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(20,25,45,1) 100%);
-  padding: 15px 0;
+  padding: 72px 0 80px;
   position: relative;
   overflow: hidden;
 }
 
+/* Mesh di triangoli (come la hero) di sfondo */
+#thpace-democall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
+/* Variante A: alone arancione centrato dietro il form */
+.demo-call-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(249,115,22,0.85), rgba(249,115,22,0.35) 40%, transparent 68%);
+  animation: dcGlow 7s ease-in-out infinite;
+}
+
+@keyframes dcGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+}
+
+/* Sfumature morbide in alto e in basso: niente stacco netto con le altre sezioni */
+.demo-call-fade-top,
+.demo-call-fade-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.demo-call-fade-top {
+  top: 0;
+  background: linear-gradient(to bottom, #080E1F, rgba(8,14,31,0));
+}
+
+.demo-call-fade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #080E1F, rgba(8,14,31,0));
+}
+
+.demo-call-section .container { position: relative; z-index: 3; }
+
+@media (max-width: 768px) {
+  .demo-call-glow { width: 360px; height: 360px; filter: blur(45px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-call-glow { animation: none; }
+}
+
 .demo-call-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  display: block;
 }
 
 .demo-call-content {
-  max-width: 520px;
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(8, 14, 31, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 36px 32px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 560px) {
+  .demo-call-content { padding: 28px 20px; }
+}
+
+.demo-call-content .eyebrow,
+.demo-call-title,
+.demo-call-subtitle {
+  text-align: center;
 }
 
 .demo-call-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.125rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text-primary);
   margin: 16px 0 12px;
 }
+
+/* il titolo demo-call deve restare dentro la card: niente nowrap qui */
+.demo-call-title .title-problem,
+.demo-call-title .title-solution { white-space: normal; }
 
 .demo-call-subtitle {
   font-size: 1.125rem;
@@ -1153,10 +1314,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .demo-call-visual {
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
 
 .visual-placeholder {
@@ -1189,495 +1347,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   
   .demo-call-visual {
     height: 400px;
-  }
-}
-
-/* ====================================================================
-   OMNICANALE (sec-02) — 4 CARD ORIZZONTALI CON MOCKUP
-   ==================================================================== */
-
-.omni-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 64px;
-}
-
-@media (max-width: 768px) {
-  .omni-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.omni-card {
-  position: relative;
-  flex: 1; /* Tutti uguali */
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  border-radius: 24px;
-  border: 1px solid rgba(var(--omni-rgb, 249, 115, 22), 0.25);
-  background:
-    linear-gradient(160deg, 
-      rgba(var(--omni-rgb, 249, 115, 22), 0.22) 0%, 
-      rgba(var(--omni-rgb, 249, 115, 22), 0.10) 40%, 
-      rgba(0, 0, 0, 0.3) 100%
-    ),
-    var(--ink-900);
-  text-align: center;
-  overflow: hidden;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s, box-shadow 0.4s;
-  isolation: isolate;
-  min-height: 520px;
-}
-
-/* Glow radiale con colore specifico per card */
-.omni-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--omni-color, var(--accent)), transparent 55%);
-  opacity: 0.35;
-  transition: opacity 0.5s;
-  z-index: 0;
-}
-
-/* Pattern griglia hairline */
-.omni-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
-  opacity: 0.7;
-}
-
-.omni-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--omni-color, var(--accent));
-  box-shadow: 0 24px 60px -28px var(--omni-color, var(--accent));
-}
-
-.omni-card:hover::before {
-  opacity: 0.5;
-}
-
-/* Colori specifici per ogni card (sia HEX che RGB) */
-.omni-card:nth-child(1) { 
-  --omni-color: #F97316; 
-  --omni-rgb: 249, 115, 22;
-}
-.omni-card:nth-child(2) { 
-  --omni-color: #22C55E; 
-  --omni-rgb: 34, 197, 94;
-}
-.omni-card:nth-child(3) { 
-  --omni-color: #25D366; 
-  --omni-rgb: 37, 211, 102;
-}
-.omni-card:nth-child(4) { 
-  --omni-color: #60A5FA; 
-  --omni-rgb: 96, 165, 250;
-}
-
-.omni-icon {
-  font-size: 48px;
-  line-height: 1;
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 2;
-}
-
-.omni-eyebrow {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--omni-color, var(--accent));
-  font-weight: 700;
-  margin-bottom: 8px;
-  display: block;
-  position: relative;
-  z-index: 2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.omni-title {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: white;
-  position: relative;
-  z-index: 2;
-  line-height: 1.2;
-  min-height: 22px;
-}
-
-.omni-desc {
-  font-size: 14px;
-  line-height: 1.4;
-  color: var(--muted-strong);
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 2;
-}
-
-.omni-mockup {
-  display: flex;
-  justify-content: center;
-  margin-top: auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* === Phone mockup inline omnicanale === */
-.omni-phone {
-  width: 220px;
-  height: 460px;
-  background: #000;
-  border-radius: 32px;
-  padding: 8px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  position: relative;
-  z-index: 2;
-}
-
-.omni-phone-screen {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #0a0f1f 0%, #1a1f2f 100%);
-  border-radius: 26px;
-  padding: 14px 11px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.omni-phone-statusbar {
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  font-size: 9px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  padding: 0 4px;
-}
-
-/* CHIAMATA */
-.omni-call-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-}
-.omni-call-avatar {
-  width: 64px; height: 64px;
-  background: linear-gradient(135deg, #475569, #334155);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff;
-  margin-bottom: 12px;
-  position: relative;
-}
-.omni-call-avatar::before {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border: 2px solid rgba(148,163,184,0.4);
-  border-radius: 50%;
-  animation: omniPulse 2s ease-in-out infinite;
-}
-@keyframes omniPulse {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.15); opacity: 0; }
-}
-.omni-call-name { color: #fff; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
-.omni-call-type { color: rgba(255,255,255,0.65); font-size: 9px; margin-bottom: 14px; }
-.omni-call-actions {
-  display: flex; gap: 20px; margin-top: auto; margin-bottom: 8px;
-}
-.omni-call-btn {
-  width: 42px; height: 42px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.4);
-}
-.omni-call-btn svg { width: 20px; height: 20px; }
-.omni-call-btn.decline { background: #ef4444; }
-.omni-call-btn.decline svg { transform: rotate(135deg); }
-.omni-call-btn.answer { background: #fff; color: #000; }
-.omni-call-btn-label { font-size: 8px; color: rgba(255,255,255,0.55); margin-top: 4px; text-align: center; }
-
-/* APPUNTAMENTI */
-.omni-appt-header {
-  display: flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  padding: 7px 10px;
-  margin-bottom: 10px;
-}
-.omni-appt-title { color: #fff; font-size: 10px; font-weight: 600; flex: 1; text-align: center; }
-.omni-appt-icon { color: rgba(255,255,255,0.5); font-size: 13px; }
-.omni-appt-date {
-  text-align: center;
-  color: rgba(255,255,255,0.65);
-  font-size: 9px;
-  margin-bottom: 10px;
-}
-.omni-appt-slots {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-bottom: 10px;
-}
-.omni-appt-slot {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
-  padding: 6px;
-  text-align: center;
-  color: #fff;
-  font-size: 8px;
-  font-weight: 600;
-}
-.omni-appt-slot.selected {
-  background: linear-gradient(135deg, #F97316, #EA580C);
-  border-color: #F97316;
-}
-.omni-appt-confirm {
-  background: rgba(34,197,94,0.12);
-  border: 1px solid rgba(34,197,94,0.3);
-  border-radius: 8px;
-  padding: 7px 9px;
-  display: flex; gap: 7px; align-items: center;
-  margin-top: auto;
-}
-.omni-appt-confirm-icon {
-  width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(34,197,94,0.3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px;
-  color: #22C55E;
-}
-.omni-appt-confirm-text { color: rgba(255,255,255,0.85); font-size: 7.5px; line-height: 1.35; }
-
-/* WHATSAPP */
-.omni-wa-header {
-  display: flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  padding: 7px;
-  margin-bottom: 8px;
-}
-.omni-wa-avatar {
-  width: 26px; height: 26px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-}
-.omni-wa-info { flex: 1; }
-.omni-wa-name { color: #fff; font-size: 10px; font-weight: 600; }
-.omni-wa-status {
-  color: #25D366;
-  font-size: 8px;
-  display: flex; align-items: center; gap: 4px;
-}
-.omni-wa-status::before {
-  content: '';
-  width: 5px; height: 5px; background: #25D366;
-  border-radius: 50%;
-}
-.omni-wa-messages {
-  flex: 1;
-  display: flex; flex-direction: column;
-  gap: 5px;
-  overflow: hidden;
-}
-.omni-wa-msg {
-  max-width: 78%;
-  padding: 6px 8px;
-  border-radius: 9px;
-  font-size: 8.5px;
-  line-height: 1.35;
-  color: #fff;
-}
-.omni-wa-msg-in {
-  background: rgba(255,255,255,0.08);
-  align-self: flex-start;
-  border-bottom-left-radius: 3px;
-}
-.omni-wa-msg-out {
-  background: linear-gradient(135deg, #F97316, #EA580C);
-  align-self: flex-end;
-  border-bottom-right-radius: 3px;
-}
-.omni-wa-tag {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.7);
-  font-size: 7.5px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  text-align: center;
-  margin-top: 4px;
-}
-
-/* DASHBOARD */
-.omni-dash-title { color: #fff; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
-.omni-dash-kpis {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-.omni-dash-kpi {
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  padding: 7px 8px;
-}
-.omni-dash-kpi-label {
-  color: rgba(255,255,255,0.5);
-  font-size: 6.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
-}
-.omni-dash-kpi-value {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 800;
-  font-family: var(--font-display);
-  line-height: 1;
-}
-.omni-dash-kpi-change {
-  color: #22c55e;
-  font-size: 7.5px;
-  margin-top: 2px;
-}
-.omni-dash-list {
-  background: rgba(255,255,255,0.04);
-  border-radius: 8px;
-  padding: 8px;
-  flex: 1;
-  overflow: hidden;
-}
-.omni-dash-list-title {
-  font-size: 7px;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
-}
-.omni-dash-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.omni-dash-item:last-child { border-bottom: none; }
-.omni-dash-item-icon {
-  width: 16px; height: 16px;
-  background: rgba(249,115,22,0.2);
-  border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 8px;
-}
-.omni-dash-item-text { flex: 1; color: #fff; font-size: 7.5px; }
-.omni-dash-item-time { color: rgba(255,255,255,0.4); font-size: 6.5px; }
-
-.mockup-phone {
-  width: 220px;
-  height: 440px;
-  background: rgba(255,255,255,.05);
-  border: 2px solid var(--line);
-  border-radius: 28px;
-  padding: 14px;
-  position: relative;
-}
-
-.mockup-phone::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 5px;
-  background: rgba(255,255,255,.2);
-  border-radius: 3px;
-}
-
-.mockup-content {
-  width: 100%;
-  height: 100%;
-  background: rgba(8,14,31,0.95);
-  border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-}
-
-.mockup-placeholder {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 11px;
-}
-
-/* === RESPONSIVE === */
-
-/* Tablet: Grid 2x2 */
-@media (max-width: 1024px) {
-  .omni-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-
-/* Mobile: Stack verticale */
-@media (max-width: 768px) {
-  .omni-card {
-    padding: 24px;
-  }
-  
-  .omni-icon {
-    font-size: 36px;
-  }
-  
-  .omni-title {
-    font-size: 18px;
-  }
-  
-  .omni-desc {
-    font-size: 14px;
-  }
-}
-
-/* Mobile stretto: nascondi mockup */
-@media (max-width: 480px) {
-  .omni-mockup {
-    display: none;
-  }
-  
-  .omni-desc::after {
-    content: ' →';
-    color: var(--accent);
-    font-weight: 600;
-    margin-left: 4px;
   }
 }
 
@@ -2252,6 +1921,220 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   margin-top: 102px; /* 72px base + 30px extra */
 }
 
+/* ====================================================================
+   SENZA / CON YOUZEN (sec-04) — SPLIT-SCREEN GIORNATA TIPO
+   ==================================================================== */
+.day-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  position: relative;
+}
+@media (min-width: 900px) {
+  .day-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+
+.day-col {
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 32px 28px;
+}
+.day-col.bad { border-color: rgba(239,68,68,0.18); }
+.day-col.good {
+  border-color: rgba(249,115,22,0.28);
+  background: linear-gradient(180deg, rgba(249,115,22,0.06), rgba(249,115,22,0.01));
+}
+
+.day-col-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.day-col-tag {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px; border-radius: 999px;
+}
+.day-col.bad .day-col-tag {
+  color: #EF4444; background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+}
+.day-col.good .day-col-tag {
+  color: var(--accent); background: rgba(249,115,22,0.1);
+  border: 1px solid rgba(249,115,22,0.3);
+}
+.day-col-score {
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 700;
+}
+.day-col.bad .day-col-score { color: #EF4444; }
+.day-col.good .day-col-score { color: var(--accent); }
+
+.day-col-title {
+  font-size: 1.4rem; margin-bottom: 24px;
+  color: white;
+  font-family: var(--font-display);
+}
+
+.day-timeline { position: relative; }
+.day-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 6px; bottom: 6px;
+  width: 1px; background: var(--line);
+}
+.day-event {
+  position: relative;
+  padding-left: 32px;
+  padding-bottom: 18px;
+}
+.day-event:last-child { padding-bottom: 0; }
+.day-event::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 6px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--ink-900);
+  border: 2px solid var(--line-strong);
+}
+.day-col.bad .day-event::before {
+  background: #EF4444;
+  border-color: rgba(239,68,68,0.4);
+  box-shadow: 0 0 10px rgba(239,68,68,0.4);
+}
+.day-col.good .day-event::before {
+  background: #22C55E;
+  border-color: rgba(34,197,94,0.4);
+  box-shadow: 0 0 10px rgba(34,197,94,0.4);
+}
+
+.day-event-time {
+  font-family: var(--font-mono);
+  font-size: 10.5px; letter-spacing: 0.08em;
+  color: var(--muted-weak);
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+.day-event-text {
+  font-size: 0.92rem;
+  color: var(--muted-strong);
+  line-height: 1.45;
+}
+.day-event-text strong { color: white; font-weight: 600; }
+.day-col.bad .day-event-text strong { color: #EF4444; }
+
+.day-summary {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.day-summary b { color: white; }
+
+.day-divider {
+  display: none;
+}
+@media (min-width: 900px) {
+  .day-divider {
+    display: grid; place-items: center;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--ink-900);
+    border: 1px solid var(--line-strong);
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 0.85rem;
+    color: var(--accent);
+    box-shadow: 0 0 0 8px var(--ink-900);
+  }
+}
+
+/* ====================================================================
+   INTEGRAZIONI (sec-integrazioni) — MARQUEE INFINITO DESTRA → SINISTRA
+   ==================================================================== */
+.integrations-marquee {
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.integrations-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: integrations-scroll 38s linear infinite;
+  will-change: transform;
+}
+.integrations-marquee:hover .integrations-track {
+  animation-play-state: paused;
+}
+@keyframes integrations-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.integration-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted-strong);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.25s, transform 0.25s;
+  cursor: default;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.integration-item:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+.integration-item svg {
+  width: 52px;
+  height: 52px;
+  opacity: 0.85;
+  flex-shrink: 0;
+  transition: opacity 0.25s, color 0.25s;
+  color: var(--muted-strong);
+}
+.integration-item:hover svg {
+  opacity: 1;
+  color: var(--accent);
+}
+/* Marquee integrazioni a tutta larghezza pagina (sfonda .container) */
+.integrations-marquee {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+
+@media (max-width: 768px) {
+  .integrations-marquee { padding: 24px 0; }
+  .integrations-track { gap: 44px; animation-duration: 30s; }
+  .integration-item { font-size: 1.15rem; gap: 12px; }
+  .integration-item svg { width: 40px; height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .integrations-track { animation: none; flex-wrap: wrap; justify-content: center; }
+}
+
 /* ====================================================================   SECTORS (sec-05) — GRID MOSAICO EDITORIALE NOBILITATO
    ==================================================================== */
 .sectors-grid {
@@ -2259,16 +2142,11 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   grid-template-columns: 1fr;
   gap: 20px;
 }
-@media (min-width: 768px) {
-  .sectors-grid {
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 240px;
-    gap: 20px;
-  }
-  .s-xxl { grid-column: span 4; grid-row: span 2; }
-  .s-xl  { grid-column: span 2; grid-row: span 2; }
-  .s-lg  { grid-column: span 3; grid-row: span 1; }
-  .s-md  { grid-column: span 2; grid-row: span 1; }
+@media (min-width: 700px) {
+  .sectors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+@media (min-width: 1024px) {
+  .sectors-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 280px; gap: 22px; }
 }
 
 .sector-card {
@@ -2371,18 +2249,22 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .sector-name {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 16px;
-  line-height: 1.1;
+  color: rgba(255,255,255,0.96);
+  margin-bottom: 14px;
+  line-height: 1.05;
 }
 
 .sector-card .s-title {
   font-family: var(--font-display);
-  font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 6px; line-height: 1.1;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.78);
 }
 .sector-card .s-tag {
   font-family: var(--font-display);
@@ -2409,6 +2291,31 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .sector-card:hover .sector-hairline { opacity: 1; }
 
+/* Box CTA (6° box) */
+.sector-card.s-cta {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(249,115,22,0.30), transparent 60%),
+    linear-gradient(160deg, rgba(249,115,22,0.18) 0%, rgba(249,115,22,0.04) 100%),
+    var(--ink-900);
+  border-color: rgba(249,115,22,0.45);
+}
+.sector-card.s-cta::before {
+  background: radial-gradient(ellipse 100% 80% at 50% 0%, var(--accent), transparent 60%);
+  opacity: 0.22;
+}
+.sector-card.s-cta:hover { border-color: var(--accent); box-shadow: 0 24px 60px -28px rgba(249,115,22,0.7); }
+.sector-card.s-cta:hover::before { opacity: 0.40; }
+.sector-card.s-cta .sector-icon {
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  border-color: var(--accent); color: white;
+}
+.sector-card.s-cta .sector-name { color: white; }
+.sector-card.s-cta .s-title { color: rgba(255,255,255,0.88); font-size: 1.05rem; }
+.sector-card.s-cta .sector-arrow {
+  background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.35); color: white;
+}
+
+
 .sector-card .s-desc {
   color: var(--muted);
   font-size: 0.85rem; line-height: 1.6;
@@ -2430,6 +2337,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   margin-top: 20px;
 }
 .sector-mark {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
   font-family: var(--font-display);
   font-size: 2rem; font-weight: 800;
   color: var(--sc, var(--accent));
@@ -2437,32 +2347,65 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   line-height: 0.7;
   letter-spacing: -0.04em;
   transition: opacity 0.4s, transform 0.5s;
+  z-index: 2;
 }
 .sector-card:hover .sector-mark { opacity: 0.6; transform: rotate(-8deg); }
 
 .sector-arrow {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
   width: 42px; height: 42px; border-radius: 999px;
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--line);
   display: grid; place-items: center;
   color: white;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 3;
 }
+
+/* Spazio per le frecce/mark posizionati in absolute */
+.sector-card { padding-bottom: 84px; }
+.sector-foot { display: none; } /* non serve più, era solo wrapper */
+
 .sector-card:hover .sector-arrow {
   background: var(--sc, var(--accent));
   border-color: var(--sc, var(--accent));
   transform: rotate(-45deg) scale(1.05);
 }
 
+/* Pannello app a 1/3 con divisione obliqua (App dedicata / App in sviluppo) */
+.sector-card.has-app .sector-body { padding-right: 34%; }
+.sector-card.has-app .sector-name { font-size: clamp(1.35rem, 1.9vw, 1.75rem); }
+.sector-card.has-app .s-title { font-size: 0.92rem; }
+.app-panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 33%;
+  z-index: 3; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 9px; text-align: center; padding: 16px 12px 16px 20px;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: clip-path 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.app-panel svg { width: 28px; height: 28px; }
+.app-panel .ap-label { font-size: 10.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.25; }
+.app-panel.ded { background: linear-gradient(160deg, #F97316, #FB923C); color: #0a0a0a; }
+.app-panel.dev {
+  color: #FBBF24;
+  background:
+    linear-gradient(rgba(251,191,36,0.12), rgba(251,191,36,0.12)),
+    repeating-linear-gradient(45deg, rgba(251,191,36,0.30) 0 10px, rgba(251,191,36,0.10) 10px 20px);
+}
+.sector-card.has-app:hover .app-panel { clip-path: polygon(26% 0, 100% 0, 100% 100%, 0% 100%); }
+@media (max-width: 600px) {
+  .sector-card.has-app .sector-body { padding-right: 36%; }
+}
+
 /* ====================================================================
    TIMELINE (sec-06) — STICKY PANEL + 3 STEPS
    ==================================================================== */
 .timeline-wrap {
-  display: grid; grid-template-columns: 1fr;
-  gap: 60px; position: relative;
-}
-@media (min-width: 1024px) {
-  .timeline-wrap { grid-template-columns: 0.9fr 1.1fr; gap: 100px; }
+  display: block;
+  position: relative;
 }
 
 .timeline-sticky {
@@ -2544,7 +2487,14 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   border: 1px solid rgba(16,185,129,0.3);
 }
 
-.timeline-steps { display: flex; flex-direction: column; gap: 32px; }
+.timeline-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .timeline-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
 .tl-step {
   position: relative;
   display: flex; flex-direction: column; justify-content: space-between;
@@ -2655,6 +2605,100 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .tl-bullets li::before {
   content: ''; position: absolute; left: 0; top: 13px;
   width: 12px; height: 1.5px; background: var(--step-color, #22C55E);
+}
+
+/* ====================================================================
+   ONBOARDING TIMELINE (sec-06) — zig-zag con linea animata (variante 3)
+   ==================================================================== */
+.yztl { position: relative; max-width: 940px; margin: 0 auto; }
+.yztl-line { position: relative; padding: 10px 0; }
+.yztl-spine {
+  position: absolute; left: 50%; top: 0; height: 0; width: 4px;
+  transform: translateX(-50%); z-index: 1;
+}
+.yztl-spine .track {
+  position: absolute; inset: 0; border-radius: 4px; opacity: 0.45;
+  background: linear-gradient(#22C55E, #FBBF24 50%, #F97316);
+}
+.yztl-spine .dash {
+  position: absolute; inset: 0; border-radius: 4px; mix-blend-mode: screen;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.6) 0 7px, transparent 7px 16px);
+  animation: yzDash 1s linear infinite;
+}
+@keyframes yzDash { to { background-position-y: 16px; } }
+
+.yztl-row { position: relative; display: flex; margin-bottom: 28px; min-height: 120px; }
+.yztl-row:last-child { margin-bottom: 0; }
+.yztl-row.r { justify-content: flex-end; }
+.yztl-node {
+  position: absolute; left: 50%; top: 26px; transform: translateX(-50%);
+  width: 18px; height: 18px; border-radius: 50%; background: var(--c);
+  border: 3px solid var(--ink-900, #080e1f);
+  box-shadow: 0 0 0 3px var(--c), 0 0 16px var(--c);
+  z-index: 4; animation: yzPulse 1.8s ease-in-out infinite;
+}
+@keyframes yzPulse {
+  0%, 100% { box-shadow: 0 0 0 3px var(--c), 0 0 10px var(--c); }
+  50% { box-shadow: 0 0 0 5px var(--c), 0 0 26px var(--c); }
+}
+
+.yzc {
+  width: 44%; border-radius: 22px; padding: 26px; position: relative;
+  overflow: hidden; isolation: isolate;
+  border: 1px solid var(--line, rgba(255,255,255,0.08));
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.005) 50%, rgba(0,0,0,0.2) 100%),
+    var(--ink-900, #080e1f);
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), border-color 0.4s, box-shadow 0.4s;
+}
+.yzc::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--c), transparent 55%);
+  opacity: 0.16; transition: opacity 0.5s;
+}
+.yzc::after {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.6;
+}
+.yzc:hover { transform: translateY(-6px); border-color: var(--c); box-shadow: 0 24px 60px -28px var(--c); }
+.yzc:hover::before { opacity: 0.32; }
+.yzc:hover .yzc-big { opacity: 0.18; transform: translateX(4px); }
+.yzc-big {
+  position: absolute; top: -52px; right: -6px;
+  font-family: var(--font-display); font-size: clamp(9rem, 15vw, 15rem);
+  line-height: 0.78; font-weight: 800; letter-spacing: -0.06em;
+  color: var(--c); opacity: 0.10; z-index: 0; pointer-events: none; user-select: none;
+  transition: opacity 0.5s, transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.yzc-conn { position: absolute; top: 34px; width: 40px; height: 2px; background: var(--c); opacity: 0.5; }
+.yztl-row.l .yzc-conn { right: -40px; }
+.yztl-row.r .yzc-conn { left: -40px; }
+.yzc-in { position: relative; z-index: 2; }
+.yzc-du {
+  display: inline-block; font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 42%, transparent);
+  border-radius: 999px; padding: 5px 12px; margin-bottom: 14px;
+}
+.yzc-in h3 { color: #fff; margin: 0 0 8px; position: relative; z-index: 1; }
+.yzc-in p { color: var(--muted); margin: 0 0 16px; position: relative; z-index: 1; }
+.yzc-b { list-style: none; margin: 0; padding: 0; position: relative; z-index: 1; }
+.yzc-b li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted-strong); font-size: 0.9rem; line-height: 1.45; margin-bottom: 8px; }
+.yzc-b li:last-child { margin-bottom: 0; }
+.yzc-ck { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; color: var(--c); }
+
+@media (max-width: 760px) {
+  .yztl-spine { left: 20px; }
+  .yztl-node { left: 20px; }
+  .yztl-row, .yztl-row.r { justify-content: flex-start; }
+  .yzc { width: auto; margin-left: 46px; }
+  .yzc-conn { left: -40px !important; right: auto !important; }
 }
 
 /* ====================================================================
@@ -3563,10 +3607,15 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .ba-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 6px 8px;
   margin-bottom: 20px;
+  justify-content: start;
+}
+.ba-chip {
+  text-align: center;
+  justify-content: center;
 }
 
 .ba-chip {
@@ -3623,29 +3672,25 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   margin-bottom: 10px;
 }
 
-.ba-compare-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.ba-compare-col li {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  line-height: 1.35;
+/* Riga singola condensata (sostituisce vecchia struttura ul/li) */
+.ba-compare-line {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
   color: rgba(255,255,255,0.92);
+  margin: 0;
   padding-left: 12px;
   position: relative;
 }
-
-.ba-compare-col li::before {
+.ba-compare-line::before {
   content: '–';
   position: absolute;
   left: 0;
   color: rgba(255,255,255,0.5);
+}
+.ba-compare-line strong {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .ba-cta {
@@ -4509,6 +4554,42 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.7); }
   50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
 }
+
+/* === Illustrazione AI che chiama il cliente === */
+.ai-call-illu {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(249,115,22,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 30% 30%, rgba(124,58,237,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 80% 80%, rgba(6,182,212,0.08) 0%, transparent 55%),
+    linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.005));
+  border: 1px solid rgba(249,115,22,0.20);
+  border-radius: 32px;
+  padding: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 30px 80px -30px rgba(249,115,22,0.45),
+    0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+.ai-call-illu::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent 80%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.ai-call-illu svg { width: 100%; height: 100%; display: block; position: relative; z-index: 1; }
+
 </style>
 </head>
 
@@ -4518,35 +4599,35 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#" class="logo">
-      <img src="/favicon-96x96.png" alt="YouZen" class="logo-img" />
+      <img src="youzen-logo-k2.png" alt="YouZen" class="logo-img" />
       You<span style="color:var(--accent)">Zen</span>
     </a>
     <nav class="nav-links">
       <div class="nav-dropdown">
-        <a href="#sec-02" class="nav-dropdown-trigger">
+        <a href="#sec-03" class="nav-dropdown-trigger">
           Prodotto
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown-menu">
-          <a href="#sec-02">
-            <span class="nav-dropdown-icon">🔌</span>
-            <div>
-              <div class="nav-dropdown-title">Omnicanale</div>
-              <div class="nav-dropdown-desc">Chiamate, WhatsApp, web, dashboard</div>
-            </div>
-          </a>
           <a href="#sec-03">
             <span class="nav-dropdown-icon">⚡</span>
             <div>
-              <div class="nav-dropdown-title">Prima vs Dopo</div>
-              <div class="nav-dropdown-desc">Cosa cambia con YouZen</div>
+              <div class="nav-dropdown-title">I Nostri Servizi</div>
+              <div class="nav-dropdown-desc">5 cose che YouZen fa per te</div>
             </div>
           </a>
-          <a href="#sec-05">
-            <span class="nav-dropdown-icon">🎯</span>
+          <a href="#sec-04">
+            <span class="nav-dropdown-icon">📊</span>
             <div>
-              <div class="nav-dropdown-title">Settori</div>
-              <div class="nav-dropdown-desc">7 verticali, 7 specializzazioni</div>
+              <div class="nav-dropdown-title">Senza / Con YouZen</div>
+              <div class="nav-dropdown-desc">Una giornata, due risultati</div>
+            </div>
+          </a>
+          <a href="#sec-integrazioni">
+            <span class="nav-dropdown-icon">🔌</span>
+            <div>
+              <div class="nav-dropdown-title">Integrazioni</div>
+              <div class="nav-dropdown-desc">HubSpot, Stripe, Calendly, WhatsApp…</div>
             </div>
           </a>
           <a href="#sec-06">
@@ -4558,7 +4639,11 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
           </a>
         </div>
       </div>
-      
+
+      <a href="#sec-05">Settori</a>
+
+      <a href="#demo-call">Prova subito</a>
+
       <a href="#prezzi">Prezzi</a>
       
       <div class="nav-dropdown">
@@ -4571,7 +4656,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
             <span class="nav-dropdown-icon">💬</span>
             <div>
               <div class="nav-dropdown-title">FAQ</div>
-              <div class="nav-dropdown-desc">Le 12 risposte più cercate</div>
+              <div class="nav-dropdown-desc">Le 10 risposte più cercate</div>
             </div>
           </a>
           <a href="#anti-faq">
@@ -4587,21 +4672,21 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       <a href="#contatto">Contattaci</a>
     </nav>
     <div class="nav-cta">
-      <a href="#demo-call" class="btn btn-primary btn-sm">Entra in YouZen</a>
+      <a href="https://app.youzen.it" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Entra nella App</a>
     </div>
   </div>
 </header>
 
 <!-- ============================ HERO (sec-01) ============================ -->
 <section class="hero" id="hero">
-  <!-- Aurora animated background (TURBO 4s) -->
+  <!-- Thpace animated background (triangles) -->
   <div id="fog-container">
-    <div class="aurora-blob b1"></div>
-    <div class="aurora-blob b2"></div>
-    <div class="aurora-blob b3"></div>
-    <div class="aurora-blob b4"></div>
+    <canvas id="thpace-hero"></canvas>
   </div>
   
+  <!-- Sfumatura morbida in basso: dissolve i triangoli in #080E1F senza stacco -->
+  <div class="hero-bottom-fade"></div>
+
   <!-- Layer di isolamento -->
   <div class="hero-isolation-layer"></div>
   
@@ -4627,304 +4712,16 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   </div>
 </section>
 
-</section>
-
-<!-- ============================ DEMO CALL (sec-01b) ============================ -->
-<section class="section demo-call-section" id="demo-call">
-  <div class="container">
-    <div class="demo-call-grid">
-      <!-- Colonna sinistra: form -->
-      <div class="demo-call-content">
-        <span class="eyebrow">Prova subito</span>
-        <h2 class="demo-call-title">
-          <span class="title-problem">Il telefono squilla sempre nel momento sbagliato?</span>
-          <span class="title-solution">YouZen risponde sempre.</span>
-        </h2>
-        <p class="demo-call-subtitle">Lascia il numero, ti chiama l'AI in 60 secondi.</p>
-
-        <form class="demo-call-form" id="demoCallForm" novalidate>
-          <div class="field">
-            <label for="dc-name">Nome</label>
-            <input id="dc-name" type="text" placeholder="Mario Rossi" required />
-          </div>
-
-          <div class="field">
-            <label for="dc-email">Email</label>
-            <input id="dc-email" type="email" placeholder="mario@esempio.it" required />
-          </div>
-
-          <div class="field">
-            <label for="dc-phone">Numero di telefono</label>
-            <div class="phone-input-group">
-              <span class="phone-prefix">+39</span>
-              <input id="dc-phone" type="tel" placeholder="333 1234567" required />
-            </div>
-          </div>
-          
-          <div class="field">
-            <label for="dc-settore">Settore</label>
-            <select id="dc-settore" required>
-              <option value="">Seleziona il tuo settore</option>
-              <option value="legale">Avvocati e Notai</option>
-              <option value="medico">Cliniche e Studi Medici</option>
-              <option value="beauty">Saloni e SPA</option>
-              <option value="pmi">PMI e Retail</option>
-              <option value="finance">Commercialisti e Consulenti</option>
-              <option value="artigiani">Artigiani</option>
-              <option value="realestate">Real Estate</option>
-            </select>
-          </div>
-
-          <div class="privacy-row">
-            <input type="checkbox" id="dc-privacy" required />
-            <label for="dc-privacy">Accetto la <a href="/privacy" target="_blank">privacy policy</a> e di essere contattato per questa demo</label>
-          </div>
-
-          <p class="demo-call-whatsapp-notice">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
-            Dopo la chiamata riceverai un messaggio WhatsApp con il riassunto della conversazione.
-          </p>
-
-          <button type="submit" class="btn btn-primary btn-large">
-            <span>Chiamami ora</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
-            </svg>
-          </button>
-          
-          <p class="demo-call-note">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-            Riceverai una chiamata demo entro 60 secondi. Nessun costo, nessun impegno.
-          </p>
-        </form>
-      </div>
-
-      <!-- Colonna destra: immagine placeholder -->
-      <div class="demo-call-visual">
-        <div class="visual-placeholder">
-          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="rgba(249,115,22,0.3)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2"/>
-            <path d="M12 18h.01"/>
-            <circle cx="12" cy="12" r="3" stroke="rgba(249,115,22,0.5)" stroke-width="1.5"/>
-            <path d="M12 9v6M9 12h6" stroke="rgba(249,115,22,0.5)" stroke-width="1.5"/>
-          </svg>
-          <p style="color: rgba(255,255,255,0.4); margin-top: 24px; font-size: 0.875rem;">Spazio per immagine/animazione</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ OMNICANALE (sec-02) — 4 CARD ORIZZONTALI CON MOCKUP ============================ -->
-<section class="section has-cta" id="sec-02">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Omnicanale</span>
-      <h2>
-        <span class="title-problem">Chiamate, WhatsApp, email: il circo è aperto.</span>
-        <span class="title-solution">YouZen domatore.</span>
-      </h2>
-      <p class="lead">Chiamate vocali, WhatsApp, web chat e dashboard di controllo. Tutto in un punto, niente sparso ovunque.</p>
-    </div>
-
-    <!-- Grid orizzontale 4 card -->
-    <div class="omni-grid">
-      
-      <!-- Card 1: HERO - Chiamate -->
-      <article class="omni-card">
-        <div class="omni-icon">📞</div>
-        <div class="omni-eyebrow">NESSUN CLIENTE IN ATTESA</div>
-        <h3 class="omni-title">Risponde alle chiamate</h3>
-        <p class="omni-desc">Anche quando sei occupato o fuori orario, ogni squillo trova risposta.</p>
-        <div class="omni-mockup">
-          <div class="omni-phone">
-            <div class="omni-phone-screen">
-              <div class="omni-phone-statusbar">
-                <span>11:24</span>
-                <span>📶 🔋</span>
-              </div>
-              <div class="omni-call-screen">
-                <div class="omni-call-avatar">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </div>
-                <div class="omni-call-name">Marco Bianchi</div>
-                <div class="omni-call-type">Chiamata in arrivo · 2s</div>
-                <div style="font-size:8.5px;color:rgba(255,255,255,0.55);margin-bottom:14px">YouZen risponde automaticamente</div>
-                <div class="omni-call-actions">
-                  <div>
-                    <div class="omni-call-btn decline">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div class="omni-call-btn-label">Rifiuta</div>
-                  </div>
-                  <div>
-                    <div class="omni-call-btn answer">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div class="omni-call-btn-label">Rispondi</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 2: Appuntamenti -->
-      <article class="omni-card">
-        <div class="omni-icon">📅</div>
-        <div class="omni-eyebrow">-80% DI NO-SHOW</div>
-        <h3 class="omni-title">Gestisce appuntamenti</h3>
-        <p class="omni-desc">Conferme automatiche, remind via SMS e WhatsApp. I clienti si presentano.</p>
-        <div class="omni-mockup">
-          <div class="omni-phone">
-            <div class="omni-phone-screen">
-              <div class="omni-phone-statusbar">
-                <span>10:24</span>
-                <span>📶 🔋</span>
-              </div>
-              <div class="omni-appt-header">
-                <span class="omni-appt-icon">←</span>
-                <span class="omni-appt-title">Prenota Visita</span>
-                <span class="omni-appt-icon">⋮</span>
-              </div>
-              <div class="omni-appt-date">Mercoledì 15 Maggio 2026</div>
-              <div class="omni-appt-slots">
-                <div class="omni-appt-slot">09:00</div>
-                <div class="omni-appt-slot">09:30</div>
-                <div class="omni-appt-slot">10:00</div>
-                <div class="omni-appt-slot">10:30</div>
-                <div class="omni-appt-slot selected">11:00</div>
-                <div class="omni-appt-slot">11:30</div>
-                <div class="omni-appt-slot">14:00</div>
-                <div class="omni-appt-slot">14:30</div>
-                <div class="omni-appt-slot">15:00</div>
-              </div>
-              <div class="omni-appt-confirm">
-                <div class="omni-appt-confirm-icon">✓</div>
-                <div class="omni-appt-confirm-text">Appuntamento confermato. Reminder 24h prima.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 3: WhatsApp -->
-      <article class="omni-card">
-        <div class="omni-icon">💬</div>
-        <div class="omni-eyebrow">WHATSAPP SENZA CAOS</div>
-        <h3 class="omni-title">Scrive su WhatsApp</h3>
-        <p class="omni-desc">Messaggi organizzati, risposte immediate, zero notifiche perse.</p>
-        <div class="omni-mockup">
-          <div class="omni-phone">
-            <div class="omni-phone-screen">
-              <div class="omni-phone-statusbar">
-                <span>11:24</span>
-                <span>📶 🔋</span>
-              </div>
-              <div class="omni-wa-header">
-                <div class="omni-wa-avatar">YZ</div>
-                <div class="omni-wa-info">
-                  <div class="omni-wa-name">YouZen Business</div>
-                  <div class="omni-wa-status">Online · auto-reply</div>
-                </div>
-              </div>
-              <div class="omni-wa-messages">
-                <div class="omni-wa-msg omni-wa-msg-in">Ciao, quanto costa una consulenza?</div>
-                <div class="omni-wa-msg omni-wa-msg-out">Ciao Marco! Il primo incontro è gratuito (30 min), poi €120/h. Vuoi che ti fissi una call?</div>
-                <div class="omni-wa-msg omni-wa-msg-in">Sì grazie, domani pomeriggio.</div>
-                <div class="omni-wa-msg omni-wa-msg-out">Perfetto: domani 16:30, ti mando link Meet. Ti aspetto!</div>
-                <div class="omni-wa-tag">Classificato: lead caldo · priorità alta</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 4: Dashboard -->
-      <article class="omni-card">
-        <div class="omni-icon">📊</div>
-        <div class="omni-eyebrow">TUTTO SOTTO CONTROLLO</div>
-        <h3 class="omni-title">Ti aggiorna ovunque</h3>
-        <p class="omni-desc">Una dashboard. Tutte le interazioni. Zero sorprese.</p>
-        <div class="omni-mockup">
-          <div class="omni-phone">
-            <div class="omni-phone-screen">
-              <div class="omni-phone-statusbar">
-                <span>14:08</span>
-                <span>📶 🔋</span>
-              </div>
-              <div class="omni-dash-title">Dashboard mensile</div>
-              <div class="omni-dash-kpis">
-                <div class="omni-dash-kpi">
-                  <div class="omni-dash-kpi-label">Chiamate</div>
-                  <div class="omni-dash-kpi-value">847</div>
-                  <div class="omni-dash-kpi-change">+18%</div>
-                </div>
-                <div class="omni-dash-kpi">
-                  <div class="omni-dash-kpi-label">Conversioni</div>
-                  <div class="omni-dash-kpi-value">42%</div>
-                  <div class="omni-dash-kpi-change">+5%</div>
-                </div>
-                <div class="omni-dash-kpi">
-                  <div class="omni-dash-kpi-label">Appuntam.</div>
-                  <div class="omni-dash-kpi-value">156</div>
-                  <div class="omni-dash-kpi-change">+22%</div>
-                </div>
-                <div class="omni-dash-kpi">
-                  <div class="omni-dash-kpi-label">Risparmio</div>
-                  <div class="omni-dash-kpi-value">€2.4k</div>
-                  <div class="omni-dash-kpi-change">vs receptionist</div>
-                </div>
-              </div>
-              <div class="omni-dash-list">
-                <div class="omni-dash-list-title">Top categorie</div>
-                <div class="omni-dash-item">
-                  <div class="omni-dash-item-icon">🟢</div>
-                  <div class="omni-dash-item-text">Lead caldi · 47%</div>
-                  <div class="omni-dash-item-time">+12%</div>
-                </div>
-                <div class="omni-dash-item">
-                  <div class="omni-dash-item-icon">🟡</div>
-                  <div class="omni-dash-item-text">Info generali · 28%</div>
-                  <div class="omni-dash-item-time">+3%</div>
-                </div>
-                <div class="omni-dash-item">
-                  <div class="omni-dash-item-icon">🔵</div>
-                  <div class="omni-dash-item-text">Già clienti · 25%</div>
-                  <div class="omni-dash-item-time">-2%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-    <!-- /omni-grid -->
-
-    <a href="#hero" class="section-cta">
-      <div class="section-cta-text">
-        <div class="section-cta-eyebrow">Inizia oggi</div>
-        <div class="section-cta-line">Setup guidato, configurazione su misura. <span>Parti subito con YouZen.</span></div>
-      </div>
-      <span class="section-cta-arrow">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-    </a>
-  </div>
-</section>
-
-<!-- ============================ COMPARISON (sec-03) ============================ -->
+<!-- ============================ I NOSTRI SERVIZI (sec-03) ============================ -->
 <section class="section" id="sec-03">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Prima vs Dopo</span>
+      <span class="eyebrow">I Nostri Servizi</span>
       <h2>
-        <span class="title-problem">Rincorri clienti tutto il giorno?</span>
-        <span class="title-solution">YouZen li gestisce.</span>
+        <span class="title-problem">Cinque problemi in meno,</span>
+        <span class="title-solution">ci pensiamo noi.</span>
       </h2>
-      <p class="lead">Cinque cose che migliorano subito, senza che tu cambi software o flussi di lavoro.</p>
+      <p class="lead">Chiamate, agenda, messaggi, disponibilità 24/7 e controllo. Senza cambiare software, senza cambiare flussi.</p>
     </div>
   </div>
 
@@ -4968,25 +4765,15 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
             <span class="ba-chip">Multilingua</span>
             <span class="ba-chip">Trascrizione live</span>
           </div>
-          
-          <div class="ba-topic">TOPIC 01 — CHIAMATE</div>
-          <h3 class="ba-title">Ogni chiamata trova<br>una risposta.<br>Sempre.</h3>
+                    <h3 class="ba-title">Ogni chiamata trova<br>una risposta.<br>Sempre.</h3>
           <div class="ba-compare">
             <div class="ba-compare-col ba-senza">
               <div class="ba-compare-head">● SENZA YOUZEN</div>
-              <ul>
-                <li>Telefono che squilla nel vuoto</li>
-                <li>1 cliente su 3 non richiama mai</li>
-                <li>Corri tra clienti e telefono</li>
-              </ul>
+              <p class="ba-compare-line">Telefono nel vuoto: 1 cliente su 3 non richiama mai.</p>
             </div>
             <div class="ba-compare-col ba-con">
               <div class="ba-compare-head">● CON YOUZEN</div>
-              <ul>
-                <li>Risposta entro 2 squilli, sempre</li>
-                <li>Ogni chiamata gestita 24/7</li>
-                <li>Tu lavori, lui risponde</li>
-              </ul>
+              <p class="ba-compare-line">Risposta in <strong>2 squilli</strong>, sempre. Anche mentre lavori.</p>
             </div>
           </div>
           <a href="#demo-call" class="ba-cta">Provalo sul tuo numero <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -5051,25 +4838,15 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
             <span class="ba-chip">Anti no-show</span>
             <span class="ba-chip">Riprogrammazione auto</span>
           </div>
-          
-          <div class="ba-topic">TOPIC 02 — AGENDA</div>
-          <h3 class="ba-title">Calendari sincronizzati.<br>Zero doppi booking.</h3>
+                    <h3 class="ba-title">Calendari sincronizzati.<br>Zero doppi booking.</h3>
           <div class="ba-compare">
             <div class="ba-compare-col ba-senza">
               <div class="ba-compare-head">● SENZA YOUZEN</div>
-              <ul>
-                <li>Email, telefonate, agenda cartacea</li>
-                <li>Doppi booking e dimenticanze</li>
-                <li>No-show che svuotano l'agenda</li>
-              </ul>
+              <p class="ba-compare-line">Agenda sparsa: doppi booking e no-show ti svuotano i giorni.</p>
             </div>
             <div class="ba-compare-col ba-con">
               <div class="ba-compare-head">● CON YOUZEN</div>
-              <ul>
-                <li>Calendario sincronizzato live</li>
-                <li>Reminder automatici 24h prima</li>
-                <li>No-show ridotti dell'80%</li>
-              </ul>
+              <p class="ba-compare-line">Calendario sync + reminder automatici: <strong>-80% no-show</strong>.</p>
             </div>
           </div>
           <a href="#demo-call" class="ba-cta">Provalo sul tuo numero <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -5133,25 +4910,15 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
             <span class="ba-chip">Classificazione auto</span>
             <span class="ba-chip">Multicanale</span>
           </div>
-          
-          <div class="ba-topic">TOPIC 03 — MESSAGGI</div>
-          <h3 class="ba-title">Messaggi che ricevono<br>risposta in secondi.</h3>
+                    <h3 class="ba-title">Messaggi che ricevono<br>risposta in secondi.</h3>
           <div class="ba-compare">
             <div class="ba-compare-col ba-senza">
               <div class="ba-compare-head">● SENZA YOUZEN</div>
-              <ul>
-                <li>12 messaggi non letti dopo cena</li>
-                <li>Risposte la mattina dopo</li>
-                <li>Clienti che vanno altrove</li>
-              </ul>
+              <p class="ba-compare-line">Messaggi letti il giorno dopo. Quando rispondi, sono già altrove.</p>
             </div>
             <div class="ba-compare-col ba-con">
               <div class="ba-compare-head">● CON YOUZEN</div>
-              <ul>
-                <li>Risposta in pochi secondi</li>
-                <li>Classificazione automatica</li>
-                <li>Zero notifiche perse</li>
-              </ul>
+              <p class="ba-compare-line">Risposta in <strong>pochi secondi</strong>, classificazione automatica, zero notifiche perse.</p>
             </div>
           </div>
           <a href="#demo-call" class="ba-cta">Provalo sul tuo numero <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -5205,40 +4972,30 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
         <div class="ba-num">04</div>
         <div class="ba-panel-content">
           <div class="ba-chips">
+            <span class="ba-chip">20+ in parallelo</span>
             <span class="ba-chip">24/7</span>
-            <span class="ba-chip">Weekend inclusi</span>
-            <span class="ba-chip">Festivi inclusi</span>
+            <span class="ba-chip">Weekend &amp; festivi</span>
             <span class="ba-chip">Ferie? Lavora lui</span>
           </div>
-          
-          <div class="ba-topic">TOPIC 04 — DISPONIBILITÀ</div>
-          <h3 class="ba-title">Sempre attivo.<br>Anche quando<br>tu non ci sei.</h3>
+                    <h3 class="ba-title">Sempre attivo.<br>20+ chiamate<br>nello stesso istante.</h3>
           <div class="ba-compare">
             <div class="ba-compare-col ba-senza">
               <div class="ba-compare-head">● SENZA YOUZEN</div>
-              <ul>
-                <li>Chiusura alle 18 = clienti persi</li>
-                <li>Weekend = zero risposte</li>
-                <li>Festivi = concorrenza vince</li>
-              </ul>
+              <p class="ba-compare-line">Alle 18 chiudi e perdi clienti. Una linea sola: chi chiama mentre parli, occupato.</p>
             </div>
             <div class="ba-compare-col ba-con">
               <div class="ba-compare-head">● CON YOUZEN</div>
-              <ul>
-                <li>Risponde 24/7, ferie incluse</li>
-                <li>Weekend gestiti come weekday</li>
-                <li>Tu dormi, lui lavora</li>
-              </ul>
+              <p class="ba-compare-line">Sempre attivo. Risponde a <strong>oltre 20 chiamate contemporaneamente</strong>, anche di notte e nei festivi.</p>
             </div>
           </div>
           <a href="#demo-call" class="ba-cta">Provalo sul tuo numero <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
         <div class="ba-panel-visual">
           <div class="ba-kpi ba-kpi-top">
-            <div class="ba-kpi-icon">⏰</div>
+            <div class="ba-kpi-icon">📞</div>
             <div>
-              <div class="ba-kpi-value">24/7</div>
-              <div class="ba-kpi-label">SEMPRE ATTIVO</div>
+              <div class="ba-kpi-value">20+</div>
+              <div class="ba-kpi-label">CHIAMATE IN PARALLELO</div>
             </div>
           </div>
           <div class="ba-phone">
@@ -5307,25 +5064,15 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
             <span class="ba-chip">Export CSV</span>
             <span class="ba-chip">KPI in tempo reale</span>
           </div>
-          
-          <div class="ba-topic">TOPIC 05 — CONTROLLO</div>
-          <h3 class="ba-title">Una sola dashboard.<br>Sai tutto, sempre.</h3>
+                    <h3 class="ba-title">Una sola dashboard.<br>Sai tutto, sempre.</h3>
           <div class="ba-compare">
             <div class="ba-compare-col ba-senza">
               <div class="ba-compare-head">● SENZA YOUZEN</div>
-              <ul>
-                <li>Dati sparsi tra quaderni e PC</li>
-                <li>Niente reportistica</li>
-                <li>Non sai cosa funziona davvero</li>
-              </ul>
+              <p class="ba-compare-line">Dati sparsi tra quaderni, PC e WhatsApp. Non sai cosa funziona davvero.</p>
             </div>
             <div class="ba-compare-col ba-con">
               <div class="ba-compare-head">● CON YOUZEN</div>
-              <ul>
-                <li>Dashboard unica e live</li>
-                <li>Report mensili automatici</li>
-                <li>Sai esattamente cosa rende</li>
-              </ul>
+              <p class="ba-compare-line">Dashboard <strong>live</strong>, report mensili automatici. Sai esattamente cosa rende.</p>
             </div>
           </div>
           <a href="#demo-call" class="ba-cta">Provalo sul tuo numero <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -5416,157 +5163,468 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 
 
+<!-- ============================ SENZA / CON YOUZEN (sec-04) — SPLIT-SCREEN GIORNATA TIPO ============================ -->
+<section class="section" id="sec-04">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Una giornata tipo</span>
+      <h2>
+        <span class="title-problem">Mercoledì, ore 18.</span>
+        <span class="title-solution">Indovina chi stacca.</span>
+      </h2>
+      <p class="lead">A sinistra: senza YouZen, ogni squillo è una rinuncia. A destra: tutto gestito mentre lavori.</p>
+    </div>
+
+    <div class="day-grid">
+
+      <!-- Colonna SENZA -->
+      <div class="day-col bad">
+        <div class="day-col-head">
+          <span class="day-col-tag">Senza YouZen</span>
+          <span class="day-col-score">-€680</span>
+        </div>
+        <h3 class="day-col-title">La giornata che già conosci</h3>
+
+        <div class="day-timeline">
+          <div class="day-event">
+            <div class="day-event-time">09:14</div>
+            <div class="day-event-text">Sei in riunione. <strong>Chiamata persa.</strong> Non richiami mai.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">11:02</div>
+            <div class="day-event-text">WhatsApp di un nuovo cliente. Lo vedi alle <strong>17:45</strong>, è andato dal concorrente.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">13:30</div>
+            <div class="day-event-text">Pausa pranzo. <strong>3 chiamate perse</strong>, nessun messaggio in segreteria.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">16:20</div>
+            <div class="day-event-text">Cliente non si presenta. Nessuno l'aveva richiamato per la conferma.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">18:00</div>
+            <div class="day-event-text"><strong>7 chiamate perse</strong>, 2 WhatsApp ignorati, 1 no-show.</div>
+          </div>
+        </div>
+
+        <div class="day-summary">
+          Stima persa oggi: <b>2 clienti</b> · <b>€680</b> di mancato fatturato.
+        </div>
+      </div>
+
+      <div class="day-divider">VS</div>
+
+      <!-- Colonna CON -->
+      <div class="day-col good">
+        <div class="day-col-head">
+          <span class="day-col-tag">Con YouZen</span>
+          <span class="day-col-score">+€940</span>
+        </div>
+        <h3 class="day-col-title">La giornata che potresti avere</h3>
+
+        <div class="day-timeline">
+          <div class="day-event">
+            <div class="day-event-time">09:14</div>
+            <div class="day-event-text">Sei in riunione. <strong>YouZen risponde</strong>, qualifica, fissa appuntamento.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">11:02</div>
+            <div class="day-event-text">WhatsApp risposto in <strong>11 secondi</strong>. Lead caldo, demo prenotata domani.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">13:30</div>
+            <div class="day-event-text">Pausa pranzo. Tutto gestito. Trovi il <strong>riassunto in 1 messaggio</strong>.</div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">16:20</div>
+            <div class="day-event-text">Conferma automatica 24h prima: <strong>cliente si presenta.</strong></div>
+          </div>
+          <div class="day-event">
+            <div class="day-event-time">18:00</div>
+            <div class="day-event-text"><strong>12 contatti gestiti</strong>, 4 nuovi appuntamenti, 0 perse.</div>
+          </div>
+        </div>
+
+        <div class="day-summary">
+          Stima guadagnata oggi: <b>3 clienti nuovi</b> · <b>+€940</b> di fatturato recuperato.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INTEGRAZIONI (sec-integrazioni) — RIGA LOGO PARTNER ============================ -->
+<section class="section" id="sec-integrazioni">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Integrazioni</span>
+      <h2>
+        <span class="title-problem">Fa amicizia</span>
+        <span class="title-solution">con i tuoi tool.</span>
+      </h2>
+      <p class="lead">YouZen si collega ai calendari, alle email, ai CRM e ai sistemi di pagamento che già usi. Tu connetti, lei lavora.</p>
+    </div>
+
+    <div class="integrations-marquee" aria-label="Tool con cui YouZen si integra">
+      <div class="integrations-track">
+
+      <span class="integration-item" title="HubSpot CRM">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18.5" cy="13.5" r="3.5"/><line x1="18.5" y1="10" x2="18.5" y2="4"/>
+          <circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/>
+          <line x1="7.5" y1="7.5" x2="15.5" y2="12"/><line x1="7.5" y1="16.5" x2="15.5" y2="15"/>
+        </svg>HubSpot
+      </span>
+
+      <span class="integration-item" title="Calendly">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>
+        </svg>Calendly
+      </span>
+
+      <span class="integration-item" title="Cal.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>Cal.com
+      </span>
+
+      <span class="integration-item" title="Google Calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <text x="12" y="18" text-anchor="middle" font-size="7" font-family="DM Mono, monospace" fill="currentColor" stroke="none">31</text>
+        </svg>Google Calendar
+      </span>
+
+      <span class="integration-item" title="Apple Calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16.4 2C18.4 2.6 20 4.6 20 7c0 .5-.1 1-.2 1.5-1.7-.4-3.4-.6-3.4-2.5 0-2.5 0-4 0-4z"/>
+          <path d="M3 13c0-4 2-6 5-6 1.8 0 2.5 1 4 1s2.2-1 4-1c3 0 5 2 5 6 0 5-4 9-5 9-.8 0-1.5-.5-2.5-.5S11 22 10 22c-1 0-4-4-4-9z"/>
+        </svg>Apple Calendar
+      </span>
+
+      <span class="integration-item" title="Zapier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+          <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+          <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+        </svg>Zapier
+      </span>
+
+      <span class="integration-item" title="Stripe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/>
+        </svg>Stripe
+      </span>
+
+      <span class="integration-item" title="WhatsApp Business">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/>
+          <path d="M8 11a4 4 0 0 0 5 3"/>
+        </svg>WhatsApp
+      </span>
+
+      <span class="integration-item" title="Gmail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <polyline points="2 7 12 14 22 7"/>
+        </svg>Gmail
+      </span>
+
+      <span class="integration-item" title="Outlook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <circle cx="9" cy="12" r="3.5"/>
+          <line x1="14" y1="9" x2="20" y2="9"/><line x1="14" y1="13" x2="20" y2="13"/><line x1="14" y1="17" x2="18" y2="17"/>
+        </svg>Outlook
+      </span>
+
+      <span class="integration-item" title="Slack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="3" width="6" height="6" rx="1.5"/>
+          <rect x="3" y="15" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/>
+          <line x1="9" y1="6" x2="15" y2="6"/><line x1="6" y1="9" x2="6" y2="15"/>
+          <line x1="9" y1="18" x2="15" y2="18"/><line x1="18" y1="9" x2="18" y2="15"/>
+        </svg>Slack
+      </span>
+
+      <span class="integration-item" title="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M7 12l3 3 7-7"/>
+          <line x1="7" y1="12" x2="17" y2="8"/>
+        </svg>Telegram
+      </span>
+
+      <span class="integration-item" title="Notion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="3" width="16" height="18" rx="1"/>
+          <line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/>
+        </svg>Notion
+      </span>
+
+      <span class="integration-item" title="Google Sheets">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+          <polyline points="14 3 14 9 20 9"/>
+          <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="16" y2="16"/>
+          <line x1="11" y1="11" x2="11" y2="18"/>
+        </svg>Google Sheets
+      </span>
+
+        <!-- duplicato per loop infinito senza salto -->
+      <span class="integration-item" title="HubSpot CRM">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18.5" cy="13.5" r="3.5"/><line x1="18.5" y1="10" x2="18.5" y2="4"/>
+          <circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/>
+          <line x1="7.5" y1="7.5" x2="15.5" y2="12"/><line x1="7.5" y1="16.5" x2="15.5" y2="15"/>
+        </svg>HubSpot
+      </span>
+
+      <span class="integration-item" title="Calendly">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>
+        </svg>Calendly
+      </span>
+
+      <span class="integration-item" title="Cal.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>Cal.com
+      </span>
+
+      <span class="integration-item" title="Google Calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <text x="12" y="18" text-anchor="middle" font-size="7" font-family="DM Mono, monospace" fill="currentColor" stroke="none">31</text>
+        </svg>Google Calendar
+      </span>
+
+      <span class="integration-item" title="Apple Calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16.4 2C18.4 2.6 20 4.6 20 7c0 .5-.1 1-.2 1.5-1.7-.4-3.4-.6-3.4-2.5 0-2.5 0-4 0-4z"/>
+          <path d="M3 13c0-4 2-6 5-6 1.8 0 2.5 1 4 1s2.2-1 4-1c3 0 5 2 5 6 0 5-4 9-5 9-.8 0-1.5-.5-2.5-.5S11 22 10 22c-1 0-4-4-4-9z"/>
+        </svg>Apple Calendar
+      </span>
+
+      <span class="integration-item" title="Zapier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+          <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+          <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+        </svg>Zapier
+      </span>
+
+      <span class="integration-item" title="Stripe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/>
+        </svg>Stripe
+      </span>
+
+      <span class="integration-item" title="WhatsApp Business">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/>
+          <path d="M8 11a4 4 0 0 0 5 3"/>
+        </svg>WhatsApp
+      </span>
+
+      <span class="integration-item" title="Gmail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <polyline points="2 7 12 14 22 7"/>
+        </svg>Gmail
+      </span>
+
+      <span class="integration-item" title="Outlook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <circle cx="9" cy="12" r="3.5"/>
+          <line x1="14" y1="9" x2="20" y2="9"/><line x1="14" y1="13" x2="20" y2="13"/><line x1="14" y1="17" x2="18" y2="17"/>
+        </svg>Outlook
+      </span>
+
+      <span class="integration-item" title="Slack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="3" width="6" height="6" rx="1.5"/>
+          <rect x="3" y="15" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/>
+          <line x1="9" y1="6" x2="15" y2="6"/><line x1="6" y1="9" x2="6" y2="15"/>
+          <line x1="9" y1="18" x2="15" y2="18"/><line x1="18" y1="9" x2="18" y2="15"/>
+        </svg>Slack
+      </span>
+
+      <span class="integration-item" title="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M7 12l3 3 7-7"/>
+          <line x1="7" y1="12" x2="17" y2="8"/>
+        </svg>Telegram
+      </span>
+
+      <span class="integration-item" title="Notion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="3" width="16" height="18" rx="1"/>
+          <line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/>
+        </svg>Notion
+      </span>
+
+      <span class="integration-item" title="Google Sheets">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+          <polyline points="14 3 14 9 20 9"/>
+          <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="16" y2="16"/>
+          <line x1="11" y1="11" x2="11" y2="18"/>
+        </svg>Google Sheets
+      </span>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ SECTORS (sec-05) ============================ -->
 <section class="section has-cta" id="sec-05">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Settori</span>
       <h2>
-        <span class="title-problem">Chatbot che parlano a vanvera?</span>
-        <span class="title-solution">YouZen parla il tuo gergo.</span>
+        <span class="title-problem">Niente "premi 1":</span>
+        <span class="title-solution">parla come te.</span>
       </h2>
-      <p class="lead">Sette verticali, sette knowledge base, sette flussi su misura. Scegli il tuo per vedere come funziona.</p>
+      <p class="lead">Cinque verticali con knowledge base e flussi cuciti sul settore. Non vedi il tuo? Sesto box: scrivici e te lo costruiamo.</p>
     </div>
 
     <div class="sectors-grid">
-      <a class="sector-card s-xxl" style="--sc: var(--sector-legale)" href="#">
-        <span class="sector-num" aria-hidden="true">01</span>
-        <span class="sector-type" aria-hidden="true">LEGAL</span>
-        <div class="sector-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M7 8l-3 6a3 3 0 0 0 6 0Zm10 0-3 6a3 3 0 0 0 6 0Z"/></svg>
+      <a class="sector-card has-app" style="--sc: var(--sector-salone)" href="settori/saloni.html">
+        <div class="app-panel ded" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="m9 9.5 2 2 4-4"/></svg>
+          <span class="ap-label">App<br>dedicata</span>
         </div>
-        <div class="sector-body">
-          <h3 class="sector-name">Avvocati e Notai</h3>
-          <div class="s-title">Consulenze gratis al telefono?<br/><span style="color: #FFA366;">Mai più.</span></div>
-          <div class="sector-hairline"></div>
-          <div class="s-desc">L'AI riconosce il tipo di pratica, raccoglie i dati essenziali e fissa l'appuntamento solo se la richiesta è in target.</div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark">§</span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card s-xl" style="--sc: var(--sector-clinica)" href="#">
-        <span class="sector-num" aria-hidden="true">02</span>
-        <div class="sector-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="11" r="2"/></svg>
-        </div>
-        <div class="sector-body">
-          <h3 class="sector-name">Cliniche e Studi Medici</h3>
-          <div class="s-title">In visita, telefono impazzito?<br/><span style="color: #FFA366;">Risolto.</span></div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark">+</span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card s-lg" style="--sc: var(--sector-salone)" href="#">
-        <span class="sector-num" aria-hidden="true">03</span>
-        <div class="sector-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/></svg>
-        </div>
+        <span class="sector-num" aria-hidden="true">1</span>
+        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/></svg></div>
         <div class="sector-body">
           <h3 class="sector-name">Saloni e SPA</h3>
-          <div class="s-title">Forbici in mano, cliente in linea?<br/><span style="color: #FFA366;">Ci pensa YouZen.</span></div>
+          <div class="s-title">Forbici in mano, telefono che squilla? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
-          <span class="sector-mark">✦</span>
+          <span class="sector-mark"></span>
           <div class="sector-arrow">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
         </div>
       </a>
 
-      <a class="sector-card s-lg" style="--sc: var(--sector-pmi)" href="#">
-        <span class="sector-num" aria-hidden="true">04</span>
-        <div class="sector-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-1 4a3 3 0 0 1-5.5 0A3 3 0 0 1 9 11a3 3 0 0 1-5.5 0Z"/><path d="M5 11v9h14v-9M10 20v-5h4v5"/></svg>
+      <a class="sector-card has-app" style="--sc: var(--sector-food)" href="settori/food.html">
+        <div class="app-panel ded" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="m9 9.5 2 2 4-4"/></svg>
+          <span class="ap-label">App<br>dedicata</span>
         </div>
+        <span class="sector-num" aria-hidden="true">2</span>
+        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8a3 3 0 0 0 6 0V2M10 10v12M16 2c-1.5 2-2 4-2 6s.5 4 2 4v10"/></svg></div>
         <div class="sector-body">
-          <h3 class="sector-name">PMI e Retail</h3>
-          <div class="s-title">"Premi 1 per... 2 per..."<br/><span style="color: #FFA366;">Basta menù.</span></div>
+          <h3 class="sector-name">Ristoranti</h3>
+          <div class="s-title">Sala piena, ordini che saltano? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
-          <span class="sector-mark">◆</span>
+          <span class="sector-mark"></span>
           <div class="sector-arrow">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
         </div>
       </a>
 
-      <a class="sector-card s-md" style="--sc: var(--sector-prof)" href="#">
-        <span class="sector-num" aria-hidden="true">05</span>
-        <div class="sector-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+      <a class="sector-card has-app" style="--sc: var(--sector-prof)" href="settori/professionisti.html">
+        <div class="app-panel ded" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="m9 9.5 2 2 4-4"/></svg>
+          <span class="ap-label">App<br>dedicata</span>
         </div>
+        <span class="sector-num" aria-hidden="true">3</span>
+        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
         <div class="sector-body">
-          <h3 class="sector-name">Commercialisti e Consulenti</h3>
-          <div class="s-title">Chiamate inutili a raffica?<br/><span style="color: #FFA366;">Filtrate.</span></div>
+          <h3 class="sector-name">Professionisti</h3>
+          <div class="s-title">Mani occupate, chiamate continue? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
-          <span class="sector-mark">¶</span>
+          <span class="sector-mark"></span>
           <div class="sector-arrow">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
         </div>
       </a>
 
-      <a class="sector-card s-md" style="--sc: var(--sector-artig)" href="#">
-        <span class="sector-num" aria-hidden="true">06</span>
-        <div class="sector-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4-4 4 4-4 4-2-2-9 9-3 1 1-3 9-9Z"/></svg>
+      <a class="sector-card has-app" style="--sc: var(--sector-real)" href="settori/immobiliare.html">
+        <div class="app-panel dev" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg>
+          <span class="ap-label">App in<br>sviluppo</span>
         </div>
+        <span class="sector-num" aria-hidden="true">4</span>
+        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg></div>
         <div class="sector-body">
-          <h3 class="sector-name">Artigiani</h3>
-          <div class="s-title">Mani sporche, telefono che squilla?<br/><span style="color: #FFA366;">Risponde AI.</span></div>
+          <h3 class="sector-name">Immobiliare</h3>
+          <div class="s-title">In visita e lead che chiamano? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
-          <span class="sector-mark">※</span>
+          <span class="sector-mark"></span>
           <div class="sector-arrow">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
         </div>
       </a>
 
-      <a class="sector-card s-md" style="--sc: var(--sector-real)" href="#">
-        <span class="sector-num" aria-hidden="true">07</span>
-        <div class="sector-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+      <a class="sector-card has-app" style="--sc: var(--sector-legale)" href="settori/studio-legale.html">
+        <div class="app-panel dev" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg>
+          <span class="ap-label">App in<br>sviluppo</span>
         </div>
+        <span class="sector-num" aria-hidden="true">5</span>
+        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M7 8l-3 6a3 3 0 0 0 6 0Zm10 0-3 6a3 3 0 0 0 6 0Z"/></svg></div>
         <div class="sector-body">
-          <h3 class="sector-name">Real Estate</h3>
-          <div class="s-title">Lead persi mentre visiti?<br/><span style="color: #FFA366;">Non più.</span></div>
+          <h3 class="sector-name">Studio Legale</h3>
+          <div class="s-title">In udienza e mille squilli? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
-          <span class="sector-mark">△</span>
+          <span class="sector-mark"></span>
           <div class="sector-arrow">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="sector-card s-cta" href="#contatto">
+        <span class="sector-num" aria-hidden="true">6</span>
+        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="sector-body">
+          <h3 class="sector-name">Il tuo settore non c'è?</h3>
+          <div class="s-title">Dicci il tuo business e i tuoi problemi. Te lo costruiamo su misura.</div>
+          <div class="sector-hairline"></div>
+        </div>
+        <div class="sector-foot">
+          <span class="sector-mark">→</span>
+          <div class="sector-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
         </div>
       </a>
     </div>
-
-    <a href="#contatto" class="section-cta">
-      <div class="section-cta-text">
-        <div class="section-cta-eyebrow">Demo per il tuo settore</div>
-        <div class="section-cta-line">Mezz'ora con noi per vederla all'opera. <span>Sul tuo verticale, con i tuoi flussi.</span></div>
-      </div>
-      <span class="section-cta-arrow">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-    </a>
   </div>
 </section>
 
@@ -5576,168 +5634,70 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     <div class="section-head">
       <span class="eyebrow">Onboarding</span>
       <h2>
-        <span class="title-problem">Setup che non finiscono mai?</span>
-        <span class="title-solution">8 giorni. Live.</span>
+        <span class="title-problem">Pronta in 8 giorni,</span>
+        <span class="title-solution">caffè incluso.</span>
       </h2>
       <p class="lead">Setup guidato, una settimana di test in modalità ombra, go-live. Tu lavori, noi configuriamo.</p>
     </div>
 
     <div class="timeline-wrap">
-      <!-- Sticky panel sinistro -->
-      <div class="timeline-sticky">
-        <div class="device-mockup">
-          <div class="device-bar">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="url">app.youzen.it/dashboard</span>
-          </div>
-          <div class="mock-screen">
-            <div class="mock-step active" data-step="setup">
-              <h5>● Setup · Giorno 1</h5>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Numero collegato</div>
-                  <div class="tx-2">+39 02 XXXX XXXX</div>
-                </div>
-                <span class="badge-sm">OK</span>
-              </div>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Google Calendar</div>
-                  <div class="tx-2">studio@youzen.it</div>
-                </div>
-                <span class="badge-sm">OK</span>
-              </div>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4Z"/><path d="M8 10h8M8 13h5"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">WhatsApp Business</div>
-                  <div class="tx-2">In configurazione</div>
-                </div>
-                <span class="badge-sm" style="background:rgba(249,115,22,0.15);color:var(--accent);border-color:rgba(249,115,22,0.3)">…</span>
-              </div>
-            </div>
+      <div class="yztl v3">
+        <div class="yztl-line">
+          <div class="yztl-spine"><span class="track"></span><span class="dash"></span></div>
 
-            <div class="mock-step" data-step="test">
-              <h5>● Test · Giorni 2–7</h5>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Simulazione #14</div>
-                  <div class="tx-2">02:34 · Prenotazione visita</div>
-                </div>
-                <span class="badge-sm">PASS</span>
-              </div>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Simulazione #15</div>
-                  <div class="tx-2">01:50 · Richiesta info pricing</div>
-                </div>
-                <span class="badge-sm">PASS</span>
-              </div>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Calibrazione tono</div>
-                  <div class="tx-2">3 correzioni applicate</div>
-                </div>
-                <span class="badge-sm">OK</span>
-              </div>
-            </div>
-
-            <div class="mock-step" data-step="live">
-              <h5>● Live · Da giorno 8</h5>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Chiamata in corso</div>
-                  <div class="tx-2">+39 333 ··· · 00:42</div>
-                </div>
-                <span class="badge-sm" style="background:rgba(34,197,94,0.15);color:rgb(74,222,128);border-color:rgba(34,197,94,0.4)">LIVE</span>
-              </div>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">Appuntamento fissato</div>
-                  <div class="tx-2">Giovedì 24 · 15:30</div>
-                </div>
-                <span class="badge-sm">CONF</span>
-              </div>
-              <div class="mock-tile">
-                <div class="ico">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>
-                </div>
-                <div class="tx">
-                  <div class="tx-1">KPI settimana</div>
-                  <div class="tx-2">+34% chiamate gestite</div>
-                </div>
-                <span class="badge-sm">↑</span>
+          <div class="yztl-row l" style="--c:#22C55E">
+            <div class="yztl-node"></div>
+            <div class="yzc">
+              <span class="yzc-big">1</span>
+              <span class="yzc-conn"></span>
+              <div class="yzc-in">
+                <span class="yzc-du">Giorno 1</span>
+                <h3>Si parte con un caffè</h3>
+                <p>Una call e via: pensiamo noi a sistemare tutto. Tu rispondi a due domande, al resto ci pensiamo noi.</p>
+                <ul class="yzc-b">
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Due chiacchiere su servizi, orari e domande tipiche</li>
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Colleghiamo il tuo numero (porting o forward)</li>
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Calendario e WhatsApp agganciati</li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- 3 step a destra -->
-      <div class="timeline-steps">
-        <div class="tl-step active" data-target="setup">
-          <div class="tl-head">
-            <span class="tl-num">01</span>
-            <span class="tl-duration">Giorno 1</span>
+          <div class="yztl-row r" style="--c:#FBBF24">
+            <div class="yztl-node"></div>
+            <div class="yzc">
+              <span class="yzc-big">2</span>
+              <span class="yzc-conn"></span>
+              <div class="yzc-in">
+                <span class="yzc-du">Giorni 2–7</span>
+                <h3>Prove generali, in punta di piedi</h3>
+                <p>Una settimana di rodaggio: ascolti, correggi, dai il tono giusto. Così al debutto niente sorprese.</p>
+                <ul class="yzc-b">
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Simulazioni su casi veri</li>
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Aggiusti tutto al volo dalla dashboard</li>
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ok finale prima di alzare il sipario</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <h3>Setup guidato in 30 minuti</h3>
-          <p>Una call con il nostro team. Configuriamo voce, conoscenza azienda, calendario e canali. Tu rispondi alle domande, noi facciamo il resto.</p>
-          <ul class="tl-bullets">
-            <li>Briefing su servizi, orari, FAQ tipiche</li>
-            <li>Connessione del numero (porting o forward)</li>
-            <li>Integrazione calendario e WhatsApp Business</li>
-          </ul>
-        </div>
 
-        <div class="tl-step" data-target="test">
-          <div class="tl-head">
-            <span class="tl-num">02</span>
-            <span class="tl-duration">Giorni 2–7</span>
+          <div class="yztl-row l" style="--c:#F97316">
+            <div class="yztl-node"></div>
+            <div class="yzc">
+              <span class="yzc-big">3</span>
+              <span class="yzc-conn"></span>
+              <div class="yzc-in">
+                <span class="yzc-du">Da giorno 8</span>
+                <h3>Sipario! Ora risponde sempre</h3>
+                <p>Da qui in poi non stacca mai, nemmeno il sabato sera. Tu guardi tutto comodo dalla dashboard.</p>
+                <ul class="yzc-b">
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sempre sveglia: 24/7, weekend e festivi</li>
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ti chiama in causa solo quando serve davvero</li>
+                  <li><svg class="yzc-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Il riassunto della settimana nella tua inbox</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <h3>Test e calibrazione</h3>
-          <p>Provi l'AI in modalità ombra: ascolti, correggi, perfezioni. Modifichi tono, parole vietate, escalation. Niente sorprese al lancio.</p>
-          <ul class="tl-bullets">
-            <li>Simulazioni su scenari reali</li>
-            <li>Correzioni in tempo reale dalla dashboard</li>
-            <li>Approvazione finale prima del go-live</li>
-          </ul>
-        </div>
-
-        <div class="tl-step" data-target="live">
-          <div class="tl-head">
-            <span class="tl-num">03</span>
-            <span class="tl-duration">Da giorno 8</span>
-          </div>
-          <h3>Live h24, monitoraggio continuo</h3>
-          <p>L'AI entra in servizio. Tu vedi tutto in dashboard: chiamate, trascrizioni, appuntamenti, KPI. Aggiusti rotta quando vuoi.</p>
-          <ul class="tl-bullets">
-            <li>Copertura 24/7 inclusi weekend e festivi</li>
-            <li>Notifiche istantanee per casi che richiedono te</li>
-            <li>Reportistica settimanale automatica via email</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -5754,14 +5714,339 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   </div>
 </section>
 
+<!-- ============================ DEMO CALL (sec-01b) ============================ -->
+<section class="section demo-call-section" id="demo-call">
+  <!-- Mesh di triangoli animato (come la hero) -->
+  <canvas id="thpace-democall" aria-hidden="true"></canvas>
+  <!-- Variante A: alone arancione centrato dietro il form -->
+  <div class="demo-call-glow" aria-hidden="true"></div>
+  <!-- Sfumature morbide ai bordi -->
+  <div class="demo-call-fade-top" aria-hidden="true"></div>
+  <div class="demo-call-fade-bottom" aria-hidden="true"></div>
+  <div class="container">
+    <div class="demo-call-grid">
+      <!-- Colonna sinistra: form -->
+      <div class="demo-call-content">
+        <span class="eyebrow">Prova subito</span>
+        <h2 class="demo-call-title">
+          <span class="title-problem">Non ci credi?</span>
+          <span class="title-solution">guarda la magia</span>
+        </h2>
+        <p class="demo-call-subtitle">Lascia il numero, ti chiama l'AI in 60 secondi.</p>
+
+        <form class="demo-call-form" id="demoCallForm" novalidate>
+          <div class="field">
+            <label for="dc-name">Nome</label>
+            <input id="dc-name" type="text" placeholder="Mario Rossi" required />
+          </div>
+
+          <div class="field">
+            <label for="dc-email">Email</label>
+            <input id="dc-email" type="email" placeholder="mario@esempio.it" required />
+          </div>
+
+          <div class="field">
+            <label for="dc-phone">Numero di telefono</label>
+            <div class="phone-input-group">
+              <span class="phone-prefix">+39</span>
+              <input id="dc-phone" type="tel" placeholder="333 1234567" required />
+            </div>
+          </div>
+          
+          <div class="field">
+            <label for="dc-settore">Settore</label>
+            <select id="dc-settore" required>
+              <option value="">Seleziona il tuo settore</option>
+              <option value="legale">Avvocati e Notai</option>
+              <option value="medico">Cliniche e Studi Medici</option>
+              <option value="beauty">Saloni e SPA</option>
+              <option value="pmi">PMI e Retail</option>
+              <option value="finance">Commercialisti e Consulenti</option>
+              <option value="artigiani">Artigiani</option>
+              <option value="realestate">Real Estate</option>
+            </select>
+          </div>
+
+          <div class="privacy-row">
+            <input type="checkbox" id="dc-privacy" required />
+            <label for="dc-privacy">Accetto la <a href="/privacy" target="_blank">privacy policy</a> e di essere contattato per questa demo</label>
+          </div>
+
+          <p class="demo-call-whatsapp-notice">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+            Dopo la chiamata riceverai un messaggio WhatsApp con il riassunto della conversazione.
+          </p>
+
+          <button type="submit" class="btn btn-primary btn-large">
+            <span>Chiamami ora</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
+            </svg>
+          </button>
+          
+          <p class="demo-call-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Riceverai una chiamata demo entro 60 secondi. Nessun costo, nessun impegno.
+          </p>
+        </form>
+      </div>
+
+      <!-- Colonna destra: immagine placeholder -->
+      <div class="demo-call-visual">
+        <div class="ai-call-illu" aria-hidden="true" style="display:none">
+          <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" style="display:none">
+            <defs>
+              <!-- Gradiente orb principale -->
+              <radialGradient id="orbCore" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#FFE0BF"/>
+                <stop offset="25%" stop-color="#FFB37A"/>
+                <stop offset="55%" stop-color="#F97316"/>
+                <stop offset="100%" stop-color="#7C2D00"/>
+              </radialGradient>
+              <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F97316" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="dataStream" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
+                <stop offset="50%" stop-color="#FFA366" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="phoneBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1a2540"/>
+                <stop offset="100%" stop-color="#0a0f1e"/>
+              </linearGradient>
+              <linearGradient id="phoneScreen" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(249,115,22,0.20)"/>
+                <stop offset="100%" stop-color="rgba(249,115,22,0.04)"/>
+              </linearGradient>
+              <radialGradient id="bgVignette" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="rgba(124,58,237,0.18)"/>
+                <stop offset="100%" stop-color="rgba(124,58,237,0)"/>
+              </radialGradient>
+              <filter id="blurMd" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="10"/>
+              </filter>
+              <filter id="blurLg" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="18"/>
+              </filter>
+              <!-- Pattern griglia esagonale stile cyberpunk -->
+              <pattern id="hex" x="0" y="0" width="40" height="46" patternUnits="userSpaceOnUse">
+                <polygon points="20,1 38,12 38,34 20,45 2,34 2,12" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
+              </pattern>
+            </defs>
+
+            <!-- Sfondo: griglia hex sottile -->
+            <rect width="640" height="480" fill="url(#bgVignette)" opacity="0.6"/>
+            <rect width="640" height="480" fill="url(#hex)" opacity="0.5"/>
+
+            <!-- Vignette ai bordi -->
+            <ellipse cx="320" cy="240" rx="320" ry="240" fill="url(#bgVignette)" opacity="0.5"/>
+
+            <!-- LINEE DATI DA AI A TELEFONO (3 percorsi animati) -->
+            <g stroke="url(#dataStream)" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M 180 220 Q 320 140, 460 260" opacity="0.9">
+                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="3s" repeatCount="indefinite"/>
+              </path>
+              <path d="M 180 240 Q 320 240, 460 280" opacity="0.7" stroke-width="1.5">
+                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
+              </path>
+              <path d="M 180 260 Q 320 340, 460 300" opacity="0.5" stroke-width="1.2">
+                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="3.6s" repeatCount="indefinite" begin="0.8s"/>
+              </path>
+            </g>
+
+            <!-- AI ORB (sinistra) -->
+            <g transform="translate(150,240)">
+              <!-- Glow esterno -->
+              <circle cx="0" cy="0" r="120" fill="url(#orbGlow)" filter="url(#blurLg)"/>
+              <!-- Anelli orbitali (rotazione lenta) -->
+              <g>
+                <ellipse cx="0" cy="0" rx="95" ry="32" fill="none" stroke="#F97316" stroke-width="1" stroke-dasharray="3 5" opacity="0.40">
+                  <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="28s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="0" cy="0" rx="80" ry="80" fill="none" stroke="#F97316" stroke-width="0.8" stroke-dasharray="2 8" opacity="0.30">
+                  <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="0" cy="0" rx="65" ry="100" fill="none" stroke="#A78BFA" stroke-width="0.8" stroke-dasharray="2 6" opacity="0.25">
+                  <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="22s" repeatCount="indefinite"/>
+                </ellipse>
+              </g>
+
+              <!-- Nodi orbitanti (mini cerchi su anello) -->
+              <g>
+                <circle cx="0" cy="0" r="3" fill="#FFB37A">
+                  <animateMotion path="M 95,0 A 95,32 0 1,1 -95,0 A 95,32 0 1,1 95,0" dur="28s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="0" cy="0" r="2.5" fill="#A78BFA">
+                  <animateMotion path="M 80,0 A 80,80 0 1,1 -80,0 A 80,80 0 1,1 80,0" dur="20s" repeatCount="indefinite"/>
+                </circle>
+              </g>
+
+              <!-- Orb principale con shading -->
+              <circle cx="0" cy="0" r="58" fill="url(#orbCore)" filter="url(#blurMd)" opacity="0.6"/>
+              <circle cx="0" cy="0" r="55" fill="url(#orbCore)"/>
+              <!-- Highlight in alto -->
+              <ellipse cx="-12" cy="-18" rx="26" ry="13" fill="rgba(255,255,255,0.35)"/>
+              <ellipse cx="-6" cy="-12" rx="10" ry="5" fill="rgba(255,255,255,0.55)"/>
+
+              <!-- Voice equalizer dentro l'orb -->
+              <g stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.95">
+                <line x1="-22" y1="8" x2="-22" y2="-8">
+                  <animate attributeName="y1" values="8;18;4;14;8" dur="1.2s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="-8;-18;-4;-14;-8" dur="1.2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="-9" y1="14" x2="-9" y2="-14">
+                  <animate attributeName="y1" values="14;7;18;10;14" dur="1.5s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="-14;-7;-18;-10;-14" dur="1.5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="4" y1="11" x2="4" y2="-11">
+                  <animate attributeName="y1" values="11;19;6;15;11" dur="1.3s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="-11;-19;-6;-15;-11" dur="1.3s" repeatCount="indefinite"/>
+                </line>
+                <line x1="17" y1="9" x2="17" y2="-9">
+                  <animate attributeName="y1" values="9;16;5;13;9" dur="1.4s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="-9;-16;-5;-13;-9" dur="1.4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="28" y1="6" x2="28" y2="-6">
+                  <animate attributeName="y1" values="6;13;3;10;6" dur="1.6s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="-6;-13;-3;-10;-6" dur="1.6s" repeatCount="indefinite"/>
+                </line>
+              </g>
+
+              <!-- Label sotto orb -->
+              <g transform="translate(0,90)">
+                <rect x="-50" y="-12" width="100" height="24" rx="12" fill="rgba(0,0,0,0.5)" stroke="rgba(249,115,22,0.45)" stroke-width="1"/>
+                <text x="0" y="4" text-anchor="middle" font-family="DM Mono, monospace" font-size="11" fill="#FFB37A" letter-spacing="2">YOUZEN AI</text>
+              </g>
+            </g>
+
+            <!-- INDICATORE "CONNECTING" centro -->
+            <g transform="translate(320,170)">
+              <circle r="4" fill="#22c55e">
+                <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
+              </circle>
+              <text y="-12" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="2">CALL · LIVE</text>
+            </g>
+
+            <!-- SMARTPHONE (destra) -->
+            <g transform="translate(480,250)">
+              <!-- Glow dietro -->
+              <ellipse cx="0" cy="0" rx="100" ry="140" fill="#F97316" opacity="0.18" filter="url(#blurLg)"/>
+              <!-- Body telefono con riflesso -->
+              <rect x="-65" y="-125" width="130" height="240" rx="26" fill="url(#phoneBody)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+              <rect x="-61" y="-121" width="122" height="232" rx="22" fill="url(#phoneScreen)"/>
+              <!-- Riflesso schermo -->
+              <path d="M -55 -110 L 55 -110 L 50 -100 L -50 -100 Z" fill="rgba(255,255,255,0.10)"/>
+
+              <!-- Notch / Dynamic island -->
+              <rect x="-22" y="-122" width="44" height="9" rx="4.5" fill="#000"/>
+
+              <!-- Schermo: "CHIAMATA IN ARRIVO" -->
+              <text x="0" y="-72" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="2.5">CHIAMATA IN ARRIVO</text>
+
+              <!-- Avatar AI -->
+              <circle cx="0" cy="-30" r="28" fill="#F97316" filter="url(#blurMd)" opacity="0.6"/>
+              <circle cx="0" cy="-30" r="26" fill="url(#orbCore)"/>
+              <ellipse cx="-6" cy="-38" rx="10" ry="5" fill="rgba(255,255,255,0.4)"/>
+              <text x="0" y="-25" text-anchor="middle" font-family="Syne, sans-serif" font-weight="800" font-size="18" fill="white">YZ</text>
+
+              <!-- Nome chiamante -->
+              <text x="0" y="14" text-anchor="middle" font-family="Syne, sans-serif" font-weight="700" font-size="15" fill="white">YouZen AI</text>
+              <text x="0" y="30" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="rgba(255,255,255,0.55)">+39 02 ····· 8201</text>
+
+              <!-- Wave indicator (sotto nome) -->
+              <g transform="translate(0,52)" stroke="#FFA366" stroke-width="2" stroke-linecap="round" fill="none">
+                <line x1="-18" y1="0" x2="-18" y2="0">
+                  <animate attributeName="y1" values="-3;-8;-3" dur="0.6s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="3;8;3" dur="0.6s" repeatCount="indefinite"/>
+                </line>
+                <line x1="-9" y1="0" x2="-9" y2="0">
+                  <animate attributeName="y1" values="-5;-12;-5" dur="0.7s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="5;12;5" dur="0.7s" repeatCount="indefinite"/>
+                </line>
+                <line x1="0" y1="0" x2="0" y2="0">
+                  <animate attributeName="y1" values="-4;-10;-4" dur="0.65s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="4;10;4" dur="0.65s" repeatCount="indefinite"/>
+                </line>
+                <line x1="9" y1="0" x2="9" y2="0">
+                  <animate attributeName="y1" values="-5;-12;-5" dur="0.7s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="5;12;5" dur="0.7s" repeatCount="indefinite"/>
+                </line>
+                <line x1="18" y1="0" x2="18" y2="0">
+                  <animate attributeName="y1" values="-3;-8;-3" dur="0.6s" repeatCount="indefinite"/>
+                  <animate attributeName="y2" values="3;8;3" dur="0.6s" repeatCount="indefinite"/>
+                </line>
+              </g>
+
+              <!-- Pulsanti accept/decline -->
+              <g transform="translate(0,90)">
+                <!-- Decline (rosso) -->
+                <circle cx="-26" cy="0" r="18" fill="#ef4444"/>
+                <circle cx="-26" cy="0" r="18" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+                <g transform="rotate(135 -26 0)">
+                  <line x1="-33" y1="0" x2="-19" y2="0" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </g>
+                <!-- Accept (verde) - pulsante che pulsa -->
+                <circle cx="26" cy="0" r="18" fill="#22c55e">
+                  <animate attributeName="r" values="18;22;18" dur="1s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="26" cy="0" r="18" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+                <path d="M 19 -7 L 27 -5 L 31 0 L 28 6 C 22 4 19 0 19 -5 Z" fill="white" transform="rotate(-15 26 0)"/>
+              </g>
+
+              <!-- Status verde squillo -->
+              <g transform="translate(50,-125)">
+                <circle r="5" fill="#22c55e">
+                  <animate attributeName="opacity" values="1;0.2;1" dur="0.7s" repeatCount="indefinite"/>
+                </circle>
+              </g>
+            </g>
+
+            <!-- Particelle decorative (puntini luminosi) -->
+            <g fill="#FFA366">
+              <circle cx="80" cy="80" r="2.5" opacity="0.6">
+                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="260" cy="60" r="1.8" opacity="0.5">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
+              </circle>
+              <circle cx="560" cy="100" r="2" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.8s" repeatCount="indefinite" begin="0.8s"/>
+              </circle>
+              <circle cx="60" cy="380" r="1.8" opacity="0.6">
+                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.2s" repeatCount="indefinite" begin="1.2s"/>
+              </circle>
+              <circle cx="380" cy="420" r="2" opacity="0.5">
+                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.6s" repeatCount="indefinite" begin="0.6s"/>
+              </circle>
+              <circle cx="580" cy="400" r="1.5" opacity="0.5"/>
+              <circle cx="320" cy="50" r="1.2" opacity="0.4"/>
+              <circle cx="80" cy="430" r="1.5" opacity="0.5"/>
+            </g>
+
+            <!-- Particelle viola (depth) -->
+            <g fill="#A78BFA">
+              <circle cx="140" cy="100" r="1.5" opacity="0.4"/>
+              <circle cx="500" cy="60" r="1.8" opacity="0.4"/>
+              <circle cx="600" cy="240" r="1.5" opacity="0.4"/>
+              <circle cx="50" cy="240" r="2" opacity="0.4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ PRICING (sec-07) ============================ -->
 <section class="section has-cta" id="prezzi">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Prezzi</span>
       <h2>
-        <span class="title-problem">Canoni fissi anche ad agosto?</span>
-        <span class="title-solution">Paghi solo le chiamate.</span>
+        <span class="title-problem">Niente asterischi,</span>
+        <span class="title-solution">niente sorprese.</span>
       </h2>
       <p class="lead">Tre piani, prezzi trasparenti, nessun contratto a lungo termine. Sposta lo slider per vedere il tuo conto.</p>
     </div>
@@ -5936,8 +6221,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
         <div class="matrix-cell label">
           <span>Notifiche WhatsApp</span>
           <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Notifiche immediate su WhatsApp per chiamate perse, nuovi appuntamenti, promemoria. Disponibile da piano Ultra.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="true">●</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
+          <div class="tooltip-popup">Notifiche immediate su WhatsApp per chiamate perse, nuovi appuntamenti, promemoria. Nel piano Pro: gratis per i primi 3 mesi, poi 0,02 €/messaggio.</div>
+        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span style="font-size:0.78em;line-height:1.25;display:inline-block;">Gratis 3 mesi,<br>poi 0,02 €/msg</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
       <div class="matrix-row">
         <div class="matrix-cell label">
           <span>Supporto</span>
@@ -6001,8 +6286,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     <div class="section-head">
       <span class="eyebrow">FAQ</span>
       <h2>
-        <span class="title-problem">Dubbi e paranoie sacrosante?</span>
-        <span class="title-solution">12 risposte chiare.</span>
+        <span class="title-problem">Le solite domande,</span>
+        <span class="title-solution">risposte oneste.</span>
       </h2>
       <p class="lead">Clicca per aprire la risposta. Se manca qualcosa, scrivici.</p>
     </div>
@@ -6089,17 +6374,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
       <div class="faq-item">
         <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🌍</span>
-          <span class="faq-q">In quali lingue risponde?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Italiano nativo come default. Su richiesta attiviamo inglese, francese, tedesco e spagnolo. L'AI riconosce la lingua del cliente in automatico.</p>
-        </div></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
           <span class="faq-emoji">🔒</span>
           <span class="faq-q">I dati dei clienti sono al sicuro?</span>
           <span class="faq-toggle" aria-hidden="true"></span>
@@ -6132,16 +6406,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
         </div></div></div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🚪</span>
-          <span class="faq-q">E se decido di lasciarlo?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Esporti tutti i dati in CSV o via API, restituisci il numero (se l'avevi portato), zero penali. Volevi una segreteria, non un matrimonio.</p>
-        </div></div></div>
-      </div>
     </div>
 
     <a href="#contatto" class="section-cta">
@@ -6162,8 +6426,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     <div class="section-head">
       <span class="eyebrow" style="color: #94A3B8;">Onestà commerciale</span>
       <h2>
-        <span class="title-problem">Pensi che YouZen sia per tutti?</span>
-        <span class="title-solution">Spoiler: no.</span>
+        <span class="title-problem">Va bene per tutti?</span>
+        <span class="title-solution">Ma anche no.</span>
       </h2>
       <p class="lead">10 situazioni in cui YouZen non ti serve. Davvero. Risparmiati i soldi e leggi qui sotto.</p>
     </div>
@@ -6303,8 +6567,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       <div class="cta-text">
         <span class="eyebrow">Prenota una demo</span>
         <h2 style="margin-top:24px">
-          <span class="title-problem">Ancora indeciso?</span>
-          <span class="title-solution">30 minuti gratis.</span>
+          <span class="title-problem">Ancora un forse?</span>
+          <span class="title-solution">Mezz’ora, gratis.</span>
         </h2>
         <p class="lead">Ti mostriamo l'AI dal vivo sul tuo settore. Capiamo se ha senso. Decidi tu.</p>
 
@@ -6355,7 +6619,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <img src="/favicon-96x96.png" alt="YouZen" class="logo-img" />
+          <img src="youzen-logo-k2.png" alt="YouZen" class="logo-img" />
           You<span style="color:var(--accent)">Zen</span>
         </a>
         <p>La segreteria AI italiana che risponde sempre. Chiamate, WhatsApp, appuntamenti — h24, 365 giorni.</p>
@@ -6370,7 +6634,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       <div class="footer-col">
         <h5>Prodotto</h5>
         <ul>
-          <li><a href="#sec-02">Come funziona</a></li>
+          <li><a href="#sec-03">Come funziona</a></li>
+          <li><a href="#sec-04">Senza / Con</a></li>
+          <li><a href="#sec-integrazioni">Integrazioni</a></li>
           <li><a href="#sec-06">Onboarding</a></li>
           <li><a href="#prezzi">Prezzi</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -6392,8 +6658,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       <div class="footer-col">
         <h5>Legale</h5>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="GDPR/">Privacy Policy</a></li>
+          <li><a href="GDPR/">Cookie Policy</a></li>
+          <li><a href="#" data-yz-manage>Gestisci cookie</a></li>
           <li><a href="#">Termini</a></li>
           <li><a href="#">GDPR</a></li>
         </ul>
@@ -6493,6 +6760,28 @@ const tlObserver = new IntersectionObserver((entries) => {
 }, { threshold: [0.5], rootMargin: '-20% 0px -20% 0px' });
 tlSteps.forEach(s => tlObserver.observe(s));
 
+// ===== Onboarding timeline (zig-zag): la linea coincide col primo e ultimo nodo =====
+(function () {
+  function placeSpine() {
+    document.querySelectorAll('.yztl-line').forEach(function (line) {
+      var spine = line.querySelector('.yztl-spine');
+      var nodes = line.querySelectorAll('.yztl-node');
+      if (!spine || nodes.length < 2) return;
+      var lr = line.getBoundingClientRect();
+      var f = nodes[0].getBoundingClientRect();
+      var l = nodes[nodes.length - 1].getBoundingClientRect();
+      var top = (f.top + f.height / 2) - lr.top;
+      var bot = (l.top + l.height / 2) - lr.top;
+      spine.style.top = top + 'px';
+      spine.style.height = Math.max(0, bot - top) + 'px';
+    });
+  }
+  function run() { requestAnimationFrame(placeSpine); }
+  if (document.readyState === 'complete') run();
+  else window.addEventListener('load', run);
+  window.addEventListener('resize', placeSpine);
+})();
+
 // ===== FAQ accordion (one-at-a-time, tutto chiuso all'apertura)
 document.querySelectorAll('.faq-trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {
@@ -6525,711 +6814,203 @@ document.querySelectorAll('.section-head, .sector-card, .tl-step, .plan-card, .f
   fadeObserver.observe(el);
 });
 
-// ===== COMPARISON SECTION SCROLL-DRIVEN =====
-// ===== COMPARISON SCROLL-DRIVEN ANIMATION =====
-function initComparisonStage() {
-  const stage = document.getElementById('cmpStage');
-  if (!stage || window.innerWidth <= 640) return; // Skip solo su mobile vero
-  
-  const data = [
-    // 01 - CHIAMATE
-    {
-      emoji: '📞',
-      title: 'Chiamate',
-      before: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">17:23</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-lockscreen">
-            <div class="cmp-lockscreen-time">17:23</div>
-            <div class="cmp-lockscreen-date">Lunedì 12 Maggio</div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📞</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Chiamata persa</div>
-                <div class="cmp-notif-body">+39 328 456 2932</div>
-              </div>
-              <div class="cmp-notif-time">17:20</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📞</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Chiamata persa</div>
-                <div class="cmp-notif-body">+39 335 789 1234</div>
-              </div>
-              <div class="cmp-notif-time">17:05</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📞</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Chiamata persa</div>
-                <div class="cmp-notif-body">+39 340 123 5678</div>
-              </div>
-              <div class="cmp-notif-time">16:48</div>
-            </div>
-          </div>
-        `,
-        caption: '<ul><li>Chiamate perse. Clienti persi.</li><li>Opportunità che non tornano.</li></ul>'
-      },
-      after: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">19:23</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-dashboard">
-            <div class="cmp-dash-header">
-              <div class="cmp-dash-title">📞 Studio Dentistico</div>
-              <div class="cmp-dash-badge">LIVE</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">👋</span>
-                <span class="cmp-msg-label">Ciao Mario!</span>
-              </div>
-              <div class="cmp-msg-text">Grazie per la chiamata! Ecco i tuoi orari disponibili per la visita di controllo:</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📅</span>
-                <span class="cmp-msg-label">Prenotazione</span>
-              </div>
-              <div class="cmp-msg-text">• Lunedì 15/5 ore 14:00<br/>• Mercoledì 17/5 ore 10:30<br/>• Venerdì 19/5 ore 16:00</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">✅</span>
-                <span class="cmp-msg-label">Confermato</span>
-              </div>
-              <div class="cmp-msg-text">Appuntamento fissato per Mercoledì 17/5 ore 10:30. Ti ricorderò il giorno prima!</div>
-            </div>
-          </div>        `,
-        caption: '<ul><li>Ogni chiamata gestita.</li><li>Ogni cliente seguito.</li><li>Ogni opportunità salvata.</li></ul>'
-      }
-    },
-    
-    // 02 - APPUNTAMENTI
-    {
-      emoji: '📅',
-      title: 'Appuntamenti',
-      before: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">14:30</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-lockscreen">
-            <div class="cmp-lockscreen-time">14:30</div>
-            <div class="cmp-lockscreen-date">Martedì 14 Maggio</div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📧</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Email</div>
-                <div class="cmp-notif-body">Re: Appuntamento giovedì?</div>
-              </div>
-              <div class="cmp-notif-time">14:12</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📧</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Email</div>
-                <div class="cmp-notif-body">Conferma appuntamento</div>
-              </div>
-              <div class="cmp-notif-time">11:45</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📧</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Email</div>
-                <div class="cmp-notif-body">Richiesta spostamento...</div>
-              </div>
-              <div class="cmp-notif-time">09:22</div>
-            </div>
-          </div>
-        `,
-        caption: '<ul><li>Email, telefonate, agenda cartacea.</li><li>Doppi booking e dimenticanze.</li></ul>'
-      },
-      after: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">16:30</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-dashboard">
-            <div class="cmp-dash-header">
-              <div class="cmp-dash-title">📅 Calendario Sync</div>
-              <div class="cmp-dash-badge">SYNC</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">✓</span>
-                <span class="cmp-msg-label">Appuntamento confermato</span>
-              </div>
-              <div class="cmp-msg-text">Giovedì 16/5 ore 15:00<br/>Cliente: Laura Bianchi<br/>Servizio: Consulenza legale</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📲</span>
-                <span class="cmp-msg-label">Reminder inviato</span>
-              </div>
-              <div class="cmp-msg-text">SMS + WhatsApp 24h prima<br/>Tasso conferma: 94%</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📊</span>
-                <span class="cmp-msg-label">No-show ridotti</span>
-              </div>
-              <div class="cmp-msg-text">Prima: 30% | Ora: 6%<br/>-80% assenze nel mese</div>
-            </div>
-          </div>        `,
-        caption: '<ul><li>Calendario sincronizzato live.</li><li>-80% di no-show.</li><li>I clienti si presentano.</li></ul>'
-      }
-    },
-    
-    // 03 - WHATSAPP
-    {
-      emoji: '💬',
-      title: 'WhatsApp',
-      before: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">22:45</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-lockscreen">
-            <div class="cmp-lockscreen-time">22:45</div>
-            <div class="cmp-lockscreen-date">Venerdì 17 Maggio</div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon" style="background:#25D366">💬</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">WhatsApp (12)</div>
-                <div class="cmp-notif-body">Marco: Quanto costa?</div>
-              </div>
-              <div class="cmp-notif-time">22:38</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon" style="background:#25D366">💬</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">WhatsApp (8)</div>
-                <div class="cmp-notif-body">Sofia: Siete aperti domani?</div>
-              </div>
-              <div class="cmp-notif-time">21:52</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon" style="background:#25D366">💬</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">WhatsApp (15)</div>
-                <div class="cmp-notif-body">Altri messaggi non letti...</div>
-              </div>
-              <div class="cmp-notif-time">20:14</div>
-            </div>
-          </div>
-        `,
-        caption: '<ul><li>Messaggi che si accumulano.</li><li>Risposte la mattina dopo.</li><li>Clienti che non aspettano.</li></ul>'
-      },
-      after: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">00:45</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-dashboard">
-            <div class="cmp-dash-header">
-              <div class="cmp-dash-title">💬 WhatsApp Business</div>
-              <div class="cmp-dash-badge">AUTO</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">⚡</span>
-                <span class="cmp-msg-label">Risposta automatica (3s)</span>
-              </div>
-              <div class="cmp-msg-text">Ciao Marco! Il servizio di consulenza costa €120/ora. Ti mando i dettagli completi via email.</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">🏷️</span>
-                <span class="cmp-msg-label">Classificato: INFO PREZZI</span>
-              </div>
-              <div class="cmp-msg-text">Priorità: Media<br/>Azione: Risposta inviata<br/>Follow-up: Schedulato 48h</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📊</span>
-                <span class="cmp-msg-label">Oggi</span>
-              </div>
-              <div class="cmp-msg-text">24 messaggi gestiti<br/>Tempo risposta medio: 8 secondi<br/>0 escalation necessarie</div>
-            </div>
-          </div>        `,
-        caption: '<ul><li>Risposta in pochi secondi.</li><li>Classificazione automatica.</li><li>Zero notifiche perse.</li></ul>'
-      }
-    },
-    
-    // 04 - ORARI 24/7
-    {
-      emoji: '⏰',
-      title: 'Disponibilità 24/7',
-      before: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">19:15</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-lockscreen">
-            <div class="cmp-lockscreen-time">19:15</div>
-            <div class="cmp-lockscreen-date">Sabato 18 Maggio</div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📞</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Segreteria telefonica</div>
-                <div class="cmp-notif-body">Nuovo messaggio vocale</div>
-              </div>
-              <div class="cmp-notif-time">19:10</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📞</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Chiamata persa</div>
-                <div class="cmp-notif-body">+39 347 891 2345</div>
-              </div>
-              <div class="cmp-notif-time">18:55</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon">📞</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Chiamata persa</div>
-                <div class="cmp-notif-body">+39 338 567 8901</div>
-              </div>
-              <div class="cmp-notif-time">18:32</div>
-            </div>
-          </div>
-        `,
-        caption: '<ul><li>Orario 9-18, poi silenzio.</li><li>Weekend? Telefono spento.</li><li>Urgenze? Richiameremo lunedì.</li></ul>'
-      },
-      after: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">21:15</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-dashboard">
-            <div class="cmp-dash-header">
-              <div class="cmp-dash-title">⏰ Sistema attivo</div>
-              <div class="cmp-dash-badge">24/7</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">🌙</span>
-                <span class="cmp-msg-label">Orario notturno</span>
-              </div>
-              <div class="cmp-msg-text">Chiamata gestita ore 02:18<br/>Urgenza dentale riconosciuta<br/>Dentista di guardia contattato</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📊</span>
-                <span class="cmp-msg-label">Copertura attuale</span>
-              </div>
-              <div class="cmp-msg-text">Lun-Dom: 24 ore<br/>Festivi: Attivo<br/>Ferie: Nessuna interruzione</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">💰</span>
-                <span class="cmp-msg-label">Lead non persi</span>
-              </div>
-              <div class="cmp-msg-text">Fuori orario questo mese:<br/>47 richieste gestite<br/>12 appuntamenti fissati</div>
-            </div>
-          </div>        `,
-        caption: '<ul><li>Sempre attivo, 24/7.</li><li>Weekend, festivi, notte.</li><li>Zero chiamate perse.</li></ul>'
-      }
-    },
-    
-    // 05 - DASHBOARD
-    {
-      emoji: '📊',
-      title: 'Visibilità e controllo',
-      before: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">11:20</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-lockscreen">
-            <div class="cmp-lockscreen-time">11:20</div>
-            <div class="cmp-lockscreen-date">Lunedì 20 Maggio</div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon" style="background:#666">📝</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Note</div>
-                <div class="cmp-notif-body">Agenda carta: controllare...</div>
-              </div>
-              <div class="cmp-notif-time">10:45</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon" style="background:#666">❓</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Promemoria</div>
-                <div class="cmp-notif-body">Richiamare cliente delle 9?</div>
-              </div>
-              <div class="cmp-notif-time">09:30</div>
-            </div>
-            <div class="cmp-notification">
-              <div class="cmp-notif-icon" style="background:#666">📋</div>
-              <div class="cmp-notif-content">
-                <div class="cmp-notif-title">Note</div>
-                <div class="cmp-notif-body">Verificare appuntamento...</div>
-              </div>
-              <div class="cmp-notif-time">08:15</div>
-            </div>
-          </div>
-        `,
-        caption: '<ul><li>Niente storico, zero metriche.</li><li>Impossibile capire cosa funziona.</li><li>Decisioni al buio.</li></ul>'
-      },
-      after: {
-        html: `
-          <div class="cmp-status-bar">
-            <span class="cmp-status-left">13:20</span>
-            <span class="cmp-status-right"><span>📶</span><span>🔋</span></span>
-          </div>
-          <div class="cmp-dashboard">
-            <div class="cmp-dash-header">
-              <div class="cmp-dash-title">📊 Dashboard live</div>
-              <div class="cmp-dash-badge">REAL-TIME</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📞</span>
-                <span class="cmp-msg-label">Chiamate oggi</span>
-              </div>
-              <div class="cmp-msg-text">28 gestite | 100% risposta<br/>Durata media: 3m 24s<br/>12 appuntamenti fissati</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">📈</span>
-                <span class="cmp-msg-label">Conversione</span>
-              </div>
-              <div class="cmp-msg-text">Lead → Cliente: 42%<br/>Tasso no-show: 6%<br/>Soddisfazione: 4.8/5</div>
-            </div>
-            <div class="cmp-chat-message">
-              <div class="cmp-msg-meta">
-                <span class="cmp-msg-icon">💾</span>
-                <span class="cmp-msg-label">Trascrizioni</span>
-              </div>
-              <div class="cmp-msg-text">Tutte le chiamate archiviate<br/>Searchable + Esportabili<br/>Compliance GDPR garantita</div>
-            </div>
-          </div>        `,
-        caption: '<ul><li>Dashboard real-time completa.</li><li>Trascrizioni + KPI live.</li><li>Decisioni data-driven.</li></ul>'
-      }
-    }
-  ];
-  
-  let currentIdx = 0;
-  let isTransitioning = false;
-  
-  // Imposta confronto iniziale
-  setActive(0);
-  
-  // Scroll listener
+
+// ===== STICKY SCROLL sec-03 (I Nostri Servizi) =====
+function initBaScroll() {
+  const section = document.getElementById('baSection');
+  const panels = document.querySelectorAll('.ba-panel');
+  const tabs = document.querySelectorAll('.ba-tab');
+  const dots = document.querySelectorAll('.ba-progress-dot');
+  if (!section || !panels.length) return;
+
+  const total = panels.length;
+  let currentIdx = -1;
+
+  function setActive(idx) {
+    if (idx === currentIdx) return;
+    currentIdx = idx;
+    panels.forEach((p, i) => p.classList.toggle('active', i === idx));
+    tabs.forEach((t, i) => t.classList.toggle('active', parseInt(t.dataset.tab) === idx));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+
+  function scrollToIdx(idx) {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = window.scrollY + rect.top;
+    const target = sectionTop + (section.offsetHeight / total) * idx;
+    window.scrollTo({ top: target, behavior: 'smooth' });
+  }
+
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    const idx = parseInt(tab.dataset.tab);
+    setActive(idx);
+    scrollToIdx(idx);
+  }));
+
+  dots.forEach(dot => dot.addEventListener('click', () => {
+    const idx = parseInt(dot.dataset.tab);
+    setActive(idx);
+    scrollToIdx(idx);
+  }));
+
   let ticking = false;
   window.addEventListener('scroll', () => {
-    if (!ticking && !isTransitioning) {
-      window.requestAnimationFrame(() => {
-        updateProgress();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-  
-  // Click su progress dots
-  document.querySelectorAll('.cmp-progress-dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.dataset.index);
-      scrollToSection(idx);
-    });
-  });
-  
-  function updateProgress() {
-    const rect = stage.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const stageHeight = stage.offsetHeight;
-    
-    // Progress da 0 a 1
-    const scrolled = -rect.top;
-    const scrollable = stageHeight - windowHeight;
-    const progress = Math.max(0, Math.min(1, scrolled / scrollable));
-    
-    // Calcola indice (0-4)
-    const newIdx = Math.min(4, Math.floor(progress * 5));
-    
-    if (newIdx !== currentIdx) {
-      currentIdx = newIdx;
-      setActive(newIdx);
-    }
-  }
-  
-  function setActive(idx) {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    
-    const item = data[idx];
-    
-    // Fade out
-    document.querySelector('.cmp-header-row').classList.remove('active');
-    document.querySelectorAll('.cmp-phone-wrapper').forEach(w => w.classList.remove('active'));
-    
-    setTimeout(() => {
-      // Aggiorna contenuto
-      document.getElementById('cmpEmoji').textContent = item.emoji;
-      document.getElementById('cmpTitle').textContent = item.title;
-      document.getElementById('phoneBeforeScreen').innerHTML = item.before.html;
-      document.getElementById('headerTextBefore').innerHTML = item.before.caption;
-      document.getElementById('phoneAfterScreen').innerHTML = item.after.html;
-      document.getElementById('headerTextAfter').innerHTML = item.after.caption;
-      
-      // Aggiorna progress dots
-      document.querySelectorAll('.cmp-progress-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === idx);
-      });
-      
-      // Fade in
-      setTimeout(() => {
-        document.querySelector('.cmp-header-row').classList.add('active');
-        document.querySelectorAll('.cmp-phone-wrapper').forEach(w => w.classList.add('active'));
-        isTransitioning = false;
-      }, 50);
-    }, 300);
-  }
-  
-  function scrollToSection(idx) {
-    const stageTop = stage.offsetTop;
-    const stageHeight = stage.offsetHeight;
-    const targetScroll = stageTop + (stageHeight / 5) * idx;
-    
-    window.scrollTo({
-      top: targetScroll,
-      behavior: 'smooth'
-    });
-  }
-}
-
-// Init quando DOM è pronto
-if (document.readyState === 'loading') {
-  // ===== Before/After STICKY SCROLL (sec-03) — APPLE/STRIPE STYLE =====
-  document.addEventListener('DOMContentLoaded', () => {
-    const section = document.getElementById('baSection');
-    const panels = document.querySelectorAll('.ba-panel');
-    const tabs = document.querySelectorAll('.ba-tab');
-    const dots = document.querySelectorAll('.ba-progress-dot');
-    if (!section || !panels.length) return;
-    
-    const total = panels.length;
-    let currentIdx = -1;
-
-    function setActive(idx) {
-      if (idx === currentIdx) return;
-      currentIdx = idx;
-      panels.forEach((p, i) => p.classList.toggle('active', i === idx));
-      tabs.forEach((t, i) => t.classList.toggle('active', parseInt(t.dataset.tab) === idx));
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === idx);
-        d.classList.toggle('passed', i < idx);
-      });
-    }
-
-    function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
       const rect = section.getBoundingClientRect();
-      const sectionTop = rect.top;
-      const sectionHeight = rect.height - window.innerHeight;
-      if (sectionHeight <= 0) return;
-      // Progress da 0 a 1
-      const progress = Math.max(0, Math.min(1, -sectionTop / sectionHeight));
-      const idx = Math.min(total - 1, Math.floor(progress * total));
-      setActive(idx);
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // Click tab: scrolla al pannello corrispondente
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => {
-        const idx = parseInt(tab.dataset.tab);
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        const sectionHeight = section.offsetHeight - window.innerHeight;
-        const targetY = sectionTop + (idx / total) * sectionHeight + 20;
-        window.scrollTo({ top: targetY, behavior: 'smooth' });
-      });
+      const wh = window.innerHeight;
+      if (rect.bottom < 0 || rect.top > wh) { ticking = false; return; }
+      const scrolled = Math.max(0, -rect.top);
+      const scrollable = Math.max(1, section.offsetHeight - wh);
+      const progress = Math.min(1, scrolled / scrollable);
+      const newIdx = Math.min(total - 1, Math.floor(progress * total));
+      if (newIdx !== currentIdx) setActive(newIdx);
+      ticking = false;
     });
+  }, { passive: true });
 
-    // Click progress dot
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-        const sectionHeight = section.offsetHeight - window.innerHeight;
-        const targetY = sectionTop + (i / total) * sectionHeight + 20;
-        window.scrollTo({ top: targetY, behavior: 'smooth' });
-      });
-    });
-  });
-
-  // ===== Hero Rotating Words =====
-  const words = ['Risponde', 'Gestisce', 'Prenota', 'Chiama', 'Organizza'];
-  let currentIndex = 0;
-  const rotatingWord = document.getElementById('rotatingWord');
-
-  function rotateWord() {
-    if (!rotatingWord) return;
-    currentIndex = (currentIndex + 1) % words.length;
-    rotatingWord.style.animation = 'none';
-    setTimeout(() => {
-      rotatingWord.textContent = words[currentIndex];
-      rotatingWord.style.animation = 'rotateWord 0.6s ease-in-out';
-    }, 10);
-  }
-
-  if (rotatingWord) {
-    setInterval(rotateWord, 2500); // Cambia ogni 2.5 secondi
-  }
-
-  // ===== Hero Aurora background è CSS-only, no JS init necessario =====
-} else {
-  initComparisonStage();
+  setActive(0);
 }
 
-// ===== DEMO CALL FORM — Invio al webhook AutoCalls.ai =====
-(function() {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBaScroll);
+} else {
+  initBaScroll();
+}
+
+// ===== Demo Call Form submit handler
+(function initDemoCallForm() {
   const form = document.getElementById('demoCallForm');
   if (!form) return;
 
-  const WEBHOOK_URL = 'https://automate.autocalls.ai/api/v1/webhooks/g2cDAa5qNlNQR2fq1vHPn';
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+  const WEBHOOK_URL = 'https://automate.autocalls.ai/api/v1/webhooks/vtqYxeo58vqqRFbIc5Auh';
 
-  // Mapping settore → nome leggibile (per il payload)
-  const settoreLabels = {
-    legale: 'Avvocati e Notai',
-    medico: 'Cliniche e Studi Medici',
-    beauty: 'Saloni e SPA',
-    pmi: 'PMI e Retail',
-    finance: 'Commercialisti e Consulenti',
-    artigiani: 'Artigiani',
-    realestate: 'Real Estate'
-  };
-
-  function setLoading(loading) {
-    if (!submitBtn) return;
-    submitBtn.disabled = loading;
-    if (loading) {
-      submitBtn.innerHTML = '<span>Invio in corso...</span>';
-    } else {
-      submitBtn.innerHTML = originalBtnHtml;
-    }
-  }
-
-  function showMessage(type, text) {
-    // Rimuovi eventuale messaggio precedente
-    const existing = form.querySelector('.demo-form-message');
-    if (existing) existing.remove();
-
-    const msg = document.createElement('div');
-    msg.className = 'demo-form-message demo-form-message-' + type;
-    msg.style.cssText = 'margin-top: 16px; padding: 14px 16px; border-radius: 12px; font-size: 0.9rem; line-height: 1.4;' +
-      (type === 'success'
-        ? 'background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.35); color: #4ade80;'
-        : 'background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.35); color: #f87171;');
-    msg.textContent = text;
-    form.appendChild(msg);
-
-    if (type === 'success') {
-      setTimeout(() => msg.remove(), 8000);
-    }
-  }
-
-  function cleanPhoneNumber(phone) {
-    // Rimuovi spazi, trattini, parentesi, +
-    let cleaned = (phone || '').replace(/[\s\-\(\)\+]/g, '');
-    // Se inizia con 0039, rimuovilo
-    if (cleaned.startsWith('0039')) cleaned = cleaned.substring(4);
-    // Se non inizia con 39, aggiungilo (assumendo Italia)
-    if (!cleaned.startsWith('39')) cleaned = '39' + cleaned;
-    return cleaned;
-  }
-
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const orig = btn.innerHTML;
 
-    // Validazione manuale
     const name = document.getElementById('dc-name').value.trim();
     const email = document.getElementById('dc-email').value.trim();
-    const phoneRaw = document.getElementById('dc-phone').value.trim();
+    const phone = document.getElementById('dc-phone').value.trim();
     const settore = document.getElementById('dc-settore').value;
     const privacy = document.getElementById('dc-privacy').checked;
-
-    if (!name || !email || !phoneRaw || !settore || !privacy) {
-      showMessage('error', 'Compila tutti i campi e accetta la privacy policy.');
+    if (!name || !email || !phone || !settore || !privacy) {
+      alert('Compila tutti i campi e accetta la privacy policy.');
       return;
     }
 
-    // Validazione email base
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showMessage('error', 'Inserisci un indirizzo email valido.');
-      return;
-    }
-
-    // Validazione telefono: almeno 9 cifre dopo pulizia
-    const phone = cleanPhoneNumber(phoneRaw);
-    if (phone.replace(/\D/g, '').length < 11) {
-      showMessage('error', 'Inserisci un numero di telefono valido.');
-      return;
-    }
-
-    setLoading(true);
-
-    // Payload per il webhook AutoCalls.ai
-    const payload = {
-      name: name,
-      email: email,
-      phone: phone,                                  // formato 39XXXXXXXXX (no + no spazi)
-      sector: settore,                                // chiave
-      sector_label: settoreLabels[settore] || settore,// leggibile
-      source: 'youzen.it - hero demo call form',
-      timestamp: new Date().toISOString(),
-      page_url: window.location.href
-    };
+    btn.disabled = true;
+    btn.innerHTML = '<span>Invio in corso...</span>';
 
     try {
-      const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      if (response.ok) {
-        showMessage('success', '✓ Perfetto! Ti chiamiamo entro 60 secondi al ' + phoneRaw + '. Tieni il telefono a portata di mano.');
-        form.reset();
-
-        // Tracking GA4 (se presente)
-        if (typeof gtag === 'function') {
-          gtag('event', 'demo_call_request', {
-            event_category: 'lead',
-            event_label: settore,
-            value: 1
-          });
-        }
+      if (WEBHOOK_URL) {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone: '+39' + phone.replace(/\s/g, ''), settore, source: 'youzen-demo-call' })
+        });
+        if (!res.ok) throw new Error('Webhook error: ' + res.status);
       } else {
-        throw new Error('HTTP ' + response.status);
+        await new Promise(r => setTimeout(r, 800));
+        console.warn('[YouZen] WEBHOOK_URL non configurato — placeholder mode.');
       }
+
+      btn.innerHTML = '<span>✓ Ti chiamiamo entro 60 secondi</span>';
+      btn.style.background = '#22C55E';
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'demo_call_request', { settore, source: 'demo-call-form' });
+      }
+
+      setTimeout(() => {
+        form.reset();
+        btn.innerHTML = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
     } catch (err) {
-      console.error('Form submit error:', err);
-      showMessage('error', 'Qualcosa è andato storto. Riprova o scrivici a info@youzen.it');
-    } finally {
-      setLoading(false);
+      console.error('[YouZen] Errore invio form:', err);
+      btn.innerHTML = '<span>⚠ Errore — riprova</span>';
+      btn.style.background = '#EF4444';
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
     }
   });
 })();
-
 </script>
 
+<!-- Thpace animated hero background -->
+<script src="https://unpkg.com/thpace"></script>
+<script>
+(function () {
+  function initThpace() {
+    var canvas = document.getElementById('thpace-hero');
+    var Lib = window.ThpaceGL || window.Thpace;
+    if (!canvas || !Lib) return;
+    try {
+      Lib.create(canvas, {
+        colors: ['#F97316', '#7c3aed', '#1d2747', '#080E1F'],
+        triangleSize: 120,
+        pointAnimationSpeed: 8000,
+        particleSettings: { color: '#ffffff', count: [1, 3] }
+      });
+    } catch (e) {
+      // fallback: lascia lo sfondo scuro se la libreria non si carica
+      console.warn('Thpace init failed', e);
+    }
+  }
+  if (document.readyState === 'complete') initThpace();
+  else window.addEventListener('load', initThpace);
+})();
+</script>
+
+<!-- Mesh di triangoli (Thpace) sezione demo-call -->
+<script>
+(function () {
+  function initDemoMesh() {
+    var canvas = document.getElementById('thpace-democall');
+    var Lib = window.ThpaceGL || window.Thpace;
+    if (!canvas || !Lib) return;
+    try {
+      Lib.create(canvas, {
+        colors: ['#080E1F', '#1a2240', '#3a2f63', '#7c3aed'],
+        triangleSize: 130,
+        pointAnimationSpeed: 9000,
+        particleSettings: { color: '#ffffff', count: [1, 2] }
+      });
+    } catch (e) {
+      console.warn('Thpace demo-call init failed', e);
+    }
+  }
+  if (document.readyState === 'complete') initDemoMesh();
+  else window.addEventListener('load', initDemoMesh);
+})();
+</script>
+
+<!-- Carosello parola hero (cosa fa YouZen) -->
+<script>
+(function () {
+  var el = document.getElementById('rotatingWord');
+  if (!el) return;
+  var words = ['Risponde', 'Prenota', 'Organizza', 'Notifica', 'Richiama', 'Conferma'];
+  var i = 0;
+  setInterval(function () {
+    i = (i + 1) % words.length;
+    el.style.animation = 'none';
+    void el.offsetWidth; // forza il reflow per ri-avviare l'animazione
+    el.textContent = words[i];
+    el.style.animation = 'rotateWord 0.6s ease-in-out';
+  }, 2200);
+})();
+</script>
+
+<!-- ============================ COOKIE BANNER (GDPR / Consent Mode v2) ============================ -->
+<!-- Banner + registro consensi gestiti da yz-consent.js (unico file condiviso su tutte le pagine con GA4). -->
+<script defer src="yz-consent.js"></script>
 </body>
 </html>

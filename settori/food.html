@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================ GOOGLE ANALYTICS 4 + CONSENT MODE v2 ============================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consenso negato di default finché l'utente non accetta (GDPR / Consent Mode v2)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-S3XZKEZSFF', { 'anonymize_ip': true });
+  // Ripristina il consenso eventualmente già dato
+  try {
+    if (localStorage.getItem('yz-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    }
+  } catch (e) {}
+</script>
+<title>YouZen Food — La receptionist AI per ristoranti, pizzerie e take away</title>
+<meta name="description" content="YouZen è la receptionist AI italiana per ristoranti, pizzerie e attività food: risponde h24, prende ordini take away, prenota tavoli, gestisce la cucina. Mai più una chiamata persa." />
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="YouZen">
+<meta name="keywords" content="receptionist AI ristoranti, AI pizzeria, prenotazione tavoli automatica, take away AI, gestione ordini ristorante, chatbot ristorante, agenda sala digitale">
+<meta name="theme-color" content="#DC2626">
+<link rel="canonical" href="https://youzen.it/food.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YouZen Food">
+<meta property="og:title" content="YouZen Food — Receptionist AI per ristoranti e pizzerie">
+<meta property="og:description" content="YouZen Food è la receptionist AI italiana per ristoranti, pizzerie e take away: prende ordini, prenota tavoli, manda notifiche WhatsApp quando l'ordine è pronto. Mai più chiamate perse nel servizio.">
+<meta property="og:url" content="https://youzen.it/food.html">
+<meta property="og:image" content="https://youzen.it/og-food.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@youzen">
+<meta name="twitter:title" content="YouZen Food — Receptionist AI per ristoranti e pizzerie">
+<meta name="twitter:description" content="YouZen Food è la receptionist AI italiana per ristoranti, pizzerie e take away: prende ordini, prenota tavoli, manda notifiche WhatsApp quando l'ordine è pronto. Mai più chiamate perse nel servizio.">
+<meta name="twitter:image" content="https://youzen.it/og-food.png">
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YouZen",
+  "url": "https://youzen.it",
+  "logo": "https://youzen.it/favicon-96x96.png",
+  "description": "Receptionist AI italiana per piccole e medie imprese. Risponde alle chiamate h24, prenota appuntamenti, manda notifiche WhatsApp.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IT"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@youzen.it",
+    "availableLanguage": [
+      "Italian"
+    ]
+  },
+  "sameAs": []
+}
+</script>
+
+<!-- Structured Data: Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Receptionist AI",
+  "name": "YouZen Food — Receptionist AI per ristoranti e take away",
+  "description": "YouZen Food è la receptionist AI italiana per ristoranti, pizzerie e take away: prende ordini, prenota tavoli, manda notifiche WhatsApp quando l'ordine è pronto. Mai più chiamate perse nel servizio.",
+  "provider": {
+    "@type": "Organization",
+    "name": "YouZen",
+    "url": "https://youzen.it"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Italy"
+  },
+  "url": "https://youzen.it/food.html",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter",
+      "price": "99",
+      "priceCurrency": "EUR",
+      "description": "1.500 minuti/mese inclusi"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "249",
+      "priceCurrency": "EUR",
+      "description": "Per ristoranti con sala e asporto"
+    },
+    {
+      "@type": "Offer",
+      "name": "Ultra",
+      "price": "450",
+      "priceCurrency": "EUR",
+      "description": "Multi-sede e franchising"
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cos'è esattamente YouZen per il mio ristorante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YouZen Food è la receptionist AI italiana per ristoranti, pizzerie e take away: una voce naturale che risponde al telefono, conosce il menu, prende ordini asporto, prenota tavoli sulla piantina, manda notifiche WhatsApp ai clienti."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Il cliente capisce di parlare con un'AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voce italiana naturale, tono calibrato sul tuo locale. Quasi nessuno se ne accorge nei primi 30 secondi. Se chiede di parlare con lo staff, YouZen ti notifica o trasferisce la chiamata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Si integra con il mio gestionale di sala/cassa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integriamo nativamente TheFork, Plateform, Cassa in Cloud, Scloby, Soft Restaurant. Per altri gestionali abbiamo API aperte e middleware su misura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa davvero per un ristorante come il mio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setup una tantum + canone mensile calibrato sul volume di chiamate. Niente percentuale sul fatturato, niente vincoli pluriennali."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I dati dei miei clienti sono al sicuro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Server in Unione Europea, conformità GDPR completa, registro dei trattamenti incluso. Trascrizioni cifrate, dati mai venduti."
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --ink-900: #080e1f;
+  --ink-800: #0d1530;
+  --ink-700: #121b3d;
+  --accent: #DC2626;
+  --accent-400: #EF4444;
+  --accent-600: #B91C1C;
+
+  /* Colori settore (presi dalla sezione Settori della homepage) */
+  --sector-salone: #EC4899;
+  --sector-food:   #DC2626;
+  --sector-prof:   #F59E0B;
+  --sector-real:   #06B6D4;
+  --sector-legale: #7C3AED;
+  --sector-pmi:    #10B981;
+
+  --muted: rgba(255,255,255,0.62);
+  --muted-strong: rgba(255,255,255,0.78);
+  --muted-weak: rgba(255,255,255,0.42);
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.16);
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+  --shadow-cta: 0 12px 32px -8px rgba(220,38,38,0.45), 0 2px 0 0 rgba(255,255,255,0.08) inset, 0 -2px 0 0 rgba(0,0,0,0.18) inset;
+  --shadow-cta-hover: 0 16px 40px -8px rgba(220,38,38,0.55), 0 2px 0 0 rgba(255,255,255,0.12) inset, 0 -2px 0 0 rgba(0,0,0,0.18) inset;
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.06) inset, 0 24px 60px -28px rgba(0,0,0,0.6);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body {
+  font-family: var(--font-sans);
+  background: var(--ink-900);
+  color: white;
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+@media (min-width: 1024px) { .container { padding: 0 40px; } }
+
+.section { position: relative; padding: 64px 0; }
+@media (min-width: 1024px) { .section { padding: 96px 0; } }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+  padding: 6px 12px;
+  border: 1px solid rgba(220,38,38,0.24);
+  border-radius: 999px;
+  background: rgba(220,38,38,0.06);
+}
+.eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.05; font-weight: 700; }
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.03em; line-height: 0.98; font-weight: 800; }
+h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
+
+.title-problem { color: rgba(255,255,255,0.95); display: block; line-height: 1.1; }
+.title-solution { color: var(--accent); display: block; line-height: 1.1; }
+
+.lead { font-size: clamp(1.05rem, 1.4vw, 1.25rem); color: var(--muted-strong); line-height: 1.5; }
+
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em;
+  height: 52px; padding: 0 26px;
+  border-radius: 14px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(180deg, var(--accent-400) 0%, var(--accent) 50%, var(--accent-600) 100%);
+  color: white;
+  box-shadow: var(--shadow-cta);
+}
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 50%);
+  pointer-events: none;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-cta-hover); }
+.btn-primary svg.arrow { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.btn-primary:hover svg.arrow { transform: translateX(4px); }
+
+.btn-ghost { height: 44px; padding: 0 16px; color: var(--muted-strong); border-radius: 12px; }
+.btn-ghost:hover { color: white; background: rgba(255,255,255,0.05); }
+
+.btn-outline {
+  height: 52px; padding: 0 24px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  color: white;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
+
+.btn-sm { height: 42px; padding: 0 18px; font-size: 0.9rem; border-radius: 12px; }
+.btn-lg { height: 58px; padding: 0 30px; font-size: 1.05rem; border-radius: 16px; }
+
+.section-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+  margin-top: 72px;
+  padding: 28px 36px;
+  border-radius: 24px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(180deg, var(--accent-400) 0%, var(--accent) 50%, var(--accent-600) 100%);
+  box-shadow: 0 20px 50px -12px rgba(220,38,38,0.55), 0 4px 0 0 rgba(0,0,0,0.18) inset, 0 2px 0 0 rgba(255,255,255,0.20) inset, 0 0 0 1px rgba(220,38,38,0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.section-cta::before {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0) 45%);
+  pointer-events: none; z-index: 1;
+}
+.section-cta::after {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.30) 50%, transparent 70%);
+  transition: left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none; z-index: 1;
+}
+.section-cta:hover { transform: translateY(-2px); }
+.section-cta:hover::after { left: 130%; }
+.section-cta-text { flex: 1; min-width: 0; position: relative; z-index: 2; }
+.section-cta-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 8px;
+}
+.section-cta-eyebrow::before { content: ''; width: 18px; height: 1px; background: rgba(255,255,255,0.85); }
+.section-cta-line {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.9vw, 1.6rem);
+  font-weight: 700; letter-spacing: -0.02em;
+  color: white; line-height: 1.2;
+}
+.section-cta-line span { color: rgba(255,255,255,0.78); font-weight: 600; }
+.section-cta-arrow {
+  position: relative; z-index: 2;
+  flex-shrink: 0;
+  width: 60px; height: 60px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  display: grid; place-items: center;
+  color: white;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(4px);
+}
+.section-cta:hover .section-cta-arrow { transform: translateX(6px) scale(1.05); }
+@media (max-width: 768px) {
+  .section-cta { padding: 22px 22px; gap: 16px; margin-top: 56px; border-radius: 20px; flex-direction: column; align-items: flex-start; }
+  .section-cta-arrow { width: 48px; height: 48px; }
+}
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s ease; }
+.nav.scrolled { background: rgba(8, 14, 31, 0.78); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+.nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+.logo {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -0.03em;
+  display: flex; align-items: center; gap: 8px;
+}
+.logo-img { width: 28px; height: 28px; display: block; }
+.logo .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+.logo .sub { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 4px; font-family: var(--font-sans); }
+.nav-links { display: none; gap: 4px; }
+.nav-links a { padding: 10px 14px; font-size: 0.9rem; color: var(--muted); border-radius: 10px; transition: color 0.2s, background 0.2s; }
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.04); }
+.nav-cta { display: none; gap: 8px; }
+@media (min-width: 1024px) { .nav-links, .nav-cta { display: flex; align-items: center; } }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 80px;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(220,38,38,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 90% 30%, rgba(124,58,237,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 50% 90%, rgba(14,165,233,0.10) 0%, transparent 60%);
+  animation: meshDrift 28s ease-in-out infinite alternate;
+}
+@keyframes meshDrift {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-3%, 2%) scale(1.08); }
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.4;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 80%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; gap: 64px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 80px; } }
+
+.hero-headline { margin: 28px 0 24px; }
+.hero-headline span { display: block; }
+.hero-headline .l1 { color: white; }
+.hero-headline .l2 { color: var(--accent); position: relative; }
+.hero-headline .l3 {
+  color: transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.55));
+  -webkit-background-clip: text; background-clip: text;
+}
+.hero-rotating-word {
+  display: inline-block;
+  color: var(--accent);
+  animation: rotateWord 0.6s ease-in-out;
+}
+@keyframes rotateWord {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hero-sub { max-width: 560px; margin-bottom: 32px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.badge {
+  font-family: var(--font-mono); font-size: 12px;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  color: var(--muted-strong);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-social-proof {
+  margin-top: 40px;
+  display: flex; align-items: center; gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.proof-icons { display: flex; }
+.proof-icons .pi {
+  width: 40px; height: 40px; border-radius: 999px;
+  display: grid; place-items: center;
+  margin-left: -10px;
+  border: 2px solid var(--ink-900);
+  font-size: 18px;
+  background: var(--ink-700);
+}
+.proof-icons .pi:first-child { margin-left: 0; }
+.proof-text { font-size: 0.85rem; color: var(--muted); }
+
+/* Hero mockup */
+.hero-mockup {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+}
+.hero-mockup::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(220,38,38,0.35), rgba(255,255,255,0.05) 40%);
+  -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+}
+.mockup-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.mockup-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.mockup-meta { flex: 1; min-width: 0; }
+.mockup-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.mockup-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; color: rgb(74,222,128);
+  font-family: var(--font-mono);
+}
+.mockup-status::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: rgb(74,222,128);
+  animation: pulseLive 2s infinite;
+}
+@keyframes pulseLive {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+.mockup-timer { font-family: var(--font-mono); color: var(--muted); font-size: 0.85rem; }
+.msg-list { display: flex; flex-direction: column; gap: 10px; }
+.msg {
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  max-width: 88%;
+  animation: fadeIn 0.4s ease both;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.msg-customer {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--line);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.msg-carla {
+  background: linear-gradient(135deg, rgba(220,38,38,0.18), rgba(220,38,38,0.08));
+  border: 1px solid rgba(220,38,38,0.3);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.msg-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.section-head { max-width: 780px; margin-bottom: 64px; }
+.section-head .eyebrow { margin-bottom: 24px; }
+.section-head h2 { margin-bottom: 20px; }
+.section-head .lead { color: var(--muted); }
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.stat-card {
+  position: relative;
+  padding: 36px 32px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+}
+.stat-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.6;
+  z-index: 0;
+}
+.stat-card > * { position: relative; z-index: 1; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.stat-label { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.stat-desc { color: var(--muted); font-size: 0.92rem; }
+
+/* FEATURES */
+.omni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.omni-card {
+  position: relative;
+  padding: 32px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.005) 50%, rgba(0,0,0,0.2) 100%), var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
+}
+.omni-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--accent), transparent 55%);
+  opacity: 0.10;
+  z-index: 0;
+  transition: opacity 0.5s;
+}
+.omni-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.omni-card:hover { border-color: rgba(220,38,38,0.35); transform: translateY(-4px); }
+.omni-card:hover::before { opacity: 0.20; }
+.omni-card > * { position: relative; z-index: 1; }
+.omni-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(220,38,38,0.10);
+  border: 1px solid rgba(220,38,38,0.25);
+  display: grid; place-items: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.omni-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.omni-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+.omni-desc { color: var(--muted-strong); font-size: 0.95rem; }
+
+/* CONFRONTO */
+.cmp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) { .cmp-grid { grid-template-columns: 1fr 1fr; } }
+.cmp-col {
+  padding: 32px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+}
+.cmp-col.before { background: rgba(239,68,68,0.04); border-color: rgba(239,68,68,0.20); }
+.cmp-col.after  { background: linear-gradient(180deg, rgba(220,38,38,0.08), rgba(220,38,38,0.02)); border-color: rgba(220,38,38,0.35); }
+.cmp-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.7;
+}
+.cmp-col.after .cmp-col-title { color: var(--accent); opacity: 1; }
+.cmp-list { display: flex; flex-direction: column; gap: 14px; }
+.cmp-row { display: flex; gap: 12px; align-items: flex-start; }
+.cmp-bullet {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700;
+  margin-top: 2px;
+}
+.cmp-col.before .cmp-bullet { background: rgba(239,68,68,0.15); color: rgb(248,113,113); }
+.cmp-col.after .cmp-bullet { background: rgba(34,197,94,0.18); color: rgb(74,222,128); }
+.cmp-text { font-size: 1rem; line-height: 1.5; }
+.cmp-col.before .cmp-text { color: rgba(255,255,255,0.65); }
+.cmp-col.after .cmp-text { color: white; }
+
+/* STEPS */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+.step-card {
+  padding: 36px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  background: linear-gradient(180deg, rgba(220,38,38,0.5), rgba(220,38,38,0.1));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 4px;
+}
+.step-duration {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.step-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; }
+.step-desc { color: var(--muted); font-size: 0.95rem; }
+
+/* TESTIMONIAL */
+.testimonial {
+  position: relative;
+  padding: 56px 48px;
+  border-radius: 28px;
+  border: 1px solid var(--line-strong);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  overflow: hidden;
+}
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: -40px; left: 24px;
+  font-family: var(--font-display);
+  font-size: 18rem;
+  color: rgba(220,38,38,0.08);
+  line-height: 1;
+}
+.testimonial-quote {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+}
+.testimonial-author { display: flex; align-items: center; gap: 14px; position: relative; }
+.testimonial-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.testimonial-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.testimonial-role { color: var(--muted); font-size: 0.88rem; }
+
+/* PRICING */
+.setup-box-row { margin-bottom: 32px; display: flex; justify-content: center; }
+.setup-box {
+  display: inline-flex; align-items: center; gap: 16px;
+  padding: 18px 28px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+}
+.setup-icon-wrap {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: rgba(220,38,38,0.10);
+  border: 1px solid rgba(220,38,38,0.25);
+  display: grid; place-items: center;
+  color: var(--accent);
+}
+.setup-info { display: flex; flex-direction: column; }
+.setup-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-weak); }
+.setup-value { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+.setup-tagline { font-size: 0.78rem; color: var(--muted); }
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) { .plans-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .plans-grid { grid-template-columns: repeat(4, 1fr); } }
+.plan-card {
+  position: relative;
+  padding: 36px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%), var(--ink-900);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+}
+.plan-card.featured {
+  border-color: rgba(220,38,38,0.5);
+  box-shadow: 0 24px 60px -28px rgba(220,38,38,0.5);
+}
+.plan-card.featured::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(220,38,38,0.15), transparent 60%);
+  z-index: 0;
+}
+.plan-card > * { position: relative; z-index: 1; }
+.plan-tag {
+  position: absolute; top: 16px; right: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  color: white;
+  font-weight: 600;
+  z-index: 2;
+}
+.plan-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+.plan-tagline { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
+.plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+.plan-price .cur { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--muted-strong); }
+.plan-price .num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.plan-price .per { font-size: 0.95rem; color: var(--muted); margin-left: 4px; }
+.plan-minutes {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 8px 0 24px;
+}
+.plan-features {
+  list-style: none;
+  margin-bottom: 28px;
+  flex: 1;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.plan-features li {
+  font-size: 0.92rem;
+  color: var(--muted-strong);
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.plan-features li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  margin-top: 2px;
+  background: rgba(34,197,94,0.18);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(74,222,128)' stroke-width='3' stroke-linecap='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.plan-cta { width: 100%; }
+
+/* FAQ */
+.faq-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+/* FAQ a larghezza piena, sempre 1 colonna */
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: rgba(220,38,38,0.4); }
+.faq-trigger {
+  width: 100%;
+  padding: 20px 22px;
+  display: flex; align-items: center; gap: 14px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.faq-emoji { font-size: 1.2rem; flex-shrink: 0; }
+.faq-q { flex: 1; }
+.faq-toggle {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+}
+.faq-toggle::before, .faq-toggle::after {
+  content: ''; position: absolute;
+  top: 50%; left: 50%;
+  background: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.faq-toggle::before { width: 10px; height: 1.5px; transform: translate(-50%, -50%); }
+.faq-toggle::after  { width: 1.5px; height: 10px; transform: translate(-50%, -50%); }
+.faq-item.open .faq-toggle { background: var(--accent); border-color: var(--accent); }
+.faq-item.open .faq-toggle::after { opacity: 0; }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.open .faq-body { max-height: 400px; }
+.faq-body-inner {
+  padding: 0 22px 22px 56px;
+  color: var(--muted-strong);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* CTA FINAL */
+.cta-final {
+  position: relative;
+  padding: 120px 0;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-final-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(220,38,38,0.18), transparent 65%);
+}
+.cta-final > .container { position: relative; z-index: 2; }
+.cta-final h2 { margin-bottom: 20px; }
+.cta-final .lead { margin: 0 auto 36px; max-width: 600px; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.cta-trust {
+  margin-top: 32px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+}
+.trust-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted-strong);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+}
+.trust-badge svg { color: var(--accent); }
+
+/* SERVIZI PRO FOOD — sezione dedicata ai servizi sviluppati */
+.pro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 900px) { .pro-grid { grid-template-columns: repeat(3, 1fr); } }
+.pro-card {
+  position: relative;
+  padding: 36px 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(220,38,38,0.25);
+  background:
+    linear-gradient(160deg, rgba(220,38,38,0.10) 0%, rgba(220,38,38,0.02) 50%, rgba(0,0,0,0.2) 100%),
+    var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.pro-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--sector-food), transparent 55%);
+  opacity: 0.14;
+  z-index: 0;
+  transition: opacity 0.5s;
+}
+.pro-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.pro-card:hover {
+  border-color: rgba(220,38,38,0.55);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px -28px rgba(220,38,38,0.45);
+}
+.pro-card:hover::before { opacity: 0.24; }
+.pro-card > * { position: relative; z-index: 1; }
+.pro-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.pro-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: rgba(220,38,38,0.12);
+  border: 1px solid rgba(220,38,38,0.30);
+  display: grid; place-items: center;
+  font-size: 26px;
+}
+.pro-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(74,222,128);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.30);
+}
+.pro-status::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: rgb(74,222,128);
+  box-shadow: 0 0 8px rgb(74,222,128);
+}
+.pro-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sector-food);
+  margin-bottom: 10px;
+}
+.pro-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.pro-desc { color: var(--muted-strong); font-size: 0.95rem; line-height: 1.55; margin-bottom: 18px; }
+.pro-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+}
+.pro-tag svg { color: var(--sector-food); flex-shrink: 0; }
+
+/* ALTRI SETTORI — box di rimando ai verticali */
+.sectors-others {
+  border-top: 1px solid var(--line);
+  padding: 96px 0 24px;
+}
+.sectors-others-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+.sectors-others-head .eyebrow { margin-bottom: 20px; }
+.sectors-others-head h2 { margin-bottom: 16px; font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
+.sectors-others-head p { color: var(--muted); }
+
+.others-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 600px) { .others-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .others-grid { grid-template-columns: repeat(5, 1fr); } }
+
+.other-card {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 220px;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.4s;
+  text-decoration: none;
+  color: inherit;
+}
+.other-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--sc, var(--accent)), transparent 55%);
+  opacity: 0.16;
+  z-index: 0;
+  transition: opacity 0.4s;
+}
+.other-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.other-card > * { position: relative; z-index: 1; }
+.other-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--sc, var(--accent)) 55%, transparent);
+  box-shadow: 0 24px 50px -28px color-mix(in srgb, var(--sc, var(--accent)) 60%, transparent);
+}
+.other-card:hover::before { opacity: 0.28; }
+
+.other-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-size: 22px;
+  background: color-mix(in srgb, var(--sc, var(--accent)) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sc, var(--accent)) 35%, transparent);
+  margin-bottom: 18px;
+}
+.other-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sc, var(--accent));
+  margin-bottom: 8px;
+}
+.other-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+.other-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+.other-arrow {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line-strong);
+  background: rgba(255,255,255,0.03);
+  color: white;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s, border-color 0.3s;
+  margin-top: auto;
+  align-self: flex-start;
+}
+.other-card:hover .other-arrow {
+  transform: translateX(4px);
+  background: color-mix(in srgb, var(--sc, var(--accent)) 18%, transparent);
+  border-color: color-mix(in srgb, var(--sc, var(--accent)) 50%, transparent);
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 72px 0 32px;
+  position: relative;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.footer-brand p { color: var(--muted); font-size: 0.92rem; margin-top: 14px; max-width: 320px; }
+.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+  display: grid; place-items: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+.footer-social a:hover { border-color: var(--accent); color: var(--accent); }
+.footer-col h5 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-weak);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: var(--muted-strong); font-size: 0.92rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  font-size: 0.82rem;
+  color: var(--muted-weak);
+}
+
+/* === CTA finale stile prova.html === */
+.cta-grid {
+  display: grid; grid-template-columns: 1fr; gap: 60px;
+  align-items: center;
+}
+@media (min-width: 1000px) { .cta-grid { grid-template-columns: 1.05fr 0.95fr; } }
+.cta-text h2 { margin-bottom: 24px; }
+.cta-text .lead { color: var(--muted); margin-bottom: 32px; }
+.cta-contact-row {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  margin-bottom: 28px;
+}
+.contact-pill {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-size: 0.9rem;
+}
+.contact-pill svg { color: var(--accent); flex-shrink: 0; }
+.cta-final .cta-trust { justify-content: flex-start; margin-top: 0; }
+.cal-embed {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  padding: 24px;
+  min-height: 380px;
+  display: grid; place-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.cal-embed::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(220,38,38,0.10), transparent 60%);
+  pointer-events: none;
+}
+.cal-placeholder { position: relative; z-index: 1; padding: 24px; }
+.cal-placeholder .ico {
+  width: 64px; height: 64px; border-radius: 18px;
+  background: rgba(220,38,38,0.12); color: var(--accent);
+  display: grid; place-items: center;
+  margin: 0 auto 20px;
+  border: 1px solid rgba(220,38,38,0.25);
+}
+
+/* === DASHBOARD MOCKUP === */
+.dash-wrap {
+  position: relative;
+  border-radius: 28px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  isolation: isolate;
+}
+.dash-wrap::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+  opacity: 0.6;
+}
+.dash-bar {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+.dash-dot { width: 10px; height: 10px; border-radius: 50%; }
+.dash-dot.r { background: #ff5f56; }
+.dash-dot.y { background: #ffbd2e; }
+.dash-dot.g { background: #27c93f; }
+.dash-url {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-left: 16px;
+  flex: 1; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.dash-grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 700px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .dash-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+.dash-card {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+  position: relative;
+  overflow: hidden;
+}
+.dash-card.tall { grid-row: span 2; }
+.dash-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-weak);
+  margin-bottom: 10px;
+}
+.dash-kpi {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 6px;
+}
+.dash-kpi-sub { font-size: 0.85rem; color: var(--muted); }
+.dash-chart { margin-top: 18px; display: flex; align-items: flex-end; gap: 4px; height: 80px; }
+.dash-bar-v {
+  flex: 1; min-width: 0;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  border-radius: 4px 4px 0 0;
+  opacity: 0.85;
+}
+.dash-list { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+.dash-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+}
+.dash-item-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-size: 14px; font-family: var(--font-display); font-weight: 700;
+  flex-shrink: 0;
+}
+.dash-item-name { font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; line-height: 1.15; }
+.dash-item-svc { font-size: 0.78rem; color: var(--muted); }
+.dash-item-time {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.dash-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.dash-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.28);
+  color: rgb(74,222,128);
+}
+.dash-badge.warn { background: rgba(220,38,38,0.10); border-color: rgba(220,38,38,0.30); color: var(--accent); }
+
+
+/* === FUNZIONALITÀ AVANZATE — sezione dedicata Food === */
+.feat-adv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 900px) { .feat-adv-grid { grid-template-columns: 1fr 1fr; } }
+
+.feat-adv-card {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid var(--line-strong);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+}
+.feat-adv-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 60% at 0% 0%, black, transparent 70%);
+  opacity: 0.4;
+  z-index: 0;
+}
+.feat-adv-card > * { position: relative; z-index: 1; }
+
+.feat-adv-visual {
+  background: linear-gradient(180deg, rgba(220,38,38,0.05), rgba(0,0,0,0.20));
+  border-bottom: 1px solid var(--line);
+  padding: 24px;
+  min-height: 220px;
+  display: grid; place-items: center;
+}
+.feat-adv-body { padding: 28px; }
+.feat-adv-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sector-food);
+  margin-bottom: 10px;
+}
+.feat-adv-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.feat-adv-desc { color: var(--muted-strong); font-size: 0.95rem; line-height: 1.55; margin-bottom: 14px; }
+.feat-adv-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; padding: 0; }
+.feat-adv-bullets li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex; gap: 8px;
+}
+.feat-adv-bullets li::before {
+  content: '→';
+  color: var(--sector-food);
+  flex-shrink: 0;
+}
+
+/* TAKE AWAY mockup */
+.tak-mock {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.tak-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+.tak-row .ico {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: rgba(220,38,38,0.12);
+  border: 1px solid rgba(220,38,38,0.28);
+  display: grid; place-items: center;
+  font-size: 14px;
+}
+.tak-row .nm { flex: 1; }
+.tak-row .qt {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-weight: 600;
+}
+.tak-tot {
+  display: flex; justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(220,38,38,0.18), rgba(220,38,38,0.06));
+  border: 1px solid rgba(220,38,38,0.35);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* SALA mockup */
+.sala-mock {
+  width: 100%; max-width: 320px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: 14px;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 8px, rgba(255,255,255,0.04) 8px, rgba(255,255,255,0.04) 16px);
+  border: 1px solid var(--line);
+}
+.tav {
+  position: absolute;
+  border-radius: 8px;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: white;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.20);
+  transition: all .3s;
+}
+.tav.full { background: linear-gradient(135deg, var(--accent-400), var(--accent-600)); border-color: var(--accent); box-shadow: 0 0 0 3px rgba(220,38,38,0.18); }
+.tav.book { background: rgba(220,38,38,0.20); border-color: rgba(220,38,38,0.55); color: #ffb3b3; }
+.tav.free { background: rgba(34,197,94,0.10); border-color: rgba(34,197,94,0.35); color: rgb(134,239,172); }
+
+.tav-1 { top: 8%; left: 6%; width: 22%; height: 22%; }
+.tav-2 { top: 8%; right: 6%; width: 22%; height: 22%; }
+.tav-3 { top: 38%; left: 36%; width: 28%; height: 18%; border-radius: 999px; }
+.tav-4 { bottom: 10%; left: 8%; width: 18%; height: 26%; }
+.tav-5 { bottom: 10%; right: 8%; width: 36%; height: 26%; }
+.bar-zone {
+  position: absolute; top: 0; left: 35%; right: 35%;
+  height: 6%;
+  background: rgba(220,38,38,0.18);
+  border-bottom: 1px solid rgba(220,38,38,0.35);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  display: grid; place-items: center;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+/* SLOT TIME mockup */
+.slot-mock { width: 100%; }
+.slot-row {
+  display: grid; grid-template-columns: 60px 1fr auto;
+  align-items: center; gap: 12px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+.slot-time { font-family: var(--font-mono); color: var(--muted-strong); font-weight: 600; }
+.slot-bar-w {
+  height: 6px; border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.slot-bar-i {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-400), var(--accent-600));
+  border-radius: 3px;
+}
+.slot-cnt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.slot-row.full .slot-cnt { color: rgb(248,113,113); }
+.slot-row.full .slot-bar-i { background: linear-gradient(90deg, rgb(248,113,113), rgb(220,38,38)); }
+
+/* TOUCH KITCHEN mockup */
+.kitchen-mock {
+  width: 100%; max-width: 340px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.kt-tick {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+}
+.kt-tick.urgent { border-color: rgba(220,38,38,0.45); background: linear-gradient(180deg, rgba(220,38,38,0.10), rgba(220,38,38,0.02)); }
+.kt-tick.ready { border-color: rgba(34,197,94,0.45); background: linear-gradient(180deg, rgba(34,197,94,0.10), rgba(34,197,94,0.02)); }
+.kt-num { font-family: var(--font-display); font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+.kt-it { color: var(--muted-strong); line-height: 1.3; }
+.kt-time {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted-weak);
+  margin-top: 4px;
+}
+.kt-tick.ready .kt-num { color: rgb(74,222,128); }
+
+/* WHATSAPP NOTIF mockup */
+.wa-mock { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 8px; }
+.wa-msg {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.16), rgba(34,197,94,0.06));
+  border: 1px solid rgba(34,197,94,0.35);
+  color: rgba(255,255,255,0.95);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  position: relative;
+  border-bottom-right-radius: 4px;
+}
+.wa-msg .head {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(74,222,128);
+  margin-bottom: 4px;
+}
+.wa-msg .time {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted-weak);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* CLIENTS mockup */
+.cli-mock { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.cli-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+}
+.cli-av {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.cli-info { flex: 1; min-width: 0; font-size: 0.85rem; }
+.cli-nm { font-family: var(--font-display); font-weight: 600; }
+.cli-tags {
+  display: flex; gap: 4px;
+  margin-top: 2px;
+}
+.cli-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.cli-tag.allergy { background: rgba(220,38,38,0.10); border-color: rgba(220,38,38,0.30); color: var(--accent); }
+.cli-tag.vip { background: rgba(220,38,38,0.10); border-color: rgba(220,38,38,0.30); color: rgb(252,165,165); }
+.cli-cnt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted-weak);
+}
+
+
+/* === TITOLI A UNA RIGA === */
+.hero-headline span,
+.hero-headline .l1,
+.hero-headline .l2,
+.hero-headline .l3 { display: inline; }
+.hero-headline { line-height: 1.05; }
+.title-problem,
+.title-solution { display: inline; }
+
+/* === Back link YouZen === */
+.nav-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted-strong);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.nav-back:hover { border-color: var(--accent); color: white; background: rgba(255,255,255,0.06); }
+.nav-back .arr { transition: transform 0.25s ease; }
+.nav-back:hover .arr { transform: translateX(-3px); }
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="https://www.youzen.it" class="logo">
+      <img src="../youzen-logo-k2.png" alt="YouZen" class="logo-img" />
+      You<span style="color:var(--accent)">Zen</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#problema">Il problema</a>
+      <a href="#features">Cosa facciamo</a>
+      <a href="#servizi-pro">Come lo facciamo</a>
+      <a href="#confronto">Prima e dopo</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contatto">Contatti</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.app.youzen.it" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Entra nell'App</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Receptionist AI per ristoranti</span>
+        <h1 class="hero-headline">
+          <span class="l1">Tu sforni.</span> <span class="l2"><span class="hero-rotating-word" id="rotatingWord">YouZen prende l'ordine.</span></span>
+        </h1>
+        <p class="lead hero-sub">
+          YouZen è la receptionist AI di YouZen Food. Risponde h24 al posto tuo, prende ordini take away, prenota tavoli sulla piantina, manda notifiche WhatsApp quando gli ordini sono pronti. Tu cucini, lei risponde.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">h24, anche durante il servizio</span>
+          <span class="badge">italiano nativo</span>
+          <span class="badge">GDPR · server UE</span>
+          <span class="badge">take away + sala</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contatto" class="btn btn-primary btn-lg">
+            Contattaci
+            <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#features" class="btn btn-outline btn-lg">Scopri come funziona</a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="proof-icons">
+            <span class="pi">🍕</span>
+            <span class="pi">🍝</span>
+            <span class="pi">🥗</span>
+            <span class="pi">🍷</span>
+          </div>
+          <span class="proof-text">Già usato da ristoranti e pizzerie in tutta Italia · zero ordini persi</span>
+        </div>
+      </div>
+
+      <!-- Mockup conversazione YouZen -->
+      <div class="hero-mockup">
+        <div class="mockup-head">
+          <div class="mockup-avatar">🎧</div>
+          <div class="mockup-meta">
+            <div class="mockup-name">YouZen — YouZen</div>
+            <div class="mockup-status">Chiamata in corso</div>
+          </div>
+          <div class="mockup-timer">00:42</div>
+        </div>
+        <div class="msg-list">
+          <div class="msg msg-carla">
+            <div class="msg-label">YouZen</div>
+            Pizzeria Da Mario, buonasera! Sono YouZen. Vuoi prenotare un tavolo o ordinare da asporto?
+          </div>
+          <div class="msg msg-customer">
+            <div class="msg-label">Cliente</div>
+            Asporto. Una Margherita, una Diavola e una bibita per le 20:30.
+          </div>
+          <div class="msg msg-carla">
+            <div class="msg-label">YouZen</div>
+            Perfetto: 2 pizze + bibita, 22 €. Per le 20:30 ho slot disponibile, confermo?
+          </div>
+          <div class="msg msg-customer">
+            <div class="msg-label">Cliente</div>
+            Sì, conferma.
+          </div>
+          <div class="msg msg-carla">
+            <div class="msg-label">YouZen</div>
+            Ordine #142 confermato. Ti scrivo su WhatsApp quando è pronto. A dopo!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA / STATS -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Il problema</span>
+      <h2><span class="title-problem">Spoiler:</span> <span class="title-solution">tantissimi.</span></h2>
+      <p class="lead">Sala piena, friggitrice che brucia, telefono che squilla e nessuno risponde. Take away che salta in un altro locale, tavolo prenotato dal concorrente. Ogni servizio, ogni weekend, ogni festa.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">40%</div>
+        <div class="stat-label">delle chiamate persa</div>
+        <div class="stat-desc">Nei picchi (venerdì sera, sabato pranzo, festività) un ristorante perde fino al 40% delle chiamate in arrivo.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">25€</div>
+        <div class="stat-label">ordine take away medio</div>
+        <div class="stat-desc">Ogni squillo non gestito è un asporto che salta. Moltiplica per il numero di chiamate perse a settimana.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">80%</div>
+        <div class="stat-label">va al concorrente</div>
+        <div class="stat-desc">Chi non trova risposta non richiama: prende il telefono e ordina dalla pizzeria a 200 metri. Lo perdi senza accorgertene.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cosa fa YouZen Food</span>
+      <h2><span class="title-problem">Non un risponditore:</span> <span class="title-solution">un maître che lavora anche da casa.</span></h2>
+      <p class="lead">YouZen capisce se il cliente vuole prenotare o ordinare, controlla la sala e gli slot take away, propone, prende l'ordine, conferma. Tutto in italiano naturale, anche con il fritto in corso.</p>
+    </div>
+
+    <div class="omni-grid">
+      <article class="omni-card">
+        <div class="omni-icon">📞</div>
+        <div class="omni-eyebrow">SEMPRE RISPOSTA</div>
+        <h3 class="omni-title">Risponde alle chiamate</h3>
+        <p class="omni-desc">H24, anche venerdì sera con la sala piena. Mai più clienti che ordinano dalla concorrenza perché in cucina non sentite il telefono.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">🍽️</div>
+        <div class="omni-eyebrow">PRENOTA TAVOLI</div>
+        <h3 class="omni-title">Gestisce la sala</h3>
+        <p class="omni-desc">Conosce coperti, turni e composizione tavoli. Controlla la piantina della sala in tempo reale e fissa la prenotazione senza interromperti.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">🥡</div>
+        <div class="omni-eyebrow">TAKE AWAY COMPLETO</div>
+        <h3 class="omni-title">Prende ordini di asporto</h3>
+        <p class="omni-desc">Menu intero a disposizione, varianti e allergie capite al volo, slot di ritiro proposti in base al carico cucina. L'ordine arriva diretto in dashboard cucina.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">💬</div>
+        <div class="omni-eyebrow">NOTIFICHE WHATSAPP</div>
+        <h3 class="omni-title">Tiene il cliente informato</h3>
+        <p class="omni-desc">"Ordine ricevuto", "in preparazione", "pronto per il ritiro", follow-up il giorno dopo. Nessuna chiamata in più, esperienza premium senza sforzo.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">🛡️</div>
+        <div class="omni-eyebrow">FILTRO INTELLIGENTE</div>
+        <h3 class="omni-title">Blocca spam e scherzi</h3>
+        <p class="omni-desc">Riconosce call center, fornitori non autorizzati e prenotazioni fake. A te arrivano solo clienti veri, niente più tavoli buttati per chiamate scherzo.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">📊</div>
+        <div class="omni-eyebrow">DASHBOARD CHIARA</div>
+        <h3 class="omni-title">Tutto sotto controllo</h3>
+        <p class="omni-desc">Ogni ordine in tempo reale, coperti del giorno, take away in coda, KPI della settimana. Apri il tablet in pausa e sai esattamente come va.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIZI PRO SVILUPPATI PER IL FOOD -->
+<section class="section" id="servizi-pro">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: var(--sector-food); border-color: rgba(220,38,38,0.30); background: rgba(220,38,38,0.08);">Servizi Pro · Food</span>
+      <h2><span class="title-problem">Sei chicche</span> <span class="title-solution" style="color: var(--sector-food);">per chi sta in cucina.</span></h2>
+      <p class="lead">Non promesse generiche da SaaS. Sei funzionalità pensate per chi vive tra sala, cucina e take away — h24, anche nei picchi.</p>
+    </div>
+
+    <div class="pro-grid">
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">🧠</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Riconoscimento clienti</div>
+        <h3 class="pro-title">YouZen saluta i clienti abituali per nome</h3>
+        <p class="pro-desc">Quando un cliente già in rubrica chiama, YouZen lo riconosce dal numero e apre con "Buonasera Marco, come al solito tavolo per due?". Niente "mi dica il suo nominativo": è subito relazione, come al banco del bar dove vai da anni.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          Match automatico sul numero in arrivo
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">🔁</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Recall ultimo ordine</div>
+        <h3 class="pro-title">Propone il piatto preferito del cliente</h3>
+        <p class="pro-desc">YouZen pesca l'ultimo ordine e propone direttamente di rifarlo: "La solita Diavola e due birre?". Il cliente conferma in due battute, l'ordine entra in cucina, tu non interrompi il servizio per scrivere niente.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          Storico ordini · varianti · allergie
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">💬</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">WhatsApp con agente</div>
+        <h3 class="pro-title">Il cliente ordina o prenota direttamente in chat</h3>
+        <p class="pro-desc">Oltre alle notifiche, su WhatsApp c'è YouZen. Il cliente scrive "tavolo per 4 sabato sera" o "due pizze da asporto per le 21", YouZen risponde, propone slot e chiude l'ordine dentro la chat. Senza telefonate, senza app da scaricare.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chat WhatsApp + ordine integrato
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">🕐</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Sempre attiva</div>
+        <h3 class="pro-title">Disponibile 24/7, anche nelle ore di chiusura</h3>
+        <p class="pro-desc">Mattina presto, dopo cena, lunedì di chiusura, ferragosto: YouZen risponde sempre e accetta prenotazioni per i giorni in cui sei aperto. Mai più clienti che ti chiamano alle 11 di sera per il pranzo della domenica e non trovano risposta.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          H24 · 365 giorni · anche a sala chiusa
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">📞</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Capacità illimitata</div>
+        <h3 class="pro-title">Fino a 50 chiamate in simultanea</h3>
+        <p class="pro-desc">Sabato sera ore 20:30, partita in TV, festa della mamma: cinquanta clienti chiamano contemporaneamente per ordinare. YouZen risponde a tutti senza farli aspettare. Zero linee occupate, zero ordini che vanno alla concorrenza.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          50 chiamate in parallelo · zero linee occupate
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">📅</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Sincronizzazione totale</div>
+        <h3 class="pro-title">Sala e take away in tempo reale</h3>
+        <p class="pro-desc">Ogni prenotazione tavolo entra nella piantina, ogni ordine asporto arriva al tablet di cucina. Niente quaderni, niente Post-it, niente doppie prenotazioni: la sala e l'asporto restano sempre allineati.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          TheFork · Plateform · gestionali food
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FUNZIONALITÀ AVANZATE FOOD -->
+<section class="section" id="funzionalita">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: var(--sector-food); border-color: rgba(220,38,38,0.30); background: rgba(220,38,38,0.08);">Funzionalità avanzate</span>
+      <h2><span class="title-problem">Sala, cucina, asporto:</span> <span class="title-solution" style="color: var(--sector-food);">tutto coperto.</span></h2>
+      <p class="lead">Non solo telefono. YouZen Food è una piattaforma operativa che entra in sala, in cucina e su WhatsApp. Sei moduli, configurabili, pensati per il modo in cui un ristorante lavora davvero.</p>
+    </div>
+
+    <div class="feat-adv-grid">
+      <!-- 1. TAKE AWAY -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="tak-mock">
+            <div class="tak-row"><div class="ico">🍕</div><div class="nm">Margherita</div><div class="qt">×2</div></div>
+            <div class="tak-row"><div class="ico">🍕</div><div class="nm">Diavola</div><div class="qt">×1</div></div>
+            <div class="tak-row"><div class="ico">🥤</div><div class="nm">Coca 33cl</div><div class="qt">×3</div></div>
+            <div class="tak-tot"><span>Totale</span><span>22,50 €</span></div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Take away configurabile</div>
+          <h3 class="feat-adv-title">Asporto su misura, anche con varianti</h3>
+          <p class="feat-adv-desc">Configuri menu, varianti, allergie e fasce orarie. YouZen guida il cliente nell'ordine al telefono o in chat, calcola il totale e propone slot di ritiro liberi.</p>
+          <ul class="feat-adv-bullets">
+            <li>Menu completo importato dal tuo gestionale o caricato a mano</li>
+            <li>Varianti gestite ("senza cipolla", "ben cotta", "extra mozzarella")</li>
+            <li>Slot ritiro proposti in base al carico cucina del momento</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 2. PRENOTAZIONE TAVOLO VISUALE -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="sala-mock" aria-label="Piantina sala con tavoli">
+            <div class="bar-zone">BAR</div>
+            <div class="tav tav-1 full">T1 · 4</div>
+            <div class="tav tav-2 free">T2 · 2</div>
+            <div class="tav tav-3 book">T3 · 6</div>
+            <div class="tav tav-4 full">T4 · 2</div>
+            <div class="tav tav-5 free">T5 · 8</div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Prenotazione tavolo visuale</div>
+          <h3 class="feat-adv-title">Disegni la sala, YouZen la riempie</h3>
+          <p class="feat-adv-desc">Editor drag-and-drop per costruire la piantina del tuo locale. YouZen assegna automaticamente i tavoli giusti in base ai coperti e ai turni, con regole personalizzabili.</p>
+          <ul class="feat-adv-bullets">
+            <li>Editor visuale tavoli (rotondi, quadrati, dehor, zona bar)</li>
+            <li>Assegnazione automatica per coperti / preferenze cliente</li>
+            <li>Turni doppi gestiti: cena 19:30 e 21:30 con buffer pulizia</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. SLOT TIME LOGIC -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="slot-mock">
+            <div class="slot-row"><span class="slot-time">19:30</span><div class="slot-bar-w"><div class="slot-bar-i" style="width:40%"></div></div><span class="slot-cnt">8/20</span></div>
+            <div class="slot-row"><span class="slot-time">20:00</span><div class="slot-bar-w"><div class="slot-bar-i" style="width:75%"></div></div><span class="slot-cnt">15/20</span></div>
+            <div class="slot-row full"><span class="slot-time">20:30</span><div class="slot-bar-w"><div class="slot-bar-i" style="width:100%"></div></div><span class="slot-cnt">20/20</span></div>
+            <div class="slot-row"><span class="slot-time">21:00</span><div class="slot-bar-w"><div class="slot-bar-i" style="width:60%"></div></div><span class="slot-cnt">12/20</span></div>
+            <div class="slot-row"><span class="slot-time">21:30</span><div class="slot-bar-w"><div class="slot-bar-i" style="width:25%"></div></div><span class="slot-cnt">5/20</span></div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Logiche per slot</div>
+          <h3 class="feat-adv-title">Max ordini e prodotti per fascia oraria</h3>
+          <p class="feat-adv-desc">Imposti limiti per ogni slot: massimo 20 pizze ogni 30 minuti, massimo 10 ordini contemporanei, blocco per prodotti finiti. YouZen rifiuta o propone alternativi in automatico.</p>
+          <ul class="feat-adv-bullets">
+            <li>Tetto ordini per slot per non saturare la cucina</li>
+            <li>Limite per categoria (pizze, fritti, dolci, ecc.)</li>
+            <li>Stop-vendita automatico quando finisce un ingrediente</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4. TOUCH KITCHEN -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="kitchen-mock">
+            <div class="kt-tick urgent">
+              <div class="kt-num">#142</div>
+              <div class="kt-it">2× Margherita<br/>1× Diavola</div>
+              <div class="kt-time">⚡ ritiro 20:30</div>
+            </div>
+            <div class="kt-tick">
+              <div class="kt-num">#143</div>
+              <div class="kt-it">Tavolo 5<br/>4× antipasto</div>
+              <div class="kt-time">in lavorazione</div>
+            </div>
+            <div class="kt-tick ready">
+              <div class="kt-num">#141</div>
+              <div class="kt-it">3× Carbonara<br/>1× Cacio e pepe</div>
+              <div class="kt-time">✓ pronto</div>
+            </div>
+            <div class="kt-tick">
+              <div class="kt-num">#144</div>
+              <div class="kt-it">Take away<br/>2× sushi mix</div>
+              <div class="kt-time">in coda</div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Dashboard touch cucina</div>
+          <h3 class="feat-adv-title">Gestione ordini con un tocco, dal banco</h3>
+          <p class="feat-adv-desc">Tablet in cucina con tutti i ticket attivi: take away, sala, consegne. Un tocco per cambiare stato (in lavorazione → pronto), uno scroll per vedere tutti gli ordini del turno.</p>
+          <ul class="feat-adv-bullets">
+            <li>Interfaccia ottimizzata per touch in cucina (anche con guanti)</li>
+            <li>Stati colorati: in coda, in lavorazione, pronto, ritirato</li>
+            <li>Stampa automatica scontrino o ticket termico opzionale</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 5. WHATSAPP NOTIFICATIONS -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="wa-mock">
+            <div class="wa-msg">
+              <div class="head">Pizzeria Da Mario</div>
+              Ordine #142 ricevuto! 2 pizze + bibita. Ti scrivo quando è pronto. 🍕
+              <span class="time">20:14</span>
+            </div>
+            <div class="wa-msg">
+              <div class="head">Pizzeria Da Mario</div>
+              Ordine pronto per il ritiro! Ti aspettiamo entro 15 min.
+              <span class="time">20:33</span>
+            </div>
+            <div class="wa-msg">
+              <div class="head">Pizzeria Da Mario</div>
+              Grazie per averci scelto! Lascia una recensione 🌟 e prenota subito sabato sera.
+              <span class="time">il giorno dopo</span>
+            </div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Notifiche WhatsApp</div>
+          <h3 class="feat-adv-title">Cliente sempre informato, zero telefonate</h3>
+          <p class="feat-adv-desc">Tre touch automatici sul cliente via WhatsApp Business: conferma ordine, "è pronto", follow-up il giorno dopo con recensione/riprenotazione. Senza che tu o lo staff alziate il telefono.</p>
+          <ul class="feat-adv-bullets">
+            <li>Conferma immediata con riepilogo e tempo stimato</li>
+            <li>Notifica "pronto" quando lo segni in cucina</li>
+            <li>Follow-up con recensione + offerta riprenotazione</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 6. CLIENT MANAGEMENT -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="cli-mock">
+            <div class="cli-row">
+              <div class="cli-av">MR</div>
+              <div class="cli-info">
+                <div class="cli-nm">Marco Rossi</div>
+                <div class="cli-tags"><span class="cli-tag vip">VIP</span><span class="cli-tag">12 ordini</span></div>
+              </div>
+              <div class="cli-cnt">€ 420</div>
+            </div>
+            <div class="cli-row">
+              <div class="cli-av">GB</div>
+              <div class="cli-info">
+                <div class="cli-nm">Giulia Bianchi</div>
+                <div class="cli-tags"><span class="cli-tag allergy">no glutine</span><span class="cli-tag">8 ordini</span></div>
+              </div>
+              <div class="cli-cnt">€ 240</div>
+            </div>
+            <div class="cli-row">
+              <div class="cli-av">AP</div>
+              <div class="cli-info">
+                <div class="cli-nm">Anna Petrov</div>
+                <div class="cli-tags"><span class="cli-tag">vegetariana</span><span class="cli-tag">5 ordini</span></div>
+              </div>
+              <div class="cli-cnt">€ 145</div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Gestione clienti</div>
+          <h3 class="feat-adv-title">Anagrafica, storico, preferenze, allergie</h3>
+          <p class="feat-adv-desc">Ogni cliente ha la sua scheda: ordini passati, piatto preferito, allergie, segnalazione VIP. YouZen consulta tutto in chiamata, tu lo guardi sul telefono prima del servizio.</p>
+          <ul class="feat-adv-bullets">
+            <li>Tag automatici: VIP, abituali, allergie, intolleranze, festeggiamenti</li>
+            <li>Storico ordini con valore totale e media scontrino</li>
+            <li>Esportazione CSV per campagne email/WhatsApp dedicate</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="section" id="dashboard">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Dashboard dedicata</span>
+      <h2><span class="title-problem">Il locale intero</span> <span class="title-solution">su un tablet.</span></h2>
+      <p class="lead">Ticket attivi, coperti del servizio, take away in coda, KPI della settimana. Apri il tablet in pausa tra cena e cena e sai esattamente come sta andando il locale.</p>
+    </div>
+
+    <div class="dash-wrap" aria-label="Anteprima dashboard YouZen Food">
+      <div class="dash-bar">
+        <span class="dash-dot r"></span>
+        <span class="dash-dot y"></span>
+        <span class="dash-dot g"></span>
+        <span class="dash-url">app.youzen.it/food/da-mario · Live</span>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card tall">
+          <div class="dash-eyebrow">Ordini ultimi 7 giorni</div>
+          <div class="dash-kpi">342</div>
+          <div class="dash-kpi-sub">230 take away · 112 prenotazioni sala</div>
+          <div class="dash-chart" aria-hidden="true">
+            <span class="dash-bar-v" style="height:38%;"></span>
+            <span class="dash-bar-v" style="height:52%;"></span>
+            <span class="dash-bar-v" style="height:46%;"></span>
+            <span class="dash-bar-v" style="height:72%;"></span>
+            <span class="dash-bar-v" style="height:64%;"></span>
+            <span class="dash-bar-v" style="height:88%;"></span>
+            <span class="dash-bar-v" style="height:96%;"></span>
+          </div>
+          <div class="dash-badges">
+            <span class="dash-badge">+32% vs settimana scorsa</span>
+            <span class="dash-badge warn">picco venerdì 20:30</span>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-eyebrow">Coperti servizio cena</div>
+          <div class="dash-kpi">84</div>
+          <div class="dash-kpi-sub">2 turni · 6 tavoli ancora liberi alle 21:30</div>
+          <div class="dash-list">
+            <div class="dash-item">
+              <div class="dash-item-avatar">MR</div>
+              <div>
+                <div class="dash-item-name">Marco R. · 4 pax</div>
+                <div class="dash-item-svc">Tavolo 5 · senza glutine</div>
+              </div>
+              <div class="dash-item-time">19:30</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-item-avatar">GB</div>
+              <div>
+                <div class="dash-item-name">Giulia B. · 2 pax</div>
+                <div class="dash-item-svc">Tavolo 2 · anniversario</div>
+              </div>
+              <div class="dash-item-time">20:00</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-item-avatar">AP</div>
+              <div>
+                <div class="dash-item-name">Anna P. · 6 pax</div>
+                <div class="dash-item-svc">Tavolo 3 · compleanno</div>
+              </div>
+              <div class="dash-item-time">21:00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-eyebrow">No-show settimanali</div>
+          <div class="dash-kpi">-55%</div>
+          <div class="dash-kpi-sub">Da quando YouZen manda promemoria + caparra</div>
+          <div class="dash-badges">
+            <span class="dash-badge">5 no-show questa sett.</span>
+            <span class="dash-badge">12 sett. scorsa</span>
+          </div>
+          <div style="margin-top:18px;font-size:0.86rem;color:var(--muted-strong);line-height:1.5;">
+            Promemoria 24h prima via WhatsApp con conferma "Verrai?". Per tavoli grossi YouZen chiede caparra. Chi non risponde libera lo slot in automatico.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFRONTO -->
+<section class="section" id="confronto">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Prima vs Dopo</span>
+      <h2><span class="title-problem">Un venerdì in pizzeria,</span> <span class="title-solution">con e senza YouZen.</span></h2>
+      <p class="lead">Lo stesso servizio, gli stessi clienti, due esperienze diverse. Per te in cucina e per chi chiama.</p>
+    </div>
+
+    <div class="cmp-grid">
+      <div class="cmp-col before">
+        <div class="cmp-col-title">Senza YouZen</div>
+        <div class="cmp-list">
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Sala piena, friggitrice che brucia, il telefono squilla per la decima volta. Nessuno risponde.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Cliente chiama 3 volte, riattacca, ordina alla pizzeria a 200 metri. Perdi 25 € a botta.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Due tavoli prenotati non si presentano, hai mandato via altri clienti, perdi 180€.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">A fine serata 8 ordini take away sbagliati per malintesi al telefono, due recensioni 1 stella.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Lunedì fai i conti: 700€ di mancato fatturato per chiamate perse + no-show del weekend.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-col after">
+        <div class="cmp-col-title">Con YouZen</div>
+        <div class="cmp-list">
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">YouZen risponde al primo squillo. Tu continui a friggere, l'ordine è già preso.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Cliente sceglie slot disponibile, paga in chat se vuole, ordine arriva diretto in cucina sul tablet.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Promemoria WhatsApp 24h prima per i tavoli, caparra automatica per gruppi: no-show ridotti del 55%.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Ogni ordine ha un numero, una scheda cliente, un orario. Zero malintesi, zero recensioni 1 stella per ordini sbagliati.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Lunedì fai i conti: sala piena, asporto fluido, follow-up WhatsApp che riportano clienti il fine settimana dopo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#contatto" class="section-cta">
+      <div class="section-cta-text">
+        <div class="section-cta-eyebrow">Parliamone</div>
+        <div class="section-cta-line">Contattaci per una demo sul tuo ristorante. <span>Risposte vere, zero impegno.</span></div>
+      </div>
+      <span class="section-cta-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section">
+  <div class="container">
+    <div class="testimonial">
+      <p class="testimonial-quote">
+        Il venerdì sera perdevamo 20-30 chiamate per il take away mentre eravamo sotto in cucina. Oggi YouZen risponde a tutti, gli ordini arrivano sul tablet e in tre mesi abbiamo recuperato il costo del primo anno.
+      </p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">DM</div>
+        <div>
+          <div class="testimonial-name">Pizzeria Da Mario</div>
+          <div class="testimonial-role">Pizzeria di quartiere · Cliente YouZen dal 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2><span class="title-problem">Dubbi?</span> <span class="title-solution">Risposte vere, niente fuffa.</span></h2>
+      <p class="lead">Clicca per aprire la risposta. Se manca qualcosa, scrivici.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🤖</span>
+          <span class="faq-q">Cos'è esattamente YouZen per il mio ristorante?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          YouZen Food è la receptionist AI italiana per ristoranti, pizzerie e take away: una voce naturale che risponde al telefono, conosce il tuo menu e le tue regole di sala/cucina, prende ordini asporto, prenota tavoli sulla piantina, manda notifiche WhatsApp ai clienti. Più una dashboard touch per la cucina e una piattaforma per gestire clienti, slot e storico ordini.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🎙️</span>
+          <span class="faq-q">Il cliente capisce di parlare con un'AI?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Voce italiana naturale, tono calibrato sul tuo locale (familiare per la pizzeria di quartiere, formale per il ristorante alto di gamma). Quasi nessuno se ne accorge nei primi 30 secondi. Se chiede esplicitamente di parlare con uno staff umano, YouZen ti notifica o trasferisce la chiamata.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🍴</span>
+          <span class="faq-q">Si integra con il mio gestionale di sala/cassa?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Integriamo nativamente TheFork, Plateform, Cassa in Cloud, Scloby, Quartz, Soft Restaurant e altri gestionali food italiani. Per tutto il resto abbiamo API aperte e middleware su misura. Chiedici quale usi e in 5 minuti ti diciamo se è coperto e in quanti giorni siete operativi.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">💶</span>
+          <span class="faq-q">Quanto costa davvero per un ristorante come il mio?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Setup una tantum + canone mensile calibrato sul volume di chiamate/ordini del locale. Niente percentuale sul fatturato, niente vincoli pluriennali, prezzo trasparente. Contattaci con il tuo numero medio di chiamate al mese e il tipo di servizio (asporto, sala, entrambi) e ti mandiamo preventivo entro 24 ore.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🔒</span>
+          <span class="faq-q">I dati e i numeri dei miei clienti sono al sicuro?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Server in Unione Europea, conformità GDPR completa, registro dei trattamenti incluso. Trascrizioni chiamate cifrate, dati clienti mai venduti, mai usati per addestrare modelli di terze parti. Tu resti titolare del database e lo esporti in CSV in qualsiasi momento.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTI-FAQ -->
+<section class="section" id="anti-faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: rgb(239,68,68); border-color: rgba(239,68,68,0.30); background: rgba(239,68,68,0.08);">Per chi NON è YouZen Food</span>
+      <h2><span class="title-problem">A chi NON serve?</span> <span class="title-solution" style="color: rgb(239,68,68);">Te lo diciamo subito.</span></h2>
+      <p class="lead">Preferiamo dirtelo subito invece di farti sprecare una call. Se il tuo ristorante si riconosce in una di queste, probabilmente YouZen Food non è la soluzione giusta oggi.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🚫</span>
+          <span class="faq-q">Cerchi solo un risponditore con messaggio fisso?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Se ti basta un "siamo chiusi, scriveteci su WhatsApp", YouZen Food è sovradimensionata e cara. La segreteria del telefono o un messaggio WhatsApp Business automatico fanno lo stesso a costo quasi zero. Risparmia e investi altrove.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">📵</span>
+          <span class="faq-q">Il tuo locale riceve meno di 15 chiamate a settimana?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          A questi volumi il costo del canone non si ripaga. YouZen ha senso quando le chiamate perse o gli ordini sbagliati ti costano effettivamente fatturato — tipicamente da 40-50 chiamate/settimana in su. Sotto, ti conviene rispondere tu o uno della famiglia.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">📔</span>
+          <span class="faq-q">Gestisci ordini e tavoli solo su foglio di carta?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Per usare YouZen ti serve un minimo di digitalizzazione: un tablet/PC in cucina per la dashboard, una connessione decente e voglia di passare da carta a digitale. Se sei totalmente analogico, parti prima da un gestionale base, poi tornaci a parlare.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🤝</span>
+          <span class="faq-q">Vuoi prendere ogni ordine personalmente al telefono?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Se gestire personalmente ogni chiamata è il tuo modo di mantenere il tocco familiare — tipico delle trattorie storiche con clientela storica — non vuoi delegare a una voce AI. YouZen è per chi vuole smettere di interrompere il servizio per rispondere, non per chi vede il telefono come parte dell'esperienza.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🆓</span>
+          <span class="faq-q">Cerchi una soluzione gratis per sempre?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Non siamo freemium. Dietro YouZen Food c'è un'infrastruttura vera — modelli vocali italiani, server EU, integrazione cassa/gestionali, WhatsApp Business, dashboard touch — che ha un costo ogni mese. Setup una tantum + canone mensile. Se cerchi "gratis per sempre", non siamo noi.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA stile prova.html -->
+<section class="cta-final" id="contatto">
+  <div class="cta-final-bg"></div>
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-text">
+        <span class="eyebrow">Parliamone</span>
+        <h2 style="margin-top:24px"><span class="title-problem">Indeciso?</span> <span class="title-solution">Facciamo due chiacchiere.</span></h2>
+        <p class="lead">Ti mostriamo YouZen Food dal vivo: come prende un ordine, come gestisce un tavolo, come parla in italiano col cliente. Capiamo se ha senso per il tuo ristorante. Decidi tu.</p>
+
+        <div class="cta-contact-row">
+          <div class="contact-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+            +39 02 9475 8201
+          </div>
+          <div class="contact-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 5 8 7 8-7"/></svg>
+            info@youzen.it
+          </div>
+        </div>
+
+        <div class="cta-trust">
+          <span class="trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+            GDPR + Server EU
+          </span>
+          <span class="trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+            Nessun impegno
+          </span>
+          <span class="trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-1 4a3 3 0 0 1-5.5 0A3 3 0 0 1 9 11a3 3 0 0 1-5.5 0Z"/><path d="M5 11v9h14v-9"/></svg>
+            Made in Italy
+          </span>
+        </div>
+      </div>
+
+      <div class="cal-embed">
+        <div class="cal-placeholder">
+          <div class="ico">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </div>
+          <h4 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:8px;">Prenota su Cal.com</h4>
+          <p style="color:var(--muted); font-size:0.95rem; margin-bottom:24px;">L'iframe si carica al click per non rallentare la pagina. Trenta minuti, sul tuo ristorante, online.</p>
+          <a href="https://cal.com/youzen/demo" target="_blank" rel="noopener" class="btn btn-primary">Apri il calendario</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTRI SETTORI -->
+<section class="sectors-others" id="altri-settori">
+  <div class="container">
+    <div class="sectors-others-head">
+      <span class="eyebrow">Altri settori</span>
+      <h2><span class="title-problem">YouZen non è solo per il food.</span></h2>
+      <p>Stessa YouZen, stesso motore, flussi e knowledge base cuciti sul tuo settore. Scopri come funziona nel tuo.</p>
+    </div>
+
+    <div class="others-grid">
+      <a class="other-card" style="--sc: var(--sector-salone)" href="saloni.html">
+        <div class="other-icon">💇</div>
+        <div class="other-eyebrow">Verticale 01</div>
+        <h3 class="other-name">Saloni di bellezza</h3>
+        <p class="other-desc">Parrucchieri, estetisti, barber shop. Risponde h24, prenota appuntamenti, riconosce clienti per nome.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-prof)" href="professionisti.html">
+        <div class="other-icon">📁</div>
+        <div class="other-eyebrow">Verticale 03</div>
+        <h3 class="other-name">Professionisti</h3>
+        <p class="other-desc">Partite IVA, artigiani, idraulici, consulenti: filtra spam, fissa sopralluoghi, manda preventivi.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-real)" href="immobiliare.html">
+        <div class="other-icon">🏠</div>
+        <div class="other-eyebrow">Verticale 04</div>
+        <h3 class="other-name">Immobiliare</h3>
+        <p class="other-desc">Agenzie immobiliari: qualifica lead, fissa visite, manda schede immobili via WhatsApp.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-legale)" href="studio-legale.html">
+        <div class="other-icon">⚖️</div>
+        <div class="other-eyebrow">Verticale 05</div>
+        <h3 class="other-name">Studio Legale</h3>
+        <p class="other-desc">Filtro chiamate, intake pratiche, appuntamenti in studio. Riservato, conforme, ordinato.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-pmi)" href="pmi.html">
+        <div class="other-icon">🏢</div>
+        <div class="other-eyebrow">Verticale 06</div>
+        <h3 class="other-name">PMI</h3>
+        <p class="other-desc">Centralino AI, smistamento richieste, dashboard chiamate. Più ordine, meno interruzioni.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">You<span style="color:var(--accent)">Zen</span><span class="dot"></span><span class="sub">Food</span></a>
+        <p>La receptionist AI italiana per ristoranti, pizzerie e take away. Chiamate, WhatsApp, ordini, prenotazioni — h24, 365 giorni.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">In</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="YouTube">Yt</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Prodotto</h5>
+        <ul>
+          <li><a href="#features">Cosa fa</a></li>
+          <li><a href="#servizi-pro">Servizi Pro</a></li>
+          <li><a href="#funzionalita">Funzionalità</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#confronto">Prima vs Dopo</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#anti-faq">Per chi non è</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Altri settori</h5>
+        <ul>
+          <li><a href="saloni.html">YouZen Saloni</a></li>
+          <li><a href="https://studi.youzen.it">YouZen Studi</a></li>
+          <li><a href="studio-legale.html">YouZen Studio Legale</a></li>
+          <li><a href="https://www.youzen.it">Tutti i verticali</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Legale</h5>
+        <ul>
+          <li><a href="/GDPR/">Privacy Policy</a></li>
+          <li><a href="/GDPR/">Cookie Policy</a></li>
+          <li><a href="#" data-yz-manage>Gestisci cookie</a></li>
+          <li><a href="/termini/">Termini</a></li>
+          <li><a href="/GDPR/">GDPR</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 YouZen S.r.l. · P.IVA 04855440402</div>
+      <div>info@youzen.it · Server EU · GDPR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 24);
+}, { passive: true });
+
+const words = ["YouZen prende l'ordine.", "YouZen prenota il tavolo.", "YouZen ti salva la cena."];
+let wIdx = 0;
+const wEl = document.getElementById('rotatingWord');
+setInterval(() => {
+  wIdx = (wIdx + 1) % words.length;
+  wEl.style.animation = 'none';
+  void wEl.offsetWidth;
+  wEl.textContent = words[wIdx];
+  wEl.style.animation = '';
+}, 3200);
+
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+</script>
+
+<script defer src="../yz-consent.js"></script>
+</body>
+</html>

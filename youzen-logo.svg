@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="YouZen">
+  <defs>
+    <linearGradient id="yzGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F9A03F"/>
+      <stop offset="0.55" stop-color="#F47A1F"/>
+      <stop offset="1" stop-color="#E45C13"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="url(#yzGrad)" stroke-width="9"
+          stroke-linecap="round" stroke-dasharray="206 251.3" transform="rotate(-6 50 50)"/>
+  <g fill="url(#yzGrad)">
+    <circle cx="50" cy="31" r="9.2"/>
+    <path d="M50 41.5 C43.6 41.5 40.4 45.8 38.4 52.6 L36.4 58.4 C36 60.4 37.6 61.8 39.8 61.8 L60.2 61.8 C62.4 61.8 64 60.4 63.6 58.4 L61.6 52.6 C59.6 45.8 56.4 41.5 50 41.5 Z"/>
+    <path d="M50 63.2 C40 63 24.5 64.8 22.4 70.8 C24.5 76 38 78.2 50 78.2 C62 78.2 75.5 76 77.6 70.8 C75.5 64.8 60 63 50 63.2 Z"/>
+  </g>
+</svg>

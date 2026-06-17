@@ -1,0 +1,2731 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================ GOOGLE ANALYTICS 4 + CONSENT MODE v2 ============================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consenso negato di default finché l'utente non accetta (GDPR / Consent Mode v2)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-S3XZKEZSFF', { 'anonymize_ip': true });
+  // Ripristina il consenso eventualmente già dato
+  try {
+    if (localStorage.getItem('yz-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    }
+  } catch (e) {}
+</script>
+<title>YouZen Saloni — YouZen risponde al telefono per il tuo salone</title>
+<meta name="description" content="YouZen è la receptionist AI italiana per parrucchieri ed estetisti: risponde h24, prende appuntamenti, manda promemoria WhatsApp. Mai più una chiamata persa." />
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="YouZen">
+<meta name="keywords" content="receptionist AI saloni, AI parrucchieri, gestione appuntamenti salone, prenotazione automatica salone, chatbot salone, AI estetista, gestione chiamate parrucchiere">
+<meta name="theme-color" content="#EC4899">
+<link rel="canonical" href="https://youzen.it/saloni.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YouZen Saloni">
+<meta property="og:title" content="YouZen Saloni — Receptionist AI per parrucchieri">
+<meta property="og:description" content="YouZen Saloni è la receptionist AI italiana per parrucchieri ed estetisti: risponde h24, prenota appuntamenti sul calendario, manda promemoria WhatsApp ai clienti. Mai più chiamate perse mentre tagli.">
+<meta property="og:url" content="https://youzen.it/saloni.html">
+<meta property="og:image" content="https://youzen.it/og-saloni.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@youzen">
+<meta name="twitter:title" content="YouZen Saloni — Receptionist AI per parrucchieri">
+<meta name="twitter:description" content="YouZen Saloni è la receptionist AI italiana per parrucchieri ed estetisti: risponde h24, prenota appuntamenti sul calendario, manda promemoria WhatsApp ai clienti. Mai più chiamate perse mentre tagli.">
+<meta name="twitter:image" content="https://youzen.it/og-saloni.png">
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YouZen",
+  "url": "https://youzen.it",
+  "logo": "https://youzen.it/favicon-96x96.png",
+  "description": "Receptionist AI italiana per piccole e medie imprese. Risponde alle chiamate h24, prenota appuntamenti, manda notifiche WhatsApp.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IT"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "info@youzen.it",
+    "availableLanguage": [
+      "Italian"
+    ]
+  },
+  "sameAs": []
+}
+</script>
+
+<!-- Structured Data: Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Receptionist AI",
+  "name": "YouZen Saloni — Receptionist AI per saloni di bellezza",
+  "description": "YouZen Saloni è la receptionist AI italiana per parrucchieri ed estetisti: risponde h24, prenota appuntamenti sul calendario, manda promemoria WhatsApp ai clienti. Mai più chiamate perse mentre tagli.",
+  "provider": {
+    "@type": "Organization",
+    "name": "YouZen",
+    "url": "https://youzen.it"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Italy"
+  },
+  "url": "https://youzen.it/saloni.html",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter",
+      "price": "99",
+      "priceCurrency": "EUR",
+      "description": "1.500 minuti/mese inclusi"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "249",
+      "priceCurrency": "EUR",
+      "description": "Per saloni con più stilisti"
+    },
+    {
+      "@type": "Offer",
+      "name": "Ultra",
+      "price": "450",
+      "priceCurrency": "EUR",
+      "description": "Multi-sede e team"
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cos'è esattamente YouZen per il mio salone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YouZen Saloni è la receptionist AI italiana per parrucchieri ed estetisti: una voce naturale che risponde al telefono al posto tuo, conosce stilisti, servizi e listino del tuo salone, controlla l'agenda in tempo reale e prende l'appuntamento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Il cliente si accorge che sta parlando con un'AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voce italiana naturale, tono calibrato sul tono del tuo salone. Quasi nessuno se ne accorge nei primi 30 secondi. Se chiede di parlare con uno staff umano, YouZen ti notifica o passa la chiamata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Si integra con l'agenda che uso già nel salone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Calendar e Outlook in modo nativo. Per gestionali specifici per saloni (Treatwell, Fresha, Setmore) abbiamo integrazioni dirette o middleware."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa davvero per un salone come il mio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setup una tantum + canone mensile calibrato sul volume di chiamate. Niente vincoli pluriennali. Contattaci per preventivo personalizzato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I dati e i numeri dei miei clienti sono al sicuro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Server in Unione Europea, conformità GDPR, registro trattamenti incluso. Trascrizioni cifrate, dati mai venduti, mai usati per training di terze parti."
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --ink-900: #080e1f;
+  --ink-800: #0d1530;
+  --ink-700: #121b3d;
+  --accent: #EC4899;
+  --accent-400: #F472B6;
+  --accent-600: #DB2777;
+
+  /* Colori settore (presi dalla sezione Settori della homepage) */
+  --sector-salone: #EC4899;
+  --sector-food:   #DC2626;
+  --sector-prof:   #F59E0B;
+  --sector-real:   #06B6D4;
+  --sector-legale: #7C3AED;
+  --sector-pmi:    #10B981;
+
+  --muted: rgba(255,255,255,0.62);
+  --muted-strong: rgba(255,255,255,0.78);
+  --muted-weak: rgba(255,255,255,0.42);
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.16);
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+  --shadow-cta: 0 12px 32px -8px rgba(236,72,153,0.45), 0 2px 0 0 rgba(255,255,255,0.08) inset, 0 -2px 0 0 rgba(0,0,0,0.18) inset;
+  --shadow-cta-hover: 0 16px 40px -8px rgba(236,72,153,0.55), 0 2px 0 0 rgba(255,255,255,0.12) inset, 0 -2px 0 0 rgba(0,0,0,0.18) inset;
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.06) inset, 0 24px 60px -28px rgba(0,0,0,0.6);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body {
+  font-family: var(--font-sans);
+  background: var(--ink-900);
+  color: white;
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+@media (min-width: 1024px) { .container { padding: 0 40px; } }
+
+.section { position: relative; padding: 64px 0; }
+@media (min-width: 1024px) { .section { padding: 96px 0; } }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+  padding: 6px 12px;
+  border: 1px solid rgba(236,72,153,0.24);
+  border-radius: 999px;
+  background: rgba(236,72,153,0.06);
+}
+.eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.05; font-weight: 700; }
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.03em; line-height: 0.98; font-weight: 800; }
+h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
+
+.title-problem { color: rgba(255,255,255,0.95); display: block; line-height: 1.1; }
+.title-solution { color: var(--accent); display: block; line-height: 1.1; }
+
+.lead { font-size: clamp(1.05rem, 1.4vw, 1.25rem); color: var(--muted-strong); line-height: 1.5; }
+
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em;
+  height: 52px; padding: 0 26px;
+  border-radius: 14px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(180deg, var(--accent-400) 0%, var(--accent) 50%, var(--accent-600) 100%);
+  color: white;
+  box-shadow: var(--shadow-cta);
+}
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 50%);
+  pointer-events: none;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-cta-hover); }
+.btn-primary svg.arrow { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.btn-primary:hover svg.arrow { transform: translateX(4px); }
+
+.btn-ghost { height: 44px; padding: 0 16px; color: var(--muted-strong); border-radius: 12px; }
+.btn-ghost:hover { color: white; background: rgba(255,255,255,0.05); }
+
+.btn-outline {
+  height: 52px; padding: 0 24px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  color: white;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
+
+.btn-sm { height: 42px; padding: 0 18px; font-size: 0.9rem; border-radius: 12px; }
+.btn-lg { height: 58px; padding: 0 30px; font-size: 1.05rem; border-radius: 16px; }
+
+.section-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+  margin-top: 72px;
+  padding: 28px 36px;
+  border-radius: 24px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(180deg, var(--accent-400) 0%, var(--accent) 50%, var(--accent-600) 100%);
+  box-shadow: 0 20px 50px -12px rgba(236,72,153,0.55), 0 4px 0 0 rgba(0,0,0,0.18) inset, 0 2px 0 0 rgba(255,255,255,0.20) inset, 0 0 0 1px rgba(236,72,153,0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.section-cta::before {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0) 45%);
+  pointer-events: none; z-index: 1;
+}
+.section-cta::after {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.30) 50%, transparent 70%);
+  transition: left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none; z-index: 1;
+}
+.section-cta:hover { transform: translateY(-2px); }
+.section-cta:hover::after { left: 130%; }
+.section-cta-text { flex: 1; min-width: 0; position: relative; z-index: 2; }
+.section-cta-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 8px;
+}
+.section-cta-eyebrow::before { content: ''; width: 18px; height: 1px; background: rgba(255,255,255,0.85); }
+.section-cta-line {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.9vw, 1.6rem);
+  font-weight: 700; letter-spacing: -0.02em;
+  color: white; line-height: 1.2;
+}
+.section-cta-line span { color: rgba(255,255,255,0.78); font-weight: 600; }
+.section-cta-arrow {
+  position: relative; z-index: 2;
+  flex-shrink: 0;
+  width: 60px; height: 60px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  display: grid; place-items: center;
+  color: white;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(4px);
+}
+.section-cta:hover .section-cta-arrow { transform: translateX(6px) scale(1.05); }
+@media (max-width: 768px) {
+  .section-cta { padding: 22px 22px; gap: 16px; margin-top: 56px; border-radius: 20px; flex-direction: column; align-items: flex-start; }
+  .section-cta-arrow { width: 48px; height: 48px; }
+}
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s ease; }
+.nav.scrolled { background: rgba(8, 14, 31, 0.78); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+.nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+.logo {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -0.03em;
+  display: flex; align-items: center; gap: 8px;
+}
+.logo-img { width: 28px; height: 28px; display: block; }
+.logo .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+.logo .sub { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 4px; font-family: var(--font-sans); }
+.nav-links { display: none; gap: 4px; }
+.nav-links a { padding: 10px 14px; font-size: 0.9rem; color: var(--muted); border-radius: 10px; transition: color 0.2s, background 0.2s; }
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.04); }
+.nav-cta { display: none; gap: 8px; }
+@media (min-width: 1024px) { .nav-links, .nav-cta { display: flex; align-items: center; } }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 80px;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(236,72,153,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 90% 30%, rgba(124,58,237,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 50% 90%, rgba(14,165,233,0.10) 0%, transparent 60%);
+  animation: meshDrift 28s ease-in-out infinite alternate;
+}
+@keyframes meshDrift {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-3%, 2%) scale(1.08); }
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.4;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 80%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; gap: 64px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 80px; } }
+
+.hero-headline { margin: 28px 0 24px; }
+.hero-headline span { display: block; }
+.hero-headline .l1 { color: white; }
+.hero-headline .l2 { color: var(--accent); position: relative; }
+.hero-headline .l3 {
+  color: transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.55));
+  -webkit-background-clip: text; background-clip: text;
+}
+.hero-rotating-word {
+  display: inline-block;
+  color: var(--accent);
+  animation: rotateWord 0.6s ease-in-out;
+}
+@keyframes rotateWord {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hero-sub { max-width: 560px; margin-bottom: 32px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.badge {
+  font-family: var(--font-mono); font-size: 12px;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  color: var(--muted-strong);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-social-proof {
+  margin-top: 40px;
+  display: flex; align-items: center; gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.proof-icons { display: flex; }
+.proof-icons .pi {
+  width: 40px; height: 40px; border-radius: 999px;
+  display: grid; place-items: center;
+  margin-left: -10px;
+  border: 2px solid var(--ink-900);
+  font-size: 18px;
+  background: var(--ink-700);
+}
+.proof-icons .pi:first-child { margin-left: 0; }
+.proof-text { font-size: 0.85rem; color: var(--muted); }
+
+/* Hero mockup */
+.hero-mockup {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+}
+.hero-mockup::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(236,72,153,0.35), rgba(255,255,255,0.05) 40%);
+  -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+}
+.mockup-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.mockup-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.mockup-meta { flex: 1; min-width: 0; }
+.mockup-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.mockup-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; color: rgb(74,222,128);
+  font-family: var(--font-mono);
+}
+.mockup-status::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: rgb(74,222,128);
+  animation: pulseLive 2s infinite;
+}
+@keyframes pulseLive {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+.mockup-timer { font-family: var(--font-mono); color: var(--muted); font-size: 0.85rem; }
+.msg-list { display: flex; flex-direction: column; gap: 10px; }
+.msg {
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  max-width: 88%;
+  animation: fadeIn 0.4s ease both;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.msg-customer {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--line);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.msg-carla {
+  background: linear-gradient(135deg, rgba(236,72,153,0.18), rgba(236,72,153,0.08));
+  border: 1px solid rgba(236,72,153,0.3);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.msg-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.section-head { max-width: 780px; margin-bottom: 64px; }
+.section-head .eyebrow { margin-bottom: 24px; }
+.section-head h2 { margin-bottom: 20px; }
+.section-head .lead { color: var(--muted); }
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.stat-card {
+  position: relative;
+  padding: 36px 32px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+}
+.stat-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.6;
+  z-index: 0;
+}
+.stat-card > * { position: relative; z-index: 1; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.stat-label { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.stat-desc { color: var(--muted); font-size: 0.92rem; }
+
+/* FEATURES */
+.omni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.omni-card {
+  position: relative;
+  padding: 32px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.005) 50%, rgba(0,0,0,0.2) 100%), var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
+}
+.omni-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--accent), transparent 55%);
+  opacity: 0.10;
+  z-index: 0;
+  transition: opacity 0.5s;
+}
+.omni-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.omni-card:hover { border-color: rgba(236,72,153,0.35); transform: translateY(-4px); }
+.omni-card:hover::before { opacity: 0.20; }
+.omni-card > * { position: relative; z-index: 1; }
+.omni-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(236,72,153,0.10);
+  border: 1px solid rgba(236,72,153,0.25);
+  display: grid; place-items: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.omni-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.omni-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+.omni-desc { color: var(--muted-strong); font-size: 0.95rem; }
+
+/* CONFRONTO */
+.cmp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) { .cmp-grid { grid-template-columns: 1fr 1fr; } }
+.cmp-col {
+  padding: 32px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+}
+.cmp-col.before { background: rgba(239,68,68,0.04); border-color: rgba(239,68,68,0.20); }
+.cmp-col.after  { background: linear-gradient(180deg, rgba(236,72,153,0.08), rgba(236,72,153,0.02)); border-color: rgba(236,72,153,0.35); }
+.cmp-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.7;
+}
+.cmp-col.after .cmp-col-title { color: var(--accent); opacity: 1; }
+.cmp-list { display: flex; flex-direction: column; gap: 14px; }
+.cmp-row { display: flex; gap: 12px; align-items: flex-start; }
+.cmp-bullet {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700;
+  margin-top: 2px;
+}
+.cmp-col.before .cmp-bullet { background: rgba(239,68,68,0.15); color: rgb(248,113,113); }
+.cmp-col.after .cmp-bullet { background: rgba(34,197,94,0.18); color: rgb(74,222,128); }
+.cmp-text { font-size: 1rem; line-height: 1.5; }
+.cmp-col.before .cmp-text { color: rgba(255,255,255,0.65); }
+.cmp-col.after .cmp-text { color: white; }
+
+/* STEPS */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+.step-card {
+  padding: 36px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  background: linear-gradient(180deg, rgba(236,72,153,0.5), rgba(236,72,153,0.1));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 4px;
+}
+.step-duration {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.step-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; }
+.step-desc { color: var(--muted); font-size: 0.95rem; }
+
+/* TESTIMONIAL */
+.testimonial {
+  position: relative;
+  padding: 56px 48px;
+  border-radius: 28px;
+  border: 1px solid var(--line-strong);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  overflow: hidden;
+}
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: -40px; left: 24px;
+  font-family: var(--font-display);
+  font-size: 18rem;
+  color: rgba(236,72,153,0.08);
+  line-height: 1;
+}
+.testimonial-quote {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+}
+.testimonial-author { display: flex; align-items: center; gap: 14px; position: relative; }
+.testimonial-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.testimonial-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.testimonial-role { color: var(--muted); font-size: 0.88rem; }
+
+/* PRICING */
+.setup-box-row { margin-bottom: 32px; display: flex; justify-content: center; }
+.setup-box {
+  display: inline-flex; align-items: center; gap: 16px;
+  padding: 18px 28px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+}
+.setup-icon-wrap {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: rgba(236,72,153,0.10);
+  border: 1px solid rgba(236,72,153,0.25);
+  display: grid; place-items: center;
+  color: var(--accent);
+}
+.setup-info { display: flex; flex-direction: column; }
+.setup-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-weak); }
+.setup-value { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+.setup-tagline { font-size: 0.78rem; color: var(--muted); }
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) { .plans-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .plans-grid { grid-template-columns: repeat(4, 1fr); } }
+.plan-card {
+  position: relative;
+  padding: 36px 28px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%), var(--ink-900);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+}
+.plan-card.featured {
+  border-color: rgba(236,72,153,0.5);
+  box-shadow: 0 24px 60px -28px rgba(236,72,153,0.5);
+}
+.plan-card.featured::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(236,72,153,0.15), transparent 60%);
+  z-index: 0;
+}
+.plan-card > * { position: relative; z-index: 1; }
+.plan-tag {
+  position: absolute; top: 16px; right: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  color: white;
+  font-weight: 600;
+  z-index: 2;
+}
+.plan-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+.plan-tagline { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
+.plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+.plan-price .cur { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--muted-strong); }
+.plan-price .num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.plan-price .per { font-size: 0.95rem; color: var(--muted); margin-left: 4px; }
+.plan-minutes {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 8px 0 24px;
+}
+.plan-features {
+  list-style: none;
+  margin-bottom: 28px;
+  flex: 1;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.plan-features li {
+  font-size: 0.92rem;
+  color: var(--muted-strong);
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.plan-features li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  margin-top: 2px;
+  background: rgba(34,197,94,0.18);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgb(74,222,128)' stroke-width='3' stroke-linecap='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.plan-cta { width: 100%; }
+
+/* FAQ */
+.faq-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+/* FAQ a larghezza piena, sempre 1 colonna */
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: rgba(236,72,153,0.4); }
+.faq-trigger {
+  width: 100%;
+  padding: 20px 22px;
+  display: flex; align-items: center; gap: 14px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.faq-emoji { font-size: 1.2rem; flex-shrink: 0; }
+.faq-q { flex: 1; }
+.faq-toggle {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  transition: transform 0.3s, background 0.3s, border-color 0.3s;
+}
+.faq-toggle::before, .faq-toggle::after {
+  content: ''; position: absolute;
+  top: 50%; left: 50%;
+  background: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.faq-toggle::before { width: 10px; height: 1.5px; transform: translate(-50%, -50%); }
+.faq-toggle::after  { width: 1.5px; height: 10px; transform: translate(-50%, -50%); }
+.faq-item.open .faq-toggle { background: var(--accent); border-color: var(--accent); }
+.faq-item.open .faq-toggle::after { opacity: 0; }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.open .faq-body { max-height: 400px; }
+.faq-body-inner {
+  padding: 0 22px 22px 56px;
+  color: var(--muted-strong);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* CTA FINAL */
+.cta-final {
+  position: relative;
+  padding: 120px 0;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-final-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(236,72,153,0.18), transparent 65%);
+}
+.cta-final > .container { position: relative; z-index: 2; }
+.cta-final h2 { margin-bottom: 20px; }
+.cta-final .lead { margin: 0 auto 36px; max-width: 600px; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.cta-trust {
+  margin-top: 32px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+}
+.trust-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted-strong);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+}
+.trust-badge svg { color: var(--accent); }
+
+/* SERVIZI PRO SALONI — sezione dedicata ai servizi sviluppati */
+.pro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 900px) { .pro-grid { grid-template-columns: repeat(3, 1fr); } }
+.pro-card {
+  position: relative;
+  padding: 36px 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(236,72,153,0.25);
+  background:
+    linear-gradient(160deg, rgba(236,72,153,0.10) 0%, rgba(236,72,153,0.02) 50%, rgba(0,0,0,0.2) 100%),
+    var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s, box-shadow 0.4s;
+}
+.pro-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--sector-salone), transparent 55%);
+  opacity: 0.14;
+  z-index: 0;
+  transition: opacity 0.5s;
+}
+.pro-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.pro-card:hover {
+  border-color: rgba(236,72,153,0.55);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px -28px rgba(236,72,153,0.45);
+}
+.pro-card:hover::before { opacity: 0.24; }
+.pro-card > * { position: relative; z-index: 1; }
+.pro-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.pro-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: rgba(236,72,153,0.12);
+  border: 1px solid rgba(236,72,153,0.30);
+  display: grid; place-items: center;
+  font-size: 26px;
+}
+.pro-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(74,222,128);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.30);
+}
+.pro-status::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: rgb(74,222,128);
+  box-shadow: 0 0 8px rgb(74,222,128);
+}
+.pro-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sector-salone);
+  margin-bottom: 10px;
+}
+.pro-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.pro-desc { color: var(--muted-strong); font-size: 0.95rem; line-height: 1.55; margin-bottom: 18px; }
+.pro-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+}
+.pro-tag svg { color: var(--sector-salone); flex-shrink: 0; }
+
+/* ALTRI SETTORI — box di rimando ai verticali */
+.sectors-others {
+  border-top: 1px solid var(--line);
+  padding: 96px 0 24px;
+}
+.sectors-others-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+.sectors-others-head .eyebrow { margin-bottom: 20px; }
+.sectors-others-head h2 { margin-bottom: 16px; font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
+.sectors-others-head p { color: var(--muted); }
+
+.others-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 600px) { .others-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .others-grid { grid-template-columns: repeat(5, 1fr); } }
+
+.other-card {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 220px;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s, box-shadow 0.4s;
+  text-decoration: none;
+  color: inherit;
+}
+.other-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--sc, var(--accent)), transparent 55%);
+  opacity: 0.16;
+  z-index: 0;
+  transition: opacity 0.4s;
+}
+.other-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+.other-card > * { position: relative; z-index: 1; }
+.other-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--sc, var(--accent)) 55%, transparent);
+  box-shadow: 0 24px 50px -28px color-mix(in srgb, var(--sc, var(--accent)) 60%, transparent);
+}
+.other-card:hover::before { opacity: 0.28; }
+
+.other-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-size: 22px;
+  background: color-mix(in srgb, var(--sc, var(--accent)) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sc, var(--accent)) 35%, transparent);
+  margin-bottom: 18px;
+}
+.other-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sc, var(--accent));
+  margin-bottom: 8px;
+}
+.other-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+.other-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+.other-arrow {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line-strong);
+  background: rgba(255,255,255,0.03);
+  color: white;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s, border-color 0.3s;
+  margin-top: auto;
+  align-self: flex-start;
+}
+.other-card:hover .other-arrow {
+  transform: translateX(4px);
+  background: color-mix(in srgb, var(--sc, var(--accent)) 18%, transparent);
+  border-color: color-mix(in srgb, var(--sc, var(--accent)) 50%, transparent);
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 72px 0 32px;
+  position: relative;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.footer-brand p { color: var(--muted); font-size: 0.92rem; margin-top: 14px; max-width: 320px; }
+.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.02);
+  display: grid; place-items: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+.footer-social a:hover { border-color: var(--accent); color: var(--accent); }
+.footer-col h5 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-weak);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: var(--muted-strong); font-size: 0.92rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  font-size: 0.82rem;
+  color: var(--muted-weak);
+}
+
+/* === CTA finale stile prova.html === */
+.cta-grid {
+  display: grid; grid-template-columns: 1fr; gap: 60px;
+  align-items: center;
+}
+@media (min-width: 1000px) { .cta-grid { grid-template-columns: 1.05fr 0.95fr; } }
+.cta-text h2 { margin-bottom: 24px; }
+.cta-text .lead { color: var(--muted); margin-bottom: 32px; }
+.cta-contact-row {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  margin-bottom: 28px;
+}
+.contact-pill {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-size: 0.9rem;
+}
+.contact-pill svg { color: var(--accent); flex-shrink: 0; }
+.cta-final .cta-trust { justify-content: flex-start; margin-top: 0; }
+.cal-embed {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  padding: 24px;
+  min-height: 380px;
+  display: grid; place-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.cal-embed::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(236,72,153,0.10), transparent 60%);
+  pointer-events: none;
+}
+.cal-placeholder { position: relative; z-index: 1; padding: 24px; }
+.cal-placeholder .ico {
+  width: 64px; height: 64px; border-radius: 18px;
+  background: rgba(236,72,153,0.12); color: var(--accent);
+  display: grid; place-items: center;
+  margin: 0 auto 20px;
+  border: 1px solid rgba(236,72,153,0.25);
+}
+
+/* === DASHBOARD MOCKUP === */
+.dash-wrap {
+  position: relative;
+  border-radius: 28px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  isolation: isolate;
+}
+.dash-wrap::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+  opacity: 0.6;
+}
+.dash-bar {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+.dash-dot { width: 10px; height: 10px; border-radius: 50%; }
+.dash-dot.r { background: #ff5f56; }
+.dash-dot.y { background: #ffbd2e; }
+.dash-dot.g { background: #27c93f; }
+.dash-url {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-left: 16px;
+  flex: 1; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.dash-grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 700px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .dash-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+.dash-card {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
+  position: relative;
+  overflow: hidden;
+}
+.dash-card.tall { grid-row: span 2; }
+.dash-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-weak);
+  margin-bottom: 10px;
+}
+.dash-kpi {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 6px;
+}
+.dash-kpi-sub { font-size: 0.85rem; color: var(--muted); }
+.dash-chart { margin-top: 18px; display: flex; align-items: flex-end; gap: 4px; height: 80px; }
+.dash-bar-v {
+  flex: 1; min-width: 0;
+  background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
+  border-radius: 4px 4px 0 0;
+  opacity: 0.85;
+}
+.dash-list { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+.dash-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+}
+.dash-item-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-size: 14px; font-family: var(--font-display); font-weight: 700;
+  flex-shrink: 0;
+}
+.dash-item-name { font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; line-height: 1.15; }
+.dash-item-svc { font-size: 0.78rem; color: var(--muted); }
+.dash-item-time {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.dash-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.dash-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.28);
+  color: rgb(74,222,128);
+}
+.dash-badge.warn { background: rgba(236,72,153,0.10); border-color: rgba(236,72,153,0.30); color: var(--accent); }
+
+
+/* === TITOLI A UNA RIGA === */
+.hero-headline span,
+.hero-headline .l1,
+.hero-headline .l2,
+.hero-headline .l3 { display: inline; }
+.hero-headline { line-height: 1.05; }
+.title-problem,
+.title-solution { display: inline; }
+
+/* === Back link YouZen === */
+.nav-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted-strong);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.nav-back:hover { border-color: var(--accent); color: white; background: rgba(255,255,255,0.06); }
+.nav-back .arr { transition: transform 0.25s ease; }
+.nav-back:hover .arr { transform: translateX(-3px); }
+
+
+/* === FUNZIONALITÀ AVANZATE — sezione dedicata Saloni === */
+.feat-adv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 900px) { .feat-adv-grid { grid-template-columns: 1fr 1fr; } }
+
+.feat-adv-card {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid var(--line-strong);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+}
+.feat-adv-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 60% at 0% 0%, black, transparent 70%);
+  opacity: 0.4;
+  z-index: 0;
+}
+.feat-adv-card > * { position: relative; z-index: 1; }
+
+.feat-adv-visual {
+  background: linear-gradient(180deg, rgba(236,72,153,0.05), rgba(0,0,0,0.20));
+  border-bottom: 1px solid var(--line);
+  padding: 24px;
+  min-height: 230px;
+  display: grid; place-items: center;
+}
+.feat-adv-body { padding: 28px; }
+.feat-adv-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sector-salone);
+  margin-bottom: 10px;
+}
+.feat-adv-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.feat-adv-desc { color: var(--muted-strong); font-size: 0.95rem; line-height: 1.55; margin-bottom: 14px; }
+.feat-adv-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; padding: 0; }
+.feat-adv-bullets li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex; gap: 8px;
+}
+.feat-adv-bullets li::before {
+  content: '→';
+  color: var(--sector-salone);
+  flex-shrink: 0;
+}
+
+/* LISTINO SERVIZI mockup */
+.list-mock {
+  width: 100%; max-width: 260px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.list-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+.list-row .ico {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(236,72,153,0.12);
+  border: 1px solid rgba(236,72,153,0.28);
+  display: grid; place-items: center;
+  font-size: 14px;
+}
+.list-row .nm { flex: 1; }
+.list-row .nm .sub { display: block; font-size: 0.72rem; color: var(--muted-weak); margin-top: 1px; }
+.list-row .pr {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* AGENDA VISUALE mockup */
+.cal-mock {
+  width: 100%; max-width: 320px;
+  display: grid;
+  grid-template-columns: 36px 1fr 1fr 1fr;
+  gap: 3px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+.cal-h {
+  text-align: center;
+  padding: 4px 2px;
+  color: var(--muted-weak);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.cal-hh { grid-column: 1; padding: 4px 0; text-align: right; color: var(--muted-weak); }
+.cal-c {
+  background: rgba(255,255,255,0.025);
+  border-radius: 4px;
+  min-height: 22px;
+  padding: 2px 4px;
+}
+.cal-c.bk {
+  background: linear-gradient(135deg, rgba(236,72,153,0.30), rgba(236,72,153,0.10));
+  border: 1px solid rgba(236,72,153,0.50);
+  color: #fff;
+  font-weight: 600;
+  font-size: 8px;
+  display: grid; align-items: center;
+}
+.cal-c.bk.alt {
+  background: linear-gradient(135deg, rgba(249,115,22,0.25), rgba(249,115,22,0.08));
+  border-color: rgba(249,115,22,0.45);
+  color: #fff;
+}
+
+/* SLOT STILISTI mockup */
+.slt-mock { width: 100%; }
+.slt-row {
+  display: grid; grid-template-columns: 56px 1fr auto;
+  align-items: center; gap: 12px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+.slt-name { font-family: var(--font-display); font-weight: 700; }
+.slt-w {
+  height: 6px; border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.slt-i {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-400), var(--accent-600));
+  border-radius: 3px;
+}
+.slt-n {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+.slt-row.full .slt-n { color: rgb(248,113,113); }
+.slt-row.full .slt-i { background: linear-gradient(90deg, rgb(248,113,113), rgb(220,38,38)); }
+
+/* DASHBOARD TOUCH mockup */
+.dt-mock {
+  width: 100%; max-width: 340px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.dt-tick {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+}
+.dt-tick.now { border-color: var(--sector-salone); background: linear-gradient(180deg, rgba(236,72,153,0.10), rgba(236,72,153,0.02)); }
+.dt-tick.next { border-color: rgba(249,115,22,0.45); background: linear-gradient(180deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02)); }
+.dt-tick.done { border-color: rgba(34,197,94,0.40); background: linear-gradient(180deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02)); opacity: 0.85; }
+.dt-time { font-family: var(--font-mono); font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+.dt-cli { color: #fff; font-weight: 600; line-height: 1.2; }
+.dt-srv { color: var(--muted-strong); font-size: 0.72rem; margin-top: 3px; }
+.dt-st {
+  display: inline-block;
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  color: var(--muted);
+}
+.dt-tick.done .dt-time { color: rgb(74,222,128); }
+.dt-tick.done .dt-st { color: rgb(74,222,128); background: rgba(34,197,94,0.10); }
+
+/* WHATSAPP SALONE mockup */
+.wa2-mock { width: 100%; max-width: 280px; display: flex; flex-direction: column; gap: 8px; }
+.wa2-msg {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.16), rgba(34,197,94,0.06));
+  border: 1px solid rgba(34,197,94,0.35);
+  color: rgba(255,255,255,0.95);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border-bottom-right-radius: 4px;
+}
+.wa2-msg .head {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(74,222,128);
+  margin-bottom: 4px;
+}
+.wa2-msg .time {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted-weak);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* SCHEDA CLIENTE SALONE mockup */
+.csc-mock { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.csc-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+}
+.csc-av {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-600));
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.csc-info { flex: 1; min-width: 0; font-size: 0.85rem; }
+.csc-nm { font-family: var(--font-display); font-weight: 600; }
+.csc-tags {
+  display: flex; gap: 4px;
+  margin-top: 2px; flex-wrap: wrap;
+}
+.csc-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.csc-tag.formula { background: rgba(236,72,153,0.10); border-color: rgba(236,72,153,0.30); color: #f9a8d4; }
+.csc-tag.vip { background: rgba(249,115,22,0.10); border-color: rgba(249,115,22,0.30); color: var(--accent); }
+.csc-cnt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted-weak);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="https://www.youzen.it" class="logo">
+      <img src="../youzen-logo-k2.png" alt="YouZen" class="logo-img" />
+      You<span style="color:var(--accent)">Zen</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#problema">Il problema</a>
+      <a href="#features">Cosa facciamo</a>
+      <a href="#servizi-pro">Come lo facciamo</a>
+      <a href="#confronto">Prima e dopo</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contatto">Contatti</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://www.app.youzen.it" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Entra nell'App</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Receptionist AI per saloni</span>
+        <h1 class="hero-headline">
+          <span class="l1">Tu tagli.</span> <span class="l2"><span class="hero-rotating-word" id="rotatingWord">YouZen risponde.</span></span>
+        </h1>
+        <p class="lead hero-sub">
+          YouZen è la receptionist AI di YouZen Saloni. Risponde h24 al posto tuo, prende appuntamenti sul tuo calendario, manda promemoria WhatsApp ai clienti. Tu tagli, lei risponde.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">h24, anche festivi</span>
+          <span class="badge">italiano nativo</span>
+          <span class="badge">GDPR · server UE</span>
+          <span class="badge">live in 8 giorni</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contatto" class="btn btn-primary btn-lg">
+            Contattaci
+            <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#features" class="btn btn-outline btn-lg">Scopri come funziona</a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="proof-icons">
+            <span class="pi">✂️</span>
+            <span class="pi">💇</span>
+            <span class="pi">💅</span>
+            <span class="pi">✨</span>
+          </div>
+          <span class="proof-text">Già usato da saloni in tutta Italia · zero chiamate perse</span>
+        </div>
+      </div>
+
+      <!-- Mockup conversazione YouZen -->
+      <div class="hero-mockup">
+        <div class="mockup-head">
+          <div class="mockup-avatar">🎧</div>
+          <div class="mockup-meta">
+            <div class="mockup-name">YouZen — YouZen</div>
+            <div class="mockup-status">Chiamata in corso</div>
+          </div>
+          <div class="mockup-timer">00:42</div>
+        </div>
+        <div class="msg-list">
+          <div class="msg msg-carla">
+            <div class="msg-label">YouZen</div>
+            Salone Bianchi, buongiorno! Sono YouZen. Come posso aiutarti?
+          </div>
+          <div class="msg msg-customer">
+            <div class="msg-label">Cliente</div>
+            Vorrei prenotare un taglio + colore per giovedì, possibilmente pomeriggio.
+          </div>
+          <div class="msg msg-carla">
+            <div class="msg-label">YouZen</div>
+            Perfetto. Ho disponibilità giovedì alle 15:30 con Sara o alle 17:00 con Marco. Quale preferisci?
+          </div>
+          <div class="msg msg-customer">
+            <div class="msg-label">Cliente</div>
+            15:30 con Sara.
+          </div>
+          <div class="msg msg-carla">
+            <div class="msg-label">YouZen</div>
+            Confermato. Ti mando il riepilogo su WhatsApp e un promemoria il giorno prima. A giovedì!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA / STATS -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Il problema</span>
+      <h2><span class="title-problem">Spoiler:</span> <span class="title-solution">ne perdi una valanga.</span></h2>
+      <p class="lead">Forbici in mano, telefono che squilla, cliente che riattacca e va dalla concorrenza. Ogni giorno succede, ogni giorno costa.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">delle chiamate persa</div>
+        <div class="stat-desc">In media un salone non risponde a una chiamata su tre durante le ore di punta.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">40€</div>
+        <div class="stat-label">scontrino medio</div>
+        <div class="stat-desc">Ogni chiamata persa è un cliente che va altrove. Conta tu quanto fa al mese.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">70%</div>
+        <div class="stat-label">non richiama</div>
+        <div class="stat-desc">Chi non trova risposta al primo tentativo prova un altro salone, non ti dà una seconda chance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cosa fa YouZen</span>
+      <h2><span class="title-problem">Non un risponditore:</span> <span class="title-solution">la receptionist che non hai mai avuto.</span></h2>
+      <p class="lead">YouZen capisce cosa vuole il cliente, controlla l'agenda, propone slot, prenota, conferma. Tutto in italiano naturale.</p>
+    </div>
+
+    <div class="omni-grid">
+      <article class="omni-card">
+        <div class="omni-icon">📞</div>
+        <div class="omni-eyebrow">SEMPRE RISPOSTA</div>
+        <h3 class="omni-title">Risponde alle chiamate</h3>
+        <p class="omni-desc">H24, anche di domenica, anche quando sei sotto col phon. Mai più clienti che vanno alla concorrenza perché non rispondi.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">📅</div>
+        <div class="omni-eyebrow">AGENDA AUTOMATICA</div>
+        <h3 class="omni-title">Prende appuntamenti</h3>
+        <p class="omni-desc">Conosce stilisti, servizi e durate. Controlla l'agenda in tempo reale e fissa l'appuntamento sul calendario senza chiamarti.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">💬</div>
+        <div class="omni-eyebrow">PROMEMORIA WHATSAPP</div>
+        <h3 class="omni-title">Manda reminder</h3>
+        <p class="omni-desc">Conferma il giorno prima, promemoria automatici, recap della chiamata. I clienti si presentano: meno no-show, più incasso.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">🧠</div>
+        <div class="omni-eyebrow">RICONOSCE I CLIENTI</div>
+        <h3 class="omni-title">Sa chi sta chiamando</h3>
+        <p class="omni-desc">Riconosce i clienti dal numero, ricorda l'ultimo servizio e propone "stesso taglio con lo stesso stilista?". Personale, immediato.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">🛡️</div>
+        <div class="omni-eyebrow">FILTRO INTELLIGENTE</div>
+        <h3 class="omni-title">Blocca i call center</h3>
+        <p class="omni-desc">Riconosce chiamate spam e venditori. A te arrivano solo i clienti veri, niente più rotture per offerte energia.</p>
+      </article>
+
+      <article class="omni-card">
+        <div class="omni-icon">📊</div>
+        <div class="omni-eyebrow">DASHBOARD CHIARA</div>
+        <h3 class="omni-title">Tutto sotto controllo</h3>
+        <p class="omni-desc">Ogni chiamata trascritta, ogni appuntamento registrato. Apri il telefono e vedi cosa è successo in salone mentre tagliavi.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIZI PRO SVILUPPATI PER I SALONI -->
+<section class="section" id="servizi-pro">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: var(--sector-salone); border-color: rgba(236,72,153,0.30); background: rgba(236,72,153,0.08);">Servizi Pro · Saloni</span>
+      <h2><span class="title-problem">Sei chicche</span> <span class="title-solution" style="color: var(--sector-salone);">fatte su misura per il tuo salone.</span></h2>
+      <p class="lead">Non promesse generiche da SaaS. Tre servizi cuciti sul modo in cui un salone gestisce davvero clienti, agenda e WhatsApp.</p>
+    </div>
+
+    <div class="pro-grid">
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">🧠</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Riconoscimento clienti</div>
+        <h3 class="pro-title">YouZen saluta i clienti per nome</h3>
+        <p class="pro-desc">Quando un cliente già in rubrica chiama, YouZen lo riconosce dal numero e apre la chiamata salutandolo per nome. Niente "mi dica il suo nominativo": è subito un'esperienza personale, come al banco.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          Match automatico sul numero in arrivo
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">🔁</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Recall ultimo appuntamento</div>
+        <h3 class="pro-title">Propone lo stesso servizio con lo stesso stilista</h3>
+        <p class="pro-desc">YouZen pesca l'ultimo trattamento del cliente e propone direttamente di rifarlo con lo stilista di sempre. Il cliente conferma in due battute, l'appuntamento entra in agenda, tu non interrompi il lavoro.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          Storico servizi · stilista preferito
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">💬</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">WhatsApp con agente</div>
+        <h3 class="pro-title">Il cliente prenota direttamente in chat</h3>
+        <p class="pro-desc">Oltre alle notifiche, su WhatsApp c'è YouZen. Il cliente scrive "vorrei un colore venerdì", YouZen risponde, propone slot e fissa l'appuntamento dentro la chat. Senza telefonate, senza app da scaricare.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chat WhatsApp + prenotazione integrata
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">🕐</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Sempre attiva</div>
+        <h3 class="pro-title">Disponibile 24/7, anche nei festivi</h3>
+        <p class="pro-desc">Notte, weekend, ferie estive, Natale: YouZen risponde sempre. Mai più chiamate perse perché il salone è chiuso o sei in pausa. L'agenda continua a riempirsi mentre tu ricarichi le batterie.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          H24 · 365 giorni all'anno
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">📞</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Capacità illimitata</div>
+        <h3 class="pro-title">Fino a 50 chiamate in simultanea</h3>
+        <p class="pro-desc">Nei picchi — promo Instagram, sabato mattina, rientro dalle feste — YouZen risponde a tutti senza farli aspettare. Cinquanta clienti in parallelo, zero linee occupate, zero clienti persi.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          50 chiamate in parallelo · zero attese
+        </span>
+      </article>
+
+      <article class="pro-card">
+        <div class="pro-head">
+          <div class="pro-icon">📅</div>
+          <span class="pro-status">Attivo</span>
+        </div>
+        <div class="pro-eyebrow">Sincronizzazione totale</div>
+        <h3 class="pro-title">Agenda automatica in tempo reale</h3>
+        <p class="pro-desc">Ogni prenotazione, modifica o cancellazione viene scritta direttamente sul tuo calendario. Niente trascrizioni manuali a fine giornata, niente doppi appuntamenti, niente slot persi.</p>
+        <span class="pro-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Google Calendar · Outlook · gestionali saloni
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FUNZIONALITÀ AVANZATE SALONI -->
+<section class="section" id="funzionalita">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: var(--sector-salone); border-color: rgba(236,72,153,0.30); background: rgba(236,72,153,0.08);">Funzionalità avanzate</span>
+      <h2><span class="title-problem">Non solo voce.</span> <span class="title-solution" style="color: var(--sector-salone);">Anche tutto il back-office del salone.</span></h2>
+      <p class="lead">Listino, agenda stilisti, regole di prenotazione, dashboard touch al banco, notifiche WhatsApp e schede clienti con formula colore. Sei moduli pensati per chi vive tra forbici, phon e telefono.</p>
+    </div>
+
+    <div class="feat-adv-grid">
+      <!-- 1. LISTINO SERVIZI -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="list-mock">
+            <div class="list-row"><div class="ico">✂️</div><div class="nm">Taglio donna<span class="sub">30 min</span></div><div class="pr">25 €</div></div>
+            <div class="list-row"><div class="ico">🎨</div><div class="nm">Colore + piega<span class="sub">90 min</span></div><div class="pr">65 €</div></div>
+            <div class="list-row"><div class="ico">💆</div><div class="nm">Trattamento idratante<span class="sub">20 min</span></div><div class="pr">18 €</div></div>
+            <div class="list-row"><div class="ico">🧔</div><div class="nm">Barba + rifinitura<span class="sub">25 min</span></div><div class="pr">15 €</div></div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Listino configurabile</div>
+          <h3 class="feat-adv-title">Servizi, durate e prezzi sul tuo modo di lavorare</h3>
+          <p class="feat-adv-desc">Configuri ogni servizio (taglio, colore, piega, barba, manicure) con la sua durata reale e il prezzo. YouZen propone solo combinazioni che esistono davvero nel tuo listino, niente sorprese al banco.</p>
+          <ul class="feat-adv-bullets">
+            <li>Servizi singoli o combo (taglio+colore, piega+barba)</li>
+            <li>Durate diverse per stilista (chi taglia veloce, chi cura il colore)</li>
+            <li>Listino aggiornabile in 30 secondi dalla dashboard</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 2. AGENDA VISUALE STILISTI -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="cal-mock" aria-label="Agenda visuale per stilista">
+            <span class="cal-h"></span>
+            <span class="cal-h">Sara</span>
+            <span class="cal-h">Marco</span>
+            <span class="cal-h">Marta</span>
+
+            <span class="cal-hh">09</span>
+            <span class="cal-c bk">Taglio</span>
+            <span class="cal-c"></span>
+            <span class="cal-c bk alt">Barba</span>
+
+            <span class="cal-hh">10</span>
+            <span class="cal-c bk">Colore</span>
+            <span class="cal-c bk">Taglio</span>
+            <span class="cal-c"></span>
+
+            <span class="cal-hh">11</span>
+            <span class="cal-c bk">Colore</span>
+            <span class="cal-c"></span>
+            <span class="cal-c bk">Piega</span>
+
+            <span class="cal-hh">12</span>
+            <span class="cal-c"></span>
+            <span class="cal-c bk alt">Taglio</span>
+            <span class="cal-c bk">Piega</span>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Agenda visuale</div>
+          <h3 class="feat-adv-title">Calendario per stilista, modificabile col drag</h3>
+          <p class="feat-adv-desc">Sposti un appuntamento da Sara a Marco con un dito. Vedi a colpo d'occhio il riempimento della giornata, le code, gli slot liberi. Niente quaderno cancellato dieci volte, niente Post-it persi.</p>
+          <ul class="feat-adv-bullets">
+            <li>Vista giorno / settimana / per stilista</li>
+            <li>Drag &amp; drop appuntamenti senza chiamare il cliente</li>
+            <li>Sincronizzazione con Google Calendar / Outlook</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. SLOT STILISTI / REGOLE -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="slt-mock">
+            <div class="slt-row"><span class="slt-name">Sara</span><div class="slt-w"><div class="slt-i" style="width:80%"></div></div><span class="slt-n">8/10</span></div>
+            <div class="slt-row full"><span class="slt-name">Marco</span><div class="slt-w"><div class="slt-i" style="width:100%"></div></div><span class="slt-n">10/10</span></div>
+            <div class="slt-row"><span class="slt-name">Marta</span><div class="slt-w"><div class="slt-i" style="width:55%"></div></div><span class="slt-n">5/9</span></div>
+            <div class="slt-row"><span class="slt-name">Lab. colore</span><div class="slt-w"><div class="slt-i" style="width:65%"></div></div><span class="slt-n">2/3 attivi</span></div>
+            <div class="slt-row"><span class="slt-name">Lavaggi</span><div class="slt-w"><div class="slt-i" style="width:33%"></div></div><span class="slt-n">1/3 attivi</span></div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Regole di prenotazione</div>
+          <h3 class="feat-adv-title">Max appuntamenti per stilista e pause intelligenti</h3>
+          <p class="feat-adv-desc">Imposti le regole della tua giornata: max 2 colori contemporanei nel laboratorio, pausa cuscinetto tra cliente e cliente, slot lavaggio dedicati. YouZen le rispetta in automatico, non propone mai uno slot impossibile.</p>
+          <ul class="feat-adv-bullets">
+            <li>Limite per categoria servizio (colore, piega, taglio)</li>
+            <li>Tempo cuscinetto configurabile tra appuntamenti</li>
+            <li>Stop-vendita quando uno stilista è pieno</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4. DASHBOARD TOUCH SALONE -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="dt-mock">
+            <div class="dt-tick now">
+              <div class="dt-time">10:30</div>
+              <div class="dt-cli">Giulia L.</div>
+              <div class="dt-srv">Colore + piega · Sara</div>
+              <span class="dt-st">In corso</span>
+            </div>
+            <div class="dt-tick next">
+              <div class="dt-time">11:00</div>
+              <div class="dt-cli">Marco R.</div>
+              <div class="dt-srv">Barba · Marco</div>
+              <span class="dt-st">Prossimo</span>
+            </div>
+            <div class="dt-tick done">
+              <div class="dt-time">09:30</div>
+              <div class="dt-cli">Anna P.</div>
+              <div class="dt-srv">Taglio · Marta</div>
+              <span class="dt-st">✓ Finito</span>
+            </div>
+            <div class="dt-tick">
+              <div class="dt-time">11:30</div>
+              <div class="dt-cli">Sig.ra Conti</div>
+              <div class="dt-srv">Piega · Marta</div>
+              <span class="dt-st">In attesa</span>
+            </div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Dashboard touch al banco</div>
+          <h3 class="feat-adv-title">La giornata del salone su un tablet</h3>
+          <p class="feat-adv-desc">Vista in tempo reale per stilista: chi è in corso, chi è il prossimo, chi è finito, chi ritarda. Un tap per fare check-in quando il cliente entra, un tap per chiudere l'appuntamento e mandare il follow-up.</p>
+          <ul class="feat-adv-bullets">
+            <li>Vista giornaliera ottimizzata per touch (anche con guanti)</li>
+            <li>Stati colorati: in corso, prossimo, finito, ritardo</li>
+            <li>Check-in e check-out cliente con un tap</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 5. NOTIFICHE WHATSAPP -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="wa2-mock">
+            <div class="wa2-msg">
+              <div class="head">Salone Bianchi</div>
+              Appuntamento confermato: giovedì 12 alle 15:30 con Sara. Taglio + colore (~90 min). 💇
+              <span class="time">18:42</span>
+            </div>
+            <div class="wa2-msg">
+              <div class="head">Salone Bianchi</div>
+              Promemoria: domani alle 15:30! Confermi che ci sarai? Rispondi "Sì" o "No". 🌸
+              <span class="time">il giorno prima</span>
+            </div>
+            <div class="wa2-msg">
+              <div class="head">Salone Bianchi</div>
+              Grazie Giulia! Sara ha lasciato la nota del tuo colore. Lascia una recensione e prenota la prossima 🌟
+              <span class="time">dopo il servizio</span>
+            </div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Notifiche WhatsApp</div>
+          <h3 class="feat-adv-title">Cliente sempre informato, zero telefonate</h3>
+          <p class="feat-adv-desc">Tre touch automatici sul cliente via WhatsApp Business: conferma appuntamento, promemoria 24h prima, recap post-servizio con richiesta recensione. Esperienza premium, zero lavoro per te e lo staff.</p>
+          <ul class="feat-adv-bullets">
+            <li>Conferma con data, ora e stilista assegnato</li>
+            <li>Promemoria 24h prima con "ci sarai?" e libera-slot se no</li>
+            <li>Follow-up con recensione e prenotazione del prossimo</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 6. SCHEDE CLIENTI -->
+      <article class="feat-adv-card">
+        <div class="feat-adv-visual">
+          <div class="csc-mock">
+            <div class="csc-row">
+              <div class="csc-av">GL</div>
+              <div class="csc-info">
+                <div class="csc-nm">Giulia L.</div>
+                <div class="csc-tags"><span class="csc-tag vip">VIP</span><span class="csc-tag formula">7.0 + 30vol</span><span class="csc-tag">12 visite</span></div>
+              </div>
+              <div class="csc-cnt">€ 680</div>
+            </div>
+            <div class="csc-row">
+              <div class="csc-av">MR</div>
+              <div class="csc-info">
+                <div class="csc-nm">Marco R.</div>
+                <div class="csc-tags"><span class="csc-tag">Barba</span><span class="csc-tag">8 visite</span></div>
+              </div>
+              <div class="csc-cnt">€ 120</div>
+            </div>
+            <div class="csc-row">
+              <div class="csc-av">AP</div>
+              <div class="csc-info">
+                <div class="csc-nm">Anna P.</div>
+                <div class="csc-tags"><span class="csc-tag formula">9.3 ash</span><span class="csc-tag">no PPD</span></div>
+              </div>
+              <div class="csc-cnt">€ 240</div>
+            </div>
+          </div>
+        </div>
+        <div class="feat-adv-body">
+          <div class="feat-adv-eyebrow">Schede clienti</div>
+          <h3 class="feat-adv-title">Anagrafica, formula colore, foto, allergie</h3>
+          <p class="feat-adv-desc">Ogni cliente ha la sua scheda: ultimo colore con formula esatta, foto del prima/dopo, allergie ai prodotti (PPD, ammoniaca), preferenze stilista, fedeltà. Tutto pronto prima che il cliente metta piede in salone.</p>
+          <ul class="feat-adv-bullets">
+            <li>Tag automatici: VIP, abituali, allergie, compleanno</li>
+            <li>Formula colore conservata (es. 7.0 + 30 vol, 30 min)</li>
+            <li>Foto risultato con timestamp, esportazione CSV</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="section" id="dashboard">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Dashboard dedicata</span>
+      <h2><span class="title-problem">La tua giornata,</span> <span class="title-solution">tutta in un colpo d'occhio.</span></h2>
+      <p class="lead">Ogni chiamata, ogni appuntamento, ogni KPI del tuo salone. Apri il telefono in pausa caffè e sai cosa è successo mentre tagliavi.</p>
+    </div>
+
+    <div class="dash-wrap" aria-label="Anteprima dashboard YouZen Saloni">
+      <div class="dash-bar">
+        <span class="dash-dot r"></span>
+        <span class="dash-dot y"></span>
+        <span class="dash-dot g"></span>
+        <span class="dash-url">app.youzen.it/saloni/bianchi · Live</span>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card tall">
+          <div class="dash-eyebrow">Chiamate ultimi 7 giorni</div>
+          <div class="dash-kpi">142</div>
+          <div class="dash-kpi-sub">98% gestite da YouZen · 4 trasferite a te</div>
+          <div class="dash-chart" aria-hidden="true">
+            <span class="dash-bar-v" style="height:38%;"></span>
+            <span class="dash-bar-v" style="height:52%;"></span>
+            <span class="dash-bar-v" style="height:46%;"></span>
+            <span class="dash-bar-v" style="height:72%;"></span>
+            <span class="dash-bar-v" style="height:64%;"></span>
+            <span class="dash-bar-v" style="height:88%;"></span>
+            <span class="dash-bar-v" style="height:96%;"></span>
+          </div>
+          <div class="dash-badges">
+            <span class="dash-badge">+24% vs settimana scorsa</span>
+            <span class="dash-badge warn">picco sabato 11:20</span>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-eyebrow">Appuntamenti presi</div>
+          <div class="dash-kpi">87</div>
+          <div class="dash-kpi-sub">73% confermati da reminder WhatsApp</div>
+          <div class="dash-list">
+            <div class="dash-item">
+              <div class="dash-item-avatar">GL</div>
+              <div>
+                <div class="dash-item-name">Giulia L.</div>
+                <div class="dash-item-svc">Taglio + piega · Sara</div>
+              </div>
+              <div class="dash-item-time">Gio 15:30</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-item-avatar">MR</div>
+              <div>
+                <div class="dash-item-name">Marco R.</div>
+                <div class="dash-item-svc">Barba + rifinitura · Luca</div>
+              </div>
+              <div class="dash-item-time">Ven 18:00</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-item-avatar">AP</div>
+              <div>
+                <div class="dash-item-name">Anna P.</div>
+                <div class="dash-item-svc">Colore + taglio · Marta</div>
+              </div>
+              <div class="dash-item-time">Sab 10:15</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-eyebrow">No-show settimanali</div>
+          <div class="dash-kpi">-62%</div>
+          <div class="dash-kpi-sub">Da quando YouZen manda i promemoria</div>
+          <div class="dash-badges">
+            <span class="dash-badge">3 no-show questa sett.</span>
+            <span class="dash-badge">8 sett. scorsa</span>
+          </div>
+          <div style="margin-top:18px;font-size:0.86rem;color:var(--muted-strong);line-height:1.5;">
+            Promemoria 24h prima via WhatsApp con conferma "Ci sarai?". Chi non risponde libera lo slot automaticamente.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFRONTO -->
+<section class="section" id="confronto">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Prima vs Dopo</span>
+      <h2><span class="title-problem">Un giovedì in salone,</span> <span class="title-solution">con e senza YouZen.</span></h2>
+      <p class="lead">Lo stesso giovedì, lo stesso cliente, due esperienze diverse. Per te e per chi chiama.</p>
+    </div>
+
+    <div class="cmp-grid">
+      <div class="cmp-col before">
+        <div class="cmp-col-title">Senza YouZen</div>
+        <div class="cmp-list">
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Sei al lavabo, il telefono squilla per la quinta volta. Lasci la cliente bagnata per rispondere.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">"Mi richiami più tardi", poi te ne dimentichi. Cliente va dalla concorrenza.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Tre clienti non si presentano, hai bloccato gli slot per niente, perdi 120€ secchi.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">A fine giornata 4 chiamate perse senza nome, non sai chi richiamare.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✕</span>
+            <span class="cmp-text">Sabato fai i conti: 600€ di mancato fatturato per chiamate non gestite.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-col after">
+        <div class="cmp-col-title">Con YouZen</div>
+        <div class="cmp-list">
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">YouZen risponde al primo squillo. Tu continui a tagliare, la cliente al telefono è già gestita.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Cliente prenota subito uno slot reale sul tuo calendario. Zero rimbalzi, zero richiami.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Promemoria WhatsApp 24h prima: i no-show crollano, l'agenda piena resta piena.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">A fine giornata apri la dashboard: ogni chiamata trascritta, nome e numero salvati.</span>
+          </div>
+          <div class="cmp-row">
+            <span class="cmp-bullet">✓</span>
+            <span class="cmp-text">Sabato fai i conti: agenda piena, niente clienti persi, recensioni che parlano di te.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#contatto" class="section-cta">
+      <div class="section-cta-text">
+        <div class="section-cta-eyebrow">Parliamone</div>
+        <div class="section-cta-line">Contattaci per una demo sul tuo salone. <span>Risposte vere, zero impegno.</span></div>
+      </div>
+      <span class="section-cta-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section">
+  <div class="container">
+    <div class="testimonial">
+      <p class="testimonial-quote">
+        Prima perdevo 4–5 chiamate al giorno mentre tagliavo. Oggi YouZen risponde a tutto e mi trovo l'agenda piena la mattina. In due mesi ho recuperato il costo del primo anno.
+      </p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">PB</div>
+        <div>
+          <div class="testimonial-name">Parrucchieri Bianchi</div>
+          <div class="testimonial-role">Salone in centro · Cliente YouZen dal 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2><span class="title-problem">Dubbi?</span> <span class="title-solution">Risposte vere, niente fuffa.</span></h2>
+      <p class="lead">Clicca per aprire la risposta. Se manca qualcosa, scrivici.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🤖</span>
+          <span class="faq-q">Cos'è esattamente YouZen per il mio salone?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          YouZen è la receptionist AI italiana di YouZen Saloni: una voce naturale che risponde al telefono al posto tuo, conosce stilisti, servizi e listino del tuo salone, controlla l'agenda in tempo reale e prende l'appuntamento. Non un risponditore automatico, non un chatbot — una collaboratrice virtuale h24 che pensa solo a non farti perdere clienti mentre tagli.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🎙️</span>
+          <span class="faq-q">Il cliente si accorge che sta parlando con un'AI?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Quasi nessuno se ne accorge nei primi 30 secondi: voce italiana naturale, tono calibrato sul tono del tuo salone, pause e respiri come una persona vera. Se il cliente chiede esplicitamente di parlare con un umano, YouZen ti notifica subito o passa la chiamata al tuo cellulare a seconda di come configuriamo il flusso.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">📅</span>
+          <span class="faq-q">Si integra con l'agenda che uso già nel salone?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Google Calendar e Outlook in modo nativo. Per i gestionali specifici per saloni (Treatwell, Fresha, Setmore, Salonized e altri) abbiamo integrazioni dirette o tramite middleware — chiedici quale usi e ti diciamo subito se è coperto e in quanti giorni siamo operativi.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">💶</span>
+          <span class="faq-q">Quanto costa davvero per un salone come il mio?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Setup una tantum + canone mensile calibrato sul volume di chiamate del tuo salone. Niente scatti nascosti, niente vincoli pluriennali, prezzo trasparente fissato all'inizio. Contattaci con il tuo numero medio di chiamate/mese e ti mandiamo preventivo cucito addosso entro 24 ore.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🔒</span>
+          <span class="faq-q">I dati e i numeri dei miei clienti sono al sicuro?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Server in Unione Europea, piena conformità GDPR, registro dei trattamenti incluso. Trascrizioni delle chiamate cifrate, mai dati venduti, mai usati per addestrare modelli di terze parti. Tu resti titolare di tutti i dati e li esporti in CSV in qualsiasi momento.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTI-FAQ -->
+<section class="section" id="anti-faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: rgb(239,68,68); border-color: rgba(239,68,68,0.30); background: rgba(239,68,68,0.08);">Per chi NON è YouZen</span>
+      <h2><span class="title-problem">A chi NON serve?</span> <span class="title-solution" style="color: rgb(239,68,68);">Te lo diciamo subito.</span></h2>
+      <p class="lead">Preferiamo dirtelo subito invece di farti sprecare una call. Se ti riconosci in una di queste, probabilmente YouZen non è la soluzione giusta per te oggi.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🚫</span>
+          <span class="faq-q">Vuoi solo un risponditore con un messaggio fisso?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Se ti basta un "siamo chiusi, richiamateci domani", YouZen è sovradimensionata e cara. La segreteria del telefono o un messaggio WhatsApp Business automatico fanno lo stesso lavoro a costo quasi zero. Risparmia e investi altrove.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">📵</span>
+          <span class="faq-q">Il tuo salone riceve meno di 10 chiamate a settimana?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          A questi volumi il costo del canone non si ripaga. YouZen ha senso quando le chiamate perse ti fanno effettivamente perdere fatturato — tipicamente da 30+ chiamate/settimana in su. Sotto, il risparmio non c'è e ti conviene rispondere tu o un familiare.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">📔</span>
+          <span class="faq-q">Gestisci l'agenda solo su carta o quaderno?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          YouZen ha bisogno di un calendario digitale (Google Calendar, Outlook o un gestionale tipo Treatwell/Fresha) per scrivere gli appuntamenti in tempo reale. Senza, non c'è agenda da popolare. Parti prima da digitalizzare la prenotazione, poi torna a parlarci.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🤝</span>
+          <span class="faq-q">Ogni cliente vuoi gestirlo tu personalmente al telefono?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Se il rapporto vocale uno-a-uno è il cuore della tua proposta — magari sei un salone alto di gamma dove ogni telefonata è già relazione — non vuoi delegare a una voce AI. YouZen è pensata per chi vuole liberare tempo e smettere di interrompere il taglio per rispondere, non per chi vuole essere sempre la voce all'altro capo.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-emoji">🆓</span>
+          <span class="faq-q">Cerchi una soluzione gratis per sempre?</span>
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body"><div class="faq-body-inner">
+          Non siamo freemium. Dietro YouZen c'è un'infrastruttura vera — modelli vocali italiani, server in UE, integrazione calendari, WhatsApp Business, dashboard — che ha un costo fisso ogni mese. Setup una tantum + canone mensile. Se cerchi "gratis per sempre", non siamo noi.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA stile prova.html -->
+<section class="cta-final" id="contatto">
+  <div class="cta-final-bg"></div>
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-text">
+        <span class="eyebrow">Parliamone</span>
+        <h2 style="margin-top:24px"><span class="title-problem">Indeciso?</span> <span class="title-solution">Facciamo due chiacchiere.</span></h2>
+        <p class="lead">Ti mostriamo YouZen Saloni dal vivo: come risponde, come prenota, come parla in italiano. Capiamo se ha senso per il tuo salone. Decidi tu.</p>
+
+        <div class="cta-contact-row">
+          <div class="contact-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+            +39 02 9475 8201
+          </div>
+          <div class="contact-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="m4 5 8 7 8-7"/></svg>
+            info@youzen.it
+          </div>
+        </div>
+
+        <div class="cta-trust">
+          <span class="trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+            GDPR + Server EU
+          </span>
+          <span class="trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+            Nessun impegno
+          </span>
+          <span class="trust-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-1 4a3 3 0 0 1-5.5 0A3 3 0 0 1 9 11a3 3 0 0 1-5.5 0Z"/><path d="M5 11v9h14v-9"/></svg>
+            Made in Italy
+          </span>
+        </div>
+      </div>
+
+      <div class="cal-embed">
+        <div class="cal-placeholder">
+          <div class="ico">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </div>
+          <h4 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:8px;">Prenota su Cal.com</h4>
+          <p style="color:var(--muted); font-size:0.95rem; margin-bottom:24px;">L'iframe si carica al click per non rallentare la pagina. Trenta minuti, sul tuo salone, online.</p>
+          <a href="https://cal.com/youzen/demo" target="_blank" rel="noopener" class="btn btn-primary">Apri il calendario</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTRI SETTORI -->
+<section class="sectors-others" id="altri-settori">
+  <div class="container">
+    <div class="sectors-others-head">
+      <span class="eyebrow">Altri settori</span>
+      <h2><span class="title-problem">YouZen non è solo per i saloni.</span></h2>
+      <p>Stessa YouZen, stesso motore, flussi e knowledge base cuciti sul tuo settore. Scopri come funziona nel tuo.</p>
+    </div>
+
+    <div class="others-grid">
+      <a class="other-card" style="--sc: var(--sector-food)" href="food.html">
+        <div class="other-icon">🍝</div>
+        <div class="other-eyebrow">Verticale 02</div>
+        <h3 class="other-name">Food &amp; Ristorazione</h3>
+        <p class="other-desc">Prenotazioni tavolo, asporto, gestione no-show. YouZen risponde anche durante il servizio.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-prof)" href="professionisti.html">
+        <div class="other-icon">📁</div>
+        <div class="other-eyebrow">Verticale 03</div>
+        <h3 class="other-name">Professionisti</h3>
+        <p class="other-desc">Partite IVA, artigiani, idraulici, consulenti: filtra spam, fissa sopralluoghi, manda preventivi.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-real)" href="immobiliare.html">
+        <div class="other-icon">🏠</div>
+        <div class="other-eyebrow">Verticale 04</div>
+        <h3 class="other-name">Immobiliare</h3>
+        <p class="other-desc">Agenzie immobiliari: qualifica lead, fissa visite, manda schede immobili via WhatsApp.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-legale)" href="studio-legale.html">
+        <div class="other-icon">⚖️</div>
+        <div class="other-eyebrow">Verticale 05</div>
+        <h3 class="other-name">Studio Legale</h3>
+        <p class="other-desc">Filtro chiamate, intake pratiche, appuntamenti in studio. Riservato, conforme, ordinato.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="other-card" style="--sc: var(--sector-pmi)" href="pmi.html">
+        <div class="other-icon">🏢</div>
+        <div class="other-eyebrow">Verticale 06</div>
+        <h3 class="other-name">PMI</h3>
+        <p class="other-desc">Centralino AI, smistamento richieste, dashboard chiamate. Più ordine, meno interruzioni.</p>
+        <span class="other-arrow" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">You<span style="color:var(--accent)">Zen</span><span class="dot"></span><span class="sub">Saloni</span></a>
+        <p>La receptionist AI italiana per saloni di parrucchieri ed estetisti. Chiamate, WhatsApp, appuntamenti — h24, 365 giorni.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">In</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="YouTube">Yt</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Prodotto</h5>
+        <ul>
+          <li><a href="#features">Cosa fa</a></li>
+          <li><a href="#servizi-pro">Servizi Pro</a></li>
+          <li><a href="#funzionalita">Funzionalità</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#confronto">Prima vs Dopo</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#anti-faq">Per chi non è</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Altri settori</h5>
+        <ul>
+          <li><a href="https://food.youzen.it">YouZen Food</a></li>
+          <li><a href="https://studi.youzen.it">YouZen Studi</a></li>
+          <li><a href="studio-legale.html">YouZen Studio Legale</a></li>
+          <li><a href="https://www.youzen.it">Tutti i verticali</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Legale</h5>
+        <ul>
+          <li><a href="/GDPR/">Privacy Policy</a></li>
+          <li><a href="/GDPR/">Cookie Policy</a></li>
+          <li><a href="#" data-yz-manage>Gestisci cookie</a></li>
+          <li><a href="/termini/">Termini</a></li>
+          <li><a href="/GDPR/">GDPR</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 YouZen S.r.l. · P.IVA 04855440402</div>
+      <div>info@youzen.it · Server EU · GDPR</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 24);
+}, { passive: true });
+
+const words = ["YouZen risponde.", "YouZen prenota.", "YouZen ti salva."];
+let wIdx = 0;
+const wEl = document.getElementById('rotatingWord');
+setInterval(() => {
+  wIdx = (wIdx + 1) % words.length;
+  wEl.style.animation = 'none';
+  void wEl.offsetWidth;
+  wEl.textContent = words[wIdx];
+  wEl.style.animation = '';
+}, 3200);
+
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+</script>
+
+<script defer src="../yz-consent.js"></script>
+</body>
+</html>
