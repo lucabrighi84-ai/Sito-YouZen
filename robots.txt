@@ -1,11 +1,10 @@
 # ==============================
 # YouZen - Robots.txt
 # https://youzen.it
-# PRE-LANCIO: indicizzazione BLOCCATA finche' il sito non e' online.
-# Al lancio: sostituire "Disallow: /" con "Allow: /".
+# SITO ONLINE: indicizzazione consentita.
 # ==============================
 
 User-agent: *
-Disallow: /
+Allow: /
 
 Sitemap: https://youzen.it/sitemap.xml
