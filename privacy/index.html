@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- ============================ GOOGLE ANALYTICS 4 + CONSENT MODE v2 ============================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consenso negato di default finché l'utente non accetta (GDPR / Consent Mode v2)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-S3XZKEZSFF', { 'anonymize_ip': true });
+  // Ripristina il consenso eventualmente già dato
+  try {
+    if (localStorage.getItem('yz-consent') === 'granted') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    }
+  } catch (e) {}
+</script>
+
+<!-- ============================ SEO ============================ -->
+<title>Privacy Policy | YouZen</title>
+<meta name="description" content="Privacy Policy di YouZen: quali dati trattiamo, per quali finalità, basi giuridiche, destinatari, integrazioni con servizi terzi (incluso Google Calendar) e diritti dell'interessato. Titolare: YouZen di Luca Brighi, P.IVA 04855440402." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="YouZen di Luca Brighi" />
+<meta name="language" content="Italian" />
+<link rel="canonical" href="https://youzen.it/privacy/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="YouZen" />
+<meta property="og:title" content="Privacy Policy | YouZen" />
+<meta property="og:description" content="Come YouZen tratta i dati personali: finalità, basi giuridiche, destinatari, integrazioni con servizi terzi (incluso Google Calendar) e diritti dell'interessato." />
+<meta property="og:url" content="https://youzen.it/privacy/" />
+<meta property="og:image" content="https://youzen.it/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="it_IT" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy Policy | YouZen" />
+<meta name="twitter:description" content="Come YouZen tratta i dati personali e le integrazioni con servizi terzi, incluso Google Calendar." />
+<meta name="twitter:image" content="https://youzen.it/og-image.jpg" />
+
+<meta name="theme-color" content="#080e1f" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Font coerenti con homepage -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy | YouZen",
+  "description": "Informativa sul trattamento dei dati personali di YouZen, incluse le integrazioni con servizi terzi come Google Calendar.",
+  "url": "https://youzen.it/privacy/",
+  "inLanguage": "it-IT",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "YouZen",
+    "url": "https://youzen.it"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "YouZen",
+    "legalName": "YouZen di Luca Brighi",
+    "url": "https://youzen.it",
+    "vatID": "IT04855440402",
+    "email": "info@youzen.it",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via del Pino 13",
+      "postalCode": "47923",
+      "addressLocality": "Rimini",
+      "addressRegion": "RN",
+      "addressCountry": "IT"
+    }
+  }
+}
+</script>
+
+<style>
+:root {
+  --bg: #080e1f;
+  --panel: #0f172a;
+  --panel-2: #111c34;
+  --text: #e6edf3;
+  --muted: #94a3b8;
+  --border: rgba(255,255,255,.08);
+  --border-strong: rgba(255,255,255,.14);
+  --orange: #F97316;
+  --orange-2: #EA580C;
+  --orange-glow: rgba(249,115,22,.22);
+  --max: 980px;
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(34,197,94,.12), transparent 45%),
+    radial-gradient(1000px 600px at 100% 0%, rgba(249,115,22,.16), transparent 40%),
+    var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #ffb37a; text-decoration: none; }
+a:hover { color: #ffd0ae; text-decoration: underline; text-underline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 24px; }
+
+/* Header */
+header { padding: 28px 24px 8px; }
+.topbar {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+}
+.brand .dot { color: var(--orange); }
+.back { color: var(--muted); font-size: 0.95rem; }
+.back:hover { color: #fff; text-decoration: none; }
+
+/* Hero card */
+.hero { padding: 24px 24px 10px; }
+.hero-card, .card {
+  max-width: var(--max);
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+}
+.hero-card {
+  position: relative;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--orange-glow), transparent 70%);
+  pointer-events: none;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  padding: 6px 12px;
+  border: 1px solid rgba(249,115,22,0.24);
+  border-radius: 999px;
+  background: rgba(249,115,22,0.06);
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--orange);
+  box-shadow: 0 0 10px var(--orange);
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.lede { color: var(--muted); max-width: 75ch; font-size: 1.05rem; }
+.meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.pill {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: #cbd5e1;
+  font-size: .9rem;
+}
+
+/* Main content */
+main { padding: 24px 24px 56px; }
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  color: #fff;
+}
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 22px 0 8px;
+  color: #fff;
+}
+.card { margin-top: 18px; }
+.card p, .card li { color: rgba(255,255,255,.78); }
+.muted { color: var(--muted); }
+ul { padding-left: 1.2rem; }
+li + li { margin-top: 6px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.note {
+  border-left: 3px solid var(--orange);
+  padding: 8px 0 8px 14px;
+  color: #dbe5f0;
+  background: rgba(249,115,22,0.04);
+  border-radius: 4px;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+.table th, .table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  color: #fff;
+  font-weight: 600;
+  width: 35%;
+}
+
+/* TOC */
+.toc {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 24px;
+}
+.toc li { margin: 0; }
+.toc a {
+  display: block;
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.toc a:hover { color: var(--orange); text-decoration: none; }
+
+/* Footer */
+.footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+  color: var(--muted);
+  font-size: .9rem;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+.footer-links { margin-top: 12px; display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--orange); }
+
+/* Responsive */
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; }
+  .toc { grid-template-columns: 1fr; }
+  .hero-card, .card { padding: 22px; }
+  .wrap, header, .hero, main, .footer { padding-left: 16px; padding-right: 16px; }
+  .table th { width: 40%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <a class="brand" href="/">YouZen<span class="dot">.</span></a>
+    <a class="back" href="/">← Torna al sito</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-card">
+    <span class="eyebrow">Documento legale</span>
+    <h1>Privacy Policy</h1>
+    <p class="lede">Informativa sul trattamento dei dati personali ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (GDPR). Spiega quali dati trattiamo, per quali finalità, con quali basi giuridiche, a chi possono essere comunicati e quali sono i tuoi diritti.</p>
+    <div class="meta">
+      <span class="pill">Ultimo aggiornamento: 24 giugno 2026</span>
+      <span class="pill">Titolare: YouZen di Luca Brighi</span>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section class="card">
+    <h2>Indice</h2>
+    <ul class="toc">
+      <li><a href="#sec-1">1. Titolare del trattamento</a></li>
+      <li><a href="#sec-2">2. Dati che trattiamo</a></li>
+      <li><a href="#sec-3">3. Finalità e basi giuridiche</a></li>
+      <li><a href="#sec-4">4. Integrazioni con servizi terzi</a></li>
+      <li><a href="#sec-google">5. Google Calendar e dati Google</a></li>
+      <li><a href="#sec-6">6. Destinatari e responsabili</a></li>
+      <li><a href="#sec-7">7. Trasferimenti extra-UE</a></li>
+      <li><a href="#sec-8">8. Tempi di conservazione</a></li>
+      <li><a href="#sec-9">9. I tuoi diritti</a></li>
+      <li><a href="#sec-10">10. Cookie</a></li>
+      <li><a href="#sec-11">11. Modifiche all'informativa</a></li>
+      <li><a href="#sec-12">12. Contatti</a></li>
+    </ul>
+  </section>
+
+  <section class="card" id="sec-1">
+    <h2>1. Chi è il titolare del trattamento</h2>
+    <table class="table">
+      <tr><th>Titolare</th><td>YouZen di Luca Brighi</td></tr>
+      <tr><th>Forma giuridica</th><td>Impresa individuale</td></tr>
+      <tr><th>Sede</th><td>Via del Pino 13, 47923 Rimini (RN)</td></tr>
+      <tr><th>P.IVA</th><td>IT04855440402</td></tr>
+      <tr><th>REA</th><td>RN&nbsp;-&nbsp;446631</td></tr>
+      <tr><th>Email privacy</th><td><a href="mailto:luca@youzen.it">luca@youzen.it</a></td></tr>
+      <tr><th>PEC</th><td><a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a></td></tr>
+      <tr><th>Email ordinaria</th><td><a href="mailto:info@youzen.it">info@youzen.it</a></td></tr>
+    </table>
+  </section>
+
+  <section class="card" id="sec-2">
+    <h2>2. Quali dati trattiamo</h2>
+    <p>A seconda di come interagisci con YouZen, possiamo trattare le seguenti categorie di dati personali:</p>
+    <div class="grid">
+      <div>
+        <h3>Dati di contatto e richieste</h3>
+        <p>Nome, email, numero di telefono, azienda/settore e contenuto delle richieste di informazioni o di demo che ci invii tramite i moduli del sito.</p>
+        <h3>Dati dell'account e dell'area riservata</h3>
+        <p>Credenziali e dati identificativi dei titolari e dei collaboratori che accedono alle dashboard YouZen (saloni, food, studi, hub) per gestire il servizio.</p>
+        <h3>Dati operativi del servizio</h3>
+        <p>Dati relativi ad appuntamenti, prenotazioni, ordini e clienti finali gestiti tramite la piattaforma per conto dell'azienda cliente, inclusi nome, recapiti e dettagli dell'appuntamento.</p>
+      </div>
+      <div>
+        <h3>Dati di chiamata e interazione</h3>
+        <p>Registrazioni e/o trascrizioni delle chiamate gestite dall'assistente vocale, esiti delle conversazioni e messaggi WhatsApp scambiati nell'ambito del servizio.</p>
+        <h3>Dati di navigazione e cookie</h3>
+        <p>Dati tecnici raccolti durante la navigazione sul sito (vedi sezione <a href="#sec-10">Cookie</a>), trattati solo previo consenso per le finalità statistiche.</p>
+        <h3>Dati da servizi collegati</h3>
+        <p>Quando colleghi volontariamente un servizio esterno (ad esempio Google Calendar o Microsoft Outlook), trattiamo i dati necessari alla sincronizzazione: vedi sezioni <a href="#sec-4">4</a> e <a href="#sec-google">5</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="sec-3">
+    <h2>3. Finalità e basi giuridiche del trattamento</h2>
+    <table class="table">
+      <tr><th>Finalità</th><th>Base giuridica</th></tr>
+      <tr><td>Rispondere a richieste di informazioni e demo</td><td>Misure precontrattuali su richiesta dell'interessato (art. 6(1)(b) GDPR)</td></tr>
+      <tr><td>Erogare il servizio YouZen e gestire l'account</td><td>Esecuzione del contratto (art. 6(1)(b) GDPR)</td></tr>
+      <tr><td>Gestire appuntamenti, prenotazioni e comunicazioni con i clienti finali per conto dell'azienda cliente</td><td>Esecuzione del contratto con l'azienda cliente; per i dati dei clienti finali YouZen agisce come responsabile del trattamento per conto dell'azienda cliente</td></tr>
+      <tr><td>Sincronizzare gli appuntamenti con calendari esterni collegati dall'utente</td><td>Consenso e/o esecuzione del contratto (art. 6(1)(a)/(b) GDPR)</td></tr>
+      <tr><td>Adempiere a obblighi di legge, fiscali e contabili</td><td>Obbligo legale (art. 6(1)(c) GDPR)</td></tr>
+      <tr><td>Sicurezza, prevenzione abusi e miglioramento del servizio</td><td>Legittimo interesse (art. 6(1)(f) GDPR)</td></tr>
+      <tr><td>Statistiche di navigazione del sito</td><td>Consenso (art. 6(1)(a) GDPR)</td></tr>
+    </table>
+  </section>
+
+  <section class="card" id="sec-4">
+    <h2>4. Integrazioni con servizi terzi</h2>
+    <p>Per funzionare, YouZen si appoggia a fornitori che agiscono come responsabili del trattamento, tra cui: servizi di hosting e database (infrastruttura nell'Unione Europea), fornitori di telefonia e assistente vocale, messaggistica WhatsApp Business, calendari esterni (Google Calendar, Microsoft Outlook), strumenti di pagamento e di analisi statistica del sito.</p>
+    <p>Alcune integrazioni si attivano <strong>solo se l'utente le collega volontariamente</strong> dalla propria dashboard. È il caso della sincronizzazione del calendario, descritta nel dettaglio nella sezione seguente.</p>
+  </section>
+
+  <section class="card" id="sec-google">
+    <h2>5. Google Calendar e utilizzo dei dati Google</h2>
+    <p>Se un utente sceglie di collegare il proprio account Google, YouZen richiede l'autorizzazione di accesso a Google Calendar al solo scopo di <strong>sincronizzare gli appuntamenti</strong> creati o gestiti nella piattaforma con il calendario dell'utente (del titolare o del singolo collaboratore/assistente).</p>
+
+    <h3>Ambiti (scope) richiesti</h3>
+    <ul>
+      <li><code>https://www.googleapis.com/auth/calendar</code> e <code>calendar.events</code> — per creare, leggere e aggiornare gli eventi relativi agli appuntamenti sul calendario collegato;</li>
+      <li><code>userinfo.email</code> e <code>userinfo.profile</code> — per identificare l'account collegato e mostrarti quale indirizzo è connesso.</li>
+    </ul>
+
+    <h3>Come usiamo i dati di Google</h3>
+    <ul>
+      <li>I dati ottenuti tramite le API di Google vengono utilizzati <strong>esclusivamente</strong> per fornire e migliorare la funzione di sincronizzazione degli appuntamenti tra YouZen e il calendario dell'utente.</li>
+      <li><strong>Non vendiamo</strong> i dati ottenuti dalle API di Google e non li trasferiamo a terzi per finalità di marketing o pubblicità.</li>
+      <li><strong>Non utilizziamo</strong> i dati ottenuti tramite le API di Google per addestrare modelli di intelligenza artificiale o di machine learning generalizzati.</li>
+      <li>Nessun essere umano legge i dati ottenuti dalle API di Google, salvo: tuo consenso esplicito, per finalità di sicurezza (ad esempio indagine su abusi), per adempiere a obblighi di legge, oppure quando i dati sono aggregati e anonimizzati e utilizzati per operazioni interne.</li>
+      <li>Conserviamo unicamente i riferimenti tecnici necessari alla sincronizzazione (ad esempio l'identificativo dell'evento e del calendario collegato) e i token di accesso, custoditi in forma cifrata.</li>
+    </ul>
+
+    <p class="note">L'uso e il trasferimento, da parte di YouZen, delle informazioni ricevute dalle API di Google sono conformi alla <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, inclusi i requisiti di uso limitato (<em>Limited Use</em>).</p>
+
+    <h3>Come revocare l'accesso</h3>
+    <p>Puoi scollegare il calendario in qualsiasi momento dalla pagina <strong>Integrazioni</strong> della tua dashboard YouZen. In alternativa, puoi revocare l'autorizzazione dalle impostazioni di sicurezza del tuo account Google, alla pagina <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. Alla revoca, i token vengono eliminati e la sincronizzazione cessa.</p>
+  </section>
+
+  <section class="card" id="sec-6">
+    <h2>6. Destinatari e responsabili del trattamento</h2>
+    <p>I dati possono essere trattati, nei limiti delle finalità dichiarate, da collaboratori autorizzati e da fornitori che supportano l'operatività di YouZen (hosting e database, telefonia e assistente vocale, messaggistica, calendari, pagamenti, analisi statistica e assistenza tecnica), nominati responsabili del trattamento ai sensi dell'art. 28 GDPR. I dati non vengono diffusi e non sono oggetto di cessione a terzi per finalità di marketing.</p>
+  </section>
+
+  <section class="card" id="sec-7">
+    <h2>7. Trasferimenti di dati fuori dall'Unione Europea</h2>
+    <p>L'infrastruttura principale è collocata su server nell'Unione Europea. Alcuni fornitori (ad esempio Google) possono comportare trasferimenti verso paesi terzi: in tali casi il trasferimento avviene sulla base di garanzie adeguate previste dal GDPR, quali decisioni di adeguatezza o Clausole Contrattuali Standard della Commissione Europea.</p>
+  </section>
+
+  <section class="card" id="sec-8">
+    <h2>8. Tempi di conservazione</h2>
+    <p>I dati sono conservati per il tempo necessario alle finalità per cui sono raccolti e nel rispetto degli obblighi di legge. Le tempistiche di dettaglio (richieste di contatto, dati operativi, dati amministrativi, log tecnici, analytics, trascrizioni) sono indicate nella pagina <a href="/GDPR/#sec-6">Diritti privacy e GDPR</a>. I token e i riferimenti dei calendari collegati sono conservati finché la connessione resta attiva e vengono eliminati alla disconnessione.</p>
+  </section>
+
+  <section class="card" id="sec-9">
+    <h2>9. I tuoi diritti</h2>
+    <p>Hai diritto di accesso, rettifica, cancellazione, limitazione, opposizione, portabilità e di revoca del consenso, oltre al diritto di proporre reclamo all'autorità di controllo. Le modalità pratiche per esercitarli (a chi scrivere, cosa indicare, tempi di risposta) sono descritte nella pagina dedicata <a href="/GDPR/">Diritti privacy e GDPR</a>.</p>
+  </section>
+
+  <section class="card" id="sec-10">
+    <h2>10. Cookie</h2>
+    <p>Il sito utilizza cookie tecnici, sempre attivi, e — solo previo consenso — cookie di analisi statistica (Google Analytics 4, con Consent Mode v2). Puoi prestare, modificare o revocare il consenso in qualsiasi momento tramite il banner, riapribile dal link <strong>"Gestisci cookie"</strong> nel piè di pagina. Dettagli sulla gestione dei cookie e sul registro dei consensi sono nella sezione <a href="/GDPR/#sec-cookie">Cookie e registro dei consensi</a>.</p>
+  </section>
+
+  <section class="card" id="sec-11">
+    <h2>11. Modifiche a questa informativa</h2>
+    <p>Questa informativa può essere aggiornata nel tempo per riflettere modifiche al servizio o alla normativa applicabile. La versione vigente è sempre pubblicata su questa pagina, con indicazione della data di ultimo aggiornamento.</p>
+  </section>
+
+  <section class="card" id="sec-12">
+    <h2>12. Contatti</h2>
+    <p class="note">Per qualsiasi richiesta relativa al trattamento dei dati personali scrivi a <a href="mailto:luca@youzen.it"><strong>luca@youzen.it</strong></a><br>Per comunicazioni formali tramite PEC: <a href="mailto:lucabrighi84@pec.it"><strong>lucabrighi84@pec.it</strong></a></p>
+  </section>
+
+</main>
+
+<div class="footer wrap">
+  <strong>YouZen di Luca Brighi</strong> · P.IVA IT04855440402 · REA RN-446631 · Via del Pino 13, 47923 Rimini (RN)<br>
+  <a href="mailto:info@youzen.it">info@youzen.it</a> · Privacy: <a href="mailto:luca@youzen.it">luca@youzen.it</a> · PEC: <a href="mailto:lucabrighi84@pec.it">lucabrighi84@pec.it</a>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/termini/">Termini e condizioni</a>
+    <a href="/GDPR/">Diritti privacy e GDPR</a>
+    <a href="#" data-yz-manage>Gestisci cookie</a>
+  </div>
+</div>
+<script defer src="../yz-consent.js"></script>
+</body>
+</html>
