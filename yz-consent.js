@@ -63,6 +63,60 @@
   }
 
   var box = null;
+  var placeTimer = null;
+  var placeRO = null;
+  var widgetEl = null;
+
+  function widget() {
+    if (widgetEl && document.contains(widgetEl)) return widgetEl;
+    widgetEl = document.querySelector('iframe[title="Voice Assistant Widget"]');
+    return widgetEl;
+  }
+
+  // Tiene il banner cookie sopra il widget assistenza (iframe Autocalls: z-index
+  // massimo, cattura i click su tutta la sua area). Lo solleva quanto basta, in
+  // modo adattivo (segue collasso bolla / apertura chat a tutto schermo).
+  function placeBanner() {
+    if (!box || box.hidden) return;
+    box.style.bottom = "";            // torna al baseline CSS, poi misura
+    var f = widget();
+    if (!f) return;
+    var fr = f.getBoundingClientRect();
+    if (!fr.width || !fr.height) return;
+    var br = box.getBoundingClientRect();
+    var hOverlap = br.left < fr.right && br.right > fr.left;
+    var widgetAtBottom = fr.bottom >= window.innerHeight - 8;
+    var vOverlap = fr.top < br.bottom;
+    if (hOverlap && widgetAtBottom && vOverlap) {
+      var lift = (window.innerHeight - fr.top) + 12;
+      lift = Math.min(lift, Math.round(window.innerHeight * 0.6));
+      box.style.bottom = lift + "px";
+    }
+  }
+
+  function startPlacement() {
+    placeBanner();
+    window.addEventListener("resize", placeBanner);
+    if (placeTimer) clearInterval(placeTimer);
+    var ticks = 0;
+    placeTimer = setInterval(function () {
+      placeBanner();
+      ticks++;
+      var f = widget();
+      if (f && typeof ResizeObserver === "function" && !placeRO) {
+        placeRO = new ResizeObserver(placeBanner);
+        try { placeRO.observe(f); } catch (e) {}
+      }
+      if ((placeRO || ticks > 40) && placeTimer) { clearInterval(placeTimer); placeTimer = null; }
+    }, 300);
+  }
+
+  function stopPlacement() {
+    if (placeTimer) { clearInterval(placeTimer); placeTimer = null; }
+    if (placeRO) { try { placeRO.disconnect(); } catch (e) {} placeRO = null; }
+    window.removeEventListener("resize", placeBanner);
+    if (box) box.style.bottom = "";
+  }
 
   function build() {
     if (box) return box;
@@ -126,9 +180,10 @@
     updateGtag(granted);
     logConsent(granted, action);
     if (box) box.hidden = true;
+    stopPlacement();
   }
 
-  function open() { build().hidden = false; }
+  function open() { build().hidden = false; startPlacement(); }
 
   function init() {
     // aggancia i link "Gestisci cookie"
