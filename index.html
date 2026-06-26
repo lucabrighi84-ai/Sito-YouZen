@@ -909,14 +909,17 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .hero-line-brand {
   display: block;
-  color: #F97316;
+  font-family: var(--font-brand);
+  letter-spacing: normal;
+  color: rgba(255,255,255,0.98);
   margin-bottom: 0.1em;
   position: relative;
   z-index: 10000 !important;
-  text-shadow: 
+  text-shadow:
     0 0 30px rgba(249,115,22,0.4),
     0 4px 20px rgba(0,0,0,0.8);
 }
+.hero-brand-zen { color: var(--accent); }
 
 .hero-line-rotating {
   display: block;
@@ -2851,7 +2854,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   border-right: 1px solid var(--line);
 }
 
-.setup-box {
+.setup-row .setup-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3405,6 +3408,26 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .matrix-row { grid-template-columns: 1.5fr 1fr 1fr 1fr; font-size: 0.75rem; }
   .matrix-cell { padding: 12px 8px; }
   .matrix-row.head .matrix-cell { font-size: 9px; padding: 12px 6px; }
+  /* Allineamento colonne sezione prezzi su mobile */
+  .setup-row .setup-box { padding: 16px 6px; gap: 4px; }
+  .setup-row .setup-box .setup-label {
+    min-height: 2.6em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.58rem;
+    letter-spacing: 0.03em;
+  }
+  .setup-row .setup-box .setup-value,
+  .setup-row .setup-box .setup-value-enterprise { font-size: 1.2rem; }
+  .setup-row .setup-box .setup-tagline { font-size: 0.62rem; min-height: 2.4em; }
+  .matrix-row.plans-header .matrix-cell {
+    justify-content: flex-start;
+    padding: 22px 6px 24px;
+  }
+  .plan-header-name { font-size: 1.05rem; }
+  .plan-header-tagline { font-size: 0.7rem; }
 }
 
 /* ====================================================================
@@ -4641,7 +4664,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="/" class="logo">
-      <img src="youzen-logo-k2.png" alt="YouZen" class="logo-img" />
+      <img src="youzen-logo-falai.png" alt="YouZen" class="logo-img" />
       You<span style="color:var(--accent)">Zen</span>
     </a>
     <nav class="nav-links">
@@ -4783,7 +4806,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       <h1 class="hero-headline-giant">
         <span class="hero-line-white">Il telefono</span>
         <span class="hero-line-white">squilla.</span>
-        <span class="hero-line-brand">YouZen</span>
+        <span class="hero-line-brand">You<span class="hero-brand-zen">Zen</span></span>
         <span class="hero-line-rotating">
           <span class="hero-rotating-word" id="rotatingWord">Risponde</span>
         </span>
@@ -6691,7 +6714,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">
-          <img src="youzen-logo-k2.png" alt="YouZen" class="logo-img" />
+          <img src="youzen-logo-falai.png" alt="YouZen" class="logo-img" />
           You<span style="color:var(--accent)">Zen</span>
         </a>
         <p>La segreteria italiana di YouZen che risponde sempre. Chiamate, WhatsApp, appuntamenti — h24, 365 giorni.</p>
