@@ -745,13 +745,53 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .nav-cta { display: none; gap: 8px; }
+.nav-links a.nav-cta-mobile { display: none; }
 .nav-wa { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; background: #25D366; color: #fff; flex-shrink: 0; margin-left: auto; margin-right: 8px; transition: transform 0.2s ease, filter 0.2s ease; }
 .nav-wa:hover { filter: brightness(1.08); transform: translateY(-1px); }
 .nav-wa svg { width: 22px; height: 22px; }
+
+/* === Hamburger mobile === */
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 5px;
+  width: 42px; height: 42px; padding: 9px; border: none; border-radius: 10px;
+  background: rgba(255,255,255,0.06); cursor: pointer; flex-shrink: 0;
+}
+.nav-toggle span { display: block; height: 2px; width: 100%; background: #fff; border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; }
+.nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menu mobile a tendina (sotto i 1024px) */
+@media (max-width: 1023px) {
+  .nav.nav-open { background: rgba(8,14,31,0.97); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+  .nav-links {
+    display: none;
+    position: fixed; top: 72px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 2px;
+    background: linear-gradient(180deg, #0b1226, #0a1020);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 16px 22px; margin: 0;
+    max-height: calc(100dvh - 72px); overflow-y: auto;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+  .nav.nav-open .nav-links { display: flex; }
+  .nav-links > a, .nav-dropdown-trigger { width: 100%; font-size: 1rem; padding: 12px; }
+  .nav-dropdown { display: block; width: 100%; }
+  .nav-dropdown::before { display: none; }
+  .nav-dropdown-menu {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    min-width: 0; width: 100%; background: transparent; border: none;
+    box-shadow: none; padding: 2px 0 8px 8px;
+  }
+  .nav-dropdown-menu a { padding: 9px 10px; }
+  .nav-links a.nav-cta-mobile { display: flex; justify-content: center; width: 100%; margin-top: 12px; }
+}
+
 @media (min-width: 1024px) {
   .nav-links, .nav-cta { display: flex; align-items: center; }
   .nav-links { margin-left: auto; margin-right: auto; }
   .nav-wa { margin-left: 0; }
+  .nav-toggle { display: none; }
 }
 
 /* ====================================================================
@@ -3405,9 +3445,15 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .matrix-cell .false { color: var(--muted-weak); opacity: 0.4; }
 
 @media (max-width: 767px) {
-  .matrix-row { grid-template-columns: 1.5fr 1fr 1fr 1fr; font-size: 0.75rem; }
+  .matrix-row { grid-template-columns: 1.15fr 1fr 1fr 1fr; font-size: 0.75rem; }
   .matrix-cell { padding: 12px 8px; }
   .matrix-row.head .matrix-cell { font-size: 9px; padding: 12px 6px; }
+  /* Prezzi "CONFRONTA I PIANI": far stare il prezzo nella colonna su mobile */
+  .matrix-row.matrix-pricing-row .matrix-cell { padding: 16px 4px; overflow: hidden; }
+  .matrix-price .num { font-size: 1.15rem; }
+  .matrix-price .cur { font-size: 0.78rem; }
+  .matrix-price .per { display: none; }
+  .plan-tag-mini { font-size: 7px; padding: 3px 7px; letter-spacing: 0.06em; top: 6px; }
   /* Allineamento colonne sezione prezzi su mobile */
   .setup-row .setup-box { padding: 16px 6px; gap: 4px; }
   .setup-row .setup-box .setup-label {
@@ -4654,6 +4700,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .call-bar-text { font-size: 0.8rem; white-space: normal; }
   .call-bar-btn { padding: 9px 13px; font-size: 0.82rem; }
 }
+/* Su mobile la barra e' ridondante (widget vocale + WhatsApp) e verrebbe coperta dal widget Autocalls: nascondila */
+@media (max-width: 767px) {
+  .call-bar { display: none; }
+}
 
 </style>
 </head>
@@ -4667,7 +4717,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       <img src="youzen-logo-falai.png" alt="YouZen" class="logo-img" />
       You<span style="color:var(--accent)">Zen</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <div class="nav-dropdown">
         <a href="#sec-03" class="nav-dropdown-trigger">
           Cosa fa
@@ -4777,10 +4827,14 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
       </div>
       
       <a href="#contatto">Contattaci</a>
+      <a href="https://app.youzen.it" target="_blank" rel="noopener" class="btn btn-primary nav-cta-mobile">Entra nella App</a>
     </nav>
     <a class="nav-wa" href="https://wa.me/393883681715?text=Ciao%2C%20vorrei%20info%20su%20YouZen" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
     </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-cta">
       <a href="https://app.youzen.it" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Entra nella App</a>
     </div>
@@ -6701,7 +6755,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
           </div>
           <h4>Prenota su Cal.com</h4>
           <p>L'iframe si carica al click per non rallentare la pagina.</p>
-          <a href="https://cal.com/youzen/demo" target="_blank" rel="noopener" class="btn btn-primary">Apri il calendario</a>
+          <a href="https://cal.com/luca-brighi-drauee/videocall-da-15-min?user=luca-brighi-drauee&amp;overlayCalendar=true" target="_blank" rel="noopener" class="btn btn-primary">Apri il calendario</a>
         </div>
       </div>
     </div>
@@ -6794,6 +6848,27 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 24);
 }, { passive: true });
+
+// ===== Menu mobile (hamburger)
+(function(){
+  var navEl = document.getElementById('nav'), t = document.getElementById('navToggle');
+  if (!t) return;
+  t.addEventListener('click', function(){
+    var open = navEl.classList.toggle('nav-open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    t.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+  });
+  document.querySelectorAll('#navLinks a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navEl.classList.remove('nav-open');
+      t.setAttribute('aria-expanded', 'false');
+      t.setAttribute('aria-label', 'Apri menu');
+    });
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth >= 1024) navEl.classList.remove('nav-open');
+  }, { passive: true });
+})();
 
 // ===== Footer email decode
 document.getElementById('footer-email').textContent = 'info' + String.fromCharCode(64) + 'youzen.it';
