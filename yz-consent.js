@@ -180,10 +180,17 @@
     updateGtag(granted);
     logConsent(granted, action);
     if (box) box.hidden = true;
+    document.documentElement.classList.remove("yz-cookie-open");
     stopPlacement();
   }
 
-  function open() { build().hidden = false; startPlacement(); }
+  // La classe segnala alla pagina che il banner occupa la zona bassa: elementi
+  // fissi come la barra telefono si tolgono di mezzo finche' non c'e' una scelta.
+  function open() {
+    build().hidden = false;
+    document.documentElement.classList.add("yz-cookie-open");
+    startPlacement();
+  }
 
   function init() {
     // aggancia i link "Gestisci cookie"

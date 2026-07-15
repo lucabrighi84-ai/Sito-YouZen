@@ -142,29 +142,37 @@
   "applicationSubCategory": "AI Receptionist",
   "operatingSystem": "Web, iOS, Android",
   "description": "AI receptionist che gestisce chiamate, WhatsApp e appuntamenti 24/7 per studi, cliniche, saloni, agenzie e PMI.",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Starter",
-      "price": "45",
-      "priceCurrency": "EUR",
-      "description": "Piano per chi inizia · 1.5k minuti inclusi"
-    },
-    {
-      "@type": "Offer",
-      "name": "Pro",
-      "price": "90",
-      "priceCurrency": "EUR",
-      "description": "Piano più scelto · 1.5k minuti + pannello di controllo avanzato"
-    },
-    {
-      "@type": "Offer",
-      "name": "Ultra",
-      "price": "165",
-      "priceCurrency": "EUR",
-      "description": "Piano top · agenti AI illimitati + multi-sede"
-    }
-  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "YouZen",
+    "description": "Piano unico a consumo · €0,30/min · minuti modulabili · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500.",
+    "priceCurrency": "EUR",
+    "price": "225",
+    "priceSpecification": [
+      {
+        "@type": "UnitPriceSpecification",
+        "name": "Canone mensile al pacchetto di riferimento (750 min/mese)",
+        "price": "225",
+        "priceCurrency": "EUR",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "name": "Tariffa al minuto",
+        "price": "0.30",
+        "priceCurrency": "EUR",
+        "unitCode": "MIN"
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "name": "Minuti extra oltre il pacchetto",
+        "price": "0.35",
+        "priceCurrency": "EUR",
+        "unitCode": "MIN"
+      }
+    ]
+  },
   "featureList": [
     "Risposta automatica alle chiamate 24/7",
     "Gestione WhatsApp Business",
@@ -240,10 +248,10 @@
     },
     {
       "@type": "Question",
-      "name": "Si integra col mio gestionale?",
+      "name": "Cosa succede se supero i minuti del pacchetto?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Integrazioni native con Cal.com, Google Calendar, Outlook. Altri gestionali via Make/Zapier o API custom nel piano Ultra."
+        "text": "Non si blocca niente e non perdi nessuna chiamata. I minuti oltre il pacchetto li paghi 0,35€ l'uno, e solo quelli. Se succede spesso, alzi il pacchetto quando vuoi e torni a 0,30€ al minuto."
       }
     },
     {
@@ -251,7 +259,7 @@
       "name": "Quanto costa YouZen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tre piani: Starter 45€/mese, Pro 90€/mese, Ultra da 165€/mese. Setup una tantum 150€/250€/da 450€. Niente costi nascosti, paghi solo i minuti effettivi."
+        "text": "Un piano solo, a consumo: €0,30 al minuto, con i minuti modulabili. Al pacchetto di riferimento da 750 minuti/mese sono 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ con l'integrazione al gestionale. I minuti oltre il pacchetto costano 0,35€/min. Niente costi nascosti, paghi solo i minuti effettivi."
       }
     },
     {
@@ -353,6 +361,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 img, svg { display: block; max-width: 100%; }
 input, select, textarea { font: inherit; color: inherit; }
 
+/* Focus da tastiera sempre visibile (accessibilità WCAG 2.4.7) */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+:focus:not(:focus-visible) { outline: none; }
+
 /* atmosfera: noise overlay sottile globale */
 body::before {
   content: '';
@@ -366,10 +378,10 @@ body::before {
 }
 
 .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-@media (min-width: 1024px) { .container { padding: 0 40px; } }
+@media (min-width: 1024px) { .container { padding: 0 40px; }}
 
 .section { position: relative; padding: 64px 0; }
-@media (min-width: 1024px) { .section { padding: 96px 0; } }
+@media (min-width: 1024px) { .section { padding: 96px 0; }}
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -602,8 +614,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .section-cta-arrow { width: 48px; height: 48px; }
   .section-cta-arrow svg { width: 18px; height: 18px; }
   .section-cta-line { font-size: 1.0625rem; }
-  .section-cta-eyebrow { font-size: 10px; margin-bottom: 4px; }
-}
+  .section-cta-eyebrow { font-size: 10px; margin-bottom: 4px; }}
 
 /* === 20px di gap dopo la CTA prima della sezione adiacente === */
 .section.has-cta { padding-bottom: 120px; }
@@ -791,8 +802,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .nav-links, .nav-cta { display: flex; align-items: center; }
   .nav-links { margin-left: auto; margin-right: auto; }
   .nav-wa { margin-left: 0; }
-  .nav-toggle { display: none; }
-}
+  .nav-toggle { display: none; }}
 
 /* ====================================================================
    HERO (sec-01)
@@ -870,8 +880,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   0%, 100% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(180px, -150px) scale(1.3); }
   50% { transform: translate(-120px, 120px) scale(0.8); }
-  75% { transform: translate(140px, 180px) scale(1.2); }
-}
+  75% { transform: translate(140px, 180px) scale(1.2); }}
 
 /* Rimuovo regola Vanta canvas (non più usata) */
 
@@ -991,8 +1000,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   100% { 
     opacity: 1;
     transform: translateY(0);
-  }
-}
+  }}
 
 .hero-cta-minimal {
   display: inline-flex;
@@ -1036,8 +1044,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 @keyframes meshDrift {
   0% { transform: translate(0,0) scale(1); }
-  100% { transform: translate(-3%, 2%) scale(1.08); }
-}
+  100% { transform: translate(-3%, 2%) scale(1.08); }}
 .hero-grid {
   position: absolute; inset: 0; z-index: 0; opacity: 0.4;
   background-image:
@@ -1054,8 +1061,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   align-items: center;
 }
 @media (min-width: 1024px) {
-  .hero-inner { grid-template-columns: 1.15fr 0.85fr; gap: 80px; }
-}
+  .hero-inner { grid-template-columns: 1.15fr 0.85fr; gap: 80px; }}
 
 .hero-headline { margin: 28px 0 24px; }
 .hero-headline span { display: block; }
@@ -1208,8 +1214,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 @keyframes dcGlow {
   0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
-  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
-}
+  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }}
 
 /* Sfumature morbide in alto e in basso: niente stacco netto con le altre sezioni */
 .demo-call-fade-top,
@@ -1235,12 +1240,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .demo-call-section .container { position: relative; z-index: 3; }
 
 @media (max-width: 768px) {
-  .demo-call-glow { width: 360px; height: 360px; filter: blur(45px); }
-}
+  .demo-call-glow { width: 360px; height: 360px; filter: blur(45px); }}
 
 @media (prefers-reduced-motion: reduce) {
-  .demo-call-glow { animation: none; }
-}
+  .demo-call-glow { animation: none; }}
 
 .demo-call-grid {
   display: block;
@@ -1259,8 +1262,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 @media (max-width: 560px) {
-  .demo-call-content { padding: 28px 20px; }
-}
+  .demo-call-content { padding: 28px 20px; }}
 
 .demo-call-content .eyebrow,
 .demo-call-title,
@@ -1397,8 +1399,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   
   .demo-call-visual {
     height: 400px;
-  }
-}
+  }}
 
 /* ====================================================================
    COMPARISON (sec-03) — SCROLL-DRIVEN SMARTPHONE STICKY
@@ -1981,8 +1982,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   position: relative;
 }
 @media (min-width: 900px) {
-  .day-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-}
+  .day-grid { grid-template-columns: 1fr 1fr; gap: 24px; }}
 
 .day-col {
   background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
@@ -2102,8 +2102,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     font-weight: 700; font-size: 0.85rem;
     color: var(--accent);
     box-shadow: 0 0 0 8px var(--ink-900);
-  }
-}
+  }}
 
 /* ====================================================================
    INTEGRAZIONI (sec-integrazioni) — MARQUEE INFINITO DESTRA → SINISTRA
@@ -2131,8 +2130,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 @keyframes integrations-scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+  to   { transform: translateX(-50%); }}
 .integration-item {
   display: inline-flex;
   align-items: center;
@@ -2178,12 +2176,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .integrations-marquee { padding: 24px 0; }
   .integrations-track { gap: 44px; animation-duration: 30s; }
   .integration-item { font-size: 1.15rem; gap: 12px; }
-  .integration-item svg { width: 40px; height: 40px; }
-}
+  .integration-item svg { width: 40px; height: 40px; }}
 
 @media (prefers-reduced-motion: reduce) {
-  .integrations-track { animation: none; flex-wrap: wrap; justify-content: center; }
-}
+  .integrations-track { animation: none; flex-wrap: wrap; justify-content: center; }}
 
 /* ====================================================================   SECTORS (sec-05) — GRID MOSAICO EDITORIALE NOBILITATO
    ==================================================================== */
@@ -2193,11 +2189,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   gap: 20px;
 }
 @media (min-width: 700px) {
-  .sectors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-}
+  .sectors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }}
 @media (min-width: 1024px) {
-  .sectors-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 280px; gap: 22px; }
-}
+  .sectors-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 280px; gap: 22px; }}
 
 .sector-card {
   position: relative;
@@ -2377,8 +2371,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .sector-card.s-xxl .s-title { font-size: 2.5rem; line-height: 1; }
   .sector-card.s-xxl .s-tag { font-size: 1.125rem; }
   .sector-card.s-xxl .s-desc { font-size: 1rem; max-width: 420px; }
-  .sector-card.s-xxl .sector-icon { width: 64px; height: 64px; }
-}
+  .sector-card.s-xxl .sector-icon { width: 64px; height: 64px; }}
 
 /* Footer: arrow + segno editoriale */
 .sector-foot {
@@ -2447,8 +2440,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .sector-card.has-app:hover .app-panel { clip-path: polygon(26% 0, 100% 0, 100% 100%, 0% 100%); }
 @media (max-width: 600px) {
-  .sector-card.has-app .sector-body { padding-right: 36%; }
-}
+  .sector-card.has-app .sector-body { padding-right: 36%; }}
 
 /* ====================================================================
    TIMELINE (sec-06) — STICKY PANEL + 3 STEPS
@@ -2467,8 +2459,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     position: sticky; top: 100px;
     height: calc(100vh - 200px);
     max-height: 580px;
-  }
-}
+  }}
 
 .device-mockup {
   position: relative;
@@ -2507,8 +2498,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .mock-step.active { display: block; }
 @keyframes mockFade {
   from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  to { opacity: 1; transform: translateY(0); }}
 .mock-step h5 {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 16px;
@@ -2543,8 +2533,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   gap: 24px;
 }
 @media (min-width: 900px) {
-  .timeline-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-}
+  .timeline-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }}
 .tl-step {
   position: relative;
   display: flex; flex-direction: column; justify-content: space-between;
@@ -2623,12 +2612,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   user-select: none;
   transition: opacity 0.5s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
-  
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-  transition: opacity 0.5s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
 
 .tl-step:hover .tl-num {
   opacity: 0.18;
@@ -2675,7 +2658,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.6) 0 7px, transparent 7px 16px);
   animation: yzDash 1s linear infinite;
 }
-@keyframes yzDash { to { background-position-y: 16px; } }
+@keyframes yzDash { to { background-position-y: 16px; }}
 
 .yztl-row { position: relative; display: flex; margin-bottom: 28px; min-height: 120px; }
 .yztl-row:last-child { margin-bottom: 0; }
@@ -2689,8 +2672,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 @keyframes yzPulse {
   0%, 100% { box-shadow: 0 0 0 3px var(--c), 0 0 10px var(--c); }
-  50% { box-shadow: 0 0 0 5px var(--c), 0 0 26px var(--c); }
-}
+  50% { box-shadow: 0 0 0 5px var(--c), 0 0 26px var(--c); }}
 
 .yzc {
   width: 44%; border-radius: 22px; padding: 26px; position: relative;
@@ -2748,87 +2730,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .yztl-node { left: 20px; }
   .yztl-row, .yztl-row.r { justify-content: flex-start; }
   .yzc { width: auto; margin-left: 46px; }
-  .yzc-conn { left: -40px !important; right: auto !important; }
-}
-
-/* ====================================================================
-   PRICING (sec-07)
-   ==================================================================== */
-.price-controls {
-  margin-bottom: 60px;
-  padding: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005));
-  border: 1px solid var(--line);
-  border-radius: 24px;
-}
-.controls-row {
-  display: flex; flex-direction: column; gap: 24px;
-  align-items: stretch;
-}
-@media (min-width: 768px) {
-  .controls-row { flex-direction: row; align-items: center; justify-content: space-between; }
-}
-.minutes-block { flex: 1; }
-.minutes-eyebrow {
-  display: block;
-  font-family: var(--font-brand);
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--muted-weak);
-  margin-bottom: 12px;
-}
-.minutes-value {
-  display: flex; align-items: baseline; gap: 12px;
-  margin-bottom: 22px;
-}
-.minutes-num {
-  font-family: var(--font-sans);
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
-}
-.minutes-unit {
-  font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: -0.01em;
-}
+  .yzc-conn { left: -40px !important; right: auto !important; }}
 
 /* Slider wrapper con tacche */
 .slider-wrapper {
   position: relative;
   width: 100%;
-}
-
-/* Tacche sotto lo slider */
-.slider-ticks {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  right: 0;
-  height: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  padding: 0 12px; /* Offset per allineare con thumb */
-}
-
-.slider-tick {
-  width: 2px;
-  height: 6px;
-  background: rgba(255,255,255,0.25);
-  border-radius: 2px;
-}
-
-.slider-tick:first-child,
-.slider-tick:last-child {
-  background: rgba(249,115,22,0.6);
-  width: 3px;
 }
 
 /* Labels sotto slider */
@@ -2869,135 +2776,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   margin-left: 4px;
 }
 
-/* Setup row sopra le card */
-.setup-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 0;
-  margin-bottom: 0;
-  margin-top: 48px;
-  position: relative;
-  z-index: 2;
-  border: 1px solid var(--line);
-  border-bottom: none;
-  border-radius: 24px 24px 0 0;
-  background: rgba(255,255,255,0.02);
-  overflow: hidden;
-}
-
-@media (max-width: 767px) {
-  .setup-row { grid-template-columns: 1.15fr 1fr 1fr 1fr; } /* stessa griglia della .matrix-row: colonne allineate a Starter/Pro/Ultra */
-}
-
-.setup-spacer {
-  display: block;
-  border-right: 1px solid var(--line);
-}
-
-.setup-row .setup-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 20px 16px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  transition: all 0.3s ease;
-  margin: 0;
-  text-align: center;
-}
-
-.setup-box + .setup-box {
-  border-left: 1px solid var(--line);
-}
-
-.setup-box:hover {
-  background: rgba(255,255,255,0.03);
-}
-
-/* COLONNA PRO - sfumatura arancione coordinata */
-.setup-box.setup-pro {
-  background: linear-gradient(180deg, 
-    rgba(249,115,22,0.12) 0%, 
-    rgba(249,115,22,0.08) 100%
-  );
-  position: relative;
-}
-
-.setup-box.setup-pro::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-left: 1px solid rgba(249,115,22,0.25);
-  border-right: 1px solid rgba(249,115,22,0.25);
-  pointer-events: none;
-}
-
-.setup-box.setup-pro .setup-icon-wrap {
-  background: rgba(249,115,22,0.2);
-  color: var(--accent);
-}
-
-.setup-box.setup-pro .setup-value {
-  color: var(--accent);
-}
-
-.setup-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.setup-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.7);
-  flex-shrink: 0;
-  margin-bottom: 4px;
-}
-
-.setup-enterprise .setup-icon-wrap {
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.7);
-}
-
-.setup-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-}
-
-.setup-value {
-  font-family: var(--font-body);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: rgba(255,255,255,0.98);
-  line-height: 1;
-}
-
-.setup-value-enterprise {
-  font-family: var(--font-body);
-  color: rgba(255,255,255,0.98);
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-
-.setup-tagline {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
-  margin-top: 2px;
-  font-style: italic;
+@media (max-width: 767px) { /* stessa griglia della .matrix-row: colonne allineate a Starter/Pro/Ultra */
 }
 
 .slider {
@@ -3045,21 +2824,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .setup-grid { 
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-  }
-}
-
-.setup-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 24px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--line);
-  border-bottom: none;
-  border-radius: 16px 16px 0 0;
-  transition: all 0.3s;
-}
+  }}
 
 .setup-box-popular {
   background: rgba(249,115,22,0.04);
@@ -3125,13 +2890,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 1.25rem;
 }
 
-.setup-tagline {
-  font-size: 0.75rem;
-  color: var(--muted);
-  font-style: italic;
-  margin-top: 2px;
-}
-
 .price-grid {
   display: grid; grid-template-columns: 1fr;
   gap: 20px;
@@ -3140,35 +2898,14 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .price-grid { 
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-  } 
-}
-
-.plan-card {
-  position: relative;
-  padding: 36px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005));
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  display: flex; flex-direction: column;
-}
+  }}
 .plan-card.popular {
   border-color: rgba(249,115,22,0.5);
   background: linear-gradient(180deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02));
   transform: scale(1.02);
 }
 @media (min-width: 768px) {
-  .plan-card.popular { transform: scale(1.04) translateY(-4px); }
-}
-.plan-tag {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 6px 14px;
-  background: var(--accent); color: white;
-  border-radius: 999px;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(249,115,22,0.4);
-}
-.plan-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .plan-card.popular { transform: scale(1.04) translateY(-4px); }}
 .plan-tagline { color: var(--muted); font-size: 0.875rem; min-height: 42px; margin-bottom: 24px; }
 .plan-setup-box {
   background: rgba(249,115,22,0.08);
@@ -3193,16 +2930,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-weight: 700;
   color: var(--accent);
 }
-.plan-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px; }
-.plan-price .num { 
-  font-family: var(--font-sans);
-  font-size: 3rem; 
-  font-weight: 800; 
-  letter-spacing: -0.03em;
-  font-variant-numeric: tabular-nums;
-}
-.plan-price .cur { font-family: var(--font-sans); font-size: 1.5rem; color: var(--muted); }
-.plan-price .per { font-family: var(--font-sans); font-size: 0.875rem; color: var(--muted-weak); }
 .plan-setup { font-size: 0.8rem; font-family: var(--font-mono); color: var(--muted-weak); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .plan-features { list-style: none; flex: 1; margin-bottom: 24px; }
 .plan-features li {
@@ -3211,154 +2938,18 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .plan-features li svg { color: var(--accent); flex-shrink: 0; margin-top: 3px; }
 .plan-card .btn { width: 100%; }
-
-/* feature matrix */
-.matrix-wrap {
-  margin-top: 0;
-  border: 1px solid var(--line);
-  border-radius: 0 0 24px 24px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-.matrix-row {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-  border-top: 1px solid var(--line);
-}
-.matrix-row:first-child { border-top: none; }
 .matrix-row.head {
   background: rgba(255,255,255,0.03);
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--muted-weak);
 }
 
-/* Plans header (riga piani) */
-.matrix-row.plans-header {
-  padding: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-}
-.matrix-row.plans-header .matrix-cell {
-  padding: 24px 24px 28px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  position: relative;
-}
-.plans-header-eyebrow {
-  font-family: var(--font-brand);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-}
-.plan-header-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: rgba(255,255,255,0.95);
-  text-transform: none;
-}
-.plan-header-tagline {
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  color: var(--muted);
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 400;
-}
-.plan-popular-cell {
-  background: rgba(249,115,22,0.08);
-  position: relative;
-  border-left: 1px solid rgba(249,115,22,0.25) !important;
-  border-right: 1px solid rgba(249,115,22,0.25) !important;
-}
-.plan-popular-cell .plan-header-name {
-  color: var(--accent);
-}
-
-/* COLONNA PRO INTERA (3a cella di ogni matrix-row) */
-.matrix-row .matrix-cell:nth-child(3) {
-  background: rgba(249,115,22,0.06);
-  border-left: 1px solid rgba(249,115,22,0.18);
-  border-right: 1px solid rgba(249,115,22,0.18);
-  color: rgba(249,115,22,0.95);
-}
-
 /* Mantieni colori specifici per celle speciali */
-.matrix-row.head .matrix-cell:nth-child(3),
-.matrix-row.matrix-pricing-row .matrix-cell:nth-child(3) {
+.matrix-row.head .matrix-cell:nth-child(3) {
   background: rgba(249,115,22,0.10);
-}
-.plan-tag-mini {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  background: var(--accent);
-  color: white;
-  border-radius: 999px;
-  white-space: nowrap;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(249,115,22,0.4);
-}
-
-/* Riga prezzi */
-.matrix-row.matrix-pricing-row {
-  background: rgba(255,255,255,0.02);
-  border-top: 2px solid rgba(249,115,22,0.3);
-}
-.matrix-row.matrix-pricing-row .matrix-cell {
-  padding: 28px 24px;
-  align-items: center;
-  justify-content: center;
 }
 .matrix-row.matrix-pricing-row .matrix-cell.label {
   justify-content: flex-start;
-}
-.pricing-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
-}
-.matrix-price {
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-  justify-content: center;
-}
-.matrix-price .cur {
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--muted);
-}
-.matrix-price .num {
-  font-family: var(--font-body);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: rgba(255,255,255,0.98);
-  line-height: 1;
-}
-.plan-popular-cell .matrix-price .num {
-  color: var(--accent);
-}
-.matrix-price .per {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--muted);
-  margin-left: 4px;
 }
 
 /* Riga CTA buttons */
@@ -3373,17 +2964,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   justify-content: center;
 }
 
-/* Bordi pricing/cta */
-.matrix-row.matrix-pricing-row .matrix-cell,
 .matrix-row.matrix-cta-row .matrix-cell {
   border-right: 1px solid var(--line);
 }
-.matrix-row.matrix-pricing-row .matrix-cell:last-child,
 .matrix-row.matrix-cta-row .matrix-cell:last-child {
   border-right: none;
 }
-
-.matrix-cell { padding: 18px 24px; font-size: 0.875rem; display: flex; align-items: center; gap: 8px; }
 .matrix-cell.label { 
   color: var(--muted-strong); 
   border-right: 1px solid var(--line); 
@@ -3392,89 +2978,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   gap: 8px;
   position: relative;
 }
-
-.tooltip-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.5);
-  font-size: 11px;
-  font-weight: 700;
-  cursor: help;
-  transition: all 0.2s;
-  flex-shrink: 0;
-}
-
-.tooltip-btn:hover {
-  background: var(--accent);
-  color: white;
-  transform: scale(1.1);
-}
-
-.tooltip-popup {
-  position: absolute;
-  left: 0;
-  bottom: calc(100% + 8px);
-  background: rgba(20,25,35,0.98);
-  border: 1px solid rgba(249,115,22,0.3);
-  border-radius: 8px;
-  padding: 12px 16px;
-  min-width: 280px;
-  max-width: 320px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.9);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-
-.tooltip-btn:hover + .tooltip-popup,
-.tooltip-popup:hover {
-  opacity: 1;
-  pointer-events: auto;
-}
 .matrix-cell.value { justify-content: center; color: var(--muted); }
-.matrix-cell .true { color: var(--accent); }
-.matrix-cell .false { color: var(--muted-weak); opacity: 0.4; }
 
 @media (max-width: 767px) {
-  .matrix-row { grid-template-columns: 1.15fr 1fr 1fr 1fr; font-size: 0.75rem; }
-  .matrix-cell { padding: 12px 8px; }
-  .matrix-row.head .matrix-cell { font-size: 9px; padding: 12px 6px; }
-  /* Prezzi "CONFRONTA I PIANI": far stare il prezzo nella colonna su mobile */
-  .matrix-row.matrix-pricing-row .matrix-cell { padding: 16px 4px; overflow: hidden; }
-  .matrix-price .num { font-size: 1.15rem; }
-  .matrix-price .cur { font-size: 0.78rem; }
-  .matrix-price .per { display: none; }
-  .plan-tag-mini { font-size: 7px; padding: 3px 7px; letter-spacing: 0.06em; top: 6px; }
-  /* Allineamento colonne sezione prezzi su mobile */
-  .setup-row .setup-box { padding: 16px 6px; gap: 4px; }
-  .setup-row .setup-box .setup-label {
-    min-height: 2.6em;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: center;
-    font-size: 0.58rem;
-    letter-spacing: 0.03em;
-  }
-  .setup-row .setup-box .setup-value,
-  .setup-row .setup-box .setup-value-enterprise { font-size: 1.2rem; }
-  .setup-row .setup-box .setup-tagline { font-size: 0.62rem; min-height: 2.4em; }
-  .matrix-row.plans-header .matrix-cell {
-    justify-content: flex-start;
-    padding: 22px 6px 24px;
-  }
-  .plan-header-name { font-size: 1.05rem; }
-  .plan-header-tagline { font-size: 0.7rem; }
-}
+  .matrix-row.head .matrix-cell { font-size: 9px; padding: 12px 6px; }}
 
 /* ====================================================================
    BEFORE/AFTER TAB LAYOUT (sec-03) — STICKY APPLE/STRIPE STYLE
@@ -3654,8 +3161,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     padding-right: 0;
     right: -40px;
     font-size: clamp(10rem, 30vw, 20rem);
-  }
-}
+  }}
 
 .ba-panel-content {
   padding: 36px 36px 32px;
@@ -3965,8 +3471,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 @keyframes baPulse {
   0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.15); opacity: 0; }
-}
+  50% { transform: scale(1.15); opacity: 0; }}
 
 .ba-call-name { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 3px; }
 .ba-call-type { color: rgba(255,255,255,0.7); font-size: 10px; margin-bottom: 18px; }
@@ -4310,8 +3815,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .ba-tab { padding: 8px 10px; font-size: 0.7rem; }
   .ba-tab span { display: none; }
   .ba-tab.active span { display: inline; }
-  .ba-progress { right: 12px; }
-}
+  .ba-progress { right: 12px; }}
 
 
 
@@ -4418,8 +3922,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 @media (max-width: 640px) {
   .faq-trigger { padding: 18px 20px; gap: 14px; }
-  .faq-content { padding: 0 20px 20px 20px; }
-}
+  .faq-content { padding: 0 20px 20px 20px; }}
 
 /* ====================================================================
    ANTI-FAQ (sec-09) — Quando YouZen NON serve
@@ -4514,7 +4017,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   display: grid; grid-template-columns: 1fr; gap: 60px;
   align-items: center;
 }
-@media (min-width: 1024px) { .cta-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+@media (min-width: 1024px) { .cta-grid { grid-template-columns: 1fr 1fr; gap: 80px; }}
 
 .cta-text h2 { margin-bottom: 24px; }
 .cta-text .lead { color: var(--muted); margin-bottom: 32px; }
@@ -4581,7 +4084,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   display: grid; grid-template-columns: 1fr; gap: 48px;
   margin-bottom: 56px;
 }
-@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }}
 
 .footer-brand p { color: var(--muted); font-size: 0.9rem; margin: 16px 0 20px; max-width: 320px; }
 .footer-social { display: flex; gap: 8px; }
@@ -4611,14 +4114,132 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 0.8rem;
   color: var(--muted-weak);
 }
-@media (min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+@media (min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }}
 .footer-bottom .right { display: flex; gap: 16px; }
+
+/* ====================================================================
+   PREZZI — PIANO UNICO ("il contatore")
+   ==================================================================== */
+.yzp { max-width: 780px; margin: 0 auto; }
+
+.yzp-hero { text-align: center; }
+.yzp-big {
+  font-size: clamp(4rem, 13vw, 8.5rem);
+  font-weight: 800; letter-spacing: -0.055em; line-height: 0.9;
+  font-variant-numeric: tabular-nums; margin: 14px 0 2px;
+  background: linear-gradient(180deg, #fff 55%, rgba(255,255,255,0.72));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.yzp-cur { font-size: 0.42em; vertical-align: 0.42em; color: var(--accent); -webkit-text-fill-color: var(--accent); margin-right: 4px; }
+.yzp-per { font-size: 0.13em; vertical-align: 0.9em; color: var(--muted); -webkit-text-fill-color: var(--muted); letter-spacing: 0; font-weight: 600; }
+.yzp-calc { font-size: 0.85rem; color: var(--muted); line-height: 1.9; }
+.yzp-calc b { color: #fff; }
+.yzp-dim { color: var(--muted-weak); }
+.yzp-acc { color: var(--accent); }
+/* riga visibile solo in fatturazione annuale */
+.yzp-was { display: none; font-size: 0.82rem; color: var(--sector-pmi); margin-top: 10px; }
+.yzp.annuale .yzp-was { display: block; }
+.yzp-was s { color: var(--muted-weak); margin-right: 6px; }
+
+/* box cadenza: allineato tutto a destra */
+.yzp-cadrow { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin: 32px 0 16px; }
+.yzp-cadlab { font-size: 0.78rem; color: var(--muted-weak); }
+@media (max-width: 560px) {
+  .yzp-cadrow { flex-direction: column; align-items: flex-end; gap: 8px; }}
+
+/* etichetta sopra lo slider */
+.yzp-minrow { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.yzp-minlab {
+  font-family: var(--font-brand); font-size: 11px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--muted-weak);
+}
+.yzp-minval { font-size: 0.86rem; color: var(--muted); }
+.yzp-minval b { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+
+.yzp-track { margin-bottom: 36px; }
+
+/* avviso sconto attivazione */
+.yzp-promo {
+  display: flex; align-items: center; gap: 11px;
+  padding: 12px 15px; border-radius: 12px;
+  border: 1px solid rgba(16,185,129,0.42); background: rgba(16,185,129,0.09);
+  margin-bottom: 12px;
+}
+.yzp-promo-ico {
+  width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0;
+  display: grid; place-items: center;
+  background: var(--sector-pmi); color: #04170f; font-size: 12px; font-weight: 800;
+}
+.yzp-promo-t { font-size: 0.79rem; color: #fff; line-height: 1.45; }
+.yzp-promo-t b { color: var(--sector-pmi); }
+.yzp-promo-t span { display: block; color: var(--muted); font-size: 0.71rem; margin-top: 1px; }
+.yzp-promo-t u { color: #fff; text-decoration: none; font-weight: 700; }
+
+/* scelta setup */
+.yzp-setups { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 640px) { .yzp-setups { grid-template-columns: 1fr; }}
+.yzp-set {
+  position: relative; text-align: left;
+  display: flex; flex-direction: column; gap: 4px;
+  border: 1px solid var(--line); border-radius: 14px; padding: 18px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.yzp-set:hover { border-color: rgba(249,115,22,0.45); transform: translateY(-2px); }
+.yzp-set.on { border-color: var(--accent); background: rgba(249,115,22,0.07); }
+.yzp-set-n { font-size: 0.9rem; font-weight: 700; }
+.yzp-set-d { font-size: 0.78rem; color: var(--muted); line-height: 1.4; margin-bottom: 8px; }
+.yzp-set-p { display: flex; align-items: baseline; gap: 8px; }
+.yzp-set-p s { color: var(--muted-weak); font-size: 0.85rem; }
+.yzp-set-p b { font-size: 1.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+.yzp-set-note { font-size: 0.7rem; color: var(--muted-weak); line-height: 1.4; margin-top: 6px; }
+.yzp-badge {
+  position: absolute; top: -9px; right: 12px;
+  background: var(--sector-pmi); color: #04170f;
+  font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 99px;
+}
+
+/* nota fatturazione */
+.yzp-bill {
+  display: flex; align-items: flex-start; gap: 9px;
+  margin-top: 12px; padding: 12px 14px; border-radius: 10px;
+  border: 1px dashed rgba(249,115,22,0.38); background: rgba(249,115,22,0.06);
+  font-size: 0.79rem; color: var(--muted-strong); line-height: 1.5;
+}
+.yzp-bill b { color: var(--accent); }
+.yzp-bill svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+
+/* totale di oggi (non e' una CTA: e' il numero che conta) */
+.yzp-today {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  margin-top: 20px; padding: 16px 18px; border-radius: 14px;
+  background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.28);
+}
+.yzp-today-l { font-size: 0.86rem; font-weight: 600; color: #fff; }
+.yzp-today-s { display: block; font-size: 0.72rem; font-weight: 400; color: var(--muted); }
+.yzp-today-v { font-size: 1.9rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.yzp-then { text-align: right; font-size: 0.76rem; color: var(--muted); margin-top: 8px; }
+.yzp-then b { color: #fff; }
 
 /* ====================================================================
    ANIMAZIONI ON-SCROLL
    ==================================================================== */
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Rispetta "riduci movimento": reveal istantanei, niente animazioni ambientali.
+   Il canvas Thpace viene saltato via JS; qui uno sfondo statico che ne imita il look. */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .aurora-blob { animation: none !important; }
+  html { scroll-behavior: auto; }
+  #fog-container {
+    background:
+      radial-gradient(120% 90% at 12% 8%, rgba(249,115,22,0.55) 0%, transparent 45%),
+      radial-gradient(120% 100% at 70% 42%, rgba(124,58,237,0.45) 0%, transparent 55%),
+      #080E1F !important;
+  }
+}
 
 /* notifiche live nell'hero badge */
 .live-pulse {
@@ -4628,8 +4249,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 @keyframes pulseLive {
   0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.7); }
-  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
-}
+  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }}
 
 /* === Illustrazione AI che chiama il cliente === */
 .ai-call-illu {
@@ -4698,14 +4318,14 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 @media (max-width: 640px) {
   .call-bar { gap: 10px; padding: 8px 8px 8px 16px; bottom: 12px; }
   .call-bar-text { font-size: 0.8rem; white-space: normal; }
-  .call-bar-btn { padding: 9px 13px; font-size: 0.82rem; }
-}
+  .call-bar-btn { padding: 9px 13px; font-size: 0.82rem; }}
 /* Su mobile la barra e' ridondante (widget vocale + WhatsApp) e verrebbe coperta dal widget Autocalls: nascondila */
-@media (max-width: 767px) {
-  .call-bar { display: none; }
-}
+/* Il banner cookie e' bottom-center e coprirebbe esattamente la call-bar:
+   finche' non c'e' una scelta, la barra telefono resta fuori. */
+html.yz-cookie-open .call-bar { display: none; }
 
-</style>
+@media (max-width: 767px) {
+  .call-bar { display: none; }}</style>
 </head>
 
 <body>
@@ -6202,215 +5822,98 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     <div class="section-head">
       <span class="eyebrow">Prezzi</span>
       <h2>
-        <span class="title-problem">Quello che vedi</span>
-        <span class="title-solution">è quello che paghi.</span>
+        <span class="title-problem">Un piano solo.</span>
+        <span class="title-solution">Quello giusto.</span>
       </h2>
-      <p class="lead">Tre piani, prezzi trasparenti, nessun contratto a lungo termine. Sposta lo slider per vedere il tuo conto.</p>
+      <p class="lead">Una tariffa sola, minuti modulabili, nessun contratto a lungo termine. Sposta lo slider e vedi il tuo conto.</p>
     </div>
 
-    <!-- Slider + toggle -->
-    <div class="price-controls">
-      <div class="controls-row">
-        <div class="minutes-block">
-          <span class="minutes-eyebrow">— MINUTI DI CONVERSAZIONE MENSILI</span>
-          <div class="minutes-value">
-            <span class="minutes-num" id="minOut">1,5k</span>
-            <span class="minutes-unit">min/mese</span>
-          </div>
-          <div class="slider-wrapper">
-            <input type="range" id="minSlider" class="slider" min="0" max="12" step="1" value="6" />
-            <div class="slider-labels" aria-hidden="true">
-              <span>100</span>
-              <span>200</span>
-              <span>300</span>
-              <span>500</span>
-              <span>750</span>
-              <span>1k</span>
-              <span class="active">1.5k</span>
-              <span>2k</span>
-              <span>3k</span>
-              <span>4k</span>
-              <span>5k</span>
-              <span>7.5k</span>
-              <span>10k</span>
-            </div>
-          </div>
-        </div>
-        <div class="billing-toggle">
-          <button class="active" data-bill="month">Trimestrale</button>
-          <button data-bill="year">Annuale <span class="discount-badge">-10%</span></button>
-        </div>
-      </div>
-    </div>
+    <div class="yzp" id="yzp">
 
-    <!-- Setup row sopra le card -->
-    <div class="setup-row">
-      <div class="setup-spacer"></div>
-      <div class="setup-box">
-        <div class="setup-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
+      <!-- ===== Contatore ===== -->
+      <div class="yzp-hero">
+        <div class="yzp-big">
+          <span class="yzp-cur">€</span><span id="yzpMonthly">225</span><span class="yzp-per">/mese</span>
         </div>
-        <div class="setup-info">
-          <span class="setup-label">SETUP INIZIALE</span>
-          <span class="setup-value">€150</span>
-          <span class="setup-tagline">una tantum · fai da te, ci sei quasi</span>
-        </div>
+        <p class="yzp-calc">
+          <b id="yzpMin">750</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
+          <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
+        </p>
+        <div class="yzp-was">con l'annuale: <s id="yzpWas">€225/mese</s> <b id="yzpSave">risparmi €270 l'anno</b></div>
       </div>
-      <div class="setup-box setup-pro">
-        <div class="setup-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-        </div>
-        <div class="setup-info">
-          <span class="setup-label">SETUP + ONBOARDING</span>
-          <span class="setup-value">€250</span>
-          <span class="setup-tagline">una tantum · ci pensiamo noi</span>
-        </div>
-      </div>
-      <div class="setup-box setup-enterprise">
-        <div class="setup-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21h18M3 7v14M21 7v14M3 7l9-4 9 4M9 11h.01M9 15h.01M9 19h.01M15 11h.01M15 15h.01M15 19h.01"/>
-          </svg>
-        </div>
-        <div class="setup-info">
-          <span class="setup-label">SETUP + ONBOARDING FULL</span>
-          <span class="setup-value setup-value-enterprise">da €450</span>
-          <span class="setup-tagline">tanto lo sai già che non è €250</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- Feature matrix con piani integrati -->
-    <div class="matrix-wrap">
-      <div class="matrix-row head plans-header">
-        <div class="matrix-cell label">
-          <span class="plans-header-eyebrow">CONFRONTA I PIANI</span>
-        </div>
-        <div class="matrix-cell value">
-          <div class="plan-header-name">Starter</div>
-          <div class="plan-header-tagline">Per chi parte</div>
-        </div>
-        <div class="matrix-cell value plan-popular-cell">
-          <span class="plan-tag-mini">PIÙ SCELTO</span>
-          <div class="plan-header-name">Pro</div>
-          <div class="plan-header-tagline">Per chi cresce</div>
-        </div>
-        <div class="matrix-cell value">
-          <div class="plan-header-name">Ultra</div>
-          <div class="plan-header-tagline">Per chi vuole tutto</div>
+      <!-- ===== Cadenza: box allineato tutto a destra ===== -->
+      <div class="yzp-cadrow">
+        <span class="yzp-cadlab">Come paghi il canone</span>
+        <div class="billing-toggle" id="yzpCad">
+          <button type="button" class="active" data-mesi="3">Trimestrale</button>
+          <button type="button" data-mesi="12">Annuale <span class="discount-badge">-10%</span></button>
         </div>
       </div>
-      
-      <!-- Riga prezzo mensile (subito dopo header) -->
-      <div class="matrix-row matrix-pricing-row matrix-pricing-top">
-        <div class="matrix-cell label">
-          <span class="pricing-label">Prezzo mensile</span>
-        </div>
-        <div class="matrix-cell value">
-          <div class="matrix-price">
-            <span class="cur">€</span>
-            <span class="num" data-rate="0.20">45</span>
-            <span class="per">/mese</span>
-          </div>
-        </div>
-        <div class="matrix-cell value plan-popular-cell">
-          <div class="matrix-price">
-            <span class="cur">€</span>
-            <span class="num" data-rate="0.30">90</span>
-            <span class="per">/mese</span>
-          </div>
-        </div>
-        <div class="matrix-cell value">
-          <div class="matrix-price">
-            <span class="cur">€</span>
-            <span class="num" data-rate="0.42">165</span>
-            <span class="per">/mese</span>
-          </div>
+
+      <!-- ===== Slider minuti ===== -->
+      <div class="yzp-minrow">
+        <span class="yzp-minlab">Minuti al mese</span>
+        <span class="yzp-minval"><b id="yzpMinLab">750</b> min</span>
+      </div>
+      <div class="slider-wrapper yzp-track">
+        <input type="range" id="minSlider" class="slider" min="0" max="12" step="1" value="4" aria-label="Minuti di conversazione mensili" />
+        <div class="slider-labels" aria-hidden="true">
+          <span>100</span>
+          <span>200</span>
+          <span>300</span>
+          <span>500</span>
+          <span class="active">750</span>
+          <span>1k</span>
+          <span>1.5k</span>
+          <span>2k</span>
+          <span>3k</span>
+          <span>4k</span>
+          <span>5k</span>
+          <span>7.5k</span>
+          <span>10k</span>
         </div>
       </div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Minuti di conversazione mensili</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Minuti mensili inclusi per chiamate inbound gestite da YouZen. Cambia con lo slider sopra. Chiamate oltre il piano sono addebitate al costo/minuto del piano scelto.</div>
-        </div>
-        <div class="matrix-cell value" data-minutes-cell="starter">1.5k min</div>
-        <div class="matrix-cell value" data-minutes-cell="pro">1.5k min</div>
-        <div class="matrix-cell value" data-minutes-cell="enterprise">1.5k min</div>
+
+      <!-- ===== Avviso sconto attivazione ===== -->
+      <div class="yzp-promo">
+        <span class="yzp-promo-ico" aria-hidden="true">%</span>
+        <p class="yzp-promo-t">
+          <b>Sconto attivazione attivo:</b> risparmi <b id="yzpSaving">€500</b> sull'una tantum.
+          <span>Offerta valida fino al <u>31 dicembre 2026</u> — dopo, l'attivazione torna a prezzo pieno.</span>
+        </p>
       </div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Extra €/min oltre soglia</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Costo per minuto delle chiamate oltre il pacchetto incluso. Si attiva solo se superi i minuti mensili acquistati.</div>
-        </div>
-        <div class="matrix-cell value">+ 0,22 €/min</div>
-        <div class="matrix-cell value">+ 0,35 €/min</div>
-        <div class="matrix-cell value">+ 0,48 €/min</div>
+
+      <!-- ===== Scelta setup ===== -->
+      <div class="yzp-setups">
+        <button type="button" class="yzp-set on" data-setup data-val="500" aria-pressed="true">
+          <span class="yzp-badge">−50%</span>
+          <span class="yzp-set-n">Setup standard</span>
+          <span class="yzp-set-d">Numero VoIP dedicato, agente, calendario e WhatsApp. Live in 8 giorni.</span>
+          <span class="yzp-set-p"><s>€1.000</s><b>€500</b></span>
+        </button>
+        <button type="button" class="yzp-set" data-setup data-val="900" aria-pressed="false">
+          <span class="yzp-badge">−36%</span>
+          <span class="yzp-set-n">Setup + gestionale</span>
+          <span class="yzp-set-d">Tutto lo standard, più l'integrazione con il gestionale che usi già.</span>
+          <span class="yzp-set-p"><s>€1.400</s><b>da €900</b></span>
+          <span class="yzp-set-note">Il prezzo può variare in base alle integrazioni richieste.</span>
+        </button>
       </div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Pannello dedicato</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Pannello di controllo per visualizzare chiamate, appuntamenti, trascrizioni e KPI. Standard: metriche base. Avanzata: filtri e export. Custom: branding e integrazioni su misura.</div>
-        </div>
-        <div class="matrix-cell value">Standard</div>
-        <div class="matrix-cell value">Avanzata</div>
-        <div class="matrix-cell value">Custom</div>
+
+      <!-- ===== Nota fatturazione: subito dopo il setup ===== -->
+      <div class="yzp-bill">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <p>Il canone si paga <b><span id="yzpCadLabel">ogni 3 mesi</span>, in anticipo</b>. L'attivazione la paghi <b>una volta sola, oggi</b>.</p>
       </div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Integrazioni calendario</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Sincronizzazione con i tuoi calendari per check disponibilità e prenotazione automatica. Google/Outlook: 1 calendario. Multi-cal: più calendari. Multi-team: gestione team multipli.</div>
-        </div><div class="matrix-cell value">G/O</div><div class="matrix-cell value">Multi-cal.</div><div class="matrix-cell value">Multi-team</div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Notifiche WhatsApp</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Notifiche immediate su WhatsApp per chiamate perse, nuovi appuntamenti, promemoria. Nel piano Pro: gratis per i primi 3 mesi.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span style="font-size:0.78em;line-height:1.25;display:inline-block;">Gratis 3 mesi</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Supporto</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Email (Starter), Prioritario con SLA 4h (Pro), Account manager dedicato con SLA 1h (Ultra).</div>
-        </div><div class="matrix-cell value">Email</div><div class="matrix-cell value">Prioritario</div><div class="matrix-cell value">Account manager</div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Agente YouZen su sito web</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Widget chat intelligente integrabile sul tuo sito web. Qualifica lead e prenota appuntamenti. Disponibile da piano Pro.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="true">●</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Campagne outbound</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Chiamate in uscita automatiche per promemoria, conferme, follow-up clienti. Include scheduling e reporting. Solo Ultra.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Campagne WhatsApp</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Messaggi WhatsApp automatici in uscita per promemoria, follow-up, marketing. Include template e analytics. Solo Ultra.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Integrazioni custom (CRM)</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Connessione con il tuo CRM. Standard (Pro): HubSpot, Salesforce, Pipedrive via API. Custom (Ultra): integrazioni su misura per gestionali proprietari.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value">Standard</div><div class="matrix-cell value">Custom</div></div>
-      <div class="matrix-row">
-        <div class="matrix-cell label">
-          <span>Multi-sede / multi-utente</span>
-          <span class="tooltip-btn">?</span>
-          <div class="tooltip-popup">Gestione di più sedi/filiali con numeri, calendari e team separati. Pannello unificato per il controllo centralizzato. Solo Ultra.</div>
-        </div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="false">○</span></div><div class="matrix-cell value"><span class="true">●</span></div></div>
-      
+
+      <!-- ===== Totale oggi ===== -->
+      <div class="yzp-today">
+        <span class="yzp-today-l">Oggi paghi <span class="yzp-today-s">canone anticipato + attivazione</span></span>
+        <span class="yzp-today-v" id="yzpToday">€1.175</span>
+      </div>
+      <p class="yzp-then">poi <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
+
     </div>
 
     <a href="#contatto" class="section-cta">
@@ -6511,12 +6014,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
       <div class="faq-item">
         <button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">💬</span>
-          <span class="faq-q">Funziona anche su WhatsApp?</span>
+          <span class="faq-emoji">⏱️</span>
+          <span class="faq-q">Cosa succede se supero i minuti del pacchetto?</span>
           <span class="faq-toggle" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Sì, dal piano Ultra! Risponde in pochi secondi, smista i messaggi da solo e chiama in causa una persona del team solo quando serve davvero.</p>
+          <p class="faq-a">Non si blocca niente e non perdi nessuna chiamata. I minuti oltre il pacchetto li paghi <b>0,35€ l'uno</b>, e solo quelli. Se ti capita spesso, alzi il pacchetto quando vuoi e torni a 0,30€ al minuto.</p>
         </div></div></div>
       </div>
 
@@ -6550,7 +6053,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
           <span class="faq-toggle" aria-hidden="true"></span>
         </button>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Tre piani per tutte le tasche: Starter 99€/mese, Pro 249€/mese, Ultra da 450€/mese. Più il setup una tantum (150€ / 250€ / da 450€). Niente sorprese e niente costi nascosti: paghi solo i minuti che usi davvero.</p>
+          <p class="faq-a">Un piano solo, a consumo: <b>€0,30 al minuto</b>, e i minuti li scegli tu. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Niente sorprese: paghi solo i minuti che usi davvero.</p>
           <span class="faq-punch">Meno di un caffè al giorno per non perdere più un cliente.</span>
         </div></div></div>
       </div>
@@ -6703,7 +6206,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
     <div class="antifaq-footer">
       <p>Se hai letto fino a qui e <strong>nessuno di questi 10 punti</strong> ti rispecchia, allora forse YouZen fa proprio per te.</p>
-      <a href="#demo-call" class="antifaq-cta">Provalo gratis →</a>
     </div>
 
   </div>
@@ -6873,51 +6375,72 @@ window.addEventListener('scroll', () => {
 // ===== Footer email decode
 document.getElementById('footer-email').textContent = 'info' + String.fromCharCode(64) + 'youzen.it';
 
-// ===== Pricing slider + billing toggle
+// ===== Prezzi: piano unico (€0,30/min) + cadenza anticipata + attivazione
 const minSteps = [100, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
-const slider = document.getElementById('minSlider');
-const minOut = document.getElementById('minOut');
-let billing = 'month';
-const annualDiscount = 0.10;
+const RATE = 0.30;              // €/min
+const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
+const LISTINO = { 500: 1000, 900: 1400 };  // prezzo pieno di ogni attivazione scontata
 
-function formatMinutes(min) {
-  if (min >= 1000) {
-    return (min / 1000).toString().replace('.', ',') + 'k';
-  }
-  return min.toString();
-}
+const slider = document.getElementById('minSlider');
+const yzp = document.getElementById('yzp');
+let mesi = 3;      // cadenza: 3 = trimestrale, 12 = annuale
+let setup = 500;   // attivazione scelta
+
+// it-IT non raggruppa i numeri a 4 cifre ("1500"); il sito scrive "1.500".
+const grp = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const eur = n => '€' + grp(Math.round(n));
+const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
 
 function updatePricing() {
   const idx = parseInt(slider.value, 10);
   const minutes = minSteps[idx];
-  minOut.textContent = formatMinutes(minutes);
+  const annuale = mesi === 12;
 
-  // Evidenzia label attiva
-  const labels = document.querySelectorAll('.slider-labels span');
-  labels.forEach((label, i) => {
+  const base = minutes * RATE;                              // canone pieno
+  const monthly = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
+  const period = monthly * mesi;                            // quanto paghi per ciclo, in anticipo
+  const today = period + setup;
+  const cadLabel = 'ogni ' + mesi + ' mesi';
+
+  yzp.classList.toggle('annuale', annuale);
+
+  setTxt('yzpMin', grp(minutes));
+  setTxt('yzpMinLab', grp(minutes));
+  setTxt('yzpMonthly', grp(Math.round(monthly)));
+  setTxt('yzpWas', eur(base) + '/mese');
+  setTxt('yzpSave', 'risparmi ' + eur(base * 12 * ANNUAL_DISCOUNT) + " l'anno");
+  setTxt('yzpSaving', eur(LISTINO[setup] - setup));
+  setTxt('yzpCadLabel', cadLabel);
+  setTxt('yzpCadLabel2', cadLabel);
+  setTxt('yzpToday', eur(today));
+  setTxt('yzpThen', eur(period));
+
+  document.querySelectorAll('.slider-labels span').forEach((label, i) => {
     label.classList.toggle('active', i === idx);
-  });
-
-  // Aggiorna i minuti nella feature matrix (data-minutes-cell)
-  document.querySelectorAll('[data-minutes-cell]').forEach(el => {
-    el.textContent = formatMinutes(minutes) + ' min';
-  });
-
-  // Calcola prezzi: minuti × €/min (sia plan-price che matrix-price)
-  document.querySelectorAll('.num[data-rate]').forEach(el => {
-    const rate = parseFloat(el.dataset.rate); // €/min
-    let total = minutes * rate;
-    if (billing === 'year') total = total * (1 - annualDiscount);
-    el.textContent = Math.round(total);
   });
 }
 slider.addEventListener('input', updatePricing);
 
-document.querySelectorAll('.billing-toggle button').forEach(b => {
+// cadenza trimestrale / annuale
+document.querySelectorAll('#yzpCad button').forEach(b => {
   b.addEventListener('click', () => {
-    document.querySelectorAll('.billing-toggle button').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('#yzpCad button').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
-    billing = b.dataset.bill;
+    mesi = parseInt(b.dataset.mesi, 10);
+    updatePricing();
+  });
+});
+
+// scelta attivazione
+document.querySelectorAll('[data-setup]').forEach(el => {
+  el.addEventListener('click', () => {
+    document.querySelectorAll('[data-setup]').forEach(o => {
+      o.classList.remove('on');
+      o.setAttribute('aria-pressed', 'false');
+    });
+    el.classList.add('on');
+    el.setAttribute('aria-pressed', 'true');
+    setup = parseInt(el.dataset.val, 10);
     updatePricing();
   });
 });
@@ -7137,6 +6660,8 @@ if (document.readyState === 'loading') {
     var canvas = document.getElementById('thpace-hero');
     var Lib = window.ThpaceGL || window.Thpace;
     if (!canvas || !Lib) return;
+    // Rispetta la preferenza "riduci movimento": niente animazione (fallback CSS statico)
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     try {
       Lib.create(canvas, {
         colors: ['#F97316', '#7c3aed', '#1d2747', '#080E1F'],
@@ -7161,6 +6686,7 @@ if (document.readyState === 'loading') {
     var canvas = document.getElementById('thpace-democall');
     var Lib = window.ThpaceGL || window.Thpace;
     if (!canvas || !Lib) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     try {
       Lib.create(canvas, {
         colors: ['#080E1F', '#1a2240', '#3a2f63', '#7c3aed'],

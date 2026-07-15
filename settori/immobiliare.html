@@ -100,29 +100,29 @@
     "name": "Italy"
   },
   "url": "https://youzen.it/settori/immobiliare.html",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Starter",
-      "price": "99",
-      "priceCurrency": "EUR",
-      "description": "1.500 minuti/mese inclusi"
-    },
-    {
-      "@type": "Offer",
-      "name": "Pro",
-      "price": "249",
-      "priceCurrency": "EUR",
-      "description": "Per agenzie con più agenti"
-    },
-    {
-      "@type": "Offer",
-      "name": "Ultra",
-      "price": "450",
-      "priceCurrency": "EUR",
-      "description": "Multi-sede e team"
-    }
-  ]
+  "offers": {
+    "@type": "Offer",
+    "name": "YouZen",
+    "description": "Piano unico a consumo · €0,30/min · minuti modulabili · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500.",
+    "priceCurrency": "EUR",
+    "price": "225",
+    "priceSpecification": [
+      {
+        "@type": "UnitPriceSpecification",
+        "name": "Canone mensile al pacchetto di riferimento (750 min/mese)",
+        "price": "225",
+        "priceCurrency": "EUR",
+        "unitCode": "MON"
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "name": "Tariffa al minuto",
+        "price": "0.30",
+        "priceCurrency": "EUR",
+        "unitCode": "MIN"
+      }
+    ]
+  }
 }
 </script>
 

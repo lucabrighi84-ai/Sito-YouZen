@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap reale del sito youzen.it.
-  NOTA: in pre-lancio robots.txt blocca l'indicizzazione (Disallow: /).
-  La sitemap diventa effettiva al lancio, quando si riapre robots.
+  Sito online: robots.txt consente l'indicizzazione (Allow: /).
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
