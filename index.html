@@ -4122,7 +4122,35 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
    ==================================================================== */
 .yzp { max-width: 780px; margin: 0 auto; }
 
-.yzp-hero { text-align: center; }
+.yzp-hero { text-align: center; min-height: 232px; display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 640px) { .yzp-hero { min-height: 180px; } }
+
+/* stato iniziale: invito a scegliere i minuti */
+.yzp-invite[hidden], .yzp-reveal[hidden] { display: none; }
+.yzp-invite-q {
+  font-size: clamp(1.75rem, 5vw, 3.1rem);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+  background: linear-gradient(180deg, #fff 55%, rgba(255,255,255,0.72));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.yzp-invite-s {
+  font-size: 0.9rem; color: var(--muted); margin-top: 12px;
+  display: inline-flex; align-items: center; gap: 9px;
+}
+.yzp-invite-s::after {
+  content: '↓'; color: var(--accent); font-weight: 700;
+  animation: yzpNudge 1.6s ease-in-out infinite;
+}
+@keyframes yzpNudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+/* stato rivelato: il prezzo entra */
+.yzp-reveal { animation: yzpReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes yzpReveal { from { opacity: 0; transform: translateY(10px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .yzp-reveal { animation: none; }
+  .yzp-invite-s::after { animation: none; }
+}
 .yzp-big {
   font-size: clamp(4rem, 13vw, 8.5rem);
   font-weight: 800; letter-spacing: -0.055em; line-height: 0.9;
@@ -5825,21 +5853,32 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Un piano solo.</span>
         <span class="title-solution">Quello giusto.</span>
       </h2>
-      <p class="lead">Una tariffa sola, minuti modulabili, nessun contratto a lungo termine. Sposta lo slider e vedi il tuo conto.</p>
+      <p class="lead">Una tariffa sola, minuti modulabili, nessun contratto a lungo termine.</p>
     </div>
 
     <div class="yzp" id="yzp">
 
       <!-- ===== Contatore ===== -->
       <div class="yzp-hero">
-        <div class="yzp-big">
-          <span class="yzp-cur">€</span><span id="yzpMonthly">225</span><span class="yzp-per">/mese</span>
+
+        <!-- Stato iniziale: invito a scegliere i minuti. Sparisce al primo tocco dello slider. -->
+        <div class="yzp-invite" id="yzpInvite">
+          <p class="yzp-invite-q">Quanti minuti ti servono?</p>
+          <p class="yzp-invite-s">Scegli qui sotto: il prezzo arriva subito dopo.</p>
         </div>
-        <p class="yzp-calc">
-          <b id="yzpMin">750</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
-          <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
-        </p>
-        <div class="yzp-was">con l'annuale: <s id="yzpWas">€225/mese</s> <b id="yzpSave">risparmi €270 l'anno</b></div>
+
+        <!-- Stato rivelato: il prezzo. Resta visibile da qui in poi. -->
+        <div class="yzp-reveal" id="yzpReveal" hidden>
+          <div class="yzp-big">
+            <span class="yzp-cur">€</span><span id="yzpMonthly">225</span><span class="yzp-per">/mese</span>
+          </div>
+          <p class="yzp-calc">
+            <b id="yzpMin">750</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
+            <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
+          </p>
+          <div class="yzp-was">con l'annuale: <s id="yzpWas">€225/mese</s> <b id="yzpSave">risparmi €270 l'anno</b></div>
+        </div>
+
       </div>
 
       <!-- ===== Cadenza: box allineato tutto a destra ===== -->
@@ -6419,7 +6458,18 @@ function updatePricing() {
     label.classList.toggle('active', i === idx);
   });
 }
-slider.addEventListener('input', updatePricing);
+// Il prezzo non c'e' alla prima visione: prima l'invito a scegliere i minuti.
+// Si scopre al primo tocco dello slider (o del toggle cadenza, che il prezzo
+// lo cambia: lasciarlo nascosto farebbe sembrare il toggle rotto) e poi resta.
+let priceRevealed = false;
+function revealPrice() {
+  if (priceRevealed) return;
+  priceRevealed = true;
+  document.getElementById('yzpInvite').hidden = true;
+  document.getElementById('yzpReveal').hidden = false;
+}
+
+slider.addEventListener('input', () => { revealPrice(); updatePricing(); });
 
 // cadenza trimestrale / annuale
 document.querySelectorAll('#yzpCad button').forEach(b => {
@@ -6427,6 +6477,7 @@ document.querySelectorAll('#yzpCad button').forEach(b => {
     document.querySelectorAll('#yzpCad button').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
     mesi = parseInt(b.dataset.mesi, 10);
+    revealPrice();
     updatePricing();
   });
 });
