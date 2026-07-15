@@ -1,0 +1,4 @@
+# TraVis — tracker visite commerciali: strumento interno, NON fa parte del sito.
+# Contiene dati personali di aziende reali (nomi, email, telefoni): non deve
+# finire nel repo pubblico ne' essere servito da youzen.it via GitHub Pages.
+tracker/
