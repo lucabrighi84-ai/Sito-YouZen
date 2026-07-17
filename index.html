@@ -826,63 +826,61 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   background: #080E1F;
 }
 
-#thpace-hero {
+/* Sfondo hero: griglia ferma + alone + banda di luce che passa.
+   Sostituisce il canvas WebGL Thpace. Si anima solo transform: nessun
+   ridisegno per fotogramma, nessuna libreria esterna. */
+.hero-glow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Aurora blobs (sostituiscono Vanta FOG) */
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.7;
+  inset: 0;
   pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 26% 30%, rgba(249,115,22,0.24) 0%, transparent 66%),
+    radial-gradient(ellipse 60% 50% at 76% 62%, rgba(124,58,237,0.20) 0%, transparent 68%);
 }
 
-.aurora-blob.b1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, #F97316, transparent 70%);
-  top: -100px; left: -100px;
-  animation: auroraTurbo 4s ease-in-out infinite;
-  animation-delay: 0s;
+/* NB: .hero-grid esiste già più sotto (regola morta di una vecchia hero) e
+   vincerebbe per ordine nel foglio: qui serve un nome tutto suo. */
+.hero-net {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 58px 58px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 42%, #000 30%, transparent 78%);
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 42%, #000 30%, transparent 78%);
 }
 
-.aurora-blob.b2 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, #7c3aed, transparent 70%);
-  top: 50%; right: -100px;
-  animation: auroraTurbo 4s ease-in-out infinite;
-  animation-delay: -1s;
+.hero-sweep {
+  position: absolute;
+  top: -30%;
+  left: 0;
+  width: 46%;
+  height: 160%;
+  pointer-events: none;
+  will-change: transform;
+  transform: translateX(-130%) rotate(14deg);
+  animation: heroSweep 8s ease-in-out infinite;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(249,115,22,0.06) 34%,
+    rgba(251,146,60,0.20) 50%,
+    rgba(249,115,22,0.06) 66%,
+    transparent 100%);
 }
 
-.aurora-blob.b3 {
-  width: 550px; height: 550px;
-  background: radial-gradient(circle, #ea580c, transparent 70%);
-  bottom: -100px; left: 30%;
-  animation: auroraTurbo 4s ease-in-out infinite;
-  animation-delay: -2s;
+@keyframes heroSweep {
+  0%   { transform: translateX(-130%) rotate(14deg); }
+  100% { transform: translateX(320%) rotate(14deg); }
 }
 
-.aurora-blob.b4 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, #1d4ed8, transparent 70%);
-  top: 20%; left: 50%;
-  animation: auroraTurbo 4s ease-in-out infinite;
-  animation-delay: -3s;
+/* Ferma le animazioni ambientali quando la sezione esce dallo schermo
+   o la scheda del browser va in background (classe messa da JS). */
+.amb-paused .hero-sweep,
+.amb-paused .demo-call-glow {
+  animation-play-state: paused;
 }
-
-@keyframes auroraTurbo {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(180px, -150px) scale(1.3); }
-  50% { transform: translate(-120px, 120px) scale(0.8); }
-  75% { transform: translate(140px, 180px) scale(1.2); }}
-
-/* Rimuovo regola Vanta canvas (non più usata) */
 
 /* Sfumatura morbida in basso: i triangoli si dissolvono in #080E1F senza linea di stacco */
 .hero-bottom-fade {
@@ -1185,8 +1183,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   overflow: hidden;
 }
 
-/* Mesh di triangoli (come la hero) di sfondo */
-#thpace-democall {
+/* Griglia ferma di sfondo, stesso linguaggio della hero (era un canvas WebGL) */
+.demo-call-mesh {
   position: absolute;
   top: 0;
   left: 0;
@@ -1194,21 +1192,33 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  display: block;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 58px 58px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 25%, transparent 75%);
 }
 
-/* Variante A: alone arancione centrato dietro il form */
+/* Alone arancione dietro al form. La sfocatura è dentro il gradiente invece
+   che in filter: blur(), così l'animazione resta solo transform + opacity. */
 .demo-call-glow {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 720px;
-  height: 720px;
+  width: 1040px;
+  height: 1040px;
   border-radius: 50%;
-  filter: blur(80px);
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(249,115,22,0.85), rgba(249,115,22,0.35) 40%, transparent 68%);
+  will-change: transform, opacity;
+  background: radial-gradient(circle closest-side,
+    rgba(249,115,22,0.80) 0%,
+    rgba(249,115,22,0.56) 20%,
+    rgba(249,115,22,0.32) 38%,
+    rgba(249,115,22,0.14) 56%,
+    rgba(249,115,22,0.04) 74%,
+    transparent 90%);
   animation: dcGlow 7s ease-in-out infinite;
 }
 
@@ -1240,7 +1250,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .demo-call-section .container { position: relative; z-index: 3; }
 
 @media (max-width: 768px) {
-  .demo-call-glow { width: 360px; height: 360px; filter: blur(45px); }}
+  .demo-call-glow { width: 440px; height: 440px; }}
 
 @media (prefers-reduced-motion: reduce) {
   .demo-call-glow { animation: none; }}
@@ -4260,17 +4270,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* Rispetta "riduci movimento": reveal istantanei, niente animazioni ambientali.
-   Il canvas Thpace viene saltato via JS; qui uno sfondo statico che ne imita il look. */
+   La griglia e gli aloni restano (sono fermi), sparisce solo ciò che si muove. */
 @media (prefers-reduced-motion: reduce) {
   .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .aurora-blob { animation: none !important; }
+  .hero-sweep { animation: none !important; opacity: 0 !important; }
+  .demo-call-glow { animation: none !important; }
   html { scroll-behavior: auto; }
-  #fog-container {
-    background:
-      radial-gradient(120% 90% at 12% 8%, rgba(249,115,22,0.55) 0%, transparent 45%),
-      radial-gradient(120% 100% at 70% 42%, rgba(124,58,237,0.45) 0%, transparent 55%),
-      #080E1F !important;
-  }
 }
 
 /* notifiche live nell'hero badge */
@@ -4495,12 +4500,14 @@ html.yz-cookie-open .call-bar { display: none; }
 
 <!-- ============================ HERO (sec-01) ============================ -->
 <section class="hero" id="hero">
-  <!-- Thpace animated background (triangles) -->
-  <div id="fog-container">
-    <canvas id="thpace-hero"></canvas>
+  <!-- Sfondo: griglia + alone + banda di luce (solo CSS, solo transform) -->
+  <div id="fog-container" aria-hidden="true">
+    <div class="hero-glow"></div>
+    <div class="hero-net"></div>
+    <div class="hero-sweep"></div>
   </div>
-  
-  <!-- Sfumatura morbida in basso: dissolve i triangoli in #080E1F senza stacco -->
+
+  <!-- Sfumatura morbida in basso: dissolve lo sfondo in #080E1F senza stacco -->
   <div class="hero-bottom-fade"></div>
 
   <!-- Layer di isolamento -->
@@ -5525,8 +5532,8 @@ html.yz-cookie-open .call-bar { display: none; }
 
 <!-- ============================ DEMO CALL (sec-01b) ============================ -->
 <section class="section demo-call-section" id="demo-call">
-  <!-- Mesh di triangoli animato (come la hero) -->
-  <canvas id="thpace-democall" aria-hidden="true"></canvas>
+  <!-- Griglia ferma di sfondo (come la hero) -->
+  <div class="demo-call-mesh" aria-hidden="true"></div>
   <!-- Variante A: alone arancione centrato dietro il form -->
   <div class="demo-call-glow" aria-hidden="true"></div>
   <!-- Sfumature morbide ai bordi -->
@@ -6711,54 +6718,42 @@ if (document.readyState === 'loading') {
 })();
 </script>
 
-<!-- Thpace animated hero background -->
-<script defer src="https://unpkg.com/thpace"></script>
+<!-- Sfondi ambientali: ferma le animazioni quando la sezione non si vede.
+     Sostituisce i due canvas WebGL Thpace (che giravano sempre, anche non visibili). -->
 <script>
 (function () {
-  function initThpace() {
-    var canvas = document.getElementById('thpace-hero');
-    var Lib = window.ThpaceGL || window.Thpace;
-    if (!canvas || !Lib) return;
-    // Rispetta la preferenza "riduci movimento": niente animazione (fallback CSS statico)
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    try {
-      Lib.create(canvas, {
-        colors: ['#F97316', '#7c3aed', '#1d2747', '#080E1F'],
-        triangleSize: 120,
-        pointAnimationSpeed: 8000,
-        particleSettings: { color: '#ffffff', count: [1, 3] }
-      });
-    } catch (e) {
-      // fallback: lascia lo sfondo scuro se la libreria non si carica
-      console.warn('Thpace init failed', e);
-    }
-  }
-  if (document.readyState === 'complete') initThpace();
-  else window.addEventListener('load', initThpace);
-})();
-</script>
+  var hero = document.getElementById('hero');
+  var demo = document.getElementById('demo-call');
+  var sections = [hero, demo].filter(Boolean);
+  if (!sections.length) return;
 
-<!-- Mesh di triangoli (Thpace) sezione demo-call -->
-<script>
-(function () {
-  function initDemoMesh() {
-    var canvas = document.getElementById('thpace-democall');
-    var Lib = window.ThpaceGL || window.Thpace;
-    if (!canvas || !Lib) return;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    try {
-      Lib.create(canvas, {
-        colors: ['#080E1F', '#1a2240', '#3a2f63', '#7c3aed'],
-        triangleSize: 130,
-        pointAnimationSpeed: 9000,
-        particleSettings: { color: '#ffffff', count: [1, 2] }
-      });
-    } catch (e) {
-      console.warn('Thpace demo-call init failed', e);
-    }
+  function pause(el, yes) {
+    el.classList.toggle('amb-paused', yes);
   }
-  if (document.readyState === 'complete') initDemoMesh();
-  else window.addEventListener('load', initDemoMesh);
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        pause(e.target, !e.isIntersecting);
+      });
+    }, { rootMargin: '80px' });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    sections.forEach(function (s) {
+      if (document.hidden) pause(s, true);
+      else if (!('IntersectionObserver' in window)) pause(s, false);
+    });
+    if (!document.hidden && 'IntersectionObserver' in window) {
+      // l'observer riemette lo stato corretto da solo alla prossima soglia;
+      // qui riattiviamo subito ciò che è già a schermo
+      sections.forEach(function (s) {
+        var r = s.getBoundingClientRect();
+        pause(s, r.bottom < 0 || r.top > window.innerHeight);
+      });
+    }
+  });
 })();
 </script>
 
