@@ -274,10 +274,15 @@
 }
 </script>
 
+<!-- Poster della hero: precaricato con priorità alta, solo dove il video esiste (desktop) -->
+<link rel="preload" as="image" href="youzen-hero-wide-poster.webp" media="(min-width: 769px)" fetchpriority="high" />
+
 <!-- ============================ PRECONNECT FONT ============================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" />
+<!-- Caricamento non bloccante: media="print" finché non è pronto, poi diventa "all" -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" /></noscript>
 
 <style>
 /* ====================================================================
@@ -943,6 +948,16 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   isolation: isolate;
   transform: translateZ(0);
   will-change: transform;
+}
+
+/* Sotto i 769px niente video (e con preload="none" nemmeno il download):
+   resta la hero testuale con gli sfondi animati. Da 769px in su vale l'inverso. */
+@media (max-width: 768px) {
+  .hero-video-bg,
+  .hero-video-scrim { display: none; }
+}
+@media (min-width: 769px) {
+  .hero-content-wrapper { display: none; }
 }
 
 .hero-content-center {
@@ -4458,7 +4473,7 @@ html.yz-cookie-open .call-bar { display: none; }
   </div>
 
   <!-- Video hero (sfondo animato) -->
-  <video class="hero-video-bg" autoplay muted loop playsinline preload="metadata" poster="youzen-hero-wide-poster.jpg" aria-hidden="true">
+  <video class="hero-video-bg" muted loop playsinline preload="none" poster="youzen-hero-wide-poster.webp" aria-hidden="true">
     <source src="youzen-hero-wide.webm" type="video/webm">
     <source src="youzen-hero-wide.mp4" type="video/mp4">
   </video>
@@ -4471,7 +4486,7 @@ html.yz-cookie-open .call-bar { display: none; }
   <div class="hero-isolation-layer"></div>
   
   <!-- Contenuto hero FUORI dal fog container -->
-  <div class="hero-content-wrapper" style="display:none">
+  <div class="hero-content-wrapper">
     <div class="hero-content-center">
       <h1 class="hero-headline-giant">
         <span class="hero-line-white">Il telefono</span>
@@ -6721,6 +6736,30 @@ if (document.readyState === 'loading') {
     el.textContent = words[i];
     el.style.animation = 'rotateWord 0.6s ease-in-out';
   }, 2200);
+})();
+</script>
+
+<!-- Avvio differito del video hero: solo desktop (>=769px), dopo il caricamento pagina,
+     così su mobile non si scarica nulla e su desktop non compete con l'LCP -->
+<script>
+(function () {
+  var v = document.querySelector('.hero-video-bg');
+  if (!v) return;
+  var mq = window.matchMedia('(min-width: 769px)');
+  var started = false;
+  function start() {
+    if (started || !mq.matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    started = true;
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  if (document.readyState === 'complete') { start(); }
+  else {
+    window.addEventListener('load', start);
+    setTimeout(start, 3000); /* rete lenta: non aspettare il load all'infinito */
+  }
+  if (mq.addEventListener) mq.addEventListener('change', start);
 })();
 </script>
 
