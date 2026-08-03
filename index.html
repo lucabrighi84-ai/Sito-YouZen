@@ -960,6 +960,38 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   .hero-content-wrapper { display: none; }
 }
 
+/* Toggle pausa/riproduzione del video hero (solo desktop: su mobile il video non c'è) */
+.hero-video-toggle {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  z-index: 210;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(8,14,31,0.55);
+  color: #fff;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.hero-video-toggle:hover {
+  background: rgba(8,14,31,0.85);
+  border-color: rgba(249,115,22,0.55);
+}
+.hero-video-toggle svg { width: 18px; height: 18px; }
+.hero-video-toggle .ic-play { display: none; }
+.hero-video-toggle.is-paused .ic-play { display: block; }
+.hero-video-toggle.is-paused .ic-pause { display: none; }
+@media (min-width: 769px) {
+  .hero-video-toggle { display: flex; }
+}
+
 .hero-content-center {
   width: 100%;
   padding: 0 20px;
@@ -4479,6 +4511,12 @@ html.yz-cookie-open .call-bar { display: none; }
   </video>
   <div class="hero-video-scrim" aria-hidden="true"></div>
 
+  <!-- Pausa/riproduzione del video di sfondo -->
+  <button class="hero-video-toggle is-paused" type="button" aria-label="Riproduci il video di sfondo">
+    <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+    <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="8 5 19 12 8 19"/></svg>
+  </button>
+
   <!-- Sfumatura morbida in basso: dissolve lo sfondo in #080E1F senza stacco -->
   <div class="hero-bottom-fade"></div>
 
@@ -6753,6 +6791,22 @@ if (document.readyState === 'loading') {
     started = true;
     var p = v.play();
     if (p && p.catch) p.catch(function () {});
+  }
+  /* Pulsante pausa/riproduzione: lo stato segue gli eventi del video,
+     così l'icona è giusta anche quando il play parte da solo al load */
+  var btn = document.querySelector('.hero-video-toggle');
+  function syncBtn() {
+    if (!btn) return;
+    btn.classList.toggle('is-paused', v.paused);
+    btn.setAttribute('aria-label', v.paused ? 'Riproduci il video di sfondo' : 'Metti in pausa il video di sfondo');
+  }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else { v.pause(); }
+    });
+    v.addEventListener('play', syncBtn);
+    v.addEventListener('pause', syncBtn);
   }
   if (document.readyState === 'complete') { start(); }
   else {
