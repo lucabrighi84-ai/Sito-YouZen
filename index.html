@@ -78,6 +78,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://youzen.it/#organization",
   "name": "YouZen",
   "legalName": "YouZen di Luca Brighi",
   "url": "https://youzen.it",
@@ -93,6 +94,10 @@
   "email": "info@youzen.it",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Via del Pino 13",
+    "postalCode": "47923",
+    "addressLocality": "Rimini",
+    "addressRegion": "RN",
     "addressCountry": "IT"
   },
   "sameAs": [
@@ -102,6 +107,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
+    "telephone": "+39 0541 172 6297",
     "email": "info@youzen.it",
     "availableLanguage": ["Italian", "English"]
   }
@@ -116,20 +122,7 @@
   "name": "YouZen",
   "url": "https://youzen.it/",
   "inLanguage": "it-IT",
-  "publisher": { "@type": "Organization", "name": "YouZen" }
-}
-</script>
-
-<!-- ============================ STRUCTURED DATA: BREADCRUMB ============================ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://youzen.it/" },
-    { "@type": "ListItem", "position": 2, "name": "Settori", "item": "https://youzen.it/#sec-05" },
-    { "@type": "ListItem", "position": 3, "name": "Prezzi", "item": "https://youzen.it/#sec-07" }
-  ]
+  "publisher": { "@id": "https://youzen.it/#organization" }
 }
 </script>
 
@@ -277,12 +270,8 @@
 <!-- Poster della hero: precaricato con priorità alta, solo dove il video esiste (desktop) -->
 <link rel="preload" as="image" href="youzen-hero-wide-poster.webp" media="(min-width: 769px)" fetchpriority="high" />
 
-<!-- ============================ PRECONNECT FONT ============================ -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<!-- Caricamento non bloccante: media="print" finché non è pronto, poi diventa "all" -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" /></noscript>
+<!-- ============================ FONT (self-hosted) ============================ -->
+<link rel="stylesheet" href="fonts/fonts.css" />
 
 <style>
 /* ====================================================================
@@ -4368,7 +4357,7 @@ html.yz-cookie-open .call-bar { display: none; }
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="/" class="logo">
-      <img src="youzen-logo-96.png" alt="YouZen" class="logo-img" width="32" height="32" fetchpriority="high" decoding="async" />
+      <img src="youzen-logo.svg" alt="YouZen" class="logo-img" width="32" height="32" fetchpriority="high" decoding="async" />
       You<span style="color:var(--accent)">Zen</span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -5588,7 +5577,7 @@ html.yz-cookie-open .call-bar { display: none; }
 
           <div class="privacy-row">
             <input type="checkbox" id="dc-privacy" required />
-            <label for="dc-privacy">Accetto la <a href="/privacy" target="_blank">privacy policy</a> e di essere contattato per questa demo</label>
+            <label for="dc-privacy">Accetto la <a href="/privacy/" target="_blank">privacy policy</a> e di essere contattato per questa demo</label>
           </div>
 
           <p class="demo-call-whatsapp-notice">
@@ -6327,7 +6316,7 @@ html.yz-cookie-open .call-bar { display: none; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">
-          <img src="youzen-logo-96.png" alt="YouZen" class="logo-img" width="32" height="32" loading="lazy" decoding="async" />
+          <img src="youzen-logo.svg" alt="YouZen" class="logo-img" width="32" height="32" loading="lazy" decoding="async" />
           You<span style="color:var(--accent)">Zen</span>
         </a>
         <p>La segreteria italiana di YouZen che risponde sempre. Chiamate, WhatsApp, appuntamenti — h24, 365 giorni.</p>
@@ -6381,7 +6370,7 @@ html.yz-cookie-open .call-bar { display: none; }
       <div class="footer-col">
         <h5>Legale</h5>
         <ul>
-          <li><a href="privacy/">Privacy Policy</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
           <li><a href="GDPR/">Cookie Policy</a></li>
           <li><a href="#" data-yz-manage>Gestisci cookie</a></li>
           <li><a href="termini/">Termini</a></li>
@@ -6830,6 +6819,5 @@ if (document.readyState === 'loading') {
   <button class="call-bar-close" aria-label="Chiudi" onclick="document.getElementById('yzCallBar').remove()">×</button>
 </div>
 
-<script defer src="https://app.autocalls.ai/embed.js" data-assistant-id="bc158071-21e1-429e-8724-346411bd23f8"></script>
 </body>
 </html>

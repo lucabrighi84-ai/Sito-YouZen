@@ -62,23 +62,51 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://youzen.it/#organization",
   "name": "YouZen",
+  "legalName": "YouZen di Luca Brighi",
   "url": "https://youzen.it",
-  "logo": "https://youzen.it/favicon-96x96.png",
-  "description": "Receptionist AI italiana per piccole e medie imprese. Risponde alle chiamate h24, prenota appuntamenti, manda notifiche WhatsApp.",
+  "logo": "https://youzen.it/web-app-manifest-512x512.png",
+  "image": "https://youzen.it/web-app-manifest-512x512.png",
+  "description": "Segreteria AI italiana per professionisti e PMI. Gestisce chiamate, WhatsApp e appuntamenti 24/7.",
+  "founder": {
+    "@type": "Person",
+    "name": "Luca Brighi"
+  },
+  "foundingDate": "2024",
+  "vatID": "IT04855440402",
+  "email": "info@youzen.it",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Via del Pino 13",
+    "postalCode": "47923",
+    "addressLocality": "Rimini",
+    "addressRegion": "RN",
     "addressCountry": "IT"
   },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61584872474697",
+    "https://www.instagram.com/youzenpro/"
+  ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "contactType": "sales",
+    "contactType": "customer service",
+    "telephone": "+39 0541 172 6297",
     "email": "info@youzen.it",
-    "availableLanguage": [
-      "Italian"
-    ]
-  },
-  "sameAs": []
+    "availableLanguage": ["Italian", "English"]
+  }
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://youzen.it/" },
+    { "@type": "ListItem", "position": 2, "name": "Food", "item": "https://youzen.it/settori/food.html" }
+  ]
 }
 </script>
 
@@ -90,11 +118,7 @@
   "serviceType": "Receptionist AI",
   "name": "YouZen Food — Receptionist AI per ristoranti e take away",
   "description": "YouZen Food è la receptionist AI italiana per ristoranti, pizzerie e take away: prende ordini, prenota tavoli, manda notifiche WhatsApp quando l'ordine è pronto. Mai più chiamate perse nel servizio.",
-  "provider": {
-    "@type": "Organization",
-    "name": "YouZen",
-    "url": "https://youzen.it"
-  },
+  "provider": { "@id": "https://youzen.it/#organization" },
   "areaServed": {
     "@type": "Country",
     "name": "Italy"
@@ -179,9 +203,7 @@
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Michroma&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../fonts/fonts.css" />
 
 <style>
 :root {
@@ -2708,6 +2730,5 @@ document.querySelectorAll('.faq-trigger').forEach(trigger => {
 </script>
 
 <script defer src="../yz-consent.js"></script>
-<script src="https://app.autocalls.ai/embed.js" data-assistant-id="bc158071-21e1-429e-8724-346411bd23f8"></script>
 </body>
 </html>

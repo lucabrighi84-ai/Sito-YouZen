@@ -8,55 +8,43 @@
   <!-- Homepage -->
   <url>
     <loc>https://youzen.it/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
 
   <!-- Pagine settori -->
   <url>
     <loc>https://youzen.it/settori/saloni.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://youzen.it/settori/food.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://youzen.it/settori/professionisti.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://youzen.it/settori/immobiliare.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://youzen.it/settori/studio-legale.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
 
   <!-- Pagine legali -->
   <url>
+    <loc>https://youzen.it/privacy/</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
     <loc>https://youzen.it/GDPR/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://youzen.it/termini/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-08-11</lastmod>
   </url>
 
 </urlset>
