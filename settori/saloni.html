@@ -590,6 +590,49 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
 .section-head h2 { margin-bottom: 20px; }
 .section-head .lead { color: var(--muted); }
 
+/* VIDEO DEMO */
+.video-demo-frame {
+  position: relative;
+  aspect-ratio: 1284 / 716;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-card);
+  background: #080E1F;
+}
+.video-demo-poster,
+.video-demo-el {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-demo-el { display: none; }
+.video-demo-frame.is-playing .video-demo-poster,
+.video-demo-frame.is-playing .video-demo-play { display: none; }
+.video-demo-frame.is-playing .video-demo-el { display: block; }
+.video-demo-play {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  border: none;
+  display: grid; place-items: center;
+  background: rgba(8,14,31,0.55);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.video-demo-play::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: inherit;
+  border: 2px solid var(--accent);
+}
+.video-demo-play svg { margin-left: 4px; }
+.video-demo-play:hover { transform: translate(-50%, -50%) scale(1.06); background: rgba(8,14,31,0.72); }
+
 /* STATS */
 .stats-grid {
   display: grid;
@@ -1107,24 +1150,44 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
   border-top: 1px solid var(--line);
   padding: 96px 0 24px;
 }
-.sectors-others-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
-.sectors-others-head .eyebrow { margin-bottom: 20px; }
-.sectors-others-head h2 { margin-bottom: 16px; font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
-.sectors-others-head p { color: var(--muted); }
+/* Il titolo sta dentro la griglia come primo blocco: le schede sono sempre 4
+   (la quinta e' la pagina corrente) e cosi' non resta mai una colonna vuota. */
+.others-panel {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(249,115,22,0.28);
+  background:
+    radial-gradient(ellipse 100% 80% at 0% 100%, rgba(249,115,22,0.20), transparent 62%),
+    linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.005) 100%),
+    var(--ink-900);
+}
+.others-panel .eyebrow { margin-bottom: 18px; align-self: flex-start; }
+.others-panel h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 12px; }
+.others-panel p { color: var(--muted); font-size: 0.92rem; }
+.others-dots { display: flex; gap: 7px; margin-top: 26px; }
+.others-dots i { width: 9px; height: 9px; border-radius: 999px; display: block; }
+.others-dots i.is-current { opacity: 0.35; }
 
 .others-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
 }
-@media (min-width: 600px) { .others-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1000px) { .others-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 700px) {
+  .others-grid { grid-template-columns: repeat(2, 1fr); }
+  .others-panel { grid-column: span 2; }
+}
+@media (min-width: 1000px) {
+  .others-grid { grid-template-columns: 1.15fr 1fr 1fr; }
+  .others-panel { grid-column: auto; grid-row: span 2; }
+}
 
 .other-card {
   position: relative;
-  display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 220px;
-  padding: 24px;
+  display: flex; flex-direction: column;
+  min-height: 168px;
+  padding: 22px;
   border-radius: 22px;
   border: 1px solid var(--line);
   background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.005) 100%), var(--ink-900);
@@ -1161,52 +1224,27 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
 }
 .other-card:hover::before { opacity: 0.28; }
 
+.other-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .other-icon {
-  width: 48px; height: 48px;
+  width: 40px; height: 40px;
   border-radius: 14px;
   display: grid; place-items: center;
-  font-size: 22px;
+  font-size: 19px;
+  flex-shrink: 0;
   background: color-mix(in srgb, var(--sc, var(--accent)) 16%, transparent);
   border: 1px solid color-mix(in srgb, var(--sc, var(--accent)) 35%, transparent);
-  margin-bottom: 18px;
-}
-.other-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--sc, var(--accent));
-  margin-bottom: 8px;
 }
 .other-name {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
   line-height: 1.15;
 }
 .other-desc {
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.45;
-  margin-bottom: 18px;
-}
-.other-arrow {
-  width: 36px; height: 36px;
-  border-radius: 999px;
-  display: grid; place-items: center;
-  border: 1px solid var(--line-strong);
-  background: rgba(255,255,255,0.03);
-  color: white;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s, border-color 0.3s;
-  margin-top: auto;
-  align-self: flex-start;
-}
-.other-card:hover .other-arrow {
-  transform: translateX(4px);
-  background: color-mix(in srgb, var(--sc, var(--accent)) 18%, transparent);
-  border-color: color-mix(in srgb, var(--sc, var(--accent)) 50%, transparent);
 }
 
 /* FOOTER */
@@ -1715,7 +1753,7 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="https://www.youzen.it" class="logo">
-      <img src="../youzen-logo-k2.png" alt="YouZen" class="logo-img" />
+      <img src="../youzen-logo-96.png" alt="YouZen" class="logo-img" />
       You<span style="color:var(--accent)">Zen</span>
     </a>
     <nav class="nav-links">
@@ -1813,6 +1851,40 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
     </div>
   </div>
 </section>
+
+<!-- VIDEO DEMO -->
+<section class="section" id="video-demo">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Il video</span>
+      <h2><span class="title-problem">Fin qui te l'abbiamo raccontato.</span> <span class="title-solution">Ora guardalo.</span></h2>
+      <p class="lead">Un salone come il tuo, un giovedì che va storto: cinquanta secondi per vedere cosa cambia quando arriva YouZen.</p>
+    </div>
+
+    <div class="video-demo-frame" id="videoDemoFrame">
+      <img class="video-demo-poster" src="../saloni-video-poster.webp" alt="Fotogramma del video YouZen per saloni, con il logo e l'elenco delle funzioni principali" loading="lazy" width="1284" height="716">
+      <button class="video-demo-play" type="button" aria-label="Riproduci il video">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><polygon points="8 5 19 12 8 19"/></svg>
+      </button>
+      <video class="video-demo-el" preload="none" playsinline poster="../saloni-video-poster.webp" controls>
+        <source src="../saloni-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var frame = document.getElementById('videoDemoFrame');
+  if (!frame) return;
+  var video = frame.querySelector('.video-demo-el');
+  function play() {
+    frame.classList.add('is-playing');
+    video.play();
+  }
+  frame.querySelector('.video-demo-play').addEventListener('click', play);
+  frame.querySelector('.video-demo-poster').addEventListener('click', play);
+})();
+</script>
 
 <!-- PROBLEMA / STATS -->
 <section class="section" id="problema">
@@ -2553,51 +2625,52 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
 <!-- ALTRI SETTORI -->
 <section class="sectors-others" id="altri-settori">
   <div class="container">
-    <div class="sectors-others-head">
-      <span class="eyebrow">Altri settori</span>
-      <h2><span class="title-problem">YouZen non è solo per i saloni.</span></h2>
-      <p>Stessa YouZen, stesso motore, flussi e knowledge base cuciti sul tuo settore. Scopri come funziona nel tuo.</p>
-    </div>
-
     <div class="others-grid">
+      <div class="others-panel">
+        <div>
+          <span class="eyebrow">Altri settori</span>
+          <h2><span class="title-problem">YouZen non è solo per i saloni.</span></h2>
+          <p>Stesso motore, stessa voce. Cambiano i flussi e le cose che deve sapere: quelle le cuciamo sul tuo settore.</p>
+        </div>
+        <div class="others-dots" aria-hidden="true">
+          <i class="is-current" style="background: var(--sector-salone)"></i>
+          <i style="background: var(--sector-food)"></i>
+          <i style="background: var(--sector-prof)"></i>
+          <i style="background: var(--sector-real)"></i>
+          <i style="background: var(--sector-legale)"></i>
+        </div>
+      </div>
+
       <a class="other-card" style="--sc: var(--sector-food)" href="food.html">
-        <div class="other-icon">🍝</div>
-        <div class="other-eyebrow">Verticale 02</div>
-        <h3 class="other-name">Food &amp; Ristorazione</h3>
-        <p class="other-desc">Prenotazioni tavolo, asporto, gestione no-show. YouZen risponde anche durante il servizio.</p>
-        <span class="other-arrow" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
+        <div class="other-top">
+          <div class="other-icon">🍝</div>
+          <h3 class="other-name">Food &amp; Ristorazione</h3>
+        </div>
+        <p class="other-desc">Prenotazioni tavolo, asporto, gestione no-show. Risponde anche nel pieno del servizio.</p>
       </a>
 
       <a class="other-card" style="--sc: var(--sector-prof)" href="professionisti.html">
-        <div class="other-icon">📁</div>
-        <div class="other-eyebrow">Verticale 03</div>
-        <h3 class="other-name">Professionisti</h3>
-        <p class="other-desc">Partite IVA, artigiani, idraulici, consulenti: filtra spam, fissa sopralluoghi, manda preventivi.</p>
-        <span class="other-arrow" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
+        <div class="other-top">
+          <div class="other-icon">📁</div>
+          <h3 class="other-name">Professionisti</h3>
+        </div>
+        <p class="other-desc">Partite IVA e artigiani: filtra lo spam, fissa i sopralluoghi, manda i preventivi.</p>
       </a>
 
       <a class="other-card" style="--sc: var(--sector-real)" href="immobiliare.html">
-        <div class="other-icon">🏠</div>
-        <div class="other-eyebrow">Verticale 04</div>
-        <h3 class="other-name">Immobiliare</h3>
-        <p class="other-desc">Agenzie immobiliari: qualifica lead, fissa visite, manda schede immobili via WhatsApp.</p>
-        <span class="other-arrow" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
+        <div class="other-top">
+          <div class="other-icon">🏠</div>
+          <h3 class="other-name">Immobiliare</h3>
+        </div>
+        <p class="other-desc">Qualifica i contatti, fissa le visite, manda le schede immobili su WhatsApp.</p>
       </a>
 
       <a class="other-card" style="--sc: var(--sector-legale)" href="studio-legale.html">
-        <div class="other-icon">⚖️</div>
-        <div class="other-eyebrow">Verticale 05</div>
-        <h3 class="other-name">Studio Legale</h3>
-        <p class="other-desc">Filtro chiamate, intake pratiche, appuntamenti in studio. Riservato, conforme, ordinato.</p>
-        <span class="other-arrow" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
+        <div class="other-top">
+          <div class="other-icon">⚖️</div>
+          <h3 class="other-name">Studio Legale</h3>
+        </div>
+        <p class="other-desc">Filtro chiamate, raccolta pratiche, appuntamenti in studio. Riservato e ordinato.</p>
       </a>
 
     </div>

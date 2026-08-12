@@ -2,3 +2,10 @@
 # Contiene dati personali di aziende reali (nomi, email, telefoni): non deve
 # finire nel repo pubblico ne' essere servito da youzen.it via GitHub Pages.
 tracker/
+
+# Copie di sicurezza locali delle pagine. GitHub Pages serve qualunque file
+# committato, quindi un index.html.qualcosa finirebbe pubblico su
+# youzen.it/index.html.qualcosa: restano solo in locale.
+*.hero-backup
+*.online-live-backup
+*.bak
