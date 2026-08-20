@@ -5712,13 +5712,13 @@ html.yz-cookie-open .call-bar { display: none; }
         <!-- Stato rivelato: il prezzo. Resta visibile da qui in poi. -->
         <div class="yzp-reveal" id="yzpReveal" hidden>
           <div class="yzp-big">
-            <span class="yzp-cur">€</span><span id="yzpMonthly">225</span><span class="yzp-per">/mese</span>
+            <span class="yzp-cur">€</span><span id="yzpMonthly">0</span><span class="yzp-per">/mese</span>
           </div>
           <p class="yzp-calc">
-            <b id="yzpMin">750</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
+            <b id="yzpMin">0</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
             <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
           </p>
-          <div class="yzp-was">con l'annuale: <s id="yzpWas">€225/mese</s> <b id="yzpSave">risparmi €270 l'anno</b></div>
+          <div class="yzp-was">con l'annuale: <s id="yzpWas">€0/mese</s> <b id="yzpSave">risparmi €0 l'anno</b></div>
         </div>
 
       </div>
@@ -5735,21 +5735,22 @@ html.yz-cookie-open .call-bar { display: none; }
       <!-- ===== Slider minuti ===== -->
       <div class="yzp-minrow">
         <span class="yzp-minlab">Minuti al mese</span>
-        <span class="yzp-minval"><b id="yzpMinLab">750</b> min</span>
+        <span class="yzp-minval"><b id="yzpMinLab">0</b> min</span>
       </div>
       <div class="slider-wrapper yzp-track">
-        <input type="range" id="minSlider" class="slider" min="0" max="10" step="1" value="2" aria-label="Minuti di conversazione mensili" />
+        <input type="range" id="minSlider" class="slider" min="0" max="11" step="1" value="0" aria-label="Minuti di conversazione mensili" />
         <div class="slider-labels" aria-hidden="true">
-          <span style="--f:0">300</span>
-          <span style="--f:0.1">500</span>
-          <span class="active" style="--f:0.2">750</span>
-          <span style="--f:0.3">1k</span>
-          <span style="--f:0.4">1.5k</span>
-          <span style="--f:0.5">2k</span>
-          <span style="--f:0.6">3k</span>
-          <span style="--f:0.7">4k</span>
-          <span style="--f:0.8">5k</span>
-          <span style="--f:0.9">7.5k</span>
+          <span class="active" style="--f:0">0</span>
+          <span style="--f:0.0909">300</span>
+          <span style="--f:0.1818">500</span>
+          <span style="--f:0.2727">750</span>
+          <span style="--f:0.3636">1k</span>
+          <span style="--f:0.4545">1.5k</span>
+          <span style="--f:0.5455">2k</span>
+          <span style="--f:0.6364">3k</span>
+          <span style="--f:0.7273">4k</span>
+          <span style="--f:0.8182">5k</span>
+          <span style="--f:0.9091">7.5k</span>
           <span style="--f:1">10k</span>
         </div>
       </div>
@@ -6249,8 +6250,9 @@ window.addEventListener('scroll', () => {
 document.getElementById('footer-email').textContent = 'info' + String.fromCharCode(64) + 'youzen.it';
 
 // ===== Prezzi: piano unico (€0,30/min) + cadenza anticipata + attivazione
-// Si parte da 300 minuti al mese: sotto quella soglia il servizio non ha senso per nessuno.
-const minSteps = [300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
+// Lo slider apre su zero: il prezzo lo costruisce chi legge, muovendolo. Il primo
+// scalino utile resta 300 minuti, sotto non ha senso per nessuno.
+const minSteps = [0, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
 const RATE = 0.30;              // €/min
 const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
 const LISTINO = { 500: 1000, 900: 1400 };  // prezzo pieno di ogni attivazione scontata
