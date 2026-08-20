@@ -4558,19 +4558,12 @@ html.yz-cookie-open .call-bar { display: none; }
   transition:opacity .45s ease;
 }
 .pb-fascia:hover::before{ opacity:1; }
-/* a righe pari l'alone segue la foto, che sta dall'altra parte */
-.pb-fascia.pb-rovescia::before{
-  background:radial-gradient(60% 130% at 18% 50%, rgba(249,115,22,.30) 0%, rgba(249,115,22,0) 74%);
-}
 
 .pb-dentro{
   max-width:1240px; margin:0 auto; padding:32px 24px;
   display:grid; grid-template-columns:minmax(0,1fr) 300px; align-items:center; gap:48px;
   min-height:230px;
 }
-.pb-rovescia .pb-dentro{ grid-template-columns:300px minmax(0,1fr); }
-.pb-rovescia .pb-testo{ order:2; }
-.pb-rovescia .pb-media{ order:1; }
 
 .pb-occhio{
   display:block; font-family:var(--font-brand); font-size:10px; letter-spacing:.14em;
@@ -4612,7 +4605,6 @@ html.yz-cookie-open .call-bar { display: none; }
   border:1px solid rgba(249,115,22,.20); backdrop-filter:blur(10px); white-space:nowrap;
   transition:border-color .45s ease, box-shadow .45s ease;
 }
-.pb-rovescia .pb-dato{ left:auto; right:-20px; }
 .pb-fascia:hover .pb-dato{ border-color:rgba(249,115,22,.45); box-shadow:0 0 26px -10px rgba(249,115,22,.7); }
 .pb-dato b{ font-size:27px; font-weight:800; color:var(--accent); letter-spacing:-.03em; line-height:1; }
 .pb-dato span{ font-family:var(--font-brand); font-size:9px; letter-spacing:.10em;
@@ -4679,11 +4671,10 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-vedi:hover{ text-decoration:underline; }
 
 @media (max-width:980px){
-  .pb-dentro, .pb-rovescia .pb-dentro{ grid-template-columns:1fr; gap:28px; padding:28px 20px 36px; min-height:0; }
-  .pb-rovescia .pb-testo, .pb-rovescia .pb-media{ order:0; }
+  .pb-dentro{ grid-template-columns:1fr; gap:28px; padding:28px 20px 36px; min-height:0; }
   .pb-media{ max-width:400px; }
   /* in colonna singola il badge non ha piu' la foto accanto: torna dentro il suo angolo */
-  .pb-dato, .pb-rovescia .pb-dato{ left:auto; right:14px; bottom:-14px; padding:11px 16px; }
+  .pb-dato{ left:auto; right:14px; bottom:-14px; padding:11px 16px; }
   .pb-dato b{ font-size:23px; }
   .pb-pn-dentro{ grid-template-columns:1fr; padding:30px 20px; gap:26px; }
   .pb-dash-numeri div{ padding:12px 6px; }
@@ -4727,7 +4718,7 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
     </article>
 
-    <article class="pb-fascia pb-rovescia">
+    <article class="pb-fascia">
       <div class="pb-dentro">
         <div class="pb-testo">
           <span class="pb-occhio">Fuori orario</span>
@@ -4757,7 +4748,7 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
     </article>
 
-    <article class="pb-fascia pb-rovescia">
+    <article class="pb-fascia">
       <div class="pb-dentro">
         <div class="pb-testo">
           <span class="pb-occhio">Messaggi WhatsApp</span>
