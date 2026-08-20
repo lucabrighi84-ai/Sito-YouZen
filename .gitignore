@@ -9,3 +9,11 @@ tracker/
 *.hero-backup
 *.online-live-backup
 *.bak
+
+# Prototipo locale della sezione scroll-film "problemi" (agosto 2026). Stessa
+# ragione dei backup qui sopra: e' una prova, non una pagina del sito, e non deve
+# finire pubblica su youzen.it. Contiene anche i frame estratti del video, che
+# sono pesanti e inutili nel repo.
+index-prototipo.html
+prototipo-problemi/
+*.pre-*-backup

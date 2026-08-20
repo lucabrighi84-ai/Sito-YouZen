@@ -33,8 +33,8 @@
 </script>
 
 <!-- ============================ SEO PRIMARY ============================ -->
-<title>YouZen · Segretaria AI per chiamate, WhatsApp e appuntamenti</title>
-<meta name="description" content="Segreteria AI italiana 24/7 per studi legali, cliniche, saloni, agenzie immobiliari e PMI. Risponde alle chiamate, gestisce WhatsApp, prenota appuntamenti automaticamente." />
+<title>Problemi e soluzioni · YouZen</title>
+<meta name="description" content="I quattro problemi che fanno perdere clienti a chi lavora da solo: chiamate perse, telefonate fuori orario, appuntamenti saltati e messaggi WhatsApp. Per ognuno, cosa succede oggi e cosa cambia con YouZen." />
 <meta name="keywords" content="segretaria AI, AI receptionist, segretaria virtuale, gestione chiamate AI, agente AI italiano, automazione studi, AI WhatsApp business, prenotazione appuntamenti AI, AI per studi legali, AI per cliniche, AI per saloni, AI per agenzie immobiliari" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="YouZen di Luca Brighi" />
@@ -42,13 +42,13 @@
 <meta name="geo.region" content="IT" />
 <meta name="geo.placename" content="Italia" />
 <meta name="theme-color" content="#080E1F" />
-<link rel="canonical" href="https://youzen.it/" />
+<link rel="canonical" href="https://youzen.it/problemi-e-soluzioni.html" />
 
 <!-- ============================ OPEN GRAPH (Facebook, LinkedIn) ============================ -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="YouZen" />
-<meta property="og:url" content="https://youzen.it/" />
-<meta property="og:title" content="YouZen · Segretaria AI 24/7 per chiamate, WhatsApp e appuntamenti" />
+<meta property="og:url" content="https://youzen.it/problemi-e-soluzioni.html" />
+<meta property="og:title" content="Problemi e soluzioni · YouZen" />
 <meta property="og:description" content="Trasforma il caos delle telefonate in un sistema automatico. YouZen risponde sempre, mentre tu lavori." />
 <meta property="og:image" content="https://youzen.it/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -100,8 +100,6 @@
     "addressRegion": "RN",
     "addressCountry": "IT"
   },
-  "telephone": "+39 0541 172 6297",
-  "areaServed": { "@type": "Country", "name": "Italia" },
   "sameAs": [
     "https://www.facebook.com/profile.php?id=61584872474697",
     "https://www.instagram.com/youzenpro/"
@@ -124,7 +122,6 @@
   "name": "YouZen",
   "url": "https://youzen.it/",
   "inLanguage": "it-IT",
-  "dateModified": "2026-08-20",
   "publisher": { "@id": "https://youzen.it/#organization" }
 }
 </script>
@@ -133,11 +130,6 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://youzen.it/#software",
-  "url": "https://youzen.it/",
-  "inLanguage": "it-IT",
-  "dateModified": "2026-08-20",
-  "provider": { "@id": "https://youzen.it/#organization" },
   "name": "YouZen",
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "AI Receptionist",
@@ -1225,24 +1217,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   margin: 16px 0 20px;
   font-size: 0.8rem; color: var(--muted);
 }
-.privacy-row input[type="checkbox"] {
-  appearance: none; -webkit-appearance: none;
-  width: 20px; height: 20px; flex: 0 0 20px; margin-top: 1px;
-  border: 1px solid var(--line-strong); border-radius: 6px;
-  background: rgba(255,255,255,0.04); cursor: pointer;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-.privacy-row input[type="checkbox"]:hover { border-color: rgba(249,115,22,0.55); }
-.privacy-row input[type="checkbox"]:checked {
-  background-color: var(--accent); border-color: var(--accent);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
-  background-repeat: no-repeat; background-position: center;
-}
-.privacy-row input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-/* il link all'informativa aveva lo stesso colore del testo e nessuna sottolineatura:
-   in una riga di consenso deve riconoscersi come link */
-.privacy-row a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-.privacy-row a:hover { color: #fff; }
+.privacy-row input { margin-top: 2px; accent-color: var(--accent); }
 .demo-card .btn { width: 100%; }
 
 /* ====================================================================
@@ -2663,77 +2638,96 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 /* ====================================================================
-   ONBOARDING (sec-06) — nastro: righello degli 8 giorni + barre in scala
+   ONBOARDING TIMELINE (sec-06) — zig-zag con linea animata (variante 3)
    ==================================================================== */
-.yzn-asse-nome {
-  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--muted-weak); margin-bottom: 7px;
+.yztl { position: relative; max-width: 940px; margin: 0 auto; }
+.yztl-line { position: relative; padding: 10px 0; }
+.yztl-spine {
+  position: absolute; left: 50%; top: 0; height: 0; width: 4px;
+  transform: translateX(-50%); z-index: 1;
 }
-.yzn-asse { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-bottom: 10px; }
-.yzn-tacca {
-  position: relative; padding-bottom: 11px; font-size: 0.75rem;
-  font-weight: 600; color: var(--muted-weak); letter-spacing: 0.04em;
+.yztl-spine .track {
+  position: absolute; inset: 0; border-radius: 4px; opacity: 0.45;
+  background: linear-gradient(#22C55E, #FBBF24 50%, #F97316);
 }
-.yzn-tacca::after {
-  content: ""; position: absolute; left: 0; bottom: 0;
-  width: 1px; height: 7px; background: var(--line-strong);
+.yztl-spine .dash {
+  position: absolute; inset: 0; border-radius: 4px; mix-blend-mode: screen;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.6) 0 7px, transparent 7px 16px);
+  animation: yzDash 1s linear infinite;
 }
+@keyframes yzDash { to { background-position-y: 16px; }}
 
-.yzn-nastri { display: grid; gap: 8px; }
-.yzn-fila { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
-.yzn-barra {
-  position: relative; height: 52px; border-radius: 9px;
-  display: flex; align-items: center; padding: 0 15px;
-  font-size: 0.85rem; font-weight: 600; color: #0A0F1E;
-  white-space: nowrap; overflow: hidden;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.85s cubic-bezier(0.3, 0.9, 0.3, 1);
+.yztl-row { position: relative; display: flex; margin-bottom: 28px; min-height: 120px; }
+.yztl-row:last-child { margin-bottom: 0; }
+.yztl-row.r { justify-content: flex-end; }
+.yztl-node {
+  position: absolute; left: 50%; top: 26px; transform: translateX(-50%);
+  width: 18px; height: 18px; border-radius: 50%; background: var(--c);
+  border: 3px solid var(--ink-900, #080e1f);
+  box-shadow: 0 0 0 3px var(--c), 0 0 16px var(--c);
+  z-index: 4; animation: yzPulse 1.8s ease-in-out infinite;
 }
-.yzn-nastri.is-in .yzn-barra { clip-path: inset(0 0 0 0); }
-.yzn-nastri.is-in .yzn-f2 .yzn-barra { transition-delay: 0.18s; }
-.yzn-nastri.is-in .yzn-f3 .yzn-barra { transition-delay: 0.36s; }
-.yzn-f1 .yzn-barra { grid-column: 1 / span 1; background: #22C55E; }
-.yzn-f2 .yzn-barra { grid-column: 2 / span 6; background: #FBBF24; }
-.yzn-f3 .yzn-barra {
-  grid-column: 8 / span 1;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 48%, rgba(249, 115, 22, 0.12) 100%);
-}
-.yzn-legenda { margin-top: 14px; font-size: 0.85rem; color: var(--muted-weak); }
+@keyframes yzPulse {
+  0%, 100% { box-shadow: 0 0 0 3px var(--c), 0 0 10px var(--c); }
+  50% { box-shadow: 0 0 0 5px var(--c), 0 0 26px var(--c); }}
 
-.yzn-testi {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  margin-top: 44px; border-top: 1px solid var(--line);
+.yzc {
+  width: 44%; border-radius: 22px; padding: 26px; position: relative;
+  overflow: hidden; isolation: isolate;
+  border: 1px solid var(--line, rgba(255,255,255,0.08));
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.005) 50%, rgba(0,0,0,0.2) 100%),
+    var(--ink-900, #080e1f);
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), border-color 0.4s, box-shadow 0.4s;
 }
-.yzn-testo { padding: 28px 30px 6px; border-right: 1px solid var(--line); }
-.yzn-testo:first-child { padding-left: 0; }
-.yzn-testo:last-child { border-right: 0; padding-right: 0; }
-.yzn-quando {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--c);
+.yzc::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 90% 70% at 100% 100%, var(--c), transparent 55%);
+  opacity: 0.16; transition: opacity 0.5s;
 }
-.yzn-quando::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--c); }
-.yzn-testo h3 { margin: 13px 0 0; font-size: 1.32rem; line-height: 1.16; letter-spacing: -0.022em; }
-.yzn-testo > p { margin: 11px 0 0; font-size: 0.97rem; line-height: 1.6; color: var(--muted); }
-.yzn-voci { list-style: none; margin: 20px 0 0; padding: 0; }
-.yzn-voci li {
-  display: flex; gap: 11px; padding: 9px 0;
-  font-size: 0.9rem; line-height: 1.5; color: var(--muted-strong);
-  border-top: 1px solid var(--line);
+.yzc::after {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, black, transparent 70%);
+  opacity: 0.6;
 }
-.yzn-voci svg { flex-shrink: 0; width: 15px; height: 15px; color: var(--c); margin-top: 3px; }
+.yzc:hover { transform: translateY(-6px); border-color: var(--c); box-shadow: 0 24px 60px -28px var(--c); }
+.yzc:hover::before { opacity: 0.32; }
+.yzc:hover .yzc-big { opacity: 0.18; transform: translateX(4px); }
+.yzc-big {
+  position: absolute; top: -52px; right: -6px;
+  font-family: var(--font-display); font-size: clamp(9rem, 15vw, 15rem);
+  line-height: 0.78; font-weight: 800; letter-spacing: -0.06em;
+  color: var(--c); opacity: 0.10; z-index: 0; pointer-events: none; user-select: none;
+  transition: opacity 0.5s, transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.yzc-conn { position: absolute; top: 34px; width: 40px; height: 2px; background: var(--c); opacity: 0.5; }
+.yztl-row.l .yzc-conn { right: -40px; }
+.yztl-row.r .yzc-conn { left: -40px; }
+.yzc-in { position: relative; z-index: 2; }
+.yzc-du {
+  display: inline-block; font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 42%, transparent);
+  border-radius: 999px; padding: 5px 12px; margin-bottom: 14px;
+}
+.yzc-in h3 { color: #fff; margin: 0 0 8px; position: relative; z-index: 1; }
+.yzc-in p { color: var(--muted); margin: 0 0 16px; position: relative; z-index: 1; }
+.yzc-b { list-style: none; margin: 0; padding: 0; position: relative; z-index: 1; }
+.yzc-b li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted-strong); font-size: 0.9rem; line-height: 1.45; margin-bottom: 8px; }
+.yzc-b li:last-child { margin-bottom: 0; }
+.yzc-ck { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; color: var(--c); }
 
-@media (max-width: 900px) {
-  .yzn-testi { grid-template-columns: 1fr; }
-  .yzn-testo { border-right: 0; border-bottom: 1px solid var(--line); padding: 26px 0 22px; }
-  .yzn-testo:last-child { border-bottom: 0; }
-}
-@media (max-width: 700px) {
-  .yzn-asse { gap: 2px; }
-  .yzn-tacca { font-size: 0.7rem; }
-  .yzn-fila { gap: 2px; }
-  .yzn-barra { height: 40px; padding: 0 9px; font-size: 0.72rem; border-radius: 7px; }
-}
+@media (max-width: 760px) {
+  .yztl-spine { left: 20px; }
+  .yztl-node { left: 20px; }
+  .yztl-row, .yztl-row.r { justify-content: flex-start; }
+  .yzc { width: auto; margin-left: 46px; }
+  .yzc-conn { left: -40px !important; right: auto !important; }}
 
 /* Slider wrapper con tacche */
 .slider-wrapper {
@@ -2742,13 +2736,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 /* Labels sotto slider */
-/* Le etichette stavano in celle uguali (flex:1), mentre il pallino corre su una pista
-   accorciata della propria larghezza: 24px, 12 per parte. Cosi' non combaciavano mai, e
-   l'errore cresceva verso il centro. Ora ogni etichetta e' ancorata alla stessa formula del
-   pallino: 12px + (larghezza - 24px) x la sua frazione, scritta inline come --f. */
 .slider-labels {
-  position: relative;
-  height: 18px;
+  display: flex;
+  justify-content: space-between;
   margin-top: 16px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -2757,13 +2747,13 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .slider-labels span {
-  position: absolute;
-  top: 0;
-  left: calc(12px + (100% - 24px) * var(--f, 0));
-  transform: translateX(-50%);
-  white-space: nowrap;
+  flex: 1;
+  text-align: center;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
+
+.slider-labels span:first-child { text-align: left; }
+.slider-labels span:last-child { text-align: right; }
 
 .slider-labels span.active {
   color: var(--accent);
@@ -3850,7 +3840,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   background: linear-gradient(180deg, rgba(249,115,22,0.05), rgba(255,255,255,0.005));
 }
 
-.faq-h { margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
 .faq-trigger {
   width: 100%;
   display: flex; align-items: center; gap: 18px;
@@ -4114,9 +4103,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 /* ====================================================================
    PREZZI — PIANO UNICO ("il contatore")
    ==================================================================== */
-/* Il calcolatore stava in 780px dentro un contenitore da 1240: la testata partiva da sinistra
-   e il blocco dei prezzi galleggiava al centro. Ora occupa la sezione come tutte le altre. */
-.yzp { max-width: 100%; margin: 0; }
+.yzp { max-width: 780px; margin: 0 auto; }
 
 .yzp-hero { text-align: center; min-height: 232px; display: flex; flex-direction: column; justify-content: center; }
 @media (max-width: 640px) { .yzp-hero { min-height: 180px; } }
@@ -4376,21 +4363,21 @@ html.yz-cookie-open .call-bar { display: none; }
               <div class="nav-dropdown-desc">i quattro film, uno per problema</div>
             </div>
           </a>
-          <a href="#sec-04">
+          <a href="index.html#sec-04">
             <span class="nav-dropdown-icon">📊</span>
             <div>
               <div class="nav-dropdown-title">Senza / Con YouZen</div>
               <div class="nav-dropdown-desc">Una giornata, due risultati</div>
             </div>
           </a>
-          <a href="#sec-integrazioni">
+          <a href="index.html#sec-integrazioni">
             <span class="nav-dropdown-icon">🔌</span>
             <div>
               <div class="nav-dropdown-title">Integrazioni</div>
               <div class="nav-dropdown-desc">HubSpot, Stripe, Calendly, WhatsApp…</div>
             </div>
           </a>
-          <a href="#sec-06">
+          <a href="index.html#sec-06">
             <span class="nav-dropdown-icon">📅</span>
             <div>
               <div class="nav-dropdown-title">Onboarding</div>
@@ -4401,7 +4388,7 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
 
       <div class="nav-dropdown">
-        <a href="#sec-05" class="nav-dropdown-trigger">
+        <a href="index.html#sec-05" class="nav-dropdown-trigger">
           Settori
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
@@ -4444,24 +4431,24 @@ html.yz-cookie-open .call-bar { display: none; }
         </div>
       </div>
 
-      <a href="#demo-call">Prova subito</a>
+      <a href="#contatto">Prova subito</a>
 
-      <a href="#prezzi">Prezzi</a>
+      <a href="index.html#prezzi">Prezzi</a>
       
       <div class="nav-dropdown">
-        <a href="#faq" class="nav-dropdown-trigger">
+        <a href="index.html#faq" class="nav-dropdown-trigger">
           Domande
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown-menu">
-          <a href="#faq">
+          <a href="index.html#faq">
             <span class="nav-dropdown-icon">💬</span>
             <div>
               <div class="nav-dropdown-title">FAQ</div>
               <div class="nav-dropdown-desc">Le 10 risposte più cercate</div>
             </div>
           </a>
-          <a href="#anti-faq">
+          <a href="index.html#anti-faq">
             <span class="nav-dropdown-icon">⚠️</span>
             <div>
               <div class="nav-dropdown-title">Anti-FAQ</div>
@@ -4486,217 +4473,236 @@ html.yz-cookie-open .call-bar { display: none; }
   </div>
 </header>
 
-<!-- ============================ HERO (sec-01) ============================ -->
-<section class="hero" id="hero">
-  <!-- Sfondo: griglia + alone + banda di luce (solo CSS, solo transform) -->
-  <div id="fog-container" aria-hidden="true">
-    <div class="hero-glow"></div>
-    <div class="hero-net"></div>
-    <div class="hero-sweep"></div>
-  </div>
 
-  <!-- Video hero (sfondo animato) -->
-  <video class="hero-video-bg" muted loop playsinline preload="none" poster="youzen-hero-wide-poster.webp" aria-hidden="true">
-    <source src="youzen-hero-wide.webm?v=2" type="video/webm">
-    <source src="youzen-hero-wide.mp4?v=2" type="video/mp4">
-  </video>
-  <div class="hero-video-scrim" aria-hidden="true"></div>
-
-  <!-- Pausa/riproduzione del video di sfondo -->
-  <button class="hero-video-toggle is-paused" type="button" aria-label="Riproduci il video di sfondo">
-    <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-    <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="8 5 19 12 8 19"/></svg>
-  </button>
-
-  <!-- Sfumatura morbida in basso: dissolve lo sfondo in #080E1F senza stacco -->
-  <div class="hero-bottom-fade"></div>
-
-  <!-- Layer di isolamento -->
-  <div class="hero-isolation-layer"></div>
-  
-  <!-- Contenuto hero FUORI dal fog container -->
-  <div class="hero-content-wrapper">
-    <div class="hero-content-center">
-      <h1 class="hero-headline-giant">
-        <span class="hero-line-white">Il telefono</span>
-        <span class="hero-line-white">squilla.</span>
-        <span class="hero-line-brand">You<span class="hero-brand-zen">Zen</span></span>
-        <span class="hero-line-rotating">
-          <span class="hero-rotating-word" id="rotatingWord">Risponde</span>
-        </span>
-      </h1>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ I QUATTRO PROBLEMI (sec-03) — FASCE A ZIGZAG ============================ -->
+<main>
+<!-- ============================ I QUATTRO PROBLEMI (sec-03) — SCROLL-FILM + SVOLTA ============================ -->
 <style>
-/* Quattro fasce larghe quanto la finestra, una per problema, con la foto che cambia
-   lato a ogni riga. Prende il posto del bento: li' i quattro riquadri stavano in una
-   griglia sbilanciata e due problemi avevano piu' spazio degli altri, qui pesano uguale
-   e ognuno ha la riga per la sua svolta. Chiude il pannello, come prima.
-   Classi prefissate pb- perche' nomi come .card o .dato sono troppo comuni per un file
-   da settemila righe. I token sono quelli del sito, qui non si ridefinisce niente. */
-.pb-anchor{ display:block; height:0; }
+/* Quattro film scroll-driven, uno per problema, ognuno seguito dalla soluzione che si apre a
+   tutto schermo. Prende il posto dei pannelli .ba-* (il loro CSS resta piu' sopra, inerte).
+   I token sono quelli del sito: qui non si ridefinisce nessuna variabile. */
+.pf-anchor{ display:block; height:0; }
+/* Le due righe del titolo di sezione sono nowrap fino a 560px (vedi .title-problem piu' sopra):
+   qui la riga e' piu' lunga di quella che c'era prima e a 1440px usciva dallo schermo. Con il
+   wrap libero e la testata larga 760 andava invece su quattro righe, da cui i 1040. */
 #sec-problemi-head .title-problem, #sec-problemi-head .title-solution{ white-space:normal; }
 #sec-problemi-head .section-head{ max-width:1040px; }
-/* la testata ha gia' il suo respiro: le fasce partono attaccate, non a 90px */
-#sec-problemi-head{ padding-bottom:0; }
 
-.pb-fasce{ display:flex; flex-direction:column; gap:16px; margin-top:52px; }
+.pf-sec{ position:relative; background:var(--ink-900); }
+.pf-sec .pf-driver{ height:480vh; position:relative; }
+.pf-sec .pf-stage{ position:sticky; top:0; height:100vh; display:flex; align-items:center; overflow:hidden; }
+.pf-sec .pf-grid{
+  width:100%; max-width:1240px; margin:0 auto; padding:0 24px;
+  display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+}
+.pf-sec .pf-copy{ position:relative; min-height:44vh; display:flex; flex-direction:column; justify-content:center; }
+.pf-sec .pf-eyebrow{
+  align-self:flex-start; margin-bottom:28px;
+  opacity:0; transform:translateX(-36px);
+  transition:opacity .6s ease, transform .8s cubic-bezier(.16,1,.3,1);
+}
+.pf-sec.pf-in .pf-eyebrow{ opacity:1; transform:none; }
+.pf-sec .pf-beats{ position:relative; min-height:340px; }
+.pf-sec .pf-beat{
+  position:absolute; top:0; left:0; right:0; opacity:0; will-change:opacity,transform;
+  transform:translateY(14px);
+}
+.pf-sec .pf-beat:first-child{ position:relative; }
+.pf-sec .pf-beat h2{
+  font-family:var(--font-display); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(28px,3.6vw,52px); line-height:1.08; margin:0; color:#fff;
+}
+.pf-sec .pf-beat p{
+  margin:16px 0 0; font-size:clamp(15px,1.25vw,19px); line-height:1.55; color:var(--muted);
+  max-width:34ch;
+}
+.pf-sec .pf-film{ position:relative; justify-self:end; width:100%; max-width:560px; aspect-ratio:1/1; }
+.pf-sec canvas{
+  position:absolute; inset:0;
+  width:100%; height:100%; display:block; background:var(--ink-900);
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent 0, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right,  transparent 0, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-composite: intersect;
+}
 
-.pb-fascia{
-  position:relative; width:100%; overflow:hidden; isolation:isolate;
-  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, #0b1226 0%, #070c1a 100%);
-  transition:background .45s ease;
+/* La soluzione a tutto schermo: nasce sul riquadro del film e si apre fino ai bordi. */
+.sv-full{
+  position:absolute; inset:0; z-index:3; visibility:hidden;
+  background:
+    radial-gradient(46% 40% at 72% 50%, rgba(249,115,22,.30) 0%, rgba(249,115,22,.10) 55%, rgba(249,115,22,0) 100%),
+    radial-gradient(120% 90% at 72% 52%, rgba(249,115,22,.14) 0%, rgba(249,115,22,.04) 46%, rgba(249,115,22,0) 72%),
+    linear-gradient(180deg, var(--ink-800) 0%, var(--ink-900) 62%);
+  display:flex; align-items:center; justify-content:center;
+  will-change:clip-path;
+  box-shadow:0 0 0 1px rgba(249,115,22,.16) inset;
 }
-/* l'alone sta in uno strato suo, cosi' si accende senza toccare il fondo della fascia */
-.pb-fascia::before{
-  content:''; position:absolute; inset:0; z-index:-2; opacity:0;
-  background:radial-gradient(60% 130% at 82% 50%, rgba(249,115,22,.30) 0%, rgba(249,115,22,0) 74%);
-  transition:opacity .45s ease;
+/* Il numero del problema, gigante e sfocato dietro a sinistra: entra con l'apertura, quindi
+   copre anche il tratto in cui il pannello e' gia' largo e il testo non e' ancora entrato.
+   Cresce da sinistra (transform-origin), o ingrandendosi scivolerebbe fuori dallo schermo. */
+.sv-ghost{
+  position:absolute; left:2vw; top:50%; z-index:0;
+  transform-origin:left center;
+  transform:translateY(-50%) scale(.86); opacity:0;
+  font-family:var(--font-display); font-weight:800; letter-spacing:-.05em;
+  font-size:min(46vh,24vw); line-height:.78; white-space:nowrap;
+  color:rgba(249,115,22,.20); filter:blur(18px);
+  pointer-events:none; user-select:none;
+  will-change:opacity,transform;
 }
-.pb-fascia:hover::before{ opacity:1; }
-/* a righe pari l'alone segue la foto, che sta dall'altra parte */
-.pb-fascia.pb-rovescia::before{
-  background:radial-gradient(60% 130% at 18% 50%, rgba(249,115,22,.30) 0%, rgba(249,115,22,0) 74%);
+.sv-wrap{
+  position:relative; z-index:1;
+  width:100%; max-width:1240px; padding:0 24px; margin:0 auto;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
 }
+.sv-eyebrow{ opacity:0; margin-bottom:24px; }
+.sv-title{
+  margin:0; opacity:0; will-change:opacity,transform;
+  font-family:var(--font-display); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(28px,3.9vw,56px); line-height:1.07; color:#fff;
+}
+.sv-title em{ font-style:normal; color:var(--accent); }
+.sv-sub{
+  margin:18px 0 0; opacity:0; will-change:opacity,transform;
+  font-size:clamp(15px,1.3vw,20px); line-height:1.55; color:var(--muted); max-width:54ch;
+}
+/* I numeri: stessa grammatica dei KPI che stavano nei pannelli .ba-* (pillola scura, valore in
+   font-display 800, etichetta piccola maiuscola), ingranditi perche' qui stanno a tutto schermo.
+   L'etichetta e' piu' chiara dell'originale: a 0.6 di bianco sull'alone arancione vira al marrone. */
+.sv-kpis{
+  margin:34px 0 0; opacity:0; will-change:opacity,transform;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:16px;
+}
+.sv-kpi{
+  display:inline-flex; align-items:baseline; gap:14px;
+  padding:14px 26px; border-radius:18px;
+  background:rgba(0,0,0,0.58); border:1px solid rgba(249,115,22,.26);
+  backdrop-filter:blur(20px);
+  box-shadow:0 0 40px -12px rgba(249,115,22,.55);
+}
+.sv-kpi-value{
+  font-family:var(--font-display); font-weight:800; line-height:1;
+  font-size:clamp(38px,4.6vw,64px); letter-spacing:-.03em; color:var(--accent);
+}
+.sv-kpi-label{
+  font-family:var(--font-brand); font-size:11px; letter-spacing:.10em;
+  text-transform:uppercase; color:rgba(255,255,255,0.82);
+}
+.sv-rows{
+  list-style:none; margin:38px 0 0; padding:0; width:100%;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:26px 34px; text-align:left;
+}
+.sv-row{
+  display:flex; align-items:flex-start; gap:13px;
+  opacity:0; transform:translateY(12px); will-change:opacity,transform;
+}
+.sv-tick{
+  flex:0 0 auto; width:28px; height:28px; border-radius:999px;
+  display:grid; place-items:center;
+  border:1px solid rgba(249,115,22,.34); background:rgba(249,115,22,.10);
+}
+.sv-tick svg{ width:14px; height:14px; stroke:var(--accent); stroke-width:2.8;
+  fill:none; stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:26; stroke-dashoffset:26; }
+.sv-txt{ font-size:clamp(15px,1.2vw,18px); line-height:1.45; color:#fff; padding-top:3px; }
+.sv-foot{
+  margin:38px 0 0; display:flex; flex-direction:column; align-items:center; gap:14px;
+  opacity:0; will-change:opacity,transform;
+}
+.sv-nota{ font-size:14px; color:var(--muted-weak, rgba(255,255,255,0.42)); }
+.sv-cta{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:15px 26px; border-radius:999px; border:0;
+  background:linear-gradient(180deg,var(--accent-400,#FB923C),var(--accent-600,#EA580C));
+  color:#fff; font-family:var(--font-sans); font-weight:700; font-size:16px;
+  text-decoration:none;
+  box-shadow:0 12px 32px -8px rgba(249,115,22,0.45),
+             0 2px 0 0 rgba(255,255,255,0.08) inset,
+             0 -2px 0 0 rgba(0,0,0,0.18) inset;
+}
+.sv-cta svg{ width:18px; height:18px; stroke:currentColor; stroke-width:2; fill:none;
+  stroke-linecap:round; stroke-linejoin:round; }
 
-.pb-dentro{
-  max-width:1240px; margin:0 auto; padding:32px 24px;
-  display:grid; grid-template-columns:minmax(0,1fr) 300px; align-items:center; gap:48px;
-  min-height:230px;
+@media (max-width:1100px){
+  .sv-rows{ grid-template-columns:1fr; gap:16px; max-width:640px; }
 }
-.pb-rovescia .pb-dentro{ grid-template-columns:300px minmax(0,1fr); }
-.pb-rovescia .pb-testo{ order:2; }
-.pb-rovescia .pb-media{ order:1; }
-
-.pb-occhio{
-  display:block; font-family:var(--font-brand); font-size:10px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--accent); margin-bottom:13px;
-}
-/* i titoli seguono la grammatica del sito: font display e arancione pieno come
-   .title-solution, non il corsivo serif che si portava dietro il vecchio bento */
-.pb-fascia h3{
-  font-family:var(--font-display); font-weight:700; letter-spacing:-.02em;
-  font-size:clamp(25px,2.8vw,36px); line-height:1.1; margin:0 0 12px; max-width:24ch;
-  color:rgba(255,255,255,.95);
-}
-.pb-fascia h3 em{ font-style:normal; color:var(--accent); }
-.pb-fascia p{ margin:0; color:var(--muted); font-size:16px; line-height:1.58; max-width:52ch; }
-.pb-fascia p b{ color:#fff; font-weight:600; }
-.pb-svolta{
-  margin-top:16px; padding-top:16px; border-top:1px solid rgba(249,115,22,.22);
-  color:var(--muted-strong); font-size:15.5px;
-}
-.pb-svolta b{ color:var(--accent); font-weight:600; }
-
-.pb-media{ position:relative; }
-.pb-foto{
-  position:relative; width:100%; aspect-ratio:4/3; border-radius:18px; overflow:hidden;
-  border:1px solid var(--line); background:#070c1a;
-}
-.pb-foto img{
-  width:100%; height:100%; object-fit:cover; display:block;
-  opacity:.55; filter:saturate(.7);
-  transition:opacity .5s ease, filter .5s ease, transform .9s cubic-bezier(.16,1,.3,1);
-}
-.pb-fascia:hover .pb-foto img{ opacity:.9; filter:saturate(1); transform:scale(1.03); }
-
-/* il dato si appoggia all'angolo della foto, dalla parte del testo */
-.pb-dato{
-  position:absolute; bottom:-16px; left:-20px; z-index:2;
-  display:inline-flex; flex-direction:column; align-items:flex-start; gap:4px;
-  padding:13px 19px; border-radius:16px; background:rgba(6,10,24,.92);
-  border:1px solid rgba(249,115,22,.20); backdrop-filter:blur(10px); white-space:nowrap;
-  transition:border-color .45s ease, box-shadow .45s ease;
-}
-.pb-rovescia .pb-dato{ left:auto; right:-20px; }
-.pb-fascia:hover .pb-dato{ border-color:rgba(249,115,22,.45); box-shadow:0 0 26px -10px rgba(249,115,22,.7); }
-.pb-dato b{ font-size:27px; font-weight:800; color:var(--accent); letter-spacing:-.03em; line-height:1; }
-.pb-dato span{ font-family:var(--font-brand); font-size:9px; letter-spacing:.10em;
-  text-transform:uppercase; color:rgba(255,255,255,.72); }
-
-/* il quinto box, grande, con il pannello disegnato invece che fotografato */
-.pb-pannello{
-  position:relative; width:100%; overflow:hidden;
-  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, #0c1428 0%, #080e20 100%);
-}
-.pb-pannello::before{
-  content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:radial-gradient(60% 120% at 88% 50%, rgba(249,115,22,.14) 0%, rgba(249,115,22,0) 70%);
-}
-.pb-pn-dentro{
-  position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:36px 24px;
-  display:grid; grid-template-columns:minmax(0,1fr) 440px; gap:44px; align-items:center;
-}
-.pb-pannello h3{
-  font-family:var(--font-display); font-weight:700; letter-spacing:-.02em;
-  font-size:clamp(26px,2.9vw,38px); line-height:1.1; margin:0 0 12px; max-width:20ch;
-  color:rgba(255,255,255,.95);
-}
-.pb-pannello h3 em{ font-style:normal; color:var(--accent); }
-.pb-pannello p{ margin:0; color:var(--muted); font-size:16px; line-height:1.58; max-width:48ch; }
-.pb-pannello p b{ color:#fff; font-weight:600; }
-
-.pb-dash{
-  position:relative; border:1px solid var(--line-strong); border-radius:16px; overflow:hidden;
-  background:linear-gradient(180deg,#0e1730 0%, #0a1024 100%);
-  box-shadow:0 30px 60px -30px rgba(0,0,0,.9);
-}
-.pb-dash-testa{ display:flex; align-items:center; gap:10px; padding:12px 16px;
-  border-bottom:1px solid var(--line); background:rgba(255,255,255,.02); }
-.pb-punti{ display:flex; gap:5px; }
-.pb-punti i{ width:8px; height:8px; border-radius:999px; background:rgba(255,255,255,.16); }
-.pb-dash-nome{ font-family:var(--font-brand); font-size:9.5px; letter-spacing:.10em;
-  text-transform:uppercase; color:var(--muted-weak); }
-.pb-dash-oggi{ margin-left:auto; font-size:11px; color:var(--muted-weak); }
-.pb-dash-oggi b{ color:var(--accent); font-weight:600; }
-.pb-dash-numeri{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-bottom:1px solid var(--line); }
-.pb-dash-numeri div{ padding:14px 16px; border-right:1px solid var(--line); }
-.pb-dash-numeri div:last-child{ border-right:0; }
-.pb-dash-numeri b{ display:block; font-size:24px; font-weight:800; letter-spacing:-.03em; line-height:1; color:#fff; }
-.pb-dash-numeri .pb-buono b{ color:var(--accent); }
-.pb-dash-numeri span{ display:block; margin-top:6px; font-family:var(--font-brand);
-  font-size:8.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted-weak); }
-.pb-dash-righe{ padding:6px 0; }
-.pb-dash-riga{ display:grid; grid-template-columns:44px 1fr auto; gap:10px; align-items:center;
-  padding:9px 16px; font-size:12.5px; }
-.pb-dash-riga + .pb-dash-riga{ border-top:1px solid rgba(255,255,255,.04); }
-.pb-ora{ color:var(--muted-weak); font-variant-numeric:tabular-nums; font-size:11.5px; }
-.pb-chi b{ display:block; font-weight:600; font-size:13px; color:#fff; }
-.pb-chi span{ color:var(--muted-weak); }
-.pb-tag{ font-family:var(--font-brand); font-size:8px; letter-spacing:.08em; text-transform:uppercase;
-  padding:4px 8px; border-radius:999px; white-space:nowrap;
-  background:rgba(249,115,22,.12); border:1px solid rgba(249,115,22,.30); color:var(--accent); }
-.pb-tag.pb-neutro{ background:rgba(255,255,255,.05); border-color:var(--line-strong); color:var(--muted); }
-
-.pb-coda{ max-width:1240px; margin:0 auto; padding:44px 24px 0;
-  display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
-.pb-vedi{ color:var(--accent); text-decoration:none; font-weight:600; font-size:15.5px; }
-.pb-vedi:hover{ text-decoration:underline; }
-
-@media (max-width:980px){
-  .pb-dentro, .pb-rovescia .pb-dentro{ grid-template-columns:1fr; gap:28px; padding:28px 20px 36px; min-height:0; }
-  .pb-rovescia .pb-testo, .pb-rovescia .pb-media{ order:0; }
-  .pb-media{ max-width:400px; }
-  /* in colonna singola il badge non ha piu' la foto accanto: torna dentro il suo angolo */
-  .pb-dato, .pb-rovescia .pb-dato{ left:auto; right:14px; bottom:-14px; padding:11px 16px; }
-  .pb-dato b{ font-size:23px; }
-  .pb-pn-dentro{ grid-template-columns:1fr; padding:30px 20px; gap:26px; }
-  .pb-dash-numeri div{ padding:12px 6px; }
-  /* Michroma e' troppo larga per tre colonne da 90px: "appuntamenti" sfora
-     nella colonna accanto. Qui sotto le etichette passano alla font di sistema. */
-  .pb-dash-numeri span{ font-family:system-ui,-apple-system,sans-serif; letter-spacing:.05em; }
+@media (max-width:900px){
+  .pf-sec .pf-driver{ height:440vh; }
+  .pf-sec .pf-grid{ grid-template-columns:1fr; gap:28px; }
+  .pf-sec .pf-film{ justify-self:center; max-width:min(78vw,420px); order:-1; }
+  .pf-sec .pf-copy{ min-height:30vh; }
+  .pf-sec .pf-beats{ min-height:260px; }
+  .sv-kpis{ margin-top:24px; gap:12px; }
+  .sv-kpi{ padding:11px 20px; }
+  .sv-ghost{ filter:blur(12px); font-size:min(34vh,42vw); left:-1vw; }
+  .sv-rows{ margin-top:26px; }
+  .sv-txt{ font-size:15px; }
+  .sv-foot{ margin-top:26px; }
 }
 @media (prefers-reduced-motion:reduce){
-  .pb-fascia, .pb-fascia::before, .pb-foto img{ transition:none; }
+  .pf-sec .pf-driver{ height:auto; }
+  .pf-sec .pf-stage{ position:static; height:auto; padding:96px 0; }
+  .pf-sec .pf-beat{ position:relative !important; opacity:1 !important; transform:none !important; margin-bottom:34px; }
+  .pf-sec .pf-eyebrow{ opacity:1 !important; transform:none !important; transition:none !important; }
+  .sv-full{ position:relative !important; visibility:visible !important; inset:auto !important;
+            clip-path:none !important; padding:80px 0; }
+  .sv-eyebrow, .sv-title, .sv-sub, .sv-kpis, .sv-foot{ opacity:1 !important; transform:none !important; }
+  .sv-row{ opacity:1 !important; transform:none !important; }
+  .sv-tick svg{ stroke-dashoffset:0 !important; }
+  .sv-ghost{ display:none; }
+}
+/* Fermo-immagine per gli screenshot: Chrome headless fotografa il documento dall'alto e ignora
+   lo scroll, quindi con lo stage sticky a migliaia di pixel scatterebbe driver vuoto. */
+.pf-still .pf-sec .pf-driver{ height:100vh; }
+.pf-still .pf-sec .pf-stage{ position:relative; }
+.pf-still .pf-sec .pf-eyebrow{ transition:none; }
+
+/* Indice laterale: le quattro tappe sempre raggiungibili mentre scorre il film.
+   A riposo si vedono i pallini piu' l'etichetta della tappa in corso; passandoci
+   sopra si aprono tutte. Sotto i 1100px lo spazio a destra non c'e' e sparisce. */
+.pf-index{ position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:90; display:none; }
+@media (min-width:1100px){ .pf-index{ display:block; } }
+.pf-index ol{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; }
+.pf-index a{
+  display:flex; align-items:center; justify-content:flex-end; gap:10px;
+  padding:7px 9px; border-radius:999px; text-decoration:none;
+  color:var(--muted-weak); transition:color .3s ease;
+}
+.pf-index a:hover{ color:#fff; }
+.pf-index-t{
+  font-size:12.5px; line-height:1; white-space:nowrap;
+  max-width:0; overflow:hidden; opacity:0;
+  transition:max-width .45s cubic-bezier(.16,1,.3,1), opacity .3s ease;
+}
+.pf-index:hover .pf-index-t,
+.pf-index a[aria-current] .pf-index-t{ max-width:200px; opacity:1; }
+.pf-index-d{
+  width:9px; height:9px; flex:0 0 9px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.30); background:transparent;
+  transition:background .3s ease, border-color .3s ease, transform .3s ease;
+}
+.pf-index a[aria-current]{ color:#fff; }
+.pf-index a[aria-current] .pf-index-d{ background:var(--accent); border-color:var(--accent); transform:scale(1.3); }
+.pf-index{ transition:opacity .4s ease; }
+.pf-index.is-off{ opacity:0; pointer-events:none; }
+@media (prefers-reduced-motion:reduce){
+  .pf-index a, .pf-index-t, .pf-index-d{ transition:none; }
 }
 </style>
 
-<span id="sec-03" class="pb-anchor" aria-hidden="true"></span>
+<nav class="pf-index" aria-label="I quattro problemi">
+  <ol>
+    <li><a href="#pf-perse"><span class="pf-index-t">Chiamate perse</span><span class="pf-index-d" aria-hidden="true"></span></a></li>
+    <li><a href="#pf-247"><span class="pf-index-t">Fuori orario</span><span class="pf-index-d" aria-hidden="true"></span></a></li>
+    <li><a href="#pf-ns"><span class="pf-index-t">Appuntamenti saltati</span><span class="pf-index-d" aria-hidden="true"></span></a></li>
+    <li><a href="#pf-wa"><span class="pf-index-t">Messaggi WhatsApp</span><span class="pf-index-d" aria-hidden="true"></span></a></li>
+  </ol>
+</nav>
+
+<span id="sec-03" class="pf-anchor" aria-hidden="true"></span>
 
 <section class="section" id="sec-problemi-head">
   <div class="container">
@@ -4706,209 +4712,61 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Quattro cose che ti costano clienti,</span>
         <span class="title-solution">le chiude YouZen una per una.</span>
       </h2>
-      <p class="lead">Chiamate perse, telefonate fuori orario, appuntamenti saltati e chat lasciate a metà. Una per riga, con quello che cambia il giorno dopo.</p>
+      <p class="lead">Chiamate perse, telefonate fuori orario, appuntamenti saltati e chat lasciate a metà. Scorri: per ognuna vedi cosa succede oggi, e cosa cambia quando rispondiamo noi.</p>
     </div>
   </div>
+</section>
 
-  <div class="pb-fasce">
+<!-- ---------------------------- 1 - CHIAMATE PERSE ---------------------------- -->
+<section id="pf-perse" class="pf-sec" aria-labelledby="pf-perse-title">
+  <div class="pf-driver">
+    <div class="pf-stage">
+      <div class="pf-grid">
 
-    <article class="pb-fascia">
-      <div class="pb-dentro">
-        <div class="pb-testo">
-          <span class="pb-occhio">Chiamate perse</span>
-          <h3>Il telefono suona sempre <em>nel momento peggiore</em></h3>
-          <p>Stai già lavorando per qualcuno, e quello che hai davanti non lo metti in pausa. <b>Chi non ti ha trovato non richiama per dirtelo.</b></p>
-          <p class="pb-svolta">Risponde <b>al secondo squillo</b>, riconosce chi chiama e lo saluta per nome.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/perse.jpg" alt="Un telefono di carta che squilla in mano e comincia a bruciare" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>98%</b><span>chiamate gestite</span></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-fascia pb-rovescia">
-      <div class="pb-dentro">
-        <div class="pb-testo">
-          <span class="pb-occhio">Fuori orario</span>
-          <h3>Ti cercano quando <em>sono liberi loro</em></h3>
-          <p>Alle otto di sera, il primo momento in cui hanno le mani libere. <b>Tu a quell'ora hai chiuso</b>, e sotto il tuo numero ce ne sono altri quattro.</p>
-          <p class="pb-svolta">YouZen risponde <b>24 ore su 24, 7 giorni su 7</b>. Alle nove di sera, la domenica e a Ferragosto chi ti cerca trova aperto e fissa l'appuntamento.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/247.jpg" alt="Il telefono squilla in rosso sulla scrivania, di notte" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>24/7</b><span>festivi compresi</span></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-fascia">
-      <div class="pb-dentro">
-        <div class="pb-testo">
-          <span class="pb-occhio">Appuntamenti saltati</span>
-          <h3>L'unico che l'ha segnato <em>sei tu</em></h3>
-          <p>Il posto l'avevi già negato a un'altra persona. <b>Si libera alle tre e un quarto</b>, quando non serve più a nessuno.</p>
-          <p class="pb-svolta">Manda il promemoria su WhatsApp e SMS, e <b>chi non può venire disdice rispondendo</b>, mentre il posto serve ancora.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/ns.jpg" alt="Un'agenda di carta con gli appuntamenti che si cancellano" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>-80%</b><span>no-show</span></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-fascia pb-rovescia">
-      <div class="pb-dentro">
-        <div class="pb-testo">
-          <span class="pb-occhio">Messaggi WhatsApp</span>
-          <h3>Un messaggio non ti obbliga <em>a rispondere subito</em></h3>
-          <p>Loro però sanno che l'hai letto. <b>Per rispondere sul serio ti serve mezz'ora</b>, e intanto l'hanno chiesto anche a qualcun altro.</p>
-          <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/wa.jpg" alt="Le notifiche di WhatsApp escono fuori dallo schermo del telefono" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>4s</b><span>tempo di risposta</span></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-pannello">
-      <div class="pb-pn-dentro">
-        <div class="pb-testo">
-          <span class="pb-occhio">Il pannello</span>
-          <h3>A fine giornata sai <em>chi ti ha cercato</em></h3>
-          <p>Ogni chiamata trascritta, nome e numero salvati, anche quelle arrivate mentre eri chiuso. <b>Chi non ti trova non richiama per dirtelo</b>: da qui in poi te lo dice il pannello.</p>
-        </div>
-        <div class="pb-dash" role="img" aria-label="Il pannello di YouZen: dodici chiamate gestite, quattro appuntamenti fissati, nessuna persa, con l'elenco di chi ha chiamato">
-          <div class="pb-dash-testa">
-            <div class="pb-punti"><i></i><i></i><i></i></div>
-            <span class="pb-dash-nome">YouZen · pannello</span>
-            <span class="pb-dash-oggi">martedì · <b>in ascolto</b></span>
-          </div>
-          <div class="pb-dash-numeri">
-            <div class="pb-buono"><b>12</b><span>chiamate gestite</span></div>
-            <div class="pb-buono"><b>4</b><span>appuntamenti fissati</span></div>
-            <div><b>0</b><span>perse</span></div>
-          </div>
-          <div class="pb-dash-righe">
-            <div class="pb-dash-riga">
-              <span class="pb-ora">8:32</span>
-              <span class="pb-chi"><b>Anna Neri</b><span>colore, chiede giovedì pomeriggio</span></span>
-              <span class="pb-tag">in agenda</span>
+        <div class="pf-copy">
+          <span class="eyebrow pf-eyebrow">Problema 1 - Chiamate perse</span>
+          <div class="pf-beats">
+            <div class="pf-beat" data-in="-0.1" data-peak="0" data-out="0.34">
+              <h2 id="pf-perse-title">Il telefono suona sempre nel momento peggiore.</h2>
+              <p>E quello che hai davanti non lo metti in pausa.</p>
             </div>
-            <div class="pb-dash-riga">
-              <span class="pb-ora">13:10</span>
-              <span class="pb-chi"><b>+39 348 552 1907</b><span>cliente nuovo, primo appuntamento</span></span>
-              <span class="pb-tag">in agenda</span>
+            <div class="pf-beat" data-in="0.34" data-peak="0.45" data-out="0.68">
+              <h2>I numeri che non conosci sono quasi tutti call center.</h2>
+              <p>Hai smesso di rispondere. Anche a chi ti cercava davvero.</p>
             </div>
-            <div class="pb-dash-riga">
-              <span class="pb-ora">19:41</span>
-              <span class="pb-chi"><b>Marco Rinaldi</b><span>ha disdetto, posto rimesso libero</span></span>
-              <span class="pb-tag pb-neutro">disdetta</span>
-            </div>
-            <div class="pb-dash-riga">
-              <span class="pb-ora">23:48</span>
-              <span class="pb-chi"><b>Giulia Ferrari</b><span>«quanto mi viene?» · preventivo mandato</span></span>
-              <span class="pb-tag">risposto</span>
+            <div class="pf-beat" data-in="0.68" data-peak="0.80" data-out="2">
+              <h2>Quante ne hai perse ieri?</h2>
+              <p>Non lo sai. Chi non ti ha trovato non richiama per dirtelo.</p>
             </div>
           </div>
         </div>
-      </div>
-    </article>
 
-  </div>
-
-  <div class="pb-coda">
-    <a href="#demo-call" class="btn btn-primary">Provalo sul tuo numero</a>
-    <a href="problemi-e-soluzioni.html" class="pb-vedi">Guardali uno per uno, in quattro filmati →</a>
-  </div>
-</section>
-
-<!-- ============================ SENZA / CON YOUZEN (sec-04) — SPLIT-SCREEN GIORNATA TIPO ============================ -->
-<section class="section" id="sec-04">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Una giornata tipo</span>
-      <h2>
-        <span class="title-problem">Mercoledì, ore 18.</span>
-        <span class="title-solution">Indovina chi stacca.</span>
-      </h2>
-      <p class="lead">A sinistra: senza YouZen, ogni squillo è una rinuncia. A destra: tutto gestito mentre lavori.</p>
-    </div>
-
-    <div class="day-grid">
-
-      <!-- Colonna SENZA -->
-      <div class="day-col bad">
-        <div class="day-col-head">
-          <span class="day-col-tag">Senza YouZen</span>
-          <span class="day-col-score">-2 <span class="day-col-score-unit">clienti</span></span>
-        </div>
-        <h3 class="day-col-title">La giornata che già conosci</h3>
-
-        <div class="day-timeline">
-          <div class="day-event">
-            <div class="day-event-time">09:14</div>
-            <div class="day-event-text">Sei in riunione. <strong>Chiamata persa.</strong> Non richiami mai.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">11:02</div>
-            <div class="day-event-text">WhatsApp di un nuovo cliente. Lo vedi alle <strong>17:45</strong>, è andato dal concorrente.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">13:30</div>
-            <div class="day-event-text">Pausa pranzo. <strong>3 chiamate perse</strong>, nessun messaggio in segreteria.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">16:20</div>
-            <div class="day-event-text">Cliente non si presenta. Nessuno l'aveva richiamato per la conferma.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">18:00</div>
-            <div class="day-event-text"><strong>7 chiamate perse</strong>, 2 WhatsApp ignorati, 1 no-show.</div>
-          </div>
+        <div class="pf-film">
+          <canvas width="900" height="900" aria-hidden="true"></canvas>
         </div>
 
-        <div class="day-summary">
-          Stima persa oggi: <b>2 clienti</b> · le 7 chiamate perse non le richiama nessuno.
-        </div>
       </div>
 
-      <div class="day-divider">VS</div>
-
-      <!-- Colonna CON -->
-      <div class="day-col good">
-        <div class="day-col-head">
-          <span class="day-col-tag">Con YouZen</span>
-          <span class="day-col-score">+3 <span class="day-col-score-unit">clienti</span></span>
-        </div>
-        <h3 class="day-col-title">La giornata che potresti avere</h3>
-
-        <div class="day-timeline">
-          <div class="day-event">
-            <div class="day-event-time">09:14</div>
-            <div class="day-event-text">Sei in riunione. <strong>YouZen risponde</strong>, qualifica, fissa appuntamento.</div>
+      <div class="sv-full">
+        <span class="sv-ghost" aria-hidden="true">01</span>
+        <div class="sv-wrap">
+          <span class="eyebrow sv-eyebrow">La soluzione</span>
+          <h2 class="sv-title">Il telefono squilla uguale.<br><em>Cambia solo chi risponde.</em></h2>
+          <p class="sv-sub">Tu vai avanti con quello che stavi facendo. La differenza la sente solo chi ha chiamato.</p>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><span class="sv-kpi-value">98%</span><span class="sv-kpi-label">chiamate gestite</span></div>
           </div>
-          <div class="day-event">
-            <div class="day-event-time">11:02</div>
-            <div class="day-event-text">WhatsApp risposto in <strong>11 secondi</strong>. Lead caldo, demo prenotata domani.</div>
+          <ul class="sv-rows">
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Riconosce il numero e apre la chiamata salutando il cliente per nome</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Pesca il servizio dell'ultima volta e propone di rifarlo, stesso giorno e stessa persona</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">A fine giornata sai chi ti ha cercato e cosa voleva</span></li>
+          </ul>
+          <div class="sv-foot">
+            <span class="sv-nota">Il numero resta il tuo. Cambia solo chi alza.</span>
+            <a class="sv-cta" href="#contatto">Provalo sul tuo numero
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
-          <div class="day-event">
-            <div class="day-event-time">13:30</div>
-            <div class="day-event-text">Pausa pranzo. Tutto gestito. Trovi il <strong>riassunto in 1 messaggio</strong>.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">16:20</div>
-            <div class="day-event-text">Conferma automatica 24h prima: <strong>cliente si presenta.</strong></div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">18:00</div>
-            <div class="day-event-text"><strong>12 contatti gestiti</strong>, 4 nuovi appuntamenti, 0 perse.</div>
-          </div>
-        </div>
-
-        <div class="day-summary">
-          Stima guadagnata oggi: <b>3 clienti nuovi</b>, su 12 contatti gestiti.
         </div>
       </div>
 
@@ -4916,1181 +4774,596 @@ html.yz-cookie-open .call-bar { display: none; }
   </div>
 </section>
 
-<!-- ============================ INTEGRAZIONI (sec-integrazioni) — RIGA LOGO PARTNER ============================ -->
-<section class="section" id="sec-integrazioni">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Integrazioni</span>
-      <h2>
-        <span class="title-problem">Fa amicizia</span>
-        <span class="title-solution">con i tuoi tool.</span>
-      </h2>
-      <p class="lead">YouZen è l'assistente telefonico con intelligenza artificiale per le piccole imprese: risponde a chiamate e messaggi WhatsApp, prende gli appuntamenti e li sincronizza con i calendari, le email, i CRM e i sistemi di pagamento che già usi. Collegando il tuo account Google, YouZen crea, legge e aggiorna automaticamente gli eventi degli appuntamenti sul tuo Google Calendar.</p>
-    </div>
+<!-- ---------------------------- 2 - FUORI ORARIO ---------------------------- -->
+<section id="pf-247" class="pf-sec" aria-labelledby="pf-247-title">
+  <div class="pf-driver">
+    <div class="pf-stage">
+      <div class="pf-grid">
 
-    <div class="integrations-marquee" aria-label="Tool con cui YouZen si integra">
-      <div class="integrations-track">
-
-      <span class="integration-item" title="HubSpot CRM">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="18.5" cy="13.5" r="3.5"/><line x1="18.5" y1="10" x2="18.5" y2="4"/>
-          <circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/>
-          <line x1="7.5" y1="7.5" x2="15.5" y2="12"/><line x1="7.5" y1="16.5" x2="15.5" y2="15"/>
-        </svg>HubSpot
-      </span>
-
-      <span class="integration-item" title="Calendly">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>
-        </svg>Calendly
-      </span>
-
-      <span class="integration-item" title="Cal.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>Cal.com
-      </span>
-
-      <span class="integration-item" title="Google Calendar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-          <text x="12" y="18" text-anchor="middle" font-size="7" font-family="Inter, sans-serif" fill="currentColor" stroke="none">31</text>
-        </svg>Google Calendar
-      </span>
-
-      <span class="integration-item" title="Apple Calendar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16.4 2C18.4 2.6 20 4.6 20 7c0 .5-.1 1-.2 1.5-1.7-.4-3.4-.6-3.4-2.5 0-2.5 0-4 0-4z"/>
-          <path d="M3 13c0-4 2-6 5-6 1.8 0 2.5 1 4 1s2.2-1 4-1c3 0 5 2 5 6 0 5-4 9-5 9-.8 0-1.5-.5-2.5-.5S11 22 10 22c-1 0-4-4-4-9z"/>
-        </svg>Apple Calendar
-      </span>
-
-      <span class="integration-item" title="Zapier">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
-          <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
-          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
-          <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
-        </svg>Zapier
-      </span>
-
-      <span class="integration-item" title="Stripe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/>
-          <line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/>
-        </svg>Stripe
-      </span>
-
-      <span class="integration-item" title="WhatsApp Business">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/>
-          <path d="M8 11a4 4 0 0 0 5 3"/>
-        </svg>WhatsApp
-      </span>
-
-      <span class="integration-item" title="Gmail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/>
-          <polyline points="2 7 12 14 22 7"/>
-        </svg>Gmail
-      </span>
-
-      <span class="integration-item" title="Outlook">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/>
-          <circle cx="9" cy="12" r="3.5"/>
-          <line x1="14" y1="9" x2="20" y2="9"/><line x1="14" y1="13" x2="20" y2="13"/><line x1="14" y1="17" x2="18" y2="17"/>
-        </svg>Outlook
-      </span>
-
-      <span class="integration-item" title="Slack">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="3" width="6" height="6" rx="1.5"/>
-          <rect x="3" y="15" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/>
-          <line x1="9" y1="6" x2="15" y2="6"/><line x1="6" y1="9" x2="6" y2="15"/>
-          <line x1="9" y1="18" x2="15" y2="18"/><line x1="18" y1="9" x2="18" y2="15"/>
-        </svg>Slack
-      </span>
-
-      <span class="integration-item" title="Telegram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M7 12l3 3 7-7"/>
-          <line x1="7" y1="12" x2="17" y2="8"/>
-        </svg>Telegram
-      </span>
-
-      <span class="integration-item" title="Notion">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="3" width="16" height="18" rx="1"/>
-          <line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/>
-        </svg>Notion
-      </span>
-
-      <span class="integration-item" title="Google Sheets">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
-          <polyline points="14 3 14 9 20 9"/>
-          <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="16" y2="16"/>
-          <line x1="11" y1="11" x2="11" y2="18"/>
-        </svg>Google Sheets
-      </span>
-
-        <!-- duplicato per loop infinito senza salto -->
-      <span class="integration-item" title="HubSpot CRM">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="18.5" cy="13.5" r="3.5"/><line x1="18.5" y1="10" x2="18.5" y2="4"/>
-          <circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/>
-          <line x1="7.5" y1="7.5" x2="15.5" y2="12"/><line x1="7.5" y1="16.5" x2="15.5" y2="15"/>
-        </svg>HubSpot
-      </span>
-
-      <span class="integration-item" title="Calendly">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>
-        </svg>Calendly
-      </span>
-
-      <span class="integration-item" title="Cal.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>Cal.com
-      </span>
-
-      <span class="integration-item" title="Google Calendar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-          <text x="12" y="18" text-anchor="middle" font-size="7" font-family="Inter, sans-serif" fill="currentColor" stroke="none">31</text>
-        </svg>Google Calendar
-      </span>
-
-      <span class="integration-item" title="Apple Calendar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16.4 2C18.4 2.6 20 4.6 20 7c0 .5-.1 1-.2 1.5-1.7-.4-3.4-.6-3.4-2.5 0-2.5 0-4 0-4z"/>
-          <path d="M3 13c0-4 2-6 5-6 1.8 0 2.5 1 4 1s2.2-1 4-1c3 0 5 2 5 6 0 5-4 9-5 9-.8 0-1.5-.5-2.5-.5S11 22 10 22c-1 0-4-4-4-9z"/>
-        </svg>Apple Calendar
-      </span>
-
-      <span class="integration-item" title="Zapier">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
-          <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
-          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
-          <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
-        </svg>Zapier
-      </span>
-
-      <span class="integration-item" title="Stripe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/>
-          <line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/>
-        </svg>Stripe
-      </span>
-
-      <span class="integration-item" title="WhatsApp Business">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/>
-          <path d="M8 11a4 4 0 0 0 5 3"/>
-        </svg>WhatsApp
-      </span>
-
-      <span class="integration-item" title="Gmail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/>
-          <polyline points="2 7 12 14 22 7"/>
-        </svg>Gmail
-      </span>
-
-      <span class="integration-item" title="Outlook">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="5" width="20" height="14" rx="2"/>
-          <circle cx="9" cy="12" r="3.5"/>
-          <line x1="14" y1="9" x2="20" y2="9"/><line x1="14" y1="13" x2="20" y2="13"/><line x1="14" y1="17" x2="18" y2="17"/>
-        </svg>Outlook
-      </span>
-
-      <span class="integration-item" title="Slack">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="3" width="6" height="6" rx="1.5"/>
-          <rect x="3" y="15" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/>
-          <line x1="9" y1="6" x2="15" y2="6"/><line x1="6" y1="9" x2="6" y2="15"/>
-          <line x1="9" y1="18" x2="15" y2="18"/><line x1="18" y1="9" x2="18" y2="15"/>
-        </svg>Slack
-      </span>
-
-      <span class="integration-item" title="Telegram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M7 12l3 3 7-7"/>
-          <line x1="7" y1="12" x2="17" y2="8"/>
-        </svg>Telegram
-      </span>
-
-      <span class="integration-item" title="Notion">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="3" width="16" height="18" rx="1"/>
-          <line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/>
-        </svg>Notion
-      </span>
-
-      <span class="integration-item" title="Google Sheets">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
-          <polyline points="14 3 14 9 20 9"/>
-          <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="16" y2="16"/>
-          <line x1="11" y1="11" x2="11" y2="18"/>
-        </svg>Google Sheets
-      </span>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ SECTORS (sec-05) ============================ -->
-<section class="section has-cta" id="sec-05">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Settori</span>
-      <h2>
-        <span class="title-problem">Sa già cosa serve,</span>
-        <span class="title-solution">così tu respiri un attimo.</span>
-      </h2>
-      <p class="lead">Cinque verticali con knowledge base e flussi cuciti sul settore. Non vedi il tuo? Sesto box: scrivici e te lo costruiamo.</p>
-    </div>
-
-    <div class="sectors-grid">
-      <a class="sector-card has-app" style="--sc: var(--sector-salone)" href="settori/saloni.html">
-        <div class="app-panel ded" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="m9 9.5 2 2 4-4"/></svg>
-          <span class="ap-label">App<br>dedicata</span>
-        </div>
-        <span class="sector-num" aria-hidden="true">1</span>
-        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/></svg></div>
-        <div class="sector-body">
-          <h3 class="sector-name">Saloni e SPA</h3>
-          <div class="s-title">Forbici in mano, telefono che squilla? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark"></span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card has-app" style="--sc: var(--sector-food)" href="settori/food.html">
-        <div class="app-panel ded" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="m9 9.5 2 2 4-4"/></svg>
-          <span class="ap-label">App<br>dedicata</span>
-        </div>
-        <span class="sector-num" aria-hidden="true">2</span>
-        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8a3 3 0 0 0 6 0V2M10 10v12M16 2c-1.5 2-2 4-2 6s.5 4 2 4v10"/></svg></div>
-        <div class="sector-body">
-          <h3 class="sector-name">Ristoranti</h3>
-          <div class="s-title">Sala piena, ordini che saltano? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark"></span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card has-app" style="--sc: var(--sector-prof)" href="settori/professionisti.html">
-        <div class="app-panel ded" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="m9 9.5 2 2 4-4"/></svg>
-          <span class="ap-label">App<br>dedicata</span>
-        </div>
-        <span class="sector-num" aria-hidden="true">3</span>
-        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
-        <div class="sector-body">
-          <h3 class="sector-name">Professionisti</h3>
-          <div class="s-title">Mani occupate, chiamate continue? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark"></span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card has-app" style="--sc: var(--sector-real)" href="settori/immobiliare.html">
-        <div class="app-panel dev" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg>
-          <span class="ap-label">App in<br>sviluppo</span>
-        </div>
-        <span class="sector-num" aria-hidden="true">4</span>
-        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg></div>
-        <div class="sector-body">
-          <h3 class="sector-name">Immobiliare</h3>
-          <div class="s-title">In visita e lead che chiamano? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark"></span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card has-app" style="--sc: var(--sector-legale)" href="settori/studio-legale.html">
-        <div class="app-panel dev" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg>
-          <span class="ap-label">App in<br>sviluppo</span>
-        </div>
-        <span class="sector-num" aria-hidden="true">5</span>
-        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M7 8l-3 6a3 3 0 0 0 6 0Zm10 0-3 6a3 3 0 0 0 6 0Z"/></svg></div>
-        <div class="sector-body">
-          <h3 class="sector-name">Studio Legale</h3>
-          <div class="s-title">In udienza e mille squilli? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark"></span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <a class="sector-card s-cta" href="#contatto">
-        <span class="sector-num" aria-hidden="true">6</span>
-        <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="sector-body">
-          <h3 class="sector-name">Il tuo settore non c'è?</h3>
-          <div class="s-title">Dicci il tuo business e i tuoi problemi. Te lo costruiamo su misura.</div>
-          <div class="sector-hairline"></div>
-        </div>
-        <div class="sector-foot">
-          <span class="sector-mark">→</span>
-          <div class="sector-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ TIMELINE (sec-06) ============================ -->
-<section class="section has-cta" id="sec-06">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Onboarding</span>
-      <h2>
-        <span class="title-problem">Pronta in 8 giorni,</span>
-        <span class="title-solution">caffè incluso.</span>
-      </h2>
-      <p class="lead">Setup guidato, una settimana di test in modalità ombra, go-live. Tu lavori, noi configuriamo.</p>
-    </div>
-
-    <div class="yzn-asse-nome">Giorni</div>
-    <div class="yzn-asse" aria-hidden="true">
-      <span class="yzn-tacca">1</span>
-      <span class="yzn-tacca">2</span>
-      <span class="yzn-tacca">3</span>
-      <span class="yzn-tacca">4</span>
-      <span class="yzn-tacca">5</span>
-      <span class="yzn-tacca">6</span>
-      <span class="yzn-tacca">7</span>
-      <span class="yzn-tacca">8</span>
-    </div>
-
-    <div class="yzn-nastri">
-      <div class="yzn-fila yzn-f1"><div class="yzn-barra">Setup</div></div>
-      <div class="yzn-fila yzn-f2"><div class="yzn-barra">Prove in modalità ombra</div></div>
-      <div class="yzn-fila yzn-f3"><div class="yzn-barra">Live</div></div>
-    </div>
-
-    <p class="yzn-legenda">Un giorno per il setup, sei di prove con te che ascolti. Dall'ottavo risponde da sola, e non finisce più.</p>
-
-    <div class="yzn-testi">
-      <section class="yzn-testo" style="--c:#22C55E">
-        <span class="yzn-quando">Giorno 1</span>
-        <h3>Si parte con un caffè</h3>
-        <p>Una call e via: pensiamo noi a sistemare tutto. Tu rispondi a due domande, al resto ci pensiamo noi.</p>
-        <ul class="yzn-voci">
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Due chiacchiere su servizi, orari e domande tipiche</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Colleghiamo il tuo numero (porting o forward)</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Calendario e WhatsApp agganciati</li>
-        </ul>
-      </section>
-
-      <section class="yzn-testo" style="--c:#FBBF24">
-        <span class="yzn-quando">Giorni 2–7</span>
-        <h3>Prove generali, in punta di piedi</h3>
-        <p>Una settimana di rodaggio: ascolti, correggi, dai il tono giusto. Così al debutto niente sorprese.</p>
-        <ul class="yzn-voci">
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Simulazioni su casi veri</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Aggiusti tutto al volo dal pannello di controllo</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ok finale prima di alzare il sipario</li>
-        </ul>
-      </section>
-
-      <section class="yzn-testo" style="--c:#F97316">
-        <span class="yzn-quando">Da giorno 8</span>
-        <h3>Sipario! Ora risponde sempre</h3>
-        <p>Da qui in poi non stacca mai, nemmeno il sabato sera. Tu guardi tutto comodo dal pannello di controllo.</p>
-        <ul class="yzn-voci">
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sempre sveglia: 24/7, weekend e festivi</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ti chiama in causa solo quando serve davvero</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Il riassunto della settimana nella tua inbox</li>
-        </ul>
-      </section>
-    </div>
-
-    <a href="#contatto" class="section-cta">
-      <div class="section-cta-text">
-        <div class="section-cta-eyebrow">Parti oggi</div>
-        <div class="section-cta-line">Setup in 30 minuti, live in 8 giorni. <span>Senza vincoli e senza impegno.</span></div>
-      </div>
-      <span class="section-cta-arrow">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-    </a>
-  </div>
-</section>
-
-<!-- ============================ DEMO CALL (sec-01b) ============================ -->
-<section class="section demo-call-section" id="demo-call">
-  <div class="container">
-    <div class="demo-call-grid">
-      <!-- Form demo call -->
-      <div class="demo-call-content">
-        <span class="eyebrow">Prova subito</span>
-        <h2 class="demo-call-title">
-          <span class="title-problem">Non ci credi?</span>
-          <span class="title-solution">guarda la magia</span>
-        </h2>
-        <p class="demo-call-subtitle">Lascia il numero, ti chiama YouZen in 60 secondi.</p>
-
-        <form class="demo-call-form" id="demoCallForm" novalidate>
-          <div class="field">
-            <label for="dc-name">Nome</label>
-            <input id="dc-name" type="text" placeholder="Mario Rossi" required />
-          </div>
-
-          <div class="field">
-            <label for="dc-email">Email</label>
-            <input id="dc-email" type="email" placeholder="mario@esempio.it" required />
-          </div>
-
-          <div class="field">
-            <label for="dc-phone">Numero di telefono</label>
-            <div class="phone-input-group">
-              <span class="phone-prefix">+39</span>
-              <input id="dc-phone" type="tel" placeholder="333 1234567" required />
+        <div class="pf-copy">
+          <span class="eyebrow pf-eyebrow">Problema 2 - Fuori orario</span>
+          <div class="pf-beats">
+            <div class="pf-beat" data-in="-0.1" data-peak="0" data-out="0.34">
+              <h2 id="pf-247-title">Ti cercano quando sono liberi loro.</h2>
+              <p>Ti chiamano alle otto di sera, il primo momento in cui hanno le mani libere. Tu a quell'ora hai finito da un pezzo.</p>
+            </div>
+            <div class="pf-beat" data-in="0.34" data-peak="0.45" data-out="0.68">
+              <h2>Chi ha un capo ti chiama in pausa pranzo, quando non ha nessuno alle spalle.</h2>
+              <p>È anche l'ora in cui stacchi tu.</p>
+            </div>
+            <div class="pf-beat" data-in="0.68" data-peak="0.80" data-out="2">
+              <h2>Alle nove di sera nessuno aspetta che tu apra.</h2>
+              <p>Sulla mappa sotto il tuo numero ce ne sono altri quattro, e il secondo lo chiama mentre il tuo sta ancora squillando.</p>
             </div>
           </div>
-          
-          <div class="field">
-            <label for="dc-settore">Settore</label>
-            <select id="dc-settore" required>
-              <option value="">Seleziona il tuo settore</option>
-              <option value="legale">Avvocati e Notai</option>
-              <option value="medico">Cliniche e Studi Medici</option>
-              <option value="beauty">Saloni e SPA</option>
-              <option value="pmi">PMI e Retail</option>
-              <option value="finance">Commercialisti e Consulenti</option>
-              <option value="artigiani">Artigiani</option>
-              <option value="realestate">Real Estate</option>
-            </select>
+        </div>
+
+        <div class="pf-film">
+          <canvas width="900" height="900" aria-hidden="true"></canvas>
+        </div>
+
+      </div>
+
+      <div class="sv-full">
+        <span class="sv-ghost" aria-hidden="true">02</span>
+        <div class="sv-wrap">
+          <span class="eyebrow sv-eyebrow">La soluzione</span>
+          <h2 class="sv-title">Ti chiamano alle nove di sera.<br><em>Da adesso trovano aperto.</em></h2>
+          <p class="sv-sub">Non è una segreteria che registra il messaggio. È una che risponde, capisce e fissa.</p>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><span class="sv-kpi-value">20+</span><span class="sv-kpi-label">chiamate insieme</span></div>
+            <div class="sv-kpi"><span class="sv-kpi-value">24/7</span><span class="sv-kpi-label">festivi compresi</span></div>
           </div>
-
-          <div class="privacy-row">
-            <input type="checkbox" id="dc-privacy" required />
-            <label for="dc-privacy">Accetto la <a href="/privacy/" target="_blank">privacy policy</a> e di essere contattato per questa demo</label>
+          <ul class="sv-rows">
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Alle nove di sera e la domenica risponde allo stesso modo</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Il lunedì alle otto e mezza tiene più di venti chiamate insieme</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Nei giorni di chiusura e ad agosto continua a riempirti l'agenda per quando riapri</span></li>
+          </ul>
+          <div class="sv-foot">
+            <span class="sv-nota">Weekend e festivi. Anche il giorno che chiudi.</span>
+            <a class="sv-cta" href="#contatto">Provalo sul tuo numero
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
-
-          <p class="demo-call-whatsapp-notice">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
-            Dopo la chiamata riceverai un messaggio WhatsApp con il riassunto della conversazione.
-          </p>
-
-          <button type="submit" class="btn btn-primary btn-large">
-            <span>Chiamami ora</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
-            </svg>
-          </button>
-          
-          <p class="demo-call-note">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-            Riceverai una chiamata demo entro 60 secondi. Nessun costo, nessun impegno.
-          </p>
-        </form>
-      </div>
-
-      <!-- Colonna visual nascosta -->
-      <div class="demo-call-visual">
-        <div class="ai-call-illu" aria-hidden="true" style="display:none">
-          <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" style="display:none">
-            <defs>
-              <!-- Gradiente orb principale -->
-              <radialGradient id="orbCore" cx="50%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#FFE0BF"/>
-                <stop offset="25%" stop-color="#FFB37A"/>
-                <stop offset="55%" stop-color="#F97316"/>
-                <stop offset="100%" stop-color="#7C2D00"/>
-              </radialGradient>
-              <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#F97316" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="dataStream" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
-                <stop offset="50%" stop-color="#FFA366" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
-              </linearGradient>
-              <linearGradient id="phoneBody" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1a2540"/>
-                <stop offset="100%" stop-color="#0a0f1e"/>
-              </linearGradient>
-              <linearGradient id="phoneScreen" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="rgba(249,115,22,0.20)"/>
-                <stop offset="100%" stop-color="rgba(249,115,22,0.04)"/>
-              </linearGradient>
-              <radialGradient id="bgVignette" cx="50%" cy="50%" r="70%">
-                <stop offset="0%" stop-color="rgba(124,58,237,0.18)"/>
-                <stop offset="100%" stop-color="rgba(124,58,237,0)"/>
-              </radialGradient>
-              <filter id="blurMd" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="10"/>
-              </filter>
-              <filter id="blurLg" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="18"/>
-              </filter>
-              <!-- Pattern griglia esagonale stile cyberpunk -->
-              <pattern id="hex" x="0" y="0" width="40" height="46" patternUnits="userSpaceOnUse">
-                <polygon points="20,1 38,12 38,34 20,45 2,34 2,12" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
-              </pattern>
-            </defs>
-
-            <!-- Sfondo: griglia hex sottile -->
-            <rect width="640" height="480" fill="url(#bgVignette)" opacity="0.6"/>
-            <rect width="640" height="480" fill="url(#hex)" opacity="0.5"/>
-
-            <!-- Vignette ai bordi -->
-            <ellipse cx="320" cy="240" rx="320" ry="240" fill="url(#bgVignette)" opacity="0.5"/>
-
-            <!-- LINEE DATI DA AI A TELEFONO (3 percorsi animati) -->
-            <g stroke="url(#dataStream)" stroke-width="2" fill="none" stroke-linecap="round">
-              <path d="M 180 220 Q 320 140, 460 260" opacity="0.9">
-                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="3s" repeatCount="indefinite"/>
-              </path>
-              <path d="M 180 240 Q 320 240, 460 280" opacity="0.7" stroke-width="1.5">
-                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
-              </path>
-              <path d="M 180 260 Q 320 340, 460 300" opacity="0.5" stroke-width="1.2">
-                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="3.6s" repeatCount="indefinite" begin="0.8s"/>
-              </path>
-            </g>
-
-            <!-- AI ORB (sinistra) -->
-            <g transform="translate(150,240)">
-              <!-- Glow esterno -->
-              <circle cx="0" cy="0" r="120" fill="url(#orbGlow)" filter="url(#blurLg)"/>
-              <!-- Anelli orbitali (rotazione lenta) -->
-              <g>
-                <ellipse cx="0" cy="0" rx="95" ry="32" fill="none" stroke="#F97316" stroke-width="1" stroke-dasharray="3 5" opacity="0.40">
-                  <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="28s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="0" cy="0" rx="80" ry="80" fill="none" stroke="#F97316" stroke-width="0.8" stroke-dasharray="2 8" opacity="0.30">
-                  <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="0" cy="0" rx="65" ry="100" fill="none" stroke="#A78BFA" stroke-width="0.8" stroke-dasharray="2 6" opacity="0.25">
-                  <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="22s" repeatCount="indefinite"/>
-                </ellipse>
-              </g>
-
-              <!-- Nodi orbitanti (mini cerchi su anello) -->
-              <g>
-                <circle cx="0" cy="0" r="3" fill="#FFB37A">
-                  <animateMotion path="M 95,0 A 95,32 0 1,1 -95,0 A 95,32 0 1,1 95,0" dur="28s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="0" cy="0" r="2.5" fill="#A78BFA">
-                  <animateMotion path="M 80,0 A 80,80 0 1,1 -80,0 A 80,80 0 1,1 80,0" dur="20s" repeatCount="indefinite"/>
-                </circle>
-              </g>
-
-              <!-- Orb principale con shading -->
-              <circle cx="0" cy="0" r="58" fill="url(#orbCore)" filter="url(#blurMd)" opacity="0.6"/>
-              <circle cx="0" cy="0" r="55" fill="url(#orbCore)"/>
-              <!-- Highlight in alto -->
-              <ellipse cx="-12" cy="-18" rx="26" ry="13" fill="rgba(255,255,255,0.35)"/>
-              <ellipse cx="-6" cy="-12" rx="10" ry="5" fill="rgba(255,255,255,0.55)"/>
-
-              <!-- Voice equalizer dentro l'orb -->
-              <g stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.95">
-                <line x1="-22" y1="8" x2="-22" y2="-8">
-                  <animate attributeName="y1" values="8;18;4;14;8" dur="1.2s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-8;-18;-4;-14;-8" dur="1.2s" repeatCount="indefinite"/>
-                </line>
-                <line x1="-9" y1="14" x2="-9" y2="-14">
-                  <animate attributeName="y1" values="14;7;18;10;14" dur="1.5s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-14;-7;-18;-10;-14" dur="1.5s" repeatCount="indefinite"/>
-                </line>
-                <line x1="4" y1="11" x2="4" y2="-11">
-                  <animate attributeName="y1" values="11;19;6;15;11" dur="1.3s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-11;-19;-6;-15;-11" dur="1.3s" repeatCount="indefinite"/>
-                </line>
-                <line x1="17" y1="9" x2="17" y2="-9">
-                  <animate attributeName="y1" values="9;16;5;13;9" dur="1.4s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-9;-16;-5;-13;-9" dur="1.4s" repeatCount="indefinite"/>
-                </line>
-                <line x1="28" y1="6" x2="28" y2="-6">
-                  <animate attributeName="y1" values="6;13;3;10;6" dur="1.6s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-6;-13;-3;-10;-6" dur="1.6s" repeatCount="indefinite"/>
-                </line>
-              </g>
-
-              <!-- Label sotto orb -->
-              <g transform="translate(0,90)">
-                <rect x="-50" y="-12" width="100" height="24" rx="12" fill="rgba(0,0,0,0.5)" stroke="rgba(249,115,22,0.45)" stroke-width="1"/>
-                <text x="0" y="4" text-anchor="middle" font-family="Michroma, sans-serif" font-size="11" fill="#FFB37A" letter-spacing="1">YOUZEN AI</text>
-              </g>
-            </g>
-
-            <!-- INDICATORE "CONNECTING" centro -->
-            <g transform="translate(320,170)">
-              <circle r="4" fill="#22c55e">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
-              </circle>
-              <text y="-12" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="2">CALL · LIVE</text>
-            </g>
-
-            <!-- SMARTPHONE (destra) -->
-            <g transform="translate(480,250)">
-              <!-- Glow dietro -->
-              <ellipse cx="0" cy="0" rx="100" ry="140" fill="#F97316" opacity="0.18" filter="url(#blurLg)"/>
-              <!-- Body telefono con riflesso -->
-              <rect x="-65" y="-125" width="130" height="240" rx="26" fill="url(#phoneBody)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
-              <rect x="-61" y="-121" width="122" height="232" rx="22" fill="url(#phoneScreen)"/>
-              <!-- Riflesso schermo -->
-              <path d="M -55 -110 L 55 -110 L 50 -100 L -50 -100 Z" fill="rgba(255,255,255,0.10)"/>
-
-              <!-- Notch / Dynamic island -->
-              <rect x="-22" y="-122" width="44" height="9" rx="4.5" fill="#000"/>
-
-              <!-- Schermo: "CHIAMATA IN ARRIVO" -->
-              <text x="0" y="-72" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="2.5">CHIAMATA IN ARRIVO</text>
-
-              <!-- Avatar AI -->
-              <circle cx="0" cy="-30" r="28" fill="#F97316" filter="url(#blurMd)" opacity="0.6"/>
-              <circle cx="0" cy="-30" r="26" fill="url(#orbCore)"/>
-              <ellipse cx="-6" cy="-38" rx="10" ry="5" fill="rgba(255,255,255,0.4)"/>
-              <text x="0" y="-25" text-anchor="middle" font-family="Michroma, sans-serif" font-weight="800" font-size="18" fill="white">YZ</text>
-
-              <!-- Nome chiamante -->
-              <text x="0" y="14" text-anchor="middle" font-family="Michroma, sans-serif" font-weight="700" font-size="15" fill="white">YouZen AI</text>
-              <text x="0" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.55)">+39 0541 ··· 6297</text>
-
-              <!-- Wave indicator (sotto nome) -->
-              <g transform="translate(0,52)" stroke="#FFA366" stroke-width="2" stroke-linecap="round" fill="none">
-                <line x1="-18" y1="0" x2="-18" y2="0">
-                  <animate attributeName="y1" values="-3;-8;-3" dur="0.6s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="3;8;3" dur="0.6s" repeatCount="indefinite"/>
-                </line>
-                <line x1="-9" y1="0" x2="-9" y2="0">
-                  <animate attributeName="y1" values="-5;-12;-5" dur="0.7s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="5;12;5" dur="0.7s" repeatCount="indefinite"/>
-                </line>
-                <line x1="0" y1="0" x2="0" y2="0">
-                  <animate attributeName="y1" values="-4;-10;-4" dur="0.65s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="4;10;4" dur="0.65s" repeatCount="indefinite"/>
-                </line>
-                <line x1="9" y1="0" x2="9" y2="0">
-                  <animate attributeName="y1" values="-5;-12;-5" dur="0.7s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="5;12;5" dur="0.7s" repeatCount="indefinite"/>
-                </line>
-                <line x1="18" y1="0" x2="18" y2="0">
-                  <animate attributeName="y1" values="-3;-8;-3" dur="0.6s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="3;8;3" dur="0.6s" repeatCount="indefinite"/>
-                </line>
-              </g>
-
-              <!-- Pulsanti accept/decline -->
-              <g transform="translate(0,90)">
-                <!-- Decline (rosso) -->
-                <circle cx="-26" cy="0" r="18" fill="#ef4444"/>
-                <circle cx="-26" cy="0" r="18" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-                <g transform="rotate(135 -26 0)">
-                  <line x1="-33" y1="0" x2="-19" y2="0" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                </g>
-                <!-- Accept (verde) - pulsante che pulsa -->
-                <circle cx="26" cy="0" r="18" fill="#22c55e">
-                  <animate attributeName="r" values="18;22;18" dur="1s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="26" cy="0" r="18" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-                <path d="M 19 -7 L 27 -5 L 31 0 L 28 6 C 22 4 19 0 19 -5 Z" fill="white" transform="rotate(-15 26 0)"/>
-              </g>
-
-              <!-- Status verde squillo -->
-              <g transform="translate(50,-125)">
-                <circle r="5" fill="#22c55e">
-                  <animate attributeName="opacity" values="1;0.2;1" dur="0.7s" repeatCount="indefinite"/>
-                </circle>
-              </g>
-            </g>
-
-            <!-- Particelle decorative (puntini luminosi) -->
-            <g fill="#FFA366">
-              <circle cx="80" cy="80" r="2.5" opacity="0.6">
-                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="260" cy="60" r="1.8" opacity="0.5">
-                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
-              </circle>
-              <circle cx="560" cy="100" r="2" opacity="0.5">
-                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.8s" repeatCount="indefinite" begin="0.8s"/>
-              </circle>
-              <circle cx="60" cy="380" r="1.8" opacity="0.6">
-                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.2s" repeatCount="indefinite" begin="1.2s"/>
-              </circle>
-              <circle cx="380" cy="420" r="2" opacity="0.5">
-                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.6s" repeatCount="indefinite" begin="0.6s"/>
-              </circle>
-              <circle cx="580" cy="400" r="1.5" opacity="0.5"/>
-              <circle cx="320" cy="50" r="1.2" opacity="0.4"/>
-              <circle cx="80" cy="430" r="1.5" opacity="0.5"/>
-            </g>
-
-            <!-- Particelle viola (depth) -->
-            <g fill="#A78BFA">
-              <circle cx="140" cy="100" r="1.5" opacity="0.4"/>
-              <circle cx="500" cy="60" r="1.8" opacity="0.4"/>
-              <circle cx="600" cy="240" r="1.5" opacity="0.4"/>
-              <circle cx="50" cy="240" r="2" opacity="0.4"/>
-            </g>
-          </svg>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ============================ PRICING (sec-07) ============================ -->
-<section class="section has-cta" id="prezzi">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Prezzi</span>
-      <h2>
-        <span class="title-problem">Un piano solo.</span>
-        <span class="title-solution">Quello giusto.</span>
-      </h2>
-      <p class="lead">Una tariffa sola, minuti modulabili, nessun contratto a lungo termine.</p>
-    </div>
+<!-- ---------------------------- 3 - APPUNTAMENTI SALTATI ---------------------------- -->
+<section id="pf-ns" class="pf-sec" aria-labelledby="pf-ns-title">
+  <div class="pf-driver">
+    <div class="pf-stage">
+      <div class="pf-grid">
 
-    <div class="yzp" id="yzp">
-
-      <!-- ===== Contatore ===== -->
-      <div class="yzp-hero">
-
-        <!-- Stato iniziale: invito a scegliere i minuti. Sparisce al primo tocco dello slider. -->
-        <div class="yzp-invite" id="yzpInvite">
-          <p class="yzp-invite-q">Quanti minuti ti servono?</p>
-          <p class="yzp-invite-s">Scegli qui sotto: il prezzo arriva subito dopo.</p>
-        </div>
-
-        <!-- Stato rivelato: il prezzo. Resta visibile da qui in poi. -->
-        <div class="yzp-reveal" id="yzpReveal" hidden>
-          <div class="yzp-big">
-            <span class="yzp-cur">€</span><span id="yzpMonthly">225</span><span class="yzp-per">/mese</span>
+        <div class="pf-copy">
+          <span class="eyebrow pf-eyebrow">Problema 3 - Appuntamenti saltati</span>
+          <div class="pf-beats">
+            <div class="pf-beat" data-in="-0.1" data-peak="0" data-out="0.34">
+              <h2 id="pf-ns-title">Prendere un appuntamento non costa niente.</h2>
+              <p>Glielo hai fissato a tre settimane, e l'unico che l'ha segnato da qualche parte sei tu.</p>
+            </div>
+            <div class="pf-beat" data-in="0.34" data-peak="0.45" data-out="0.68">
+              <h2>Il primo appuntamento è quello che salta più spesso.</h2>
+              <p>Chi non ti ha mai visto in faccia non sta dando buca a nessuno.</p>
+            </div>
+            <div class="pf-beat" data-in="0.68" data-peak="0.80" data-out="2">
+              <h2>Quel posto l'avevi già negato a un'altra persona.</h2>
+              <p>Si libera alle tre e un quarto, quando non serve più a nessuno.</p>
+            </div>
           </div>
-          <p class="yzp-calc">
-            <b id="yzpMin">750</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
-            <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
-          </p>
-          <div class="yzp-was">con l'annuale: <s id="yzpWas">€225/mese</s> <b id="yzpSave">risparmi €270 l'anno</b></div>
+        </div>
+
+        <div class="pf-film">
+          <canvas width="900" height="900" aria-hidden="true"></canvas>
         </div>
 
       </div>
 
-      <!-- ===== Cadenza: box allineato tutto a destra ===== -->
-      <div class="yzp-cadrow">
-        <span class="yzp-cadlab">Come paghi il canone</span>
-        <div class="billing-toggle" id="yzpCad">
-          <button type="button" class="active" data-mesi="3">Trimestrale</button>
-          <button type="button" data-mesi="12">Annuale <span class="discount-badge">-10%</span></button>
+      <div class="sv-full">
+        <span class="sv-ghost" aria-hidden="true">03</span>
+        <div class="sv-wrap">
+          <span class="eyebrow sv-eyebrow">La soluzione</span>
+          <h2 class="sv-title">L'appuntamento<br><em>se lo ricorda anche qualcun altro.</em></h2>
+          <p class="sv-sub">Non devi chiamare nessuno per farti confermare che viene.</p>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><span class="sv-kpi-value">-80%</span><span class="sv-kpi-label">no-show</span></div>
+          </div>
+          <ul class="sv-rows">
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Manda il promemoria su WhatsApp e SMS prima dell'appuntamento</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Chi non può venire disdice rispondendo al messaggio, senza dover chiamare nessuno</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Il posto che si libera torna prenotabile subito, non alle tre e un quarto</span></li>
+          </ul>
+          <div class="sv-foot">
+            <span class="sv-nota">Il calendario resta il tuo, sincronizzato. Niente doppi appuntamenti.</span>
+            <a class="sv-cta" href="#contatto">Provalo sul tuo numero
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- ===== Slider minuti ===== -->
-      <div class="yzp-minrow">
-        <span class="yzp-minlab">Minuti al mese</span>
-        <span class="yzp-minval"><b id="yzpMinLab">750</b> min</span>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------- 4 - MESSAGGI WHATSAPP ---------------------------- -->
+<section id="pf-wa" class="pf-sec" aria-labelledby="pf-wa-title">
+  <div class="pf-driver">
+    <div class="pf-stage">
+      <div class="pf-grid">
+
+        <div class="pf-copy">
+          <span class="eyebrow pf-eyebrow">Problema 4 - Messaggi WhatsApp</span>
+          <div class="pf-beats">
+            <div class="pf-beat" data-in="-0.1" data-peak="0" data-out="0.34">
+              <h2 id="pf-wa-title">Un messaggio non ti obbliga a rispondere subito.</h2>
+              <p>Le chat stanno sul telefono che hai in tasca, e il numero di WhatsApp è il tuo: nessuno può rispondere al posto tuo.</p>
+            </div>
+            <div class="pf-beat" data-in="0.34" data-peak="0.45" data-out="0.68">
+              <h2>«Quanto mi viene?» con due foto allegate.</h2>
+              <p>Per rispondere davvero ti serve mezz'ora. E l'hanno chiesto anche a qualcun altro.</p>
+            </div>
+            <div class="pf-beat" data-in="0.68" data-peak="0.80" data-out="2">
+              <h2>Loro sanno che l'hai letto.</h2>
+              <p>In quelle chat l'ultimo messaggio non l'hai scritto tu. Da martedì.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-film">
+          <canvas width="900" height="900" aria-hidden="true"></canvas>
+        </div>
+
       </div>
-      <div class="slider-wrapper yzp-track">
-        <input type="range" id="minSlider" class="slider" min="0" max="10" step="1" value="2" aria-label="Minuti di conversazione mensili" />
-        <div class="slider-labels" aria-hidden="true">
-          <span style="--f:0">300</span>
-          <span style="--f:0.1">500</span>
-          <span class="active" style="--f:0.2">750</span>
-          <span style="--f:0.3">1k</span>
-          <span style="--f:0.4">1.5k</span>
-          <span style="--f:0.5">2k</span>
-          <span style="--f:0.6">3k</span>
-          <span style="--f:0.7">4k</span>
-          <span style="--f:0.8">5k</span>
-          <span style="--f:0.9">7.5k</span>
-          <span style="--f:1">10k</span>
+
+      <div class="sv-full">
+        <span class="sv-ghost" aria-hidden="true">04</span>
+        <div class="sv-wrap">
+          <span class="eyebrow sv-eyebrow">La soluzione</span>
+          <h2 class="sv-title">I messaggi arrivano sullo stesso numero.<br><em>La risposta parte senza di te.</em></h2>
+          <p class="sv-sub">Tu li leggi dopo, se vuoi. Chi ha scritto intanto ha già una risposta.</p>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><span class="sv-kpi-value">4s</span><span class="sv-kpi-label">tempo di risposta</span></div>
+          </div>
+          <ul class="sv-rows">
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Risponde in pochi secondi, con lo stesso tono che ha al telefono</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Il cliente prenota dentro la chat, senza telefonate e senza app da scaricare</span></li>
+            <li class="sv-row"><span class="sv-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sv-txt">Ti passa solo quello su cui deve decidere una persona</span></li>
+          </ul>
+          <div class="sv-foot">
+            <span class="sv-nota">Stesso numero, stesse chat. Cambia solo chi scrive per primo.</span>
+            <a class="sv-cta" href="#contatto">Provalo sul tuo numero
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- ===== Avviso sconto attivazione ===== -->
-      <div class="yzp-promo">
-        <span class="yzp-promo-ico" aria-hidden="true">%</span>
-        <p class="yzp-promo-t">
-          <b>Sconto attivazione attivo:</b> risparmi <b id="yzpSaving">€500</b> sull'una tantum.
-          <span>Offerta valida fino al <u>31 dicembre 2026</u> — dopo, l'attivazione torna a prezzo pieno.</span>
-        </p>
-      </div>
-
-      <!-- ===== Scelta setup ===== -->
-      <div class="yzp-setups">
-        <button type="button" class="yzp-set on" data-setup data-val="500" aria-pressed="true">
-          <span class="yzp-badge">−50%</span>
-          <span class="yzp-set-n">Setup standard</span>
-          <span class="yzp-set-d">Numero VoIP dedicato, agente, calendario e WhatsApp. Live in 8 giorni.</span>
-          <span class="yzp-set-p"><s>€1.000</s><b>€500</b></span>
-        </button>
-        <button type="button" class="yzp-set" data-setup data-val="900" aria-pressed="false">
-          <span class="yzp-badge">−36%</span>
-          <span class="yzp-set-n">Setup + gestionale</span>
-          <span class="yzp-set-d">Tutto lo standard, più l'integrazione con il gestionale che usi già.</span>
-          <span class="yzp-set-p"><s>€1.400</s><b>da €900</b></span>
-          <span class="yzp-set-note">Il prezzo può variare in base alle integrazioni richieste.</span>
-        </button>
-      </div>
-
-      <!-- ===== Nota fatturazione: subito dopo il setup ===== -->
-      <div class="yzp-bill">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <p>Il canone si paga <b><span id="yzpCadLabel">ogni 3 mesi</span>, in anticipo</b>. L'attivazione la paghi <b>una volta sola, oggi</b>.</p>
-      </div>
-
-      <!-- ===== Totale oggi ===== -->
-      <div class="yzp-today">
-        <span class="yzp-today-l">Oggi paghi <span class="yzp-today-s">canone anticipato + attivazione</span></span>
-        <span class="yzp-today-v" id="yzpToday">€1.175</span>
-      </div>
-      <p class="yzp-then">poi <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
-
     </div>
-
-    <a href="#contatto" class="section-cta">
-      <div class="section-cta-text">
-        <div class="section-cta-eyebrow">Dubbi sul piano?</div>
-        <div class="section-cta-line">Parliamone in mezz'ora. <span>Capiamo insieme cosa fa al caso tuo.</span></div>
-      </div>
-      <span class="section-cta-arrow">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-    </a>
   </div>
 </section>
 
-<!-- ============================ FAQ (sec-08) — GRID 2 COL STATICO ============================ -->
-<section class="section has-cta" id="faq">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>
-        <span class="title-problem">Le solite domande,</span>
-        <span class="title-solution">risposte oneste.</span>
-      </h2>
-      <p class="lead">Clicca per aprire la risposta. Se manca qualcosa, scrivici.</p>
-    </div>
+<script>
+/* Motore dei quattro film + svolta. Fasi, in spazio pagina della singola sezione:
+     0 -> FILM_END      i 121 fotogrammi, con i tre beat del problema
+     FILM_END ->        il pannello della soluzione nasce sul riquadro del film e si apre fino ai
+                        bordi mentre sotto film e testo si spengono. Se l'apertura partisse dopo
+                        la dissolvenza resterebbe un buco nero in mezzo allo schermo.
+     R0 ->              le tre voci si accendono a scalare, poi la nota e il bottone
+   I fotogrammi si scaricano solo quando la sezione sta arrivando: quattro film sono 484 immagini
+   e circa 16 MB, che non possono partire al caricamento della home. */
+(function(){
+var FILM_END = 0.56, DISS_END = 0.64, OPEN_A = 0.56, OPEN_B = 0.72;
+var R0 = 0.76, PASSO = 0.020, DURATA = 0.05;
 
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">📞</span>
-          <span class="faq-q">Cos'è esattamente YouZen?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">È la tua receptionist italiana che non stacca mai: risponde a chiamate, WhatsApp e prenotazioni 24 ore su 24, anche quando tu sei impegnato, in ferie o semplicemente vuoi staccare un attimo. Parla in modo naturale, capisce al volo cosa serve al cliente e gli fissa l'appuntamento dritto sul tuo calendario.</p>
-          <span class="faq-punch">In pratica: non perdi più una chiamata. Mai. Neanche una.</span>
-        </div></div></div>
-      </div>
+function clamp01(t){ return t < 0 ? 0 : t > 1 ? 1 : t; }
+function ease(t){ t = clamp01(t); return t*t*(3-2*t); }
+function tratto(p,a,b){ return ease((p-a)/(b-a)); }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🎙️</span>
-          <span class="faq-q">Si capisce che non è una persona in carne e ossa?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Quasi nessuno ci fa caso nei primi 30 secondi: la voce è italiana, naturale e parla la lingua del tuo settore. E se il cliente preferisce proprio un essere umano, YouZen gli passa la palla al tuo team senza fare drammi.</p>
-          <span class="faq-punch">Spoiler: il più delle volte chiama, prenota e riattacca contento.</span>
-        </div></div></div>
-      </div>
+var Q = new URLSearchParams(location.search);
+var JUMP = Q.get('jump');
+var FREEZE = Q.get('freeze') !== null;
+var STILL = Q.get('still');
+STILL = (STILL === null || STILL === '') ? null : parseFloat(STILL);
+if (STILL !== null) document.documentElement.classList.add('pf-still');
+if (JUMP !== null && 'scrollRestoration' in history) history.scrollRestoration = 'manual';
+var SCATTO = (STILL !== null || JUMP !== null);
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">⚙️</span>
-          <span class="faq-q">Quanto ci mette a partire?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Pochissimo, promesso. Setup guidato in 30 minuti il primo giorno, una settimana di rodaggio in modalità ombra (ascolta e impara in silenzio, senza disturbare nessuno) e go-live al giorno 8. Tu, nel frattempo, continui a lavorare come sempre.</p>
-          <span class="faq-punch">Otto giorni e hai una receptionist in più. Senza colloqui.</span>
-        </div></div></div>
-      </div>
+window.__pfReady = {};
+window.__pfExpected = ['pf-perse','pf-247','pf-ns','pf-wa'];
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🎁</span>
-          <span class="faq-q">Posso vedere come funziona prima di firmare?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Ci mancherebbe, mica si compra a scatola chiusa! Prenoti una demo di 30 minuti gratis: ti facciamo sentire YouZen dal vivo sul nostro numero, ti mostriamo il pannello di controllo e rispondiamo a tutte le tue curiosità. Poi decidi con calma.</p>
-          <span class="faq-punch">Zero pressione commerciale, zero impegno. Parola nostra.</span>
-        </div></div></div>
-      </div>
+// Rete di sicurezza: le sezioni si accendono e si spengono con l'IntersectionObserver, ma un
+// solo meccanismo per una cosa che si vede subito e' poco. Questo controllo passa su tutte le
+// sezioni al massimo cinque volte al secondo mentre si scorre, e costa quattro rettangoli.
+var REGISTRO = [], inAttesa = false;
+function controllaTutte(){ for (var i = 0; i < REGISTRO.length; i++) REGISTRO[i](); }
+window.addEventListener('scroll', function(){
+  if (inAttesa) return;
+  inAttesa = true;
+  setTimeout(function(){ inAttesa = false; controllaTutte(); }, 200);
+}, { passive:true });
+window.addEventListener('resize', controllaTutte, { passive:true });
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">📞</span>
-          <span class="faq-q">Devo cambiare il mio numero di telefono?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">No, stai sereno: il tuo numero resta il tuo. Impostiamo un inoltro intelligente (quando sei occupato, non rispondi o sei fuori orario) verso YouZen. Se preferisci il trasloco completo, facciamo anche il porting.</p>
-          <span class="faq-punch">I clienti chiamano lo stesso numero di sempre. Cambia solo chi risponde.</span>
-        </div></div></div>
-      </div>
+function initFilmSection(sectionId, framesPath, frameCount){
+  var section = document.getElementById(sectionId);
+  if (!section) return;
+  var driver = section.querySelector('.pf-driver');
+  var canvas = section.querySelector('canvas');
+  var ctx = canvas.getContext('2d', { alpha:false });
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">📅</span>
-          <span class="faq-q">Si integra con il mio calendario?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Sì: Google Calendar, Outlook, iCloud, Apple Calendar e i principali gestionali di settore (studi legali, medici, saloni). Ne usi uno un po' particolare? Diccelo e controlliamo subito se va d'accordo con noi.</p>
-        </div></div></div>
-      </div>
+  var beats = Array.prototype.map.call(section.querySelectorAll('.pf-beat'), function(el){
+    return { el:el, a:parseFloat(el.dataset.in), pk:parseFloat(el.dataset.peak), b:parseFloat(el.dataset.out) };
+  });
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">⏱️</span>
-          <span class="faq-q">Cosa succede se supero i minuti del pacchetto?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Non si blocca niente e non perdi nessuna chiamata. I minuti oltre il pacchetto li paghi <b>0,35€ l'uno</b>, e solo quelli. Se ti capita spesso, alzi il pacchetto quando vuoi e torni a 0,30€ al minuto.</p>
-        </div></div></div>
-      </div>
+  var stage = section.querySelector('.pf-stage');
+  var film = section.querySelector('.pf-film');
+  var grid = section.querySelector('.pf-grid');
+  var full = section.querySelector('.sv-full');
+  var svEyebrow = section.querySelector('.sv-eyebrow');
+  var svTitle = section.querySelector('.sv-title');
+  var svSub = section.querySelector('.sv-sub');
+  var svKpi = section.querySelector('.sv-kpis');
+  var svGhost = section.querySelector('.sv-ghost');
+  var svFoot = section.querySelector('.sv-foot');
+  var righe = Array.prototype.slice.call(section.querySelectorAll('.sv-row'));
+  var ticks = righe.map(function(r){ return r.querySelector('svg polyline'); });
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🔒</span>
-          <span class="faq-q">I dati dei clienti sono al sicuro?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Al sicuro come in cassaforte: server in UE, tutto a norma GDPR e registro dei trattamenti incluso. Le trascrizioni sono cifrate e l'accesso è multi-utente, con permessi su misura per ogni persona del team.</p>
-          <span class="faq-punch">Mai dati venduti, mai usati per addestrare modelli di terzi. Punto.</span>
-        </div></div></div>
-      </div>
+  var FRAME_COUNT = frameCount, PATH = framesPath;
+  function src(i){ var n = String(i+1); while(n.length<4) n='0'+n; return PATH+n+'.jpg'; }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🎚️</span>
-          <span class="faq-q">Posso intervenire mentre YouZen parla?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Assolutamente sì: comandi sempre tu. Dal pannello di controllo vedi le chiamate in diretta e, quando vuoi, ti infili nella conversazione o prendi tu il controllo della chiamata.</p>
-        </div></div></div>
-      </div>
+  var images = new Array(FRAME_COUNT);
+  var bitmaps = new Map(), decoding = new Set();
+  var AVANTI = 48, TIENI = 62;
+  var bmpCentro = -999, mostrato = -1;
+  var current = 0, target = 0, loaded = 0;
+  var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">💶</span>
-          <span class="faq-q">Quanto costa davvero?</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Un piano solo, a consumo: <b>€0,30 al minuto</b>, e i minuti li scegli tu. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Niente sorprese: paghi solo i minuti che usi davvero.</p>
-          <span class="faq-punch">Meno di un caffè al giorno per non perdere più un cliente.</span>
-        </div></div></div>
-      </div>
+  function sizeCanvas(){
+    var box = canvas.getBoundingClientRect();
+    var side = Math.max(1, Math.round(Math.min(box.width, 900)));
+    if (canvas.width !== side){ canvas.width = side; canvas.height = side; drawFrame(mostrato >= 0 ? mostrato : 0, true); }
+  }
+  function nearestFrame(i){
+    for (var d=0; d<FRAME_COUNT; d++){
+      if (bitmaps.has(i-d) || (images[i-d] && images[i-d].complete)) return i-d;
+      if (bitmaps.has(i+d) || (images[i+d] && images[i+d].complete)) return i+d;
+    }
+    return -1;
+  }
+  function drawFrame(i, force){
+    if (i < 0) return;
+    var use = bitmaps.has(i) ? i : nearestFrame(i);
+    if (use < 0) return;
+    if (use === mostrato && !force) return;
+    var srcObj = bitmaps.get(use) || images[use];
+    if (!srcObj) return;
+    ctx.drawImage(srcObj, 0, 0, canvas.width, canvas.height);
+    mostrato = use;
+  }
 
-    </div>
+  var MAX_DECODE = 3;
+  function ensureBitmaps(centro){
+    if (Math.abs(centro - bmpCentro) < 3) return;
+    bmpCentro = centro;
+    var lo = Math.max(0, centro - 20), hi = Math.min(FRAME_COUNT-1, centro + AVANTI);
+    var troncata = false;
+    for (var i=lo; i<=hi; i++){
+      if (decoding.size >= MAX_DECODE){ troncata = true; break; }
+      if (bitmaps.has(i) || decoding.has(i) || !images[i] || !images[i].complete) continue;
+      decoding.add(i);
+      (function(idx){
+        createImageBitmap(images[idx]).then(function(b){
+          decoding.delete(idx);
+          if (Math.abs(idx - bmpCentro) > TIENI){ b.close(); return; }
+          bitmaps.set(idx, b);
+          if (idx === mostrato) drawFrame(idx, true);
+        }).catch(function(){ decoding.delete(idx); });
+      })(i);
+    }
+    bitmaps.forEach(function(b,k){
+      if (k < centro - TIENI || k > centro + TIENI){ b.close(); bitmaps.delete(k); }
+    });
+    if (troncata) bmpCentro = -999;
+  }
 
-    <a href="#contatto" class="section-cta">
-      <div class="section-cta-text">
-        <div class="section-cta-eyebrow">Non hai trovato la risposta?</div>
-        <div class="section-cta-line">Scrivici o prenota una chiamata. <span>Risposte vere, non chatbot.</span></div>
-      </div>
-      <span class="section-cta-arrow">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-    </a>
-  </div>
-</section>
+  var next = 0, INFLIGHT = 10, partito = false;
+  function pump(){
+    while (next < FRAME_COUNT && INFLIGHT > 0){
+      INFLIGHT--;
+      (function(i){
+        var im = new Image();
+        im.decoding = 'async';
+        // Priorita' bassa: i fotogrammi non devono togliere banda al video dell'hero.
+        im.fetchPriority = 'low';
+        im.onload = im.onerror = function(){
+          loaded++; INFLIGHT++;
+          if (i === 0) drawFrame(0, true);
+          if (loaded === FRAME_COUNT) onAllLoaded();
+          pump();
+        };
+        im.src = src(i);
+        images[i] = im;
+      })(next++);
+    }
+  }
+  function aTempoPerso(fn){
+    (window.requestIdleCallback || function(f){ setTimeout(f, 250); })(fn, { timeout:2000 });
+  }
+  function avviaCaricamento(){
+    if (partito) return;
+    partito = true;
+    // I fotogrammi non partono mai prima che la pagina abbia finito di caricarsi: il primo film
+    // e' subito sotto la piega e senza questa attesa si porterebbe via banda mentre l'hero sta
+    // ancora arrivando. Nel frattempo la sezione mostra il suo fotogramma di posa.
+    // Per gli scatti serve tutto subito: aspettare il load significherebbe fotografare il poster.
+    if (SCATTO){ pump(); return; }
+    if (document.readyState === 'complete') aTempoPerso(pump);
+    else window.addEventListener('load', function(){ aTempoPerso(pump); }, { once:true });
+  }
+  // Il primo fotogramma fa da poster: costa una immagine sola e riempie il riquadro finche' il
+  // resto non arriva, invece di lasciare un quadrato di fondo pagina.
+  function caricaPoster(){
+    var im = new Image();
+    im.decoding = 'async';
+    im.onload = function(){
+      if (!images[0]) { images[0] = im; drawFrame(0, true); }
+      segnaPronta();
+    };
+    im.onerror = segnaPronta;
+    im.src = src(0);
+  }
 
-<!-- ============================ ANTI-FAQ (sec-09) — Quando YouZen NON serve ============================ -->
-<section class="section" id="anti-faq">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow" style="color: #94A3B8;">Onestà commerciale</span>
-      <h2>
-        <span class="title-problem">Va bene per tutti?</span>
-        <span class="title-solution">Ma anche no.</span>
-      </h2>
-      <p class="lead">10 situazioni in cui YouZen non ti serve. Davvero. Risparmiati i soldi e leggi qui sotto.</p>
-    </div>
+  function progress(){
+    if (STILL !== null) return Math.max(0, Math.min(1, STILL));
+    var r = driver.getBoundingClientRect();
+    var span = r.height - window.innerHeight;
+    if (span <= 0) return 0;
+    return Math.max(0, Math.min(1, -r.top / span));
+  }
 
-    <div class="faq-list antifaq-list-wrapper">
+  function paintBeats(pf){
+    for (var i=0; i<beats.length; i++){
+      var b = beats[i], al = 0;
+      if (pf >= b.a && pf <= b.b){
+        if (pf < b.pk) al = (pf - b.a) / Math.max(1e-4, b.pk - b.a);
+        else if (b.b > 1.5) al = 1;
+        else al = 1 - (pf - b.pk) / Math.max(1e-4, b.b - b.pk);
+      }
+      al = Math.max(0, Math.min(1, al));
+      b.el.style.opacity = al;
+      b.el.style.transform = 'translateY(' + ((1-al)*14).toFixed(1) + 'px)';
+    }
+  }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">👨‍🎨</span>
-          <span class="faq-q">"Rispondo io a tutto, sempre."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Sei tu il talento, sei tu il marketing, sei tu il telefono. Bravo. Se ti pagano per essere irraggiungibile (psicoterapeuta affermato, chef Michelin, notaio storico), YouZen è una spesa inutile.</p>
-          <span class="faq-punch">Continua così.</span>
-        </div></div></div>
-      </div>
+  var partenza = null;
+  function misuraPartenza(){
+    var rf = film.getBoundingClientRect();
+    var rs = stage.getBoundingClientRect();
+    if (rs.width <= 0 || rs.height <= 0){ partenza = null; return; }
+    partenza = {
+      top: Math.max(0, rf.top - rs.top),
+      right: Math.max(0, rs.right - rf.right),
+      bottom: Math.max(0, rs.bottom - rf.bottom),
+      left: Math.max(0, rf.left - rs.left)
+    };
+  }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🎭</span>
-          <span class="faq-q">"Mi piace farmi richiamare 3 volte prima di rispondere."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Strategia legittima. C'è chi crea attesa per principio. Se la tua brand promise è "irreperibile come un'opera d'arte", YouZen ti rovina il personaggio.</p>
-        </div></div></div>
-      </div>
+  function paintSvolta(p){
+    var diss = tratto(p, FILM_END, DISS_END);
+    grid.style.opacity = (1 - diss).toFixed(3);
+    var ub = beats[beats.length-1];
+    if (ub){
+      var base = parseFloat(ub.el.style.opacity || '0');
+      ub.el.style.opacity = (base * (1 - diss)).toFixed(3);
+    }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">💎</span>
-          <span class="faq-q">"Ho 2 clienti l'anno e li conosco tutti per nome."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Allora non sei un'attività, sei un consulente VIP. YouZen serve a chi gestisce volume. Tu gestisci relazioni.</p>
-          <span class="faq-punch">Sono due mestieri diversi.</span>
-        </div></div></div>
-      </div>
+    var k = clamp01((p - OPEN_A) / (OPEN_B - OPEN_A));
+    if (k <= 0){
+      full.style.visibility = 'hidden';
+      if (p > OPEN_A - 0.06) misuraPartenza();
+      return;
+    }
+    if (!partenza) misuraPartenza();
+    full.style.visibility = 'visible';
+    var e = ease(k);
+    if (partenza){
+      var t = partenza.top * (1-e), r = partenza.right * (1-e);
+      var b2 = partenza.bottom * (1-e), l = partenza.left * (1-e);
+      var rad = 22 * (1-e);
+      full.style.clipPath = 'inset(' + t.toFixed(1) + 'px ' + r.toFixed(1) + 'px ' +
+                            b2.toFixed(1) + 'px ' + l.toFixed(1) + 'px round ' + rad.toFixed(1) + 'px)';
+    } else {
+      full.style.clipPath = 'none';
+    }
+    full.style.opacity = tratto(p, OPEN_A, OPEN_A + 0.045).toFixed(3);
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">👨‍👩‍👦</span>
-          <span class="faq-q">"Il mio segretario è mio cognato e non posso licenziarlo."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Capiamo la situazione familiare. YouZen non risolve i drammi parentali.</p>
-          <span class="faq-punch">Per quelli serve uno psicologo, mica una receptionist.</span>
-        </div></div></div>
-      </div>
+    if (svGhost){
+      var kg = tratto(p, OPEN_A + 0.02, OPEN_B);
+      svGhost.style.opacity = kg.toFixed(3);
+      svGhost.style.transform = 'translateY(-50%) scale(' + (0.86 + kg*0.14 + clamp01((p-OPEN_B)/0.3)*0.06).toFixed(3) + ')';
+    }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🧘</span>
-          <span class="faq-q">"Adoro perdere tempo con chi chiama solo per chiedere se siete aperti."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Bella forma di meditazione zen. Se per te ogni chiamata è un'occasione di mindfulness, automatizzare ti toglie il piacere del momento presente.</p>
-        </div></div></div>
-      </div>
+    // Il contenuto entra mentre il pannello si apre, ma non prima di meta' corsa: clip-path
+    // taglia invece di rimpicciolire, quindi un titolo entrato troppo presto si legge mozzato.
+    var kc = tratto(p, OPEN_A + (OPEN_B-OPEN_A)*0.50, OPEN_B + 0.01);
+    svEyebrow.style.opacity = kc.toFixed(3);
+    svTitle.style.opacity = kc.toFixed(3);
+    svTitle.style.transform = 'translateY(' + ((1-kc)*16).toFixed(1) + 'px)';
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🚑</span>
-          <span class="faq-q">"Il mio settore vive di telefonate alle 3 del mattino."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Pronto soccorso? Veterinario d'urgenza? Soccorso stradale? Lì serve un umano vero, sempre, con autorità decisionale.</p>
-          <span class="faq-punch">YouZen è bravo, ma non firma certificati.</span>
-        </div></div></div>
-      </div>
+    var ks = tratto(p, OPEN_B - 0.05, OPEN_B + 0.01);
+    svSub.style.opacity = ks.toFixed(3);
+    svSub.style.transform = 'translateY(' + ((1-ks)*12).toFixed(1) + 'px)';
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🕵️</span>
-          <span class="faq-q">"Le mie chiamate sono tutte segretissime."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Servizi segreti? Avvocati di mafiosi? Se hai bisogno di zero traccia digitale, YouZen non fa per te. Noi siamo conformi GDPR, ma per definizione "tracciamo" tutto in modo legittimo.</p>
-        </div></div></div>
-      </div>
+    var kn = tratto(p, OPEN_B - 0.01, OPEN_B + 0.05);
+    svKpi.style.opacity = kn.toFixed(3);
+    svKpi.style.transform = 'translateY(' + ((1-kn)*14).toFixed(1) + 'px) scale(' + (0.94 + kn*0.06).toFixed(3) + ')';
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">👵</span>
-          <span class="faq-q">"Il telefono squilla 1 volta al mese e quando squilla è mia madre."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Bellissimo. Tua madre merita una risposta umana.</p>
-          <span class="faq-punch">YouZen non simula l'affetto materno (ancora).</span>
-        </div></div></div>
-      </div>
+    for (var i=0; i<righe.length; i++){
+      var a = R0 + i*PASSO;
+      var rk = tratto(p, a, a + DURATA);
+      righe[i].style.opacity = rk.toFixed(3);
+      righe[i].style.transform = 'translateY(' + ((1-rk)*12).toFixed(1) + 'px)';
+      if (ticks[i]) ticks[i].style.strokeDashoffset = (26 * (1-rk)).toFixed(1);
+    }
+    var kf = tratto(p, R0 + righe.length*PASSO, R0 + righe.length*PASSO + 0.05);
+    svFoot.style.opacity = kf.toFixed(3);
+    svFoot.style.transform = 'translateY(' + ((1-kf)*12).toFixed(1) + 'px)';
+  }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🏺</span>
-          <span class="faq-q">"Voglio che i clienti capiscano che siamo pochi e artigianali."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Posizionamento legittimo. Se "non rispondiamo mai" è parte della tua narrazione (osterie segrete, atelier su appuntamento, club esclusivi), YouZen rompe l'incantesimo.</p>
-        </div></div></div>
-      </div>
+  function segnaPronta(){
+    window.__pfReady[sectionId] = true;
+    for (var i=0; i<window.__pfExpected.length; i++)
+      if (!window.__pfReady[window.__pfExpected[i]]) return;
+    window.__ready = true;
+  }
 
-      <div class="faq-item">
-        <h3 class="faq-h"><button class="faq-trigger" aria-expanded="false">
-          <span class="faq-emoji">🍕</span>
-          <span class="faq-q">"Non ho un'attività, ho solo un numero per ordinare le pizze."</span>
-          <span class="faq-toggle" aria-hidden="true"></span>
-        </button></h3>
-        <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Allora questo non è il sito che cercavi. Però già che ci sei, dai un'occhiata a Glovo.</p>
-          <span class="faq-punch">(Scherziamo. O forse no.)</span>
-        </div></div></div>
-      </div>
+  function dipingi(p){
+    var pf = Math.min(1, p / FILM_END);
+    target = pf * (FRAME_COUNT - 1);
+    return pf;
+  }
 
-    </div>
+  // Il ciclo di disegno esiste solo mentre la sezione e' in zona: quattro cicli sempre accesi
+  // costerebbero 240 fotogrammi al secondo di lavoro inutile a chi sta leggendo tutt'altro.
+  var sveglio = false;
+  function sveglia(){
+    if (sveglio) return;
+    sveglio = true;
+    requestAnimationFrame(tick);
+  }
+  function dormi(){
+    sveglio = false;
+    if (bitmaps.size){
+      bitmaps.forEach(function(b){ b.close(); });
+      bitmaps.clear();
+      bmpCentro = -999; mostrato = -1;
+    }
+  }
 
-    <div class="antifaq-footer">
-      <p>Se hai letto fino a qui e <strong>nessuno di questi 10 punti</strong> ti rispecchia, allora forse YouZen fa proprio per te.</p>
-    </div>
+  function tick(){
+    if (!sveglio) return;
+    var p = progress();
+    var pf = dipingi(p);
+    current += (target - current) * 0.14;
+    var idx = Math.round(current);
+    ensureBitmaps(idx);
+    drawFrame(idx, false);
+    paintBeats(pf);
+    paintSvolta(p);
+    if (FREEZE && window.__ready) return;
+    requestAnimationFrame(tick);
+  }
 
-  </div>
-</section>
+  function onAllLoaded(){
+    section.classList.add('is-ready');
+    if (STILL !== null){
+      var ps = progress(), pfs = dipingi(ps);
+      current = target;
+      section.classList.add('pf-in');
+      misuraPartenza();
+      drawFrame(Math.round(current), true);
+      paintBeats(pfs);
+      paintSvolta(ps);
+      segnaPronta();
+      return;
+    }
+    if (JUMP !== null){
+      window.scrollTo(0, parseFloat(JUMP) || 0);
+      var p = progress(), pf = dipingi(p);
+      current = target;
+      ensureBitmaps(Math.round(current));
+      requestAnimationFrame(function(){
+        drawFrame(Math.round(current), true);
+        paintBeats(pf);
+        paintSvolta(p);
+        requestAnimationFrame(segnaPronta);
+      });
+    }
+  }
 
-<!-- ============================ FINAL CTA (sec-10) ============================ -->
+  window.addEventListener('resize', function(){ sizeCanvas(); misuraPartenza(); }, { passive:true });
+
+  if (SCATTO){
+    section.classList.add('pf-in');
+  } else if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(voci){
+      voci.forEach(function(v){ if (v.isIntersecting){ section.classList.add('pf-in'); io.disconnect(); } });
+    }, { rootMargin: '-15% 0px -15% 0px' });
+    io.observe(section);
+  } else {
+    section.classList.add('pf-in');
+  }
+
+  if (REDUCE){
+    var im = new Image();
+    im.onload = function(){ sizeCanvas(); ctx.drawImage(im,0,0,canvas.width,canvas.height); section.classList.add('is-ready'); segnaPronta(); };
+    im.src = src(FRAME_COUNT-1);
+    return;
+  }
+
+  sizeCanvas();
+  misuraPartenza();
+
+  if (SCATTO){
+    // Per gli screenshot serve tutto subito, altrimenti si fotografa un canvas vuoto.
+    avviaCaricamento();
+    if (STILL === null) sveglia();
+    return;
+  }
+
+  caricaPoster();
+  // Il ciclo si accende e si spegne con la vicinanza: margine piu' stretto di quello del
+  // caricamento, perche' qui basta essere pronti a disegnare, non ad avere i fotogrammi.
+  if ('IntersectionObserver' in window){
+    var ioVista = new IntersectionObserver(function(voci){
+      voci.forEach(function(v){ if (v.isIntersecting) sveglia(); else dormi(); });
+    }, { rootMargin: '400px 0px 400px 0px' });
+    ioVista.observe(section);
+  } else {
+    sveglia();
+  }
+  // La stessa decisione, presa guardando i rettangoli invece che aspettando l'osservatore.
+  REGISTRO.push(function(){
+    var r = driver.getBoundingClientRect();
+    if (r.top < window.innerHeight + 1200 && r.bottom > -600){ avviaCaricamento(); sveglia(); }
+    else if (sveglio) dormi();
+  });
+  // Il grosso parte quando la sezione sta arrivando da sotto, quindi il margine largo e' quello
+  // in basso: il caricamento si spalma invece di concentrarsi nell'istante in cui entra in campo.
+  // Con questi valori solo il primo film parte insieme alla pagina; gli altri tre aspettano.
+  if ('IntersectionObserver' in window){
+    var ioLoad = new IntersectionObserver(function(voci){
+      voci.forEach(function(v){ if (v.isIntersecting){ avviaCaricamento(); ioLoad.disconnect(); } });
+    }, { rootMargin: '600px 0px 1200px 0px' });
+    ioLoad.observe(section);
+  } else {
+    avviaCaricamento();
+  }
+}
+
+// Quanti fotogrammi: non 24 fps per tutti, ma quello che ogni scena chiede davvero, misurato
+// con l'SSIM fra un fotogramma e quello a distanza 2. Le chiamate perse hanno la caduta del
+// telefono e restano fitte; gli appuntamenti sono quasi immobili e stanno in 40. A 720px perche'
+// il riquadro in pagina e' largo al massimo 560 px CSS e il canvas lavora a DPR 1.
+function avvia(){
+  initFilmSection('pf-perse', 'prototipo-problemi/frames-lite/f_',     81);
+  initFilmSection('pf-247',   'prototipo-problemi/frames-247-lite/f_', 61);
+  initFilmSection('pf-ns',    'prototipo-problemi/frames-ns-lite/f_',  40);
+  initFilmSection('pf-wa',    'prototipo-problemi/frames-wa-lite/f_',  61);
+  // Chi arriva con un'ancora, o riapre la pagina a meta', non scorre: il primo controllo va
+  // fatto lo stesso. Ma va fatto **dopo** il load, perche' prima il browser non ha ancora
+  // saltato all'ancora e vedremmo la pagina in cima, caricando il film sbagliato.
+  if (document.readyState === 'complete') controllaTutte();
+  else window.addEventListener('load', controllaTutte, { once:true });
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', avvia);
+else avvia();
+})();
+</script>
+
 <section class="cta-final" id="contatto">
   <div class="container">
     <div class="cta-grid">
@@ -6137,6 +5410,8 @@ html.yz-cookie-open .call-bar { display: none; }
   </div>
 </section>
 
+</main>
+
 <!-- ============================ FOOTER ============================ -->
 <footer class="footer">
   <div class="container">
@@ -6176,11 +5451,11 @@ html.yz-cookie-open .call-bar { display: none; }
         <h5>Prodotto</h5>
         <ul>
           <li><a href="#sec-03">Come funziona</a></li>
-          <li><a href="#sec-04">Senza / Con</a></li>
-          <li><a href="#sec-integrazioni">Integrazioni</a></li>
-          <li><a href="#sec-06">Onboarding</a></li>
-          <li><a href="#prezzi">Prezzi</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="index.html#sec-04">Senza / Con</a></li>
+          <li><a href="index.html#sec-integrazioni">Integrazioni</a></li>
+          <li><a href="index.html#sec-06">Onboarding</a></li>
+          <li><a href="index.html#prezzi">Prezzi</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
         </ul>
       </div>
 
@@ -6248,89 +5523,8 @@ window.addEventListener('scroll', () => {
 // ===== Footer email decode
 document.getElementById('footer-email').textContent = 'info' + String.fromCharCode(64) + 'youzen.it';
 
-// ===== Prezzi: piano unico (€0,30/min) + cadenza anticipata + attivazione
-// Si parte da 300 minuti al mese: sotto quella soglia il servizio non ha senso per nessuno.
-const minSteps = [300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
-const RATE = 0.30;              // €/min
-const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
-const LISTINO = { 500: 1000, 900: 1400 };  // prezzo pieno di ogni attivazione scontata
-
-const slider = document.getElementById('minSlider');
-const yzp = document.getElementById('yzp');
-let mesi = 3;      // cadenza: 3 = trimestrale, 12 = annuale
-let setup = 500;   // attivazione scelta
-
-// it-IT non raggruppa i numeri a 4 cifre ("1500"); il sito scrive "1.500".
-const grp = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-const eur = n => '€' + grp(Math.round(n));
-const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-
-function updatePricing() {
-  const idx = parseInt(slider.value, 10);
-  const minutes = minSteps[idx];
-  const annuale = mesi === 12;
-
-  const base = minutes * RATE;                              // canone pieno
-  const monthly = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
-  const period = monthly * mesi;                            // quanto paghi per ciclo, in anticipo
-  const today = period + setup;
-  const cadLabel = 'ogni ' + mesi + ' mesi';
-
-  yzp.classList.toggle('annuale', annuale);
-
-  setTxt('yzpMin', grp(minutes));
-  setTxt('yzpMinLab', grp(minutes));
-  setTxt('yzpMonthly', grp(Math.round(monthly)));
-  setTxt('yzpWas', eur(base) + '/mese');
-  setTxt('yzpSave', 'risparmi ' + eur(base * 12 * ANNUAL_DISCOUNT) + " l'anno");
-  setTxt('yzpSaving', eur(LISTINO[setup] - setup));
-  setTxt('yzpCadLabel', cadLabel);
-  setTxt('yzpCadLabel2', cadLabel);
-  setTxt('yzpToday', eur(today));
-  setTxt('yzpThen', eur(period));
-
-  document.querySelectorAll('.slider-labels span').forEach((label, i) => {
-    label.classList.toggle('active', i === idx);
-  });
-}
-// Il prezzo non c'e' alla prima visione: prima l'invito a scegliere i minuti.
-// Si scopre al primo tocco dello slider (o del toggle cadenza, che il prezzo
-// lo cambia: lasciarlo nascosto farebbe sembrare il toggle rotto) e poi resta.
-let priceRevealed = false;
-function revealPrice() {
-  if (priceRevealed) return;
-  priceRevealed = true;
-  document.getElementById('yzpInvite').hidden = true;
-  document.getElementById('yzpReveal').hidden = false;
-}
-
-slider.addEventListener('input', () => { revealPrice(); updatePricing(); });
-
-// cadenza trimestrale / annuale
-document.querySelectorAll('#yzpCad button').forEach(b => {
-  b.addEventListener('click', () => {
-    document.querySelectorAll('#yzpCad button').forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    mesi = parseInt(b.dataset.mesi, 10);
-    revealPrice();
-    updatePricing();
-  });
-});
-
-// scelta attivazione
-document.querySelectorAll('[data-setup]').forEach(el => {
-  el.addEventListener('click', () => {
-    document.querySelectorAll('[data-setup]').forEach(o => {
-      o.classList.remove('on');
-      o.setAttribute('aria-pressed', 'false');
-    });
-    el.classList.add('on');
-    el.setAttribute('aria-pressed', 'true');
-    setup = parseInt(el.dataset.val, 10);
-    updatePricing();
-  });
-});
-updatePricing();
+// Il calcolatore dei prezzi vive solo in home: qui la sua sezione non c'e', e senza
+// questo taglio la prima riga che cerca lo slider fermava tutto lo script che segue.
 
 // ===== Timeline: cambio step su click + scroll
 const tlSteps = document.querySelectorAll('.tl-step');
@@ -6354,20 +5548,26 @@ const tlObserver = new IntersectionObserver((entries) => {
 }, { threshold: [0.5], rootMargin: '-20% 0px -20% 0px' });
 tlSteps.forEach(s => tlObserver.observe(s));
 
-// ===== Onboarding (sec-06): le barre del nastro si riempiono quando entrano in campo =====
+// ===== Onboarding timeline (zig-zag): la linea coincide col primo e ultimo nodo =====
 (function () {
-  var nastri = document.querySelector('.yzn-nastri');
-  if (!nastri) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    nastri.classList.add('is-in');
-    return;
-  }
-  var io = new IntersectionObserver(function (voci) {
-    voci.forEach(function (v) {
-      if (v.isIntersecting) { nastri.classList.add('is-in'); io.unobserve(v.target); }
+  function placeSpine() {
+    document.querySelectorAll('.yztl-line').forEach(function (line) {
+      var spine = line.querySelector('.yztl-spine');
+      var nodes = line.querySelectorAll('.yztl-node');
+      if (!spine || nodes.length < 2) return;
+      var lr = line.getBoundingClientRect();
+      var f = nodes[0].getBoundingClientRect();
+      var l = nodes[nodes.length - 1].getBoundingClientRect();
+      var top = (f.top + f.height / 2) - lr.top;
+      var bot = (l.top + l.height / 2) - lr.top;
+      spine.style.top = top + 'px';
+      spine.style.height = Math.max(0, bot - top) + 'px';
     });
-  }, { threshold: 0.5 });
-  io.observe(nastri);
+  }
+  function run() { requestAnimationFrame(placeSpine); }
+  if (document.readyState === 'complete') run();
+  else window.addEventListener('load', run);
+  window.addEventListener('resize', placeSpine);
 })();
 
 // ===== FAQ accordion (one-at-a-time, tutto chiuso all'apertura)
@@ -6631,6 +5831,43 @@ if (document.readyState === 'loading') {
 <!-- ============================ COOKIE BANNER (GDPR / Consent Mode v2) ============================ -->
 <!-- Banner + registro consensi gestiti da yz-consent.js (unico file condiviso su tutte le pagine con GA4). -->
 <script defer src="yz-consent.js"></script>
+<!-- Indice laterale: segna la tappa che sta occupando il centro dello schermo. -->
+<script>
+(function(){
+  var nav = document.querySelector('.pf-index');
+  if (!nav) return;
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  var sezioni = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var inCoda = false;
+
+  function segna(){
+    inCoda = false;
+    var mezzo = window.innerHeight / 2;
+    var attivo = -1;
+    for (var i = 0; i < sezioni.length; i++){
+      var sez = sezioni[i];
+      if (!sez) continue;
+      var r = sez.getBoundingClientRect();
+      if (r.top <= mezzo && r.bottom >= mezzo){ attivo = i; break; }
+    }
+    // Prima del primo problema e dopo l'ultimo non si evidenzia niente.
+    for (var j = 0; j < links.length; j++){
+      if (j === attivo) links[j].setAttribute('aria-current', 'true');
+      else links[j].removeAttribute('aria-current');
+    }
+    nav.classList.toggle('is-off', attivo === -1);
+  }
+
+  window.addEventListener('scroll', function(){
+    if (inCoda) return;
+    inCoda = true;
+    requestAnimationFrame(segna);
+  }, { passive: true });
+  window.addEventListener('resize', segna);
+  segna();
+})();
+</script>
+
 <!-- Barra fissa Call Center AI -->
 <div class="call-bar" id="yzCallBar">
   <span class="call-bar-text">Per informazioni e appuntamenti chiamaci al</span>
