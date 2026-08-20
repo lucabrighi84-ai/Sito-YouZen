@@ -17,3 +17,8 @@ tracker/
 index-prototipo.html
 prototipo-problemi/
 *.pre-*-backup
+
+# Puntatore locale al wiki di conoscenza (conoscenza/youzen/). Serve solo a chi
+# lavora sul repo dal computer di Luca: non e' una pagina del sito e, come i
+# backup qui sopra, GitHub Pages lo servirebbe pubblico su youzen.it/CLAUDE.md.
+CLAUDE.md
