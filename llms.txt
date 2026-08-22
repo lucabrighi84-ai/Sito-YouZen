@@ -1,0 +1,51 @@
+# YouZen
+
+> Segreteria AI italiana per professionisti e PMI. Risponde alle chiamate, gestisce
+> WhatsApp e prende gli appuntamenti 24 ore su 24, sincronizzandoli con il calendario
+> che il cliente già usa. Attiva su tutto il territorio italiano, con sede a Rimini.
+
+## Che cos'è YouZen
+
+YouZen è un assistente telefonico con intelligenza artificiale per le piccole imprese.
+Risponde alle chiamate e ai messaggi WhatsApp al posto del titolare, riconosce chi
+chiama, fissa gli appuntamenti e li scrive sul calendario collegato. Ogni chiamata
+viene trascritta, con nome e numero salvati, incluse quelle arrivate a studio chiuso.
+Il numero di telefono resta quello dell'attività: si può collegare il numero esistente
+tramite portabilità oppure usare un numero VoIP dedicato.
+
+## Pagine principali
+
+- [Homepage](https://youzen.it/): che cosa fa YouZen, prezzi, domande frequenti
+- [Problemi e soluzioni](https://youzen.it/problemi-e-soluzioni.html): i quattro problemi che risolve, uno per uno
+- [Saloni e SPA](https://youzen.it/settori/saloni.html): parrucchieri, estetica, centri benessere
+- [Ristoranti e food](https://youzen.it/settori/food.html): prenotazione tavoli e ordini
+- [Professionisti](https://youzen.it/settori/professionisti.html): consulenti, commercialisti, partite IVA
+- [Agenzie immobiliari](https://youzen.it/settori/immobiliare.html): richieste di visita e lead
+- [Studi legali](https://youzen.it/settori/studio-legale.html): filtro chiamate e primo contatto
+- [Privacy](https://youzen.it/privacy/) · [GDPR](https://youzen.it/GDPR/) · [Termini](https://youzen.it/termini/)
+
+## Come funziona l'attivazione
+
+L'avvio dura otto giorni. Si parte con una call in cui si raccontano servizi, orari e
+domande tipiche, poi la configurazione la fa YouZen. Seguono giorni di prove in
+modalità ombra, con il cliente che ascolta le conversazioni e corregge il tono.
+Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
+
+## Prezzi
+
+- Tariffa unica a consumo: 0,30 euro al minuto, minuti extra oltre il pacchetto a 0,35 euro
+- Pacchetto di riferimento: 750 minuti al mese, 225 euro di canone mensile
+- Canone pagato ogni tre mesi in anticipo, oppure annuale con il 10 per cento di sconto
+- Attivazione una tantum: 500 euro per il setup standard, da 900 euro con integrazione al gestionale
+- Nessun contratto pluriennale, preavviso di trenta giorni per disdire
+
+## Fatti utili
+
+- Lingue gestite: italiano, inglese, francese, spagnolo, tedesco, olandese
+- Dati trattati su server nell'Unione Europea, conforme GDPR, DPA firmato su richiesta
+- Si integra con Google Calendar, Apple Calendar, Outlook, Cal.com, Calendly, WhatsApp, Telegram, Slack, Gmail, Notion, Google Sheets, HubSpot, Zapier e Stripe
+- Quando una richiesta esce dal suo dominio, l'assistente non improvvisa: passa la chiamata a una persona
+- Ragione sociale: YouZen di Luca Brighi, partita IVA IT04855440402, Via del Pino 13, 47923 Rimini
+- Contatti: +39 0541 172 6297, info@youzen.it
+
+Ultimo aggiornamento: 2026-08-20

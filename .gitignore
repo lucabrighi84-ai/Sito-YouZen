@@ -15,8 +15,20 @@ tracker/
 # finire pubblica su youzen.it. Contiene anche i frame estratti del video, che
 # sono pesanti e inutili nel repo.
 index-prototipo.html
-prototipo-problemi/
 *.pre-*-backup
+
+# Del prototipo esce solo quello che la pagina "Problemi e soluzioni" carica davvero:
+# i quattro set di fotogrammi "lite" (720px, 8 MB in tutto). Il resto della cartella
+# resta locale: i frame a piena risoluzione, i mockup e le prove non servono al sito.
+# La wildcard e' obbligatoria: ignorando la cartella intera git non guarda dentro e
+# le eccezioni qui sotto non verrebbero nemmeno lette.
+prototipo-problemi/*
+!prototipo-problemi/frames-lite/
+!prototipo-problemi/frames-247-lite/
+!prototipo-problemi/frames-ns-lite/
+!prototipo-problemi/frames-wa-lite/
+# Anche le quattro foto delle card: le usa la sezione "problemi" della home.
+!prototipo-problemi/card/
 
 # Puntatore locale al wiki di conoscenza (conoscenza/youzen/). Serve solo a chi
 # lavora sul repo dal computer di Luca: non e' una pagina del sito e, come i

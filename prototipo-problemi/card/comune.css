@@ -1,0 +1,75 @@
+/* Token del sito (index.html righe 281-304) piu' lo stretto necessario per i mockup.
+   Ogni mockup porta il suo CSS: qui c'e' solo cio' che condividono davvero. */
+:root{
+  --ink-900:#080e1f; --ink-800:#0d1530; --ink-700:#121b3d;
+  --accent:#F97316; --accent-400:#FB923C; --accent-600:#EA580C;
+  --muted:rgba(255,255,255,0.62); --muted-strong:rgba(255,255,255,0.78);
+  --muted-weak:rgba(255,255,255,0.42);
+  --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.16);
+  --rosso:#E4453A;
+  --font-sans:'Inter',system-ui,sans-serif;
+  --font-brand:'Michroma',system-ui,sans-serif;
+  --font-serif:Georgia,'Times New Roman',serif;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--ink-900); color:#fff;
+  font-family:var(--font-sans); line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+
+/* barra di scelta fra i cinque mockup: sta solo qui, non andra' nel sito */
+.mk-nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:12px 22px; background:rgba(8,14,31,.9); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.mk-nav b{
+  font-family:var(--font-brand); font-size:10px; letter-spacing:.10em;
+  text-transform:uppercase; color:var(--accent); margin-right:6px;
+}
+.mk-nav a{
+  padding:6px 13px; border-radius:999px; border:1px solid var(--line);
+  color:var(--muted); text-decoration:none; font-size:13px; white-space:nowrap;
+}
+.mk-nav a:hover{ color:#fff; border-color:var(--line-strong); }
+.mk-nav a.on{ color:#fff; background:rgba(249,115,22,.12); border-color:rgba(249,115,22,.45); }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-brand); font-size:11px; font-weight:500;
+  letter-spacing:.04em; text-transform:uppercase; color:var(--accent);
+  padding:6px 12px; border:1px solid rgba(249,115,22,.24);
+  border-radius:999px; background:rgba(249,115,22,.06);
+}
+.eyebrow::before{
+  content:''; width:6px; height:6px; border-radius:999px;
+  background:var(--accent); box-shadow:0 0 10px var(--accent);
+}
+
+.wrap{ max-width:1240px; margin:0 auto; padding:0 24px; }
+.testata{ padding:84px 0 52px; max-width:900px; }
+.testata h1{
+  font-family:var(--font-sans); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(30px,4vw,54px); line-height:1.08; margin:22px 0 18px;
+}
+.testata h1 .via{ color:var(--accent); display:block; }
+.testata p{ color:var(--muted); font-size:clamp(16px,1.4vw,20px); margin:0; max-width:60ch; }
+
+.cta{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 24px; border-radius:999px; border:0;
+  background:linear-gradient(180deg,var(--accent-400),var(--accent-600));
+  color:#fff; font-weight:700; font-size:15px; text-decoration:none;
+  box-shadow:0 12px 32px -8px rgba(249,115,22,.45),
+             0 2px 0 0 rgba(255,255,255,.08) inset,
+             0 -2px 0 0 rgba(0,0,0,.18) inset;
+}
+.coda{ padding:60px 0 110px; display:flex; justify-content:center; }
+
+:focus-visible{ outline:2px solid var(--accent-400); outline-offset:3px; border-radius:6px; }
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; }
+}
