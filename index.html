@@ -4760,8 +4760,12 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-fasce{
   display:flex; flex-direction:column; gap:0;
   margin-top:52px;
-  /* respiro dell'ultima scheda: senza, arriva e la sezione finisce subito dopo */
-  padding-bottom:46vh;
+  /* Niente padding qui sotto: il respiro dell'ultima scheda glielo da gia il suo
+     margine, uguale a quello di tutte le altre. Il 46vh che c'era prima serviva
+     quando l'ultima scheda aveva margine zero, e aggiungeva mezza schermata di
+     scorrimento vuoto prima di "una giornata tipo": lo stacco fra le due sezioni
+     risultava il triplo di quello fra due sezioni qualsiasi. */
+  padding-bottom:0;
 }
 /* Il LED della scheda in cima alla pila: sotto la scheda gira un quadrato con un
    gradiente conico, e .pb-dentro lo copre tutto tranne i 2px di padding. Di quel
