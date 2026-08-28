@@ -34,7 +34,7 @@
 
 <!-- ============================ SEO PRIMARY ============================ -->
 <title>YouZen · Segretaria AI per chiamate, WhatsApp e appuntamenti</title>
-<meta name="description" content="Segreteria AI italiana 24/7 per studi legali, cliniche, saloni, agenzie immobiliari e PMI. Risponde alle chiamate, gestisce WhatsApp, prenota appuntamenti automaticamente." />
+<meta name="description" content="Segreteria AI italiana 24/7 per studi legali, cliniche, saloni, agenzie immobiliari e PMI. Risponde a chiamate, WhatsApp e DM di Instagram e Facebook, e fissa gli appuntamenti." />
 <meta name="keywords" content="segretaria AI, AI receptionist, segretaria virtuale, gestione chiamate AI, agente AI italiano, automazione studi, AI WhatsApp business, prenotazione appuntamenti AI, AI per studi legali, AI per cliniche, AI per saloni, AI per agenzie immobiliari" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="YouZen di Luca Brighi" />
@@ -550,11 +550,16 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   height: 72px;
   display: flex; align-items: center; justify-content: space-between;
 }
+/* Michroma esiste solo in peso 400 (fonts/fonts.css): chiedendo 800 il browser si
+   inventava un grassetto sintetico che impastava le aste. */
 .logo {
-  font-family: var(--font-brand); font-size: 1.5rem; font-weight: 800;
+  font-family: var(--font-brand); font-size: 1.5rem; font-weight: 400;
   letter-spacing: 0;
   display: flex; align-items: center; gap: 8px;
 }
+/* Il gap serve a staccare l'icona dal nome. Senza questo wrapper "You" e "Zen"
+   sono due flex item distinti e il gap spacca anche il nome: "You Zen". */
+.logo-text { display: inline; }
 .logo .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
 .logo-img {
   width: 32px;
@@ -865,6 +870,75 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 @media (min-width: 769px) {
   .hero-content-wrapper { display: none; }
+}
+
+/* Invito all'azione della hero. Vive fuori dal wrapper del titolo, che sopra i 769px
+   sparisce (li' il messaggio e' dentro al video) e comunque non prende i click. */
+.hero-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  z-index: 10001;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  pointer-events: none;
+}
+.hero-cta .btn { pointer-events: auto; max-width: 100%; }
+.hero-cta-note {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.72);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.85);
+}
+/* Sotto i 769px la hero non ha il video ma il titolo, e in fondo allo schermo passano
+   il banner dei cookie e il tasto WhatsApp: qui la CTA sta appesa sotto al titolo. */
+@media (max-width: 768px) {
+  .hero-cta {
+    top: 63%;
+    bottom: auto;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    min-height: 54px;
+    padding: 14px 22px;
+    font-size: 0.98rem;
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .hero-cta-note { font-size: 0.84rem; }
+}
+@media (max-width: 768px) and (max-height: 700px) {
+  .hero-cta { top: 66%; }
+  .hero-cta-note { display: none; }
+}
+@media (min-width: 769px) and (max-height: 720px) {
+  .hero-cta { bottom: 40px; }
+  .hero-cta-note { display: none; }
+}
+
+/* Azione principale della sezione finale: prima il modo per farsi chiamare,
+   poi i recapiti per chi preferisce comporre il numero da solo. */
+.cta-final-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 28px 0 22px;
+}
+.cta-final-oppure {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.demo-call-trust {
+  margin-top: 18px;
+  justify-content: center;
 }
 
 /* Toggle pausa/riproduzione del video hero (solo desktop: su mobile il video non c'è) */
@@ -1295,10 +1369,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   flex-shrink: 0;
   margin-top: 1px;
   color: rgba(34, 197, 94, 0.8);
-}
-
-.demo-call-visual {
-  display: none;
 }
 
 .visual-placeholder {
@@ -3969,9 +4039,55 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 /* ====================================================================
    FOOTER
    ==================================================================== */
+/* Il footer ora vive dentro .footer-stage come card sollevata: niente border-top,
+   il distacco dalla pagina lo da il cerchio arancione che si apre dietro. */
 .footer {
-  padding: 80px 0 40px;
-  border-top: 1px solid var(--line);
+  padding: clamp(56px, 7vw, 110px) 0 40px;
+}
+
+/* === Footer: il cerchio che si apre =======================================
+   Due pezzi sovrapposti dentro .footer-stage:
+   - .footer-blob, un cerchio che cresce con lo scroll finche non allaga tutto
+   - .footer (con .footer-card), la card che ci galleggia sopra, da scale(.85) a scale(1)
+   Il --bleed serve a non tagliare la cupola: il bordo che ritaglia sta molto piu in alto
+   del footer, cosi il cerchio cresce libero invece di essere tranciato in orizzontale
+   mentre e ancora stretto. Il bleed copre la sezione sopra, quindi lo stage non deve
+   intercettare i click: pointer-events tornano attivi solo su .footer-inner. */
+.footer-stage {
+  --bleed: max(60vh, 40vw);
+  position: relative;
+  margin-top: calc(-1 * var(--bleed));
+  padding: calc(var(--bleed) + clamp(120px, 16vw, 220px)) clamp(14px, 2vw, 26px) clamp(24px, 3vw, 40px);
+  overflow: clip;
+  isolation: isolate;
+  pointer-events: none;
+}
+.footer-inner { position: relative; pointer-events: auto; }
+/* Il cerchio e un ritaglio, non una forma ingrandita. Scalando un cerchio di 360px
+   fino a 4x il browser ingrandiva il bitmap gia rasterizzato e il bordo sgranava;
+   clip-path lo ricalcola a ogni fotogramma alla risoluzione dello schermo.
+   inset:-100% da al livello il margine per uscire sopra il footer. */
+.footer-blob {
+  position: absolute; inset: -100%;
+  background: radial-gradient(circle at 50% 45%, var(--accent-400), var(--accent) 38%, var(--accent-600) 72%);
+  clip-path: circle(var(--r, 180px) at 50% 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+/* La card deve essere piu chiara della pagina: ink su ink non si legge come card
+   e a meta scroll resterebbe solo una cupola arancione sospesa per aria. */
+.footer-card {
+  position: relative; z-index: 1;
+  border-radius: clamp(24px, 3vw, 40px);
+  background: var(--ink-800);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 40px 80px -40px rgba(0,0,0,0.85);
+  transform: scale(var(--card, 0.85));
+  will-change: transform;
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-blob { clip-path: circle(var(--r-max, 200vmax) at 50% 50%); }
+  .footer-card { transform: none; }
 }
 .footer-grid {
   display: grid; grid-template-columns: 1fr; gap: 48px;
@@ -4260,7 +4376,7 @@ html.yz-cookie-open .call-bar { display: none; }
   <div class="container nav-inner">
     <a href="/" class="logo">
       <img src="youzen-logo-96.png" alt="YouZen" class="logo-img" width="32" height="32" fetchpriority="high" decoding="async" />
-      You<span style="color:var(--accent)">Zen</span>
+      <span class="logo-text">You<span style="color:var(--accent)">Zen</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
       <div class="nav-dropdown">
@@ -4272,7 +4388,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <a href="#sec-03">
             <span class="nav-dropdown-icon">⚡</span>
             <div>
-              <div class="nav-dropdown-title">I quattro problemi</div>
+              <div class="nav-dropdown-title">I cinque problemi</div>
               <div class="nav-dropdown-desc">e come YouZen li chiude</div>
             </div>
           </a>
@@ -4434,6 +4550,16 @@ html.yz-cookie-open .call-bar { display: none; }
       </h1>
     </div>
   </div>
+
+  <div class="hero-cta">
+    <a class="btn btn-primary btn-large" href="#demo-call">
+      <span>Fatti chiamare in 60 secondi</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
+      </svg>
+    </a>
+    <span class="hero-cta-note">Lasci il numero, squilla il tuo telefono. Nessun costo.</span>
+  </div>
 </section>
 
 <!-- ============================ I QUATTRO PROBLEMI (sec-03) — FASCE A ZIGZAG ============================ -->
@@ -4592,6 +4718,128 @@ html.yz-cookie-open .call-bar { display: none; }
 @media (prefers-reduced-motion:reduce){
   .pb-fascia, .pb-fascia::before, .pb-foto img{ transition:none; }
 }
+
+/* === Schedario ======================================================
+   Le fasce non sono piu bande impilate ma schede che si incollano una
+   sopra l'altra, ognuna 22px piu in basso della precedente: restano
+   fuori le linguette di quelle gia lette e si vede che sono cinque.
+   Sta in fondo al blocco perche deve vincere sulle media query sopra.
+
+   Le altezze vanno tenute uguali: una scheda piu bassa di quella sotto
+   la lascerebbe spuntare dal fondo invece di coprirla. */
+.pb-fasce{
+  display:flex; flex-direction:column; gap:0;
+  margin-top:52px;
+  /* respiro dell'ultima scheda: senza, arriva e la sezione finisce subito dopo */
+  padding-bottom:46vh;
+}
+/* Il LED della scheda in cima alla pila: sotto la scheda gira un quadrato con un
+   gradiente conico, e .pb-dentro lo copre tutto tranne i 2px di padding. Di quel
+   quadrato si vede quindi solo la luce che corre lungo il perimetro. */
+.pb-fascia, .pb-pannello{
+  position:sticky;
+  top:calc(96px + var(--i,0) * 22px);
+  z-index:var(--i,0);
+  height:clamp(430px, calc(100vh - 240px), 640px);
+  width:min(1240px, 100% - 40px);
+  margin:0 auto 26vh;
+  padding:2px;
+  background:#0b1226;
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:26px;
+  overflow:hidden;
+  isolation:isolate;
+  box-shadow:0 40px 90px -50px rgba(0,0,0,.9);
+  transition:box-shadow .45s ease;
+}
+.pb-fascia::before, .pb-pannello::before{
+  content:''; position:absolute; z-index:0;
+  top:50%; left:50%; width:150%; aspect-ratio:1;
+  transform:translate(-50%,-50%) rotate(0deg);
+  background:conic-gradient(from 0deg,
+    transparent 0 64%, rgba(251,146,60,.18) 72%,
+    var(--accent-400) 84%, var(--accent) 92%, transparent 100%);
+  opacity:0; transition:opacity .5s ease;
+}
+.pb-fascia.attiva::before, .pb-pannello.attiva::before{
+  opacity:1; animation:pbGiro 4.5s linear infinite;
+}
+.pb-fascia.attiva, .pb-pannello.attiva{ box-shadow:0 0 70px -20px rgba(249,115,22,.55); }
+@keyframes pbGiro{ to{ transform:translate(-50%,-50%) rotate(360deg) } }
+
+.pb-dentro, .pb-pn-dentro{
+  position:relative; z-index:1; height:100%;
+  max-width:none; margin:0; padding:0; gap:0; min-height:0;
+  border-radius:24px; overflow:hidden;
+  background:linear-gradient(180deg,#0b1226 0%,#070c1a 100%);
+  display:grid; grid-template-columns:1fr 1.3fr; align-items:stretch;
+}
+.pb-pn-dentro{ grid-template-columns:1fr 1fr; }
+.pb-testo{ position:relative; z-index:2; align-self:center; padding:clamp(28px,3.2vw,54px); }
+
+/* Il numero di fondo sta dentro .pb-dentro: il fondo opaco che maschera il
+   quadrato rotante coprirebbe qualunque cosa gli stia sotto, numero compreso. */
+.pb-num{
+  position:absolute; z-index:0; left:-2%; bottom:-14%;
+  pointer-events:none; user-select:none;
+  font-family:var(--font-brand); font-weight:400; line-height:.72;
+  font-size:clamp(300px,40vw,620px);
+  color:rgba(249,115,22,.34); filter:blur(7px);
+}
+
+.pb-media{ position:relative; overflow:hidden; max-width:none; }
+/* La foto passa da riquadro con bordo a fondo pieno della colonna. La maschera
+   che la sfuma dentro il testo sta sul contenitore e non sull'immagine: se
+   stesse sull'immagine si sposterebbe insieme a lei, e spostare la foto non
+   servirebbe piu a tirarla fuori dalla sfumatura. */
+.pb-foto{
+  position:absolute; inset:0; width:auto; aspect-ratio:auto;
+  border:0; border-radius:0; background:none;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 13%,
+                                     rgba(0,0,0,.60) 28%, #000 48%);
+          mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 13%,
+                                     rgba(0,0,0,.60) 28%, #000 48%);
+}
+.pb-foto img, .pb-fascia:hover .pb-foto img{ opacity:1; filter:none; transform:none; }
+/* l'agenda finiva per un terzo dentro la sfumatura */
+.pb-fascia--agenda .pb-foto img,
+.pb-fascia--agenda:hover .pb-foto img{ transform:translateX(12%); }
+
+.pb-dato{ left:auto; right:20px; bottom:20px; z-index:3; }
+.pb-dato--sinistra{ left:clamp(28px,3.2vw,54px); right:auto; bottom:20px; }
+.pb-pn-dentro .pb-dash{ align-self:center; margin:clamp(16px,2vw,28px); }
+
+/* Sotto i 980px la pila si smonta e le schede tornano normali: su schermo
+   stretto una sezione agganciata per sei schermate e piu una trappola che un
+   effetto, e la foto a fondo pieno non ha larghezza per respirare. */
+@media (max-width:980px){
+  .pb-fasce{ gap:16px; padding-bottom:0; }
+  .pb-fascia, .pb-pannello{
+    position:static; height:auto; margin:0 auto; border-radius:20px; padding:0;
+  }
+  .pb-fascia::before, .pb-pannello::before{ display:none; }
+  .pb-dentro, .pb-pn-dentro{
+    height:auto; grid-template-columns:1fr; gap:28px; padding:28px 20px 36px;
+    border-radius:20px;
+  }
+  .pb-testo{ padding:0; }
+  .pb-num{ display:none; }
+  .pb-media{ max-width:400px; }
+  .pb-foto{
+    position:relative; inset:auto; width:100%; aspect-ratio:4/3;
+    border:1px solid var(--line); border-radius:18px;
+    -webkit-mask-image:none; mask-image:none;
+  }
+  .pb-fascia--agenda .pb-foto img,
+  .pb-fascia--agenda:hover .pb-foto img{ transform:none; }
+  .pb-dato{ left:auto; right:14px; bottom:-14px; }
+  .pb-dato--sinistra{ display:none; }
+  .pb-pn-dentro .pb-dash{ margin:0; }
+}
+@media (prefers-reduced-motion:reduce){
+  .pb-fascia.attiva::before, .pb-pannello.attiva::before{ animation:none; opacity:1; }
+  .pb-fascia, .pb-pannello{ transition:none; }
+}
 </style>
 
 <span id="sec-03" class="pb-anchor" aria-hidden="true"></span>
@@ -4599,19 +4847,20 @@ html.yz-cookie-open .call-bar { display: none; }
 <section class="section" id="sec-problemi-head">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">I quattro problemi</span>
+      <span class="eyebrow">I cinque problemi</span>
       <h2>
-        <span class="title-problem">Quattro cose che ti costano clienti,</span>
+        <span class="title-problem">Cinque cose che ti costano clienti,</span>
         <span class="title-solution">le chiude YouZen una per una.</span>
       </h2>
-      <p class="lead">Chiamate perse, telefonate fuori orario, appuntamenti saltati e chat lasciate a metà. Una per riga, con quello che cambia il giorno dopo.</p>
+      <p class="lead">Chiamate perse, telefonate fuori orario, appuntamenti saltati, chat lasciate a metà e messaggi fermi nei DM. Una alla volta, con quello che cambia il giorno dopo.</p>
     </div>
   </div>
 
   <div class="pb-fasce">
 
-    <article class="pb-fascia">
+    <article class="pb-fascia" style="--i:0">
       <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">1</span>
         <div class="pb-testo">
           <span class="pb-occhio">Chiamate perse</span>
           <h3>Il telefono suona sempre <em>nel momento peggiore</em></h3>
@@ -4622,11 +4871,13 @@ html.yz-cookie-open .call-bar { display: none; }
           <div class="pb-foto"><img src="problemi/perse.jpg" alt="Un telefono di carta che squilla in mano e comincia a bruciare" loading="lazy" width="720" height="720" /></div>
           <div class="pb-dato"><b>98%</b><span>chiamate gestite</span></div>
         </div>
+        <div class="pb-dato pb-dato--sinistra"><b>+30</b><span>chiamate in simultanea</span></div>
       </div>
     </article>
 
-    <article class="pb-fascia">
+    <article class="pb-fascia" style="--i:1">
       <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">2</span>
         <div class="pb-testo">
           <span class="pb-occhio">Fuori orario</span>
           <h3>Ti cercano quando <em>sono liberi loro</em></h3>
@@ -4640,8 +4891,9 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
     </article>
 
-    <article class="pb-fascia">
+    <article class="pb-fascia pb-fascia--agenda" style="--i:2">
       <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">3</span>
         <div class="pb-testo">
           <span class="pb-occhio">Appuntamenti saltati</span>
           <h3>L'unico che l'ha segnato <em>sei tu</em></h3>
@@ -4655,13 +4907,14 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
     </article>
 
-    <article class="pb-fascia">
+    <article class="pb-fascia" style="--i:3">
       <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">4</span>
         <div class="pb-testo">
-          <span class="pb-occhio">Messaggi WhatsApp</span>
+          <span class="pb-occhio">WhatsApp</span>
           <h3>Un messaggio non ti obbliga <em>a rispondere subito</em></h3>
           <p>Loro però sanno che l'hai letto. <b>Per rispondere sul serio ti serve mezz'ora</b>, e intanto l'hanno chiesto anche a qualcun altro.</p>
-          <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione.</p>
+          <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione. E quando invece di scriverti ti chiamano su WhatsApp, <b>risponde anche a quelle</b>.</p>
         </div>
         <div class="pb-media">
           <div class="pb-foto"><img src="problemi/wa.jpg" alt="Le notifiche di WhatsApp escono fuori dallo schermo del telefono" loading="lazy" width="720" height="720" /></div>
@@ -4670,8 +4923,25 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
     </article>
 
-    <article class="pb-pannello">
+    <article class="pb-fascia" style="--i:4">
+      <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">5</span>
+        <div class="pb-testo">
+          <span class="pb-occhio">Instagram e Facebook</span>
+          <h3>Ti scrivono dove <em>non stai guardando</em></h3>
+          <p>Il messaggio finisce nei DM della pagina, non sul telefono. <b>Lo apri tre giorni dopo</b>, e chi aveva scritto nel frattempo ha prenotato da un'altra parte.</p>
+          <p class="pb-svolta">Colleghi la pagina Instagram e quella Facebook. <b>Nei DM risponde come risponde al telefono</b>, e l'appuntamento lo fissa lì dentro.</p>
+        </div>
+        <div class="pb-media">
+          <div class="pb-foto"><img src="problemi/dm.jpg" alt="Bigliettini di carta che escono da uno schermo di carta e si accumulano al buio" loading="lazy" width="720" height="720" /></div>
+          <div class="pb-dato"><b>IG+FB</b><span>pagine collegate</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pb-pannello" style="--i:5">
       <div class="pb-pn-dentro">
+        <span class="pb-num" aria-hidden="true">6</span>
         <div class="pb-testo">
           <span class="pb-occhio">Il pannello</span>
           <h3>A fine giornata sai <em>chi ti ha cercato</em></h3>
@@ -4796,7 +5066,7 @@ html.yz-cookie-open .call-bar { display: none; }
   <span class="yzb-luce" aria-hidden="true"></span>
   <div class="yzb-dentro">
     <div class="yzb-testo">
-      <b class="yzb-tit">Ti sei riconosciuto in almeno uno di questi quattro?</b>
+      <b class="yzb-tit">Ti sei riconosciuto in almeno uno di questi cinque?</b>
       <span class="yzb-sub">Capita a chi lavora con le mani occupate. Quando hai un momento, sentiamoci.</span>
     </div>
     <div class="yzb-tasti">
@@ -4895,17 +5165,6 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
 
     </div>
-  </div>
-</section>
-
-<section class="yzb" aria-label="Parlane con noi">
-  <span class="yzb-luce" aria-hidden="true"></span>
-  <div class="yzb-dentro">
-    <div class="yzb-testo">
-      <b class="yzb-tit">Una giornata cos&igrave; la conosci gi&agrave;.</b>
-      <span class="yzb-sub">Raccontaci com'&egrave; fatta la tua e ti diciamo dove YouZen ti toglie qualcosa dalle mani.</span>
-    </div>
-    <a class="yzb-btn" href="#contatto">Raccontacela <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -5430,252 +5689,18 @@ html.yz-cookie-open .call-bar { display: none; }
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
             Riceverai una chiamata demo entro 60 secondi. Nessun costo, nessun impegno.
           </p>
+
+          <div class="cta-trust demo-call-trust">
+            <span class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+              GDPR + Server EU
+            </span>
+            <span class="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              Il numero non finisce in nessuna lista
+            </span>
+          </div>
         </form>
-      </div>
-
-      <!-- Colonna visual nascosta -->
-      <div class="demo-call-visual">
-        <div class="ai-call-illu" aria-hidden="true" style="display:none">
-          <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" style="display:none">
-            <defs>
-              <!-- Gradiente orb principale -->
-              <radialGradient id="orbCore" cx="50%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#FFE0BF"/>
-                <stop offset="25%" stop-color="#FFB37A"/>
-                <stop offset="55%" stop-color="#F97316"/>
-                <stop offset="100%" stop-color="#7C2D00"/>
-              </radialGradient>
-              <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#F97316" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="dataStream" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
-                <stop offset="50%" stop-color="#FFA366" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
-              </linearGradient>
-              <linearGradient id="phoneBody" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1a2540"/>
-                <stop offset="100%" stop-color="#0a0f1e"/>
-              </linearGradient>
-              <linearGradient id="phoneScreen" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="rgba(249,115,22,0.20)"/>
-                <stop offset="100%" stop-color="rgba(249,115,22,0.04)"/>
-              </linearGradient>
-              <radialGradient id="bgVignette" cx="50%" cy="50%" r="70%">
-                <stop offset="0%" stop-color="rgba(124,58,237,0.18)"/>
-                <stop offset="100%" stop-color="rgba(124,58,237,0)"/>
-              </radialGradient>
-              <filter id="blurMd" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="10"/>
-              </filter>
-              <filter id="blurLg" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur stdDeviation="18"/>
-              </filter>
-              <!-- Pattern griglia esagonale stile cyberpunk -->
-              <pattern id="hex" x="0" y="0" width="40" height="46" patternUnits="userSpaceOnUse">
-                <polygon points="20,1 38,12 38,34 20,45 2,34 2,12" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
-              </pattern>
-            </defs>
-
-            <!-- Sfondo: griglia hex sottile -->
-            <rect width="640" height="480" fill="url(#bgVignette)" opacity="0.6"/>
-            <rect width="640" height="480" fill="url(#hex)" opacity="0.5"/>
-
-            <!-- Vignette ai bordi -->
-            <ellipse cx="320" cy="240" rx="320" ry="240" fill="url(#bgVignette)" opacity="0.5"/>
-
-            <!-- LINEE DATI DA AI A TELEFONO (3 percorsi animati) -->
-            <g stroke="url(#dataStream)" stroke-width="2" fill="none" stroke-linecap="round">
-              <path d="M 180 220 Q 320 140, 460 260" opacity="0.9">
-                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="3s" repeatCount="indefinite"/>
-              </path>
-              <path d="M 180 240 Q 320 240, 460 280" opacity="0.7" stroke-width="1.5">
-                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
-              </path>
-              <path d="M 180 260 Q 320 340, 460 300" opacity="0.5" stroke-width="1.2">
-                <animate attributeName="stroke-dasharray" values="0,400;400,400;400,0" dur="3.6s" repeatCount="indefinite" begin="0.8s"/>
-              </path>
-            </g>
-
-            <!-- AI ORB (sinistra) -->
-            <g transform="translate(150,240)">
-              <!-- Glow esterno -->
-              <circle cx="0" cy="0" r="120" fill="url(#orbGlow)" filter="url(#blurLg)"/>
-              <!-- Anelli orbitali (rotazione lenta) -->
-              <g>
-                <ellipse cx="0" cy="0" rx="95" ry="32" fill="none" stroke="#F97316" stroke-width="1" stroke-dasharray="3 5" opacity="0.40">
-                  <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="28s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="0" cy="0" rx="80" ry="80" fill="none" stroke="#F97316" stroke-width="0.8" stroke-dasharray="2 8" opacity="0.30">
-                  <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s" repeatCount="indefinite"/>
-                </ellipse>
-                <ellipse cx="0" cy="0" rx="65" ry="100" fill="none" stroke="#A78BFA" stroke-width="0.8" stroke-dasharray="2 6" opacity="0.25">
-                  <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="22s" repeatCount="indefinite"/>
-                </ellipse>
-              </g>
-
-              <!-- Nodi orbitanti (mini cerchi su anello) -->
-              <g>
-                <circle cx="0" cy="0" r="3" fill="#FFB37A">
-                  <animateMotion path="M 95,0 A 95,32 0 1,1 -95,0 A 95,32 0 1,1 95,0" dur="28s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="0" cy="0" r="2.5" fill="#A78BFA">
-                  <animateMotion path="M 80,0 A 80,80 0 1,1 -80,0 A 80,80 0 1,1 80,0" dur="20s" repeatCount="indefinite"/>
-                </circle>
-              </g>
-
-              <!-- Orb principale con shading -->
-              <circle cx="0" cy="0" r="58" fill="url(#orbCore)" filter="url(#blurMd)" opacity="0.6"/>
-              <circle cx="0" cy="0" r="55" fill="url(#orbCore)"/>
-              <!-- Highlight in alto -->
-              <ellipse cx="-12" cy="-18" rx="26" ry="13" fill="rgba(255,255,255,0.35)"/>
-              <ellipse cx="-6" cy="-12" rx="10" ry="5" fill="rgba(255,255,255,0.55)"/>
-
-              <!-- Voice equalizer dentro l'orb -->
-              <g stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.95">
-                <line x1="-22" y1="8" x2="-22" y2="-8">
-                  <animate attributeName="y1" values="8;18;4;14;8" dur="1.2s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-8;-18;-4;-14;-8" dur="1.2s" repeatCount="indefinite"/>
-                </line>
-                <line x1="-9" y1="14" x2="-9" y2="-14">
-                  <animate attributeName="y1" values="14;7;18;10;14" dur="1.5s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-14;-7;-18;-10;-14" dur="1.5s" repeatCount="indefinite"/>
-                </line>
-                <line x1="4" y1="11" x2="4" y2="-11">
-                  <animate attributeName="y1" values="11;19;6;15;11" dur="1.3s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-11;-19;-6;-15;-11" dur="1.3s" repeatCount="indefinite"/>
-                </line>
-                <line x1="17" y1="9" x2="17" y2="-9">
-                  <animate attributeName="y1" values="9;16;5;13;9" dur="1.4s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-9;-16;-5;-13;-9" dur="1.4s" repeatCount="indefinite"/>
-                </line>
-                <line x1="28" y1="6" x2="28" y2="-6">
-                  <animate attributeName="y1" values="6;13;3;10;6" dur="1.6s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="-6;-13;-3;-10;-6" dur="1.6s" repeatCount="indefinite"/>
-                </line>
-              </g>
-
-              <!-- Label sotto orb -->
-              <g transform="translate(0,90)">
-                <rect x="-50" y="-12" width="100" height="24" rx="12" fill="rgba(0,0,0,0.5)" stroke="rgba(249,115,22,0.45)" stroke-width="1"/>
-                <text x="0" y="4" text-anchor="middle" font-family="Michroma, sans-serif" font-size="11" fill="#FFB37A" letter-spacing="1">YOUZEN AI</text>
-              </g>
-            </g>
-
-            <!-- INDICATORE "CONNECTING" centro -->
-            <g transform="translate(320,170)">
-              <circle r="4" fill="#22c55e">
-                <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
-              </circle>
-              <text y="-12" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="2">CALL · LIVE</text>
-            </g>
-
-            <!-- SMARTPHONE (destra) -->
-            <g transform="translate(480,250)">
-              <!-- Glow dietro -->
-              <ellipse cx="0" cy="0" rx="100" ry="140" fill="#F97316" opacity="0.18" filter="url(#blurLg)"/>
-              <!-- Body telefono con riflesso -->
-              <rect x="-65" y="-125" width="130" height="240" rx="26" fill="url(#phoneBody)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
-              <rect x="-61" y="-121" width="122" height="232" rx="22" fill="url(#phoneScreen)"/>
-              <!-- Riflesso schermo -->
-              <path d="M -55 -110 L 55 -110 L 50 -100 L -50 -100 Z" fill="rgba(255,255,255,0.10)"/>
-
-              <!-- Notch / Dynamic island -->
-              <rect x="-22" y="-122" width="44" height="9" rx="4.5" fill="#000"/>
-
-              <!-- Schermo: "CHIAMATA IN ARRIVO" -->
-              <text x="0" y="-72" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="2.5">CHIAMATA IN ARRIVO</text>
-
-              <!-- Avatar AI -->
-              <circle cx="0" cy="-30" r="28" fill="#F97316" filter="url(#blurMd)" opacity="0.6"/>
-              <circle cx="0" cy="-30" r="26" fill="url(#orbCore)"/>
-              <ellipse cx="-6" cy="-38" rx="10" ry="5" fill="rgba(255,255,255,0.4)"/>
-              <text x="0" y="-25" text-anchor="middle" font-family="Michroma, sans-serif" font-weight="800" font-size="18" fill="white">YZ</text>
-
-              <!-- Nome chiamante -->
-              <text x="0" y="14" text-anchor="middle" font-family="Michroma, sans-serif" font-weight="700" font-size="15" fill="white">YouZen AI</text>
-              <text x="0" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.55)">+39 0541 ··· 6297</text>
-
-              <!-- Wave indicator (sotto nome) -->
-              <g transform="translate(0,52)" stroke="#FFA366" stroke-width="2" stroke-linecap="round" fill="none">
-                <line x1="-18" y1="0" x2="-18" y2="0">
-                  <animate attributeName="y1" values="-3;-8;-3" dur="0.6s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="3;8;3" dur="0.6s" repeatCount="indefinite"/>
-                </line>
-                <line x1="-9" y1="0" x2="-9" y2="0">
-                  <animate attributeName="y1" values="-5;-12;-5" dur="0.7s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="5;12;5" dur="0.7s" repeatCount="indefinite"/>
-                </line>
-                <line x1="0" y1="0" x2="0" y2="0">
-                  <animate attributeName="y1" values="-4;-10;-4" dur="0.65s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="4;10;4" dur="0.65s" repeatCount="indefinite"/>
-                </line>
-                <line x1="9" y1="0" x2="9" y2="0">
-                  <animate attributeName="y1" values="-5;-12;-5" dur="0.7s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="5;12;5" dur="0.7s" repeatCount="indefinite"/>
-                </line>
-                <line x1="18" y1="0" x2="18" y2="0">
-                  <animate attributeName="y1" values="-3;-8;-3" dur="0.6s" repeatCount="indefinite"/>
-                  <animate attributeName="y2" values="3;8;3" dur="0.6s" repeatCount="indefinite"/>
-                </line>
-              </g>
-
-              <!-- Pulsanti accept/decline -->
-              <g transform="translate(0,90)">
-                <!-- Decline (rosso) -->
-                <circle cx="-26" cy="0" r="18" fill="#ef4444"/>
-                <circle cx="-26" cy="0" r="18" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-                <g transform="rotate(135 -26 0)">
-                  <line x1="-33" y1="0" x2="-19" y2="0" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                </g>
-                <!-- Accept (verde) - pulsante che pulsa -->
-                <circle cx="26" cy="0" r="18" fill="#22c55e">
-                  <animate attributeName="r" values="18;22;18" dur="1s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="26" cy="0" r="18" fill="none" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-                <path d="M 19 -7 L 27 -5 L 31 0 L 28 6 C 22 4 19 0 19 -5 Z" fill="white" transform="rotate(-15 26 0)"/>
-              </g>
-
-              <!-- Status verde squillo -->
-              <g transform="translate(50,-125)">
-                <circle r="5" fill="#22c55e">
-                  <animate attributeName="opacity" values="1;0.2;1" dur="0.7s" repeatCount="indefinite"/>
-                </circle>
-              </g>
-            </g>
-
-            <!-- Particelle decorative (puntini luminosi) -->
-            <g fill="#FFA366">
-              <circle cx="80" cy="80" r="2.5" opacity="0.6">
-                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="260" cy="60" r="1.8" opacity="0.5">
-                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.4s" repeatCount="indefinite" begin="0.4s"/>
-              </circle>
-              <circle cx="560" cy="100" r="2" opacity="0.5">
-                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="1.8s" repeatCount="indefinite" begin="0.8s"/>
-              </circle>
-              <circle cx="60" cy="380" r="1.8" opacity="0.6">
-                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.2s" repeatCount="indefinite" begin="1.2s"/>
-              </circle>
-              <circle cx="380" cy="420" r="2" opacity="0.5">
-                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.6s" repeatCount="indefinite" begin="0.6s"/>
-              </circle>
-              <circle cx="580" cy="400" r="1.5" opacity="0.5"/>
-              <circle cx="320" cy="50" r="1.2" opacity="0.4"/>
-              <circle cx="80" cy="430" r="1.5" opacity="0.5"/>
-            </g>
-
-            <!-- Particelle viola (depth) -->
-            <g fill="#A78BFA">
-              <circle cx="140" cy="100" r="1.5" opacity="0.4"/>
-              <circle cx="500" cy="60" r="1.8" opacity="0.4"/>
-              <circle cx="600" cy="240" r="1.5" opacity="0.4"/>
-              <circle cx="50" cy="240" r="2" opacity="0.4"/>
-            </g>
-          </svg>
-        </div>
       </div>
     </div>
   </div>
@@ -5801,7 +5826,7 @@ html.yz-cookie-open .call-bar { display: none; }
       <b class="yzb-tit">Vuoi sapere quanto verrebbe nel tuo caso?</b>
       <span class="yzb-sub">Bastano due domande sulle tue chiamate e ti diamo un numero, senza girarci intorno.</span>
     </div>
-    <a class="yzb-btn" href="#contatto">Chiedi il tuo conto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="yzb-btn" href="#demo-call">Chiedi il tuo conto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -5937,17 +5962,6 @@ html.yz-cookie-open .call-bar { display: none; }
 
     </div>
 
-  </div>
-</section>
-
-<section class="yzb" aria-label="Parlane con noi">
-  <span class="yzb-luce" aria-hidden="true"></span>
-  <div class="yzb-dentro">
-    <div class="yzb-testo">
-      <b class="yzb-tit">La tua domanda non era fra queste?</b>
-      <span class="yzb-sub">Falla a noi. Ti risponde una persona, e non ti mettiamo in nessuna lista.</span>
-    </div>
-    <a class="yzb-btn" href="#contatto">Fai la tua domanda <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -6102,6 +6116,16 @@ html.yz-cookie-open .call-bar { display: none; }
         </h2>
         <p class="lead">Ti facciamo vedere YouZen dal vivo sul tuo settore, gratis. Decidi tu se partire: da lì in poi al telefono ci siamo noi.</p>
 
+        <div class="cta-final-action">
+          <a class="btn btn-primary btn-large" href="#demo-call">
+            <span>Fatti chiamare adesso</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
+            </svg>
+          </a>
+          <span class="cta-final-oppure">oppure prendi tu il telefono</span>
+        </div>
+
         <div class="cta-contact-row">
           <a class="contact-pill link" href="tel:+3905411726297">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
@@ -6138,13 +6162,16 @@ html.yz-cookie-open .call-bar { display: none; }
 </section>
 
 <!-- ============================ FOOTER ============================ -->
-<footer class="footer">
+<div class="footer-stage" id="footerStage">
+ <div class="footer-inner">
+  <div class="footer-blob" aria-hidden="true"></div>
+  <footer class="footer footer-card">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">
           <img src="youzen-logo-96.png" alt="YouZen" class="logo-img" width="32" height="32" loading="lazy" decoding="async" />
-          You<span style="color:var(--accent)">Zen</span>
+          <span class="logo-text">You<span style="color:var(--accent)">Zen</span></span>
         </a>
         <div class="footer-claim">Noi rispondiamo, <span>tu respiri.</span></div>
         <p>La segreteria italiana di YouZen che risponde sempre. Chiamate, WhatsApp, appuntamenti: h24, 365 giorni.</p>
@@ -6215,7 +6242,9 @@ html.yz-cookie-open .call-bar { display: none; }
       </div>
     </div>
   </div>
-</footer>
+  </footer>
+ </div>
+</div>
 
 <script>
 // ===== Navbar scrolled state
@@ -6247,6 +6276,79 @@ window.addEventListener('scroll', () => {
 
 // ===== Footer email decode
 document.getElementById('footer-email').textContent = 'info' + String.fromCharCode(64) + 'youzen.it';
+
+// ===== Footer: il cerchio che si apre con lo scroll
+(function () {
+  var stage = document.getElementById('footerStage');
+  if (!stage) return;
+  var inner = stage.querySelector('.footer-inner');
+  var blob  = stage.querySelector('.footer-blob');
+  if (!inner || !blob) return;
+
+  var R_MIN = 180;       // raggio di partenza: il cerchio sta nascosto dietro la card
+  var CARD_MIN = 0.85;   // la card parte rimpicciolita
+  var rMax = 1000;
+  var ticking = false;
+
+  // Per coprire il footer il raggio deve arrivare a meta diagonale.
+  // Si misura .footer-inner, cioe il footer vero: .footer-stage include anche il bleed.
+  function misura() {
+    var r = inner.getBoundingClientRect();
+    rMax = Math.hypot(r.width, r.height) / 2 + 18;
+    stage.style.setProperty('--r-max', rMax + 'px');
+  }
+
+  function disegna() {
+    ticking = false;
+    var r = inner.getBoundingClientRect();
+    // 0 quando il footer spunta dal bordo basso, 1 quando il suo fondo tocca il fondo
+    // schermo: cioe a fine pagina. Legandolo all'altezza del footer invece che a una
+    // frazione di viewport, l'effetto si chiude sempre, anche su schermi alti.
+    // Lineare, come le scroll-transform di Framer: il cerchio cresce a ritmo costante
+    // invece di spalancarsi subito e poi restare fermo per meta salita.
+    var p = (window.innerHeight - r.top) / r.height;
+    if (p < 0) p = 0; else if (p > 1) p = 1;
+    stage.style.setProperty('--r', (R_MIN + (rMax - R_MIN) * p) + 'px');
+    stage.style.setProperty('--card', CARD_MIN + (1 - CARD_MIN) * p);
+  }
+
+  function chiedi() {
+    if (!ticking) { ticking = true; requestAnimationFrame(disegna); }
+  }
+
+  misura();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // ci pensa il CSS
+  disegna();
+  window.addEventListener('scroll', chiedi, { passive: true });
+  window.addEventListener('resize', function () { misura(); disegna(); }, { passive: true });
+})();
+
+// ===== I cinque problemi: accende il LED sulla scheda in cima alla pila
+(function () {
+  var schede = Array.prototype.slice.call(document.querySelectorAll('.pb-fascia, .pb-pannello'));
+  if (schede.length < 2) return;
+  var ticking = false, ultima = -1;
+
+  function disegna() {
+    ticking = false;
+    // La scheda "attiva" e quella incollata con l'indice piu alto: essendo
+    // l'ultima arrivata, e quella che sta sopra e copre tutte le altre.
+    var attiva = 0;
+    for (var i = 0; i < schede.length; i++) {
+      var quota = parseFloat(window.getComputedStyle(schede[i]).top) || 0;
+      if (schede[i].getBoundingClientRect().top <= quota + 2) attiva = i;
+    }
+    if (attiva === ultima) return;
+    if (ultima >= 0) schede[ultima].classList.remove('attiva');
+    schede[attiva].classList.add('attiva');
+    ultima = attiva;
+  }
+  function chiedi() { if (!ticking) { ticking = true; requestAnimationFrame(disegna); } }
+
+  disegna();
+  window.addEventListener('scroll', chiedi, { passive: true });
+  window.addEventListener('resize', chiedi, { passive: true });
+})();
 
 // ===== Prezzi: piano unico (€0,30/min) + cadenza anticipata + attivazione
 // Lo slider apre su zero: il prezzo lo costruisce chi legge, muovendolo. Il primo

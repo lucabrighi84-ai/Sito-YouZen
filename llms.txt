@@ -1,13 +1,15 @@
 # YouZen
 
 > Segreteria AI italiana per professionisti e PMI. Risponde alle chiamate, gestisce
-> WhatsApp e prende gli appuntamenti 24 ore su 24, sincronizzandoli con il calendario
-> che il cliente già usa. Attiva su tutto il territorio italiano, con sede a Rimini.
+> WhatsApp e i messaggi diretti di Instagram e Facebook, e prende gli appuntamenti 24
+> ore su 24, sincronizzandoli con il calendario che il cliente già usa. Attiva su tutto
+> il territorio italiano, con sede a Rimini.
 
 ## Che cos'è YouZen
 
 YouZen è un assistente telefonico con intelligenza artificiale per le piccole imprese.
-Risponde alle chiamate e ai messaggi WhatsApp al posto del titolare, riconosce chi
+Risponde alle chiamate, ai messaggi WhatsApp e ai messaggi diretti che arrivano sulle
+pagine Instagram e Facebook dell'attività, al posto del titolare. Riconosce chi
 chiama, fissa gli appuntamenti e li scrive sul calendario collegato. Ogni chiamata
 viene trascritta, con nome e numero salvati, incluse quelle arrivate a studio chiuso.
 Il numero di telefono resta quello dell'attività: si può collegare il numero esistente
@@ -42,6 +44,8 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 ## Fatti utili
 
 - Lingue gestite: italiano, inglese, francese, spagnolo, tedesco, olandese
+- Regge oltre 30 chiamate in contemporanea: chi chiama non trova mai occupato
+- Canali gestiti: telefono, WhatsApp, messaggi diretti di Instagram e Facebook
 - Dati trattati su server nell'Unione Europea, conforme GDPR, DPA firmato su richiesta
 - Si integra con Google Calendar, Apple Calendar, Outlook, Cal.com, Calendly, WhatsApp, Telegram, Slack, Gmail, Notion, Google Sheets, HubSpot, Zapier e Stripe
 - Quando una richiesta esce dal suo dominio, l'assistente non improvvisa: passa la chiamata a una persona
