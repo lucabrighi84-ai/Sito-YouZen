@@ -2441,6 +2441,43 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 @media (max-width: 600px) {
   .sector-card.has-app .sector-body { padding-right: 36%; }}
 
+/* ---- Entrata dei box: una tendina che li scopre, alternando lato ----
+   Volutamente lenta e senza spostamento: chi scorre se ne accorge appena.
+   Lo stato nascosto vale solo con la classe .anima, che mette il JS: se il
+   JS non parte le card restano visibili invece di sparire.
+   Niente transform qui dentro: e gia usato dal sollevamento all'hover, e
+   sovrascriverlo lo spegnerebbe. Per lo stesso motivo la transition ripete
+   le tre proprieta gia presenti e ne aggiunge due, invece di rimpiazzarle. */
+.sectors-grid.anima .sector-card{
+  opacity: 0;
+  clip-path: inset(0% var(--r,100%) 0% var(--l,0%) round 24px);
+  transition: transform .5s cubic-bezier(.22,1,.36,1), border-color .4s, box-shadow .4s,
+              opacity 1s ease, clip-path 1.15s cubic-bezier(.22,1,.36,1);
+  /* il ritardo a scalare vale solo su opacita e tendina: se lo dessi a tutte,
+     anche l'hover risponderebbe con mezzo secondo di ritardo */
+  transition-delay: 0s, 0s, 0s, calc(var(--n,0) * 130ms), calc(var(--n,0) * 130ms);
+}
+.sectors-grid.anima .sector-card:nth-child(odd){  --l:0%;   --r:100%; }
+.sectors-grid.anima .sector-card:nth-child(even){ --l:100%; --r:0%;   }
+.sectors-grid.anima .sector-card:nth-child(1){ --n:0 }
+.sectors-grid.anima .sector-card:nth-child(2){ --n:1 }
+.sectors-grid.anima .sector-card:nth-child(3){ --n:2 }
+.sectors-grid.anima .sector-card:nth-child(4){ --n:3 }
+.sectors-grid.anima .sector-card:nth-child(5){ --n:4 }
+.sectors-grid.anima .sector-card:nth-child(6){ --n:5 }
+.sectors-grid.anima.dentro .sector-card{
+  opacity: 1;
+  clip-path: inset(0% 0% 0% 0% round 24px);
+}
+/* Finita l'entrata il ritaglio va tolto del tutto, non lasciato a filo: la
+   clip-path taglia anche l'ombra esterna, e l'alone colorato dell'hover
+   sparirebbe. Gli inset negativi, che sarebbero la scorciatoia, il browser
+   li scarta. Ci pensa il JS ad aggiungere .finito a effetto concluso. */
+.sectors-grid.anima.finito .sector-card{ clip-path: none; }
+@media (prefers-reduced-motion: reduce){
+  .sectors-grid.anima .sector-card{ opacity:1; clip-path:none; transition:none; }
+}
+
 /* ====================================================================
    TIMELINE (sec-06) — STICKY PANEL + 3 STEPS
    ==================================================================== */
@@ -4551,18 +4588,9 @@ html.yz-cookie-open .call-bar { display: none; }
     </div>
   </div>
 
-  <div class="hero-cta">
-    <a class="btn btn-primary btn-large" href="#demo-call">
-      <span>Fatti chiamare in 60 secondi</span>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
-      </svg>
-    </a>
-    <span class="hero-cta-note">Lasci il numero, squilla il tuo telefono. Nessun costo.</span>
-  </div>
 </section>
 
-<!-- ============================ I QUATTRO PROBLEMI (sec-03) — FASCE A ZIGZAG ============================ -->
+<!-- ============================ I CINQUE PROBLEMI (sec-03) — SCHEDE IMPILATE ============================ -->
 <style>
 /* Quattro fasce larghe quanto la finestra, una per problema, con la foto che cambia
    lato a ogni riga. Prende il posto del bento: li' i quattro riquadri stavano in una
@@ -4573,8 +4601,10 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-anchor{ display:block; height:0; }
 #sec-problemi-head .title-problem, #sec-problemi-head .title-solution{ white-space:normal; }
 #sec-problemi-head .section-head{ max-width:1040px; }
-/* la testata ha gia' il suo respiro: le fasce partono attaccate, non a 90px */
-#sec-problemi-head{ padding-bottom:0; }
+/* L'azzeramento del padding sotto serviva quando dopo la sezione veniva il banner
+   arancione. Tolto quello, la sezione va a sbattere contro "una giornata tipo":
+   qui torna il padding standard di .section, cosi lo stacco e uguale a quello
+   fra tutte le altre sezioni (96 sotto + 96 sopra la successiva). */
 
 .pb-fasce{ display:flex; flex-direction:column; gap:16px; margin-top:52px; }
 
@@ -4772,10 +4802,17 @@ html.yz-cookie-open .call-bar { display: none; }
   max-width:none; margin:0; padding:0; gap:0; min-height:0;
   border-radius:24px; overflow:hidden;
   background:linear-gradient(180deg,#0b1226 0%,#070c1a 100%);
-  display:grid; grid-template-columns:1fr 1.3fr; align-items:stretch;
+  /* 1.1 e non 1: con la colonna piu stretta il titolo della scheda 4,
+     "Un messaggio non ti obbliga", andava su due righe bianche a qualunque
+     larghezza di finestra e rompeva lo schema una bianca / una arancione. */
+  display:grid; grid-template-columns:1.1fr 1.25fr; align-items:stretch;
 }
 .pb-pn-dentro{ grid-template-columns:1fr 1fr; }
 .pb-testo{ position:relative; z-index:2; align-self:center; padding:clamp(28px,3.2vw,54px); }
+/* Il titolo su due righe nette: la parte bianca sopra, quella arancione sotto e
+   tutta di seguito. Senza, l'arancione comincia a meta della riga bianca e si
+   spezza dove capita. */
+.pb-fascia h3 em, .pb-pannello h3 em{ display:block; }
 
 /* Il numero di fondo sta dentro .pb-dentro: il fondo opaco che maschera il
    quadrato rotante coprirebbe qualunque cosa gli stia sotto, numero compreso. */
@@ -5061,20 +5098,6 @@ html.yz-cookie-open .call-bar { display: none; }
   .yzb-btn svg{ transition:none; }
 }
 </style>
-
-<section class="yzb" aria-label="Parlane con noi">
-  <span class="yzb-luce" aria-hidden="true"></span>
-  <div class="yzb-dentro">
-    <div class="yzb-testo">
-      <b class="yzb-tit">Ti sei riconosciuto in almeno uno di questi cinque?</b>
-      <span class="yzb-sub">Capita a chi lavora con le mani occupate. Quando hai un momento, sentiamoci.</span>
-    </div>
-    <div class="yzb-tasti">
-      <a class="yzb-btn" href="#demo-call">Provalo sul tuo numero</a>
-      <a class="yzb-btn yzb-btn-chiaro" href="problemi-e-soluzioni.html">Guardali uno per uno <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </div>
-</section>
 
 <!-- ============================ SENZA / CON YOUZEN (sec-04) — SPLIT-SCREEN GIORNATA TIPO ============================ -->
 <section class="section" id="sec-04">
@@ -6348,6 +6371,32 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
   disegna();
   window.addEventListener('scroll', chiedi, { passive: true });
   window.addEventListener('resize', chiedi, { passive: true });
+})();
+
+// ===== Settori: i box si scoprono a tendina quando la griglia entra in pagina
+(function () {
+  var griglia = document.querySelector('.sectors-grid');
+  if (!griglia) return;
+
+  // La classe .anima accende lo stato nascosto. La mette il JS di proposito:
+  // se questo script non gira, i box restano visibili invece di sparire.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  griglia.classList.add('anima');
+
+  if (!('IntersectionObserver' in window)) {   // browser vecchio: mostra e basta
+    griglia.classList.add('dentro');
+    return;
+  }
+  var osserva = new IntersectionObserver(function (voci) {
+    voci.forEach(function (v) {
+      if (!v.isIntersecting) return;
+      v.target.classList.add('dentro');
+      osserva.unobserve(v.target);             // si gioca una volta sola
+      // ultima card: 5 x 130ms di ritardo + 1150ms di tendina, piu un margine
+      setTimeout(function () { v.target.classList.add('finito'); }, 2100);
+    });
+  }, { threshold: 0.2 });
+  osserva.observe(griglia);
 })();
 
 // ===== Prezzi: piano unico (€0,30/min) + cadenza anticipata + attivazione
