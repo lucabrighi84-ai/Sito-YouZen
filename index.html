@@ -146,7 +146,7 @@
   "offers": {
     "@type": "Offer",
     "name": "YouZen",
-    "description": "Piano unico a consumo · €0,30/min · minuti modulabili · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500.",
+    "description": "Piano unico a consumo · €0,30/min · minuti modulabili · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500. Messaggi diretti di Instagram e Facebook in opzione a €10/mese.",
     "priceCurrency": "EUR",
     "price": "225",
     "priceSpecification": [
@@ -177,6 +177,7 @@
   "featureList": [
     "Risposta automatica alle chiamate 24/7",
     "Gestione WhatsApp Business",
+    "Risposta ai messaggi diretti di Instagram e Facebook (opzione a 10€/mese)",
     "Prenotazione appuntamenti automatica",
     "Pannello di controllo live con metriche",
     "Multilingua (IT, EN, FR, ES, DE, NL)",
@@ -260,7 +261,7 @@
       "name": "Quanto costa YouZen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un piano solo, a consumo: €0,30 al minuto, con i minuti modulabili. Al pacchetto di riferimento da 750 minuti/mese sono 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ con l'integrazione al gestionale. I minuti oltre il pacchetto costano 0,35€/min. Niente costi nascosti, paghi solo i minuti effettivi."
+        "text": "Un piano solo, a consumo: €0,30 al minuto, con i minuti modulabili. Al pacchetto di riferimento da 750 minuti/mese sono 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ con l'integrazione al gestionale. I minuti oltre il pacchetto costano 0,35€/min. Fuori dal canone restano due voci facoltative: i messaggi diretti di Instagram e Facebook, a 10€/mese, e i crediti per i messaggi, che si comprano quando finiscono. Niente costi nascosti: quello che non accendi non lo paghi."
       }
     },
     {
@@ -4306,6 +4307,117 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .yzp-then b { color: #fff; }
 
 /* ====================================================================
+   OPZIONE MESSAGGI DIRETTI (Instagram e Facebook)
+   Interruttore in linea, sotto il conto della voce: il canone dei minuti
+   finisce li', e da quel punto in giu' ci sono le cose che coi minuti non
+   c'entrano. Sopra il riquadro dei crediti, che non entra in nessun totale.
+   ==================================================================== */
+.dm-ico { display: inline-flex; flex-shrink: 0; }
+.dm-ico span {
+  width: 30px; height: 30px; border-radius: 9px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.dm-ico span + span { margin-left: -9px; }
+.dm-ico .ig { background: linear-gradient(135deg, #F9CE34, #EE2A7B 55%, #6228D7); }
+.dm-ico .fb { background: #1877F2; }
+.dm-ico svg { width: 16px; height: 16px; color: #fff; }
+
+.dm-sw {
+  position: relative; width: 46px; height: 27px; border-radius: 999px; flex-shrink: 0;
+  background: rgba(255,255,255,0.12); border: 1px solid var(--line-strong);
+  transition: background 0.2s, border-color 0.2s;
+}
+.dm-sw::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 21px; height: 21px; border-radius: 999px; background: #fff;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.yzp-dm[aria-pressed="true"] .dm-sw { background: var(--accent); border-color: var(--accent); }
+.yzp-dm[aria-pressed="true"] .dm-sw::after { transform: translateX(19px); }
+@media (prefers-reduced-motion: reduce) {
+  .dm-sw, .dm-sw::after { transition: none; }
+}
+
+/* riga di calcolo che compare solo a opzione accesa */
+.yzp-addline { display: none; color: var(--sector-salone); }
+.yzp.dm-on .yzp-addline { display: inline; }
+
+.yzp-dm {
+  position: relative; width: 100%; text-align: left;
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 24px; padding: 14px 16px; border-radius: 14px;
+  border: 1px solid var(--line); background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, background 0.2s;
+}
+.yzp-dm:hover { border-color: rgba(236,72,153,0.45); }
+.yzp-dm[aria-pressed="true"] { border-color: rgba(236,72,153,0.55); background: rgba(236,72,153,0.08); }
+.yzp-dm-badge {
+  position: absolute; top: -9px; left: 16px;
+  background: var(--sector-salone); color: #2a0616;
+  font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 99px;
+}
+.yzp-dm-txt { flex: 1; min-width: 0; }
+.yzp-dm-n { display: block; font-size: 0.88rem; font-weight: 700; }
+.yzp-dm-d { display: block; font-size: 0.76rem; color: var(--muted); line-height: 1.4; }
+.yzp-dm-p { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; }
+.yzp-dm-p small { display: block; font-size: 0.66rem; font-weight: 500; color: var(--muted-weak); letter-spacing: 0; text-align: right; }
+@media (max-width: 560px) {
+  .yzp-dm { flex-wrap: wrap; }
+  .yzp-dm-txt { flex-basis: calc(100% - 44px); }
+  .yzp-dm-p { margin-left: auto; }
+}
+
+/* ====================================================================
+   CREDITI PER I MESSAGGI
+   Ultima cosa della sezione: e' la sola voce che non entra in nessun
+   totale, perche' si compra a consumo e non fa parte del canone.
+   ==================================================================== */
+.yzc {
+  margin-top: 28px; padding: 20px;
+  border: 1px solid var(--line); border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+}
+.yzc-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.yzc-t {
+  font-family: var(--font-brand); font-size: 11px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--muted-weak);
+}
+.yzc-s { font-size: 0.8rem; color: var(--muted); }
+.yzc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 640px) { .yzc-grid { grid-template-columns: 1fr; gap: 18px; }}
+.yzc-tile {
+  position: relative;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 16px; border-radius: 12px;
+  border: 1px solid var(--line); background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.yzc-tile:hover { border-color: rgba(249,115,22,0.4); transform: translateY(-2px); }
+.yzc-tile.is-auto { border-color: var(--line-strong); }
+.yzc-badge {
+  position: absolute; top: -9px; left: 14px;
+  background: rgba(255,255,255,0.13); color: #fff;
+  border: 1px solid var(--line-strong);
+  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 99px;
+  white-space: nowrap;
+}
+.yzc-cr { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.yzc-cr i {
+  font-style: normal; font-size: 0.62rem; font-weight: 600; color: var(--muted-weak);
+  text-transform: uppercase; letter-spacing: 0.06em; margin-left: 5px;
+}
+.yzc-p { font-size: 1.05rem; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+.yzc-m { font-size: 0.74rem; color: var(--muted); }
+/* Il testo sta sotto le tre taglie e prende tutta la larghezza del riquadro:
+   niente colonna stretta con mezzo riquadro vuoto a destra. */
+.yzc-note {
+  margin-top: 18px; display: flex; flex-direction: column; gap: 9px;
+  font-size: 0.82rem; color: var(--muted-strong); line-height: 1.65;
+}
+.yzc-note b { color: #fff; }
+
+/* ====================================================================
    ANIMAZIONI ON-SCROLL
    ==================================================================== */
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -5764,6 +5876,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <p class="yzp-calc">
             <b id="yzpMin">0</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
             <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
+            <span class="yzp-addline"><br />più <b data-dmprice>€10</b> al mese per i messaggi diretti di Instagram e Facebook</span>
           </p>
           <div class="yzp-was">con l'annuale: <s id="yzpWas">€0/mese</s> <b id="yzpSave">risparmi €0 l'anno</b></div>
         </div>
@@ -5840,6 +5953,51 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="yzp-today-v" id="yzpToday">€1.175</span>
       </div>
       <p class="yzp-then">poi <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
+
+      <!-- ===== Opzione: messaggi diretti Instagram e Facebook ===== -->
+      <button type="button" class="yzp-dm" id="yzpDm" aria-pressed="false">
+        <span class="yzp-dm-badge">Novità</span>
+        <span class="dm-ico" aria-hidden="true">
+          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+          <span class="fb"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14 8.5V6.9c0-.7.2-1.1 1.2-1.1H16V3.1c-.3 0-1-.1-1.9-.1-2 0-3.4 1.2-3.4 3.5v2H8.4V11H10.7v8h2.8v-8h2.3l.4-2.5H14z"/></svg></span>
+        </span>
+        <span class="yzp-dm-txt">
+          <span class="yzp-dm-n">Messaggi diretti di Instagram e Facebook</span>
+          <span class="yzp-dm-d">Risponde ai DM e prende l'appuntamento dentro la conversazione.</span>
+        </span>
+        <span class="yzp-dm-p">+<span data-dmprice>€10</span><small>al mese</small></span>
+        <span class="dm-sw" aria-hidden="true"></span>
+      </button>
+
+      <!-- ===== Crediti per i messaggi: fuori dal canone, non entra nei totali ===== -->
+      <div class="yzc">
+        <div class="yzc-head">
+          <span class="yzc-t">Crediti per i messaggi</span>
+          <span class="yzc-s">Fuori dal canone. Si comprano quando finiscono.</span>
+        </div>
+        <div class="yzc-grid">
+          <div class="yzc-tile is-auto">
+            <span class="yzc-badge">Ricarica automatica</span>
+            <span class="yzc-cr">350 <i>crediti</i></span>
+            <span class="yzc-p">€5</span>
+            <span class="yzc-m">circa 250 messaggi</span>
+          </div>
+          <div class="yzc-tile">
+            <span class="yzc-cr">1.050 <i>crediti</i></span>
+            <span class="yzc-p">€15</span>
+            <span class="yzc-m">circa 750 messaggi</span>
+          </div>
+          <div class="yzc-tile">
+            <span class="yzc-cr">2.450 <i>crediti</i></span>
+            <span class="yzc-p">€35</span>
+            <span class="yzc-m">circa 1.750 messaggi</span>
+          </div>
+        </div>
+        <div class="yzc-note">
+          <p>I messaggi che l'assistente manda e riceve, su WhatsApp e via SMS, non pescano dai minuti di telefono: hanno un contatore loro. Un messaggio costa intorno a <b>1,4 crediti</b>, quindi con 5 euro ne mandi circa 250.</p>
+          <p>La ricarica automatica nasce spenta. Se la accendi, quando i crediti scendono sotto 35 parte da sola una ricarica da 350, non più di cinque volte nello stesso periodo di fatturazione. L'interruttore sta nella dashboard e lo sposti quando vuoi.</p>
+        </div>
+      </div>
 
     </div>
 
@@ -5982,7 +6140,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="faq-toggle" aria-hidden="true"></span>
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Un piano solo, a consumo: <b>€0,30 al minuto</b>, e i minuti li scegli tu. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Niente sorprese: paghi solo i minuti che usi davvero.</p>
+          <p class="faq-a">Un piano solo, a consumo: <b>€0,30 al minuto</b>, e i minuti li scegli tu. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 10€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
           <span class="faq-punch">Meno di un caffè al giorno per non perdere più un cliente.</span>
         </div></div></div>
       </div>
@@ -6410,35 +6568,46 @@ const minSteps = [0, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10
 const RATE = 0.30;              // €/min
 const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
 const LISTINO = { 500: 1000, 900: 1400 };  // prezzo pieno di ogni attivazione scontata
+const DM_MENSILE = 10;          // opzione messaggi diretti Instagram e Facebook, €/mese
 
 const slider = document.getElementById('minSlider');
 const yzp = document.getElementById('yzp');
 let mesi = 3;      // cadenza: 3 = trimestrale, 12 = annuale
 let setup = 500;   // attivazione scelta
+let dmOn = false;  // opzione messaggi diretti accesa o spenta
 
 // it-IT non raggruppa i numeri a 4 cifre ("1500"); il sito scrive "1.500".
 const grp = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const eur = n => '€' + grp(Math.round(n));
 const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+// Il prezzo dell'opzione compare in due punti (riga di calcolo e interruttore):
+// due id sarebbero due posti da tenere allineati a mano, quindi si va per attributo.
+const setDm = v => document.querySelectorAll('[data-dmprice]').forEach(el => { el.textContent = v; });
 
 function updatePricing() {
   const idx = parseInt(slider.value, 10);
   const minutes = minSteps[idx];
   const annuale = mesi === 12;
 
-  const base = minutes * RATE;                              // canone pieno
-  const monthly = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
+  const base = minutes * RATE;                              // canone pieno dei minuti
+  const canoneMinuti = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
+  // L'opzione segue lo stesso sconto annuale del canone: 10 euro diventano 9.
+  const dmListino = annuale ? DM_MENSILE * (1 - ANNUAL_DISCOUNT) : DM_MENSILE;
+  const dmPieno = dmOn ? DM_MENSILE : 0;
+  const monthly = canoneMinuti + (dmOn ? dmListino : 0);
   const period = monthly * mesi;                            // quanto paghi per ciclo, in anticipo
   const today = period + setup;
   const cadLabel = 'ogni ' + mesi + ' mesi';
 
   yzp.classList.toggle('annuale', annuale);
+  yzp.classList.toggle('dm-on', dmOn);
 
   setTxt('yzpMin', grp(minutes));
   setTxt('yzpMinLab', grp(minutes));
   setTxt('yzpMonthly', grp(Math.round(monthly)));
-  setTxt('yzpWas', eur(base) + '/mese');
-  setTxt('yzpSave', 'risparmi ' + eur(base * 12 * ANNUAL_DISCOUNT) + " l'anno");
+  setTxt('yzpWas', eur(base + dmPieno) + '/mese');
+  setTxt('yzpSave', 'risparmi ' + eur((base + dmPieno) * 12 * ANNUAL_DISCOUNT) + " l'anno");
+  setDm(eur(dmListino));
   setTxt('yzpSaving', eur(LISTINO[setup] - setup));
   setTxt('yzpCadLabel', cadLabel);
   setTxt('yzpCadLabel2', cadLabel);
@@ -6486,6 +6655,18 @@ document.querySelectorAll('[data-setup]').forEach(el => {
     updatePricing();
   });
 });
+
+// opzione messaggi diretti: cambia il canone mensile, quindi scopre il prezzo
+// come fanno lo slider e il toggle della cadenza.
+const dmBtn = document.getElementById('yzpDm');
+if (dmBtn) {
+  dmBtn.addEventListener('click', () => {
+    dmOn = !dmOn;
+    dmBtn.setAttribute('aria-pressed', dmOn ? 'true' : 'false');
+    revealPrice();
+    updatePricing();
+  });
+}
 updatePricing();
 
 // ===== Timeline: cambio step su click + scroll
