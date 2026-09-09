@@ -8,3 +8,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://youzen.it/sitemap.xml
+
+# Riassunto del sito per gli assistenti conversazionali.
+# Non e' una direttiva standard: e' un segnaposto per chi lo cerca.
+# https://youzen.it/llms.txt

@@ -1704,6 +1704,12 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
 .nav-back:hover .arr { transform: translateX(-3px); }
 
 </style>
+<style>
+/* Sezione contatti delle pagine di settore: prima il modo per farsi chiamare,
+   poi i recapiti per chi preferisce comporre il numero. */
+.yzc-azione{ display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin:26px 0 22px; }
+.yzc-oppure{ font-size:.92rem; color:var(--muted); }
+</style>
 </head>
 
 <body>
@@ -2494,6 +2500,14 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); }
         <span class="eyebrow">Parliamone</span>
         <h2 style="margin-top:24px"><span class="title-problem">Indeciso?</span> <span class="title-solution">Facciamo due chiacchiere.</span></h2>
         <p class="lead">Ti mostriamo YouZen Food dal vivo: come prende un ordine, come gestisce un tavolo, come parla in italiano col cliente. Capiamo se ha senso per il tuo ristorante. Decidi tu.</p>
+
+        <div class="yzc-azione">
+          <a class="btn btn-primary" href="/#demo-call">
+            <span>Fatti chiamare in 60 secondi</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+          </a>
+          <span class="yzc-oppure">oppure prendi tu il telefono</span>
+        </div>
 
         <div class="cta-contact-row">
           <a class="contact-pill" href="tel:+3905411726297">
