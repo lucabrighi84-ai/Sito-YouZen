@@ -1969,140 +1969,46 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 /* Margine extra per CTA sezione confronto */
 
 /* ====================================================================
-   SENZA / CON YOUZEN (sec-04) — SPLIT-SCREEN GIORNATA TIPO
+   SENZA / CON YOUZEN (sec-04) — I CLIENTI CHE CADONO
+   Dodici persone cadono dentro la giornata. Senza YouZen la rete ha tre
+   buchi, e sono i tre momenti in cui non puoi rispondere: la riunione, la
+   pausa pranzo, la sera. Il disegno lo fa un canvas perche' e' l'unico
+   modo per far vedere la perdita mentre succede, invece di raccontarla.
+   L'interruttore riusa la .dm-sw dell'opzione DM piu' in basso: in pagina
+   il comando deve essere uno solo, non due che si somigliano.
    ==================================================================== */
-.day-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  position: relative;
-}
-@media (min-width: 900px) {
-  .day-grid { grid-template-columns: 1fr 1fr; gap: 24px; }}
-
-.day-col {
-  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+.day-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 44px; align-items: center; }
+@media (max-width: 880px) { .day-wrap { grid-template-columns: 1fr; gap: 26px; }}
+.day-stage {
+  position: relative; border-radius: 20px; overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 32px 28px;
+  background: linear-gradient(180deg, #0b1226, #060a18);
 }
-.day-col.bad { border-color: rgba(239,68,68,0.18); }
-.day-col.good {
-  border-color: rgba(249,115,22,0.28);
-  background: linear-gradient(180deg, rgba(249,115,22,0.06), rgba(249,115,22,0.01));
-}
+.day-stage canvas { width: 100%; height: 420px; display: block; }
+@media (max-width: 640px) { .day-stage canvas { height: 320px; }}
 
-.day-col-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 8px;
+.day-score { display: flex; gap: 28px; margin-bottom: 22px; }
+.day-n {
+  font-size: clamp(2.6rem, 6vw, 3.6rem); font-weight: 800;
+  letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums;
 }
-.day-col-tag {
-  font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 10px; border-radius: 999px;
+.day-n.ko { color: var(--sector-artig); }
+.day-n.ok { color: var(--accent); }
+.day-k { display: block; font-size: 0.76rem; color: var(--muted); font-weight: 500; margin-top: 6px; }
+.day-side p { color: var(--muted); font-size: 1rem; line-height: 1.6; margin-bottom: 22px; }
+.day-sw {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 8px 8px 8px 18px; border-radius: 999px; min-height: 44px;
+  border: 1px solid var(--line-strong); background: rgba(255,255,255,0.03);
+  font-size: 0.88rem; font-weight: 600; color: var(--muted-strong);
+  transition: border-color 0.16s cubic-bezier(0.23,1,0.32,1),
+              background 0.16s cubic-bezier(0.23,1,0.32,1),
+              color 0.16s cubic-bezier(0.23,1,0.32,1),
+              transform 0.12s cubic-bezier(0.23,1,0.32,1);
 }
-.day-col.bad .day-col-tag {
-  color: #EF4444; background: rgba(239,68,68,0.1);
-  border: 1px solid rgba(239,68,68,0.25);
-}
-.day-col.good .day-col-tag {
-  color: var(--accent); background: rgba(249,115,22,0.1);
-  border: 1px solid rgba(249,115,22,0.3);
-}
-.day-col-score {
-  font-family: var(--font-display);
-  font-size: 1.6rem; font-weight: 700;
-}
-.day-col.bad .day-col-score { color: #EF4444; }
-.day-col.good .day-col-score { color: var(--accent); }
-.day-col-score-unit {
-  font-size: 0.45em; font-weight: 600; letter-spacing: 0;
-  color: var(--muted); margin-left: 3px;
-}
-
-.day-col-title {
-  font-size: 1.4rem; margin-bottom: 24px;
-  color: white;
-  font-family: var(--font-display);
-}
-
-.day-timeline { position: relative; }
-.day-timeline::before {
-  content: '';
-  position: absolute;
-  left: 8px; top: 6px; bottom: 6px;
-  width: 1px; background: var(--line);
-}
-.day-event {
-  position: relative;
-  padding-left: 32px;
-  padding-bottom: 18px;
-}
-.day-event:last-child { padding-bottom: 0; }
-.day-event::before {
-  content: '';
-  position: absolute;
-  left: 4px; top: 6px;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--ink-900);
-  border: 2px solid var(--line-strong);
-}
-.day-col.bad .day-event::before {
-  background: #EF4444;
-  border-color: rgba(239,68,68,0.4);
-  box-shadow: 0 0 10px rgba(239,68,68,0.4);
-}
-.day-col.good .day-event::before {
-  background: #22C55E;
-  border-color: rgba(34,197,94,0.4);
-  box-shadow: 0 0 10px rgba(34,197,94,0.4);
-}
-
-.day-event-time {
-  font-family: var(--font-mono);
-  font-size: 10.5px; letter-spacing: 0.08em;
-  color: var(--muted-weak);
-  margin-bottom: 3px;
-  text-transform: uppercase;
-}
-.day-event-text {
-  font-size: 0.92rem;
-  color: var(--muted-strong);
-  line-height: 1.45;
-}
-.day-event-text strong { color: white; font-weight: 600; }
-.day-col.bad .day-event-text strong { color: #EF4444; }
-
-.day-summary {
-  margin-top: 24px;
-  padding-top: 18px;
-  border-top: 1px dashed var(--line);
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-.day-summary b { color: white; }
-
-.day-divider {
-  display: none;
-}
-@media (min-width: 900px) {
-  .day-divider {
-    display: grid; place-items: center;
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--ink-900);
-    border: 1px solid var(--line-strong);
-    font-family: var(--font-display);
-    font-weight: 700; font-size: 0.85rem;
-    color: var(--accent);
-    box-shadow: 0 0 0 8px var(--ink-900);
-  }}
+.day-sw:hover { border-color: rgba(249,115,22,0.5); color: #fff; }
+.day-sw:active { transform: scale(0.97); }
+.day-sw[aria-pressed="true"] { border-color: var(--accent); background: rgba(249,115,22,0.10); color: #fff; }
 
 /* ====================================================================
    INTEGRAZIONI (sec-integrazioni) — MARQUEE INFINITO DESTRA → SINISTRA
@@ -4333,8 +4239,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   width: 21px; height: 21px; border-radius: 999px; background: #fff;
   transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.yzp-dm[aria-pressed="true"] .dm-sw { background: var(--accent); border-color: var(--accent); }
-.yzp-dm[aria-pressed="true"] .dm-sw::after { transform: translateX(19px); }
+[aria-pressed="true"] .dm-sw { background: var(--accent); border-color: var(--accent); }
+[aria-pressed="true"] .dm-sw::after { transform: translateX(19px); }
 @media (prefers-reduced-motion: reduce) {
   .dm-sw, .dm-sw::after { transition: none; }
 }
@@ -5215,94 +5121,34 @@ html.yz-cookie-open .call-bar { display: none; }
 }
 </style>
 
-<!-- ============================ SENZA / CON YOUZEN (sec-04) — SPLIT-SCREEN GIORNATA TIPO ============================ -->
+<!-- ============================ SENZA / CON YOUZEN (sec-04) — I CLIENTI CHE CADONO ============================ -->
 <section class="section" id="sec-04">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Una giornata tipo</span>
       <h2>
-        <span class="title-problem">Mercoledì, ore 18.</span>
-        <span class="title-solution">Indovina chi stacca.</span>
+        <span class="title-problem">Dodici ti cercano.</span>
+        <span class="title-solution">Quanti ne tieni?</span>
       </h2>
-      <p class="lead">A sinistra: senza YouZen, ogni squillo è una rinuncia. A destra: tutto gestito mentre lavori.</p>
+      <p class="lead">Ogni pallino è una persona che ti cerca in una giornata. Senza YouZen la rete ha i buchi, e sotto non c'è nessuno a raccoglierli.</p>
     </div>
 
-    <div class="day-grid">
-
-      <!-- Colonna SENZA -->
-      <div class="day-col bad">
-        <div class="day-col-head">
-          <span class="day-col-tag">Senza YouZen</span>
-          <span class="day-col-score">-2 <span class="day-col-score-unit">clienti</span></span>
-        </div>
-        <h3 class="day-col-title">La giornata che già conosci</h3>
-
-        <div class="day-timeline">
-          <div class="day-event">
-            <div class="day-event-time">09:14</div>
-            <div class="day-event-text">Sei in riunione. <strong>Chiamata persa.</strong> Non richiami mai.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">11:02</div>
-            <div class="day-event-text">WhatsApp di un nuovo cliente. Lo vedi alle <strong>17:45</strong>, è andato dal concorrente.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">13:30</div>
-            <div class="day-event-text">Pausa pranzo. <strong>3 chiamate perse</strong>, nessun messaggio in segreteria.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">16:20</div>
-            <div class="day-event-text">Cliente non si presenta. Nessuno l'aveva richiamato per la conferma.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">18:00</div>
-            <div class="day-event-text"><strong>7 chiamate perse</strong>, 2 WhatsApp ignorati, 1 no-show.</div>
-          </div>
-        </div>
-
-        <div class="day-summary">
-          Stima persa oggi: <b>2 clienti</b> · le 7 chiamate perse non le richiama nessuno.
-        </div>
+    <div class="day-wrap">
+      <div class="day-stage">
+        <canvas id="dayCanvas" role="img" aria-label="I contatti di una giornata che cadono verso una rete con tre buchi"></canvas>
       </div>
 
-      <div class="day-divider">VS</div>
-
-      <!-- Colonna CON -->
-      <div class="day-col good">
-        <div class="day-col-head">
-          <span class="day-col-tag">Con YouZen</span>
-          <span class="day-col-score">+3 <span class="day-col-score-unit">clienti</span></span>
+      <div class="day-side">
+        <div class="day-score">
+          <div><span class="day-n ok" id="dayPresi">0</span><span class="day-k">presi</span></div>
+          <div><span class="day-n ko" id="dayPersi">0</span><span class="day-k">caduti nel vuoto</span></div>
         </div>
-        <h3 class="day-col-title">La giornata che potresti avere</h3>
-
-        <div class="day-timeline">
-          <div class="day-event">
-            <div class="day-event-time">09:14</div>
-            <div class="day-event-text">Sei in riunione. <strong>YouZen risponde</strong>, qualifica, fissa appuntamento.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">11:02</div>
-            <div class="day-event-text">WhatsApp risposto in <strong>11 secondi</strong>. Lead caldo, demo prenotata domani.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">13:30</div>
-            <div class="day-event-text">Pausa pranzo. Tutto gestito. Trovi il <strong>riassunto in 1 messaggio</strong>.</div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">16:20</div>
-            <div class="day-event-text">Conferma automatica 24h prima: <strong>cliente si presenta.</strong></div>
-          </div>
-          <div class="day-event">
-            <div class="day-event-time">18:00</div>
-            <div class="day-event-text"><strong>12 contatti gestiti</strong>, 4 nuovi appuntamenti, 0 perse.</div>
-          </div>
-        </div>
-
-        <div class="day-summary">
-          Stima guadagnata oggi: <b>3 clienti nuovi</b>, su 12 contatti gestiti.
-        </div>
+        <p id="daySay">La rete ha tre buchi: la riunione, la pausa pranzo, la sera. Chi ci passa in mezzo non torna indietro da solo.</p>
+        <button type="button" class="day-sw" id="daySw" aria-pressed="false">
+          Accendi YouZen
+          <span class="dm-sw" aria-hidden="true"></span>
+        </button>
       </div>
-
     </div>
   </div>
 </section>
@@ -6668,6 +6514,161 @@ if (dmBtn) {
   });
 }
 updatePricing();
+
+// ===== Una giornata tipo: i clienti che cadono
+// Dodici pallini cadono dentro la giornata. La rete in basso ha tre buchi,
+// che sono i tre momenti in cui non puoi rispondere. Il ciclo gira solo
+// quando la sezione e' sullo schermo: altrove sarebbe batteria buttata.
+(function () {
+  var cv = document.getElementById('dayCanvas');
+  if (!cv) return;
+  var ctx = cv.getContext('2d');
+  var presiEl = document.getElementById('dayPresi');
+  var persiEl = document.getElementById('dayPersi');
+  var say = document.getElementById('daySay');
+  var sw = document.getElementById('daySw');
+  var ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var on = false, W = 0, H = 0, dpr = Math.min(2, window.devicePixelRatio || 1);
+  var palle = [], presi = 0, persi = 0, prossima = 0, nate = 0, raf = null;
+  var TOT = 12;
+  var BUCHI = [[0.08, 0.20], [0.44, 0.60], [0.82, 0.94]];
+  var RETE = 0.72;
+
+  function misura() {
+    var r = cv.getBoundingClientRect();
+    if (!r.width) return;
+    W = r.width; H = r.height;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', function () { misura(); if (ridotto) statico(); });
+  misura();
+
+  function passa(x) {
+    if (on) return false;
+    var f = x / W;
+    for (var i = 0; i < BUCHI.length; i++) if (f > BUCHI[i][0] && f < BUCHI[i][1]) return true;
+    return false;
+  }
+  function nuova() {
+    palle.push({ x: 40 + Math.random() * (W - 80), y: -14, v: 1.4 + Math.random() * 0.9, stato: 'cade', a: 1, ry: 0 });
+    nate++;
+  }
+  function reset() {
+    palle = []; presi = 0; persi = 0; nate = 0; prossima = 0;
+    presiEl.textContent = '0'; persiEl.textContent = '0';
+  }
+  function disegnaRete() {
+    var y = H * RETE;
+    ctx.lineWidth = 3; ctx.lineCap = 'round';
+    if (on) {
+      ctx.strokeStyle = '#F97316';
+      ctx.shadowColor = 'rgba(249,115,22,0.7)'; ctx.shadowBlur = 14;
+      ctx.beginPath(); ctx.moveTo(24, y); ctx.lineTo(W - 24, y); ctx.stroke();
+      ctx.shadowBlur = 0;
+    } else {
+      ctx.strokeStyle = 'rgba(255,255,255,0.28)';
+      var tratti = [[24 / W, BUCHI[0][0]], [BUCHI[0][1], BUCHI[1][0]], [BUCHI[1][1], BUCHI[2][0]], [BUCHI[2][1], (W - 24) / W]];
+      tratti.forEach(function (t) {
+        ctx.beginPath(); ctx.moveTo(t[0] * W, y); ctx.lineTo(t[1] * W, y); ctx.stroke();
+      });
+    }
+  }
+  function ore() {
+    ctx.font = '11px Inter, system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.16)';
+    ['09', '11', '13', '16', '18'].forEach(function (h, i) {
+      ctx.fillText(h, 26 + i * ((W - 70) / 4), H - 14);
+    });
+  }
+  // un passo di fisica, senza disegnare: serve anche per far partire la
+  // sezione a scena gia' avviata invece che su una rete vuota e due zeri.
+  function passo() {
+    prossima--;
+    if (prossima <= 0 && nate < TOT) { nuova(); prossima = 26 + Math.random() * 22; }
+    var y = H * RETE;
+    palle.forEach(function (b) {
+      if (b.stato === 'cade') {
+        b.y += b.v; b.v += 0.045;
+        if (b.y >= y - 7) {
+          if (passa(b.x)) { b.stato = 'giu'; }
+          else { b.stato = 'preso'; b.y = y - 7; presi++; presiEl.textContent = presi; }
+        }
+      } else if (b.stato === 'giu') {
+        b.y += b.v; b.a -= 0.022;
+        if (b.a <= 0) { b.stato = 'morto'; persi++; persiEl.textContent = persi; }
+      } else if (b.stato === 'preso') {
+        b.ry = Math.min(1, b.ry + 0.12);
+      }
+    });
+    if (nate >= TOT && palle.every(function (b) { return b.stato !== 'cade'; })) {
+      prossima--;
+      if (prossima < -150) reset();
+    }
+  }
+
+  function giro() {
+    passo();
+    ctx.clearRect(0, 0, W, H);
+    ore();
+    disegnaRete();
+    palle.forEach(function (b) {
+      if (b.stato === 'morto') return;
+      ctx.globalAlpha = Math.max(0, b.a);
+      if (b.stato === 'preso') {
+        ctx.fillStyle = '#F97316';
+        ctx.shadowColor = 'rgba(249,115,22,0.8)'; ctx.shadowBlur = 12 * b.ry;
+      } else if (b.stato === 'giu') {
+        ctx.fillStyle = '#EF4444'; ctx.shadowBlur = 0;
+      } else {
+        ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.shadowBlur = 0;
+      }
+      ctx.beginPath(); ctx.arc(b.x, b.y, 7, 0, Math.PI * 2); ctx.fill();
+      ctx.shadowBlur = 0; ctx.globalAlpha = 1;
+    });
+    raf = requestAnimationFrame(giro);
+  }
+
+  function scalda() {
+    reset();
+    for (var i = 0; i < 150; i++) passo();
+  }
+  function statico() {
+    ctx.clearRect(0, 0, W, H);
+    ore(); disegnaRete();
+    var y = H * RETE, np = on ? 12 : 3;
+    for (var i = 0; i < 12; i++) {
+      var x = 40 + i * ((W - 80) / 11);
+      ctx.beginPath();
+      ctx.fillStyle = i < np ? '#F97316' : '#EF4444';
+      ctx.arc(x, i < np ? y - 7 : H - 40, 7, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    presiEl.textContent = String(np); persiEl.textContent = String(12 - np);
+  }
+  function avvia() { if (!raf && !ridotto) raf = requestAnimationFrame(giro); }
+  function ferma() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+  sw.addEventListener('click', function () {
+    on = !on;
+    sw.setAttribute('aria-pressed', on ? 'true' : 'false');
+    sw.firstChild.textContent = on ? 'Spegni YouZen ' : 'Accendi YouZen ';
+    say.textContent = on
+      ? 'La rete è chiusa. Nessuno passa in mezzo, e chi cade resta lì finché non lo guardi tu.'
+      : 'La rete ha tre buchi: la riunione, la pausa pranzo, la sera. Chi ci passa in mezzo non torna indietro da solo.';
+    if (ridotto) statico(); else { scalda(); ctx.clearRect(0, 0, W, H); ore(); disegnaRete(); }
+  });
+
+  if (ridotto) { statico(); }
+  else if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (righe) {
+      righe.forEach(function (r) {
+        if (r.isIntersecting) { misura(); if (!nate) scalda(); avvia(); } else ferma();
+      });
+    }, { threshold: 0.1 }).observe(cv);
+  } else { avvia(); }
+})();
 
 // ===== Timeline: cambio step su click + scroll
 const tlSteps = document.querySelectorAll('.tl-step');
