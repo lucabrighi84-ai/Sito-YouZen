@@ -4308,6 +4308,20 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 99px;
   white-space: nowrap;
 }
+.yzc-badge.is-save {
+  background: rgba(16,185,129,0.16); color: #6ee7b7;
+  border-color: rgba(16,185,129,0.45);
+}
+/* La fascia della non scadenza sta sotto la griglia e non dentro una tessera:
+   non e' una proprieta' di una taglia sola, vale per tutte e tre. */
+.yzc-mai {
+  display: flex; align-items: flex-start; gap: 13px;
+  margin-top: 16px; padding: 15px 17px; border-radius: 12px;
+  background: rgba(16,185,129,0.16); border: 1px solid rgba(16,185,129,0.45);
+}
+.yzc-mai svg { flex-shrink: 0; margin-top: 2px; }
+.yzc-mai-t { font-size: 0.95rem; font-weight: 800; letter-spacing: -0.015em; color: #fff; }
+.yzc-mai-s { font-size: 0.82rem; color: var(--muted-strong); line-height: 1.6; margin-top: 2px; }
 .yzc-cr { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .yzc-cr i {
   font-style: normal; font-size: 0.62rem; font-weight: 600; color: var(--muted-weak);
@@ -4322,6 +4336,32 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 0.82rem; color: var(--muted-strong); line-height: 1.65;
 }
 .yzc-note b { color: #fff; }
+/* La riga espandibile sotto le taglie: <details> nativo, niente JS.
+   Il segno del summary cambia da + a meno quando e' aperta. */
+.yzc-info { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 15px; }
+.yzc-info > summary {
+  list-style: none; cursor: pointer; width: fit-content;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 0.85rem; font-weight: 600; color: var(--muted-strong);
+  transition: color 0.2s;
+}
+.yzc-info > summary::-webkit-details-marker { display: none; }
+.yzc-info > summary:hover { color: #fff; }
+.yzc-info > summary::before {
+  content: "+";
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 19px; height: 19px; border-radius: 50%;
+  border: 1px solid var(--line-strong); background: rgba(255,255,255,0.06);
+  font-size: 13px; font-weight: 700; line-height: 1; color: #fff;
+  transition: background 0.2s, border-color 0.2s;
+}
+.yzc-info[open] > summary::before { content: "−"; }
+.yzc-info > summary:hover::before { background: rgba(249,115,22,0.16); border-color: rgba(249,115,22,0.45); }
+.yzc-info-body {
+  margin-top: 13px; display: flex; flex-direction: column; gap: 10px;
+  font-size: 0.82rem; color: var(--muted-strong); line-height: 1.65;
+}
+.yzc-info-body b { color: #fff; }
 
 /* ====================================================================
    ANIMAZIONI ON-SCROLL
@@ -5824,25 +5864,40 @@ html.yz-cookie-open .call-bar { display: none; }
         <div class="yzc-grid">
           <div class="yzc-tile is-auto">
             <span class="yzc-badge">Ricarica automatica</span>
-            <span class="yzc-cr">350 <i>crediti</i></span>
+            <span class="yzc-cr">100 <i>messaggi</i></span>
             <span class="yzc-p">€5</span>
-            <span class="yzc-m">circa 250 messaggi</span>
+            <span class="yzc-m">140 crediti</span>
           </div>
           <div class="yzc-tile">
-            <span class="yzc-cr">1.050 <i>crediti</i></span>
+            <span class="yzc-badge is-save">Risparmi il 25%</span>
+            <span class="yzc-cr">400 <i>messaggi</i></span>
             <span class="yzc-p">€15</span>
-            <span class="yzc-m">circa 750 messaggi</span>
+            <span class="yzc-m">560 crediti</span>
           </div>
           <div class="yzc-tile">
-            <span class="yzc-cr">2.450 <i>crediti</i></span>
-            <span class="yzc-p">€35</span>
-            <span class="yzc-m">circa 1.750 messaggi</span>
+            <span class="yzc-badge is-save">Risparmi il 40%</span>
+            <span class="yzc-cr">1.000 <i>messaggi</i></span>
+            <span class="yzc-p">€30</span>
+            <span class="yzc-m">1.400 crediti</span>
           </div>
         </div>
-        <div class="yzc-note">
-          <p>I messaggi che l'assistente manda e riceve, su WhatsApp e via SMS, non pescano dai minuti di telefono: hanno un contatore loro. Un messaggio costa intorno a <b>1,4 crediti</b>, quindi con 5 euro ne mandi circa 250.</p>
-          <p>La ricarica automatica nasce spenta. Se la accendi, quando i crediti scendono sotto 35 parte da sola una ricarica da 350, non più di cinque volte nello stesso periodo di fatturazione. L'interruttore sta nella dashboard e lo sposti quando vuoi.</p>
+        <div class="yzc-mai">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M6.5 8.5c-2.2 0-3.9 1.6-3.9 3.5s1.7 3.5 3.9 3.5c3.4 0 6.6-7 11-7 2.2 0 3.9 1.6 3.9 3.5s-1.7 3.5-3.9 3.5c-4.4 0-7.6-7-11-7z" />
+          </svg>
+          <div>
+            <p class="yzc-mai-t">I crediti non scadono mai</p>
+            <p class="yzc-mai-s">Quello che non spendi resta sul contatore il mese dopo, e quello dopo ancora. I minuti di telefono si azzerano a ogni rinnovo, i crediti no: una ricarica fatta a gennaio la stai ancora usando a dicembre.</p>
+          </div>
         </div>
+        <details class="yzc-info">
+          <summary>Informazioni</summary>
+          <div class="yzc-info-body">
+            <p>I messaggi che l'assistente manda e riceve, su WhatsApp e via SMS, non pescano dai minuti di telefono: hanno un contatore loro. Un messaggio costa <b>1,4 crediti</b>, quindi con 5 euro ne mandi 100.</p>
+            <p>Più grande è la ricarica, meno paghi il singolo messaggio: quattro ricariche piccole costano 20 euro e la taglia media ti dà gli stessi messaggi a 15, dieci ne costano 50 e la grande te li dà a 30.</p>
+            <p>La ricarica automatica nasce spenta. Se la accendi, quando i crediti scendono sotto 35 parte da sola una ricarica da 140, non più di cinque volte nello stesso periodo di fatturazione. L'interruttore sta nella dashboard e lo sposti quando vuoi.</p>
+          </div>
+        </details>
       </div>
 
     </div>
