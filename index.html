@@ -4200,16 +4200,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .yzp-bill b { color: var(--accent); }
 .yzp-bill svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
 
-/* totale di oggi (non e' una CTA: e' il numero che conta) */
-.yzp-today {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-  margin-top: 20px; padding: 16px 18px; border-radius: 14px;
-  background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.28);
-}
-.yzp-today-l { font-size: 0.86rem; font-weight: 600; color: #fff; }
-.yzp-today-s { display: block; font-size: 0.72rem; font-weight: 400; color: var(--muted); }
-.yzp-today-v { font-size: 1.9rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.yzp-then { text-align: right; font-size: 0.76rem; color: var(--muted); margin-top: 8px; }
+.yzp-then { text-align: right; font-size: 0.76rem; color: var(--muted); margin-top: 14px; }
 .yzp-then b { color: #fff; }
 
 /* ====================================================================
@@ -5833,12 +5824,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <p>Il canone si paga <b><span id="yzpCadLabel">ogni 3 mesi</span>, in anticipo</b>. L'attivazione la paghi <b>una volta sola, oggi</b>.</p>
       </div>
 
-      <!-- ===== Totale oggi ===== -->
-      <div class="yzp-today">
-        <span class="yzp-today-l">Oggi paghi <span class="yzp-today-s">canone anticipato + attivazione</span></span>
-        <span class="yzp-today-v" id="yzpToday">€1.175</span>
-      </div>
-      <p class="yzp-then">poi <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
+      <p class="yzp-then">Canone <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
 
       <!-- ===== Opzione: messaggi diretti Instagram e Facebook ===== -->
       <button type="button" class="yzp-dm" id="yzpDm" aria-pressed="false">
@@ -6497,7 +6483,6 @@ function updatePricing() {
   const dmPieno = dmOn ? DM_MENSILE : 0;
   const monthly = canoneMinuti + (dmOn ? dmListino : 0);
   const period = monthly * mesi;                            // quanto paghi per ciclo, in anticipo
-  const today = period + setup;
   const cadLabel = 'ogni ' + mesi + ' mesi';
 
   yzp.classList.toggle('annuale', annuale);
@@ -6512,7 +6497,6 @@ function updatePricing() {
   setTxt('yzpSaving', eur(LISTINO[setup] - setup));
   setTxt('yzpCadLabel', cadLabel);
   setTxt('yzpCadLabel2', cadLabel);
-  setTxt('yzpToday', eur(today));
   setTxt('yzpThen', eur(period));
 
   document.querySelectorAll('.slider-labels span').forEach((label, i) => {
