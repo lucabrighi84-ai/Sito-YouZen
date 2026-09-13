@@ -4202,6 +4202,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .yzp-then { text-align: right; font-size: 0.76rem; color: var(--muted); margin-top: 14px; }
 .yzp-then b { color: #fff; }
+.yzp-bill .yzp-then { margin-top: 4px; }
 
 /* ====================================================================
    OPZIONE MESSAGGI DIRETTI (Instagram e Facebook)
@@ -5821,10 +5822,11 @@ html.yz-cookie-open .call-bar { display: none; }
       <!-- ===== Nota fatturazione: subito dopo il setup ===== -->
       <div class="yzp-bill">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <p>Il canone si paga <b><span id="yzpCadLabel">ogni 3 mesi</span>, in anticipo</b>. L'attivazione la paghi <b>una volta sola, oggi</b>.</p>
+        <div>
+          <p>Il canone si paga <b><span id="yzpCadLabel">ogni 3 mesi</span>, in anticipo</b>. L'attivazione la paghi <b>una volta sola, oggi</b>.</p>
+          <p class="yzp-then">Canone <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
+        </div>
       </div>
-
-      <p class="yzp-then">Canone <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
 
       <!-- ===== Opzione: messaggi diretti Instagram e Facebook ===== -->
       <button type="button" class="yzp-dm" id="yzpDm" aria-pressed="false">
