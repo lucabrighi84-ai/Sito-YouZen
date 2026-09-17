@@ -749,6 +749,22 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   z-index: 1;
   pointer-events: none;
 }
+/* Copia statica del poster, sopra al video: resta a opacita' piena finche' il
+   video non e' davvero partito, poi si dissolve. Senza, il passaggio sarebbe
+   uno scatto secco (il <video> non anima da solo il suo poster). */
+.hero-video-poster-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+.hero-video-poster-overlay.is-hidden {
+  opacity: 0;
+}
 .hero-video-scrim {
   position: absolute;
   inset: 0;
@@ -873,6 +889,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
    resta la hero testuale con gli sfondi animati. Da 769px in su vale l'inverso. */
 @media (max-width: 768px) {
   .hero-video-bg,
+  .hero-video-poster-overlay,
   .hero-video-scrim { display: none; }
 }
 @media (min-width: 769px) {
@@ -4644,6 +4661,7 @@ html.yz-cookie-open .call-bar { display: none; }
     <source src="youzen-hero-wide.webm?v=5" type="video/webm">
     <source src="youzen-hero-wide.mp4?v=5" type="video/mp4">
   </video>
+  <img class="hero-video-poster-overlay" src="youzen-hero-wide-poster.webp?v=5" alt="" aria-hidden="true">
   <div class="hero-video-scrim" aria-hidden="true"></div>
 
   <!-- Pausa/riproduzione del video di sfondo -->
@@ -5678,8 +5696,8 @@ html.yz-cookie-open .call-bar { display: none; }
     <div class="section-head">
       <span class="eyebrow">Onboarding</span>
       <h2>
-        <span class="title-problem">Pronta in 8 giorni,</span>
-        <span class="title-solution">caffè incluso.</span>
+        <span class="title-problem">Pronta in 8 giorni.</span>
+        <span class="title-solution">Il resto lo facciamo noi.</span>
       </h2>
       <p class="lead">Setup guidato, una settimana in modalità ombra (ascolta e impara, non risponde ancora davvero), poi il go-live. Tu continui a lavorare come se non stessimo facendo niente. Infatti è quasi vero.</p>
     </div>
@@ -5822,7 +5840,7 @@ html.yz-cookie-open .call-bar { display: none; }
             <span class="yzp-cur">€</span><span id="yzpMonthly">0</span><span class="yzp-per">/mese</span>
           </div>
           <p class="yzp-calc">
-            <b id="yzpMin">0</b> minuti × €0,30 — <b>paghi le conversazioni, non il software</b><br />
+            <b id="yzpMin">0</b> minuti × €0,30: <b>paghi le conversazioni, non il software</b><br />
             <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
             <span class="yzp-addline"><br />più <b data-dmprice>€10</b> al mese per i messaggi diretti di Instagram e Facebook</span>
           </p>
@@ -5868,7 +5886,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="yzp-promo-ico" aria-hidden="true">%</span>
         <p class="yzp-promo-t">
           <b>Sconto attivazione attivo:</b> risparmi <b id="yzpSaving">€500</b> sull'una tantum.
-          <span>Offerta valida fino al <u>31 dicembre 2026</u> — dopo, l'attivazione torna a prezzo pieno.</span>
+          <span>Offerta valida fino al <u>31 dicembre 2026</u>. Dopo, l'attivazione torna a prezzo pieno.</span>
         </p>
       </div>
 
@@ -5984,7 +6002,7 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">È la tua receptionist italiana che non stacca mai: risponde a chiamate, WhatsApp e prenotazioni 24 ore su 24, anche quando tu sei impegnato, in ferie o semplicemente vuoi staccare un attimo. Parla in modo naturale, capisce al volo cosa serve al cliente e gli fissa l'appuntamento dritto sul tuo calendario.</p>
-          <span class="faq-punch">In pratica: non perdi più una chiamata. Mai. Neanche una.</span>
+          <span class="faq-punch">In pratica: chi ti cerca trova sempre qualcuno che risponde.</span>
         </div></div></div>
       </div>
 
@@ -6020,7 +6038,7 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">Ci mancherebbe, mica si compra a scatola chiusa! Prenoti una demo: ti facciamo sentire YouZen dal vivo sul nostro numero, ti mostriamo il pannello di controllo e rispondiamo a tutte le tue curiosità. Poi decidi con calma.</p>
-          <span class="faq-punch">Zero pressione commerciale, zero impegno. Parola nostra.</span>
+          <span class="faq-punch">Zero pressione. Se non fa per te, te lo diciamo prima noi.</span>
         </div></div></div>
       </div>
 
@@ -6032,7 +6050,6 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">No, stai sereno: il tuo numero resta il tuo. Impostiamo un inoltro intelligente (quando sei occupato, non rispondi o sei fuori orario) verso YouZen. Se preferisci il trasloco completo, facciamo anche il porting.</p>
-          <span class="faq-punch">I clienti chiamano lo stesso numero di sempre. Cambia solo chi risponde.</span>
         </div></div></div>
       </div>
 
@@ -6067,7 +6084,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="faq-toggle" aria-hidden="true"></span>
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Al sicuro come in cassaforte: server in UE, tutto a norma GDPR e registro dei trattamenti incluso. Le trascrizioni sono cifrate e l'accesso è multi-utente, con permessi su misura per ogni persona del team.</p>
+          <p class="faq-a">Server in UE, tutto a norma GDPR, registro dei trattamenti incluso. Le trascrizioni sono cifrate e l'accesso è multi-utente, con permessi su misura per ogni persona del team.</p>
           <span class="faq-punch">Mai dati venduti, mai usati per addestrare modelli di terzi. Punto.</span>
         </div></div></div>
       </div>
@@ -6092,7 +6109,7 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">Un piano solo, a consumo: <b>€0,30 al minuto</b>, e i minuti li scegli tu. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 10€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
-          <span class="faq-punch">Meno di un caffè al giorno per non perdere più un cliente.</span>
+          <span class="faq-punch">Il conto lo vedi prima di partire, non dopo.</span>
         </div></div></div>
       </div>
 
@@ -6975,7 +6992,7 @@ if (document.readyState === 'loading') {
       }, 4000);
     } catch (err) {
       console.error('[YouZen] Errore invio form:', err);
-      btn.innerHTML = '<span>⚠ Errore — riprova</span>';
+      btn.innerHTML = '<span>⚠ Errore, riprova</span>';
       btn.style.background = '#EF4444';
       setTimeout(() => {
         btn.innerHTML = orig;
@@ -7055,8 +7072,27 @@ if (document.readyState === 'loading') {
     if (started || !mq.matches) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     started = true;
-    var p = v.play();
-    if (p && p.catch) p.catch(function () {});
+    /* La schermata logo+slogan resta ferma (il poster, nitido) per 2s veri,
+       poi entra il video gia' al secondo 2 della sua timeline: i primi 2s del
+       video sono lo stesso schermo ma ricompresso, quindi piu' sfocato, e a
+       quel punto la dissolvenza verso la scena del telefono e' gia' iniziata.
+       Il cambio poster->video coincide cosi' con un movimento che maschera
+       la compressione invece che con un fermo immagine duplicato e piu' sfocato.
+       La copia statica sopra al video (.hero-video-poster-overlay) si dissolve
+       solo quando il video ha davvero un fotogramma da mostrare ('playing'):
+       se restasse legata al play() basterebbe la richiesta, non il primo frame,
+       e si vedrebbe uno scatto o un lampo nero sotto. */
+    setTimeout(function () {
+      try { v.currentTime = 2; } catch (e) {}
+      var overlay = document.querySelector('.hero-video-poster-overlay');
+      function reveal() {
+        v.removeEventListener('playing', reveal);
+        if (overlay) overlay.classList.add('is-hidden');
+      }
+      v.addEventListener('playing', reveal);
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }, 2000);
   }
   /* Pulsante pausa/riproduzione: lo stato segue gli eventi del video,
      così l'icona è giusta anche quando il play parte da solo al load */
