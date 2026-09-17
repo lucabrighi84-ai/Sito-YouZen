@@ -41,7 +41,7 @@
 <meta name="language" content="Italian" />
 <meta name="geo.region" content="IT" />
 <meta name="geo.placename" content="Italia" />
-<meta name="theme-color" content="#080E1F" />
+<meta name="theme-color" content="#0C1220" />
 <link rel="canonical" href="https://youzen.it/" />
 
 <!-- ============================ OPEN GRAPH (Facebook, LinkedIn) ============================ -->
@@ -70,7 +70,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<meta name="msapplication-TileColor" content="#F97316" />
+<meta name="msapplication-TileColor" content="#D98A4E" />
 <meta name="msapplication-TileImage" content="web-app-manifest-192x192.png" />
 
 <!-- ============================ STRUCTURED DATA (JSON-LD) ============================ -->
@@ -124,7 +124,7 @@
   "name": "YouZen",
   "url": "https://youzen.it/",
   "inLanguage": "it-IT",
-  "dateModified": "2026-08-20",
+  "dateModified": "2026-09-17",
   "publisher": { "@id": "https://youzen.it/#organization" }
 }
 </script>
@@ -136,7 +136,7 @@
   "@id": "https://youzen.it/#software",
   "url": "https://youzen.it/",
   "inLanguage": "it-IT",
-  "dateModified": "2026-08-20",
+  "dateModified": "2026-09-17",
   "provider": { "@id": "https://youzen.it/#organization" },
   "name": "YouZen",
   "applicationCategory": "BusinessApplication",
@@ -277,7 +277,7 @@
 </script>
 
 <!-- Poster della hero: precaricato con priorità alta, solo dove il video esiste (desktop) -->
-<link rel="preload" as="image" href="youzen-hero-wide-poster.webp" media="(min-width: 769px)" fetchpriority="high" />
+<link rel="preload" as="image" href="youzen-hero-wide-poster.webp?v=5" media="(min-width: 769px)" fetchpriority="high" />
 
 <!-- ============================ FONT (self-hosted) ============================ -->
 <link rel="stylesheet" href="fonts/fonts.css" />
@@ -287,14 +287,14 @@
    DESIGN TOKENS (consolidati — sostituisce le 15+ regole duplicate)
    ==================================================================== */
 :root {
-  --ink-900: #080e1f;
-  --ink-800: #0d1530;
+  --ink-900: #0c1220;
+  --ink-800: #111931;
   --ink-700: #121b3d;
   --ink-600: #18234d;
-  --accent: #F97316;
-  --accent-400: #FB923C;
-  --accent-600: #EA580C;
-  --accent-50: #FFF7ED;
+  --accent: #D98A4E;
+  --accent-400: #E7A876;
+  --accent-600: #B96F35;
+  --accent-50: #FBF0E3;
 
   --sector-legale: #7C3AED;
   --sector-clinica: #0EA5E9;
@@ -304,9 +304,9 @@
   --sector-artig: #EF4444;
   --sector-real: #06B6D4;
 
-  --muted: rgba(255,255,255,0.62);
-  --muted-strong: rgba(255,255,255,0.78);
-  --muted-weak: rgba(255,255,255,0.42);
+  --muted: rgba(231,220,200,0.62);
+  --muted-strong: rgba(231,220,200,0.78);
+  --muted-weak: rgba(231,220,200,0.42);
   --line: rgba(255,255,255,0.08);
   --line-strong: rgba(255,255,255,0.16);
 
@@ -316,10 +316,10 @@
   --font-body: 'Inter', system-ui, sans-serif;
   --font-brand: 'Michroma', system-ui, sans-serif;
 
-  --shadow-cta: 0 12px 32px -8px rgba(249,115,22,0.45),
+  --shadow-cta: 0 12px 32px -8px rgba(217,138,78,0.45),
                 0 2px 0 0 rgba(255,255,255,0.08) inset,
                 0 -2px 0 0 rgba(0,0,0,0.18) inset;
-  --shadow-cta-hover: 0 16px 40px -8px rgba(249,115,22,0.55),
+  --shadow-cta-hover: 0 16px 40px -8px rgba(217,138,78,0.55),
                       0 2px 0 0 rgba(255,255,255,0.12) inset,
                       0 -2px 0 0 rgba(0,0,0,0.18) inset;
   --shadow-card: 0 1px 0 rgba(255,255,255,0.06) inset,
@@ -328,20 +328,20 @@
   /* === Comparison tokens === */
   --cmp-shell-bg: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
   --cmp-shell-border: var(--line);
-  --cmp-shell-border-hover: rgba(249,115,22,0.35);
+  --cmp-shell-border-hover: rgba(217,138,78,0.35);
   --cmp-shell-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
-  --cmp-shell-shadow-hover: 0 1px 0 rgba(255,255,255,0.05) inset, 0 24px 50px -28px rgba(249,115,22,0.30);
+  --cmp-shell-shadow-hover: 0 1px 0 rgba(255,255,255,0.05) inset, 0 24px 50px -28px rgba(217,138,78,0.30);
   --cmp-divider: rgba(255,255,255,0.12);
   --cmp-num: var(--accent);
-  --cmp-num-border: rgba(249,115,22,0.4);
-  --cmp-num-bg: rgba(249,115,22,0.06);
+  --cmp-num-border: rgba(217,138,78,0.4);
+  --cmp-num-bg: rgba(217,138,78,0.06);
   --cmp-emoji-bg: rgba(255,255,255,0.06);
   --cmp-topic-color: white;
   --cmp-before-bg: rgba(239,68,68,0.04);
   --cmp-before-border: rgba(239,68,68,0.20);
   --cmp-before-text: rgba(255,255,255,0.65);
-  --cmp-after-bg: linear-gradient(180deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02));
-  --cmp-after-border: rgba(249,115,22,0.35);
+  --cmp-after-bg: linear-gradient(180deg, rgba(217,138,78,0.08), rgba(217,138,78,0.02));
+  --cmp-after-border: rgba(217,138,78,0.35);
   --cmp-after-text: white;
 }
 
@@ -352,12 +352,18 @@
 html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-sans);
-  background: var(--ink-900);
+  /* Il fondo non e' piu' un blu fisso: scende verso un bruno di sabbia calda
+     mano a mano che si scorre la pagina, --scroll-pct lo scrive lo script
+     in fondo al file. Da 0% (cima, notte piena) a 100% (fondo pagina). */
+  background-color: color-mix(in srgb, #171009 var(--scroll-pct, 0%), var(--ink-900));
   color: white;
   line-height: 1.55;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
+}
+@media (prefers-reduced-motion: reduce) {
+  body { background-color: var(--ink-900); }
 }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
@@ -393,9 +399,9 @@ body::before {
   letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--accent);
   padding: 6px 12px;
-  border: 1px solid rgba(249,115,22,0.24);
+  border: 1px solid rgba(217,138,78,0.24);
   border-radius: 999px;
-  background: rgba(249,115,22,0.06);
+  background: rgba(217,138,78,0.06);
 }
 .eyebrow::before {
   content: ''; width: 6px; height: 6px; border-radius: 999px;
@@ -455,7 +461,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   pointer-events: none;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-cta-hover); }
-.btn-primary:active { transform: translateY(0); box-shadow: 0 4px 12px -4px rgba(249,115,22,0.5); }
+.btn-primary:active { transform: translateY(0); box-shadow: 0 4px 12px -4px rgba(217,138,78,0.5); }
 .btn-primary svg.arrow { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
 .btn-primary:hover svg.arrow { transform: translateX(4px); }
 
@@ -487,10 +493,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   background: linear-gradient(180deg, var(--accent-400) 0%, var(--accent) 50%, var(--accent-600) 100%);
   color: white;
   box-shadow:
-    0 16px 40px -10px rgba(249,115,22,0.55),
+    0 16px 40px -10px rgba(217,138,78,0.55),
     0 4px 0 0 rgba(0,0,0,0.18) inset,
     0 2px 0 0 rgba(255,255,255,0.18) inset,
-    0 0 0 1px rgba(249,115,22,0.4);
+    0 0 0 1px rgba(217,138,78,0.4);
   position: relative;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -511,10 +517,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .btn-primary-xl:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 22px 50px -10px rgba(249,115,22,0.7),
+    0 22px 50px -10px rgba(217,138,78,0.7),
     0 4px 0 0 rgba(0,0,0,0.2) inset,
     0 2px 0 0 rgba(255,255,255,0.22) inset,
-    0 0 0 1px rgba(249,115,22,0.55);
+    0 0 0 1px rgba(217,138,78,0.55);
 }
 .btn-primary-xl:hover::after { left: 130%; }
 .btn-primary-xl:active { transform: translateY(0); }
@@ -566,7 +572,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   width: 32px;
   height: 32px;
   display: block;
-  filter: drop-shadow(0 0 12px rgba(249,115,22,0.4));
+  filter: drop-shadow(0 0 12px rgba(217,138,78,0.4));
   transition: transform 0.3s ease;
 }
 .logo:hover .logo-img {
@@ -598,7 +604,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
   min-width: 280px;
-  background: linear-gradient(180deg, #0d1428, #0a1020);
+  background: linear-gradient(180deg, #111829, #0e1421);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   padding: 8px;
@@ -639,7 +645,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .nav-dropdown-menu a:hover {
-  background: rgba(249,115,22,0.08);
+  background: rgba(217,138,78,0.08);
   color: #fff;
 }
 
@@ -657,7 +663,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .nav-dropdown-menu a:hover .nav-dropdown-icon {
-  background: rgba(249,115,22,0.15);
+  background: rgba(217,138,78,0.15);
 }
 
 .nav-dropdown-title {
@@ -697,7 +703,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     display: none;
     position: fixed; top: 72px; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 2px;
-    background: linear-gradient(180deg, #0b1226, #0a1020);
+    background: linear-gradient(180deg, #0f1627, #0e1421);
     border-bottom: 1px solid var(--line);
     padding: 14px 16px 22px; margin: 0;
     max-height: calc(100dvh - 72px); overflow-y: auto;
@@ -730,7 +736,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  background: #080E1F;
+  background: #0C1220;
 }
 
 /* Video hero YouZen (sfondo) + velatura per leggibilita headline */
@@ -760,7 +766,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   height: 100%;
   z-index: 0 !important;
   overflow: hidden;
-  background: #080E1F;
+  background: #0C1220;
 }
 
 /* Sfondo hero: griglia ferma + alone + banda di luce che passa.
@@ -771,7 +777,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 55% at 26% 30%, rgba(249,115,22,0.24) 0%, transparent 66%),
+    radial-gradient(ellipse 70% 55% at 26% 30%, rgba(217,138,78,0.24) 0%, transparent 66%),
     radial-gradient(ellipse 60% 50% at 76% 62%, rgba(124,58,237,0.20) 0%, transparent 68%);
 }
 
@@ -801,9 +807,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   animation: heroSweep 8s ease-in-out infinite;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(249,115,22,0.06) 34%,
-    rgba(251,146,60,0.20) 50%,
-    rgba(249,115,22,0.06) 66%,
+    rgba(217,138,78,0.06) 34%,
+    rgba(231,168,118,0.20) 50%,
+    rgba(217,138,78,0.06) 66%,
     transparent 100%);
 }
 
@@ -818,7 +824,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   animation-play-state: paused;
 }
 
-/* Sfumatura morbida in basso: i triangoli si dissolvono in #080E1F senza linea di stacco */
+/* Sfumatura morbida in basso: i triangoli si dissolvono in #0C1220 senza linea di stacco */
 .hero-bottom-fade {
   position: absolute;
   left: 0;
@@ -831,8 +837,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     rgba(8,14,31,0) 0%,
     rgba(8,14,31,0.45) 45%,
     rgba(8,14,31,0.85) 78%,
-    #080E1F 94%,
-    #080E1F 100%);
+    #0C1220 94%,
+    #0C1220 100%);
 }
 
 /* Layer di isolamento tra nebbia e testo */
@@ -964,7 +970,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .hero-video-toggle:hover {
   background: rgba(8,14,31,0.85);
-  border-color: rgba(249,115,22,0.55);
+  border-color: rgba(217,138,78,0.55);
 }
 .hero-video-toggle svg { width: 18px; height: 18px; }
 .hero-video-toggle .ic-play { display: none; }
@@ -1012,7 +1018,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   position: relative;
   z-index: 10000 !important;
   text-shadow:
-    0 0 30px rgba(249,115,22,0.4),
+    0 0 30px rgba(217,138,78,0.4),
     0 4px 20px rgba(0,0,0,0.8);
 }
 .hero-brand-zen { color: var(--accent); }
@@ -1026,12 +1032,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .hero-rotating-word {
   display: inline-block;
-  color: #F97316;
+  color: #D98A4E;
   animation: rotateWord 0.6s ease-in-out;
   position: relative;
   z-index: 10000 !important;
   text-shadow: 
-    0 0 30px rgba(249,115,22,0.4),
+    0 0 30px rgba(217,138,78,0.4),
     0 4px 20px rgba(0,0,0,0.8);
 }
 
@@ -1069,9 +1075,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .hero-cta-minimal:hover {
   border-color: var(--accent);
-  background: rgba(249,115,22,0.1);
+  background: rgba(217,138,78,0.1);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(249,115,22,0.2);
+  box-shadow: 0 12px 40px rgba(217,138,78,0.2);
 }
 
 .hero-cta-minimal svg {
@@ -1084,7 +1090,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(249,115,22,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(217,138,78,0.18) 0%, transparent 60%),
     radial-gradient(ellipse 80% 60% at 90% 30%, rgba(124,58,237,0.12) 0%, transparent 55%),
     radial-gradient(ellipse 90% 70% at 50% 90%, rgba(14,165,233,0.10) 0%, transparent 60%);
   animation: meshDrift 28s ease-in-out infinite alternate;
@@ -1171,7 +1177,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .demo-card::before {
   content: ''; position: absolute; inset: 0; border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(180deg, rgba(249,115,22,0.35), rgba(255,255,255,0.05) 40%);
+  background: linear-gradient(180deg, rgba(217,138,78,0.35), rgba(255,255,255,0.05) 40%);
   -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
   -webkit-mask-composite: xor; mask-composite: exclude;
   pointer-events: none;
@@ -1202,7 +1208,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .field input:focus, .field select:focus {
   outline: none;
   border-color: var(--accent);
-  background: rgba(249,115,22,0.04);
+  background: rgba(217,138,78,0.04);
 }
 .field select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'><path d='m6 9 6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px; }
 .privacy-row {
@@ -1217,7 +1223,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   background: rgba(255,255,255,0.04); cursor: pointer;
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
-.privacy-row input[type="checkbox"]:hover { border-color: rgba(249,115,22,0.55); }
+.privacy-row input[type="checkbox"]:hover { border-color: rgba(217,138,78,0.55); }
 .privacy-row input[type="checkbox"]:checked {
   background-color: var(--accent); border-color: var(--accent);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
@@ -1242,12 +1248,27 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
    DEMO CALL SECTION (sec-01b)
    ==================================================================== */
 
-/* Sezione senza sfondo: nessun colore proprio, nessuna griglia, nessun alone.
-   Sotto resta il --ink-900 del body. */
+/* Alone chiaro dietro la card: sfumato su tutti i lati cosi' si scioglie nel
+   --ink-900 del body senza mai creare una riga netta di stacco. */
 .demo-call-section {
   padding: 72px 0 80px;
   position: relative;
-  overflow: hidden;
+}
+
+/* niente overflow:hidden qui: taglierebbe l'alone esattamente al bordo
+   della sezione e ricreerebbe lo stacco netto che deve sparire */
+.demo-call-section::before {
+  content: '';
+  position: absolute;
+  inset: -40% -10%;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 50% 42% at 50% 50%,
+    rgba(251,240,227,1) 0%,
+    rgba(251,240,227,0.85) 32%,
+    rgba(251,240,227,0.3) 55%,
+    rgba(251,240,227,0) 80%);
+  filter: blur(24px);
 }
 
 .demo-call-section .container { position: relative; z-index: 3; }
@@ -1271,7 +1292,19 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 @media (max-width: 560px) {
   .demo-call-content { padding: 28px 20px; }}
 
-.demo-call-content .eyebrow,
+.demo-call-eyebrow-wrap {
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 28px;
+}
+
+.demo-call-eyebrow-wrap .eyebrow {
+  color: var(--accent-600);
+  background: rgba(255,255,255,0.5);
+  border-color: rgba(185,111,53,0.35);
+}
+
 .demo-call-title,
 .demo-call-subtitle {
   text-align: center;
@@ -1387,7 +1420,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .visual-placeholder:hover {
   background: rgba(255,255,255,0.03);
-  border-color: rgba(249,115,22,0.2);
+  border-color: rgba(217,138,78,0.2);
 }
 
 @media (max-width: 968px) {
@@ -1783,7 +1816,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 /* DOPO screen */
 .cmp-phone.after .cmp-phone-screen {
-  background: linear-gradient(180deg, #080E1F 0%, #0a0f20 100%);
+  background: linear-gradient(180deg, #0C1220 0%, #0e1321 100%);
 }
 
 .cmp-dashboard {
@@ -1945,7 +1978,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .cmp-progress-dot.active {
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(249,115,22,0.2);
+  box-shadow: 0 0 0 4px rgba(217,138,78,0.2);
 }
 
 /* Responsive */
@@ -1982,7 +2015,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .day-stage {
   position: relative; border-radius: 20px; overflow: hidden;
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, #0b1226, #060a18);
+  background: linear-gradient(180deg, #0f1627, #0a0e19);
 }
 .day-stage canvas { width: 100%; height: 420px; display: block; }
 @media (max-width: 640px) { .day-stage canvas { height: 320px; }}
@@ -2006,9 +2039,9 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
               color 0.16s cubic-bezier(0.23,1,0.32,1),
               transform 0.12s cubic-bezier(0.23,1,0.32,1);
 }
-.day-sw:hover { border-color: rgba(249,115,22,0.5); color: #fff; }
+.day-sw:hover { border-color: rgba(217,138,78,0.5); color: #fff; }
 .day-sw:active { transform: scale(0.97); }
-.day-sw[aria-pressed="true"] { border-color: var(--accent); background: rgba(249,115,22,0.10); color: #fff; }
+.day-sw[aria-pressed="true"] { border-color: var(--accent); background: rgba(217,138,78,0.10); color: #fff; }
 
 /* ====================================================================
    INTEGRAZIONI (sec-integrazioni) — MARQUEE INFINITO DESTRA → SINISTRA
@@ -2224,7 +2257,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 0.95rem;
   letter-spacing: -0.01em;
   margin-bottom: 16px;
-  text-shadow: 0 0 20px rgba(249,115,22,0.3);
+  text-shadow: 0 0 20px rgba(217,138,78,0.3);
   position: relative;
   z-index: 2;
 }
@@ -2244,16 +2277,16 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 /* Box CTA (6° box) */
 .sector-card.s-cta {
   background:
-    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(249,115,22,0.30), transparent 60%),
-    linear-gradient(160deg, rgba(249,115,22,0.18) 0%, rgba(249,115,22,0.04) 100%),
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(217,138,78,0.30), transparent 60%),
+    linear-gradient(160deg, rgba(217,138,78,0.18) 0%, rgba(217,138,78,0.04) 100%),
     var(--ink-900);
-  border-color: rgba(249,115,22,0.45);
+  border-color: rgba(217,138,78,0.45);
 }
 .sector-card.s-cta::before {
   background: radial-gradient(ellipse 100% 80% at 50% 0%, var(--accent), transparent 60%);
   opacity: 0.22;
 }
-.sector-card.s-cta:hover { border-color: var(--accent); box-shadow: 0 24px 60px -28px rgba(249,115,22,0.7); }
+.sector-card.s-cta:hover { border-color: var(--accent); box-shadow: 0 24px 60px -28px rgba(217,138,78,0.7); }
 .sector-card.s-cta:hover::before { opacity: 0.40; }
 .sector-card.s-cta .sector-icon {
   background: linear-gradient(180deg, var(--accent-400), var(--accent-600));
@@ -2337,7 +2370,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .app-panel svg { width: 28px; height: 28px; }
 .app-panel .ap-label { font-size: 10.5px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.25; }
-.app-panel.ded { background: linear-gradient(160deg, #F97316, #FB923C); color: #0a0a0a; }
+.app-panel.ded { background: linear-gradient(160deg, #D98A4E, #E7A876); color: #0a0a0a; }
 .app-panel.dev {
   color: #FBBF24;
   background:
@@ -2416,7 +2449,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .device-mockup::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 40% at 30% 20%, rgba(249,115,22,0.15), transparent 60%);
+  background: radial-gradient(ellipse 60% 40% at 30% 20%, rgba(217,138,78,0.15), transparent 60%);
   pointer-events: none;
 }
 .device-bar {
@@ -2456,7 +2489,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .mock-tile .ico {
   width: 36px; height: 36px; border-radius: 10px;
-  background: rgba(249,115,22,0.12); color: var(--accent);
+  background: rgba(217,138,78,0.12); color: var(--accent);
   display: grid; place-items: center;
   flex-shrink: 0;
 }
@@ -2524,7 +2557,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 /* Colori specifici per ogni step */
 .tl-step[data-target="setup"] { --step-color: #22C55E; } /* Verde */
 .tl-step[data-target="test"] { --step-color: #FBBF24; } /* Giallo */
-.tl-step[data-target="live"] { --step-color: #F97316; } /* Arancione */
+.tl-step[data-target="live"] { --step-color: #D98A4E; } /* Arancione */
 
 .tl-step.active {
   border-color: var(--step-color, #22C55E);
@@ -2617,7 +2650,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .yzn-f2 .yzn-barra { grid-column: 2 / span 6; background: #FBBF24; }
 .yzn-f3 .yzn-barra {
   grid-column: 8 / span 1;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 48%, rgba(249, 115, 22, 0.12) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 48%, rgba(217,138,78, 0.12) 100%);
 }
 .yzn-legenda { margin-top: 14px; font-size: 0.85rem; color: var(--muted-weak); }
 
@@ -2721,7 +2754,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   width: 24px; height: 24px;
   background: var(--accent); border-radius: 999px;
   border: 4px solid var(--ink-900);
-  box-shadow: 0 0 0 1px var(--accent), 0 4px 12px rgba(249,115,22,0.4);
+  box-shadow: 0 0 0 1px var(--accent), 0 4px 12px rgba(217,138,78,0.4);
   cursor: pointer;
 }
 .slider::-moz-range-thumb { width: 24px; height: 24px; background: var(--accent); border-radius: 999px; border: 4px solid var(--ink-900); cursor: pointer; }
@@ -2755,8 +2788,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   }}
 
 .setup-box-popular {
-  background: rgba(249,115,22,0.04);
-  border-color: rgba(249,115,22,0.2);
+  background: rgba(217,138,78,0.04);
+  border-color: rgba(217,138,78,0.2);
 }
 
 .setup-box-enterprise {
@@ -2778,8 +2811,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .setup-box-popular .setup-icon {
-  background: rgba(249,115,22,0.1);
-  border-color: rgba(249,115,22,0.3);
+  background: rgba(217,138,78,0.1);
+  border-color: rgba(217,138,78,0.3);
   color: var(--accent);
 }
 
@@ -2828,16 +2861,16 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     gap: 24px;
   }}
 .plan-card.popular {
-  border-color: rgba(249,115,22,0.5);
-  background: linear-gradient(180deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02));
+  border-color: rgba(217,138,78,0.5);
+  background: linear-gradient(180deg, rgba(217,138,78,0.08), rgba(217,138,78,0.02));
   transform: scale(1.02);
 }
 @media (min-width: 768px) {
   .plan-card.popular { transform: scale(1.04) translateY(-4px); }}
 .plan-tagline { color: var(--muted); font-size: 0.875rem; min-height: 42px; margin-bottom: 24px; }
 .plan-setup-box {
-  background: rgba(249,115,22,0.08);
-  border: 1px solid rgba(249,115,22,0.25);
+  background: rgba(217,138,78,0.08);
+  border: 1px solid rgba(217,138,78,0.25);
   border-radius: 12px;
   padding: 12px 16px;
   margin-bottom: 16px;
@@ -2874,7 +2907,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 /* Mantieni colori specifici per celle speciali */
 .matrix-row.head .matrix-cell:nth-child(3) {
-  background: rgba(249,115,22,0.10);
+  background: rgba(217,138,78,0.10);
 }
 .matrix-row.matrix-pricing-row .matrix-cell.label {
   justify-content: flex-start;
@@ -2981,7 +3014,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .ba-tab.active {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(249,115,22,0.4);
+  box-shadow: 0 4px 16px rgba(217,138,78,0.4);
 }
 
 .ba-tab svg { flex-shrink: 0; }
@@ -3019,7 +3052,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .ba-panel-green { --pc: #16a34a; --pc-rgb: 22, 163, 74; }
 .ba-panel-purple { --pc: #7c3aed; --pc-rgb: 124, 58, 237; }
 .ba-panel-darkgreen { --pc: #047857; --pc-rgb: 4, 120, 87; }
-.ba-panel-orange { --pc: #ea580c; --pc-rgb: 234, 88, 12; }
+.ba-panel-orange { --pc: #b96f35; --pc-rgb: 234, 88, 12; }
 .ba-panel-blue { --pc: #1d4ed8; --pc-rgb: 29, 78, 216; }
 
 .ba-panel {
@@ -3107,7 +3140,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
     radial-gradient(circle at 50% 50%, rgba(var(--pc-rgb), 0.15), rgba(0,0,0,0.5)),
     repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.04) 39px, rgba(255,255,255,0.04) 40px),
     repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.04) 39px, rgba(255,255,255,0.04) 40px),
-    #0a0f1f;
+    #0e1320;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3208,7 +3241,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   align-items: center;
   gap: 8px;
   padding: 11px 20px;
-  background: linear-gradient(180deg, #FF8C35 0%, #F97316 50%, #EA580C 100%);
+  background: linear-gradient(180deg, #FF8C35 0%, #D98A4E 50%, #B96F35 100%);
   color: #fff;
   border-radius: 100px;
   font-family: var(--font-body);
@@ -3218,19 +3251,19 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   align-self: flex-start;
   transition: all 0.3s ease;
   box-shadow:
-    0 10px 26px -8px rgba(249,115,22,0.55),
+    0 10px 26px -8px rgba(217,138,78,0.55),
     0 2px 0 0 rgba(0,0,0,0.18) inset,
     0 1px 0 0 rgba(255,255,255,0.20) inset,
-    0 0 0 1px rgba(249,115,22,0.45);
+    0 0 0 1px rgba(217,138,78,0.45);
 }
 
 .ba-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 14px 32px -8px rgba(249,115,22,0.7),
+    0 14px 32px -8px rgba(217,138,78,0.7),
     0 2px 0 0 rgba(0,0,0,0.20) inset,
     0 1px 0 0 rgba(255,255,255,0.24) inset,
-    0 0 0 1px rgba(249,115,22,0.6);
+    0 0 0 1px rgba(217,138,78,0.6);
 }
 
 .ba-cta svg { transition: transform 0.3s; }
@@ -3257,7 +3290,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .ba-phone-screen {
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #0a0f1f 0%, #1a1f2f 100%);
+  background: linear-gradient(180deg, #0e1320 0%, #1a1f2f 100%);
   border-radius: 28px;
   padding: 16px 12px;
   position: relative;
@@ -3291,7 +3324,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .ba-wa-avatar {
   width: 28px; height: 28px;
-  background: linear-gradient(135deg, #F97316, #EA580C);
+  background: linear-gradient(135deg, #D98A4E, #B96F35);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -3341,7 +3374,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .ba-wa-msg-out {
-  background: linear-gradient(135deg, #F97316, #EA580C);
+  background: linear-gradient(135deg, #D98A4E, #B96F35);
   align-self: flex-end;
   border-bottom-right-radius: 3px;
 }
@@ -3486,8 +3519,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 
 .ba-appt-slot.selected {
-  background: linear-gradient(135deg, #F97316, #EA580C);
-  border-color: #F97316;
+  background: linear-gradient(135deg, #D98A4E, #B96F35);
+  border-color: #D98A4E;
 }
 
 .ba-appt-confirm {
@@ -3576,7 +3609,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .ba-dash-item-icon {
   width: 18px; height: 18px;
-  background: rgba(249,115,22,0.2);
+  background: rgba(217,138,78,0.2);
   border-radius: 5px;
   display: flex; align-items: center; justify-content: center;
   font-size: 9px;
@@ -3605,7 +3638,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .ba-kpi-icon {
   width: 28px;
   height: 28px;
-  background: rgba(249,115,22,0.2);
+  background: rgba(217,138,78,0.2);
   border-radius: 7px;
   display: flex;
   align-items: center;
@@ -3653,12 +3686,12 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   border-radius: 18px;
   text-decoration: none;
   color: #fff;
-  background: linear-gradient(180deg, #FF8C35 0%, #F97316 50%, #EA580C 100%);
+  background: linear-gradient(180deg, #FF8C35 0%, #D98A4E 50%, #B96F35 100%);
   box-shadow:
-    0 20px 50px -12px rgba(249,115,22,0.55),
+    0 20px 50px -12px rgba(217,138,78,0.55),
     0 4px 0 0 rgba(0,0,0,0.18) inset,
     0 2px 0 0 rgba(255,255,255,0.20) inset,
-    0 0 0 1px rgba(249,115,22,0.45);
+    0 0 0 1px rgba(217,138,78,0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   flex-shrink: 0;
 }
@@ -3666,10 +3699,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .ba-sticky-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 26px 60px -12px rgba(249,115,22,0.7),
+    0 26px 60px -12px rgba(217,138,78,0.7),
     0 4px 0 0 rgba(0,0,0,0.20) inset,
     0 2px 0 0 rgba(255,255,255,0.24) inset,
-    0 0 0 1px rgba(249,115,22,0.6);
+    0 0 0 1px rgba(217,138,78,0.6);
 }
 
 .ba-sticky-cta-text {
@@ -3724,11 +3757,11 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .ba-progress-dot.active {
   background: var(--accent);
   transform: scale(1.5);
-  box-shadow: 0 0 12px rgba(249,115,22,0.6);
+  box-shadow: 0 0 12px rgba(217,138,78,0.6);
 }
 
 .ba-progress-dot.passed {
-  background: rgba(249,115,22,0.6);
+  background: rgba(217,138,78,0.6);
 }
 
 @media (max-width: 900px) {
@@ -3767,8 +3800,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .faq-item:hover { border-color: var(--line-strong); }
 .faq-item.open {
-  border-color: rgba(249,115,22,0.4);
-  background: linear-gradient(180deg, rgba(249,115,22,0.05), rgba(255,255,255,0.005));
+  border-color: rgba(217,138,78,0.4);
+  background: linear-gradient(180deg, rgba(217,138,78,0.05), rgba(255,255,255,0.005));
 }
 
 .faq-h { margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
@@ -3781,14 +3814,14 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .faq-emoji {
   width: 36px; height: 36px; border-radius: 10px;
-  background: rgba(249,115,22,0.1);
+  background: rgba(217,138,78,0.1);
   display: grid; place-items: center;
   font-size: 18px;
   flex-shrink: 0;
   transition: background 0.3s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .faq-item.open .faq-emoji {
-  background: rgba(249,115,22,0.22);
+  background: rgba(217,138,78,0.22);
   transform: scale(1.08);
 }
 .faq-q {
@@ -3843,7 +3876,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-family: var(--font-mono); font-size: 0.75rem;
   color: var(--accent);
   padding: 8px 12px;
-  background: rgba(249,115,22,0.06);
+  background: rgba(217,138,78,0.06);
   border-left: 2px solid var(--accent);
   border-radius: 0 8px 8px 0;
   display: inline-block;
@@ -3857,7 +3890,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
    ANTI-FAQ (sec-09) — Quando YouZen NON serve
    ==================================================================== */
 #anti-faq {
-  background: linear-gradient(180deg, var(--ink-900) 0%, #0a1626 50%, var(--ink-900) 100%);
+  background: linear-gradient(180deg, var(--ink-900) 0%, #0e1a27 50%, var(--ink-900) 100%);
   border-top: 1px solid var(--line);
 }
 
@@ -3884,8 +3917,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   margin: 0 auto;
   text-align: center;
   padding: 40px 32px;
-  background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02));
-  border: 1px solid rgba(249,115,22,0.2);
+  background: linear-gradient(135deg, rgba(217,138,78,0.08), rgba(217,138,78,0.02));
+  border: 1px solid rgba(217,138,78,0.2);
   border-radius: 24px;
 }
 
@@ -3907,7 +3940,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: linear-gradient(180deg, #FF8C35 0%, #F97316 50%, #EA580C 100%);
+  background: linear-gradient(180deg, #FF8C35 0%, #D98A4E 50%, #B96F35 100%);
   color: #fff;
   text-decoration: none;
   border-radius: 100px;
@@ -3916,20 +3949,20 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   box-shadow:
-    0 12px 30px -8px rgba(249,115,22,0.55),
+    0 12px 30px -8px rgba(217,138,78,0.55),
     0 2px 0 0 rgba(0,0,0,0.18) inset,
     0 1px 0 0 rgba(255,255,255,0.20) inset,
-    0 0 0 1px rgba(249,115,22,0.45);
+    0 0 0 1px rgba(217,138,78,0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .antifaq-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 16px 36px -8px rgba(249,115,22,0.7),
+    0 16px 36px -8px rgba(217,138,78,0.7),
     0 2px 0 0 rgba(0,0,0,0.20) inset,
     0 1px 0 0 rgba(255,255,255,0.24) inset,
-    0 0 0 1px rgba(249,115,22,0.6);
+    0 0 0 1px rgba(217,138,78,0.6);
 }
 
 /* ====================================================================
@@ -3938,7 +3971,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .cta-final {
   padding: 15px 0 60px;
   background:
-    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(249,115,22,0.18), transparent 70%),
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(217,138,78,0.18), transparent 70%),
     var(--ink-900);
   border-top: 1px solid var(--line);
 }
@@ -3965,7 +3998,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 .contact-pill svg { color: var(--accent); flex-shrink: 0; }
 .contact-pill.link { text-decoration: none; color: inherit; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
-.contact-pill.link:hover { border-color: rgba(249,115,22,0.4); background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+.contact-pill.link:hover { border-color: rgba(217,138,78,0.4); background: rgba(255,255,255,0.06); transform: translateY(-1px); }
 .contact-pill-txt { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
 .contact-pill-label { font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted-weak); }
 
@@ -4176,8 +4209,8 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   background: rgba(255,255,255,0.02);
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
-.yzp-set:hover { border-color: rgba(249,115,22,0.45); transform: translateY(-2px); }
-.yzp-set.on { border-color: var(--accent); background: rgba(249,115,22,0.07); }
+.yzp-set:hover { border-color: rgba(217,138,78,0.45); transform: translateY(-2px); }
+.yzp-set.on { border-color: var(--accent); background: rgba(217,138,78,0.07); }
 .yzp-set-n { font-size: 0.9rem; font-weight: 700; }
 .yzp-set-d { font-size: 0.78rem; color: var(--muted); line-height: 1.4; margin-bottom: 8px; }
 .yzp-set-p { display: flex; align-items: baseline; gap: 8px; }
@@ -4194,7 +4227,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .yzp-bill {
   display: flex; align-items: flex-start; gap: 9px;
   margin-top: 12px; padding: 12px 14px; border-radius: 10px;
-  border: 1px dashed rgba(249,115,22,0.38); background: rgba(249,115,22,0.06);
+  border: 1px dashed rgba(217,138,78,0.38); background: rgba(217,138,78,0.06);
   font-size: 0.79rem; color: var(--muted-strong); line-height: 1.5;
 }
 .yzp-bill b { color: var(--accent); }
@@ -4292,7 +4325,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   border: 1px solid var(--line); background: rgba(255,255,255,0.02);
   transition: border-color 0.2s, transform 0.2s;
 }
-.yzc-tile:hover { border-color: rgba(249,115,22,0.4); transform: translateY(-2px); }
+.yzc-tile:hover { border-color: rgba(217,138,78,0.4); transform: translateY(-2px); }
 .yzc-tile.is-auto { border-color: var(--line-strong); }
 .yzc-badge {
   position: absolute; top: -9px; left: 14px;
@@ -4349,7 +4382,7 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   transition: background 0.2s, border-color 0.2s;
 }
 .yzc-info[open] > summary::before { content: "−"; }
-.yzc-info > summary:hover::before { background: rgba(249,115,22,0.16); border-color: rgba(249,115,22,0.45); }
+.yzc-info > summary:hover::before { background: rgba(217,138,78,0.16); border-color: rgba(217,138,78,0.45); }
 .yzc-info-body {
   margin-top: 13px; display: flex; flex-direction: column; gap: 10px;
   font-size: 0.82rem; color: var(--muted-strong); line-height: 1.65;
@@ -4389,17 +4422,17 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   display: grid;
   place-items: center;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(249,115,22,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(217,138,78,0.18) 0%, transparent 60%),
     radial-gradient(ellipse 80% 60% at 30% 30%, rgba(124,58,237,0.10) 0%, transparent 55%),
     radial-gradient(ellipse 80% 60% at 80% 80%, rgba(6,182,212,0.08) 0%, transparent 55%),
     linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.005));
-  border: 1px solid rgba(249,115,22,0.20);
+  border: 1px solid rgba(217,138,78,0.20);
   border-radius: 32px;
   padding: 18px;
   overflow: hidden;
   position: relative;
   box-shadow:
-    0 30px 80px -30px rgba(249,115,22,0.45),
+    0 30px 80px -30px rgba(217,138,78,0.45),
     0 0 0 1px rgba(255,255,255,0.04) inset;
 }
 .ai-call-illu::before {
@@ -4476,7 +4509,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <a href="#sec-03">
             <span class="nav-dropdown-icon">⚡</span>
             <div>
-              <div class="nav-dropdown-title">I cinque problemi</div>
+              <div class="nav-dropdown-title">I tre problemi</div>
               <div class="nav-dropdown-desc">e come YouZen li chiude</div>
             </div>
           </a>
@@ -4607,9 +4640,9 @@ html.yz-cookie-open .call-bar { display: none; }
   </div>
 
   <!-- Video hero (sfondo animato) -->
-  <video class="hero-video-bg" muted loop playsinline preload="none" poster="youzen-hero-wide-poster.webp" aria-hidden="true">
-    <source src="youzen-hero-wide.webm?v=2" type="video/webm">
-    <source src="youzen-hero-wide.mp4?v=2" type="video/mp4">
+  <video class="hero-video-bg" muted loop playsinline preload="none" poster="youzen-hero-wide-poster.webp?v=5" aria-hidden="true">
+    <source src="youzen-hero-wide.webm?v=5" type="video/webm">
+    <source src="youzen-hero-wide.mp4?v=5" type="video/mp4">
   </video>
   <div class="hero-video-scrim" aria-hidden="true"></div>
 
@@ -4619,7 +4652,7 @@ html.yz-cookie-open .call-bar { display: none; }
     <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="8 5 19 12 8 19"/></svg>
   </button>
 
-  <!-- Sfumatura morbida in basso: dissolve lo sfondo in #080E1F senza stacco -->
+  <!-- Sfumatura morbida in basso: dissolve lo sfondo in #0C1220 senza stacco -->
   <div class="hero-bottom-fade"></div>
 
   <!-- Layer di isolamento -->
@@ -4641,7 +4674,7 @@ html.yz-cookie-open .call-bar { display: none; }
 
 </section>
 
-<!-- ============================ I CINQUE PROBLEMI (sec-03) — SCHEDE IMPILATE ============================ -->
+<!-- ============================ I TRE PROBLEMI (sec-03) — SCHEDE IMPILATE ============================ -->
 <style>
 /* Quattro fasce larghe quanto la finestra, una per problema, con la foto che cambia
    lato a ogni riga. Prende il posto del bento: li' i quattro riquadri stavano in una
@@ -4662,13 +4695,13 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-fascia{
   position:relative; width:100%; overflow:hidden; isolation:isolate;
   border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, #0b1226 0%, #070c1a 100%);
+  background:linear-gradient(180deg, #0f1627 0%, #0b101b 100%);
   transition:background .45s ease;
 }
 /* l'alone sta in uno strato suo, cosi' si accende senza toccare il fondo della fascia */
 .pb-fascia::before{
   content:''; position:absolute; inset:0; z-index:-2; opacity:0;
-  background:radial-gradient(60% 130% at 82% 50%, rgba(249,115,22,.30) 0%, rgba(249,115,22,0) 74%);
+  background:radial-gradient(60% 130% at 82% 50%, rgba(217,138,78,.30) 0%, rgba(217,138,78,0) 74%);
   transition:opacity .45s ease;
 }
 .pb-fascia:hover::before{ opacity:1; }
@@ -4694,7 +4727,7 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-fascia p{ margin:0; color:var(--muted); font-size:16px; line-height:1.58; max-width:52ch; }
 .pb-fascia p b{ color:#fff; font-weight:600; }
 .pb-svolta{
-  margin-top:16px; padding-top:16px; border-top:1px solid rgba(249,115,22,.22);
+  margin-top:16px; padding-top:16px; border-top:1px solid rgba(217,138,78,.22);
   color:var(--muted-strong); font-size:15.5px;
 }
 .pb-svolta b{ color:var(--accent); font-weight:600; }
@@ -4702,7 +4735,7 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-media{ position:relative; }
 .pb-foto{
   position:relative; width:100%; aspect-ratio:4/3; border-radius:18px; overflow:hidden;
-  border:1px solid var(--line); background:#070c1a;
+  border:1px solid var(--line); background:#0b101b;
 }
 .pb-foto img{
   width:100%; height:100%; object-fit:cover; display:block;
@@ -4716,10 +4749,10 @@ html.yz-cookie-open .call-bar { display: none; }
   position:absolute; bottom:-16px; left:-20px; z-index:2;
   display:inline-flex; flex-direction:column; align-items:flex-start; gap:4px;
   padding:13px 19px; border-radius:16px; background:rgba(6,10,24,.92);
-  border:1px solid rgba(249,115,22,.20); backdrop-filter:blur(10px); white-space:nowrap;
+  border:1px solid rgba(217,138,78,.20); backdrop-filter:blur(10px); white-space:nowrap;
   transition:border-color .45s ease, box-shadow .45s ease;
 }
-.pb-fascia:hover .pb-dato{ border-color:rgba(249,115,22,.45); box-shadow:0 0 26px -10px rgba(249,115,22,.7); }
+.pb-fascia:hover .pb-dato{ border-color:rgba(217,138,78,.45); box-shadow:0 0 26px -10px rgba(217,138,78,.7); }
 .pb-dato b{ font-size:27px; font-weight:800; color:var(--accent); letter-spacing:-.03em; line-height:1; }
 .pb-dato span{ font-family:var(--font-brand); font-size:9px; letter-spacing:.10em;
   text-transform:uppercase; color:rgba(255,255,255,.72); }
@@ -4728,11 +4761,11 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-pannello{
   position:relative; width:100%; overflow:hidden;
   border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, #0c1428 0%, #080e20 100%);
+  background:linear-gradient(180deg, #101829 0%, #0c1221 100%);
 }
 .pb-pannello::before{
   content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:radial-gradient(60% 120% at 88% 50%, rgba(249,115,22,.14) 0%, rgba(249,115,22,0) 70%);
+  background:radial-gradient(60% 120% at 88% 50%, rgba(217,138,78,.14) 0%, rgba(217,138,78,0) 70%);
 }
 .pb-pn-dentro{
   position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:36px 24px;
@@ -4749,7 +4782,7 @@ html.yz-cookie-open .call-bar { display: none; }
 
 .pb-dash{
   position:relative; border:1px solid var(--line-strong); border-radius:16px; overflow:hidden;
-  background:linear-gradient(180deg,#0e1730 0%, #0a1024 100%);
+  background:linear-gradient(180deg,#121b31 0%, #0e1425 100%);
   box-shadow:0 30px 60px -30px rgba(0,0,0,.9);
 }
 .pb-dash-testa{ display:flex; align-items:center; gap:10px; padding:12px 16px;
@@ -4776,7 +4809,7 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-chi span{ color:var(--muted-weak); }
 .pb-tag{ font-family:var(--font-brand); font-size:8px; letter-spacing:.08em; text-transform:uppercase;
   padding:4px 8px; border-radius:999px; white-space:nowrap;
-  background:rgba(249,115,22,.12); border:1px solid rgba(249,115,22,.30); color:var(--accent); }
+  background:rgba(217,138,78,.12); border:1px solid rgba(217,138,78,.30); color:var(--accent); }
 .pb-tag.pb-neutro{ background:rgba(255,255,255,.05); border-color:var(--line-strong); color:var(--muted); }
 
 .pb-coda{ max-width:1240px; margin:0 auto; padding:44px 24px 0;
@@ -4829,7 +4862,7 @@ html.yz-cookie-open .call-bar { display: none; }
   width:min(1240px, 100% - 40px);
   margin:0 auto 26vh;
   padding:2px;
-  background:#0b1226;
+  background:#0f1627;
   border:1px solid rgba(255,255,255,.05);
   border-radius:26px;
   overflow:hidden;
@@ -4842,21 +4875,21 @@ html.yz-cookie-open .call-bar { display: none; }
   top:50%; left:50%; width:150%; aspect-ratio:1;
   transform:translate(-50%,-50%) rotate(0deg);
   background:conic-gradient(from 0deg,
-    transparent 0 64%, rgba(251,146,60,.18) 72%,
+    transparent 0 64%, rgba(231,168,118,.18) 72%,
     var(--accent-400) 84%, var(--accent) 92%, transparent 100%);
   opacity:0; transition:opacity .5s ease;
 }
 .pb-fascia.attiva::before, .pb-pannello.attiva::before{
   opacity:1; animation:pbGiro 4.5s linear infinite;
 }
-.pb-fascia.attiva, .pb-pannello.attiva{ box-shadow:0 0 70px -20px rgba(249,115,22,.55); }
+.pb-fascia.attiva, .pb-pannello.attiva{ box-shadow:0 0 70px -20px rgba(217,138,78,.55); }
 @keyframes pbGiro{ to{ transform:translate(-50%,-50%) rotate(360deg) } }
 
 .pb-dentro, .pb-pn-dentro{
   position:relative; z-index:1; height:100%;
   max-width:none; margin:0; padding:0; gap:0; min-height:0;
   border-radius:24px; overflow:hidden;
-  background:linear-gradient(180deg,#0b1226 0%,#070c1a 100%);
+  background:linear-gradient(180deg,#0f1627 0%,#0b101b 100%);
   /* 1.1 e non 1: con la colonna piu stretta il titolo della scheda 4,
      "Un messaggio non ti obbliga", andava su due righe bianche a qualunque
      larghezza di finestra e rompeva lo schema una bianca / una arancione. */
@@ -4876,7 +4909,7 @@ html.yz-cookie-open .call-bar { display: none; }
   pointer-events:none; user-select:none;
   font-family:var(--font-brand); font-weight:400; line-height:.72;
   font-size:clamp(300px,40vw,620px);
-  color:rgba(249,115,22,.34); filter:blur(7px);
+  color:rgba(217,138,78,.34); filter:blur(7px);
 }
 
 .pb-media{ position:relative; overflow:hidden; max-width:none; }
@@ -4932,6 +4965,61 @@ html.yz-cookie-open .call-bar { display: none; }
   .pb-fascia.attiva::before, .pb-pannello.attiva::before{ animation:none; opacity:1; }
   .pb-fascia, .pb-pannello{ transition:none; }
 }
+
+/* La soluzione di ogni problema e' una scheda a se', subito dopo quella
+   del problema, nella stessa pila e con la stessa identica animazione
+   delle altre: niente overlay, niente scroll custom. */
+
+/* Box di prova dentro il testo della soluzione, al posto (o accanto) della
+   riga di svolta: due colonne, l'ultimo puo' allargarsi a tutta larghezza
+   con .pb-box--altro per fare da raccolta finale ("+ tanto altro"). */
+.pb-box-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; max-width:44ch; }
+.pb-box{
+  padding:20px 22px; border-radius:18px; background:rgba(6,10,24,.92);
+  border:1px solid rgba(217,138,78,.20); backdrop-filter:blur(10px);
+  transition:border-color .45s ease, box-shadow .45s ease;
+}
+.pb-fascia:hover .pb-box{ border-color:rgba(217,138,78,.45); box-shadow:0 0 26px -10px rgba(217,138,78,.7); }
+.pb-box b{ display:block; font-size:30px; font-weight:800; color:var(--accent); letter-spacing:-.03em; line-height:1.05; margin-bottom:6px; }
+.pb-box span{ display:block; font-family:var(--font-brand); font-size:10px; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,.72); line-height:1.3; }
+.pb-box--altro{ grid-column:1/-1; text-align:center; background:transparent; border-style:dashed; }
+
+/* Indice delle schede, fisso sulla destra: un trattino per scheda, quello
+   della scheda attiva si allunga e si accende. Riusa la classe "attiva"
+   che lo script della pila gia' assegna, non ne serve un secondo. */
+.pb-indice{
+  position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:40;
+  display:flex; flex-direction:column; gap:9px;
+  opacity:0; pointer-events:none; transition:opacity .4s ease;
+}
+.pb-indice.visibile{ opacity:1; }
+.pb-indice-voce{ width:10px; height:3px; border-radius:2px; background:rgba(255,255,255,.18); transition:width .3s ease, background .3s ease; }
+.pb-indice-voce.attiva{ width:22px; background:var(--accent); }
+@media (max-width:980px){ .pb-indice{ display:none; } }
+
+/* Il pannello "agenda al pc" della fascia Appuntamenti saltati: uno
+   schermo disegnato, come il pannello del box 6, non una foto. */
+.pb-agenda-pc{
+  position:relative; align-self:center; margin:clamp(16px,2vw,28px);
+  border-radius:14px; overflow:hidden; border:1px solid var(--line-strong);
+  background:linear-gradient(180deg,#121b31 0%,#0e1425 100%);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.9);
+}
+.pb-agenda-barra{ display:flex; align-items:center; gap:10px; padding:12px 16px;
+  border-bottom:1px solid var(--line); background:rgba(255,255,255,.02); }
+.pb-agenda-titolo{ font-family:var(--font-brand); font-size:9.5px; letter-spacing:.10em;
+  text-transform:uppercase; color:var(--muted-weak); }
+.pb-agenda-griglia{ padding:8px 0; }
+.pb-agenda-riga{ display:grid; grid-template-columns:52px 1fr; gap:12px; align-items:center; padding:10px 16px; }
+.pb-agenda-riga + .pb-agenda-riga{ border-top:1px solid rgba(255,255,255,.04); }
+.pb-agenda-ora{ color:var(--muted-weak); font-variant-numeric:tabular-nums; font-size:12px; }
+.pb-agenda-app{ padding:8px 12px; border-radius:8px; font-size:12.5px; font-weight:600; color:#fff;
+  background:rgba(217,138,78,.10); border-left:3px solid var(--accent); }
+.pb-agenda-app span{ display:block; margin-top:2px; font-weight:400; font-size:11px; color:var(--muted-weak); }
+
+@media (max-width:980px){
+  .pb-agenda-pc{ margin:0; }
+}
 </style>
 
 <span id="sec-03" class="pb-anchor" aria-hidden="true"></span>
@@ -4939,14 +5027,24 @@ html.yz-cookie-open .call-bar { display: none; }
 <section class="section" id="sec-problemi-head">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">I cinque problemi</span>
+      <span class="eyebrow">I tre problemi</span>
       <h2>
-        <span class="title-problem">Cinque cose che ti costano clienti,</span>
+        <span class="title-problem">Tre cose che ti costano clienti,</span>
         <span class="title-solution">le chiude YouZen una per una.</span>
       </h2>
-      <p class="lead">Chiamate perse, telefonate fuori orario, appuntamenti saltati, chat lasciate a metà e messaggi fermi nei DM. Una alla volta, con quello che cambia il giorno dopo.</p>
+      <p class="lead">Chiamate perse, telefonate fuori orario e chat lasciate a metà, tra WhatsApp e social. Una alla volta, con quello che cambia il giorno dopo.</p>
     </div>
   </div>
+
+  <nav class="pb-indice" aria-hidden="true">
+    <span class="pb-indice-voce" data-i="0"></span>
+    <span class="pb-indice-voce" data-i="1"></span>
+    <span class="pb-indice-voce" data-i="2"></span>
+    <span class="pb-indice-voce" data-i="3"></span>
+    <span class="pb-indice-voce" data-i="4"></span>
+    <span class="pb-indice-voce" data-i="5"></span>
+    <span class="pb-indice-voce" data-i="6"></span>
+  </nav>
 
   <div class="pb-fasce">
 
@@ -4957,83 +5055,98 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="pb-occhio">Chiamate perse</span>
           <h3>Il telefono suona sempre <em>nel momento peggiore</em></h3>
           <p>Stai già lavorando per qualcuno, e quello che hai davanti non lo metti in pausa. <b>Chi non ti ha trovato non richiama per dirtelo.</b></p>
-          <p class="pb-svolta">Risponde <b>al secondo squillo</b>, riconosce chi chiama e lo saluta per nome.</p>
         </div>
         <div class="pb-media">
           <div class="pb-foto"><img src="problemi/perse.jpg" alt="Un telefono di carta che squilla in mano e comincia a bruciare" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>98%</b><span>chiamate gestite</span></div>
         </div>
-        <div class="pb-dato pb-dato--sinistra"><b>+30</b><span>chiamate in simultanea</span></div>
       </div>
     </article>
 
     <article class="pb-fascia" style="--i:1">
+      <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">1</span>
+        <div class="pb-testo">
+          <span class="pb-occhio">La soluzione</span>
+          <h3>Risponde lei, <em>prima che tu te ne accorga</em></h3>
+          <div class="pb-box-grid">
+            <div class="pb-box"><b>2 squilli</b><span>tempo di risposta</span></div>
+            <div class="pb-box"><b>+100%</b><span>esperienza del cliente</span></div>
+            <div class="pb-box"><b>98%</b><span>chiamate gestite</span></div>
+            <div class="pb-box"><b>+30</b><span>in simultanea</span></div>
+          </div>
+        </div>
+        <div class="pb-media">
+          <div class="pb-foto"><img src="problemi/perse-soluzione.jpg" alt="Lo stesso telefono di carta, intatto, che risponde con una luce calda" loading="lazy" width="720" height="720" /></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pb-fascia" style="--i:2">
       <div class="pb-dentro">
         <span class="pb-num" aria-hidden="true">2</span>
         <div class="pb-testo">
           <span class="pb-occhio">Fuori orario</span>
           <h3>Ti cercano quando <em>sono liberi loro</em></h3>
           <p>Alle otto di sera, il primo momento in cui hanno le mani libere. <b>Tu a quell'ora hai chiuso</b>, e sotto il tuo numero ce ne sono altri quattro.</p>
-          <p class="pb-svolta">YouZen risponde <b>24 ore su 24, 7 giorni su 7</b>. Alle nove di sera, la domenica e a Ferragosto chi ti cerca trova aperto e fissa l'appuntamento.</p>
         </div>
         <div class="pb-media">
           <div class="pb-foto"><img src="problemi/247.jpg" alt="Il telefono squilla in rosso sulla scrivania, di notte" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>24/7</b><span>festivi compresi</span></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-fascia pb-fascia--agenda" style="--i:2">
-      <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">3</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">Appuntamenti saltati</span>
-          <h3>L'unico che l'ha segnato <em>sei tu</em></h3>
-          <p>Il posto l'avevi già negato a un'altra persona. <b>Si libera alle tre e un quarto</b>, quando non serve più a nessuno.</p>
-          <p class="pb-svolta">Manda il promemoria su WhatsApp e SMS, e <b>chi non può venire disdice rispondendo</b>, mentre il posto serve ancora.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/ns.jpg" alt="Un'agenda di carta con gli appuntamenti che si cancellano" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>-80%</b><span>no-show</span></div>
         </div>
       </div>
     </article>
 
     <article class="pb-fascia" style="--i:3">
       <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">4</span>
+        <span class="pb-num" aria-hidden="true">2</span>
         <div class="pb-testo">
-          <span class="pb-occhio">WhatsApp</span>
-          <h3>Un messaggio non ti obbliga <em>a rispondere subito</em></h3>
-          <p>Loro però sanno che l'hai letto. <b>Per rispondere sul serio ti serve mezz'ora</b>, e intanto l'hanno chiesto anche a qualcun altro.</p>
-          <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione. E quando invece di scriverti ti chiamano su WhatsApp, <b>risponde anche a quelle</b>.</p>
+          <span class="pb-occhio">La soluzione</span>
+          <h3>Per chi ti cerca, <em>sei sempre aperto</em></h3>
+          <p class="pb-svolta">YouZen risponde <b>24 ore su 24, 7 giorni su 7</b>. Alle nove di sera, la domenica e a Ferragosto chi ti cerca trova aperto e fissa l'appuntamento.</p>
         </div>
         <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/wa.jpg" alt="Le notifiche di WhatsApp escono fuori dallo schermo del telefono" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>4s</b><span>tempo di risposta</span></div>
+          <div class="pb-foto"><img src="problemi/247-soluzione-giorno-notte.jpg" alt="La stessa scrivania divisa a metà: da un lato è notte, dall'altro pieno giorno, il telefono risponde in entrambe" loading="lazy" width="720" height="720" /></div>
         </div>
+        <div class="pb-dato pb-dato--sinistra"><b>24/7</b><span>festivi compresi</span></div>
       </div>
     </article>
 
     <article class="pb-fascia" style="--i:4">
       <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">5</span>
+        <span class="pb-num" aria-hidden="true">3</span>
         <div class="pb-testo">
-          <span class="pb-occhio">Instagram e Facebook</span>
-          <h3>Ti scrivono dove <em>non stai guardando</em></h3>
-          <p>Il messaggio finisce nei DM della pagina, non sul telefono. <b>Lo apri tre giorni dopo</b>, e chi aveva scritto nel frattempo ha prenotato da un'altra parte.</p>
-          <p class="pb-svolta">Colleghi la pagina Instagram e quella Facebook. <b>Nei DM risponde come risponde al telefono</b>, e l'appuntamento lo fissa lì dentro.</p>
+          <span class="pb-occhio">Messaggistica WhatsApp e Social</span>
+          <h3>Un messaggio non ti obbliga <em>a rispondere subito</em></h3>
+          <p>Che sia WhatsApp o i DM di Instagram e Facebook, loro sanno che l'hai letto. <b>Per rispondere sul serio ti serve mezz'ora</b>, e intanto l'hanno chiesto anche a qualcun altro.</p>
         </div>
         <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/dm.jpg" alt="Bigliettini di carta che escono da uno schermo di carta e si accumulano al buio" loading="lazy" width="720" height="720" /></div>
-          <div class="pb-dato"><b>IG+FB</b><span>pagine collegate</span></div>
+          <div class="pb-foto"><img src="problemi/wa.jpg" alt="Notifiche di messaggi che escono fuori dallo schermo del telefono" loading="lazy" width="720" height="720" /></div>
         </div>
       </div>
     </article>
 
-    <article class="pb-pannello" style="--i:5">
+    <article class="pb-fascia" style="--i:5">
+      <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">3</span>
+        <div class="pb-testo">
+          <span class="pb-occhio">La soluzione</span>
+          <h3>Stesso numero, <em>quattro secondi</em></h3>
+          <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione. Risponde anche se ti chiamano su WhatsApp, e nei DM di Instagram e Facebook è la stessa storia.</p>
+          <div class="pb-box-grid">
+            <div class="pb-box"><b>4s</b><span>tempo di risposta</span></div>
+            <div class="pb-box"><b>IG+FB</b><span>pagine collegate</span></div>
+            <div class="pb-box"><b>Prenotazioni</b><span>fissate dentro la chat</span></div>
+            <div class="pb-box pb-box--altro"><b>+ tanto altro</b><span>domande, orari, indirizzo</span></div>
+          </div>
+        </div>
+        <div class="pb-media">
+          <div class="pb-foto"><img src="problemi/wa-soluzione.jpg" alt="Lo stesso telefono, con un unico segno di spunta calmo sullo schermo" loading="lazy" width="720" height="720" /></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="pb-pannello" style="--i:6">
       <div class="pb-pn-dentro">
-        <span class="pb-num" aria-hidden="true">6</span>
+        <span class="pb-num" aria-hidden="true">4</span>
         <div class="pb-testo">
           <span class="pb-occhio">Il pannello</span>
           <h3>A fine giornata sai <em>chi ti ha cercato</em></h3>
@@ -5095,8 +5208,8 @@ html.yz-cookie-open .call-bar { display: none; }
   background:linear-gradient(180deg,
     #FDB474 0%, var(--accent-400) 16%, var(--accent) 52%, var(--accent-600) 86%, #BC4E08 100%);
   box-shadow:
-    0 -16px 34px -20px rgba(249,115,22,.55),
-    0 24px 46px -18px rgba(249,115,22,.5),
+    0 -16px 34px -20px rgba(217,138,78,.55),
+    0 24px 46px -18px rgba(217,138,78,.5),
     inset 0 1px 0 rgba(255,255,255,.7),
     inset 0 -1px 0 rgba(0,0,0,.5),
     inset 0 12px 24px -16px rgba(255,255,255,.55),
@@ -5125,7 +5238,7 @@ html.yz-cookie-open .call-bar { display: none; }
 .yzb-sub{ display:block; margin-top:9px; color:rgba(255,255,255,.82); font-size:15.5px;
   font-weight:400; line-height:1.55; max-width:56ch; text-wrap:pretty; }
 .yzb-btn{ display:inline-flex; align-items:center; gap:10px; padding:13px 24px; border-radius:100px;
-  background:#0a0f1e; color:#fff; text-decoration:none; font-weight:600; font-size:15.5px;
+  background:#0e131f; color:#fff; text-decoration:none; font-weight:600; font-size:15.5px;
   white-space:nowrap;
   box-shadow:0 12px 24px -10px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.16),
              inset 0 -2px 0 rgba(0,0,0,.5);
@@ -5163,7 +5276,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Dodici ti cercano.</span>
         <span class="title-solution">Quanti ne tieni?</span>
       </h2>
-      <p class="lead">Ogni pallino è una persona che ti cerca in una giornata. Senza YouZen la rete ha i buchi, e sotto non c'è nessuno a raccoglierli.</p>
+      <p class="lead">Ogni pallino è una persona vera che ti cerca in una giornata vera. Senza YouZen la rete ha tre buchi (riunione, pausa pranzo, sera), e sotto non c'è mai nessuno a raccoglierli.</p>
     </div>
 
     <div class="day-wrap">
@@ -5195,7 +5308,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Fa amicizia</span>
         <span class="title-solution">con i tuoi tool.</span>
       </h2>
-      <p class="lead">YouZen è l'assistente telefonico con intelligenza artificiale per le piccole imprese: risponde a chiamate e messaggi WhatsApp, prende gli appuntamenti e li sincronizza con i calendari, le email, i CRM e i sistemi di pagamento che già usi. Collegando il tuo account Google, YouZen crea, legge e aggiorna automaticamente gli eventi degli appuntamenti sul tuo Google Calendar.</p>
+      <p class="lead">Non ti chiede di cambiare niente. Colleghi Google Calendar e YouZen ci scrive dentro da sola, appuntamento per appuntamento, senza che tu apra mai l'app. Stessi CRM, stesse email, stesso sistema di pagamento: si adatta lei a te, non il contrario.</p>
     </div>
 
     <div class="integrations-marquee" aria-label="Tool con cui YouZen si integra">
@@ -5436,7 +5549,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Sa già cosa serve,</span>
         <span class="title-solution">così tu respiri un attimo.</span>
       </h2>
-      <p class="lead">Cinque verticali con knowledge base e flussi cuciti sul settore. Non vedi il tuo? Sesto box: scrivici e te lo costruiamo.</p>
+      <p class="lead">Cinque settori, ognuno con la sua knowledge base e i suoi flussi, non un copia-incolla con il nome cambiato. Il tuo non c'è? Sesto box, scrivici: te lo costruiamo su misura, non "quasi uguale".</p>
     </div>
 
     <div class="sectors-grid">
@@ -5449,7 +5562,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/></svg></div>
         <div class="sector-body">
           <h3 class="sector-name">Saloni e SPA</h3>
-          <div class="s-title">Forbici in mano, telefono che squilla? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
+          <div class="s-title">Hai le forbici in mano. <span style="color:#FFA366;">Il telefono lo prende YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
@@ -5469,7 +5582,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8a3 3 0 0 0 6 0V2M10 10v12M16 2c-1.5 2-2 4-2 6s.5 4 2 4v10"/></svg></div>
         <div class="sector-body">
           <h3 class="sector-name">Ristoranti</h3>
-          <div class="s-title">Sala piena, ordini che saltano? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
+          <div class="s-title">Sala piena, cucina anche di più. <span style="color:#FFA366;">Gli ordini li prende YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
@@ -5489,7 +5602,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
         <div class="sector-body">
           <h3 class="sector-name">Professionisti</h3>
-          <div class="s-title">Mani occupate, chiamate continue? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
+          <div class="s-title">Sei con un cliente, il telefono non lo sa. <span style="color:#FFA366;">Risponde YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
@@ -5509,7 +5622,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg></div>
         <div class="sector-body">
           <h3 class="sector-name">Immobiliare</h3>
-          <div class="s-title">In visita e lead che chiamano? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
+          <div class="s-title">Sei in visita, non al telefono. <span style="color:#FFA366;">I lead li prende YouZen.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
@@ -5529,7 +5642,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <div class="sector-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M7 8l-3 6a3 3 0 0 0 6 0Zm10 0-3 6a3 3 0 0 0 6 0Z"/></svg></div>
         <div class="sector-body">
           <h3 class="sector-name">Studio Legale</h3>
-          <div class="s-title">In udienza e mille squilli? <span style="color:#FFA366;">Ci pensa YouZen.</span></div>
+          <div class="s-title">In udienza non rispondi. <span style="color:#FFA366;">YouZen sì, e prende nota.</span></div>
           <div class="sector-hairline"></div>
         </div>
         <div class="sector-foot">
@@ -5568,7 +5681,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Pronta in 8 giorni,</span>
         <span class="title-solution">caffè incluso.</span>
       </h2>
-      <p class="lead">Setup guidato, una settimana di test in modalità ombra, go-live. Tu lavori, noi configuriamo.</p>
+      <p class="lead">Setup guidato, una settimana in modalità ombra (ascolta e impara, non risponde ancora davvero), poi il go-live. Tu continui a lavorare come se non stessimo facendo niente. Infatti è quasi vero.</p>
     </div>
 
     <div class="yzn-asse-nome">Giorni</div>
@@ -5591,67 +5704,23 @@ html.yz-cookie-open .call-bar { display: none; }
 
     <p class="yzn-legenda">Un giorno per il setup, sei di prove con te che ascolti. Dall'ottavo risponde da sola, e non finisce più.</p>
 
-    <div class="yzn-testi">
-      <section class="yzn-testo" style="--c:#22C55E">
-        <span class="yzn-quando">Giorno 1</span>
-        <h3>Si parte con un caffè</h3>
-        <p>Una call e via: pensiamo noi a sistemare tutto. Tu rispondi a due domande, al resto ci pensiamo noi.</p>
-        <ul class="yzn-voci">
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Due chiacchiere su servizi, orari e domande tipiche</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Colleghiamo il tuo numero (porting o forward)</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Calendario e WhatsApp agganciati</li>
-        </ul>
-      </section>
-
-      <section class="yzn-testo" style="--c:#FBBF24">
-        <span class="yzn-quando">Giorni 2–7</span>
-        <h3>Prove generali, in punta di piedi</h3>
-        <p>Una settimana di rodaggio: ascolti, correggi, dai il tono giusto. Così al debutto niente sorprese.</p>
-        <ul class="yzn-voci">
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Simulazioni su casi veri</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Aggiusti tutto al volo dal pannello di controllo</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ok finale prima di alzare il sipario</li>
-        </ul>
-      </section>
-
-      <section class="yzn-testo" style="--c:#F97316">
-        <span class="yzn-quando">Da giorno 8</span>
-        <h3>Sipario! Ora risponde sempre</h3>
-        <p>Da qui in poi non stacca mai, nemmeno il sabato sera. Tu guardi tutto comodo dal pannello di controllo.</p>
-        <ul class="yzn-voci">
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sempre sveglia: 24/7, weekend e festivi</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ti chiama in causa solo quando serve davvero</li>
-          <li><svg class="yzn-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Il riassunto della settimana nella tua inbox</li>
-        </ul>
-      </section>
-    </div>
-
-  </div>
-</section>
-
-<section class="yzb" aria-label="Parlane con noi">
-  <span class="yzb-luce" aria-hidden="true"></span>
-  <div class="yzb-dentro">
-    <div class="yzb-testo">
-      <b class="yzb-tit">Otto giorni sembrano pochi, lo sappiamo.</b>
-      <span class="yzb-sub">Ti spieghiamo con calma cosa succede in ognuno, e cosa tocca fare a te. Poco.</span>
-    </div>
-    <a class="yzb-btn" href="#contatto">Fatti spiegare <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
 <!-- ============================ DEMO CALL (sec-01b) ============================ -->
 <section class="section demo-call-section" id="demo-call">
   <div class="container">
+    <div class="demo-call-eyebrow-wrap">
+      <span class="eyebrow">Prova subito</span>
+    </div>
     <div class="demo-call-grid">
       <!-- Form demo call -->
       <div class="demo-call-content">
-        <span class="eyebrow">Prova subito</span>
         <h2 class="demo-call-title">
           <span class="title-problem">Non ci credi?</span>
           <span class="title-solution">guarda la magia</span>
         </h2>
-        <p class="demo-call-subtitle">Lascia il numero, ti chiama YouZen in 60 secondi.</p>
+        <p class="demo-call-subtitle">Lascia il numero. Ti chiama YouZen in 60 secondi, non un venditore.</p>
 
         <form class="demo-call-form" id="demoCallForm" novalidate>
           <div class="field">
@@ -5894,17 +5963,6 @@ html.yz-cookie-open .call-bar { display: none; }
   </div>
 </section>
 
-<section class="yzb" aria-label="Parlane con noi">
-  <span class="yzb-luce" aria-hidden="true"></span>
-  <div class="yzb-dentro">
-    <div class="yzb-testo">
-      <b class="yzb-tit">Vuoi sapere quanto verrebbe nel tuo caso?</b>
-      <span class="yzb-sub">Bastano due domande sulle tue chiamate e ti diamo un numero, senza girarci intorno.</span>
-    </div>
-    <a class="yzb-btn" href="#demo-call">Chiedi il tuo conto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-</section>
-
 <!-- ============================ FAQ (sec-08) — GRID 2 COL STATICO ============================ -->
 <section class="section has-cta" id="faq">
   <div class="container">
@@ -5914,7 +5972,7 @@ html.yz-cookie-open .call-bar { display: none; }
         <span class="title-problem">Le solite domande,</span>
         <span class="title-solution">risposte oneste.</span>
       </h2>
-      <p class="lead">Clicca per aprire la risposta. Se manca qualcosa, scrivici.</p>
+      <p class="lead">Clicca per aprire la risposta. Se la tua domanda non c'è, non è che ce la siamo dimenticata apposta: scrivici.</p>
     </div>
 
     <div class="faq-list">
@@ -5986,6 +6044,7 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">Sì: Google Calendar, Outlook, iCloud, Apple Calendar e i principali gestionali di settore (studi legali, medici, saloni). Ne usi uno un po' particolare? Diccelo e controlliamo subito se va d'accordo con noi.</p>
+          <span class="faq-punch">Se il tuo calendario esiste, probabilmente lo conosciamo già.</span>
         </div></div></div>
       </div>
 
@@ -5997,6 +6056,7 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">Non si blocca niente e non perdi nessuna chiamata. I minuti oltre il pacchetto li paghi <b>0,35€ l'uno</b>, e solo quelli. Se ti capita spesso, alzi il pacchetto quando vuoi e torni a 0,30€ al minuto.</p>
+          <span class="faq-punch">Nessuno ti stacca la linea a metà chiamata per farti un dispetto.</span>
         </div></div></div>
       </div>
 
@@ -6020,6 +6080,7 @@ html.yz-cookie-open .call-bar { display: none; }
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
           <p class="faq-a">Assolutamente sì: comandi sempre tu. Dal pannello di controllo vedi le chiamate in diretta e, quando vuoi, ti infili nella conversazione o prendi tu il controllo della chiamata.</p>
+          <span class="faq-punch">YouZen non si offende se le rubi la linea.</span>
         </div></div></div>
       </div>
 
@@ -6189,7 +6250,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="title-problem">Ancora un forse?</span>
           <span class="title-solution">Mezz’ora, e poi respiri.</span>
         </h2>
-        <p class="lead">Ti facciamo vedere YouZen dal vivo sul tuo settore. Decidi tu se partire: da lì in poi al telefono ci siamo noi.</p>
+        <p class="lead">Ti facciamo vedere YouZen dal vivo sul tuo settore, non su una slide. Decidi tu se partire: da lì in poi al telefono ci siamo noi, non più tu.</p>
 
         <div class="cta-final-action">
           <a class="btn btn-primary btn-large" href="#demo-call">
@@ -6398,10 +6459,15 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
   window.addEventListener('resize', function () { misura(); disegna(); }, { passive: true });
 })();
 
-// ===== I cinque problemi: accende il LED sulla scheda in cima alla pila
+// ===== I tre problemi: accende il LED sulla scheda in cima alla pila,
+// e insieme il trattino corrispondente nell'indice fisso a destra. Stesso
+// segnale (quale scheda e' "attiva"), due posti dove si vede.
 (function () {
   var schede = Array.prototype.slice.call(document.querySelectorAll('.pb-fascia, .pb-pannello'));
   if (schede.length < 2) return;
+  var indice = document.querySelector('.pb-indice');
+  var voci = indice ? Array.prototype.slice.call(indice.querySelectorAll('.pb-indice-voce')) : [];
+  var pila = document.querySelector('.pb-fasce');
   var ticking = false, ultima = -1;
 
   function disegna() {
@@ -6416,6 +6482,8 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     if (attiva === ultima) return;
     if (ultima >= 0) schede[ultima].classList.remove('attiva');
     schede[attiva].classList.add('attiva');
+    if (voci[ultima]) voci[ultima].classList.remove('attiva');
+    if (voci[attiva]) voci[attiva].classList.add('attiva');
     ultima = attiva;
   }
   function chiedi() { if (!ticking) { ticking = true; requestAnimationFrame(disegna); } }
@@ -6423,6 +6491,13 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
   disegna();
   window.addEventListener('scroll', chiedi, { passive: true });
   window.addEventListener('resize', chiedi, { passive: true });
+
+  // L'indice si vede solo mentre la pila e' in pagina, non ovunque si scorra.
+  if (indice && pila && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (voci2) {
+      indice.classList.toggle('visibile', voci2[0].isIntersecting);
+    }, { threshold: 0 }).observe(pila);
+  }
 })();
 
 // ===== Settori: i box si scoprono a tendina quando la griglia entra in pagina
@@ -6605,8 +6680,8 @@ updatePricing();
     var y = H * RETE;
     ctx.lineWidth = 3; ctx.lineCap = 'round';
     if (on) {
-      ctx.strokeStyle = '#F97316';
-      ctx.shadowColor = 'rgba(249,115,22,0.7)'; ctx.shadowBlur = 14;
+      ctx.strokeStyle = '#D98A4E';
+      ctx.shadowColor = 'rgba(217,138,78,0.7)'; ctx.shadowBlur = 14;
       ctx.beginPath(); ctx.moveTo(24, y); ctx.lineTo(W - 24, y); ctx.stroke();
       ctx.shadowBlur = 0;
     } else {
@@ -6659,8 +6734,8 @@ updatePricing();
       if (b.stato === 'morto') return;
       ctx.globalAlpha = Math.max(0, b.a);
       if (b.stato === 'preso') {
-        ctx.fillStyle = '#F97316';
-        ctx.shadowColor = 'rgba(249,115,22,0.8)'; ctx.shadowBlur = 12 * b.ry;
+        ctx.fillStyle = '#D98A4E';
+        ctx.shadowColor = 'rgba(217,138,78,0.8)'; ctx.shadowBlur = 12 * b.ry;
       } else if (b.stato === 'giu') {
         ctx.fillStyle = '#EF4444'; ctx.shadowBlur = 0;
       } else {
@@ -6683,7 +6758,7 @@ updatePricing();
     for (var i = 0; i < 12; i++) {
       var x = 40 + i * ((W - 80) / 11);
       ctx.beginPath();
-      ctx.fillStyle = i < np ? '#F97316' : '#EF4444';
+      ctx.fillStyle = i < np ? '#D98A4E' : '#EF4444';
       ctx.arc(x, i < np ? y - 7 : H - 40, 7, 0, Math.PI * 2);
       ctx.fill();
     }
@@ -7020,6 +7095,29 @@ if (document.readyState === 'loading') {
   </a>
   <button class="call-bar-close" aria-label="Chiudi" onclick="document.getElementById('yzCallBar').remove()">×</button>
 </div>
+
+<!-- ===== Il fondo della pagina segue lo scroll: dalla notte alla sabbia =====
+     Una sola variabile, --scroll-pct, scritta sulla radice del documento;
+     il colore vero lo mescola il CSS del body con color-mix. Niente sezioni
+     da elencare qui: funziona su tutta l'altezza della pagina, sempre. -->
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var root = document.documentElement;
+  var ticking = false;
+  function disegna() {
+    ticking = false;
+    var scorribile = document.body.scrollHeight - window.innerHeight;
+    var frazione = scorribile > 0 ? window.scrollY / scorribile : 0;
+    if (frazione < 0) frazione = 0; else if (frazione > 1) frazione = 1;
+    root.style.setProperty('--scroll-pct', (frazione * 100) + '%');
+  }
+  function chiedi() { if (!ticking) { ticking = true; requestAnimationFrame(disegna); } }
+  disegna();
+  window.addEventListener('scroll', chiedi, { passive: true });
+  window.addEventListener('resize', chiedi, { passive: true });
+})();
+</script>
 
 </body>
 </html>
