@@ -6710,7 +6710,11 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
       im.className = 'pb-frame';
       im.alt = '';
       im.setAttribute('aria-hidden', 'true');
-      im.decoding = 'async';
+      // Decodifica sincrona: il browser non disegna lo schermo finche' il fotogramma nuovo
+      // non e' pronto. Con 'async' (e su Safari anche con 'auto', per immagini grandi) lo
+      // disegna prima, il livello resta vuoto per un istante e sotto compare la foto di
+      // partenza: i "frame che appaiono" su telefono e tablet.
+      im.decoding = 'sync';
       im.style.opacity = '0';
       im.style.transition = 'none';
       foto.appendChild(im);
