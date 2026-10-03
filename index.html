@@ -6717,25 +6717,33 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     function disegna(pos) {
       var a = Math.floor(pos), t = pos - a;
       if (a >= N - 1) { a = N - 1; t = 0; }
-      var chiave = a + ':' + Math.round(t * 16);
+      var chiave = a + ':' + Math.round(t * 50) + ':' + (t > 0.06 ? 1 : 0);
       if (chiave === ultimo) return;
       var ia = piuVicino(a);
       if (ia < 0) return;
       var ib = t > 0.06 ? piuVicino(Math.min(N - 1, a + 1)) : -1;
       if (ib === ia) ib = -1;
       ultimo = chiave;
-      // se il fotogramma che serve adesso a sotto e' quello che stava sopra, si scambiano i ruoli
-      if (indB === ia && indA !== ia) { var x = elA; elA = elB; elB = x; var y = indA; indA = indB; indB = y; }
+      // Se uno dei due livelli mostra gia' il fotogramma che serve all'altro posto, si
+      // scambiano i ruoli invece di ricaricare tutti e due (avanti e indietro).
+      if ((indB === ia && indA !== ia) || (ib >= 0 && indA === ib && indB !== ib)) {
+        var x = elA; elA = elB; elB = x; var y = indA; indA = indB; indB = y;
+      }
       if (indA !== ia) indA = metti(elA, ia);
-      if (ib >= 0) { if (indB !== ib) indB = metti(elB, ib); }
+      if (ib >= 0 && indB !== ib) indB = metti(elB, ib);
       elA.style.zIndex = '1'; elB.style.zIndex = '2';
+      // Il livello di sotto e' sempre opaco, anche dopo uno scambio di ruoli: se restasse con
+      // l'opacita' parziale che aveva da livello di sopra, la foto di partenza (il telefono
+      // bruciato, le notifiche) trasparirebbe sotto il fotogramma giusto.
       elB.style.opacity = ib >= 0 ? t.toFixed(3) : '0';
       if (!mostrato) {
         mostrato = true;
         elA.style.transition = 'opacity .4s ease';      // la prima volta entra sfumando sulla foto di partenza
         elA.style.opacity = '1';
-        window.setTimeout(function () { elA.style.transition = 'none'; }, 500);
+        window.setTimeout(function () { elA.style.transition = 'none'; elB.style.transition = 'none'; }, 500);
         scheda.classList.add('pb-film-pronto');
+      } else {
+        elA.style.opacity = '1';
       }
     }
 
