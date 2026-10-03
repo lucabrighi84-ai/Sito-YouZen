@@ -5017,10 +5017,12 @@ html.yz-cookie-open .call-bar { display: none; }
 
 /* === Schede film: problema e soluzione sono la stessa scheda ====================
    L'immagine passa da problema a soluzione mentre si scorre (un film su canvas) e il
-   testo cambia con lei. Da 981px in su la scheda resta incollata per tutta la corsa del
-   film (--film-corsa) piu' una sosta sulla soluzione (--film-sosta), poi la scheda dopo
-   le scivola sopra come in tutta la pila. Sotto i 980px la pila e' smontata e non si
-   incolla niente: il film corre con la posizione della scheda.
+   testo cambia con lei. La scheda resta incollata per tutta la corsa del film
+   (--film-corsa) piu' una sosta sulla soluzione (--film-sosta), poi la scheda dopo le
+   scivola sopra come in tutta la pila. Vale anche sul telefono: li' la prima versione
+   non incollava niente e il film correva con la posizione della scheda, ma l'immagine
+   sta sopra e il testo sotto, e quando si arrivava al testo il film era gia' finito
+   (si leggeva solo la soluzione) e passava in poche centinaia di pixel di scroll.
    La corsa non e' un margine della scheda ma un distanziatore, la sentinella messa subito
    prima di ogni scheda tranne la prima: una scheda incollata resta ferma finche' nel
    contenitore c'e' spazio dopo di lei, e il suo margine conta come ingombro. Con i margini
@@ -5033,11 +5035,10 @@ html.yz-cookie-open .call-bar { display: none; }
    distanziatori prendono altezza. */
 .pb-fasce{ --film-corsa:100vh; --film-sosta:40vh; }
 .pb-film-ancora{ display:block; height:0; }
-@media (min-width:981px){
-  .pb-fasce.pb-film-attiva > .pb-film-ancora{ height:calc(var(--film-corsa) + var(--film-sosta)); }
-  .pb-fasce.pb-film-attiva > .pb-film-ancora:first-child{ height:0; }
-  .pb-fasce.pb-film-attiva::after{ content:''; display:block; flex:none; height:var(--film-sosta); }
-}
+.pb-fasce.pb-film-attiva{ gap:0; }
+.pb-fasce.pb-film-attiva > .pb-film-ancora{ height:calc(var(--film-corsa) + var(--film-sosta)); }
+.pb-fasce.pb-film-attiva > .pb-film-ancora:first-child{ height:0; }
+.pb-fasce.pb-film-attiva::after{ content:''; display:block; flex:none; height:var(--film-sosta); }
 .pb-fascia--film, .pb-pannello{ margin-bottom:0; }
 /* Il numero di fondo e' tagliato dal bordo in basso (bottom:-14%), e va bene per le
    cifre, ma del "!" resterebbe solo l'asta e senza il punto non si legge. */
@@ -5071,18 +5072,31 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-fascia--film:not(.pb-film-on){ position:static; height:auto; margin-bottom:26px; }
 .pb-fascia--film:not(.pb-film-on) .pb-media{ min-height:360px; }
 @media (max-width:980px){
-  .pb-film-ancora{ display:none; }
-  .pb-fascia--film{ --film-corsa:0vh; --film-sosta:0vh; }
+  /* Telefono e tablet in verticale: le schede film si incollano come sul desktop. L'altezza
+     comune (--film-h) e il lato dell'immagine (--film-img) li misura il JS, perche' immagine
+     e testo stiano insieme nello schermo e le tre schede, uguali, si coprano del tutto. */
+  .pb-fasce{ --film-corsa:85vh; --film-sosta:25vh; }
+  .pb-fascia--film.pb-film-on{ position:sticky; top:84px; z-index:var(--i,0);
+    height:var(--film-h, calc(100svh - 100px)); overflow:hidden; }
+  .pb-fascia--film.pb-film-on .pb-dentro{ height:100%; align-content:start; }
   /* sul telefono l'immagine che si anima sta sopra, il testo cambia sotto di lei */
-  .pb-fascia--film .pb-media{ order:-1; width:100%; max-width:360px; margin:0 auto; }
-  .pb-fascia--film .pb-foto{ aspect-ratio:1/1; }
-  .pb-fascia--film:not(.pb-film-on) .pb-media{ min-height:0; }
-  /* i box della soluzione, piu' compatti: la scheda deve stare quasi tutta in uno schermo */
-  .pb-fascia--film .pb-dentro{ gap:20px; padding:20px 20px 24px; }
-  .pb-fascia--film .pb-box-grid{ gap:10px; margin-top:16px; }
-  .pb-fascia--film .pb-box{ padding:14px; border-radius:14px; }
-  .pb-fascia--film .pb-box b{ font-size:24px; margin-bottom:4px; white-space:nowrap; }
-  .pb-fascia--film .pb-box span{ font-size:9px; }
+  .pb-fascia--film .pb-media{ order:-1; width:var(--film-img, 240px); height:var(--film-img, 240px);
+    max-width:100%; margin:0 auto; }
+  .pb-fascia--film .pb-foto{ aspect-ratio:auto; width:100%; height:100%; }
+  .pb-fascia--film:not(.pb-film-on) .pb-media{ min-height:0; width:100%; max-width:360px; height:auto; }
+  .pb-fascia--film:not(.pb-film-on) .pb-foto{ aspect-ratio:1/1; height:auto; }
+  /* il pannello e' in flusso: deve passare sopra le schede ancora incollate */
+  .pb-pannello{ position:relative; z-index:20; }
+  /* il testo e i box della soluzione, compatti: tutto deve stare in uno schermo */
+  .pb-fascia--film .pb-dentro{ gap:16px; padding:18px 18px 18px; }
+  .pb-fascia--film h3{ font-size:clamp(22px,6.4vw,27px); margin-bottom:8px; }
+  .pb-fascia--film .pb-svolta{ margin-top:10px; padding-top:10px; font-size:14px; line-height:1.45; }
+  .pb-fascia--film p{ font-size:14.5px; line-height:1.5; }
+  .pb-fascia--film .pb-occhio{ margin-bottom:8px; }
+  .pb-fascia--film .pb-box-grid{ gap:8px; margin-top:12px; }
+  .pb-fascia--film .pb-box{ padding:10px 12px; border-radius:12px; }
+  .pb-fascia--film .pb-box b{ font-size:21px; margin-bottom:3px; white-space:nowrap; }
+  .pb-fascia--film .pb-box span{ font-size:8.5px; }
 }
 /* La scheda ha altezza fissa (al massimo 640px) e la soluzione di WhatsApp, con tre
    righe di box, toccava il fondo anche sugli schermi grandi e usciva fino a 150px su
@@ -6627,6 +6641,19 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
   function limita(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
   function liscia(x) { x = limita(x); return x * x * (3 - 2 * x); }
 
+  // Due sonde invisibili che misurano 100vh e 100svh in pixel: vh e' l'unita' del CSS
+  // (la corsa e i distanziatori), svh e' l'altezza dello schermo con la barra degli
+  // indirizzi aperta, stabile, e serve a dimensionare le schede sul telefono.
+  function sonda(unita) {
+    var d = document.createElement('div');
+    d.setAttribute('aria-hidden', 'true');
+    d.style.cssText = 'position:fixed;left:-9999px;top:0;width:1px;height:100' + unita + ';visibility:hidden;pointer-events:none';
+    document.body.appendChild(d);
+    return d;
+  }
+  var sondaVh = sonda('vh'), sondaSvh = sonda('svh');
+  function vhPx() { return (sondaVh.offsetHeight || window.innerHeight) / 100; }
+
   Array.prototype.forEach.call(schede, function (scheda) {
     var ancora = scheda.previousElementSibling;
     if (!ancora || !ancora.classList.contains('pb-film-ancora')) return;
@@ -6645,10 +6672,13 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     scheda.classList.add('pb-film-on');
     scheda.parentNode.classList.add('pb-film-attiva');
 
-    // legge una misura in vh dal CSS (--film-corsa: 100vh) e la da' in pixel
+    // legge una misura in vh dal CSS (--film-corsa: 100vh) e la da' in pixel. Con la
+    // stessa unita' del CSS (vh), non con innerHeight: sul telefono la barra degli
+    // indirizzi cambia innerHeight mentre si scorre e corsa e distanziatori non
+    // combacerebbero piu'.
     function vhDa(nome) {
       var v = parseFloat(window.getComputedStyle(scheda).getPropertyValue(nome));
-      return (isNaN(v) ? 0 : v) / 100 * window.innerHeight;
+      return (isNaN(v) ? 0 : v) * vhPx();
     }
 
     // Da 0 a 1. Da 981px la scheda e' incollata: conta quanto ha corso da quando
@@ -6657,11 +6687,6 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     // scheda scorre normale e conta la sua posizione: parte quando entra dal basso,
     // arriva quando e' a un decimo dallo schermo.
     function progresso() {
-      var vh = window.innerHeight;
-      if (stretto.matches) {
-        var da = 0.78 * vh, a = 0.10 * vh;
-        return limita((da - scheda.getBoundingClientRect().top) / (da - a));
-      }
       var corsa = vhDa('--film-corsa');
       if (corsa <= 0) return 0;
       var tetto = parseFloat(window.getComputedStyle(scheda).top) || 0;
@@ -6702,27 +6727,30 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     function nome(i) { var n = String(i + 1); while (n.length < 4) n = '0' + n; return PERCORSO + n + ESTENSIONE; }
     function pronta(i) { var im = imm[i]; return !!(im && im.complete && im.naturalWidth > 0); }
 
-    // il fotogramma chiesto, o il piu' vicino gia' caricato: meglio uno vicino che un buco
-    function piuVicino(i) {
-      for (var d = 0; d < N; d++) {
-        if (i - d >= 0 && pronta(i - d)) return i - d;
-        if (i + d < N && pronta(i + d)) return i + d;
-      }
-      return -1;
+    // I due fotogrammi gia' caricati che stanno attorno alla posizione (uno prima, uno dopo).
+    // A rete lenta mancano dei fotogrammi: invece di tenere fermo uno lontano e farlo
+    // scattare quando arriva quello giusto, si sfuma fra i due piu' vicini che ci sono.
+    function attorno(pos) {
+      var a = Math.floor(pos), lo = -1, hi = -1, d;
+      for (d = a; d >= 0; d--) if (pronta(d)) { lo = d; break; }
+      for (d = a + 1; d < N; d++) if (pronta(d)) { hi = d; break; }
+      return [lo, hi];
     }
     function metti(el, ind) {
       el.src = nome(ind);
       return ind;
     }
     function disegna(pos) {
-      var a = Math.floor(pos), t = pos - a;
-      if (a >= N - 1) { a = N - 1; t = 0; }
-      var chiave = a + ':' + Math.round(t * 50) + ':' + (t > 0.06 ? 1 : 0);
+      if (pos >= N - 1) pos = N - 1;
+      var lh = attorno(pos), ia = lh[0], ib = lh[1], t = 0;
+      if (ia < 0) { ia = ib; ib = -1; }                    // niente prima di noi: solo quello dopo
+      if (ia < 0) return;                                  // niente di caricato
+      if (ib >= 0) {
+        t = (pos - ia) / (ib - ia);                        // con tutti i fotogrammi caricati e' la parte frazionaria
+        if (t <= 0.06) { ib = -1; t = 0; }
+      }
+      var chiave = ia + ':' + ib + ':' + Math.round(t * 50);
       if (chiave === ultimo) return;
-      var ia = piuVicino(a);
-      if (ia < 0) return;
-      var ib = t > 0.06 ? piuVicino(Math.min(N - 1, a + 1)) : -1;
-      if (ib === ia) ib = -1;
       ultimo = chiave;
       // Se uno dei due livelli mostra gia' il fotogramma che serve all'altro posto, si
       // scambiano i ruoli invece di ricaricare tutti e due (avanti e indietro).
@@ -6766,15 +6794,21 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     }
 
     // Caricamento a concorrenza limitata e solo quando la scheda e' vicina: e' sotto
-    // la piega e non deve rubare banda all'hero. Si parte dai fotogrammi piu' vicini
-    // al punto in cui sta il film (all'inizio, il primo): se si arriva a meta' scheda
-    // per un'ancora o un ricaricamento, non si aspetta che passino tutti quelli prima.
+    // la piega e non deve rubare banda all'hero. Prima un fotogramma ogni dieci, poi ogni
+    // cinque, ogni due, poi tutti: su una rete lenta, anche se si scorre di corsa, c'e'
+    // sempre un fotogramma non lontano da quello giusto. Dentro ogni giro si parte dai
+    // piu' vicini al punto in cui sta il film (all'inizio, il primo), cosi' se si arriva a
+    // meta' scheda per un'ancora o un ricaricamento non si aspetta che passino gli altri.
     // Gli oggetti Image restano in mano a questa funzione: tengono i fotogrammi nella
     // cache del browser, cosi' cambiare src sui due livelli e' quasi istantaneo.
+    var GIRI = [10, 5, 2, 1];
     function scegli() {
-      for (var d = 0; d < N; d++) {
-        if (testa + d < N && !richiesti[testa + d]) return testa + d;
-        if (testa - d >= 0 && !richiesti[testa - d]) return testa - d;
+      for (var g = 0; g < GIRI.length; g++) {
+        for (var d = 0; d < N; d++) {
+          var su = testa + d, giu = testa - d;
+          if (su < N && su % GIRI[g] === 0 && !richiesti[su]) return su;
+          if (giu >= 0 && giu % GIRI[g] === 0 && !richiesti[giu]) return giu;
+        }
       }
       return -1;
     }
@@ -6801,9 +6835,8 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     function tick() {
       rAF = 0;
       var vh = window.innerHeight;
-      var vicino = stretto.matches;
-      var r = { top: (vicino ? scheda : ancora).getBoundingClientRect()[vicino ? 'top' : 'bottom'] };
-      var oltre = (vicino ? scheda.offsetHeight : vhDa('--film-corsa') + vhDa('--film-sosta')) + vh;
+      var r = { top: ancora.getBoundingClientRect().bottom };
+      var oltre = vhDa('--film-corsa') + vhDa('--film-sosta') + vh;
       if (r.top > vh * 2.4 || r.top < -oltre) return;                // lontana, davanti o dietro: niente da fare
       if (!partito && document.readyState === 'complete') { partito = true; pompa(); }
       var p = progresso();
@@ -6826,6 +6859,33 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
     window.__pbFilm[scheda.id || 'film'] = { N: N, caricati: function () { return caricati; }, p: function () { return pc; },
       stato: function () { return { pc: +pc.toFixed(3), testa: testa, indA: indA, indB: indB, ultimo: ultimo }; } };
   });
+
+  // Sul telefono la scheda incollata deve stare nello schermo: sotto l'intestazione, con
+  // immagine e testo insieme. Il testo piu' lungo (le due fasi stanno nella stessa cella) fissa
+  // quanto resta all'immagine; l'altezza e' la stessa per tutte, cosi' le schede si coprono
+  // del tutto. Si rimisura al cambio di dimensione e quando i caratteri sono arrivati.
+  function adatta() {
+    var pila = schede[0].parentNode;
+    if (!stretto.matches) { pila.style.removeProperty('--film-h'); pila.style.removeProperty('--film-img'); return; }
+    var vh = sondaSvh.offsetHeight || window.innerHeight;
+    var libero = vh - 84 - 14;                        // sotto l'intestazione fissa e un respiro in fondo
+    var testoMax = 0;
+    Array.prototype.forEach.call(schede, function (c) {
+      var t = c.querySelector('.pb-film-testi');
+      if (t) testoMax = Math.max(testoMax, t.offsetHeight);
+    });
+    var larg = schede[0].clientWidth - 36;           // meno il padding laterale
+    var img = Math.max(140, Math.min(libero - 52 - testoMax, larg, 480));
+    var h = Math.min(libero, Math.ceil(52 + img + testoMax));
+    pila.style.setProperty('--film-img', Math.floor(img) + 'px');
+    pila.style.setProperty('--film-h', h + 'px');
+  }
+  adatta();
+  window.addEventListener('resize', adatta, { passive: true });
+  window.addEventListener('orientationchange', adatta);
+  window.addEventListener('load', adatta);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(adatta);
+  window.__pbAdatta = adatta;
 })();
 
 // ===== Settori: i box si scoprono a tendina quando la griglia entra in pagina
