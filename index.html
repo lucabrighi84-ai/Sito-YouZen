@@ -5015,6 +5015,91 @@ html.yz-cookie-open .call-bar { display: none; }
 .pb-indice-voce.attiva{ width:22px; background:var(--accent); }
 @media (max-width:980px){ .pb-indice{ display:none; } }
 
+/* === Schede film: problema e soluzione sono la stessa scheda ====================
+   L'immagine passa da problema a soluzione mentre si scorre (un film su canvas) e il
+   testo cambia con lei. Da 981px in su la scheda resta incollata per tutta la corsa del
+   film (--film-corsa) piu' una sosta sulla soluzione (--film-sosta), poi la scheda dopo
+   le scivola sopra come in tutta la pila. Sotto i 980px la pila e' smontata e non si
+   incolla niente: il film corre con la posizione della scheda.
+   La corsa non e' un margine della scheda ma un distanziatore, la sentinella messa subito
+   prima di ogni scheda tranne la prima: una scheda incollata resta ferma finche' nel
+   contenitore c'e' spazio dopo di lei, e il suo margine conta come ingombro. Con i margini
+   ogni scheda si staccava appena arrivava l'ultima e le linguette della pila sparivano;
+   con i distanziatori restano tutte incollate fino alla fine. Un ultimo distanziatore, in
+   fondo alla pila, da' una sosta al pannello (l'ultima scheda) prima che la pila scorra via.
+   Le due fasi del testo stanno una sopra l'altra nella stessa cella, cosi' l'altezza non
+   cambia al passaggio. Senza il JS (o prima che parta) restano una sotto l'altra e si
+   leggono tutte e due: la classe .pb-film-attiva la mette il JS, e solo allora i
+   distanziatori prendono altezza. */
+.pb-fasce{ --film-corsa:100vh; --film-sosta:40vh; }
+.pb-film-ancora{ display:block; height:0; }
+@media (min-width:981px){
+  .pb-fasce.pb-film-attiva > .pb-film-ancora{ height:calc(var(--film-corsa) + var(--film-sosta)); }
+  .pb-fasce.pb-film-attiva > .pb-film-ancora:first-child{ height:0; }
+  .pb-fasce.pb-film-attiva::after{ content:''; display:block; flex:none; height:var(--film-sosta); }
+}
+.pb-fascia--film, .pb-pannello{ margin-bottom:0; }
+/* Il numero di fondo e' tagliato dal bordo in basso (bottom:-14%), e va bene per le
+   cifre, ma del "!" resterebbe solo l'asta e senza il punto non si legge. */
+.pb-pannello .pb-num{ bottom:4%; }
+.pb-fase + .pb-fase{ margin-top:26px; padding-top:26px; border-top:1px solid rgba(217,138,78,.22); }
+.pb-film-on .pb-film-testi{ display:grid; }
+.pb-film-on .pb-fase{ grid-area:1/1; align-self:center; margin:0; padding:0; border:0;
+  will-change:opacity,transform; }
+.pb-film-on .pb-fase--soluzione{ opacity:0; }
+.pb-film-on .pb-film-dato{ opacity:0; }
+/* i box entrano animati e il fondo e' gia' al 92%: il blur dietro non si vede e a ogni fotogramma si ricalcola */
+.pb-film-on .pb-box{ -webkit-backdrop-filter:none; backdrop-filter:none; }
+/* i due livelli del flipbook (creati dal JS): sopra la foto di partenza, fermi, con l'opacita' scritta dal JS.
+   Il selettore e' lungo perche' .pb-foto img e il suo :hover forzano opacity, transition e transform. */
+.pb-fascia .pb-foto img.pb-frame{ position:absolute; inset:0; width:100%; height:100%; display:block;
+  object-fit:cover; pointer-events:none; transform:none; filter:none; }
+/* la seconda foto serve solo a chi ha chiesto meno animazioni: la sceglie lo stato, non il film.
+   Selettori lunghi di proposito: .pb-foto img e il suo :hover forzano opacity:1 e vincerebbero. */
+.pb-fascia.pb-fascia--film .pb-foto img.pb-foto-fine{ position:absolute; inset:0; opacity:0;
+  transition:opacity .35s ease; }
+.pb-fascia.pb-film-fermo.pb-film-sol .pb-foto img.pb-foto-fine{ opacity:1; }
+/* meno animazioni: niente film, solo il passaggio fra due stati. La corsa si accorcia
+   perche' non c'e' niente da guardare mentre scorre. */
+.pb-film-fermo{ --film-corsa:40vh; --film-sosta:20vh; }
+.pb-film-fermo .pb-fase{ transition:opacity .35s ease; }
+.pb-film-fermo.pb-film-sol .pb-fase--problema{ opacity:0; }
+.pb-film-fermo.pb-film-sol .pb-fase--soluzione{ opacity:1; }
+.pb-film-fermo .pb-film-dato{ transition:opacity .35s ease; }
+.pb-film-fermo.pb-film-sol .pb-film-dato{ opacity:1; }
+/* senza JS la scheda non si incolla e non ha un'altezza fissa: le due fasi si leggono una sotto l'altra */
+.pb-fascia--film:not(.pb-film-on){ position:static; height:auto; margin-bottom:26px; }
+.pb-fascia--film:not(.pb-film-on) .pb-media{ min-height:360px; }
+@media (max-width:980px){
+  .pb-film-ancora{ display:none; }
+  .pb-fascia--film{ --film-corsa:0vh; --film-sosta:0vh; }
+  /* sul telefono l'immagine che si anima sta sopra, il testo cambia sotto di lei */
+  .pb-fascia--film .pb-media{ order:-1; width:100%; max-width:360px; margin:0 auto; }
+  .pb-fascia--film .pb-foto{ aspect-ratio:1/1; }
+  .pb-fascia--film:not(.pb-film-on) .pb-media{ min-height:0; }
+  /* i box della soluzione, piu' compatti: la scheda deve stare quasi tutta in uno schermo */
+  .pb-fascia--film .pb-dentro{ gap:20px; padding:20px 20px 24px; }
+  .pb-fascia--film .pb-box-grid{ gap:10px; margin-top:16px; }
+  .pb-fascia--film .pb-box{ padding:14px; border-radius:14px; }
+  .pb-fascia--film .pb-box b{ font-size:24px; margin-bottom:4px; white-space:nowrap; }
+  .pb-fascia--film .pb-box span{ font-size:9px; }
+}
+/* La scheda ha altezza fissa (al massimo 640px) e la soluzione di WhatsApp, con tre
+   righe di box, toccava il fondo anche sugli schermi grandi e usciva fino a 150px su
+   quelli bassi. Il box "+ tanto altro" smette di essere a tutta larghezza: i quattro
+   box stanno in due righe, e "Prenotazioni" non resta piu' solo con una cella vuota. */
+.pb-fascia--film .pb-box--altro{ grid-column:auto; text-align:left; }
+/* Schermi bassi (portatili): in piu' si stringono i margini. Misurato a 1280x720,
+   1366x768 e 1536x864. */
+@media (min-width:981px) and (max-height:900px){
+  .pb-fascia--film .pb-testo{ padding:28px clamp(28px,3.2vw,44px); }
+  .pb-fascia--film h3{ font-size:clamp(24px,2.5vw,32px); margin-bottom:8px; }
+  .pb-fascia--film .pb-svolta{ margin-top:10px; padding-top:10px; font-size:14.5px; line-height:1.5; }
+  .pb-fascia--film .pb-box-grid{ gap:10px; margin-top:12px; }
+  .pb-fascia--film .pb-box{ padding:12px 16px; border-radius:14px; }
+  .pb-fascia--film .pb-box b{ font-size:24px; margin-bottom:3px; }
+}
+
 /* Il pannello "agenda al pc" della fascia Appuntamenti saltati: uno
    schermo disegnato, come il pannello del box 6, non una foto. */
 .pb-agenda-pc{
@@ -5059,112 +5144,105 @@ html.yz-cookie-open .call-bar { display: none; }
     <span class="pb-indice-voce" data-i="1"></span>
     <span class="pb-indice-voce" data-i="2"></span>
     <span class="pb-indice-voce" data-i="3"></span>
-    <span class="pb-indice-voce" data-i="4"></span>
-    <span class="pb-indice-voce" data-i="5"></span>
-    <span class="pb-indice-voce" data-i="6"></span>
   </nav>
 
   <div class="pb-fasce">
 
-    <article class="pb-fascia" style="--i:0">
-      <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">1</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">Chiamate perse</span>
-          <h3>Il telefono suona sempre <em>nel momento peggiore</em></h3>
-          <p>Stai già lavorando per qualcuno, e quello che hai davanti non lo metti in pausa. <b>Chi non ti ha trovato non richiama per dirtelo.</b></p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/perse.jpg" alt="Un telefono di carta che squilla in mano e comincia a bruciare" loading="lazy" width="720" height="720" /></div>
-        </div>
-      </div>
-    </article>
+    <span class="pb-film-ancora" aria-hidden="true"></span>
 
-    <article class="pb-fascia" style="--i:1">
+    <article class="pb-fascia pb-fascia--film" id="pb-film" style="--i:0" data-film="problemi/film-perse/f_" data-film-n="61" data-film-t="0.30,0.56,0.66">
       <div class="pb-dentro">
         <span class="pb-num" aria-hidden="true">1</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">La soluzione</span>
-          <h3>Risponde lei, <em>prima che tu te ne accorga</em></h3>
-          <div class="pb-box-grid">
-            <div class="pb-box"><b>2 squilli</b><span>tempo di risposta</span></div>
-            <div class="pb-box"><b>+100%</b><span>esperienza del cliente</span></div>
-            <div class="pb-box"><b>98%</b><span>chiamate gestite</span></div>
-            <div class="pb-box"><b>+30</b><span>in simultanea</span></div>
+        <div class="pb-testo pb-film-testi">
+          <div class="pb-fase pb-fase--problema">
+            <span class="pb-occhio">Chiamate perse</span>
+            <h3>Il telefono suona sempre <em>nel momento peggiore</em></h3>
+            <p>Stai già lavorando per qualcuno, e quello che hai davanti non lo metti in pausa. <b>Chi non ti ha trovato non richiama per dirtelo.</b></p>
+          </div>
+          <div class="pb-fase pb-fase--soluzione">
+            <span class="pb-occhio">La soluzione</span>
+            <h3>Risponde lei, <em>prima che tu te ne accorga</em></h3>
+            <div class="pb-box-grid">
+              <div class="pb-box"><b>2 squilli</b><span>tempo di risposta</span></div>
+              <div class="pb-box"><b>+100%</b><span>esperienza del cliente</span></div>
+              <div class="pb-box"><b>98%</b><span>chiamate gestite</span></div>
+              <div class="pb-box"><b>+30</b><span>in simultanea</span></div>
+            </div>
           </div>
         </div>
         <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/perse-soluzione.jpg" alt="Lo stesso telefono di carta, intatto, che risponde con una luce calda" loading="lazy" width="720" height="720" /></div>
+          <div class="pb-foto">
+            <img src="problemi/perse.jpg" alt="Un telefono di carta che squilla in mano e comincia a bruciare, poi si ripara e risponde con una luce calda" loading="lazy" width="720" height="720" />
+            <img class="pb-foto-fine" data-src="problemi/perse-soluzione.jpg" alt="" width="720" height="720" />
+          </div>
         </div>
       </div>
     </article>
 
-    <article class="pb-fascia" style="--i:2">
+    <span class="pb-film-ancora" aria-hidden="true"></span>
+
+    <article class="pb-fascia pb-fascia--film" id="pb-film-247" style="--i:1" data-film="problemi/film-247/f_" data-film-n="61" data-film-t="0.40,0.70,0.80">
       <div class="pb-dentro">
         <span class="pb-num" aria-hidden="true">2</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">Fuori orario</span>
-          <h3>Ti cercano quando <em>sono liberi loro</em></h3>
-          <p>Alle otto di sera, il primo momento in cui hanno le mani libere. <b>Tu a quell'ora hai chiuso</b>, e sotto il tuo numero ce ne sono altri quattro.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/247.jpg" alt="Il telefono squilla in rosso sulla scrivania, di notte" loading="lazy" width="720" height="720" /></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-fascia" style="--i:3">
-      <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">2</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">La soluzione</span>
-          <h3>Per chi ti cerca, <em>sei sempre aperto</em></h3>
-          <p class="pb-svolta">YouZen risponde <b>24 ore su 24, 7 giorni su 7</b>. Alle nove di sera, la domenica e a Ferragosto chi ti cerca trova aperto e fissa l'appuntamento.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/247-soluzione-giorno-notte.jpg" alt="La stessa scrivania divisa a metà: da un lato è notte, dall'altro pieno giorno, il telefono risponde in entrambe" loading="lazy" width="720" height="720" /></div>
-        </div>
-        <div class="pb-dato pb-dato--sinistra"><b>24/7</b><span>festivi compresi</span></div>
-      </div>
-    </article>
-
-    <article class="pb-fascia" style="--i:4">
-      <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">3</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">Messaggistica WhatsApp e Social</span>
-          <h3>Un messaggio non ti obbliga <em>a rispondere subito</em></h3>
-          <p>Che sia WhatsApp o i DM di Instagram e Facebook, loro sanno che l'hai letto. <b>Per rispondere sul serio ti serve mezz'ora</b>, e intanto l'hanno chiesto anche a qualcun altro.</p>
-        </div>
-        <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/wa.jpg" alt="Notifiche di messaggi che escono fuori dallo schermo del telefono" loading="lazy" width="720" height="720" /></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pb-fascia" style="--i:5">
-      <div class="pb-dentro">
-        <span class="pb-num" aria-hidden="true">3</span>
-        <div class="pb-testo">
-          <span class="pb-occhio">La soluzione</span>
-          <h3>Stesso numero, <em>quattro secondi</em></h3>
-          <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione. Risponde anche se ti chiamano su WhatsApp, e nei DM di Instagram e Facebook è la stessa storia.</p>
-          <div class="pb-box-grid">
-            <div class="pb-box"><b>4s</b><span>tempo di risposta</span></div>
-            <div class="pb-box"><b>IG+FB</b><span>pagine collegate</span></div>
-            <div class="pb-box"><b>Prenotazioni</b><span>fissate dentro la chat</span></div>
-            <div class="pb-box pb-box--altro"><b>+ tanto altro</b><span>domande, orari, indirizzo</span></div>
+        <div class="pb-testo pb-film-testi">
+          <div class="pb-fase pb-fase--problema">
+            <span class="pb-occhio">Fuori orario</span>
+            <h3>Ti cercano quando <em>sono liberi loro</em></h3>
+            <p>Alle otto di sera, il primo momento in cui hanno le mani libere. <b>Tu a quell'ora hai chiuso</b>, e sotto il tuo numero ce ne sono altri quattro.</p>
+          </div>
+          <div class="pb-fase pb-fase--soluzione">
+            <span class="pb-occhio">La soluzione</span>
+            <h3>Per chi ti cerca, <em>sei sempre aperto</em></h3>
+            <p class="pb-svolta">YouZen risponde <b>24 ore su 24, 7 giorni su 7</b>. Alle nove di sera, la domenica e a Ferragosto chi ti cerca trova aperto e fissa l'appuntamento.</p>
           </div>
         </div>
         <div class="pb-media">
-          <div class="pb-foto"><img src="problemi/wa-soluzione.jpg" alt="Lo stesso telefono, con un unico segno di spunta calmo sullo schermo" loading="lazy" width="720" height="720" /></div>
+          <div class="pb-foto">
+            <img src="problemi/247.jpg" alt="Di notte il telefono squilla in rosso su una scrivania piena di carte; poi arriva la luce del giorno, la scrivania è in ordine e il telefono ha risposto" loading="lazy" width="720" height="720" />
+            <img class="pb-foto-fine" data-src="problemi/247-giorno.jpg" alt="" width="720" height="720" />
+          </div>
+        </div>
+        <div class="pb-dato pb-dato--sinistra pb-film-dato"><b>24/7</b><span>festivi compresi</span></div>
+      </div>
+    </article>
+
+    <span class="pb-film-ancora" aria-hidden="true"></span>
+
+    <article class="pb-fascia pb-fascia--film" id="pb-film-wa" style="--i:2" data-film="problemi/film-wa/f_" data-film-n="61" data-film-t="0.26,0.56,0.68">
+      <div class="pb-dentro">
+        <span class="pb-num" aria-hidden="true">3</span>
+        <div class="pb-testo pb-film-testi">
+          <div class="pb-fase pb-fase--problema">
+            <span class="pb-occhio">Messaggistica WhatsApp e Social</span>
+            <h3>Un messaggio non ti obbliga <em>a rispondere subito</em></h3>
+            <p>Che sia WhatsApp o i DM di Instagram e Facebook, loro sanno che l'hai letto. <b>Per rispondere sul serio ti serve mezz'ora</b>, e intanto l'hanno chiesto anche a qualcun altro.</p>
+          </div>
+          <div class="pb-fase pb-fase--soluzione">
+            <span class="pb-occhio">La soluzione</span>
+            <h3>Stesso numero, <em>quattro secondi</em></h3>
+            <p class="pb-svolta">Il numero resta il tuo. <b>Risponde in quattro secondi</b> e fissa l'appuntamento dentro la conversazione. Risponde anche se ti chiamano su WhatsApp, e nei DM di Instagram e Facebook è la stessa storia.</p>
+            <div class="pb-box-grid">
+              <div class="pb-box"><b>4s</b><span>tempo di risposta</span></div>
+              <div class="pb-box"><b>IG+FB</b><span>pagine collegate</span></div>
+              <div class="pb-box"><b>Prenotazioni</b><span>fissate dentro la chat</span></div>
+              <div class="pb-box pb-box--altro"><b>+ tanto altro</b><span>domande, orari, indirizzo</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-media">
+          <div class="pb-foto">
+            <img src="problemi/wa.jpg" alt="Notifiche di messaggi che escono fuori dallo schermo del telefono; poi tornano dentro e resta un unico segno di spunta calmo" loading="lazy" width="720" height="720" />
+            <img class="pb-foto-fine" data-src="problemi/wa-soluzione.jpg" alt="" width="720" height="720" />
+          </div>
         </div>
       </div>
     </article>
 
-    <article class="pb-pannello" style="--i:6">
+    <span class="pb-film-ancora" aria-hidden="true"></span>
+
+    <article class="pb-pannello" style="--i:3">
       <div class="pb-pn-dentro">
-        <span class="pb-num" aria-hidden="true">4</span>
+        <span class="pb-num" aria-hidden="true">!</span>
         <div class="pb-testo">
           <span class="pb-occhio">Il pannello</span>
           <h3>A fine giornata sai <em>chi ti ha cercato</em></h3>
@@ -6515,6 +6593,231 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
       indice.classList.toggle('visibile', voci2[0].isIntersecting);
     }, { threshold: 0 }).observe(pila);
   }
+})();
+
+// ===== I tre problemi: ogni scheda con classe pb-fascia--film mette insieme il
+// problema e la sua soluzione, e l'immagine (o la scrivania) cambia mentre si
+// scorre. La clip e' ridotta a 61 fotogrammi (12 al secondo) e il film e' un
+// flipbook: due <img> sovrapposti, uno col fotogramma corrente e uno col
+// successivo con un'opacita' pari alla frazione fra i due, cosi' scorre morbido
+// anche a 12 al secondo. Il testo cambia con la stessa posizione, cosi' parola e
+// immagine non si separano mai. Con "meno animazioni" non c'e' film: si passa da
+// una foto all'altra a meta' corsa.
+//
+// Perche' non un canvas: la prima versione disegnava i fotogrammi su un canvas
+// (con e senza ImageBitmap) e faceva crashare Chrome 154 sul PC di Luca ("Uffa!",
+// STATUS_ACCESS_VIOLATION: lettura di un puntatore nullo nella cache di decodifica
+// delle immagini, chiamata dal thread principale, cioe' dal percorso del canvas),
+// in modo ripetibile in circa quindici secondi di scroll avanti e indietro. Con gli
+// <img> in pagina si usa il percorso normale di ogni sito. Non reintrodurre il canvas.
+//
+// Cosa cambia da una scheda all'altra sta negli attributi della scheda:
+//   data-film    percorso dei fotogrammi, senza numero ne' estensione
+//   data-film-n  quanti sono
+//   data-film-t  tre tempi del testo, da 0 a 1 lungo la corsa: quando il problema
+//                comincia a uscire, quando entra la soluzione, quando entrano i box
+// e dalla sentinella pb-film-ancora messa subito prima della scheda.
+(function () {
+  var schede = document.querySelectorAll('.pb-fascia--film');
+  if (!schede.length) return;
+  var stretto = window.matchMedia('(max-width:980px)');
+  var FERMO = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.__pbFilm = window.__pbFilm || {};
+
+  function limita(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function liscia(x) { x = limita(x); return x * x * (3 - 2 * x); }
+
+  Array.prototype.forEach.call(schede, function (scheda) {
+    var ancora = scheda.previousElementSibling;
+    if (!ancora || !ancora.classList.contains('pb-film-ancora')) return;
+    var foto = scheda.querySelector('.pb-foto');
+    var fine = scheda.querySelector('.pb-foto-fine');
+    var faseP = scheda.querySelector('.pb-fase--problema');
+    var faseS = scheda.querySelector('.pb-fase--soluzione');
+    var dato = scheda.querySelector('.pb-film-dato');
+    var box = Array.prototype.slice.call(scheda.querySelectorAll('.pb-fase--soluzione .pb-box'));
+    if (!foto || !faseP || !faseS) return;
+
+    var PERCORSO = scheda.getAttribute('data-film') || '';
+    var N = parseInt(scheda.getAttribute('data-film-n'), 10) || 61;
+    var ESTENSIONE = '.webp';
+    var T = (scheda.getAttribute('data-film-t') || '0.30,0.56,0.66').split(',').map(parseFloat);
+    scheda.classList.add('pb-film-on');
+    scheda.parentNode.classList.add('pb-film-attiva');
+
+    // legge una misura in vh dal CSS (--film-corsa: 100vh) e la da' in pixel
+    function vhDa(nome) {
+      var v = parseFloat(window.getComputedStyle(scheda).getPropertyValue(nome));
+      return (isNaN(v) ? 0 : v) / 100 * window.innerHeight;
+    }
+
+    // Da 0 a 1. Da 981px la scheda e' incollata: conta quanto ha corso da quando
+    // si e' incollata, e la sentinella (un distanziatore, subito prima) e' l'unico
+    // punto che non si muove con lei: la scheda comincia dove finisce lei. Sotto, la
+    // scheda scorre normale e conta la sua posizione: parte quando entra dal basso,
+    // arriva quando e' a un decimo dallo schermo.
+    function progresso() {
+      var vh = window.innerHeight;
+      if (stretto.matches) {
+        var da = 0.78 * vh, a = 0.10 * vh;
+        return limita((da - scheda.getBoundingClientRect().top) / (da - a));
+      }
+      var corsa = vhDa('--film-corsa');
+      if (corsa <= 0) return 0;
+      var tetto = parseFloat(window.getComputedStyle(scheda).top) || 0;
+      return limita((tetto - ancora.getBoundingClientRect().bottom) / corsa);
+    }
+
+    if (FERMO) {
+      scheda.classList.add('pb-film-fermo');
+      scheda.parentNode.classList.add('pb-film-fermo');
+      if (fine && fine.getAttribute('data-src')) fine.src = fine.getAttribute('data-src');
+      var fermo = function () { scheda.classList.toggle('pb-film-sol', progresso() >= 0.5); };
+      window.addEventListener('scroll', fermo, { passive: true });
+      window.addEventListener('resize', fermo, { passive: true });
+      fermo();
+      return;
+    }
+
+    // I due livelli del flipbook, sopra la foto di partenza e sotto il testo.
+    function livello() {
+      var im = new Image();
+      im.className = 'pb-frame';
+      im.alt = '';
+      im.setAttribute('aria-hidden', 'true');
+      im.decoding = 'async';
+      im.style.opacity = '0';
+      im.style.transition = 'none';
+      foto.appendChild(im);
+      return im;
+    }
+    var elA = livello(), elB = livello();
+    var indA = -1, indB = -1;                    // quale fotogramma mostra ciascuno
+    var imm = new Array(N), richiesti = new Array(N);
+    var caricati = 0, testa = 0, inVolo = 0, partito = false, mostrato = false;
+    var MAX_VOLO = 6;
+    var ultimo = '';
+    var pc = 0, rAF = 0;     // pc: posizione del film, smorzata, da 0 a 1
+
+    function nome(i) { var n = String(i + 1); while (n.length < 4) n = '0' + n; return PERCORSO + n + ESTENSIONE; }
+    function pronta(i) { var im = imm[i]; return !!(im && im.complete && im.naturalWidth > 0); }
+
+    // il fotogramma chiesto, o il piu' vicino gia' caricato: meglio uno vicino che un buco
+    function piuVicino(i) {
+      for (var d = 0; d < N; d++) {
+        if (i - d >= 0 && pronta(i - d)) return i - d;
+        if (i + d < N && pronta(i + d)) return i + d;
+      }
+      return -1;
+    }
+    function metti(el, ind) {
+      el.src = nome(ind);
+      return ind;
+    }
+    function disegna(pos) {
+      var a = Math.floor(pos), t = pos - a;
+      if (a >= N - 1) { a = N - 1; t = 0; }
+      var chiave = a + ':' + Math.round(t * 16);
+      if (chiave === ultimo) return;
+      var ia = piuVicino(a);
+      if (ia < 0) return;
+      var ib = t > 0.06 ? piuVicino(Math.min(N - 1, a + 1)) : -1;
+      if (ib === ia) ib = -1;
+      ultimo = chiave;
+      // se il fotogramma che serve adesso a sotto e' quello che stava sopra, si scambiano i ruoli
+      if (indB === ia && indA !== ia) { var x = elA; elA = elB; elB = x; var y = indA; indA = indB; indB = y; }
+      if (indA !== ia) indA = metti(elA, ia);
+      if (ib >= 0) { if (indB !== ib) indB = metti(elB, ib); }
+      elA.style.zIndex = '1'; elB.style.zIndex = '2';
+      elB.style.opacity = ib >= 0 ? t.toFixed(3) : '0';
+      if (!mostrato) {
+        mostrato = true;
+        elA.style.transition = 'opacity .4s ease';      // la prima volta entra sfumando sulla foto di partenza
+        elA.style.opacity = '1';
+        window.setTimeout(function () { elA.style.transition = 'none'; }, 500);
+        scheda.classList.add('pb-film-pronto');
+      }
+    }
+
+    // Il testo segue la stessa posizione del film. Il problema se ne va prima che
+    // arrivi la soluzione, cosi' non si sovrappongono mai, e in mezzo resta solo
+    // l'immagine che cambia. I box della soluzione entrano uno dopo l'altro.
+    function testo(p) {
+      var a = 1 - liscia((p - T[0]) / 0.12);
+      var b = liscia((p - T[1]) / 0.12);
+      faseP.style.opacity = a.toFixed(3);
+      faseP.style.transform = 'translateY(' + (-(1 - a) * 14).toFixed(1) + 'px)';
+      faseS.style.opacity = b.toFixed(3);
+      faseS.style.transform = 'translateY(' + ((1 - b) * 14).toFixed(1) + 'px)';
+      if (dato) dato.style.opacity = liscia((p - T[2]) / 0.10).toFixed(3);
+      for (var i = 0; i < box.length; i++) {
+        var k = liscia((p - (T[2] + i * 0.055)) / 0.08);
+        box[i].style.opacity = k.toFixed(3);
+        box[i].style.transform = 'translateY(' + ((1 - k) * 12).toFixed(1) + 'px)';
+      }
+    }
+
+    // Caricamento a concorrenza limitata e solo quando la scheda e' vicina: e' sotto
+    // la piega e non deve rubare banda all'hero. Si parte dai fotogrammi piu' vicini
+    // al punto in cui sta il film (all'inizio, il primo): se si arriva a meta' scheda
+    // per un'ancora o un ricaricamento, non si aspetta che passino tutti quelli prima.
+    // Gli oggetti Image restano in mano a questa funzione: tengono i fotogrammi nella
+    // cache del browser, cosi' cambiare src sui due livelli e' quasi istantaneo.
+    function scegli() {
+      for (var d = 0; d < N; d++) {
+        if (testa + d < N && !richiesti[testa + d]) return testa + d;
+        if (testa - d >= 0 && !richiesti[testa - d]) return testa - d;
+      }
+      return -1;
+    }
+    function pompa() {
+      var i;
+      while (inVolo < MAX_VOLO && (i = scegli()) >= 0) {
+        richiesti[i] = true;
+        inVolo++;
+        (function (i) {
+          var im = new Image();
+          im.onload = im.onerror = function () {
+            im.onload = im.onerror = null;
+            inVolo--; caricati++;
+            ultimo = '';
+            chiedi();
+            pompa();
+          };
+          im.src = nome(i);
+          imm[i] = im;
+        })(i);
+      }
+    }
+
+    function tick() {
+      rAF = 0;
+      var vh = window.innerHeight;
+      var vicino = stretto.matches;
+      var r = { top: (vicino ? scheda : ancora).getBoundingClientRect()[vicino ? 'top' : 'bottom'] };
+      var oltre = (vicino ? scheda.offsetHeight : vhDa('--film-corsa') + vhDa('--film-sosta')) + vh;
+      if (r.top > vh * 2.4 || r.top < -oltre) return;                // lontana, davanti o dietro: niente da fare
+      if (!partito && document.readyState === 'complete') { partito = true; pompa(); }
+      var p = progresso();
+      pc += (p - pc) * 0.2;
+      if (Math.abs(p - pc) < 0.0008) pc = p;
+      testo(pc);
+      var pos = limita((pc - 0.04) / 0.92) * (N - 1);
+      testa = Math.round(pos);
+      disegna(pos);
+      if (pc !== p) chiedi();
+    }
+    function chiedi() { if (!rAF) rAF = window.requestAnimationFrame(tick); }
+
+    window.addEventListener('scroll', chiedi, { passive: true });
+    window.addEventListener('resize', chiedi, { passive: true });
+    window.addEventListener('load', chiedi);
+    pc = progresso();
+    chiedi();
+    // solo per le verifiche da riga di comando
+    window.__pbFilm[scheda.id || 'film'] = { N: N, caricati: function () { return caricati; }, p: function () { return pc; },
+      stato: function () { return { pc: +pc.toFixed(3), testa: testa, indA: indA, indB: indB, ultimo: ultimo }; } };
+  });
 })();
 
 // ===== Settori: i box si scoprono a tendina quando la griglia entra in pagina
