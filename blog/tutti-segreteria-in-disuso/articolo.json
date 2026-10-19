@@ -1,0 +1,34 @@
+{
+  "slug": "tutti-segreteria-in-disuso",
+  "titolo": "Perché pochi lasciano ancora un messaggio in segreteria?",
+  "sommario": "Quasi tutti hanno ancora la segreteria telefonica attivata sul cellulare. Pochi, oggi, si fermano a lasciare un messaggio.",
+  "data": "2026-10-19",
+  "etichetta": "ma-mi-serve",
+  "verdetto": "La segreteria classica non basta più come rete di sicurezza: chi chiama e non trova risposta, oggi, raramente lascia un messaggio vocale. Semplicemente, prova altrove.",
+  "fonti_citate": [
+    "https://www.ilgiornale.it/news/mobile/quei-messaggi-segreteria-che-oggi-lasciano-solo-i-call-2453924.html"
+  ],
+  "rimando": "home",
+  "blocchi": [
+    {
+      "testo": "Il telefono squilla a vuoto, parte l'invito a lasciare un messaggio dopo il segnale acustico. Chi chiamava, nella maggior parte dei casi, ha già riattaccato prima ancora di sentirlo fino in fondo.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Un'abitudine che è cambiata senza avviso",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Lo scriveva Massimiliano Parente sul Giornale a marzo 2025, ed è un'osservazione, non una statistica. La segreteria telefonica non è sparita: è ancora lì, attiva sulla maggior parte dei numeri. È cambiato chi la usa. Chi ha una richiesta vera, oggi, scrive un messaggio su WhatsApp a chi non risponde, invece di lasciare la voce registrata a un numero che magari non richiamerà mai.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Restano a lasciare un messaggio in segreteria soprattutto i call center: gli stessi che tutti gli altri hanno smesso di ascoltare.",
+      "tipo": "evidenza"
+    },
+    {
+      "testo": "Per chi gestisce un'attività, questo cambia una cosa concreta: una segreteria che nessuno ascolta più non è un piano di riserva. È solo un modo elegante per non rispondere.",
+      "tipo": "paragrafo"
+    }
+  ]
+}

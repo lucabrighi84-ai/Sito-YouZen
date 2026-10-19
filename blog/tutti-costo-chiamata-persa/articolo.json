@@ -1,0 +1,34 @@
+{
+  "slug": "tutti-costo-chiamata-persa",
+  "titolo": "Quanto vale una telefonata persa per una piccola attività?",
+  "sommario": "Chi chiama un'attività spesso ha già cercato, confrontato e scelto quel numero. Una chiamata senza risposta è quasi la fine di una vendita, non l'inizio.",
+  "data": "2026-10-19",
+  "etichetta": "ma-mi-serve",
+  "verdetto": "Una chiamata senza risposta non è un dettaglio da poco: chi chiama ha spesso già deciso di provare proprio con te, e a quel punto perdere la chiamata vuol dire perdere un cliente già convinto, non uno da conquistare.",
+  "fonti_citate": [
+    "https://www.trend-online.com/2026/07/27/chiamate-perse-il-costo-invisibile-che-frena-la-crescita-delle-pmi/"
+  ],
+  "rimando": "home",
+  "blocchi": [
+    {
+      "testo": "Il telefono squilla mentre le mani sono altrove: con un cliente, in cucina, al bancone. Squilla a vuoto, poi si ferma. Nessuno saprà mai cosa voleva la persona dall'altra parte.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Non è l'inizio del percorso, è la fine",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Chi arriva a comporre un numero ha spesso già superato diversi passaggi: ha cercato l'attività, ha guardato orari e recensioni, ha deciso di chiamare proprio quella e non un'altra. La telefonata non è il primo passo verso una vendita: è quasi l'ultimo.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Una chiamata persa non è un fastidio isolato. È spesso un cliente che aveva già scelto, e che a quel punto sceglie qualcun altro.",
+      "tipo": "evidenza"
+    },
+    {
+      "testo": "Per una piccola attività senza qualcuno dedicato solo al telefono, ogni chiamata a vuoto pesa più di quanto sembri: non è solo il cliente di oggi, è la sensazione che lascia a chi ha provato e non ha trovato nessuno.",
+      "tipo": "paragrafo"
+    }
+  ]
+}

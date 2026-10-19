@@ -26,6 +26,18 @@ tramite portabilità oppure usare un numero VoIP dedicato.
 - [Studi legali](https://youzen.it/settori/studio-legale.html): filtro chiamate e primo contatto
 - [Privacy](https://youzen.it/privacy/) · [GDPR](https://youzen.it/GDPR/) · [Termini](https://youzen.it/termini/)
 
+<!-- blog:inizio -->
+## Blog
+
+- [Blog](https://youzen.it/blog/): domande e notizie sulla segretaria AI al telefono delle piccole attività
+- [Il negozio senza casse che, in realtà, aveva mille paia di occhi in India](https://youzen.it/blog/att-amazon-just-walk-out-umani/): Just Walk Out di Amazon sembrava pura intelligenza artificiale. Secondo The Information, dietro c'era molto lavoro umano di revisione dei video.
+- [A San Francisco un cartellone promette un chatbot: risponde un uomo, a mano](https://youzen.it/blog/att-sf-finto-chatbot-a-mano/): Un cartellone di San Francisco vende un chatbot AI. Dietro non c'è intelligenza artificiale: solo un uomo che risponde a mano, fino a dieci ore al giorno.
+- [Quanto pesa davvero un no-show sui conti di un ristorante?](https://youzen.it/blog/risto-costo-noshow/): Un tavolo prenotato e mai occupato non è solo una sedia vuota: è cibo comprato, personale organizzato e, a volte, un altro cliente rifiutato per quel posto.
+- [Quanto vale una telefonata persa per una piccola attività?](https://youzen.it/blog/tutti-costo-chiamata-persa/): Chi chiama un'attività spesso ha già cercato, confrontato e scelto quel numero. Una chiamata senza risposta è quasi la fine di una vendita, non l'inizio.
+- [Perché pochi lasciano ancora un messaggio in segreteria?](https://youzen.it/blog/tutti-segreteria-in-disuso/): Quasi tutti hanno ancora la segreteria telefonica attivata sul cellulare. Pochi, oggi, si fermano a lasciare un messaggio.
+- [Chat e social ovunque: perché il primo contatto passa ancora dal telefono?](https://youzen.it/blog/tutti-telefono-canale-preferito/): Le aziende investono su chat e social, ma al primo contatto quasi un cliente su due prende ancora il telefono.
+<!-- blog:fine -->
+
 ## Come funziona l'attivazione
 
 L'avvio dura otto giorni. Si parte con una call in cui si raccontano servizi, orari e
@@ -52,4 +64,4 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 - Ragione sociale: YouZen di Luca Brighi, partita IVA IT04855440402, Via del Pino 13, 47923 Rimini
 - Contatti: +39 0541 172 6297, info@youzen.it
 
-Ultimo aggiornamento: 2026-08-20
+Ultimo aggiornamento: 2026-10-19

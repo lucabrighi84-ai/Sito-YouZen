@@ -1,0 +1,42 @@
+{
+  "slug": "tutti-telefono-canale-preferito",
+  "titolo": "Chat e social ovunque: perché il primo contatto passa ancora dal telefono?",
+  "sommario": "Le aziende investono su chat e social, ma al primo contatto quasi un cliente su due prende ancora il telefono.",
+  "data": "2026-10-19",
+  "etichetta": "ma-mi-serve",
+  "verdetto": "Investire su chat e social non sostituisce il telefono: per chi contatta un'attività la prima volta resta ancora il canale più naturale, e chi non risponde lì perde il primo contatto prima ancora che inizi.",
+  "fonti_citate": [
+    "https://www.cmimagazine.it/30801-primo-contatto-il-telefono-e-il-canale-preferito/"
+  ],
+  "rimando": "home",
+  "blocchi": [
+    {
+      "testo": "Il sito ha la chat. Il profilo Instagram risponde ai messaggi diretti. Eppure, quando deve decidersi, chi cerca un'attività per la prima volta spesso fa ancora una cosa semplice: chiama.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Il canale che non è mai passato di moda",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Secondo il Customer Service Benchmark di Ipsos Doxa, pubblicato da CMI Magazine a maggio 2026, il telefono guida il primo contatto nel 47% dei casi, ben più avanti di IVR e chat, ferme al 13% ciascuna. Tutti gli altri canali restano sotto il 10%.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Non è che i clienti non sappiano scrivere un messaggio. È che per una prima richiesta vogliono sentire subito se dall'altra parte c'è qualcuno, e quanto presto.",
+      "tipo": "evidenza"
+    },
+    {
+      "tipo": "elenco",
+      "voci": [
+        "Il telefono guida il primo contatto nel 47% dei casi.",
+        "IVR e chat valgono il 13% ciascuna.",
+        "Ogni altro canale resta sotto il 10%."
+      ]
+    },
+    {
+      "testo": "Investire su chat e social ha senso per tenere il rapporto con chi è già cliente. Ma per chi chiama la prima volta, la domanda resta la stessa di sempre: risponde qualcuno, o no?",
+      "tipo": "paragrafo"
+    }
+  ]
+}

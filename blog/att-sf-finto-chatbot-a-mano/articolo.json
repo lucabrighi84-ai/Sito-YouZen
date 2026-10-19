@@ -1,0 +1,44 @@
+{
+  "slug": "att-sf-finto-chatbot-a-mano",
+  "titolo": "A San Francisco un cartellone promette un chatbot: risponde un uomo, a mano",
+  "sommario": "Un cartellone di San Francisco vende un chatbot AI. Dietro non c'è intelligenza artificiale: solo un uomo che risponde a mano, fino a dieci ore al giorno.",
+  "data": "2026-10-19",
+  "etichetta": "attualita",
+  "fonte": {
+    "data": "2026-08-04",
+    "testata": "SF Standard",
+    "titolo": "The billboard promises a new AI chatbot. It's really just one guy typing",
+    "url": "https://sfstandard.com/2026/08/04/sf-ai-hype-fake-chatbot-billboard/"
+  },
+  "rimando": "home",
+  "blocchi": [
+    {
+      "testo": "All'incrocio fra Sixth e Folsom Street, a San Francisco, un cartellone alto quattro piani promette qualcosa che tutti vogliono vedere: un'intelligenza artificiale che risponde a chiunque le scriva. Il nome è ChatTJB, e la scritta dice che è \"la principale interfaccia di chat basata sull'AI\".",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Un uomo solo, fino a dieci ore al giorno",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Dietro il sito non c'è nessun modello: c'è Tucker Bryant, trentaduenne, ex dipendente Google, seduto al computer a rispondere a mano a ogni messaggio che arriva. **AI**, sul cartellone, non sta per intelligenza artificiale: sta per \"Average Individual\", un individuo medio. Le iniziali TJB sono le sue.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Chi scrive a ChatTJB pensa di parlare con una macchina. Sta parlando con Tucker, che, per sua stessa stima, ha risposto a mano a 15.000 messaggi in una settimana.",
+      "tipo": "evidenza"
+    },
+    {
+      "tipo": "elenco",
+      "voci": [
+        "Circa 11.000 persone gli hanno scritto in sette giorni.",
+        "Nel weekend più affollato, 5.000 richieste sono arrivate in una sola ora.",
+        "Il cartellone costa 6.000 dollari al mese: meno di altre forme di pubblicità che Bryant aveva valutato prima."
+      ]
+    },
+    {
+      "testo": "Un video del progetto ha raccolto quasi 50.000 like su Instagram. Il pubblico non applaude una macchina che risponde bene: applaude la scoperta che, dietro al cartellone più hype della città, c'è solo una persona che ha deciso di scrivere davvero a tutti.",
+      "tipo": "paragrafo"
+    }
+  ]
+}

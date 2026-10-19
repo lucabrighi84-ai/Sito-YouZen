@@ -1,0 +1,47 @@
+{
+  "slug": "att-amazon-just-walk-out-umani",
+  "titolo": "Il negozio senza casse che, in realtà, aveva mille paia di occhi in India",
+  "sommario": "Just Walk Out di Amazon sembrava pura intelligenza artificiale. Secondo The Information, dietro c'era molto lavoro umano di revisione dei video.",
+  "data": "2026-10-19",
+  "etichetta": "attualita",
+  "fonte": {
+    "testata": "Gizmodo",
+    "titolo": "Amazon schafft „Just Walk Out“-Kassen in seinen Lebensmittelgeschäften ab",
+    "data": "2024-04-02",
+    "url": "https://de.gizmodo.com/berichten-zufolge-raumt-amazon-just-walk-out-lebensmitt-1851381187"
+  },
+  "fonti_citate": [
+    "https://de.gizmodo.com/berichten-zufolge-raumt-amazon-just-walk-out-lebensmitt-1851381187"
+  ],
+  "rimando": "home",
+  "blocchi": [
+    {
+      "testo": "L'idea era semplice e quasi magica: entri in un negozio, prendi quello che ti serve, esci. Niente casse, niente fila. Telecamere e sensori capivano cosa avevi preso e ti addebitavano l'importo. Amazon lo chiamava Just Walk Out e lo presentava come uno dei suoi fiori all'occhiello tecnologici.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Poi è arrivata l'inchiesta",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Secondo un'inchiesta di The Information, gran parte di quelle transazioni non veniva risolta solo dagli algoritmi. Dietro le quinte c'erano oltre mille persone in India che guardavano i filmati per verificare cosa fosse finito davvero nel carrello e ricostruire lo scontrino. Amazon contesta questa ricostruzione. Ma la storia ha fatto il giro del mondo lo stesso, e si capisce perché.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Un sistema descritto come **automatico** funzionava, almeno in parte, grazie a persone che riguardavano i video degli acquisti.",
+      "tipo": "evidenza"
+    },
+    {
+      "testo": "Al netto dell'ironia, qui c'è una cosa poco divertente per chi gestisce un'attività. Quando qualcuno vende automazione, è legittimo chiedere cosa succede nei casi difficili. Chi interviene se il sistema non capisce. Quanto costa quell'intervento. E soprattutto: quel costo è dentro il prezzo o spunta dopo.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "L'uomo dietro la tenda non è uno scandalo, se te lo dicono",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Molte tecnologie funzionano meglio con una supervisione umana, e non è un difetto. Il punto è la distanza tra quello che viene raccontato in conferenza stampa e quello che accade davvero dietro le quinte. Nel caso di Just Walk Out quella distanza, stando a The Information, era di qualche migliaio di chilometri.",
+      "tipo": "paragrafo"
+    }
+  ]
+}

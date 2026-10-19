@@ -1,0 +1,38 @@
+{
+  "slug": "risto-costo-noshow",
+  "titolo": "Quanto pesa davvero un no-show sui conti di un ristorante?",
+  "sommario": "Un tavolo prenotato e mai occupato non è solo una sedia vuota: è cibo comprato, personale organizzato e, a volte, un altro cliente rifiutato per quel posto.",
+  "data": "2026-10-19",
+  "etichetta": "ma-mi-serve",
+  "verdetto": "Non è colpa della sfortuna: un tavolo tenuto libero per un cliente che non arriva è un costo reale: cibo comprato e personale organizzato per niente, e a volte un cliente vero rimandato altrove, anche se nessuno lo scrive mai su un foglio.",
+  "fonti_citate": [
+    "https://www.italiaatavola.net/horeca/2025/5/22/no-show-al-ristorante-quando-maleducazione-diventa-danno-economico/112457/"
+  ],
+  "rimando": "food",
+  "blocchi": [
+    {
+      "testo": "Sabato sera, il tavolo per quattro alle otto è pronto: tovaglioli piegati, posate a posto, la sedia tirata indietro. Alle otto e un quarto è ancora vuoto. Alle otto e mezza il cameriere smette di guardare la porta.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Il conto che nessuno fa",
+      "tipo": "sottotitolo"
+    },
+    {
+      "testo": "Quel tavolo non è solo una sedia libera. È la spesa fatta per quella sera, calcolata su un certo numero di coperti. È il turno del personale organizzato per servire chi non è arrivato. Ed è, a volte, un cliente vero che ha chiesto lo stesso tavolo e si è sentito rispondere di no.",
+      "tipo": "paragrafo"
+    },
+    {
+      "testo": "Un tavolo tenuto libero per un no-show non sparisce e basta: va a sommarsi alla sera peggiore che il ristorante ricorda, quella con i coperti vuoti e le scorte finite in frigo.",
+      "tipo": "evidenza"
+    },
+    {
+      "tipo": "elenco",
+      "voci": [
+        "Un mancato incasso, prodotti già comprati e deperibili, personale organizzato per un servizio che non arriva mai al completo.",
+        "Chi ha chiesto lo stesso tavolo e non l'ha avuto spesso prenota altrove.",
+        "Non esiste un numero unico valido per tutti i locali: il peso cambia con le dimensioni del ristorante e con quanti tavoli restano vuoti a settimana."
+      ]
+    }
+  ]
+}

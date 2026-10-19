@@ -53,4 +53,36 @@
     <lastmod>2026-08-11</lastmod>
   </url>
 
+  <!-- Blog: il blocco fra i due segnaposti lo scrive il motore del blog, non toccarlo a mano -->
+  <!-- blog:inizio -->
+  <url>
+    <loc>https://youzen.it/blog/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://youzen.it/blog/att-amazon-just-walk-out-umani/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://youzen.it/blog/att-sf-finto-chatbot-a-mano/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://youzen.it/blog/risto-costo-noshow/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://youzen.it/blog/tutti-costo-chiamata-persa/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://youzen.it/blog/tutti-segreteria-in-disuso/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://youzen.it/blog/tutti-telefono-canale-preferito/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+<!-- blog:fine -->
+
 </urlset>
