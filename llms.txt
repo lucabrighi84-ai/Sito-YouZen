@@ -24,6 +24,7 @@ tramite portabilità oppure usare un numero VoIP dedicato.
 - [Professionisti](https://youzen.it/settori/professionisti.html): consulenti, commercialisti, partite IVA
 - [Agenzie immobiliari](https://youzen.it/settori/immobiliare.html): richieste di visita e lead
 - [Studi legali](https://youzen.it/settori/studio-legale.html): filtro chiamate e primo contatto
+- [Segreteria telefonica AI a Rimini e in Romagna](https://youzen.it/segreteria-telefonica-ai-rimini-romagna/): siamo nati a Rimini, il servizio si attiva in tutta Italia
 - [Privacy](https://youzen.it/privacy/) · [GDPR](https://youzen.it/GDPR/) · [Termini](https://youzen.it/termini/)
 
 <!-- blog:inizio -->
