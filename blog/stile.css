@@ -372,3 +372,20 @@ h1 {
 
 .fonti-citate li { padding-left: 0; font-size: inherit; line-height: 1.5; }
 .fonti-citate li::before { content: none; }
+
+/* FOTO DEGLI ARTICOLI: grande nell'articolo, miniatura nell'indice */
+.foto { margin: 30px 0 0; }
+.foto img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.03);
+}
+@media (min-width: 900px) { .foto { margin-left: -84px; margin-right: -84px; } }
+.big.con-foto { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; padding: 22px 22px 30px; }
+.big.con-foto .big-testo { padding: 0 6px; }
+.big-foto { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 16px; order: -1; }
+@media (min-width: 900px) {
+  .big.con-foto { grid-template-columns: 1.15fr 1fr; gap: 36px; padding: 34px 34px 34px 38px; }
+  .big-foto { order: 0; }
+}
+.card.con-foto { padding-top: 0; overflow: hidden; }
+.card-foto { display: block; width: calc(100% + 48px); max-width: none; height: auto; margin: 0 -24px 22px; aspect-ratio: 16 / 9; object-fit: cover; }
