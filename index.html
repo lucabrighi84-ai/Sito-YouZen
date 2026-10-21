@@ -174,8 +174,15 @@
       },
       {
         "@type": "UnitPriceSpecification",
-        "name": "Minuti extra oltre il pacchetto",
+        "name": "Minuti extra per pacchetti con meno di 1.500 minuti/mese",
         "price": "0.35",
+        "priceCurrency": "EUR",
+        "unitCode": "MIN"
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "name": "Minuti extra per pacchetti da 1.500 minuti/mese",
+        "price": "0.28",
         "priceCurrency": "EUR",
         "unitCode": "MIN"
       }
@@ -260,7 +267,7 @@
       "name": "Quanto costa davvero?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un piano solo: €0,30 al minuto sotto 1.500 minuti al mese. Per i pacchetti da 1.500 minuti la tariffa scende a €0,25 su tutti i minuti. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Fuori dal canone restano due voci facoltative: i messaggi diretti di Instagram e Facebook a 10€/mese, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi."
+        "text": "Un piano solo: €0,30 al minuto sotto 1.500 minuti al mese. Per i pacchetti da 1.500 minuti la tariffa scende a €0,25 su tutti i minuti. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min per i pacchetti sotto 1.500 minuti e 0,28€/min per quelli da 1.500 minuti in su. Fuori dal canone restano due voci facoltative: i messaggi diretti di Instagram e Facebook a 10€/mese, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi."
       }
     },
     {
@@ -6011,7 +6018,7 @@ html.yz-cookie-open .call-bar { display: none; }
           </div>
           <p class="yzp-calc">
             <b id="yzpMin">0</b> minuti × <span id="yzpRate">€0,30</span>: <b>paghi le conversazioni, non il software</b><br />
-            <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc">€0,35/min</b>, solo sui minuti in più</span>
+            <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc"><span id="yzpExtraRate">€0,35</span>/min</b>, solo sui minuti in più</span>
             <span class="yzp-addline"><br />più <b data-dmprice>€10</b> al mese per i messaggi diretti di Instagram e Facebook</span>
           </p>
           <div class="yzp-was">con l'annuale: <s id="yzpWas">€0/mese</s> <b id="yzpSave">risparmi €0 l'anno</b></div>
@@ -6249,7 +6256,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="faq-toggle" aria-hidden="true"></span>
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Un piano solo: <b>€0,30 al minuto sotto 1.500 minuti al mese</b>. Per i pacchetti da 1.500 minuti la tariffa scende a <b>€0,25 su tutti i minuti</b>. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 10€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
+          <p class="faq-a">Un piano solo: <b>€0,30 al minuto sotto 1.500 minuti al mese</b>. Per i pacchetti da 1.500 minuti la tariffa scende a <b>€0,25 su tutti i minuti</b>. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione è una tantum: 500€ standard, da 900€ se integriamo il tuo gestionale. I minuti oltre il pacchetto costano 0,35€/min per i pacchetti sotto 1.500 minuti e 0,28€/min per quelli da 1.500 minuti in su. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 10€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
           <span class="faq-punch">Il conto lo vedi prima di partire, non dopo.</span>
         </div></div></div>
       </div>
@@ -6997,6 +7004,8 @@ const minSteps = [0, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10
 const RATE = 0.30;              // €/min sotto 1.500 minuti
 const VOLUME_RATE = 0.25;       // €/min su tutto il pacchetto a partire dalla soglia inclusa
 const VOLUME_THRESHOLD = 1500;
+const EXTRA_RATE = 0.35;        // €/min extra per i pacchetti sotto la soglia
+const VOLUME_EXTRA_RATE = 0.28; // €/min extra per i pacchetti dalla soglia inclusa
 const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
 const LISTINO = { 500: 1000, 900: 1400 };  // prezzo pieno di ogni attivazione scontata
 const DM_MENSILE = 10;          // opzione messaggi diretti Instagram e Facebook, €/mese
@@ -7022,7 +7031,9 @@ function updatePricing() {
   const minutes = minSteps[idx];
   const annuale = mesi === 12;
 
-  const rate = minutes >= VOLUME_THRESHOLD ? VOLUME_RATE : RATE;
+  const volume = minutes >= VOLUME_THRESHOLD;
+  const rate = volume ? VOLUME_RATE : RATE;
+  const extraRate = volume ? VOLUME_EXTRA_RATE : EXTRA_RATE;
   const base = minutes * rate;                              // canone pieno dei minuti
   const canoneMinuti = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
   // L'opzione segue lo stesso sconto annuale del canone: 10 euro diventano 9.
@@ -7037,6 +7048,7 @@ function updatePricing() {
 
   setTxt('yzpMin', grp(minutes));
   setTxt('yzpRate', '€' + rate.toFixed(2).replace('.', ','));
+  setTxt('yzpExtraRate', '€' + extraRate.toFixed(2).replace('.', ','));
   setTxt('yzpMinLab', grp(minutes));
   slider.setAttribute('aria-valuetext', grp(minutes) + ' minuti al mese');
   const customSelected = customMinutes || (minutes > 0 && minutes !== 300 && minutes !== 1000);

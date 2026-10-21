@@ -49,7 +49,7 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 ## Prezzi
 
 - Tariffa: 0,30 euro al minuto sotto 1.500 minuti al mese; da 1.500 minuti, 0,25 euro su tutti i minuti del pacchetto
-- Minuti extra oltre il pacchetto: 0,35 euro al minuto
+- Minuti extra oltre il pacchetto: 0,35 euro al minuto per pacchetti sotto 1.500 minuti; 0,28 euro al minuto per pacchetti da 1.500 minuti in su
 - Pacchetto di riferimento: 750 minuti al mese, 225 euro di canone mensile
 - Canone pagato ogni tre mesi in anticipo, oppure annuale con il 10 per cento di sconto
 - Attivazione una tantum: 500 euro per il setup standard, da 900 euro con integrazione al gestionale
