@@ -146,7 +146,7 @@
   "offers": {
     "@type": "Offer",
     "name": "YouZen",
-    "description": "Piano unico a consumo · €0,30/min sotto 1.500 minuti/mese; €0,25/min da 1.500, su tutto il pacchetto · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500. Messaggi diretti di Instagram e Facebook in opzione a €10/mese.",
+    "description": "Piano unico a consumo · €0,30/min sotto 1.500 minuti/mese; €0,25/min da 1.500, su tutto il pacchetto · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500. Messaggi diretti di Instagram e Facebook in opzione a €5/mese.",
     "priceCurrency": "EUR",
     "price": "225",
     "priceSpecification": [
@@ -191,7 +191,7 @@
   "featureList": [
     "Risposta automatica alle chiamate 24/7",
     "Gestione WhatsApp Business",
-    "Risposta ai messaggi diretti di Instagram e Facebook (opzione a 10€/mese)",
+    "Risposta ai messaggi diretti di Instagram e Facebook (opzione a 5€/mese)",
     "Prenotazione appuntamenti automatica",
     "Pannello di controllo live con metriche",
     "Multilingua (IT, EN, FR, ES, DE, NL)",
@@ -267,7 +267,7 @@
       "name": "Quanto costa davvero?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un piano solo: €0,30 al minuto sotto 1.500 minuti al mese. Per i pacchetti da 1.500 minuti la tariffa scende a €0,25 su tutti i minuti. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale, con il 10% di sconto). L'attivazione costa 500€, una tantum. I minuti oltre il pacchetto costano 0,35€/min per i pacchetti sotto 1.500 minuti e 0,28€/min per quelli da 1.500 minuti in su. Fuori dal canone restano due voci facoltative: i messaggi diretti di Instagram e Facebook a 10€/mese, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi."
+        "text": "Un piano solo: €0,30 al minuto sotto 1.500 minuti al mese. Per i pacchetti da 1.500 minuti la tariffa scende a €0,25 su tutti i minuti. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale, con il 10% di sconto). L'attivazione costa 500€, una tantum. I minuti oltre il pacchetto costano 0,35€/min per i pacchetti sotto 1.500 minuti e 0,28€/min per quelli da 1.500 minuti in su. Fuori dal canone restano due voci facoltative: i messaggi diretti di Instagram e Facebook a 5€/mese, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi."
       }
     },
     {
@@ -4290,21 +4290,6 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
   font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 99px;
 }
 
-/* nota fatturazione */
-.yzp-bill {
-  display: flex; align-items: flex-start; gap: 9px;
-  margin-top: 12px; padding: 12px 14px; border-radius: 10px;
-  border: 1px dashed rgba(217,138,78,0.38); background: rgba(217,138,78,0.06);
-  font-size: 0.79rem; color: var(--muted-strong); line-height: 1.5;
-}
-.yzp-bill b { color: var(--accent); }
-.yzp-bill svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
-
-.yzp-then { text-align: right; font-size: 0.76rem; color: var(--muted); margin-top: 14px; }
-.yzp-then b { color: #fff; }
-.yzp-bill .yzp-then { margin-top: 4px; }
-.yzp-bill-text { flex: 1; min-width: 0; }
-
 /* ====================================================================
    OPZIONE MESSAGGI DIRETTI (Instagram e Facebook)
    Interruttore in linea, sotto il conto della voce: il canone dei minuti
@@ -6014,7 +5999,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <p class="yzp-calc">
             <b id="yzpMin">0</b> minuti × <span id="yzpRate">€0,30</span>: <b>paghi le conversazioni, non il software</b><br />
             <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc"><span id="yzpExtraRate">€0,35</span>/min</b>, solo sui minuti in più</span>
-            <span class="yzp-addline"><br />più <b data-dmprice>€10</b> al mese per i messaggi diretti di Instagram e Facebook</span>
+            <span class="yzp-addline"><br />più <b data-dmprice>€5</b> al mese per i messaggi diretti di Instagram e Facebook</span>
           </p>
           <div class="yzp-was">con l'annuale: <s id="yzpWas">€0/mese</s> <b id="yzpSave">risparmi €0 l'anno</b></div>
         </div>
@@ -6073,15 +6058,6 @@ html.yz-cookie-open .call-bar { display: none; }
         </div>
       </div>
 
-      <!-- ===== Nota fatturazione: subito dopo il setup ===== -->
-      <div class="yzp-bill">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <div class="yzp-bill-text">
-          <p>Il canone si paga <b><span id="yzpCadLabel">ogni 3 mesi</span>, in anticipo</b>. L'attivazione la paghi <b>una volta sola, oggi</b>.</p>
-          <p class="yzp-then">Canone <b id="yzpThen">€675</b> <span id="yzpCadLabel2">ogni 3 mesi</span></p>
-        </div>
-      </div>
-
       <!-- ===== Opzione: messaggi diretti Instagram e Facebook ===== -->
       <button type="button" class="yzp-dm" id="yzpDm" aria-pressed="false">
         <span class="yzp-dm-badge">Novità</span>
@@ -6093,7 +6069,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="yzp-dm-n">Messaggi diretti di Instagram e Facebook</span>
           <span class="yzp-dm-d">Rispondiamo ai DM e prendiamo l'appuntamento dentro la conversazione.</span>
         </span>
-        <span class="yzp-dm-p">+<span data-dmprice>€10</span><small>al mese</small></span>
+        <span class="yzp-dm-p">+<span data-dmprice>€5</span><small>al mese</small></span>
         <span class="dm-sw" aria-hidden="true"></span>
       </button>
 
@@ -6244,7 +6220,7 @@ html.yz-cookie-open .call-bar { display: none; }
           <span class="faq-toggle" aria-hidden="true"></span>
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Un piano solo: <b>€0,30 al minuto sotto 1.500 minuti al mese</b>. Per i pacchetti da 1.500 minuti la tariffa scende a <b>€0,25 su tutti i minuti</b>. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione costa 500€, una tantum. I minuti oltre il pacchetto costano 0,35€/min per i pacchetti sotto 1.500 minuti e 0,28€/min per quelli da 1.500 minuti in su. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 10€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
+          <p class="faq-a">Un piano solo: <b>€0,30 al minuto sotto 1.500 minuti al mese</b>. Per i pacchetti da 1.500 minuti la tariffa scende a <b>€0,25 su tutti i minuti</b>. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione costa 500€, una tantum. I minuti oltre il pacchetto costano 0,35€/min per i pacchetti sotto 1.500 minuti e 0,28€/min per quelli da 1.500 minuti in su. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 5€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
           <span class="faq-punch">Il conto lo vedi prima di partire, non dopo.</span>
         </div></div></div>
       </div>
@@ -6995,7 +6971,7 @@ const VOLUME_THRESHOLD = 1500;
 const EXTRA_RATE = 0.35;        // €/min extra per i pacchetti sotto la soglia
 const VOLUME_EXTRA_RATE = 0.28; // €/min extra per i pacchetti dalla soglia inclusa
 const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
-const DM_MENSILE = 10;          // opzione messaggi diretti Instagram e Facebook, €/mese
+const DM_MENSILE = 5;           // opzione messaggi diretti Instagram e Facebook, €/mese
 
 const slider = document.getElementById('minSlider');
 const yzp = document.getElementById('yzp');
@@ -7006,7 +6982,11 @@ let dmOn = false;  // opzione messaggi diretti accesa o spenta
 
 // it-IT non raggruppa i numeri a 4 cifre ("1500"); il sito scrive "1.500".
 const grp = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-const eur = n => '€' + grp(Math.round(n));
+const money = n => {
+  const [intero, centesimi] = n.toFixed(2).split('.');
+  return grp(intero) + (centesimi === '00' ? '' : ',' + centesimi);
+};
+const eur = n => '€' + money(n);
 const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
 // Il prezzo dell'opzione compare in due punti (riga di calcolo e interruttore):
 // due id sarebbero due posti da tenere allineati a mano, quindi si va per attributo.
@@ -7022,12 +7002,10 @@ function updatePricing() {
   const extraRate = volume ? VOLUME_EXTRA_RATE : EXTRA_RATE;
   const base = minutes * rate;                              // canone pieno dei minuti
   const canoneMinuti = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
-  // L'opzione segue lo stesso sconto annuale del canone: 10 euro diventano 9.
+  // L'opzione segue lo stesso sconto annuale del canone: 5 euro diventano 4,50.
   const dmListino = annuale ? DM_MENSILE * (1 - ANNUAL_DISCOUNT) : DM_MENSILE;
   const dmPieno = dmOn ? DM_MENSILE : 0;
   const monthly = canoneMinuti + (dmOn ? dmListino : 0);
-  const period = monthly * mesi;                            // quanto paghi per ciclo, in anticipo
-  const cadLabel = 'ogni ' + mesi + ' mesi';
 
   yzp.classList.toggle('annuale', annuale);
   yzp.classList.toggle('dm-on', dmOn);
@@ -7044,13 +7022,10 @@ function updatePricing() {
   });
   setTxt('yzpCustomMin', customSelected && minutes > 0 ? grp(minutes) : 'Su misura');
   document.getElementById('yzpCustomUnit').hidden = !customSelected || minutes === 0;
-  setTxt('yzpMonthly', grp(Math.round(monthly)));
+  setTxt('yzpMonthly', money(monthly));
   setTxt('yzpWas', eur(base + dmPieno) + '/mese');
   setTxt('yzpSave', 'risparmi ' + eur((base + dmPieno) * 12 * ANNUAL_DISCOUNT) + " l'anno");
   setDm(eur(dmListino));
-  setTxt('yzpCadLabel', cadLabel);
-  setTxt('yzpCadLabel2', cadLabel);
-  setTxt('yzpThen', eur(period));
 
   document.querySelectorAll('.slider-labels span').forEach((label, i) => {
     label.classList.toggle('active', i === idx);
