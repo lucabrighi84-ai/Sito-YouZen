@@ -4149,10 +4149,10 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
    e il blocco dei prezzi galleggiava al centro. Ora occupa la sezione come tutte le altre. */
 .yzp { max-width: 100%; margin: 0; }
 
-.yzp-uses { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-bottom: 24px; }
+.yzp-uses { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
 .yzp-use {
-  position: relative; display: flex; flex-direction: column; align-items: flex-start;
-  padding: 26px; border: 1px solid var(--line-strong); border-radius: 18px;
+  position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr) minmax(320px, 400px); align-items: center; gap: 22px;
+  padding: 24px; border: 1px solid var(--line-strong); border-radius: 18px;
   background: rgba(255,255,255,0.015); color: inherit; text-align: left;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -4160,30 +4160,44 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 .yzp-use[aria-pressed="true"] { border-color: var(--accent); background: rgba(217,138,78,0.08); }
 .yzp-use:focus-visible, #minSlider:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .yzp-use-icon {
-  display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 20px;
+  display: grid; place-items: center; width: 48px; height: 48px;
   color: var(--accent); border: 1px solid rgba(217,138,78,0.28); border-radius: 12px;
   background: rgba(217,138,78,0.08);
 }
 .yzp-use-icon svg { width: 26px; height: 26px; }
 .yzp-use-check {
-  position: absolute; top: 28px; right: 24px; width: 25px; height: 25px;
+  position: absolute; top: 20px; right: 20px; width: 22px; height: 22px;
   display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%;
 }
 .yzp-use-check svg { width: 15px; height: 15px; opacity: 0; }
 .yzp-use[aria-pressed="true"] .yzp-use-check { background: var(--accent); border-color: var(--accent); color: var(--ink-900); }
 .yzp-use[aria-pressed="true"] .yzp-use-check svg { opacity: 1; }
-.yzp-use-title { font-size: clamp(1.1rem, 1.8vw, 1.45rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; }
-.yzp-use-amount { margin-top: 15px; font-size: clamp(2.5rem, 4.5vw, 3.5rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.1; }
-.yzp-use[aria-pressed="true"] .yzp-use-amount { color: var(--accent); }
-.yzp-use-unit { color: var(--muted); font-size: 0.93rem; margin-top: 2px; }
-.yzp-use-desc { color: var(--muted); font-size: 0.93rem; line-height: 1.55; margin-top: 20px; }
-.yzp-use-action { color: var(--accent); font-size: 0.9rem; font-weight: 600; padding-top: 20px; margin-top: auto; }
+.yzp-use-copy { min-width: 0; }
+.yzp-use-title { display: block; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; }
+.yzp-use-metrics { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 28px; margin-right: 28px; }
+.yzp-use-amount { display: block; color: var(--muted-strong); font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; }
+.yzp-use-unit { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+.yzp-use-unit[hidden], .yzp-use-price-from[hidden], .yzp-use-dm-note[hidden] { display: none; }
+.yzp-use-price { font-size: 2.65rem; font-weight: 800; color: var(--accent); letter-spacing: -0.045em; line-height: 1.15; white-space: nowrap; }
+.yzp-use-price-from { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0; margin-bottom: 3px; }
+.yzp-use-price small { display: block; font-size: 0.8rem; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 4px; }
+.yzp-use-desc { display: block; color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin-top: 8px; }
+.yzp-use-action { display: block; color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-top: 10px; }
+.yzp-use-dm-note { color: var(--muted); font-size: 0.8rem; margin: -10px 0 24px; }
 @media (max-width: 800px) {
-  .yzp-uses { grid-template-columns: 1fr; gap: 12px; }
-  .yzp-use { padding: 22px; }
-  .yzp-use-icon { width: 40px; height: 40px; margin-bottom: 14px; }
-  .yzp-use-title { font-size: 1.3rem; }
-  .yzp-use-desc { margin-top: 12px; }
+  .yzp-use { grid-template-columns: 40px minmax(0, 1fr); padding: 20px; gap: 16px; }
+  .yzp-use-icon { width: 40px; height: 40px; }
+  .yzp-use-copy { padding-right: 22px; }
+  .yzp-use-title { font-size: 1.15rem; }
+  .yzp-use-metrics { grid-column: 1 / -1; margin-right: 0; padding-top: 16px; border-top: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .yzp-use { padding: 18px; gap: 14px; }
+  .yzp-use-check { top: 18px; right: 16px; }
+  .yzp-use-metrics { gap: 14px; }
+  .yzp-use-amount { font-size: 1.05rem; }
+  .yzp-use-unit { font-size: 0.75rem; }
+  .yzp-use-price { font-size: clamp(1.85rem, 8vw, 2.15rem); }
 }
 @media (prefers-reduced-motion: reduce) { .yzp-use { transition: none; } }
 
@@ -5958,29 +5972,42 @@ html.yz-cookie-open .call-bar { display: none; }
         <button type="button" class="yzp-use" data-minutes="300" aria-pressed="false" aria-controls="minSlider yzpReveal">
           <span class="yzp-use-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 13.4A9 9 0 0 1 10.6 3.1 9 9 0 1 0 20.9 13.4Z"/></svg></span>
           <span class="yzp-use-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
-          <span class="yzp-use-title">A locale chiuso</span>
-          <span class="yzp-use-amount">300</span>
-          <span class="yzp-use-unit">minuti / mese</span>
-          <span class="yzp-use-desc">Rispondiamo quando il locale è chiuso.</span>
+          <span class="yzp-use-copy">
+            <span class="yzp-use-title">A locale chiuso</span>
+            <span class="yzp-use-desc">Rispondiamo quando il locale è chiuso.</span>
+          </span>
+          <span class="yzp-use-metrics">
+            <span><span class="yzp-use-amount">300</span><span class="yzp-use-unit">minuti / mese</span></span>
+            <span class="yzp-use-price"><b data-use-price>€90</b><small>/mese</small></span>
+          </span>
         </button>
         <button type="button" class="yzp-use" data-minutes="1000" aria-pressed="false" aria-controls="minSlider yzpReveal">
           <span class="yzp-use-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m7 3 3 5-3 2c1.5 3 4 5.5 7 7l2-3 5 3-1 4C11 22 2 13 3 4Z"/></svg></span>
           <span class="yzp-use-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
-          <span class="yzp-use-title">Segretaria al 100%</span>
-          <span class="yzp-use-amount">1.000</span>
-          <span class="yzp-use-unit">minuti / mese</span>
-          <span class="yzp-use-desc">Affidi a Carla la segreteria del locale.</span>
+          <span class="yzp-use-copy">
+            <span class="yzp-use-title">Segretaria al 100%</span>
+            <span class="yzp-use-desc">Affidi a Carla la segreteria del locale.</span>
+          </span>
+          <span class="yzp-use-metrics">
+            <span><span class="yzp-use-amount">1.000</span><span class="yzp-use-unit">minuti / mese</span></span>
+            <span class="yzp-use-price"><b data-use-price>€300</b><small>/mese</small></span>
+          </span>
         </button>
         <button type="button" class="yzp-use" data-minutes="custom" aria-pressed="false" aria-controls="minSlider yzpReveal">
           <span class="yzp-use-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h5m4 0h9M3 18h9m4 0h5"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="18" r="2"/></svg></span>
           <span class="yzp-use-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
-          <span class="yzp-use-title">A richiesta</span>
-          <span class="yzp-use-amount" id="yzpCustomMin">Su misura</span>
-          <span class="yzp-use-unit" id="yzpCustomUnit" hidden>minuti / mese</span>
-          <span class="yzp-use-desc">Scegli quanti minuti ti servono.</span>
-          <span class="yzp-use-action">Scegli i minuti <span aria-hidden="true">→</span></span>
+          <span class="yzp-use-copy">
+            <span class="yzp-use-title">A richiesta</span>
+            <span class="yzp-use-desc">Scegli quanti minuti ti servono.</span>
+            <span class="yzp-use-action">Scegli i minuti <span aria-hidden="true">→</span></span>
+          </span>
+          <span class="yzp-use-metrics">
+            <span><span class="yzp-use-amount" id="yzpCustomMin">Su misura</span><span class="yzp-use-unit" id="yzpCustomUnit" hidden>minuti / mese</span></span>
+            <span class="yzp-use-price"><span class="yzp-use-price-from" id="yzpCustomFrom">Da</span><b data-use-price>€90</b><small>/mese</small></span>
+          </span>
         </button>
       </div>
+      <p class="yzp-use-dm-note" id="yzpUseDmNote" hidden>Importi con l'opzione DM inclusa.</p>
 
       <!-- ===== Contatore ===== -->
       <div class="yzp-hero">
@@ -7017,11 +7044,18 @@ function updatePricing() {
   slider.setAttribute('aria-valuetext', grp(minutes) + ' minuti al mese');
   const customSelected = customMinutes || (minutes > 0 && minutes !== 300 && minutes !== 1000);
   usageCards.forEach(card => {
-    const selected = card.dataset.minutes === 'custom' ? customSelected : !customSelected && Number(card.dataset.minutes) === minutes;
+    const custom = card.dataset.minutes === 'custom';
+    const selected = custom ? customSelected : !customSelected && Number(card.dataset.minutes) === minutes;
     card.setAttribute('aria-pressed', String(selected));
+    const cardMinutes = custom ? (customSelected && minutes > 0 ? minutes : minSteps[1]) : Number(card.dataset.minutes);
+    const cardRate = cardMinutes >= VOLUME_THRESHOLD ? VOLUME_RATE : RATE;
+    const cardMonthly = cardMinutes * cardRate * (annuale ? 1 - ANNUAL_DISCOUNT : 1) + (dmOn ? dmListino : 0);
+    card.querySelector('[data-use-price]').textContent = eur(cardMonthly);
   });
   setTxt('yzpCustomMin', customSelected && minutes > 0 ? grp(minutes) : 'Su misura');
   document.getElementById('yzpCustomUnit').hidden = !customSelected || minutes === 0;
+  document.getElementById('yzpCustomFrom').hidden = customSelected && minutes > 0;
+  document.getElementById('yzpUseDmNote').hidden = !dmOn;
   setTxt('yzpMonthly', money(monthly));
   setTxt('yzpWas', eur(base + dmPieno) + '/mese');
   setTxt('yzpSave', 'risparmi ' + eur((base + dmPieno) * 12 * ANNUAL_DISCOUNT) + " l'anno");
