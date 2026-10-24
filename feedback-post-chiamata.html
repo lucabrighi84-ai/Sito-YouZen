@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YouZen | Feedback post chiamata</title>
   <meta name="description" content="Pagina feedback post chiamata YouZen." />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+
   <style>
     :root {
-      --text: #ffffff; --muted: #94a3b8; --dim: #64748b; --orange: #f97316; --orange-2: #ea580c;
-      --card: rgba(255,255,255,.03); --line: rgba(255,255,255,.10); --radius: 28px;
-      --shadow: 0 24px 70px rgba(0,0,0,.28);
+      --text: #292c2d; --muted: #625f58; --dim: #64748b; --orange: #f97316; --orange-2: #ea580c;
+      --card: rgba(65,54,40,0.03); --line: rgba(65,54,40,0.13); --radius: 28px;
+      --shadow: 0 24px 70px rgba(80,59,35,0.084);
     }
     * { box-sizing: border-box; margin: 0; }
     body {
       font-family: 'Outfit', sans-serif; color: var(--text);
       background: radial-gradient(circle at top, rgba(249,115,22,.14), transparent 30%),
                   radial-gradient(circle at 80% 20%, rgba(96,165,250,.10), transparent 26%),
-                  linear-gradient(180deg, #08111f 0%, #091427 40%, #0a1322 100%);
+                  linear-gradient(180deg, #fffefa 0%, #fffefa 40%, #fffefa 100%);
       min-height: 100vh;
     }
     a { color: inherit; text-decoration: none; }
@@ -35,9 +35,9 @@
     .site-header { position: sticky; top: 14px; z-index: 20; margin-bottom: 24px; }
     .nav {
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
-      padding: 16px 20px; border: 1px solid rgba(255,255,255,.08);
-      background: rgba(8,17,31,.82); backdrop-filter: blur(14px);
-      border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      padding: 16px 20px; border: 1px solid rgba(65,54,40,0.13);
+      background: rgba(255,254,250,0.82); backdrop-filter: blur(14px);
+      border-radius: 24px; box-shadow: 0 12px 40px rgba(80,59,35,0.054);
     }
     .brand { display: flex; align-items: center; gap: 14px; }
     .brand img { width: 52px; height: 52px; object-fit: contain; filter: drop-shadow(0 8px 18px rgba(0,0,0,.18)); }
@@ -46,7 +46,7 @@
     .brand-sub { margin-top: 6px; font-size: 11px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
     .nav-pill {
       border: 1px solid rgba(52,211,153,.18); background: rgba(52,211,153,.10);
-      color: #a7f3d0; padding: 10px 14px; border-radius: 999px;
+      color: #625f58; padding: 10px 14px; border-radius: 999px;
       font-size: 13px; font-weight: 700;
     }
 
@@ -68,7 +68,7 @@
 
     /* ── SCALE BAR ── */
     .scale { margin-top: 24px; }
-    .scale-bar { height: 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); overflow: hidden; }
+    .scale-bar { height: 12px; border-radius: 999px; border: 1px solid rgba(65,54,40,0.13); background: rgba(65,54,40,0.05); overflow: hidden; }
     .scale-fill { width: 100%; height: 100%; background: linear-gradient(90deg, #34d399 0%, #a3e635 22%, #fcd34d 50%, #fb923c 74%, #f43f5e 100%); }
     .scale-labels { margin-top: 8px; display: flex; justify-content: space-between; color: #64748b; font-size: 10px; text-transform: uppercase; letter-spacing: .18em; }
 
@@ -87,9 +87,9 @@
 
     .option {
       width: 100%; text-align: left; cursor: pointer; border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.10); padding: 18px;
+      border: 1px solid rgba(65,54,40,0.13); padding: 18px;
       color: inherit;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background: linear-gradient(180deg, rgba(65,54,40,0.04), rgba(65,54,40,0.02));
       transition: all .45s cubic-bezier(.4,0,.2,1);
       transform-origin: center center;
       position: relative;
@@ -97,10 +97,10 @@
     }
     .option::after {
       content: ''; position: absolute; inset: 0; border-radius: inherit;
-      background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.06), transparent 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(65,54,40,0.06), transparent 70%);
       opacity: 0; transition: opacity .4s ease;
     }
-    .option:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.22); }
+    .option:hover { transform: translateY(-3px); border-color: rgba(65,54,40,0.22); }
     .option:hover::after { opacity: 1; }
 
     /* SELECTED STATE */
@@ -117,7 +117,7 @@
       filter: saturate(.3) blur(1px);
       transform: scale(.92);
       pointer-events: none;
-      border-color: rgba(255,255,255,.04);
+      border-color: rgba(65,54,40,0.13);
     }
     .option.dimmed .option-desc { display: none; }
 
@@ -126,12 +126,12 @@
     .option.active .emoji { transform: scale(1.25); }
 
     .choose {
-      border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);
-      padding: 6px 10px; border-radius: 999px; font-size: 10px; color: #cbd5e1;
+      border: 1px solid rgba(65,54,40,0.13); background: rgba(65,54,40,0.04);
+      padding: 6px 10px; border-radius: 999px; font-size: 10px; color: #625f58;
       letter-spacing: .18em; text-transform: uppercase; font-weight: 800;
       transition: all .3s ease;
     }
-    .option:hover .choose { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); }
+    .option:hover .choose { background: rgba(65,54,40,0.08); border-color: rgba(65,54,40,0.2); }
 
     .chosen-badge {
       display: none; align-items: center; gap: 6px;
@@ -140,15 +140,15 @@
       animation: badgePop .4s cubic-bezier(.4,0,.2,1);
     }
     @keyframes badgePop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-    .positive .chosen-badge { background: rgba(52,211,153,.2); color: #6ee7b7; border: 1px solid rgba(52,211,153,.3); }
-    .warm .chosen-badge { background: rgba(163,230,53,.2); color: #bef264; border: 1px solid rgba(163,230,53,.3); }
-    .neutral .chosen-badge { background: rgba(252,211,77,.2); color: #fde68a; border: 1px solid rgba(252,211,77,.3); }
-    .negative .chosen-badge { background: rgba(251,146,60,.2); color: #fdba74; border: 1px solid rgba(251,146,60,.3); }
-    .confused .chosen-badge { background: rgba(251,113,133,.2); color: #fda4af; border: 1px solid rgba(251,113,133,.3); }
+    .positive .chosen-badge { background: rgba(52,211,153,.2); color: #39785f; border: 1px solid rgba(52,211,153,.3); }
+    .warm .chosen-badge { background: rgba(163,230,53,.2); color: #637e34; border: 1px solid rgba(163,230,53,.3); }
+    .neutral .chosen-badge { background: rgba(252,211,77,.2); color: #847848; border: 1px solid rgba(252,211,77,.3); }
+    .negative .chosen-badge { background: rgba(251,146,60,.2); color: #84613c; border: 1px solid rgba(251,146,60,.3); }
+    .confused .chosen-badge { background: rgba(251,113,133,.2); color: #84555b; border: 1px solid rgba(251,113,133,.3); }
 
     .option-title { font-size: 20px; line-height: 1.1; letter-spacing: -.03em; font-weight: 800; transition: font-size .4s ease; }
     .option.dimmed .option-title { font-size: 14px; }
-    .option-desc { margin-top: 8px; color: #cbd5e1; font-size: 13px; line-height: 1.55; transition: all .3s ease; }
+    .option-desc { margin-top: 8px; color: #625f58; font-size: 13px; line-height: 1.55; transition: all .3s ease; }
 
     /* Color accents */
     .positive { background: linear-gradient(180deg, rgba(16,185,129,.22), rgba(16,185,129,.04)); border-color: rgba(52,211,153,.22); }
@@ -190,19 +190,19 @@
       animation: slideUp .5s cubic-bezier(.4,0,.2,1);
     }
     .reset-btn {
-      flex-shrink: 0; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04);
+      flex-shrink: 0; border: 1px solid rgba(65,54,40,0.13); background: rgba(65,54,40,0.04);
       color: var(--muted); padding: 8px 14px; border-radius: 999px; font-size: 11px;
       font-weight: 700; letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
       transition: all .3s ease;
     }
-    .reset-btn:hover { background: rgba(255,255,255,.08); color: var(--text); border-color: rgba(255,255,255,.2); }
+    .reset-btn:hover { background: rgba(65,54,40,0.08); color: var(--text); border-color: rgba(65,54,40,0.2); }
 
     @keyframes slideUp { 0% { transform: translateY(12px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
 
     .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
     .chip {
-      border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04);
-      color: #e2e8f0; border-radius: 999px; padding: 10px 16px; font-size: 13px;
+      border: 1px solid rgba(65,54,40,0.13); background: rgba(65,54,40,0.04);
+      color: #625f58; border-radius: 999px; padding: 10px 16px; font-size: 13px;
       cursor: pointer; transition: all .25s ease; font-weight: 500;
       animation: chipIn .4s cubic-bezier(.4,0,.2,1) backwards;
     }
@@ -210,13 +210,13 @@
     .chip:nth-child(2) { animation-delay: .1s; }
     .chip:nth-child(3) { animation-delay: .15s; }
     .chip:nth-child(4) { animation-delay: .2s; }
-    .chip:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); transform: translateY(-1px); }
-    .chip.active { border-color: rgba(249,115,22,.45); background: rgba(249,115,22,.12); color: #fdba74; }
+    .chip:hover { background: rgba(65,54,40,0.08); border-color: rgba(65,54,40,0.18); transform: translateY(-1px); }
+    .chip.active { border-color: rgba(249,115,22,.45); background: rgba(249,115,22,.12); color: #84613c; }
     @keyframes chipIn { 0% { transform: translateY(8px) scale(.95); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
 
     .comment-area {
-      border-radius: 20px; border: 1px solid rgba(255,255,255,.10);
-      background: rgba(8,17,31,.6); padding: 18px;
+      border-radius: 20px; border: 1px solid rgba(65,54,40,0.13);
+      background: rgba(255,254,250,0.6); padding: 18px;
       animation: slideUp .5s cubic-bezier(.4,0,.2,1) .15s backwards;
     }
     .comment-label {
@@ -225,8 +225,8 @@
     }
     textarea {
       width: 100%; min-height: 120px; resize: vertical;
-      border: 1px dashed rgba(255,255,255,.10); background: rgba(255,255,255,.02);
-      color: #e2e8f0; border-radius: 16px; padding: 16px; outline: none;
+      border: 1px dashed rgba(65,54,40,0.13); background: rgba(65,54,40,0.02);
+      color: #625f58; border-radius: 16px; padding: 16px; outline: none;
       font-size: 15px; line-height: 1.6;
       transition: border-color .3s ease, box-shadow .3s ease;
     }
@@ -243,13 +243,13 @@
     .cta {
       flex: 1; border: 0; cursor: pointer; border-radius: 999px; padding: 16px 20px;
       background: linear-gradient(135deg, var(--orange), var(--orange-2));
-      color: white; font-size: 15px; font-weight: 800; letter-spacing: .01em;
+      color: #292c2d; font-size: 15px; font-weight: 800; letter-spacing: .01em;
       box-shadow: 0 12px 30px rgba(249,115,22,.22);
       transition: all .3s ease; position: relative; overflow: hidden;
     }
     .cta::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+      background: linear-gradient(135deg, rgba(65,54,40,0.08), transparent);
       opacity: 0; transition: opacity .3s ease;
     }
     .cta:hover::before { opacity: 1; }
@@ -265,15 +265,15 @@
       animation: toastIn .4s cubic-bezier(.4,0,.2,1);
     }
     @keyframes toastIn { 0% { transform: translateY(8px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-    .toast.success { display: block; border: 1px solid rgba(52,211,153,.20); background: rgba(52,211,153,.10); color: #86efac; }
-    .toast.error { display: block; border: 1px solid rgba(251,113,133,.20); background: rgba(251,113,133,.10); color: #fda4af; }
+    .toast.success { display: block; border: 1px solid rgba(52,211,153,.20); background: rgba(52,211,153,.10); color: #467c59; }
+    .toast.error { display: block; border: 1px solid rgba(251,113,133,.20); background: rgba(251,113,133,.10); color: #84555b; }
 
     /* ── FOOTER ── */
     .site-footer { margin-top: 24px; padding: 24px 0 8px; }
     .footer-shell {
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
       padding: 18px 20px; border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03);
+      border: 1px solid rgba(65,54,40,0.13); background: rgba(65,54,40,0.03);
       backdrop-filter: blur(12px);
     }
     .footer-left { display: flex; align-items: center; gap: 12px; }
@@ -305,13 +305,15 @@
       .footer-right { text-align: left; }
     }
   </style>
+<link rel="stylesheet" href="fonts/fonts.css">
+<meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="yz-interno yz-feedback">
   <div class="page">
     <header class="site-header">
       <div class="nav">
-        <a class="brand" href="https://www.youzen.it">
-          <img src="logo.webp" alt="Logo YouZen" />
+        <a class="brand" href="index.html">
+          <img src="youzen-logo-96.png" alt="Logo YouZen" />
           <div>
             <div class="brand-name">You<span>Zen</span></div>
             <div class="brand-sub">feedback post chiamata</div>
@@ -410,7 +412,7 @@
     <footer class="site-footer">
       <div class="footer-shell">
         <div class="footer-left">
-          <img src="logo.webp" alt="Logo YouZen" />
+          <img src="youzen-logo-96.png" alt="Logo YouZen" />
           <div>
             <div class="footer-brand">You<span>Zen</span></div>
             <div class="footer-meta">Partita IVA 04855440402<br/>info@youzen.it</div>
@@ -552,5 +554,7 @@
       }
     });
   </script>
+<link rel="stylesheet" href="tema-chiaro.css">
+<link rel="stylesheet" href="tema-interno.css">
 </body>
 </html>

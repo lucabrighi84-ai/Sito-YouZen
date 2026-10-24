@@ -1,0 +1,39 @@
+/* Palette comune delle pagine interne dell'anteprima. */
+:root {
+  --bg: var(--page); --panel: var(--paper); --panel-2: var(--paper-soft);
+  --card: var(--paper); --testo: #484842; --dim: #716a60;
+  --border: var(--line); --border-strong: var(--line-strong);
+  --orange: var(--accent); --orange-2: var(--accent-600); --orange-glow: #a74f2412;
+  --font-display: Inter, system-ui, sans-serif; --font-sans: Inter, system-ui, sans-serif;
+}
+body.yz-interno { background: var(--page); color: var(--text); font-family: var(--font-sans); }
+.yz-interno :is(.hero-bg,.hero-grid) { opacity: .25; }
+.yz-interno .hero { background: transparent; }
+.yz-interno :is(.hero-headline .l1,.hero-headline .l3,.brand,.brand-name,.logo) { color: var(--text); }
+.yz-interno .hero-headline .l3 { background: none; -webkit-text-fill-color: currentColor; }
+.yz-interno :is(.hero-card,.card,.panel,.big,.finale,.seguici,.autore,.toc,.call-card,.mockup-card,.feature-card,.info-card) { background-color: var(--paper); border-color: var(--line); }
+.yz-interno :is(.btn-primary,.btn-cta,.submit-btn,.send-btn) { color: #fff; background: var(--accent); }
+.yz-interno :is(.btn-primary,.btn-cta,.submit-btn,.send-btn):hover { color: #fff; background: var(--accent-600); }
+.yz-interno :is(.btn-outline,.btn-ghost) { color: var(--text); background: transparent; border-color: var(--line-strong); }
+.yz-interno :is(.nav,.nav.scrolled,.nav.nav-open) { background: rgba(247,246,242,.96); }
+.yz-interno .logo-text { color: var(--text); }
+.yz-interno :is(input,textarea,select) { color: var(--text); background-color: var(--paper); border-color: var(--line-strong); }
+.yz-interno :is(input,textarea)::placeholder { color: var(--muted); }
+.yz-interno :is(.verdetto,.callout,.nota,.note,.note-box) { background: var(--accent-50); border-color: #dcb9a1; }
+.yz-interno :is(.verdetto-et,.tag,.porta-ico) { color: var(--accent); }
+.yz-interno :is(.footer,.footer-stage) { background: var(--paper-soft); }
+.yz-interno .footer-col h5 { color: var(--muted-strong); }
+.yz-interno .nav-wa { background: #19754b; color: #fff; }
+.yz-legale :is(a,.back:hover) { color: var(--accent); }
+.yz-legale :is(.brand,h1,h2,h3,strong) { color: var(--text); }
+.yz-legale :is(.hero-card,.card) { box-shadow: 0 12px 40px -28px #58402438; }
+.yz-legale .eyebrow { font-family: var(--font-sans); }
+.yz-feedback .nav-pill { color: #245638; background: #e0eddb; border-color: #bfd4b9; }
+.yz-feedback :is(.brand-name,.panel-title,.score-value) { color: var(--text); }
+.yz-feedback .page { padding-bottom: 48px; }
+@media(max-width:600px) {
+  .yz-legale :is(.wrap,.hero) { padding-inline: 16px; }
+  .yz-legale :is(.hero-card,.card) { padding: 24px 20px; }
+  .yz-interno .footer-grid { min-width: 0; }
+  .yz-interno :is(p,li,td,a) { overflow-wrap: anywhere; }
+}

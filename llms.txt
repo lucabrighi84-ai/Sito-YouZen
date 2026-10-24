@@ -22,6 +22,7 @@ tramite portabilità oppure usare un numero VoIP dedicato.
 - [Saloni e SPA](https://youzen.it/settori/saloni.html): parrucchieri, estetica, centri benessere
 - [Ristoranti e food](https://youzen.it/settori/food.html): prenotazione tavoli e ordini
 - [Professionisti](https://youzen.it/settori/professionisti.html): consulenti, commercialisti, partite IVA
+- [Ambulatori](https://youzen.it/settori/ambulatori.html): chiamate, appuntamenti, spostamenti e promemoria WhatsApp per lo studio
 - [Agenzie immobiliari](https://youzen.it/settori/immobiliare.html): richieste di visita e lead
 - [Studi legali](https://youzen.it/settori/studio-legale.html): filtro chiamate e primo contatto
 - [Segreteria telefonica AI a Rimini e in Romagna](https://youzen.it/segreteria-telefonica-ai-rimini-romagna/): siamo nati a Rimini, il servizio si attiva in tutta Italia
@@ -49,7 +50,7 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 ## Prezzi
 
 - Tariffa: 0,30 euro al minuto sotto 1.500 minuti al mese; da 1.500 minuti, 0,25 euro su tutti i minuti del pacchetto
-- Minuti extra oltre il pacchetto: 0,35 euro al minuto per pacchetti sotto 1.500 minuti; 0,28 euro al minuto per pacchetti da 1.500 minuti in su
+- Minuti extra oltre il pacchetto: 0,35 euro al minuto per tutti i pacchetti, anche con pagamento annuale
 - Pacchetto di riferimento: 750 minuti al mese, 225 euro di canone mensile
 - Canone pagato ogni tre mesi in anticipo, oppure annuale con il 10 per cento di sconto
 - Attivazione una tantum: 500 euro per il setup
@@ -67,4 +68,4 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 - Ragione sociale: YouZen di Luca Brighi, partita IVA IT04855440402, Via del Pino 13, 47923 Rimini
 - Contatti: +39 0541 172 6297, info@youzen.it
 
-Ultimo aggiornamento: 2026-10-21
+Ultimo aggiornamento: 2026-10-24

@@ -2,28 +2,28 @@
   "name": "YouZen · Segretaria AI",
   "short_name": "YouZen",
   "description": "Segretaria AI per chiamate, WhatsApp e appuntamenti 24/7",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#080E1F",
-  "theme_color": "#F97316",
+  "background_color": "#f7f6f2",
+  "theme_color": "#a74f24",
   "orientation": "portrait-primary",
   "lang": "it",
-  "scope": "/",
+  "scope": "./",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"

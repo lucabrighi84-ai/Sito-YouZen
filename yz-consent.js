@@ -19,7 +19,7 @@
   var BANNER_VERSION = "v1";
   var KEY = "yz-consent";        // 'granted' | 'denied'
   var ID_KEY = "yz-consent-id";  // pseudonimo random
-  var PRIVACY_URL = "/GDPR/";
+  var PRIVACY_URL = new URL("GDPR/index.html", document.currentScript.src).href;
 
   function ls(get, k, v) {
     try { return get ? localStorage.getItem(k) : localStorage.setItem(k, v); }
