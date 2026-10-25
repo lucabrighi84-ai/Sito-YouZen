@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/michroma-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="hero-scene/ristorante-pieno.webp" as="image" fetchpriority="high" />
+<link rel="preload" href="tema-chiaro.css" as="style" />
+<link rel="preload" href="hero-scene.css" as="style" />
+<link rel="preload" href="home-componenti.css" as="style" />
+<link rel="preload" href="home-integrazione.css" as="style" />
 
 <!-- ============================ GOOGLE ANALYTICS 4 + CONSENT MODE v2 ============================ -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
@@ -34,9 +41,10 @@
 
 <!-- ============================ SEO PRIMARY ============================ -->
 <title>YouZen · Segretaria AI per chiamate, WhatsApp e appuntamenti</title>
-<meta name="description" content="Segreteria AI italiana 24/7 per studi legali, cliniche, saloni, agenzie immobiliari e PMI. Risponde a chiamate, WhatsApp e DM di Instagram e Facebook, e fissa gli appuntamenti." />
+<meta name="description" content="Gestisci chiamate, WhatsApp e appuntamenti 24/7 con YouZen. Per ristoranti, saloni, studi e PMI: mantieni il tuo numero e prova la demo telefonica gratuita." />
 <meta name="keywords" content="segretaria AI, AI receptionist, segretaria virtuale, gestione chiamate AI, agente AI italiano, automazione studi, AI WhatsApp business, prenotazione appuntamenti AI, AI per studi legali, AI per cliniche, AI per saloni, AI per agenzie immobiliari" />
 
+<meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="author" content="YouZen di Luca Brighi" />
 <meta name="language" content="Italian" />
 <meta name="geo.region" content="IT" />
@@ -49,7 +57,7 @@
 <meta property="og:site_name" content="YouZen" />
 <meta property="og:url" content="https://youzen.it/" />
 <meta property="og:title" content="YouZen · Segretaria AI 24/7 per chiamate, WhatsApp e appuntamenti" />
-<meta property="og:description" content="Trasforma il caos delle telefonate in un sistema automatico. YouZen risponde sempre, mentre tu lavori." />
+<meta property="og:description" content="Gestisci chiamate, WhatsApp e appuntamenti 24/7 con YouZen. Per ristoranti, saloni, studi e PMI: mantieni il tuo numero e prova la demo telefonica gratuita." />
 <meta property="og:image" content="https://youzen.it/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -59,7 +67,7 @@
 <!-- ============================ TWITTER CARD ============================ -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="YouZen · Segretaria AI 24/7" />
-<meta name="twitter:description" content="Risponde a chiamate, WhatsApp e appuntamenti mentre sei concentrato su quello che conta davvero." />
+<meta name="twitter:description" content="Gestisci chiamate, WhatsApp e appuntamenti 24/7 con YouZen. Per ristoranti, saloni, studi e PMI: mantieni il tuo numero e prova la demo telefonica gratuita." />
 <meta name="twitter:image" content="https://youzen.it/og-image.jpg" />
 <meta name="twitter:image:alt" content="YouZen - Segretaria AI italiana" />
 
@@ -130,7 +138,7 @@
   "name": "YouZen",
   "url": "https://youzen.it/",
   "inLanguage": "it-IT",
-  "dateModified": "2026-09-17",
+  "dateModified": "2026-10-25",
   "publisher": {
     "@id": "https://youzen.it/#organization"
   }
@@ -144,7 +152,7 @@
   "@id": "https://youzen.it/#software",
   "url": "https://youzen.it/",
   "inLanguage": "it-IT",
-  "dateModified": "2026-09-17",
+  "dateModified": "2026-10-25",
   "provider": {
     "@id": "https://youzen.it/#organization"
   },
@@ -152,45 +160,37 @@
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "AI Receptionist",
   "operatingSystem": "Web",
-  "description": "AI receptionist che gestisce chiamate, WhatsApp e appuntamenti 24/7 per studi, cliniche, saloni, agenzie e PMI.",
-  "offers": {
-    "@type": "Offer",
-    "name": "YouZen",
-    "description": "Piano unico a consumo · €0,30/min sotto 1.500 minuti/mese; €0,25/min da 1.500, su tutto il pacchetto · canone anticipato (trimestrale o annuale con -10%). Attivazione una tantum da €500. Messaggi diretti di Instagram e Facebook in opzione a €5/mese.",
-    "priceCurrency": "EUR",
-    "price": "225",
-    "priceSpecification": [
-      {
+  "description": "Segreteria telefonica AI italiana per ristoranti, saloni, studi e PMI: chiamate, WhatsApp e appuntamenti 24/7.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "A locale chiuso — 300 minuti",
+      "url": "https://youzen.it/#prezzi",
+      "price": "90",
+      "priceCurrency": "EUR",
+      "description": "Canone mensile base per 300 minuti. Attivazione e crediti messaggi separati.",
+      "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "name": "Canone mensile al pacchetto di riferimento (750 min/mese)",
-        "price": "225",
+        "price": "90",
         "priceCurrency": "EUR",
-        "billingIncrement": 1,
         "unitCode": "MON"
-      },
-      {
-        "@type": "UnitPriceSpecification",
-        "name": "Tariffa al minuto per pacchetti con meno di 1.500 minuti/mese",
-        "price": "0.30",
-        "priceCurrency": "EUR",
-        "unitCode": "MIN"
-      },
-      {
-        "@type": "UnitPriceSpecification",
-        "name": "Tariffa al minuto per pacchetti da 1.500 minuti/mese, su tutti i minuti",
-        "price": "0.25",
-        "priceCurrency": "EUR",
-        "unitCode": "MIN"
-      },
-      {
-        "@type": "UnitPriceSpecification",
-        "name": "Minuti extra per tutti i pacchetti",
-        "price": "0.35",
-        "priceCurrency": "EUR",
-        "unitCode": "MIN"
       }
-    ]
-  },
+    },
+    {
+      "@type": "Offer",
+      "name": "Segretaria al 100% — 1.500 minuti",
+      "url": "https://youzen.it/#prezzi",
+      "price": "375",
+      "priceCurrency": "EUR",
+      "description": "Canone mensile base per 1.500 minuti. Attivazione e crediti messaggi separati.",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "375",
+        "priceCurrency": "EUR",
+        "unitCode": "MON"
+      }
+    }
+  ],
   "featureList": [
     "Risposta automatica alle chiamate 24/7",
     "Gestione WhatsApp Business",
@@ -270,7 +270,7 @@
       "name": "Quanto costa davvero?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un piano solo: €0,30 al minuto sotto 1.500 minuti al mese. Per i pacchetti da 1.500 minuti la tariffa scende a €0,25 su tutti i minuti. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga in anticipo, ogni 3 mesi (o annuale, con il 10% di sconto). L'attivazione costa 500€, una tantum. I minuti oltre il pacchetto costano 0,35 €/min per tutti i pacchetti, anche con pagamento annuale. Fuori dal canone restano due voci facoltative: i messaggi diretti di Instagram e Facebook a 5€/mese, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi."
+        "text": "Puoi scegliere 300 minuti a 90 €/mese, 1.500 minuti a 375 €/mese oppure un pacchetto su misura. Con la formula annuale il canone base ha uno sconto del 10%. L’attivazione è separata: 500 € una tantum fino al 31 dicembre 2026, anziché 1.000 €. I minuti extra costano 0,35 €/min. Puoi aggiungere il centralino a 25 €/mese e i messaggi diretti di Instagram e Facebook a 5 €/mese (4,50 € con formula annuale). I crediti per WhatsApp, SMS e messaggi sono separati e non scadono: 140 crediti a 5 €, 560 a 15 € o 1.400 a 30 €."
       }
     },
     {
@@ -5441,9 +5441,28 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
 }
 
 </style>
+<link rel="stylesheet" href="tema-chiaro.css">
+<link rel="stylesheet" href="hero-scene.css">
+<link rel="stylesheet" href="home-componenti.css">
+<link rel="stylesheet" href="home-integrazione.css">
 </head>
 
 <body>
+<svg class="yp-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="4"/><path d="M7 3v4m10-4v4M3 11h18m-13 5h2m4 0h2"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H9l-6 2 2-6v-4.5a8 8 0 0 1 16 0Z"/><path d="M8 10h8m-8 4h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 10 7-10 7Z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.9 13.4A9 9 0 0 1 10.6 3.1 9 9 0 1 0 20.9 13.4Z"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M3 6h5m4 0h9M3 18h9m4 0h5"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="18" r="2"/></symbol>
+<symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m1-15a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v2"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+</defs></svg>
 
 <!-- ============================ NAVBAR ============================ -->
 <header class="nav" id="nav">
@@ -5590,9 +5609,9 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
 <section class="hero yz-scene" id="hero" aria-labelledby="yz-scene-title">
   <div class="yz-scene-photos" aria-hidden="true">
     <img class="yz-scene-photo is-active" src="hero-scene/ristorante-pieno.webp" width="1536" height="1024" alt="" fetchpriority="high" decoding="async" style="--photo-position:82%">
-    <img class="yz-scene-photo" src="hero-scene/salone.webp" width="1536" height="1024" alt="" decoding="async" style="--photo-position:88%">
-    <img class="yz-scene-photo" src="hero-scene/businessman.webp" width="1536" height="1024" alt="" decoding="async" style="--photo-position:74%">
-    <img class="yz-scene-photo" src="hero-scene/ambulatorio.webp" width="1536" height="1024" alt="" decoding="async" style="--photo-position:76%">
+    <img class="yz-scene-photo" fetchpriority="low" src="hero-scene/salone.webp" width="1536" height="1024" alt="" decoding="async" style="--photo-position:88%">
+    <img class="yz-scene-photo" fetchpriority="low" src="hero-scene/businessman.webp" width="1536" height="1024" alt="" decoding="async" style="--photo-position:74%">
+    <img class="yz-scene-photo" fetchpriority="low" src="hero-scene/ambulatorio.webp" width="1536" height="1024" alt="" decoding="async" style="--photo-position:76%">
   </div>
   <div class="yz-scene-copy">
     <p class="yz-scene-category"><span aria-hidden="true"></span>La tua segreteria telefonica AI</p>
@@ -5605,6 +5624,12 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
     <h1 id="yz-scene-title"><span class="yz-scene-phone">Il telefono squilla.</span><strong class="yz-scene-breath">Tu respiri.</strong></h1>
     <p class="yz-scene-description">Alle chiamate rispondiamo noi.<br>Al tuo lavoro ci pensi tu.</p>
     <a class="yz-scene-cta" href="#demo-call">Prova una chiamata<span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="yp-ui yp-hero-boxes" aria-label="Esempio illustrativo: chiamata, appuntamento e WhatsApp">
+    <div class="yp-hero-card yp-call-card"><div class="yp-card-top"><span class="yp-card-icon"><svg><use href="#i-phone"/></svg></span><span>Chiamata gestita</span><span class="yp-now">Adesso</span></div><div class="yp-card-body"><div><small>Noi rispondiamo.</small><strong>Tu resti presente.</strong></div><span class="yp-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div></div>
+    <div class="yp-hero-card yp-booking-card"><div class="yp-card-top"><span class="yp-card-icon"><svg><use href="#i-calendar"/></svg></span><span>La tua agenda</span><span class="yp-status">Confermato</span></div><div class="yp-card-body"><span class="yp-date"><small>VEN</small><b>23</b></span><div><strong id="yp-hero-result">Tavolo per 2</strong><small id="yp-hero-time">Ore 20:30 · Trattoria del Borgo</small></div><span class="yp-card-check"><svg><use href="#i-check"/></svg></span></div></div>
+    <div class="yp-hero-card yp-wa-card"><div class="yp-card-top"><span class="yp-card-icon"><svg><use href="#i-chat"/></svg></span><span>WhatsApp</span><span class="yp-now">Ora</span></div><div class="yp-card-body"><div><strong>Una conferma. Un pensiero in meno.</strong><p id="yp-hero-wa">Ciao Giulia, il tuo tavolo per 2 è confermato per venerdì alle 20:30.</p></div></div></div>
+    <p class="yp-scene-caption">Esempio dimostrativo del servizio</p>
   </div>
   <div class="yz-scene-controls">
     <button class="yz-scene-step" type="button" data-scene-step="-1" aria-label="Mostra il settore precedente">←</button>
@@ -6067,8 +6092,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
     <div class="section-head">
       <span class="eyebrow">I tre problemi</span>
       <h2>
-        <span class="title-problem">Tre cose che ti costano clienti,</span>
-        <span class="title-solution">le chiude YouZen una per una.</span>
+        <span class="title-problem">Tre problemi che ti costano clienti.</span>
+        <span class="title-solution">Li risolviamo uno per uno.</span>
       </h2>
       <p class="lead">Chiamate perse, telefonate fuori orario e chat lasciate a metà, tra WhatsApp e social. Una alla volta, con quello che cambia il giorno dopo.</p>
     </div>
@@ -6181,27 +6206,18 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
 
 </section>
 
-<!-- GESTIONALE scelto: E fisarmonica --><section class="section has-cta yzg yzg-E" id="gestionale">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Il gestionale</span>
-      <h2>
-        <span class="title-problem">Quello che succede al telefono,</span>
-        <span class="title-solution">lo ritrovi scritto qui.</span>
-      </h2>
-      <p class="lead">Un'app sola, costruita sul tuo settore. La apri dal computer o dal telefono, e dentro c'è già tutto quello che abbiamo fatto per te.</p>
-    </div>
-    <div class="yzg-sett" role="group" aria-label="Guarda il gestionale di">
-      <span>Guarda il gestionale di</span>
-      <button type="button" data-yzg-sett="ristorante" aria-pressed="true">un ristorante</button>
-      <button type="button" data-yzg-sett="salone" aria-pressed="false">un salone</button>
-      <button type="button" data-yzg-sett="studio" aria-pressed="false">uno studio</button>
-    </div>
-    <article class="yzg-E-scheda" data-yzg-giro>
-      <div class="yzg-E-striscia">
-        <button type="button" data-yzg-voce="panoramica" aria-pressed="true"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM14 4v4h6V4zM4 20h6v-4H4z"/></svg></span><span class="yzg-E-t">Panoramica</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="panoramica">
-          <p class="yzg-E-d">La giornata in quattro numeri appena apri l'app. La riga di stato diventa arancione solo se qualcosa non va.</p>
+<!-- GESTIONALE scelto: E fisarmonica --><section class="section yp-ui yp-gestion" id="gestionale" aria-labelledby="yp-gestion-title"><div class="wrap yp-gestion-layout">
+<div class="yp-gestion-copy"><p class="eyebrow">Tutto al suo posto</p><h2 id="yp-gestion-title">Il gestionale.<br><span>La tua giornata,<br>in una pagina.</span></h2><p class="yp-gestion-lead">Chiamate, WhatsApp e appuntamenti. Ritrovi quello che abbiamo fatto per te, dal computer o dal telefono.</p>
+<div class="yp-app-sectors" role="group" aria-label="Settore del gestionale"><button type="button" data-yp-app-sector="ristorante" aria-pressed="true">Ristorante</button><button type="button" data-yp-app-sector="salone" aria-pressed="false">Salone</button><button type="button" data-yp-app-sector="studio" aria-pressed="false">Studio</button></div>
+<div class="yp-app-tabs" role="tablist" aria-label="Viste del gestionale" aria-orientation="vertical"><button type="button" role="tab" id="yp-tab-agenda" aria-controls="yp-panel-agenda" data-yp-tab="agenda" data-yp-only="" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Agenda</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-chiamate" aria-controls="yp-panel-chiamate" data-yp-tab="chiamate" data-yp-only="" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>Chiamate</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-whatsapp" aria-controls="yp-panel-whatsapp" data-yp-tab="whatsapp" data-yp-only="" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span>WhatsApp</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-clienti" aria-controls="yp-panel-clienti" data-yp-tab="clienti" data-yp-only="" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg><span>Clienti</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-panoramica" aria-controls="yp-panel-panoramica" data-yp-tab="panoramica" data-yp-only="" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM14 4v4h6V4zM4 20h6v-4H4z"/></svg><span>Panoramica</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button></div>
+<details class="yp-more-functions"><summary>Altre funzioni <span aria-hidden="true">+</span></summary><div class="yp-app-tabs" role="tablist" aria-label="Altre funzioni del gestionale" aria-orientation="vertical"><button type="button" role="tab" id="yp-tab-orari" aria-controls="yp-panel-orari" data-yp-tab="orari" data-yp-only="" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Orari e chiusure</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-tavoli" aria-controls="yp-panel-tavoli" data-yp-tab="tavoli" data-yp-only="ristorante" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h16M6 10v9M18 10v9M8 6h8"/><circle cx="12" cy="4" r="1"/></svg><span>Prenotazioni tavoli</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-asporto" aria-controls="yp-panel-asporto" data-yp-tab="asporto" data-yp-only="ristorante" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.5 12h-11zM9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Asporto</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-kds" aria-controls="yp-panel-kds" data-yp-tab="kds" data-yp-only="ristorante" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 8h4M7 11h6"/></svg><span>KDS cucina</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-stilisti" aria-controls="yp-panel-stilisti" data-yp-tab="stilisti" data-yp-only="salone" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/></svg><span>Stilisti</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-servizi" aria-controls="yp-panel-servizi" data-yp-tab="servizi" data-yp-only="salone" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Servizi</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-aree" aria-controls="yp-panel-aree" data-yp-tab="aree" data-yp-only="studio" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M7 8l-3 6a3 3 0 0 0 6 0Zm10 0-3 6a3 3 0 0 0 6 0Z"/></svg><span>Aree di competenza</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button><button type="button" role="tab" id="yp-tab-calendario" aria-controls="yp-panel-calendario" data-yp-tab="calendario" data-yp-only="studio" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15l2 2 4-4"/></svg><span>Calendario</span><span class="yp-tab-arrow" aria-hidden="true">↗</span></button></div></details>
+<div class="yp-gestion-links"><a class="text-link" href="https://app.youzen.it" target="_blank" rel="noopener">Entra nell’App <svg><use href="#i-up"/></svg></a><a class="text-link" href="#demo-call">Provala sulla tua attività <svg><use href="#i-arrow"/></svg></a></div></div>
+<div class="yp-app-window" data-yp-active-sector="ristorante"><div class="yp-app-top"><span class="yp-app-logo">You<span>Zen</span></span><span id="yp-app-business">Trattoria del Borgo</span><span class="yp-avatar" id="yp-app-avatar">TB</span></div>
+<div class="yp-app-inner"><div class="yp-app-heading"><div><span class="quiet-label">Venerdì, 23 ottobre · esempio</span><h3 id="yp-app-title">La tua agenda</h3></div><span class="yp-status">Tutto in ordine</span></div>
+<p id="yp-app-description">Gli appuntamenti presi al telefono e su WhatsApp li trovi già in agenda, con il nome e il numero del cliente.</p>
+<div class="yp-week" id="yp-week" aria-hidden="true"><span>Lun<b>19</b></span><span>Mar<b>20</b></span><span>Mer<b>21</b></span><span>Gio<b>22</b></span><span class="is-selected">Ven<b>23</b></span><span>Sab<b>24</b></span><span>Dom<b>25</b></span></div>
+<div class="yp-app-panels"><div class="yp-app-panel" id="yp-panel-panoramica" data-yp-panel="panoramica" role="tabpanel" aria-labelledby="yp-tab-panoramica" hidden>
+
           <div class="yzg-pannello"><div class="yzg-s" data-s="ristorante">
           <div class="yzg-numeri">
             <div><b data-yzg-conta="12">12</b><span>prenotazioni oggi</span></div>
@@ -6224,12 +6240,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <div><b data-yzg-conta="312">312</b><span>minuti su 1.000</span></div>
           </div>
           <div class="yzg-stato"><i></i>Tutto in ordine. Nessuna chiamata rimasta senza risposta.</div></div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia">
-        <button type="button" data-yzg-voce="agenda" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="yzg-E-t">Agenda</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="agenda" hidden>
-          <p class="yzg-E-d">Gli appuntamenti presi al telefono e su WhatsApp li trovi già in agenda, con il nome e il numero del cliente.</p>
+        </div><div class="yp-app-panel" id="yp-panel-agenda" data-yp-panel="agenda" role="tabpanel" aria-labelledby="yp-tab-agenda">
+
           <div class="yzg-pannello"><div class="yzg-s" data-s="ristorante">
           <ul class="yzg-agenda">
             <li><b>12:30</b><span>Rossi, 4 persone</span><em>dal telefono</em></li>
@@ -6252,12 +6264,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <li class="yzg-nuovo"><b>15:00</b><span>Ferri, consulenza</span><em>appena preso</em></li>
             <li><b>17:00</b><span>Neri, aggiornamento</span><em>dal telefono</em></li>
           </ul></div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia">
-        <button type="button" data-yzg-voce="chiamate" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="yzg-E-t">Chiamate</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="chiamate" hidden>
-          <p class="yzg-E-d">Ogni telefonata ha la sua trascrizione. Leggi cosa voleva il cliente e com'è finita, senza doverlo richiamare.</p>
+        </div><div class="yp-app-panel" id="yp-panel-chiamate" data-yp-panel="chiamate" role="tabpanel" aria-labelledby="yp-tab-chiamate" hidden>
+
           <div class="yzg-pannello"><div class="yzg-s" data-s="ristorante">
           <ul class="yzg-chiamate">
             <li class="is-sel"><b>10:42</b><span>Rossi</span><em class="ok">Prenotato</em></li>
@@ -6289,12 +6297,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <p class="noi"><small>YouZen</small>Martedì alle 10 l'avvocato è libero. A che nome la segno?</p>
             <p><small>Cliente</small>Paolo Bianchi.</p>
           </div></div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia">
-        <button type="button" data-yzg-voce="clienti" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg></span><span class="yzg-E-t">Clienti</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="clienti" hidden>
-          <p class="yzg-E-d">Chi ha chiamato, quando e cosa ha prenotato. La scheda di ogni cliente si aggiorna a ogni contatto.</p>
+        </div><div class="yp-app-panel" id="yp-panel-clienti" data-yp-panel="clienti" role="tabpanel" aria-labelledby="yp-tab-clienti" hidden>
+
           <div class="yzg-pannello"><div class="yzg-s" data-s="ristorante">
           <div class="yzg-cliente">
             <div class="yzg-avatar">RO</div>
@@ -6335,12 +6339,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <li><i></i>Ha chiamato e fissato una consulenza</li>
             <li><i></i>Ha chiesto su WhatsApp quali documenti portare</li>
           </ul></div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia">
-        <button type="button" data-yzg-voce="whatsapp" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span class="yzg-E-t">WhatsApp</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="whatsapp" hidden>
-          <p class="yzg-E-d">Le chat con i clienti stanno nello stesso posto delle chiamate, così non devi cercare in due app.</p>
+        </div><div class="yp-app-panel" id="yp-panel-whatsapp" data-yp-panel="whatsapp" role="tabpanel" aria-labelledby="yp-tab-whatsapp" hidden>
+
           <div class="yzg-pannello"><div class="yzg-s" data-s="ristorante">
           <div class="yzg-chat">
             <p class="lei">Ciao, possiamo essere in sei invece di quattro?</p>
@@ -6360,12 +6360,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <p class="lei">Perfetto, grazie.</p>
             <p class="noi">A martedì alle 10.</p>
           </div></div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia">
-        <button type="button" data-yzg-voce="orari" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="yzg-E-t">Orari e chiusure</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="orari" hidden>
-          <p class="yzg-E-d">Cambi un orario o aggiungi un giorno di chiusura, salvi, e chi risponde al telefono lo sa già.</p>
+        </div><div class="yp-app-panel" id="yp-panel-orari" data-yp-panel="orari" role="tabpanel" aria-labelledby="yp-tab-orari" hidden>
+
           <div class="yzg-pannello"><div class="yzg-s" data-s="ristorante">
           <ul class="yzg-orari">
             <li><b>Lun</b><span class="chiuso">Chiuso</span></li>
@@ -6397,12 +6393,8 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
           </ul>
           <div class="yzg-salva"><span>Chiusura aggiunta: 8 dicembre</span><button type="button" data-yzg-salva>Salva</button></div>
           <p class="yzg-salvato" data-yzg-salvato>Salvato. Al telefono lo sappiamo già.</p></div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="ristorante">
-        <button type="button" data-yzg-voce="tavoli" data-s="ristorante" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h16M6 10v9M18 10v9M8 6h8"/><circle cx="12" cy="4" r="1"/></svg></span><span class="yzg-E-t">Prenotazioni tavoli</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="tavoli" hidden>
-          <p class="yzg-E-d">Le prenotazioni dei tavoli prese al telefono le trovi in sala, turno per turno, con il numero di persone e i coperti ancora liberi.</p>
+        </div><div class="yp-app-panel" id="yp-panel-tavoli" data-yp-panel="tavoli" role="tabpanel" aria-labelledby="yp-tab-tavoli" hidden>
+
           <div class="yzg-pannello">
           <div class="yzg-turno"><div><b>Cena di sabato</b><span>34 coperti su 48</span></div><div class="yzg-barra"><i style="--w:71%"></i></div></div>
           <ul class="yzg-agenda">
@@ -6411,48 +6403,32 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <li class="yzg-nuovo"><b>20:30</b><span>Ferri, 6 persone</span><em>appena preso</em></li>
             <li><b>21:00</b><span>Neri, 3 persone, un seggiolone</span><em>sala interna</em></li>
           </ul></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="ristorante">
-        <button type="button" data-yzg-voce="asporto" data-s="ristorante" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.5 12h-11zM9 8V6a3 3 0 0 1 6 0v2"/></svg></span><span class="yzg-E-t">Asporto</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="asporto" hidden>
-          <p class="yzg-E-d">Gli ordini d'asporto arrivano con i piatti, l'orario di ritiro e il nome. Li segui da quando entrano a quando escono.</p>
+        </div><div class="yp-app-panel" id="yp-panel-asporto" data-yp-panel="asporto" role="tabpanel" aria-labelledby="yp-tab-asporto" hidden>
+
           <div class="yzg-pannello">
           <ul class="yzg-ordini">
             <li><b>#18</b><div><span>Conti, ritiro 19:30</span><small>2 margherite, 1 tiramisù</small></div><em class="nuovo">Nuovo</em></li>
             <li><b>#17</b><div><span>Galli, ritiro 19:15</span><small>1 diavola, 1 calzone, 2 birre</small></div><em class="prep">In preparazione</em></li>
             <li><b>#16</b><div><span>Moretti, ritiro 19:00</span><small>3 margherite</small></div><em class="ok">Pronto</em></li>
           </ul></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="ristorante">
-        <button type="button" data-yzg-voce="kds" data-s="ristorante" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 8h4M7 11h6"/></svg></span><span class="yzg-E-t">KDS cucina</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="kds" hidden>
-          <p class="yzg-E-d">In cucina gli ordini compaiono sullo schermo in ordine di ritiro, e chi cucina li segna come pronti. Prova a toccare Pronto.</p>
+        </div><div class="yp-app-panel" id="yp-panel-kds" data-yp-panel="kds" role="tabpanel" aria-labelledby="yp-tab-kds" hidden>
+
           <div class="yzg-pannello">
           <div class="yzg-kds">
             <div class="yzg-ticket"><header><b>#16</b><span>ritiro 19:00</span><i>14:02</i></header><ul><li>3 × Margherita</li></ul><button type="button" data-yzg-pronto>Pronto</button></div>
             <div class="yzg-ticket"><header><b>#17</b><span>ritiro 19:15</span><i>08:40</i></header><ul><li>1 × Diavola</li><li>1 × Calzone</li></ul><button type="button" data-yzg-pronto>Pronto</button></div>
             <div class="yzg-ticket"><header><b>#18</b><span>ritiro 19:30</span><i>02:15</i></header><ul><li>2 × Margherita</li><li>1 × Tiramisù</li></ul><button type="button" data-yzg-pronto>Pronto</button></div>
           </div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="salone">
-        <button type="button" data-yzg-voce="stilisti" data-s="salone" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.5 15.5M20 20 8.5 8.5"/></svg></span><span class="yzg-E-t">Stilisti</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="stilisti" hidden>
-          <p class="yzg-E-d">Ogni stilista ha la sua agenda. Chi chiama prende il primo posto libero, oppure la persona che ha chiesto per nome.</p>
+        </div><div class="yp-app-panel" id="yp-panel-stilisti" data-yp-panel="stilisti" role="tabpanel" aria-labelledby="yp-tab-stilisti" hidden>
+
           <div class="yzg-pannello">
           <div class="yzg-stilisti">
             <div><span class="yzg-avatar">GI</span><b>Giulia</b><small>6 appuntamenti oggi</small><div class="yzg-barra"><i style="--w:80%"></i></div><em>libera alle 16:00</em></div>
             <div><span class="yzg-avatar">MA</span><b>Marco</b><small>4 appuntamenti oggi</small><div class="yzg-barra"><i style="--w:55%"></i></div><em>libero alle 11:30</em></div>
             <div><span class="yzg-avatar">SA</span><b>Sara</b><small>5 appuntamenti oggi</small><div class="yzg-barra"><i style="--w:68%"></i></div><em>libera alle 14:00</em></div>
           </div></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="salone">
-        <button type="button" data-yzg-voce="servizi" data-s="salone" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg></span><span class="yzg-E-t">Servizi</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="servizi" hidden>
-          <p class="yzg-E-d">Servizi e durate li decidi tu, così al telefono sappiamo quanto tempo bloccare per un colore e quanto per un taglio.</p>
+        </div><div class="yp-app-panel" id="yp-panel-servizi" data-yp-panel="servizi" role="tabpanel" aria-labelledby="yp-tab-servizi" hidden>
+
           <div class="yzg-pannello">
           <ul class="yzg-servizi">
             <li><span>Taglio e piega</span><em>45 min</em><small>Giulia, Sara</small></li>
@@ -6460,23 +6436,15 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <li><span>Barba</span><em>20 min</em><small>Marco</small></li>
             <li><span>Trattamento viso</span><em>60 min</em><small>Sara</small></li>
           </ul></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="studio">
-        <button type="button" data-yzg-voce="aree" data-s="studio" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M7 8l-3 6a3 3 0 0 0 6 0Zm10 0-3 6a3 3 0 0 0 6 0Z"/></svg></span><span class="yzg-E-t">Aree di competenza</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="aree" hidden>
-          <p class="yzg-E-d">Le materie di cui si occupa lo studio. Chi risponde al telefono sa cosa seguite e cosa no.</p>
+        </div><div class="yp-app-panel" id="yp-panel-aree" data-yp-panel="aree" role="tabpanel" aria-labelledby="yp-tab-aree" hidden>
+
           <div class="yzg-pannello">
           <ul class="yzg-aree">
             <li>Diritto di famiglia</li><li>Lavoro</li><li>Successioni</li><li>Contratti</li><li>Recupero crediti</li><li class="no">Penale</li>
           </ul>
           <p class="yzg-nota">Chi chiama per una materia che non seguite lo sa subito, senza aspettare di parlare con voi.</p></div>
-        </div>
-      </div>
-      <div class="yzg-E-striscia" data-s="studio">
-        <button type="button" data-yzg-voce="calendario" data-s="studio" aria-pressed="false"><span class="yzg-E-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15l2 2 4-4"/></svg></span><span class="yzg-E-t">Calendario</span></button>
-        <div class="yzg-E-aperta" data-yzg-pannello="calendario" hidden>
-          <p class="yzg-E-d">Gli appuntamenti presi al telefono finiscono anche nel calendario che usate già, per esempio Outlook.</p>
+        </div><div class="yp-app-panel" id="yp-panel-calendario" data-yp-panel="calendario" role="tabpanel" aria-labelledby="yp-tab-calendario" hidden>
+
           <div class="yzg-pannello">
           <div class="yzg-sync">
             <div><small>Agenda YouZen</small><p><b>Mar 10:00</b>Bianchi, consulenza</p></div>
@@ -6484,13 +6452,7 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <div><small>Outlook</small><p><b>Mar 10:00</b>Bianchi, consulenza</p></div>
           </div>
           <p class="yzg-nota">Sincronizzato un minuto fa.</p></div>
-        </div>
-      </div>
-      <div class="yzg-avanz" aria-hidden="true"><i></i></div>
-    </article>
-    <p class="yzg-settore"><a href="https://app.youzen.it" target="_blank" rel="noopener">Entra nell'App</a></p>
-  </div>
-</section>
+        </div></div></div><div class="yp-app-bottom"><svg><use href="#i-sliders"/></svg>Anteprima illustrativa · dati di esempio</div></div></div></section>
 
 <!-- ============================ ONBOARDING (sec-06) mockup C ============================ -->
 <section class="section has-cta yzo yzo-C" id="sec-06">
@@ -6700,10 +6662,10 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
 <section class="section has-cta" id="sec-05">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Settori</span>
+      <span class="eyebrow">Il tuo lavoro, le tue regole</span>
       <h2>
-        <span class="title-problem">Sa già cosa serve,</span>
-        <span class="title-solution">così tu respiri un attimo.</span>
+        <span class="title-problem">Non tutte le chiamate</span>
+        <span class="title-solution">chiedono la stessa cosa.</span>
       </h2>
       <p class="lead">Cinque settori, ognuno con la sua knowledge base e i suoi flussi, non un copia-incolla con il nome cambiato. Il tuo non c'è? Sesto box, scrivici: te lo costruiamo su misura, non "quasi uguale".</p>
     </div>
@@ -6833,214 +6795,47 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
 
 
 <!-- ============================ PRICING (sec-07) ============================ -->
-<section class="section has-cta" id="prezzi">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Prezzi</span>
-      <h2>
-        <span class="title-problem">Un piano solo.</span>
-        <span class="title-solution">Quello giusto.</span>
-      </h2>
-      <p class="lead">Scegli i minuti che ti servono, senza un contratto a lungo termine.</p>
-    </div>
-
-    <div class="yzp" id="yzp">
-
-      <div class="yzp-uses" role="group" aria-label="Come vuoi usare la segretaria">
-        <button type="button" class="yzp-use" data-minutes="300" aria-pressed="false" aria-controls="minSlider yzpReveal">
-          <span class="yzp-use-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 13.4A9 9 0 0 1 10.6 3.1 9 9 0 1 0 20.9 13.4Z"/></svg></span>
-          <span class="yzp-use-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
-          <span class="yzp-use-copy">
-            <span class="yzp-use-title">A locale chiuso</span>
-            <span class="yzp-use-desc">Rispondiamo quando il locale è chiuso.</span>
-          </span>
-          <span class="yzp-use-metrics">
-            <span><span class="yzp-use-amount">300</span><span class="yzp-use-unit">minuti / mese</span></span>
-            <span class="yzp-use-price"><b data-use-price>€90</b><small>/mese</small></span>
-          </span>
-          <span class="yzp-use-feat"><span>Serate, giorno di chiusura e ferie</span><span>Prenotazioni anche di notte</span><span>Nessun vincolo lungo</span></span>
-          <span class="yzp-use-cta">Scegli questo</span>
-        </button>
-        <button type="button" class="yzp-use yzp-use-hot" data-minutes="1500" aria-pressed="false" aria-controls="minSlider yzpReveal">
-          <span class="yzp-use-ribbon">Il più scelto</span>
-          <span class="yzp-use-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m7 3 3 5-3 2c1.5 3 4 5.5 7 7l2-3 5 3-1 4C11 22 2 13 3 4Z"/></svg></span>
-          <span class="yzp-use-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
-          <span class="yzp-use-copy">
-            <span class="yzp-use-title">Segretaria al 100%</span>
-            <span class="yzp-use-desc">Affidi a Carla la segreteria del locale.</span>
-          </span>
-          <span class="yzp-use-metrics">
-            <span><span class="yzp-use-amount">1.500</span><span class="yzp-use-unit">minuti / mese</span></span>
-            <span class="yzp-use-price"><b data-use-price>€375</b><small>/mese</small></span>
-          </span>
-          <span class="yzp-use-feat"><span>Risponde sempre, anche in servizio</span><span>Prenotazioni, info e richieste</span><span>Nessun vincolo lungo</span></span>
-          <span class="yzp-use-cta">Scegli questo</span>
-        </button>
-        <button type="button" class="yzp-use" data-minutes="custom" aria-pressed="false" aria-controls="minSlider yzpReveal">
-          <span class="yzp-use-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h5m4 0h9M3 18h9m4 0h5"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="18" r="2"/></svg></span>
-          <span class="yzp-use-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
-          <span class="yzp-use-copy">
-            <span class="yzp-use-title">A richiesta</span>
-            <span class="yzp-use-desc">Scegli quanti minuti ti servono.</span>
-            <span class="yzp-use-action">Scegli i minuti <span aria-hidden="true">→</span></span>
-          </span>
-          <span class="yzp-use-metrics">
-            <span><span class="yzp-use-amount" id="yzpCustomMin">Su misura</span><span class="yzp-use-unit" id="yzpCustomUnit" hidden>minuti / mese</span></span>
-            <span class="yzp-use-price" id="yzpCustomPrice" hidden><b data-use-price></b><small>/mese</small></span>
-          </span>
-          <span class="yzp-use-feat"><span>Paghi solo i minuti che usi</span><span>Da 1.500 min: €0,25/min</span><span>Cambi quando vuoi</span></span>
-          <span class="yzp-use-cta">Scegli i minuti →</span>
-        </button>
-      </div>
-      <p class="yzp-use-dm-note" id="yzpUseDmNote" hidden>Importi con l'opzione DM inclusa.</p>
-
-      <!-- ===== Contatore ===== -->
-      <div class="yzp-hero">
-
-        <!-- Stato iniziale: invito a scegliere una scheda o i minuti. -->
-        <div class="yzp-invite" id="yzpInvite">
-          <p class="yzp-invite-q">Quanti minuti ti servono?</p>
-          <p class="yzp-invite-s">Scegli una scheda o usa il cursore qui sotto.</p>
-        </div>
-
-        <!-- Stato rivelato: il prezzo. Resta visibile da qui in poi. -->
-        <div class="yzp-reveal" id="yzpReveal" aria-live="polite" aria-atomic="true" hidden>
-          <div class="yzp-big">
-            <span class="yzp-cur">€</span><span id="yzpMonthly">0</span><span class="yzp-per">/mese</span>
-          </div>
-          <p class="yzp-calc">
-            <b id="yzpMin">0</b> minuti × <span id="yzpRate">€0,30</span>: <b>paghi le conversazioni, non il software</b><br />
-            <span class="yzp-dim">se sfori il pacchetto: <b class="yzp-acc"><span id="yzpExtraRate">€0,35</span>/min</b>, solo sui minuti in più</span>
-            <span class="yzp-centralino-addline"><br />più <b>€25</b> al mese per il Centralino AI</span>
-            <span class="yzp-addline"><br />più <b data-dmprice>€5</b> al mese per i messaggi diretti di Instagram e Facebook</span>
-          </p>
-          <div class="yzp-was">con l'annuale: <s id="yzpWas">€0/mese</s> <b id="yzpSave">risparmi €0 l'anno</b></div>
-        </div>
-
-      </div>
-
-      <!-- ===== Cadenza: box allineato tutto a destra ===== -->
-      <div class="yzp-cadrow">
-        <span class="yzp-cadlab">Come paghi il canone</span>
-        <div class="billing-toggle" id="yzpCad">
-          <button type="button" class="active" data-mesi="3">Trimestrale</button>
-          <button type="button" data-mesi="12">Annuale <span class="discount-badge">-10%</span></button>
-        </div>
-      </div>
-
-      <!-- ===== Slider minuti ===== -->
-      <div class="yzp-minrow">
-        <span class="yzp-minlab">Minuti al mese</span>
-        <span class="yzp-minval"><b id="yzpMinLab">0</b> min</span>
-      </div>
-      <div class="slider-wrapper yzp-track">
-        <input type="range" id="minSlider" class="slider" min="0" max="11" step="1" value="0" aria-label="Minuti di conversazione mensili" />
-        <div class="slider-labels" aria-hidden="true">
-          <span class="active" style="--f:0">0</span>
-          <span style="--f:0.0909">300</span>
-          <span style="--f:0.1818">500</span>
-          <span style="--f:0.2727">750</span>
-          <span style="--f:0.3636">1k</span>
-          <span style="--f:0.4545">1.500</span>
-          <span style="--f:0.5455">2k</span>
-          <span style="--f:0.6364">3k</span>
-          <span style="--f:0.7273">4k</span>
-          <span style="--f:0.8182">5k</span>
-          <span style="--f:0.9091">7.5k</span>
-          <span style="--f:1">10k</span>
-        </div>
-        <p class="yzp-rate-note">Sotto 1.500 minuti: €0,30/min. Da 1.500: <b>€0,25/min su tutto il pacchetto</b>.</p>
-      </div>
-
-      <!-- ===== Avviso sconto attivazione ===== -->
-      <div class="yzp-promo">
-        <span class="yzp-promo-ico" aria-hidden="true">%</span>
-        <p class="yzp-promo-t">
-          <b>Sconto attivazione attivo:</b> risparmi <b>€500</b> sull'una tantum.
-          <span>Offerta valida fino al <u>31 dicembre 2026</u>. Dopo, l'attivazione torna a prezzo pieno.</span>
-        </p>
-      </div>
-
-      <!-- ===== Setup ===== -->
-      <div class="yzp-setups">
-        <div class="yzp-set">
-          <span class="yzp-badge">−50%</span>
-          <span class="yzp-set-n">Setup</span>
-          <span class="yzp-set-d">Numero VoIP dedicato, agente, calendario e WhatsApp. Live in 8 giorni.</span>
-          <span class="yzp-set-p"><s>€1.000</s><b>€500</b></span>
-        </div>
-      </div>
-
-      <!-- ===== Opzione: messaggi diretti Instagram e Facebook ===== -->
-      <button type="button" class="yzp-dm yzp-centralino" id="yzpCentralino" aria-pressed="false">
-        <span class="yzp-centralino-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="5" rx="1.5"/><path d="M12 7v5M4 16v-4h16v4"/><rect x="1" y="16" width="6" height="5" rx="1.5"/><rect x="9" y="16" width="6" height="5" rx="1.5"/><rect x="17" y="16" width="6" height="5" rx="1.5"/></svg></span>
-        <span class="yzp-dm-txt"><span class="yzp-dm-n">Centralino AI</span><span class="yzp-dm-d">Gestisci le chiamate e scegli quando passarle a Carla.</span></span>
-        <span class="yzp-dm-p">+€25<small>al mese</small></span>
-        <span class="dm-sw" aria-hidden="true"></span>
-      </button>
-
-      <button type="button" class="yzp-dm" id="yzpDm" aria-pressed="false">
-        <span class="yzp-dm-badge">Novità</span>
-        <span class="dm-ico" aria-hidden="true">
-          <span class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
-          <span class="fb"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14 8.5V6.9c0-.7.2-1.1 1.2-1.1H16V3.1c-.3 0-1-.1-1.9-.1-2 0-3.4 1.2-3.4 3.5v2H8.4V11H10.7v8h2.8v-8h2.3l.4-2.5H14z"/></svg></span>
-        </span>
-        <span class="yzp-dm-txt">
-          <span class="yzp-dm-n">Messaggi diretti di Instagram e Facebook</span>
-          <span class="yzp-dm-d">Rispondiamo ai DM e prendiamo l'appuntamento dentro la conversazione.</span>
-        </span>
-        <span class="yzp-dm-p">+<span data-dmprice>€5</span><small>al mese</small></span>
-        <span class="dm-sw" aria-hidden="true"></span>
-      </button>
-
-      <!-- ===== Crediti per i messaggi: fuori dal canone, non entra nei totali ===== -->
-      <div class="yzc">
-        <div class="yzc-head">
-          <span class="yzc-t">Crediti per i messaggi</span>
-          <span class="yzc-s">Fuori dal canone. Si comprano quando finiscono.</span>
-        </div>
-        <div class="yzc-grid">
-          <div class="yzc-tile is-auto">
-            <span class="yzc-badge">Ricarica automatica</span>
-            <span class="yzc-cr">100 <i>messaggi</i></span>
-            <span class="yzc-p">€5</span>
-            <span class="yzc-m">140 crediti</span>
-          </div>
-          <div class="yzc-tile">
-            <span class="yzc-badge is-save">Risparmi il 25%</span>
-            <span class="yzc-cr">400 <i>messaggi</i></span>
-            <span class="yzc-p">€15</span>
-            <span class="yzc-m">560 crediti</span>
-          </div>
-          <div class="yzc-tile">
-            <span class="yzc-badge is-save">Risparmi il 40%</span>
-            <span class="yzc-cr">1.000 <i>messaggi</i></span>
-            <span class="yzc-p">€30</span>
-            <span class="yzc-m">1.400 crediti</span>
-          </div>
-        </div>
-        <div class="yzc-mai">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-            <path d="M6.5 8.5c-2.2 0-3.9 1.6-3.9 3.5s1.7 3.5 3.9 3.5c3.4 0 6.6-7 11-7 2.2 0 3.9 1.6 3.9 3.5s-1.7 3.5-3.9 3.5c-4.4 0-7.6-7-11-7z" />
-          </svg>
-          <div>
-            <p class="yzc-mai-t">I crediti non scadono mai</p>
-            <p class="yzc-mai-s">Quello che non spendi resta sul contatore il mese dopo, e quello dopo ancora. I minuti di telefono si azzerano a ogni rinnovo, i crediti no: una ricarica fatta a gennaio la stai ancora usando a dicembre.</p>
-          </div>
-        </div>
-        <details class="yzc-info">
-          <summary>Informazioni</summary>
-          <div class="yzc-info-body">
+<section class="section pricing-section yp-ui yp-pricing" id="prezzi" aria-labelledby="pricing-title">
+<div class="wrap">
+<div class="section-intro"><p class="eyebrow">Il conto, prima di partire</p><h2 id="pricing-title">Scegli come usarla.<br><span>Sai quanto spendi.</span></h2><p>Voce + WhatsApp. Scegli i minuti che ti servono e vedi subito tutte le voci del costo.</p></div>
+<div class="pricing-layout"><div class="pricing-controls">
+<div class="price-choices" role="group" aria-label="Come vuoi usare YouZen">
+<button type="button" class="price-choice yp-plan" data-plan="300" aria-pressed="false" aria-controls="price-values custom-minutes">
+<span class="yp-plan-top"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="yp-plan-name"><span class="yp-plan-service">Voce + WhatsApp</span><strong>A locale chiuso</strong><small>Rispondiamo quando il locale è chiuso.</small></span><span class="choice-price"><b id="price-300">€90</b><small>/mese di base</small></span></span>
+<span class="yp-plan-minutes" data-plan-minutes>300 minuti al mese</span>
+<span class="yp-plan-rate"><s data-plan-was hidden></s><b data-plan-rate>€0,30/min</b><span class="yp-plan-saving" data-plan-saving hidden>−16,7% sui minuti</span></span>
+<span class="yp-plan-features"><span>Serate, giorno di chiusura e ferie</span><span>Prenotazioni anche di notte</span><span>Nessun vincolo lungo</span></span><span class="yp-plan-cta">Scegli questo <span aria-hidden="true">↗</span></span></button>
+<button type="button" class="price-choice yp-plan" data-plan="1500" aria-pressed="false" aria-controls="price-values custom-minutes"><span class="yp-plan-popular">Il più scelto</span>
+<span class="yp-plan-top"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="yp-plan-name"><span class="yp-plan-service">Voce + WhatsApp</span><strong>Segretaria al 100%</strong><small>Affidi a Carla la segreteria del locale.</small></span><span class="choice-price"><b id="price-1500">€375</b><small>/mese di base</small></span></span>
+<span class="yp-plan-minutes" data-plan-minutes>1.500 minuti al mese</span>
+<span class="yp-plan-rate"><s data-plan-was hidden></s><b data-plan-rate>€0,25/min</b><span class="yp-plan-saving" data-plan-saving hidden>−16,7% sui minuti</span></span>
+<span class="yp-plan-features"><span>Risponde sempre, anche in servizio</span><span>Prenotazioni, info e richieste</span><span>Nessun vincolo lungo</span></span><span class="yp-plan-cta">Scegli questo <span aria-hidden="true">↗</span></span></button>
+<button type="button" class="price-choice yp-plan" data-plan="custom" aria-pressed="false" aria-controls="price-values custom-minutes">
+<span class="yp-plan-top"><svg aria-hidden="true"><use href="#i-sliders"/></svg><span class="yp-plan-name"><span class="yp-plan-service">Voce + WhatsApp</span><strong>A richiesta</strong><small>Scegli quanti minuti ti servono.</small></span><span class="choice-price"><b id="price-custom">Su misura</b><small id="custom-price-caption">Scegli i minuti</small></span></span>
+<span class="yp-plan-minutes" data-plan-minutes>Scegli i tuoi minuti</span>
+<span class="yp-plan-rate"><s data-plan-was hidden></s><b data-plan-rate>€0,30/min · da 1.500: €0,25/min</b><span class="yp-plan-saving" data-plan-saving hidden>−16,7% sui minuti</span></span>
+<span class="yp-plan-features"><span>Paghi solo i minuti che usi</span><span>Tariffa ridotta da 1.500 minuti</span><span>Cambi quando vuoi</span></span><span class="yp-plan-cta">Scegli i minuti <span aria-hidden="true">↗</span></span></button>
+</div>
+<div class="custom-minutes" id="custom-minutes" hidden><label for="minutes-range">Minuti al mese <output id="minutes-output">Scegli i minuti</output></label><input id="minutes-range" type="range" min="0" max="11" value="0" step="1" aria-valuetext="Nessun pacchetto selezionato"><div class="range-labels" aria-hidden="true"><span>Seleziona</span><span>1.500</span><span>10.000</span></div></div>
+<div class="billing-row"><span>Formula del canone</span><div class="sector-switch compact" role="group" aria-label="Periodo di fatturazione"><button type="button" data-billing="3" aria-pressed="true">Standard</button><button type="button" data-billing="12" aria-pressed="false">Annuale −10%</button></div></div>
+<fieldset class="extras"><legend>Solo quello che ti serve</legend>
+<div class="yp-extra"><div class="yp-extra-row"><label for="centralino"><span><span class="yp-new"><i aria-hidden="true"></i>Novità</span><strong>Centralino AI</strong><small>Organizza lo smistamento delle chiamate.</small></span><span class="option-price">€25/mese</span><input type="checkbox" id="centralino"></label><button class="yp-extra-help" type="button" data-extra-help aria-label="Come funziona il Centralino AI" aria-expanded="false" aria-controls="centralino-help">?</button></div><p class="yp-extra-description" id="centralino-help" hidden>Organizza le chiamate in ingresso: scegli quando passarle a Carla e quando inoltrarle a una persona del tuo team. Il costo è di €25 al mese, in aggiunta al pacchetto scelto.</p></div>
+<div class="yp-extra"><div class="yp-extra-row"><label for="dm"><span><span class="yp-new"><i aria-hidden="true"></i>Novità</span><strong>DM Instagram e Facebook</strong><small>Gestisci le richieste anche nei messaggi diretti.</small></span><span class="option-price" id="dm-price">€5/mese</span><input type="checkbox" id="dm"></label><button class="yp-extra-help" type="button" data-extra-help aria-label="Come funzionano i DM Instagram e Facebook" aria-expanded="false" aria-controls="dm-help">?</button></div><p class="yp-extra-description" id="dm-help" hidden>Rispondiamo ai messaggi diretti sulle tue pagine Instagram e Facebook, diamo informazioni e prendiamo appuntamenti nella conversazione. L’opzione si aggiunge al pacchetto scelto; i messaggi utilizzano i crediti separati dal canone, descritti qui sotto.</p></div>
+</fieldset>
+</div>
+<aside class="price-summary" aria-label="Riepilogo dei costi">
+<div id="price-empty"><span class="round-icon"><svg><use href="#i-sliders"/></svg></span><h3 id="summary-title">Il tuo riepilogo<br>inizia da una scelta.</h3><p>Scegli come vuoi usare YouZen.<br>Qui vedrai il costo mensile e, separatamente, l’attivazione.</p></div>
+<div id="price-values" hidden aria-live="polite" aria-atomic="true"><span class="small-label">Il tuo riepilogo</span><div class="monthly-total"><strong id="monthly-total">€90</strong><span>/mese</span></div><p id="minutes-summary">300 minuti inclusi ogni mese</p><dl class="cost-lines"><div><dt>Attivazione, una tantum</dt><dd id="setup-total">€500</dd></div></dl><p id="options-summary" class="quiet-label">Nessun optional selezionato</p><a class="button" href="#demo-call">Parliamo della tua attività <svg><use href="#i-arrow"/></svg></a></div>
+<div class="setup-note"><svg><use href="#i-calendar"/></svg><p id="setup-note">Attivazione a €500 anziché €1.000 fino al 31 dicembre 2026. Numero VoIP, agente, calendario e WhatsApp.</p></div>
+</aside></div>
+<div class="yp-credits" id="crediti-messaggi" aria-labelledby="crediti-title"><header class="yp-credits-head"><h3 id="crediti-title">Crediti per i messaggi</h3><p>Separati dal canone. Non scadono.</p></header><p class="yp-credits-intro">WhatsApp, SMS, DM e chat usano un contatore separato dai minuti di chiamata. Scegli la ricarica quando ti serve.</p>
+<div class="credit-packages" aria-label="Pacchetti crediti messaggi"><div><b>100 messaggi</b><span>€5</span><small>140 crediti</small><em>Per iniziare</em></div><div><b>400 messaggi</b><span>€15</span><small>560 crediti</small><em>Risparmi il 25%</em></div><div><b>1.000 messaggi</b><span>€30</span><small>1.400 crediti</small><em>Risparmi il 40%</em></div></div>
+<p class="yp-credits-note">I crediti che avanzano restano disponibili. I minuti inclusi si rinnovano ogni mese.</p><details class="credit-details"><summary><span>Come funzionano i crediti</span><span aria-hidden="true">+</span></summary><div class="yp-credit-info">
             <p>I messaggi che l'assistente manda e riceve non pescano dai minuti di telefono: hanno un contatore loro. È lo stesso contatore per WhatsApp, gli SMS, i messaggi diretti di Instagram e Facebook e la chat del sito, e quello che avanza da una parte serve dall'altra. Un messaggio costa <b>1,4 crediti</b>, quindi con 5 euro ne mandi 100.</p>
             <p>Più grande è la ricarica, meno paghi il singolo messaggio: quattro ricariche piccole costano 20 euro e la taglia media ti dà gli stessi messaggi a 15, dieci ne costano 50 e la grande te li dà a 30.</p>
             <p>La ricarica automatica nasce spenta. Se la accendi, quando i crediti scendono sotto 35 parte da sola una ricarica da 140, non più di cinque volte nello stesso periodo di fatturazione. L'interruttore sta nella dashboard e lo sposti quando vuoi.</p>
-          </div>
-        </details>
-      </div>
-
-    </div>
-
-  </div>
+          </div></details></div>
+</div>
 </section>
 
 <!-- ============================ FAQ (sec-08) — GRID 2 COL STATICO ============================ -->
@@ -7140,7 +6935,7 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
           <span class="faq-toggle" aria-hidden="true"></span>
         </button></h3>
         <div class="faq-body"><div class="faq-body-inner"><div class="faq-content">
-          <p class="faq-a">Un piano solo: <b>€0,30 al minuto sotto 1.500 minuti al mese</b>. Per i pacchetti da 1.500 minuti la tariffa scende a <b>€0,25 su tutti i minuti</b>. Al pacchetto di riferimento da 750 minuti/mese fa 225€/mese. Il canone si paga <b>in anticipo, ogni 3 mesi</b> (o annuale, con il 10% di sconto). L'attivazione costa 500€, una tantum. I minuti oltre il pacchetto costano 0,35 €/min per tutti i pacchetti, anche con pagamento annuale. Fuori dal canone restano due voci facoltative: i <b>messaggi diretti di Instagram e Facebook a 5€/mese</b>, e i crediti per i messaggi, che compri quando finiscono. Niente sorprese: quello che non accendi non lo paghi.</p>
+          <p class="faq-a">Puoi scegliere 300 minuti a 90 €/mese, 1.500 minuti a 375 €/mese oppure un pacchetto su misura. Con la formula annuale il canone base ha uno sconto del 10%. L’attivazione è separata: 500 € una tantum fino al 31 dicembre 2026, anziché 1.000 €. I minuti extra costano 0,35 €/min. Puoi aggiungere il centralino a 25 €/mese e i messaggi diretti di Instagram e Facebook a 5 €/mese (4,50 € con formula annuale). I crediti per WhatsApp, SMS e messaggi sono separati e non scadono: 140 crediti a 5 €, 560 a 15 € o 1.400 a 30 €.</p>
           <span class="faq-punch">Il conto lo vedi prima di partire, non dopo.</span>
         </div></div></div>
       </div>
@@ -7311,36 +7106,35 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
 </section>
 
 <!-- ============================ DEMO CALL (sec-01b) ============================ -->
-<section class="section demo-call-section" id="demo-call">
-  <div class="container">
-    <div class="demo-call-eyebrow-wrap">
-      <span class="eyebrow">Prova subito</span>
-    </div>
-    <div class="demo-call-grid">
-      <!-- Form demo call -->
-      <div class="demo-call-content">
-        <h2 class="demo-call-title">
-          <span class="title-problem">Non ci credi?</span>
-          <span class="title-solution">guarda la magia</span>
-        </h2>
-        <p class="demo-call-subtitle">Lascia il numero. Ti chiama YouZen in 60 secondi, non un venditore.</p>
-
-        <form class="demo-call-form" id="demoCallForm" novalidate>
+<section class="section demo-section yp-ui yp-demo" id="demo-call" aria-labelledby="demo-title">
+<div class="wrap">
+<div class="section-intro"><p class="eyebrow">Prima vedi come funziona</p><h2 id="demo-title">Una conversazione.<br><span>Un pensiero in meno.</span></h2><p>Scegli il tuo settore, guarda un esempio e scopri cosa possiamo fare per la tua attività.</p></div>
+<div class="demo-grid">
+<div class="conversation" id="esempio">
+<div class="panel-top"><span class="small-label">Esempio dimostrativo</span><span class="quiet-label">Conversazione testuale</span></div>
+<div class="conversation-heading"><span class="round-icon"><svg><use href="#i-phone"/></svg></span><div><h3 id="example-title">Una prenotazione al ristorante</h3><p id="example-description">Dal primo squillo al tavolo in agenda.</p></div></div>
+<div class="sector-switch compact" role="group" aria-label="Settore dell’esempio"><button type="button" data-yp-sector="food" aria-pressed="true">Ristorante</button><button type="button" data-yp-sector="beauty" aria-pressed="false">Salone</button><button type="button" data-yp-sector="finance" aria-pressed="false">Studio</button></div>
+<div class="conversation-stage" id="conversation-stage" aria-live="polite"><div class="message assistant"><span>YouZen</span><p id="example-greeting">Buonasera, Trattoria del Borgo. Come posso aiutarla?</p></div><div class="example-rest"><div class="waiting-mark" aria-hidden="true"><span></span><span></span><span></span></div><p>Guarda come diventa una prenotazione.</p></div></div>
+<div class="conversation-footer"><button class="button secondary" id="example-play" type="button"><svg><use href="#i-play"/></svg><span>Avvia l’esempio</span></button><span class="example-progress" id="example-progress">Pronto</span></div>
+</div>
+<div class="demo-form-shell">
+<p class="small-label">Provala sulla tua attività</p><h3>Facciamo due parole?</h3><p id="yp-demo-promise">Lascia il numero. Ti chiama YouZen in 60 secondi, non un venditore.</p>
+<form class="demo-call-form" id="demoCallForm" novalidate>
           <div class="field">
             <label for="dc-name">Nome</label>
-            <input id="dc-name" type="text" placeholder="Mario Rossi" required />
+            <input id="dc-name" type="text" placeholder="Il tuo nome" autocomplete="name" maxlength="80" required />
           </div>
 
           <div class="field">
             <label for="dc-email">Email</label>
-            <input id="dc-email" type="email" placeholder="mario@esempio.it" required />
+            <input id="dc-email" type="email" placeholder="nome@attivita.it" autocomplete="email" required />
           </div>
 
           <div class="field">
             <label for="dc-phone">Numero di telefono</label>
             <div class="phone-input-group">
               <span class="phone-prefix">+39</span>
-              <input id="dc-phone" type="tel" placeholder="333 1234567" required />
+              <input id="dc-phone" type="tel" placeholder="333 1234567" autocomplete="tel-national" inputmode="tel" maxlength="18" required />
             </div>
           </div>
 
@@ -7348,6 +7142,7 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <label for="dc-settore">Settore</label>
             <select id="dc-settore" required>
               <option value="">Seleziona il tuo settore</option>
+              <option value="food">Ristoranti</option>
               <option value="legale">Avvocati e Notai</option>
               <option value="medico">Cliniche e Studi Medici</option>
               <option value="beauty">Saloni e SPA</option>
@@ -7363,22 +7158,19 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
             <label for="dc-privacy">Accetto la <a href="privacy/index.html" target="_blank">privacy policy</a> e di essere contattato per questa demo</label>
           </div>
 
-          <p class="demo-call-whatsapp-notice">
+          <p class="demo-call-whatsapp-notice" id="yp-wa-notice">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
-            Dopo la chiamata riceverai un messaggio WhatsApp con il riassunto della conversazione.
+            Chiamate, appuntamenti e messaggi WhatsApp, nello stesso flusso.
           </p>
 
           <button type="submit" class="btn btn-primary btn-large">
-            <span>Chiamami ora</span>
+            <span id="yp-submit-label">Chiamami ora</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
             </svg>
           </button>
 
-          <p class="demo-call-note">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-            Riceverai una chiamata demo entro 60 secondi. Nessun costo, nessun impegno.
-          </p>
+          <p class="demo-call-note" id="yp-form-note">Lascia il numero. Ti chiama YouZen in 60 secondi, non un venditore.</p>
 
           <div class="cta-trust demo-call-trust">
             <span class="trust-badge">
@@ -7390,10 +7182,10 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
               Il numero non finisce in nessuna lista
             </span>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
+        <p class="yp-form-status" id="yp-form-status" role="status" hidden></p></form>
+</div>
+</div>
+</div>
 </section>
 
 <!-- ============================ FINAL CTA (sec-10) ============================ -->
@@ -7968,144 +7760,7 @@ document.getElementById('footer-email').textContent = 'info' + String.fromCharCo
   osserva.observe(griglia);
 })();
 
-// ===== Prezzi: tariffa per taglia del pacchetto + cadenza anticipata + attivazione
-// Lo slider apre su zero: il prezzo segue la scheda scelta o i minuti del cursore. Il primo
-// scalino utile resta 300 minuti, sotto non ha senso per nessuno.
-const minSteps = [0, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
-const RATE = 0.30;              // €/min sotto 1.500 minuti
-const VOLUME_RATE = 0.25;       // €/min su tutto il pacchetto a partire dalla soglia inclusa
-const VOLUME_THRESHOLD = 1500;
-const EXTRA_RATE = 0.35;        // €/min extra per tutti i pacchetti e le cadenze
-const ANNUAL_DISCOUNT = 0.10;   // sconto sul canone se paghi annuale
-const CENTRALINO_MENSILE = 25;
-const DM_MENSILE = 5;           // opzione messaggi diretti Instagram e Facebook, €/mese
-
-const slider = document.getElementById('minSlider');
-const yzp = document.getElementById('yzp');
-const usageCards = yzp.querySelectorAll('[data-minutes]');
-let centralinoOn = false;
-let customMinutes = false; // la scheda A richiesta mantiene i minuti correnti finché si muove il cursore
-let mesi = 3;      // cadenza: 3 = trimestrale, 12 = annuale
-let dmOn = false;  // opzione messaggi diretti accesa o spenta
-
-// it-IT non raggruppa i numeri a 4 cifre ("1500"); il sito scrive "1.500".
-const grp = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-const money = n => {
-  const [intero, centesimi] = n.toFixed(2).split('.');
-  return grp(intero) + (centesimi === '00' ? '' : ',' + centesimi);
-};
-const eur = n => '€' + money(n);
-const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-// Il prezzo dell'opzione compare in due punti (riga di calcolo e interruttore):
-// due id sarebbero due posti da tenere allineati a mano, quindi si va per attributo.
-const setDm = v => document.querySelectorAll('[data-dmprice]').forEach(el => { el.textContent = v; });
-
-function updatePricing() {
-  const idx = parseInt(slider.value, 10);
-  const minutes = minSteps[idx];
-  const annuale = mesi === 12;
-
-  const volume = minutes >= VOLUME_THRESHOLD;
-  const rate = volume ? VOLUME_RATE : RATE;
-  const base = minutes * rate;                              // canone pieno dei minuti
-  const canoneMinuti = annuale ? base * (1 - ANNUAL_DISCOUNT) : base;
-  // L'opzione segue lo stesso sconto annuale del canone: 5 euro diventano 4,50.
-  const dmListino = annuale ? DM_MENSILE * (1 - ANNUAL_DISCOUNT) : DM_MENSILE;
-  const dmPieno = dmOn ? DM_MENSILE : 0;
-  const centralinoCanone = centralinoOn ? CENTRALINO_MENSILE : 0;
-  const monthly = canoneMinuti + (dmOn ? dmListino : 0) + centralinoCanone;
-  yzp.classList.toggle("centralino-on", centralinoOn);
-
-  yzp.classList.toggle('annuale', annuale);
-  yzp.classList.toggle('dm-on', dmOn);
-
-  setTxt('yzpMin', grp(minutes));
-  setTxt('yzpRate', '€' + rate.toFixed(2).replace('.', ','));
-  setTxt('yzpExtraRate', '€' + EXTRA_RATE.toFixed(2).replace('.', ','));
-  setTxt('yzpMinLab', grp(minutes));
-  slider.setAttribute('aria-valuetext', grp(minutes) + ' minuti al mese');
-  const customSelected = customMinutes || (minutes > 0 && minutes !== 300 && minutes !== 1500);
-  usageCards.forEach(card => {
-    const custom = card.dataset.minutes === 'custom';
-    const selected = custom ? customSelected : !customSelected && Number(card.dataset.minutes) === minutes;
-    card.setAttribute('aria-pressed', String(selected));
-    const cardMinutes = custom ? (customSelected && minutes > 0 ? minutes : minSteps[1]) : Number(card.dataset.minutes);
-    const cardRate = cardMinutes >= VOLUME_THRESHOLD ? VOLUME_RATE : RATE;
-    const cardMonthly = cardMinutes * cardRate * (annuale ? 1 - ANNUAL_DISCOUNT : 1) + (dmOn ? dmListino : 0) + centralinoCanone;
-    card.querySelector('[data-use-price]').textContent = eur(cardMonthly);
-  });
-  setTxt('yzpCustomMin', customSelected && minutes > 0 ? grp(minutes) : 'Su misura');
-  document.getElementById('yzpCustomUnit').hidden = !customSelected || minutes === 0;
-  document.getElementById('yzpCustomPrice').hidden = !customSelected || minutes === 0;
-  const optionsNote = document.getElementById('yzpUseDmNote');
-  optionsNote.hidden = !dmOn && !centralinoOn;
-  optionsNote.textContent = centralinoOn ? (dmOn ? 'Importi con Centralino AI e DM inclusi.' : 'Importi con Centralino AI incluso.') : "Importi con l'opzione DM inclusa.";
-  setTxt('yzpMonthly', money(monthly));
-  setTxt('yzpWas', eur(base + dmPieno + centralinoCanone) + '/mese');
-  setTxt('yzpSave', 'risparmi ' + eur((base + dmPieno) * 12 * ANNUAL_DISCOUNT) + " l'anno");
-  setDm(eur(dmListino));
-
-  document.querySelectorAll('.slider-labels span').forEach((label, i) => {
-    label.classList.toggle('active', i === idx);
-  });
-}
-// Il prezzo non c'e' alla prima visione: prima l'invito a scegliere i minuti.
-// Si scopre scegliendo una scheda, muovendo lo slider o toccando il toggle cadenza, che il prezzo
-// lo cambia: lasciarlo nascosto farebbe sembrare il toggle rotto) e poi resta.
-let priceRevealed = false;
-function revealPrice() {
-  if (priceRevealed) return;
-  priceRevealed = true;
-  document.getElementById('yzpInvite').hidden = true;
-  document.getElementById('yzpReveal').hidden = false;
-}
-
-usageCards.forEach(card => {
-  card.addEventListener('click', () => {
-    customMinutes = card.dataset.minutes === 'custom';
-    if (!customMinutes) {
-      slider.value = minSteps.indexOf(Number(card.dataset.minutes));
-    }
-    revealPrice();
-    updatePricing();
-    if (customMinutes) {
-      slider.focus({ preventScroll: true });
-      slider.scrollIntoView({ behavior: 'auto', block: 'center' });
-    }
-  });
-});
-slider.addEventListener('input', () => { customMinutes = false; revealPrice(); updatePricing(); });
-
-// cadenza trimestrale / annuale
-document.querySelectorAll('#yzpCad button').forEach(b => {
-  b.addEventListener('click', () => {
-    document.querySelectorAll('#yzpCad button').forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    mesi = parseInt(b.dataset.mesi, 10);
-    revealPrice();
-    updatePricing();
-  });
-});
-
-// opzione messaggi diretti: cambia il canone mensile, quindi scopre il prezzo
-// come fanno lo slider e il toggle della cadenza.
-const centralinoBtn = document.getElementById('yzpCentralino');
-centralinoBtn.addEventListener('click', () => {
-  centralinoOn = !centralinoOn;
-  centralinoBtn.setAttribute('aria-pressed', String(centralinoOn));
-  revealPrice();
-  updatePricing();
-});
-const dmBtn = document.getElementById('yzpDm');
-if (dmBtn) {
-  dmBtn.addEventListener('click', () => {
-    dmOn = !dmOn;
-    dmBtn.setAttribute('aria-pressed', dmOn ? 'true' : 'false');
-    revealPrice();
-    updatePricing();
-  });
-}
-updatePricing();
+// Il calcolatore prezzi è inizializzato in home-integrazione.js.
 
 // ===== Una giornata tipo: i clienti che cadono
 // Dodici pallini cadono dentro la giornata. La rete in basso ha tre buchi,
@@ -8398,68 +8053,7 @@ if (document.readyState === 'loading') {
 }
 
 // ===== Demo Call Form submit handler
-(function initDemoCallForm() {
-  const form = document.getElementById('demoCallForm');
-  if (!form) return;
-
-  const WEBHOOK_URL = 'https://automate.autocalls.ai/api/v1/webhooks/vtqYxeo58vqqRFbIc5Auh';
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const orig = btn.innerHTML;
-
-    const name = document.getElementById('dc-name').value.trim();
-    const email = document.getElementById('dc-email').value.trim();
-    const phone = document.getElementById('dc-phone').value.trim();
-    const settore = document.getElementById('dc-settore').value;
-    const privacy = document.getElementById('dc-privacy').checked;
-    if (!name || !email || !phone || !settore || !privacy) {
-      alert('Compila tutti i campi e accetta la privacy policy.');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.innerHTML = '<span>Invio in corso...</span>';
-
-    try {
-      if (WEBHOOK_URL) {
-        const res = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, phone: '+39' + phone.replace(/\s/g, ''), settore, source: 'youzen-demo-call' })
-        });
-        if (!res.ok) throw new Error('Webhook error: ' + res.status);
-      } else {
-        await new Promise(r => setTimeout(r, 800));
-        console.warn('[YouZen] WEBHOOK_URL non configurato — placeholder mode.');
-      }
-
-      btn.innerHTML = '<span>✓ Ti chiamiamo entro 60 secondi</span>';
-      btn.style.background = '#22C55E';
-
-      if (typeof gtag === 'function') {
-        gtag('event', 'demo_call_request', { settore, source: 'demo-call-form' });
-      }
-
-      setTimeout(() => {
-        form.reset();
-        btn.innerHTML = orig;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    } catch (err) {
-      console.error('[YouZen] Errore invio form:', err);
-      btn.innerHTML = '<span>⚠ Errore, riprova</span>';
-      btn.style.background = '#EF4444';
-      setTimeout(() => {
-        btn.innerHTML = orig;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
-    }
-  });
-})();
+// Il modulo reale viene inizializzato da demo-call.js.
 </script>
 
 <!-- Sfondi ambientali: ferma le animazioni quando la sezione non si vede.
@@ -8537,8 +8131,8 @@ if (document.readyState === 'loading') {
 })();
 </script>
 
-<link rel="stylesheet" href="tema-chiaro.css">
-<link rel="stylesheet" href="hero-scene.css">
+
+
 <script defer src="hero-scene.js"></script>
 <style id="prezzi-tre-colonne">
 /* Prezzi a tre colonne (mockup A, scelto il 2026-10-24): la scheda centrale in evidenza. */
@@ -8818,218 +8412,9 @@ if (document.readyState === 'loading') {
 })();
 
 </script>
-<script id="yzg-js">
-// ===== Gestionale mockup: una scheda che mostra le funzioni una alla volta =====
-(function () {
-  var radice = document.querySelector('.yzg');
-  if (!radice) return;
-  var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var PASSO = 5200;
 
-  function quandoVisibile(el, fn) {
-    if (!('IntersectionObserver' in window)) { fn(); return; }
-    var io = new IntersectionObserver(function (v) {
-      v.forEach(function (x) { if (x.isIntersecting) { io.disconnect(); fn(); } });
-    }, { threshold: 0.35 });
-    io.observe(el);
-  }
-
-  // rianima il contenuto di un pannello appena compare
-  function ravviva(p) {
-    if (!p) return;
-    p.classList.remove('is-vivo'); void p.offsetWidth; p.classList.add('is-vivo');
-    p.querySelectorAll('[data-yzg-conta]').forEach(function (b) {
-      var fine = +b.getAttribute('data-yzg-conta');
-      if (calmo) { b.textContent = fine.toLocaleString('it-IT'); return; }
-      var t0 = null;
-      requestAnimationFrame(function giro(ts) {
-        if (t0 === null) t0 = ts;
-        var f = Math.min(1, (ts - t0) / 900);
-        b.textContent = Math.round(fine * (1 - Math.pow(1 - f, 3))).toLocaleString('it-IT');
-        if (f < 1) requestAnimationFrame(giro);
-      });
-    });
-    var salvato = p.querySelector('[data-yzg-salvato]');
-    if (salvato) salvato.classList.remove('is-on');
-  }
-
-  document.querySelectorAll('[data-yzg-salva]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var m = b.closest('.yzg-pannello, .yzg-B-zona').querySelector('[data-yzg-salvato]');
-      m.classList.remove('is-on'); void m.offsetWidth; m.classList.add('is-on');
-    });
-  });
-
-  // motore comune: elenco di chiavi, una funzione che mostra, giro automatico finche' l'utente non sceglie
-  function giostra(scheda, chiavi, mostra) {
-    var i = 0, timer = null, fermo = false, sopra = false, avviato = false;
-    function vai(n, daUtente) {
-      i = (n + chiavi.length) % chiavi.length;
-      mostra(chiavi[i]);
-      if (daUtente) fermo = true;
-      riparti();
-    }
-    function riparti() {
-      clearTimeout(timer);
-      scheda.classList.remove('is-gira'); void scheda.offsetWidth;
-      if (fermo || calmo || !avviato) return;
-      scheda.style.setProperty('--passo', PASSO + 'ms');
-      if (!sopra) scheda.classList.add('is-gira');
-      timer = setTimeout(function () { if (!sopra) vai(i + 1); else riparti(); }, PASSO);
-    }
-    scheda.addEventListener('pointerenter', function () { sopra = true; scheda.classList.add('is-pausa'); clearTimeout(timer); });
-    scheda.addEventListener('pointerleave', function () { sopra = false; scheda.classList.remove('is-pausa'); riparti(); });
-    mostra(chiavi[0]);
-    // se l'utente ha gia' scelto una voce prima che la scheda entrasse in vista, non la si scavalca
-    quandoVisibile(scheda, function () { avviato = true; if (!fermo) vai(0); });
-    return { vai: vai, indice: function () { return i; } };
-  }
-
-  // ---------- settore: uno per tutta la pagina, ogni pulsantiera resta allineata ----------
-  var settori = document.querySelectorAll('[data-yzg-sett]');
-  function scegli(n) {
-    document.documentElement.setAttribute('data-yzg-sett', n);
-    settori.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-yzg-sett') === n)); });
-    document.dispatchEvent(new CustomEvent('yzg-settore'));
-    document.querySelectorAll('.yzg-pannello:not([hidden]), .yzg-B-schermo').forEach(function (p) {
-      var att = p.getAttribute('data-yzg-attivo');
-      ravviva(att ? p.querySelector('[data-zona="' + att + '"]') : p);
-    });
-  }
-  settori.forEach(function (b) { b.addEventListener('click', function () { scegli(b.getAttribute('data-yzg-sett')); }); });
-  document.documentElement.setAttribute('data-yzg-sett', 'ristorante');
-
-  // ---------- I: i nodi si dispongono sull'anello e quello scelto ruota in cima ----------
-  // va registrato prima del giro, che manda il primo 'yzg-mostra' appena costruito
-  document.querySelectorAll('.yzg-I-scheda').forEach(function (s) {
-    var giro = s.querySelector('.yzg-I-giro');
-    var rot = 0;
-    s.addEventListener('yzg-mostra', function (e) {
-      var ch = e.detail.chiavi, n = ch.length, passo = 360 / n;
-      ch.forEach(function (k, i) { s.querySelector('.yzg-I-nodo[data-yzg-voce="' + k + '"]').style.setProperty('--a', (i * passo) + 'deg'); });
-      var voluto = -ch.indexOf(e.detail.k) * passo;
-      var d = ((voluto - rot) % 360 + 540) % 360 - 180; // la strada piu' corta
-      rot += d;
-      giro.style.setProperty('--rot', rot + 'deg');
-    });
-  });
-
-  // ---------- H: il portatile segue il puntatore ----------
-  if (!calmo) document.querySelectorAll('[data-yzg-tilt]').forEach(function (sc) {
-    sc.addEventListener('pointermove', function (e) {
-      var r = sc.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      sc.style.setProperty('--ry', (x * 14).toFixed(2) + 'deg');
-      sc.style.setProperty('--rx', (8 - y * 10).toFixed(2) + 'deg');
-    });
-    sc.addEventListener('pointerleave', function () { sc.style.removeProperty('--ry'); sc.style.removeProperty('--rx'); });
-  });
-
-  // ---------- A: finestra dell'app ----------
-  document.querySelectorAll('[data-yzg-giro]').forEach(function (s) {
-    var voci = Array.prototype.slice.call(s.querySelectorAll('[data-yzg-voce]'));
-    var chiavi = [];
-    // il giro passa solo dalle voci comuni e da quelle del settore scelto; l'array si aggiorna sul posto
-    function ricalcola() {
-      var sett = document.documentElement.getAttribute('data-yzg-sett');
-      chiavi.length = 0;
-      voci.forEach(function (v) {
-        var vs = v.getAttribute('data-s');
-        if (!vs || vs === sett) chiavi.push(v.getAttribute('data-yzg-voce'));
-      });
-    }
-    ricalcola();
-    var titolo = s.querySelector('[data-yzg-titolo]');
-    var ora = s.querySelector('[data-yzg-ora]');
-    var mazzo = s.hasAttribute('data-yzg-mazzo');
-    var g = giostra(s, chiavi, function (k) {
-      voci.forEach(function (v) { v.setAttribute('aria-pressed', String(v.getAttribute('data-yzg-voce') === k)); });
-      var n = chiavi.indexOf(k);
-      s.querySelectorAll('[data-yzg-pannello]').forEach(function (p) {
-        var pk = p.getAttribute('data-yzg-pannello');
-        if (!mazzo) { p.hidden = pk !== k; return; }
-        // mazzo: la carta scelta in cima, le altre dietro nell'ordine del giro
-        var j = chiavi.indexOf(pk);
-        p.hidden = j < 0;
-        if (j < 0) return;
-        var pos = (j - n + chiavi.length) % chiavi.length;
-        p.style.setProperty('--pos', pos);
-        p.classList.toggle('is-cima', pos === 0);
-      });
-      s.querySelectorAll('[data-yzg-dida]').forEach(function (p) { p.hidden = p.getAttribute('data-yzg-dida') !== k; });
-      var v = s.querySelector('[data-yzg-voce="' + k + '"]');
-      if (titolo) titolo.textContent = v.querySelector('span').textContent;
-      if (v.hasAttribute('data-pos')) s.style.setProperty('--pos', v.getAttribute('data-pos'));
-      if (ora) ora.textContent = v.getAttribute('data-ora');
-      ravviva(s.querySelector('[data-yzg-pannello="' + k + '"]'));
-      s.dispatchEvent(new CustomEvent('yzg-mostra', { detail: { k: k, chiavi: chiavi.slice() } }));
-    });
-    if (mazzo) s.querySelectorAll('[data-yzg-pannello]').forEach(function (p) {
-      p.addEventListener('click', function () {
-        if (!p.classList.contains('is-cima')) g.vai(chiavi.indexOf(p.getAttribute('data-yzg-pannello')), true);
-      });
-    });
-    voci.forEach(function (v) {
-      v.addEventListener('click', function () { g.vai(chiavi.indexOf(v.getAttribute('data-yzg-voce')), true); });
-    });
-    document.addEventListener('yzg-settore', function () {
-      var attuale = chiavi[g.indice()];
-      ricalcola();
-      var n = chiavi.indexOf(attuale);
-      g.vai(n < 0 ? 0 : n);
-    });
-  });
-
-  // KDS: "Pronto" chiude il biglietto
-  document.querySelectorAll('[data-yzg-pronto]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var t = b.closest('.yzg-ticket');
-      var fatto = t.classList.toggle('is-pronto');
-      b.textContent = fatto ? 'Uscito' : 'Pronto';
-    });
-  });
-
-  // ---------- B: riflettore sulla schermata ----------
-  document.querySelectorAll('[data-yzg-faro]').forEach(function (s) {
-    var voci = Array.prototype.slice.call(s.querySelectorAll('[data-yzg-voce]'));
-    var chiavi = voci.map(function (v) { return v.getAttribute('data-yzg-voce'); });
-    var schermo = s.querySelector('.yzg-B-schermo');
-    var g = giostra(s, chiavi, function (k) {
-      voci.forEach(function (v) { v.setAttribute('aria-pressed', String(v.getAttribute('data-yzg-voce') === k)); });
-      schermo.setAttribute('data-yzg-attivo', k);
-      ravviva(s.querySelector('[data-zona="' + k + '"]'));
-    });
-    voci.forEach(function (v, n) {
-      v.addEventListener('click', function () { g.vai(n, true); });
-    });
-    s.querySelectorAll('[data-zona]').forEach(function (z) {
-      z.addEventListener('click', function () { g.vai(chiavi.indexOf(z.getAttribute('data-zona')), true); });
-    });
-  });
-
-  // ---------- C: storie ----------
-  document.querySelectorAll('[data-yzg-storie]').forEach(function (s) {
-    var tacche = Array.prototype.slice.call(s.querySelectorAll('[data-yzg-voce]'));
-    var chiavi = tacche.map(function (v) { return v.getAttribute('data-yzg-voce'); });
-    var g = giostra(s, chiavi, function (k) {
-      var n = chiavi.indexOf(k);
-      tacche.forEach(function (t, j) {
-        t.setAttribute('aria-selected', String(j === n));
-        t.classList.toggle('is-fatta', j < n);
-      });
-      s.querySelectorAll('[data-yzg-slide]').forEach(function (p) {
-        var on = p.getAttribute('data-yzg-slide') === k;
-        p.hidden = !on;
-        if (on) { p.classList.remove('is-entra'); void p.offsetWidth; p.classList.add('is-entra'); ravviva(p.querySelector('.yzg-pannello')); }
-      });
-    });
-    tacche.forEach(function (t, n) { t.addEventListener('click', function () { g.vai(n, true); }); });
-    s.querySelectorAll('[data-yzg-passo]').forEach(function (b) {
-      b.addEventListener('click', function () { g.vai(g.indice() + (+b.getAttribute('data-yzg-passo')), true); });
-    });
-  });
-})();
-
-</script>
+<script src="gestion-catalog.js"></script>
+<script src="home-integrazione.js"></script>
+<script src="demo-call.js"></script>
 </body>
 </html>

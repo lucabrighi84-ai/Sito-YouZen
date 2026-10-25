@@ -1,0 +1,142 @@
+.yp-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.yp-ui{font:15px/1.6 Inter,system-ui,sans-serif;color:var(--ink);text-align:left;--g-ink:#292d28;--g-muted:#64675f;--g-carta:#fffefa;--g-linea:#deded5;--g-rame:#ae542c;--g-rame-2:#bc845b;--g-verde:#35694a}
+.yp-ui h2,.yp-ui h3{font-family:Scene,Inter,sans-serif}.yp-ui h2{font-size:clamp(38px,4.1vw,54px);font-weight:600;line-height:1.08;letter-spacing:-.048em;margin:0}.yp-ui p{margin:0}.yp-ui h2>span{font-weight:400;color:var(--muted)}
+.yp-ui .eyebrow{display:block;margin:0 0 20px;font-family:Inter,sans-serif;font-size:11px;letter-spacing:.13em;color:var(--copper);line-height:1.5;background:none;border:0;border-radius:0;padding:0}.yp-ui .wrap{max-width:1180px}.yp-ui a,.yp-ui button{transition:background .2s,color .2s,transform .2s}.yp-ui [hidden]{display:none!important}
+.yp-ui button:focus-visible,.yp-ui a:focus-visible,.yp-ui input:focus-visible,.yp-ui select:focus-visible,.yp-ui summary:focus-visible{outline:3px solid #ae542c;outline-offset:4px}
+#gestionale .yzg-s:not([hidden]){display:block}
+.yp-ui.section{padding:90px 0}.yp-ui svg{vertical-align:middle}.yp-ui .button{border-radius:9px;background:#ae542c;color:white}.yp-ui .button.secondary{background:transparent;color:var(--ink);border-color:#bcbeb3}
+
+/* Small windows use the same surface, chrome and status language as the management panel. */
+.yp-hero-boxes{position:absolute;right:6.5%;bottom:152px;width:360px;z-index:2;display:flex;flex-direction:column;gap:12px}
+.yp-hero-card{background:#fffefaee;backdrop-filter:blur(16px);border:1px solid #fffefae6;border-radius:17px;box-shadow:0 16px 45px -24px #4a40245c;overflow:hidden}
+.yp-card-top{display:flex;align-items:center;gap:8px;padding:10px 15px;background:#f4f2ebd9;border-bottom:1px solid #e7e5dc;font-size:10px;color:#62675d}
+.yp-card-icon{display:grid;place-items:center;color:#ae542c}.yp-card-icon svg{width:15px;height:15px}.yp-now{margin-left:auto;font-size:9px;color:#787b71}
+.yp-card-body{display:flex;align-items:center;gap:13px;padding:16px 18px}.yp-card-body strong{display:block;font-size:14px;line-height:1.35;font-weight:600;letter-spacing:-.02em}.yp-card-body small{display:block;font-size:11px;color:#676d60;line-height:1.5}.yp-call-card .yp-card-body strong{font:700 20px Scene,sans-serif;margin-top:3px}
+.yp-status{display:inline-flex;align-items:center;gap:5px;color:#35694a;background:#e7eddf;font-size:9px;font-weight:500;line-height:1.5;border-radius:20px;padding:4px 9px;white-space:nowrap}.yp-status:before{content:'';width:4px;height:4px;border-radius:50%;background:#608252}.yp-card-top .yp-status{margin-left:auto;font-size:8px;padding:2px 7px}
+.yp-wave{display:flex;align-items:center;gap:4px;height:32px;margin-left:auto;color:#ae542c}.yp-wave i{width:3px;height:10px;border-radius:3px;background:currentColor}.yp-wave i:nth-child(2n){height:21px}.yp-wave i:nth-child(3n){height:31px}
+.yp-date{width:42px;height:46px;flex-shrink:0;background:#f1eee5;border-radius:9px;display:flex;align-items:center;flex-direction:column;justify-content:center}.yp-date small{font-size:8px;letter-spacing:.08em}.yp-date b{font:700 23px Scene,sans-serif;line-height:1.1}.yp-card-check{margin-left:auto;color:#47734c}.yp-card-check svg{width:19px;height:19px}
+.yp-booking-card{margin-left:20px}.yp-wa-card{margin-right:12px}.yp-wa-card .yp-card-icon{color:#47734c}.yp-wa-card .yp-card-body{padding:13px 17px 16px}.yp-wa-card .yp-card-body strong{font-size:12px;margin-bottom:5px}.yp-wa-card p{font-size:11px;line-height:1.6;color:#64675f}.yp-scene-caption{font-size:9px!important;color:#5e6456;text-align:right;padding-right:15px}
+
+/* The real demo form keeps its IDs and original webhook payload. */
+#demo-call.yp-demo{background:#f7f6f2;scroll-margin-top:90px;position:relative;z-index:1}
+.yp-demo .demo-grid{gap:55px;align-items:start}.yp-demo .section-intro{margin-bottom:38px}.yp-demo .conversation{align-self:stretch}.yp-demo .demo-form-shell{padding:6px 0 0;background:none;border:0;box-shadow:none}
+.yp-demo .demo-form-shell h3{font:600 34px/1.15 Scene,sans-serif;margin:15px 0 13px;letter-spacing:-.04em}.yp-demo #yp-demo-promise{font-size:14px;line-height:1.65;color:var(--muted);max-width:420px;margin-bottom:24px}
+.yp-demo .demo-call-form{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;margin:0;padding:0;max-width:none;background:none;border:0;box-shadow:none}
+.yp-demo .field{margin:0;display:block}.yp-demo .field label{display:block;text-align:left;font:500 11px/1.5 Inter,sans-serif;color:#4c5446;margin-bottom:7px;letter-spacing:0;text-transform:none}
+.yp-demo .field input,.yp-demo .field select{width:100%;min-height:47px;border:1px solid #c8c9bd;border-radius:7px;padding:11px 12px;background:#fffefa;color:#292d28;font:13px/1.5 Inter,sans-serif;box-shadow:none}
+.yp-demo .field select{padding-right:27px}.yp-demo .field .phone-input-group{border:1px solid #c8c9bd;background:#fffefa;border-radius:7px;display:flex;align-items:center;overflow:hidden}.yp-demo .field .phone-input-group input{border:0;min-width:0;flex:1;background:none;padding-left:6px;outline-offset:-4px}.yp-demo .phone-prefix{padding:0 0 0 12px;color:#64675f;font-size:12px;background:none;border:0;min-width:43px;display:block}
+.yp-demo .privacy-row{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;margin:0}.yp-demo .privacy-row input{width:16px;height:16px;min-width:16px;margin-top:2px;accent-color:#ae542c}.yp-demo .privacy-row label{font-size:11px;line-height:1.6;color:#64675f}.yp-demo .privacy-row a{color:inherit;text-decoration:underline}
+.yp-demo .demo-call-form>p,.yp-demo .demo-call-form>button,.yp-demo .demo-call-form>.cta-trust{grid-column:1/-1}.yp-demo .demo-call-whatsapp-notice{font-size:11px;color:#47734c;gap:9px;margin:0;line-height:1.6;display:flex;align-items:flex-start}.yp-demo .demo-call-whatsapp-notice svg{width:16px;height:16px;margin-top:2px;flex-shrink:0}
+.yp-demo .demo-call-form>button{background:#ae542c;color:#fff;min-height:52px;padding:14px 20px;font-size:12px;border:1px solid #ae542c;border-radius:9px;box-shadow:none;letter-spacing:0;font-weight:600;gap:15px}.yp-demo .demo-call-form>button:before{display:none}.yp-demo .demo-call-form>button:hover{background:#934623}
+.yp-demo .demo-call-note{font:11px/1.6 Inter,sans-serif;text-align:left;color:#64675f;margin:0;display:block}.yp-demo .cta-trust{justify-content:flex-start;gap:10px;flex-wrap:wrap;margin:0}.yp-demo .trust-badge{font:9px/1.5 Inter,sans-serif;color:#64675f;background:none;border:0;padding:0}.yp-demo .trust-badge svg{width:13px;height:13px}.yp-demo .yp-form-status{padding:10px 13px;border-radius:8px;font-size:12px;background:#f7e5dc;color:#913c25;line-height:1.6}.yp-demo .yp-form-status.success{background:#e7eddf;color:#35694a}.yp-demo [aria-invalid=true]{border-color:#a1442c!important}
+.yp-demo .conversation-stage{height:310px;min-height:310px;overflow-y:auto}.yp-demo .conversation-stage .message{font-size:12px}.yp-demo .conversation-footer{margin-top:24px;padding-top:20px}.yp-demo .conversation-heading p{margin-top:5px}
+
+/* A single quiet workspace, with all thirteen original views available. */
+#gestionale.yp-gestion{background:#efefe7;scroll-margin-top:90px}.yp-gestion-layout{display:grid;grid-template-columns:.85fr 1.55fr;gap:70px;align-items:start}.yp-gestion-copy{min-width:0}.yp-gestion-copy h2{font-size:43px}.yp-gestion-lead{font-size:14px;line-height:1.8;color:#64675f;margin:23px 0 26px!important}
+.yp-app-sectors{display:inline-flex;background:#f9f8f3;border:1px solid #deded5;border-radius:30px;padding:4px;gap:3px;max-width:100%;margin-bottom:22px}.yp-app-sectors button{font:11px/1.4 Inter,sans-serif;border:0;border-radius:22px;background:none;color:#64675f;padding:8px 12px;cursor:pointer}.yp-app-sectors button[aria-pressed=true]{background:#292d28;color:#fffefa}
+.yp-app-tabs{display:grid;gap:2px}.yp-app-tabs button{display:flex;align-items:center;gap:12px;text-align:left;background:none;color:#696d62;border:0;border-radius:9px;padding:11px 13px;font:13px/1.5 Inter,sans-serif;cursor:pointer;min-height:44px}.yp-app-tabs button svg{width:18px;height:18px;color:inherit}.yp-app-tabs button[aria-selected=true]{background:#fffefa;color:#ae542c;box-shadow:0 3px 12px -8px #584b3440;font-weight:600}.yp-app-tabs button:hover{background:#f9f8f3}.yp-tab-arrow{margin-left:auto;font-size:15px;opacity:0}.yp-app-tabs button[aria-selected=true] .yp-tab-arrow{opacity:1}
+.yp-more-functions{border-top:1px solid #d5d7cc;margin-top:12px}.yp-more-functions summary{list-style:none;display:flex;justify-content:space-between;padding:15px 13px;font-size:11px;color:#64675f;cursor:pointer}.yp-more-functions summary::-webkit-details-marker{display:none}.yp-more-functions[open] summary>span{transform:rotate(45deg)}.yp-gestion-links{display:flex;flex-direction:column;align-items:flex-start;gap:17px;margin-top:25px}.yp-gestion-links a{font-size:11px}
+.yp-app-window{border:1px solid #d8d9cd;background:#fffefa;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -34px #52583b55;min-width:0;margin-top:20px;position:sticky;top:115px;transform:rotate(1deg)}
+.yp-app-top{display:flex;align-items:center;gap:15px;padding:17px 24px;border-bottom:1px solid #e1e2d7;background:#f6f5ee}.yp-app-logo{font:14px Michroma,sans-serif;letter-spacing:-.5px}.yp-app-logo>span{color:#ae542c}#yp-app-business{font-size:11px;color:#64675f;margin-left:auto}.yp-avatar{width:29px;height:29px;border-radius:50%;background:#e6e8dc;display:grid;place-items:center;font-size:9px;font-weight:600;color:#536147}
+.yp-app-inner{padding:30px 30px 22px;min-height:450px}.yp-app-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}.yp-app-heading .quiet-label{font-size:10px}.yp-app-heading h3{font:600 31px/1.1 Scene,sans-serif;letter-spacing:-.04em;margin:9px 0 0}.yp-app-heading .yp-status{font-size:9px}
+#yp-app-description{font-size:12px;line-height:1.8;color:#6a705f;margin:15px 0 23px;max-width:560px}.yp-week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:0 0 18px}.yp-week>span{text-align:center;padding:8px 6px;font-size:9px;color:#6a705f;border-radius:9px}.yp-week b{display:block;margin-top:5px;font-size:15px;color:#292d28;font-weight:500}.yp-week .is-selected{background:#e9eddf;color:#35694a}.yp-week .is-selected b{color:#35694a;font-weight:600}
+.yp-app-panel{min-height:240px}.yp-app-bottom{display:flex;align-items:center;gap:8px;background:#f6f5ee;border-top:1px solid #e1e2d7;padding:12px 25px;font-size:10px;color:#6a705f}.yp-app-bottom svg{width:14px;height:14px}.yp-gestion .yzg-pannello{font-size:12px;color:#292d28}.yp-gestion .yzg-s[hidden]{display:none!important}
+.yp-gestion .yzg-agenda{gap:0}.yp-gestion .yzg-agenda li{border:0;border-bottom:1px solid #e7e7dc;border-left:0;border-radius:0;padding:17px 8px;grid-template-columns:45px 1fr auto;gap:13px;background:none;font-size:11px}.yp-gestion .yzg-agenda b{color:#6a705f;font-weight:500}.yp-gestion .yzg-agenda span{font-weight:500}.yp-gestion .yzg-agenda em{font-size:9px}.yp-gestion .yzg-agenda .yzg-nuovo{background:#edf0e4;border-radius:8px;border-bottom-color:transparent}.yp-gestion .yzg-agenda .yzg-nuovo b{color:#35694a}
+.yp-gestion .yzg-chat{background:none;padding:0;gap:15px}.yp-gestion .yzg-chat p{padding:13px 16px;font-size:12px;background:#f0efe7;border-radius:13px;max-width:86%}.yp-gestion .yzg-chat p.noi{background:#e8eddf;color:#3b5034}.yp-gestion .yzg-numeri{grid-template-columns:repeat(2,1fr);gap:14px}.yp-gestion .yzg-numeri div{border:0;background:#f3f2ea;padding:20px}.yp-gestion .yzg-numeri b{font-family:Scene,sans-serif;font-size:36px;font-weight:500}.yp-gestion .yzg-numeri span{font-size:10px}.yp-gestion .yzg-stato{font-size:10px;background:#e8eddf;border:0}
+.yp-gestion .yzg-chiamate{background:none;padding:0}.yp-gestion .yzg-chiamate li{border:0;border-bottom:1px solid #e7e7dc;background:transparent;padding:13px}.yp-gestion .yzg-chiamate li.is-sel{background:#edf0e4}.yp-gestion .yzg-trascr{border:0;background:#f4f3eb;padding:17px;margin-top:20px}.yp-gestion .yzg-trascr p{font-size:12px}.yp-gestion .yzg-trascr small{font-size:9px}.yp-gestion .yzg-clienti,.yp-gestion .yzg-scheda{color:inherit}.yp-gestion .yzg-avatar{background:#e8eddf;color:#35694a}
+.yp-gestion .yzg-orari li,.yp-gestion .yzg-servizi li,.yp-gestion .yzg-ordini li{background:#f7f6ef;border-color:#e4e5d9;font-size:11px}.yp-gestion .yzg-salva{font-size:10px;gap:10px}.yp-gestion .yzg-salva button{background:#ae542c;color:#fff;border:0;border-radius:7px;min-height:36px;padding:8px 15px;font-size:11px}.yp-gestion .yzg-salvato{font-size:11px}.yp-gestion .yzg-kds{background:#eeeee4}.yp-gestion .yzg-ticket{background:#fffefa;border:1px solid #deded5}.yp-gestion .yzg-ticket header,.yp-gestion .yzg-ticket:first-child header{background:#eee7dc}.yp-gestion .yzg-ticket button{background:#e4eadb;color:#35694a;min-height:35px}.yp-gestion .yzg-ticket.is-ready{opacity:.65}.yp-gestion .yzg-stilisti>div{background:#f7f6ef}.yp-gestion .yzg-sync>div{background:#f7f6ef}.yp-gestion .yzg-aree li{background:#eeeee5;color:#45513d}.yp-gestion .yzg-nota{font-size:11px}
+
+@media(max-width:1100px){.yp-hero-boxes{width:320px;right:5%;bottom:152px}.yp-hero-card .yp-card-body{padding:14px}.yp-gestion-layout{gap:35px;grid-template-columns:.85fr 1.35fr}.yp-gestion-copy h2{font-size:37px}.yp-app-inner{padding:24px}.yp-ui .wrap{width:calc(100% - 80px)}.yp-demo .demo-grid{gap:30px}}
+@media(max-width:900px){.yp-demo .demo-grid{grid-template-columns:1fr}.yp-demo .demo-form-shell{max-width:none}.yp-demo .demo-form-shell form{max-width:none}.yp-gestion-layout{grid-template-columns:1fr;gap:30px}.yp-gestion-copy h2{font-size:42px}.yp-gestion-lead{max-width:580px}.yp-app-window{position:static;transform:none;margin-top:0}.yp-app-tabs{display:flex;flex-wrap:wrap;gap:4px}.yp-app-tabs button{font-size:11px;padding:10px}.yp-tab-arrow{display:none}.yp-more-functions{margin-top:10px}.yp-gestion-links{flex-direction:row;gap:25px;margin-top:18px}.yp-app-inner{min-height:440px}.yp-gestion .yp-app-sectors{margin-bottom:16px}}
+@media(max-width:700px){.yp-ui.section{padding:60px 0}.yp-ui .wrap{width:calc(100% - 40px)}.hero.yz-scene{min-height:1040px}.yz-scene-copy{padding-bottom:620px}.yz-scene-photos{inset:360px 0 0}.yp-hero-boxes{width:290px;max-width:86%;bottom:155px;right:7%;gap:9px}.yp-card-top{padding:8px 12px;font-size:9px}.yp-call-card .yp-card-body strong{font-size:18px}.yp-card-body small{font-size:10px}.yp-booking-card{margin-left:15px}.yp-wa-card .yp-card-body{padding:12px 14px}.yp-wa-card .yp-card-body strong{font-size:11px}.yp-wa-card p{font-size:10px}.yp-scene-caption{font-size:8px!important}.yp-card-body strong{font-size:12px}.yp-wave{transform:scale(.85)}.yp-gestion-copy h2{font-size:37px}.yp-gestion-lead{font-size:13px}.yp-gestion-copy .yp-app-tabs button{font-size:10px;gap:7px}.yp-gestion-copy .yp-app-tabs button svg{width:16px;height:16px}.yp-app-top{padding:15px 18px;gap:10px}.yp-app-logo{font-size:12px}#yp-app-business{font-size:9px}.yp-app-inner{padding:23px 20px}.yp-app-heading h3{font-size:27px}.yp-app-heading .yp-status{font-size:8px;padding:4px 7px}.yp-app-bottom{font-size:9px;padding:12px 18px}.yp-gestion .yzg-agenda li{grid-template-columns:38px 1fr;gap:8px;padding:13px 6px}.yp-gestion .yzg-agenda em{grid-column:2;font-size:9px}.yp-gestion .yzg-numeri b{font-size:30px}.yp-gestion .yzg-numeri div{padding:16px}.yp-gestion .yzg-kds{grid-template-columns:1fr}.yp-gestion .yzg-stilisti{grid-template-columns:1fr}.yp-gestion .yzg-orari{grid-template-columns:repeat(2,1fr)}.yp-gestion .yzg-sync{grid-template-columns:1fr}.yp-demo .demo-grid{gap:32px}.yp-demo .demo-form-shell h3{font-size:30px}.yp-demo #yp-demo-promise{font-size:13px}.yp-demo .demo-call-form{gap:17px 12px}.yp-demo .field input,.yp-demo .field select{font-size:16px}.yp-demo .demo-call-whatsapp-notice{font-size:11px}.yp-demo .demo-call-form>button{font-size:12px}.yp-demo .conversation{padding:22px}.yp-demo .conversation-heading h3{font-size:21px}.yp-demo .conversation-stage{height:310px}.yp-ui .section-intro h2{font-size:36px}#sec-05 .section-head h2 .title-problem,#sec-05 .section-head h2 .title-solution{white-space:normal}}
+@media(max-width:400px){.yp-demo .demo-call-form{grid-template-columns:1fr}.yp-demo .panel-top .small-label,.yp-demo .panel-top .quiet-label{font-size:8px}.yp-gestion-copy h2{font-size:32px}.yp-app-heading h3{font-size:24px}.yp-app-heading .yp-status{font-size:7px}.yp-gestion-links{gap:14px;flex-wrap:wrap}.yp-gestion-links a{font-size:10px}.yp-app-inner{padding:20px 16px}.yp-app-top{padding:12px}.yp-app-logo{font-size:11px}.yp-hero-boxes{bottom:145px}.yp-ui .section-intro h2{font-size:32px}}
+@media(prefers-reduced-motion:reduce){.yp-ui *{animation:none!important;transition:none!important}.yp-app-window{transform:none}}
+
+#sec-05 .section-head h2 .title-problem,#sec-05 .section-head h2 .title-solution{display:block}
+
+/* Same bullet badge as the other section headings. */
+.yp-ui .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-brand);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;line-height:1.6;color:var(--accent);padding:6px 12px;border:1px solid rgba(217,138,78,.24);border-radius:999px;background:rgba(217,138,78,.06);margin-bottom:24px}
+.yp-ui .eyebrow::before{content:'';position:static;transform:none;width:6px;height:6px;flex-shrink:0;border-radius:999px;background:var(--accent);box-shadow:none}
+.yp-demo button:disabled{cursor:default;opacity:.7}
+.yzp-use-rate-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px 9px;min-height:29px;color:var(--text);font-size:13px;line-height:1.6}
+.yzp-use-rate-row b{font-weight:600}.yzp-use-rate-row s{font-size:11px;color:var(--muted)}
+.yzp-volume-saving{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:#e7eddf;color:#35694a;font-size:10px;font-weight:600;white-space:nowrap}
+.yzp-use-rate-row [hidden]{display:none!important}
+/* Pricing choices keep their original features inside the new summary layout. */
+.yp-pricing .yp-credits{border-top:1px solid var(--line);margin-top:40px;padding-top:35px;scroll-margin-top:100px}
+.yp-pricing .yp-credits-head h3{font-size:30px;margin:0 0 8px}.yp-pricing .yp-credits-head p{font-size:12px;color:var(--copper)}
+.yp-pricing .yp-credits-intro{margin-top:16px;max-width:650px;font-size:13px;color:var(--muted)}
+.yp-pricing .credit-packages{gap:18px;margin:25px 0 18px}
+.yp-pricing .credit-packages>div{display:flex;flex-direction:column;align-items:flex-start;gap:10px;border:1px solid var(--line);border-radius:15px;padding:25px;background:#fffefa;min-width:0}
+.yp-pricing .credit-packages b{font-size:15px;font-weight:600}.yp-pricing .credit-packages span{font:600 42px/1.1 Scene,Inter,sans-serif;margin:0;color:var(--ink);flex-basis:auto}
+.yp-pricing .credit-packages small{font-size:12px;flex-basis:auto}.yp-pricing .credit-packages em{font-size:10px;font-style:normal;border-radius:20px;background:#e7eddf;color:#35694a;padding:4px 9px;margin-top:4px}
+.yp-pricing .yp-credits-note{font-size:12px;color:var(--muted)}.yp-pricing .yp-credits .credit-details{margin-top:22px}.yp-pricing .yp-credits .yp-credit-info{padding-bottom:20px;font-size:12px;line-height:1.8;color:var(--muted)}
+@media(max-width:600px){.yp-pricing .credit-packages{grid-template-columns:1fr;gap:12px}.yp-pricing .credit-packages>div{display:grid;grid-template-columns:1fr auto;align-items:center;padding:22px;gap:8px 15px}.yp-pricing .credit-packages span{grid-column:2;grid-row:1/3;font-size:36px}.yp-pricing .credit-packages small{grid-column:1}.yp-pricing .credit-packages em{grid-column:1/-1;justify-self:start}.yp-pricing .yp-credits-head h3{font-size:27px}}
+.yp-pricing .yp-extra{border-top:1px solid var(--line)}
+.yp-pricing .yp-extra-row{display:flex;align-items:center;gap:10px}
+.yp-pricing .yp-extra-row label{flex:1;min-width:0;border:0}
+.yp-pricing .yp-new{display:inline-flex;align-items:center;gap:6px;font:600 9px/1.5 Inter,sans-serif;color:#35694a;margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase}
+.yp-pricing .yp-new i{width:6px;height:6px;flex-shrink:0;border-radius:50%;background:#68aa57;box-shadow:0 0 0 3px #68aa571a,0 0 8px #68aa5755}
+.yp-pricing .yp-extra-help{flex-shrink:0;width:36px;height:36px;display:grid;place-items:center;border:1px solid #bcbeb3;border-radius:50%;background:#fffefa;color:#64675f;font:600 15px/1 Inter,sans-serif;cursor:pointer}
+.yp-pricing .yp-extra-help:hover,.yp-pricing .yp-extra-help[aria-expanded=true]{background:#e7eddf;border-color:#8b9d7b;color:#35694a}
+.yp-pricing .yp-extra-description{font:12px/1.75 Inter,sans-serif;color:#59614f;padding:14px 16px;margin:0 0 16px;border-left:2px solid #90a57d;border-radius:0 8px 8px 0;background:#eeeee5}
+.yp-pricing .cost-lines{padding-top:12px;border-top:1px solid #cbd0bf}.yp-pricing .cost-lines>div{font-size:13px}
+#prezzi.yp-pricing{background:#f7f6f2;scroll-margin-top:90px}
+.yp-pricing .pricing-layout{grid-template-columns:1.2fr .8fr;gap:36px}
+.yp-pricing .price-choices{gap:16px}
+.yp-pricing .price-choice.yp-plan{display:flex;flex-direction:column;align-items:stretch;gap:12px;position:relative;padding:23px;cursor:pointer;color:var(--ink);font:13px/1.5 Inter,sans-serif;width:100%;min-width:0}
+.yp-plan-top{display:flex;align-items:center;gap:13px}.yp-plan-top>svg{width:23px;height:23px;color:var(--copper);flex-shrink:0}.yp-plan-name{min-width:0}
+.yp-pricing .yp-plan-top .choice-price{margin-left:auto;padding-left:8px}.yp-pricing .yp-plan-service{display:block;color:var(--copper);font:500 9px/1.5 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px}
+.yp-pricing .yp-plan-name strong{font-size:20px}.yp-pricing .yp-plan-name small{font-size:11px;line-height:1.5}
+.yp-plan-minutes{font-size:11px;font-weight:500;color:var(--muted)}
+.yp-plan-rate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px}.yp-plan-rate s{color:var(--muted);font-size:10px}.yp-plan-saving{font-size:9px;color:#35694a;background:#e7eddf;border-radius:20px;padding:3px 8px}
+.yp-plan-features{display:grid;gap:5px;font-size:11px;color:var(--muted)}.yp-plan-features>span{display:flex;gap:8px}.yp-plan-features>span::before{content:'✓';color:var(--copper)}
+.yp-plan-cta{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:600;color:var(--copper);border-top:1px solid var(--line);padding-top:10px;margin-top:2px}
+.yp-plan-popular{position:absolute;right:18px;top:-9px;background:#ae542c;color:#fffefa;padding:3px 9px;border-radius:20px;font-size:8px;line-height:1.5}
+.yp-pricing .section-intro{margin-bottom:42px}.yp-pricing .section-intro>p:last-child{margin-top:20px;max-width:640px}
+.yp-pricing .price-summary .setup-note{font-size:11px}.yp-pricing .yp-credit-info{display:grid;gap:12px;margin-top:18px}
+@media(max-width:1000px){.yp-pricing .pricing-layout{grid-template-columns:1fr;gap:28px}.yp-pricing .price-summary{position:static}.yp-pricing .yp-plan-name strong{font-size:21px}}
+@media(max-width:500px){.yp-pricing .price-choice.yp-plan{padding:20px;gap:11px}.yp-plan-top{flex-wrap:wrap;gap:10px}.yp-pricing .yp-plan-name{flex:1}.yp-pricing .yp-plan-name strong{font-size:20px}.yp-pricing .yp-plan-top .choice-price{width:100%;text-align:left;margin:3px 0 0;padding:0;display:flex;align-items:baseline;gap:5px}.yp-pricing .yp-plan-top .choice-price small{font-size:10px}.yp-pricing .billing-row{align-items:flex-start;flex-direction:column}.yp-pricing .price-summary{padding:24px}.yp-pricing .credit-details summary{gap:15px}.yp-pricing .extras label{flex-wrap:wrap}.yp-pricing .extras label>span:first-child{flex:1 1 140px}}
+.yp-demo [aria-invalid=true]+label{color:#913c25}
+/* One reading font for pricing; section badges retain the site's shared brand style. */
+.yp-pricing h2,.yp-pricing h3,.yp-pricing .price-choice strong,.yp-pricing .choice-price b,.yp-pricing .monthly-total strong,.yp-pricing .credit-packages span{font-family:Inter,system-ui,sans-serif}
+.yp-pricing .choice-price b,.yp-pricing .monthly-total strong,.yp-pricing .credit-packages span{font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+@media(max-width:600px){
+ .yp-pricing .price-choices{gap:12px}
+ .yp-pricing .price-choice.yp-plan{padding:14px;gap:7px;border-radius:12px}
+ .yp-pricing .yp-plan-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:10px}
+ .yp-pricing .yp-plan-top>svg{display:none}
+ .yp-pricing .yp-plan-name strong{font-size:17px;line-height:1.25}
+ .yp-pricing .yp-plan-service{margin-bottom:3px;font-size:9px}
+ .yp-pricing .yp-plan-name small{font-size:11px;line-height:1.4;margin-top:4px}
+ .yp-pricing .yp-plan-top .choice-price{display:block;width:auto;max-width:105px;margin:0;padding:0;text-align:right}
+ .yp-pricing .yp-plan-top .choice-price b{font-size:23px;line-height:1.2}
+ .yp-pricing [data-plan=custom] .choice-price b{font-size:17px;letter-spacing:-.02em}
+ .yp-pricing .yp-plan-top .choice-price small{font-size:10px;line-height:1.4;margin-top:3px}
+ .yp-pricing .yp-plan-minutes{font-size:11px;line-height:1.4}
+ .yp-pricing .yp-plan-rate{gap:4px 7px;font-size:12px;line-height:1.4}
+ .yp-pricing .yp-plan-saving{padding:2px 6px}
+ .yp-pricing .yp-plan-features{font-size:11px;line-height:1.45;gap:2px}
+ .yp-pricing .yp-plan-cta{padding-top:7px;margin-top:0;min-height:27px}
+ .yp-pricing .yp-plan-popular{right:12px;top:-8px}
+ .yp-pricing .price-summary{padding:20px}
+ .yp-pricing .monthly-total strong{font-size:42px}
+ .yp-pricing .cost-lines{margin-top:18px;padding-top:8px}
+ .yp-pricing .yp-credits{margin-top:28px;padding-top:25px}
+ .yp-pricing .yp-credits-head h3{font-size:24px;line-height:1.2}
+ .yp-pricing .yp-credits-intro{margin-top:12px;font-size:12px}
+ .yp-pricing .credit-packages{margin:18px 0 14px;gap:9px}
+ .yp-pricing .credit-packages>div{padding:14px 16px;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;border-radius:12px}
+ .yp-pricing .credit-packages b{font-size:13px;line-height:1.4}
+ .yp-pricing .credit-packages span{grid-column:2;grid-row:1;font-size:27px;line-height:1.15;justify-self:end}
+ .yp-pricing .credit-packages small{grid-column:1;grid-row:2;font-size:11px;line-height:1.4}
+ .yp-pricing .credit-packages em{grid-column:2;grid-row:2;justify-self:end;font-size:9px;padding:2px 6px;margin:0;white-space:nowrap}
+}
+@media(max-width:400px){.yp-ui .eyebrow{font-size:10px;gap:6px;padding:6px 10px}}
+
+/* Una sola famiglia tipografica per tutta la home, incluse le anteprime UI. */
+:root{--font-display:Inter,system-ui,sans-serif;--font-sans:Inter,system-ui,sans-serif;--font-body:Inter,system-ui,sans-serif;--font-brand:Inter,system-ui,sans-serif;--font-mono:Inter,system-ui,sans-serif}
+body :is(h1,h2,h3,h4,h5,h6,p,a,button,input,select,textarea,label,legend,summary,span,strong,b,small,em,li,dt,dd),.yz-scene,.yp-ui .result-incoming,.yp-ui .app-brand{font-family:Inter,system-ui,sans-serif!important}
+/* Il marchio conserva il carattere originale, separato dalla tipografia dei contenuti. */
+body .logo,body .logo .logo-text,body .logo .logo-text span{font-family:Michroma,system-ui,sans-serif!important;font-weight:400}
+.yp-pricing #pricing-title>span,.yp-gestion #yp-gestion-title>span,.yp-demo #demo-title>span{color:var(--accent);font-weight:700}
