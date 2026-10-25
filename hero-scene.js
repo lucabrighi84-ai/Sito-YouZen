@@ -7,7 +7,7 @@
  const sector=hero.querySelector('.yz-scene-sector');
  const pause=hero.querySelector('.yz-scene-pause');
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
- let index=0,userPaused=false,visible=false,hoveringLink=false,timer=null;
+ let index=Math.max(0,photos.findIndex(photo=>photo.classList.contains('is-active'))),userPaused=false,visible=false,hoveringLink=false,timer=null;
  function schedule(){
   clearTimeout(timer);
   if(userPaused||reduced.matches||!visible||document.hidden||hoveringLink||hero.matches(':focus-within'))return;
