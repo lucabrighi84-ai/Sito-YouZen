@@ -4108,6 +4108,19 @@ h4 { font-size: 1.125rem; letter-spacing: -0.01em; }
 }
 @media (min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }}
 .footer-bottom .right { display: flex; gap: 16px; }
+/* Copertura del servizio: le 20 regioni, in una fascia sotto le colonne.
+   Per ora testo semplice: diventano link quando esistono le pagine regione. */
+.footer-cov { border-top: 1px solid var(--line); padding: 28px 0 32px; }
+.footer-cov-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; margin-bottom: 18px; }
+.footer-cov h5 {
+  margin: 0; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted-weak); font-weight: 500;
+}
+.footer-cov p { margin: 0; font-size: 0.8rem; color: var(--muted); }
+.footer-cov ul { list-style: none; margin: 0; padding: 0; columns: 5 130px; column-gap: 24px; }
+.footer-cov li { break-inside: avoid; padding: 4px 0; }
+.footer-cov :is(a, span) { font-size: 0.875rem; color: var(--muted-strong); transition: color 0.2s; }
+.footer-cov a:hover { color: var(--accent); }
 
 /* ====================================================================
    PREZZI — PIANO UNICO ("il contatore")
@@ -7334,6 +7347,35 @@ html[data-yzg-sett="studio"] :is(.yzg-H, .yzg-I, .yzg-J, .yzg-K) [data-s]:not([d
           <li><a href="GDPR/index.html">GDPR</a></li>
         </ul>
       </div>
+    </div>
+
+    <div class="footer-cov" role="region" aria-labelledby="footer-cov-title">
+      <div class="footer-cov-head">
+        <h5 id="footer-cov-title">Copertura del servizio</h5>
+        <p>Rispondiamo in tutte le 20 regioni italiane.</p>
+      </div>
+      <ul>
+        <li><span>Abruzzo</span></li>
+        <li><span>Basilicata</span></li>
+        <li><span>Calabria</span></li>
+        <li><span>Campania</span></li>
+        <li><span>Emilia-Romagna</span></li>
+        <li><span>Friuli Venezia Giulia</span></li>
+        <li><span>Lazio</span></li>
+        <li><span>Liguria</span></li>
+        <li><span>Lombardia</span></li>
+        <li><span>Marche</span></li>
+        <li><span>Molise</span></li>
+        <li><span>Piemonte</span></li>
+        <li><span>Puglia</span></li>
+        <li><span>Sardegna</span></li>
+        <li><span>Sicilia</span></li>
+        <li><span>Toscana</span></li>
+        <li><span>Trentino-Alto Adige</span></li>
+        <li><span>Umbria</span></li>
+        <li><span>Valle d'Aosta</span></li>
+        <li><span>Veneto</span></li>
+      </ul>
     </div>
 
     <div class="footer-bottom">
