@@ -1,0 +1,138 @@
+/* ====================================================================
+   FOOTER DEL SITO — lo stesso della homepage, per tutte le altre pagine.
+   Copia delle regole del footer di index.html (piu' gli override di
+   tema-chiaro.css), tutte sotto #footerStage: l'id vince sulle regole
+   .footer, .footer-col, .logo che ogni pagina interna si porta dietro.
+   Colori e font sono scritti qui dentro, cosi' il footer esce uguale
+   anche nelle pagine che non caricano tema-chiaro.css (Ambulatori).
+   Se cambi il footer della home, cambia anche questo file e il blocco
+   HTML nelle pagine (stesso markup, con i percorsi relativi).
+   ==================================================================== */
+#footerStage {
+  --yzf-accent: #a74f24;
+  --yzf-accent-400: #bd6435;
+  --yzf-accent-600: #8c3d19;
+  --yzf-paper: #fffefa;
+  --yzf-text: #292c2d;
+  --yzf-muted: #625f58;
+  --yzf-muted-strong: #484842;
+  --yzf-muted-weak: #716a60;
+  --yzf-line: #ddd8ce;
+  --yzf-line-strong: #c6bfb2;
+  --yzf-shadow-card: 0 16px 45px -28px rgba(88, 63, 32, .22);
+  --bleed: max(60vh, 40vw);
+  position: relative;
+  margin-top: calc(-1 * var(--bleed));
+  padding: calc(var(--bleed) + clamp(120px, 16vw, 220px)) clamp(14px, 2vw, 26px) clamp(24px, 3vw, 40px);
+  overflow: clip;
+  isolation: isolate;
+  pointer-events: none;
+  background: transparent;
+  border: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--yzf-text);
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+#footerStage *, #footerStage *::before, #footerStage *::after { box-sizing: border-box; }
+#footerStage :is(div, p, ul, li, h5, footer, a, span) { margin: 0; padding: 0; }
+#footerStage a, #footerStage a:hover { color: inherit; text-decoration: none; }
+#footerStage img, #footerStage svg { display: block; max-width: 100%; }
+#footerStage :focus-visible { outline: 2px solid var(--yzf-accent); outline-offset: 2px; border-radius: 4px; }
+
+#footerStage .footer-inner { position: relative; pointer-events: auto; }
+#footerStage .footer-blob {
+  position: absolute; inset: -100%;
+  background: radial-gradient(circle at 50% 45%, var(--yzf-accent-400), var(--yzf-accent) 38%, var(--yzf-accent-600) 72%);
+  clip-path: circle(var(--yzf-r, 180px) at 50% 50%);
+  opacity: .12;
+  pointer-events: none;
+  z-index: 0;
+}
+#footerStage .footer {
+  position: relative; z-index: 1;
+  margin: 0; border: 0; max-width: none; width: auto;
+  color: var(--yzf-text); font-size: 16px; text-align: left;
+  padding: clamp(56px, 7vw, 110px) 0 40px;
+  border-radius: clamp(24px, 3vw, 40px);
+  background: var(--yzf-paper);
+  box-shadow: var(--yzf-shadow-card);
+  transform: scale(var(--yzf-card, 0.85));
+  will-change: transform;
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  #footerStage .footer-blob { clip-path: circle(var(--yzf-r-max, 200vmax) at 50% 50%); }
+  #footerStage .footer { transform: none; }
+}
+#footerStage .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+@media (min-width: 1024px) { #footerStage .container { padding: 0 40px; } }
+
+#footerStage .footer-grid {
+  display: grid; grid-template-columns: 1fr; gap: 48px;
+  margin-bottom: 56px; min-width: 0;
+}
+@media (min-width: 768px) { #footerStage .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+
+#footerStage .logo {
+  font-family: 'Michroma', system-ui, sans-serif; font-size: 1.5rem; font-weight: 400;
+  letter-spacing: 0; color: var(--yzf-text);
+  display: flex; align-items: center; gap: 8px;
+}
+#footerStage .logo-text { display: inline; color: var(--yzf-text); }
+#footerStage .logo-img {
+  width: 32px; height: 32px; display: block;
+  filter: drop-shadow(0 0 12px rgba(217,138,78,0.4));
+  transition: transform 0.3s ease;
+}
+#footerStage .logo:hover .logo-img { transform: rotate(-6deg) scale(1.05); }
+
+#footerStage .footer-claim {
+  margin-top: 14px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.0625rem; font-weight: 700;
+  letter-spacing: -0.015em; line-height: 1.35;
+  color: var(--yzf-text);
+}
+#footerStage .footer-claim span { color: var(--yzf-accent); }
+#footerStage .footer-brand p { color: var(--yzf-muted); font-size: 0.9rem; margin: 12px 0 20px; max-width: 320px; }
+#footerStage .footer-social { display: flex; gap: 8px; margin: 0; }
+#footerStage .footer-social a {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: grid; place-items: center;
+  border: 1px solid var(--yzf-line);
+  background: transparent;
+  color: var(--yzf-muted);
+  transition: all 0.2s;
+  font-size: 12px;
+}
+#footerStage .footer-social a:hover { color: var(--yzf-accent); border-color: var(--yzf-line-strong); background: rgba(65, 54, 40, 0.04); }
+
+#footerStage .footer-gdpr { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+#footerStage .gdpr-badge { width: 58px; height: 58px; flex-shrink: 0; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35)); }
+#footerStage .footer-gdpr-text { font-size: 12px; color: var(--yzf-muted); line-height: 1.35; font-weight: 600; }
+
+#footerStage .footer-col h5 {
+  font-family: 'Inter', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--yzf-muted-weak); margin-bottom: 18px;
+  font-weight: 500; line-height: 1.55;
+}
+#footerStage .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+#footerStage .footer-col li { list-style: none; }
+#footerStage .footer-col a { font-size: 0.875rem; color: var(--yzf-muted-strong); transition: color 0.2s; }
+#footerStage .footer-col a:hover { color: var(--yzf-accent); }
+
+#footerStage .footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid var(--yzf-line);
+  display: flex; flex-direction: column; gap: 12px;
+  font-size: 0.8rem;
+  color: var(--yzf-muted-weak);
+}
+@media (min-width: 768px) { #footerStage .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+#footerStage .footer-bottom .right { display: flex; gap: 16px; }
+@media (max-width: 600px) {
+  #footerStage :is(p, li, a) { overflow-wrap: anywhere; }
+}

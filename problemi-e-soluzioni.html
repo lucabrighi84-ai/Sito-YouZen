@@ -4308,6 +4308,7 @@ html.yz-cookie-open .call-bar { display: none; }
 @media (max-width: 767px) {
   .call-bar { display: none; }}</style>
 <link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="footer-sito.css">
 </head>
 
 <body class="yz-interno">
@@ -4370,17 +4371,17 @@ html.yz-cookie-open .call-bar { display: none; }
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
         <div class="nav-dropdown-menu">
-          <a href="settori/saloni.html">
+          <a href="parrucchieri/">
             <span class="nav-dropdown-icon">✂️</span>
             <div>
-              <div class="nav-dropdown-title">Saloni e SPA</div>
-              <div class="nav-dropdown-desc">Parrucchieri, estetica, benessere</div>
+              <div class="nav-dropdown-title">Parrucchieri e saloni</div>
+              <div class="nav-dropdown-desc">Estetica, SPA, benessere</div>
             </div>
           </a>
-          <a href="settori/food.html">
+          <a href="ristorazione/">
             <span class="nav-dropdown-icon">🍽️</span>
             <div>
-              <div class="nav-dropdown-title">Ristoranti</div>
+              <div class="nav-dropdown-title">Ristorazione</div>
               <div class="nav-dropdown-desc">Prenotazioni, asporto, sala</div>
             </div>
           </a>
@@ -5453,13 +5454,17 @@ else avvia();
 </main>
 
 <!-- ============================ FOOTER ============================ -->
-<footer class="footer">
+<!-- ============================ FOOTER ============================ -->
+<div class="footer-stage" id="footerStage">
+ <div class="footer-inner">
+  <div class="footer-blob" aria-hidden="true"></div>
+  <footer class="footer footer-card">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo">
           <img src="youzen-logo-96.png" alt="YouZen" class="logo-img" width="32" height="32" loading="lazy" decoding="async" />
-          You<span style="color: var(--accent)">Zen</span>
+          <span class="logo-text">You<span style="color:var(--accent)">Zen</span></span>
         </a>
         <div class="footer-claim">Noi rispondiamo, <span>tu respiri.</span></div>
         <p>Siamo la segreteria italiana che risponde sempre. Chiamate, WhatsApp, appuntamenti: h24, 365 giorni.</p>
@@ -5490,9 +5495,9 @@ else avvia();
       <div class="footer-col">
         <h5>Prodotto</h5>
         <ul>
-          <li><a href="#sec-03">Come funziona</a></li>
+          <li><a href="index.html#sec-03">Come funziona</a></li>
           <li><a href="index.html#sec-04">Senza / Con</a></li>
-          <li><a href="index.html#gestionale">App dedicata</a></li>
+
           <li><a href="index.html#sec-06">Onboarding</a></li>
           <li><a href="index.html#prezzi">Prezzi</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
@@ -5504,11 +5509,12 @@ else avvia();
       <div class="footer-col">
         <h5>Settori</h5>
         <ul>
-          <li><a href="settori/saloni.html">Saloni e SPA</a></li>
-          <li><a href="settori/food.html">Ristoranti e food</a></li>
+          <li><a href="parrucchieri/">Parrucchieri e saloni</a></li>
+          <li><a href="ristorazione/">Ristorazione</a></li>
           <li><a href="settori/studio-legale.html">Studi legali</a></li>
           <li><a href="settori/immobiliare.html">Agenzie immobiliari</a></li>
           <li><a href="settori/professionisti.html">Professionisti e P.IVA</a></li>
+          <li><a href="settori/ambulatori.html">Ambulatori e studi medici</a></li>
         </ul>
       </div>
 
@@ -5532,7 +5538,9 @@ else avvia();
       </div>
     </div>
   </div>
-</footer>
+  </footer>
+ </div>
+</div>
 
 <script>
 // ===== Navbar scrolled state
@@ -5563,7 +5571,6 @@ window.addEventListener('scroll', () => {
 })();
 
 // ===== Footer email decode
-document.getElementById('footer-email').textContent = 'info' + String.fromCharCode(64) + 'youzen.it';
 
 // Il calcolatore dei prezzi vive solo in home: qui la sua sezione non c'e', e senza
 // questo taglio la prima riga che cerca lo slider fermava tutto lo script che segue.
@@ -5922,5 +5929,6 @@ if (document.readyState === 'loading') {
 
 <link rel="stylesheet" href="tema-chiaro.css">
 <link rel="stylesheet" href="tema-interno.css">
+<script defer src="footer-sito.js"></script>
 </body>
 </html>
