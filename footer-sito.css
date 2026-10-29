@@ -137,7 +137,8 @@
   #footerStage :is(p, li, a) { overflow-wrap: anywhere; }
 }
 
-/* Copertura del servizio: le 20 regioni, in una fascia sotto le colonne. */
+/* Copertura del servizio: le 20 regioni, in una fascia sotto le colonne.
+   Per ora testo semplice: diventano link quando esistono le pagine regione. */
 #footerStage .footer-cov { border-top: 1px solid var(--yzf-line); padding: 28px 0 32px; }
 #footerStage .footer-cov-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; margin-bottom: 18px; }
 #footerStage .footer-cov h5 {
@@ -147,6 +148,6 @@
 #footerStage .footer-cov p { font-size: 0.8rem; color: var(--yzf-muted); }
 #footerStage .footer-cov ul { list-style: none; columns: 5 130px; column-gap: 24px; }
 #footerStage .footer-cov li { list-style: none; break-inside: avoid; padding: 4px 0; }
-#footerStage .footer-cov a { font-size: 0.875rem; color: var(--yzf-muted-strong); transition: color 0.2s; }
+#footerStage .footer-cov :is(a, span) { font-size: 0.875rem; color: var(--yzf-muted-strong); transition: color 0.2s; }
 #footerStage .footer-cov a:hover, #footerStage .footer-cov a[aria-current] { color: var(--yzf-accent); }
 #footerStage .footer-cov a[aria-current] { font-weight: 600; }
