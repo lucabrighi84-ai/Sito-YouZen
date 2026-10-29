@@ -19,8 +19,8 @@ tramite portabilità oppure usare un numero VoIP dedicato.
 
 - [Homepage](https://youzen.it/): che cosa fa YouZen, prezzi, domande frequenti
 - [Problemi e soluzioni](https://youzen.it/problemi-e-soluzioni.html): i quattro problemi che risolve, uno per uno
-- [Saloni e SPA](https://youzen.it/settori/saloni.html): parrucchieri, estetica, centri benessere
-- [Ristoranti e food](https://youzen.it/settori/food.html): prenotazione tavoli e ordini
+- [Parrucchieri e saloni](https://youzen.it/parrucchieri/): parrucchieri, estetica, centri benessere
+- [Ristorazione](https://youzen.it/ristorazione/): prenotazione tavoli e ordini
 - [Professionisti](https://youzen.it/settori/professionisti.html): consulenti, commercialisti, partite IVA
 - [Ambulatori](https://youzen.it/settori/ambulatori.html): chiamate, appuntamenti, spostamenti e promemoria WhatsApp per lo studio
 - [Agenzie immobiliari](https://youzen.it/settori/immobiliare.html): richieste di visita e lead
