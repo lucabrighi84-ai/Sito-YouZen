@@ -1,253 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<!-- GOOGLE ANALYTICS 4 + CONSENT MODE v2 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZKEZSFF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
+  gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied', 'wait_for_update': 500});
   gtag('js', new Date());
   gtag('config', 'G-S3XZKEZSFF', { 'anonymize_ip': true });
-  try {
-    if (localStorage.getItem('yz-consent') === 'granted') {
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted',
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted'
-      });
-    }
-  } catch (e) {}
+  try { if (localStorage.getItem('yz-consent') === 'granted') { gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted'}); } } catch (e) {}
 </script>
-<title>Domande e notizie sulla segretaria AI · Blog YouZen</title>
-<meta name="description" content="Le domande che si fa un titolare prima di far rispondere al telefono una segretaria artificiale, e le notizie del settore spiegate in parole semplici.">
 
-<meta name="theme-color" content="#f7f6f2">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff8f1">
+  <meta name="description" content="Il blog di YouZen: telefonate perse, no-show, segreterie e intelligenza artificiale raccontati per chi ha un'attività.">
+  <meta property="og:title" content="YouZen · Blog">
+  <meta property="og:description" content="Il blog di YouZen: telefonate perse, no-show, segreterie e intelligenza artificiale raccontati per chi ha un'attività.">
+  <meta property="og:type" content="website">
+  <title>YouZen · Blog</title>
 <link rel="canonical" href="https://youzen.it/blog/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="YouZen">
-<meta property="og:title" content="Domande e notizie sulla segretaria AI · Blog YouZen">
-<meta property="og:description" content="Le domande che si fa un titolare prima di far rispondere al telefono una segretaria artificiale, e le notizie del settore spiegate in parole semplici.">
-<meta property="og:url" content="https://youzen.it/blog/">
-<meta property="og:image" content="https://youzen.it/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="it_IT">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Domande e notizie sulla segretaria AI · Blog YouZen">
-<meta name="twitter:description" content="Le domande che si fa un titolare prima di far rispondere al telefono una segretaria artificiale, e le notizie del settore spiegate in parole semplici.">
-<meta name="twitter:image" content="https://youzen.it/og-image.jpg">
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="manifest" href="../site.webmanifest">
-<link rel="stylesheet" href="../fonts/fonts.css">
-<link rel="stylesheet" href="stile.css?v=20261024">
-<link rel="alternate" type="application/rss+xml" title="Blog YouZen" href="feed.xml">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Blog YouZen",
-  "url": "https://youzen.it/blog/",
-  "inLanguage": "it-IT",
-  "publisher": {
-    "@id": "https://youzen.it/#organization"
-  },
-  "blogPost": [
-    {
-      "@type": "BlogPosting",
-      "headline": "Il negozio senza casse che, in realtà, aveva mille paia di occhi in India",
-      "url": "https://youzen.it/blog/att-amazon-just-walk-out-umani/",
-      "datePublished": "2026-10-19",
-      "image": "https://youzen.it/blog/att-amazon-just-walk-out-umani/foto.jpg"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "A San Francisco un cartellone promette un chatbot: risponde un uomo, a mano",
-      "url": "https://youzen.it/blog/att-sf-finto-chatbot-a-mano/",
-      "datePublished": "2026-10-19",
-      "image": "https://youzen.it/blog/att-sf-finto-chatbot-a-mano/foto.jpg"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Quanto pesa davvero un no-show sui conti di un ristorante?",
-      "url": "https://youzen.it/blog/risto-costo-noshow/",
-      "datePublished": "2026-10-19",
-      "image": "https://youzen.it/blog/risto-costo-noshow/foto.jpg"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Quanto vale una telefonata persa per una piccola attività?",
-      "url": "https://youzen.it/blog/tutti-costo-chiamata-persa/",
-      "datePublished": "2026-10-19",
-      "image": "https://youzen.it/blog/tutti-costo-chiamata-persa/foto.jpg"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Perché pochi lasciano ancora un messaggio in segreteria?",
-      "url": "https://youzen.it/blog/tutti-segreteria-in-disuso/",
-      "datePublished": "2026-10-19",
-      "image": "https://youzen.it/blog/tutti-segreteria-in-disuso/foto.jpg"
-    },
-    {
-      "@type": "BlogPosting",
-      "headline": "Chat e social ovunque: perché il primo contatto passa ancora dal telefono?",
-      "url": "https://youzen.it/blog/tutti-telefono-canale-preferito/",
-      "datePublished": "2026-10-19",
-      "image": "https://youzen.it/blog/tutti-telefono-canale-preferito/foto.jpg"
-    }
-  ]
-}
-</script>
-<link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="icon" href="/media/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css?v=i1">
+  <script src="/app.js?v=3" defer></script>
+  <link rel="stylesheet" href="/home-sezioni-extra.css?v=1i">
+  <link rel="stylesheet" href="/blog.css?v=1">
+  <link rel="stylesheet" href="/site-nav.css?v=3">
+  <link rel="stylesheet" href="/site-footer-yz.css?v=2">
+  <link rel="stylesheet" href="/site-demo-yz.css?v=2">
+  <link rel="stylesheet" href="/brand.css?v=2">
 </head>
-<body class="yz-interno">
-
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="../index.html" class="logo">
-      <img src="../youzen-logo-96.png" alt="YouZen" class="logo-img" width="26" height="26">
-      <span class="parola">You<span style="color: var(--accent)">Zen</span></span>
-    </a>
-    <nav class="nav-links">
-      <a href="index.html" class="qui">Blog</a>
-      <a href="../index.html#sec-05">Settori</a>
-      <a href="../index.html#prezzi">Prezzi</a>
-      <a href="../index.html#contatto">Contatti</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="https://app.youzen.it" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Entra nell'App</a>
+<body class="pg-body">
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+  <header class="site-header yzn " id="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/" aria-label="YouZen, homepage"><img class="brand-logo" src="/media/youzen-logo-96.png" alt="" width="32" height="32"><span class="brand-you">You</span><span class="brand-zen">Zen</span></a>
+      <nav class="desktop-nav" aria-label="Navigazione principale"><details class="nav-dropdown"><summary>Come funziona <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#chevron-down"/></svg></summary><div class="dropdown-menu"><a href="/#panoramica"><strong>Scopri YouZen</strong><span>La tua attività, tutta collegata</span></a><a href="/#strumenti"><strong>I quattro strumenti</strong><span>Dal primo contatto alla cassa</span></a><a href="/#onboarding"><strong>Onboarding</strong><span>Dalla demo al primo giorno</span></a></div></details><details class="nav-dropdown"><summary>CRM Omnicanale <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#chevron-down"/></svg></summary><div class="dropdown-menu"><a href="/ai-a-consumo/"><strong>Voce e Messaggistica</strong><span>Voce AI al telefono e WhatsApp</span></a><a href="/gestionale-ristorante/"><strong>Gestionale per ristoranti</strong><span>Tavoli, sala, asporto e cucina</span></a><a href="/gestionale-parrucchiere/"><strong>Gestionale per parrucchieri</strong><span>Agenda, team e schede tecniche</span></a><a href="/fatturazione-elettronica/"><strong>Fatturazione</strong><span>Fatture elettroniche dalla cassa</span></a></div></details><a href="/gestionale-prezzi/">Prezzi</a><a href="/blog/" aria-current="page">Blog</a><a href="/#domande">Domande</a><a href="#contatto">Contattaci</a></nav>
+      <div class="nav-actions"><a class="yzn-wa" href="https://wa.me/393883681715?text=Ciao%2C%20vorrei%20info%20su%20YouZen" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" class="yzn-wa-ico"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg></a><a class="yzn-app" href="https://app.youzen.it" target="_blank" rel="noopener">Entra nell'app <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-up-right"/></svg></a><button class="menu-toggle" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Apri il menu"><svg aria-hidden="true" class="icon"><use href="/media/icons.svg#menu"/></svg></button></div>
     </div>
-  </div>
-</header>
+    <nav class="mobile-menu" id="mobile-menu" data-mobile-menu hidden aria-label="Navigazione mobile"><p class="yzn-mk">Come funziona</p><a href="/#panoramica">Scopri YouZen</a><a href="/#strumenti">I quattro strumenti</a><a href="/#onboarding">Onboarding</a><p class="yzn-mk">CRM Omnicanale</p><a href="/ai-a-consumo/">Voce e Messaggistica</a><a href="/gestionale-ristorante/">Gestionale per ristoranti</a><a href="/gestionale-parrucchiere/">Gestionale per parrucchieri</a><a href="/fatturazione-elettronica/">Fatturazione</a><p class="yzn-mk">YouZen</p><a href="/gestionale-prezzi/">Prezzi</a><a href="/blog/">Blog</a><a href="/#domande">Domande</a><a href="#contatto">Contattaci</a><div class="yzn-mactions"><a class="yzn-wa yzn-wa--wide" href="https://wa.me/393883681715?text=Ciao%2C%20vorrei%20info%20su%20YouZen" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" class="yzn-wa-ico"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>Scrivici su WhatsApp</a><a class="yzn-app" href="https://app.youzen.it" target="_blank" rel="noopener">Entra nell'app</a></div></nav>
+  </header>
 
-<main class="container">
-  <div class="intro">
-    <span class="eyebrow">Blog</span>
-    <h1>Ma mi serve<br><em>davvero?</em></h1>
-    <p>Le domande che si fa un titolare prima di far rispondere al telefono una segretaria artificiale, con una risposta onesta anche quando la risposta è no. E le notizie del settore, spiegate in parole semplici.</p>
-  </div>
-
-  <a class="big con-foto" href="att-amazon-just-walk-out-umani/index.html">
-    <div class="big-testo">
-    <div class="big-meta"><span class="tag"><span class="pallino"></span>Attualità</span><span class="big-data">19 ottobre 2026</span></div>
-    <h2>Il negozio senza casse che, in realtà, aveva mille paia di occhi in India</h2>
-    <p>Just Walk Out di Amazon sembrava pura intelligenza artificiale. Secondo The Information, dietro c&#39;era molto lavoro umano di revisione dei video.</p>
-    <div class="fonte-riga">Dalla notizia di <b>Gizmodo</b></div>
-    <span class="leggi">Leggi l'articolo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </div>
-    <img class="big-foto" src="att-amazon-just-walk-out-umani/foto-piccola.jpg" width="800" height="450" alt="" fetchpriority="high" decoding="async">
-  </a>
-  <div class="griglia">
-    <a class="card con-foto" href="att-sf-finto-chatbot-a-mano/index.html">
-      <img class="card-foto" src="att-sf-finto-chatbot-a-mano/foto-piccola.jpg" width="800" height="450" alt="" loading="lazy" decoding="async">
-      <div class="card-meta"><span class="tag"><span class="pallino"></span>Attualità</span><span class="card-data">19 ottobre 2026</span></div>
-      <h2>A San Francisco un cartellone promette un chatbot: risponde un uomo, a mano</h2>
-      <p>Un cartellone di San Francisco vende un chatbot AI. Dietro non c&#39;è intelligenza artificiale: solo un uomo che risponde a mano, fino a dieci ore al giorno.</p>
-      <div class="fonte-riga">Dalla notizia di <b>SF Standard</b></div>
-    </a>
-    <a class="card con-foto" href="risto-costo-noshow/index.html">
-      <img class="card-foto" src="risto-costo-noshow/foto-piccola.jpg" width="800" height="450" alt="" loading="lazy" decoding="async">
-      <div class="card-meta"><span class="tag ma-mi-serve"><span class="pallino"></span>Ma mi serve?</span><span class="card-data">19 ottobre 2026</span></div>
-      <h2>Quanto pesa davvero un no-show sui conti di un ristorante?</h2>
-      <p>Un tavolo prenotato e mai occupato non è solo una sedia vuota: è cibo comprato, personale organizzato e, a volte, un altro cliente rifiutato per quel posto.</p>
-
-    </a>
-    <a class="card con-foto" href="tutti-costo-chiamata-persa/index.html">
-      <img class="card-foto" src="tutti-costo-chiamata-persa/foto-piccola.jpg" width="800" height="450" alt="" loading="lazy" decoding="async">
-      <div class="card-meta"><span class="tag ma-mi-serve"><span class="pallino"></span>Ma mi serve?</span><span class="card-data">19 ottobre 2026</span></div>
-      <h2>Quanto vale una telefonata persa per una piccola attività?</h2>
-      <p>Chi chiama un&#39;attività spesso ha già cercato, confrontato e scelto quel numero. Una chiamata senza risposta è quasi la fine di una vendita, non l&#39;inizio.</p>
-
-    </a>
-    <a class="card con-foto" href="tutti-segreteria-in-disuso/index.html">
-      <img class="card-foto" src="tutti-segreteria-in-disuso/foto-piccola.jpg" width="800" height="450" alt="" loading="lazy" decoding="async">
-      <div class="card-meta"><span class="tag ma-mi-serve"><span class="pallino"></span>Ma mi serve?</span><span class="card-data">19 ottobre 2026</span></div>
-      <h2>Perché pochi lasciano ancora un messaggio in segreteria?</h2>
-      <p>Quasi tutti hanno ancora la segreteria telefonica attivata sul cellulare. Pochi, oggi, si fermano a lasciare un messaggio.</p>
-
-    </a>
-    <a class="card con-foto" href="tutti-telefono-canale-preferito/index.html">
-      <img class="card-foto" src="tutti-telefono-canale-preferito/foto-piccola.jpg" width="800" height="450" alt="" loading="lazy" decoding="async">
-      <div class="card-meta"><span class="tag ma-mi-serve"><span class="pallino"></span>Ma mi serve?</span><span class="card-data">19 ottobre 2026</span></div>
-      <h2>Chat e social ovunque: perché il primo contatto passa ancora dal telefono?</h2>
-      <p>Le aziende investono su chat e social, ma al primo contatto quasi un cliente su due prende ancora il telefono.</p>
-
-    </a>
-  </div>
-
-  <div class="seguici">
-    <div>
-      <div class="seguici-t">Ti avvisiamo quando esce</div>
-      <div class="seguici-d">Ogni articolo nuovo lo annunciamo su Instagram e Facebook.</div>
-    </div>
-    <div class="seguici-link">
-      <a href="https://www.instagram.com/youzenpro/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61584872474697" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
-
-  <div class="coda"></div>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo"><span>You<span style="color: var(--accent)">Zen</span></span></a>
-        <p>La segretaria AI italiana che risponde al telefono al posto tuo. Chiamate, WhatsApp e appuntamenti, tutti i giorni a tutte le ore.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/profile.php?id=61584872474697" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07Z"/></svg></a>
-          <a href="https://www.instagram.com/youzenpro/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        </div>
+  <main id="contenuto">
+    <section class="bl-hero">
+      <div class="container">
+        <p class="ft-eye">Blog</p>
+        <h1>Telefono, clienti e AI, <b>visti dal bancone.</b></h1>
+        <p class="ft-lead">Articoli brevi per chi gestisce un ristorante, un salone o uno studio.</p>
+        <div class="bl-filters" role="group" aria-label="Filtra per argomento"><button type="button" aria-pressed="true" data-cat="">Tutti</button><button type="button" aria-pressed="false" data-cat="Per tutti">Per tutti</button><button type="button" aria-pressed="false" data-cat="Ristoranti">Ristoranti</button><button type="button" aria-pressed="false" data-cat="Attualità">Attualità</button></div>
       </div>
-      <div class="footer-col">
-        <h5>Prodotto</h5>
-        <ul>
-          <li><a href="../index.html#sec-03">Cosa fa</a></li>
-          <li><a href="../index.html#prezzi">Prezzi</a></li>
-          <li><a href="index.html">Blog</a></li>
-          <li><a href="../index.html#faq">FAQ</a></li>
-        </ul>
+    </section>
+    <section class="bl-list section-space" aria-label="Articoli">
+      <div class="container bl-grid"><article class="bl-card bl-card--big"><a href="/blog/tutti-costo-chiamata-persa/"><div class="bl-img"><img src="/blog/tutti-costo-chiamata-persa/foto.jpg" alt="" loading="lazy"></div><div class="bl-body"><span class="bl-cat">Per tutti</span><h2>Quanto vale una telefonata persa per una piccola attività?</h2><p>Chi chiama un'attività spesso ha già cercato, confrontato e scelto quel numero. Una chiamata senza risposta è quasi la fine di una vendita, non l'inizio.</p><span class="bl-more">Leggi l'articolo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></span></div></a></article><article class="bl-card"><a href="/blog/risto-costo-noshow/"><div class="bl-img"><img src="/blog/risto-costo-noshow/foto.jpg" alt="" loading="lazy"></div><div class="bl-body"><span class="bl-cat">Ristoranti</span><h2>Quanto pesa davvero un no-show sui conti di un ristorante?</h2><p>Un tavolo prenotato e mai occupato non è solo una sedia vuota: è cibo comprato, personale organizzato e, a volte, un altro cliente rifiutato per quel posto.</p><span class="bl-more">Leggi l'articolo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></span></div></a></article><article class="bl-card"><a href="/blog/tutti-telefono-canale-preferito/"><div class="bl-img"><img src="/blog/tutti-telefono-canale-preferito/foto.jpg" alt="" loading="lazy"></div><div class="bl-body"><span class="bl-cat">Per tutti</span><h2>Chat e social ovunque: perché il primo contatto passa ancora dal telefono?</h2><p>Le aziende investono su chat e social, ma al primo contatto quasi un cliente su due prende ancora il telefono.</p><span class="bl-more">Leggi l'articolo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></span></div></a></article><article class="bl-card"><a href="/blog/tutti-segreteria-in-disuso/"><div class="bl-img"><img src="/blog/tutti-segreteria-in-disuso/foto.jpg" alt="" loading="lazy"></div><div class="bl-body"><span class="bl-cat">Per tutti</span><h2>Perché pochi lasciano ancora un messaggio in segreteria?</h2><p>Quasi tutti hanno ancora la segreteria telefonica attivata sul cellulare. Pochi, oggi, si fermano a lasciare un messaggio.</p><span class="bl-more">Leggi l'articolo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></span></div></a></article><article class="bl-card"><a href="/blog/att-amazon-just-walk-out-umani/"><div class="bl-img"><img src="/blog/att-amazon-just-walk-out-umani/foto.jpg" alt="" loading="lazy"></div><div class="bl-body"><span class="bl-cat">Attualità</span><h2>Il negozio senza casse che, in realtà, aveva mille paia di occhi in India</h2><p>Just Walk Out di Amazon sembrava pura intelligenza artificiale. Secondo The Information, dietro c'era molto lavoro umano di revisione dei video.</p><span class="bl-more">Leggi l'articolo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></span></div></a></article><article class="bl-card"><a href="/blog/att-sf-finto-chatbot-a-mano/"><div class="bl-img"><img src="/blog/att-sf-finto-chatbot-a-mano/foto.jpg" alt="" loading="lazy"></div><div class="bl-body"><span class="bl-cat">Attualità</span><h2>A San Francisco un cartellone promette un chatbot: risponde un uomo, a mano</h2><p>Un cartellone di San Francisco vende un chatbot AI. Dietro non c'è intelligenza artificiale: solo un uomo che risponde a mano, fino a dieci ore al giorno.</p><span class="bl-more">Leggi l'articolo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></span></div></a></article></div>
+      
+    </section>
+  </main>
+  <section class="yzd" id="contatto" aria-labelledby="yzd-t"><div class="yzd-in"><p class="yzd-eye">Prenota una demo</p><h2 id="yzd-t"><span>Ancora un forse?</span><span class="yzd-sol">Mezz'ora, e poi respiri.</span></h2><p class="yzd-lead">Ti facciamo vedere il gestionale dal vivo sul tuo ristorante o sul tuo salone, non su una slide. Poi decidi tu se partire.</p><div class="yzd-act"><a class="yzd-btn" href="/#demo-call">Fatti chiamare adesso <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></a><span class="yzd-or">oppure prendi tu il telefono</span></div><div class="yzd-row"><a class="yzd-pill" href="tel:+3905411726297"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 7 7l1.4-2L20 16v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span><small>Telefono</small>+39 0541 172 6297</span></a><a class="yzd-pill" href="tel:+393334353335"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><span><small>Cellulare</small>+39 333 43 53 335</span></a><a class="yzd-pill" href="mailto:info@youzen.it"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 5 8 7 8-7"/></svg><span><small>Email</small>info@youzen.it</span></a></div><div class="yzd-trust"><span class="yzd-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>GDPR + Server EU</span><span class="yzd-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Live in 8 giorni</span><span class="yzd-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Nessun impegno</span></div></div></section>
+<footer class="yzf" aria-label="Piè di pagina">
+  <div class="yzf-glow" aria-hidden="true"></div>
+  <div class="yzf-card"><div class="yzf-in">
+    <div class="yzf-grid">
+      <div class="yzf-brand">
+        <a href="/" class="brand" aria-label="YouZen, homepage"><img class="brand-logo" src="/media/youzen-logo-96.png" alt="" width="32" height="32" loading="lazy"><span class="brand-you">You</span><span class="brand-zen">Zen</span></a>
+        <div class="yzf-claim">Noi rispondiamo, <span>tu respiri.</span></div>
+        <p>Il gestionale omnicanale per ristoranti e parrucchieri. Prenotazioni, clienti, chiamate, WhatsApp e cassa stanno nello stesso posto.</p>
+        <div class="yzf-social"><a href="https://www.facebook.com/profile.php?id=61584872474697" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07Z"/></svg></a><a href="https://www.instagram.com/youzenpro/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div>
+        <div class="yzf-gdpr" title="Conforme al GDPR · Dati su server in UE"><svg viewBox="0 0 100 100" class="gdpr-badge" role="img" aria-label="Conforme GDPR · Unione Europea"><circle cx="50" cy="50" r="48" fill="#003399"/><circle cx="50" cy="50" r="47" fill="none" stroke="#FFCC00" stroke-width="0.6" opacity="0.45"/><g fill="#FFCC00" font-size="9" font-family="Arial, sans-serif" text-anchor="middle"><text x="50" y="15">★</text><text x="69" y="20.1">★</text><text x="82.9" y="34">★</text><text x="88" y="53">★</text><text x="82.9" y="72">★</text><text x="69" y="85.9">★</text><text x="50" y="91">★</text><text x="31" y="85.9">★</text><text x="17.1" y="72">★</text><text x="12" y="53">★</text><text x="17.1" y="34">★</text><text x="31" y="20.1">★</text></g><text x="50" y="57" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="19" fill="#FFCC00" letter-spacing="0.5">GDPR</text></svg><span>Conforme<br>GDPR · Server UE</span></div>
       </div>
-      <div class="footer-col">
-        <h5>Settori</h5>
-        <ul>
-          <li><a href="../settori/saloni.html">Saloni e SPA</a></li>
-          <li><a href="../settori/food.html">Ristoranti e food</a></li>
-          <li><a href="../settori/professionisti.html">Professionisti</a></li>
-          <li><a href="../settori/immobiliare.html">Agenzie immobiliari</a></li>
-          <li><a href="../settori/studio-legale.html">Studi legali</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Legale</h5>
-        <ul>
-          <li><a href="../privacy/index.html">Privacy Policy</a></li>
-          <li><a href="#" data-yz-manage>Gestisci cookie</a></li>
-          <li><a href="../termini/index.html">Termini</a></li>
-          <li><a href="../GDPR/index.html">GDPR</a></li>
-        </ul>
-      </div>
+      <div class="yzf-col"><h2>Prodotto</h2><ul><li><a href="/#panoramica">Come funziona</a></li><li><a href="/#onboarding">Onboarding</a></li><li><a href="/ai-a-consumo/">Voce e Messaggistica</a></li><li><a href="/fatturazione-elettronica/">Fatturazione</a></li><li><a href="/gestionale-prezzi/">Prezzi</a></li><li><a href="/#domande">FAQ</a></li><li><a href="/blog/">Blog</a></li><li><a href="/segreteria-telefonica-ai-rimini-romagna/">Rimini e Romagna</a></li></ul></div>
+      <div class="yzf-col"><h2>Per chi</h2><ul><li><a href="/gestionale-ristorante/">Ristoranti</a></li><li><a href="/gestionale-parrucchiere/">Parrucchieri e saloni</a></li></ul></div>
+      <div class="yzf-col"><h2>Legale</h2><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="#" data-yz-manage>Gestisci cookie</a></li><li><a href="/termini/">Termini</a></li><li><a href="/GDPR/">GDPR</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <div>YouZen · P.IVA 04855440402</div>
-      <div>info@youzen.it · Server EU · GDPR</div>
-    </div>
-  </div>
+    <div class="yzf-bottom"><div>© 2026 YouZen · P.IVA 04855440402</div><div class="yzf-right"><span data-yzf-mail>info[at]youzen.it</span><span>·</span><span>Server EU · GDPR</span></div></div>
+  </div></div>
+  <script>document.querySelectorAll('[data-yzf-mail]').forEach(function(e){e.textContent='info'+String.fromCharCode(64)+'youzen.it'})</script>
 </footer>
-<script defer src="misura.js"></script>
-<script defer src="../yz-consent.js?v=20261024"></script>
-<link rel="stylesheet" href="../tema-chiaro.css">
-<link rel="stylesheet" href="../tema-interno.css">
+  <dialog class="demo-dialog" id="demo-dialog" aria-labelledby="demo-title"><button class="dialog-close" data-close-demo aria-label="Chiudi la richiesta demo"><svg aria-hidden="true" class="icon"><use href="/media/icons.svg#x"/></svg></button><div class="dialog-heading"><p class="eyebrow">Conosciamoci</p><h2 id="demo-title">Partiamo dalla<br>tua attività.</h2><p>Prepara il riepilogo per una demo su misura.</p></div><form id="demo-form"><div class="form-grid"><label>Il tuo nome<input name="name" autocomplete="name" required placeholder="Nome e cognome"></label><label>Email di lavoro<input name="email" type="email" autocomplete="email" required placeholder="nome@attivita.it"></label><label>Nome dell’attività<input name="business" autocomplete="organization" required placeholder="Come si chiama la tua attività?"></label><label>Il tuo settore<select name="sector" required><option value="">Seleziona il settore</option><option>Ristorante</option><option>Salone o centro estetico</option></select></label><label class="full-width">Da dove vuoi iniziare?<select name="interest"><option>Una panoramica di YouZen</option>Prenotazioni e booking web</option>Agenda e team</option>Comande e KDS</option>CRM omnicanale, Voce AI e WhatsApp</option>Cassa, pagamenti e documenti</option></select></label></div><p class="form-note">Questa anteprima prepara un riepilogo locale: i dati non vengono inviati né salvati su un server.</p><button class="button button-primary" type="submit">Prepara il riepilogo <svg aria-hidden="true" class="icon"><use href="/media/icons.svg#arrow-right"/></svg></button></form><div id="demo-result" class="demo-result" aria-live="polite" hidden></div></dialog>
+  <script>
+  (() => {
+    const bs = document.querySelectorAll('[data-cat]');
+    bs.forEach(b => b.addEventListener('click', () => {
+      bs.forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+      document.querySelectorAll('.bl-card').forEach(c => {
+        c.hidden = !!b.dataset.cat && c.querySelector('.bl-cat').textContent !== b.dataset.cat;
+      });
+    }));
+  })();
+  </script>
+<script defer src="/yz-consent.js?v=20261024"></script>
 </body>
 </html>

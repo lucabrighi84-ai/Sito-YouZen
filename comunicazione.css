@@ -1,0 +1,72 @@
+/* Pagina Comunicazione: Voce AI e notifiche WhatsApp */
+.com-banner{position:relative;isolation:isolate;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:flex-start;background:#0e0a14;color:#fff;padding:150px 0 72px;font-family:Manrope,Inter,system-ui,sans-serif}
+.com-banner img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:0% 50%}
+.com-banner:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,10,20,.6) 0%,rgba(14,10,20,.3) 30%,rgba(14,10,20,0) 46%),linear-gradient(180deg,rgba(14,10,20,.55) 0%,rgba(14,10,20,0) 22%)}
+.com-banner .aurora-eyebrow{margin-bottom:22px}
+.com-banner h1{font-family:inherit;font-weight:800;font-size:clamp(44px,4.9vw,80px);line-height:.96;letter-spacing:-.05em;max-width:9ch;color:#fff}
+.com-banner h1 em{font-family:inherit;font-weight:400;font-style:normal;letter-spacing:-.02em}
+.com-lead{font-size:clamp(16px,1.25vw,18px);line-height:1.5;max-width:30ch;margin:20px 0 24px;color:rgba(255,255,255,.84)}
+.com-lead strong{color:#fff}
+.com-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+.com-problems{background:#fff}
+.com-problem-list{display:grid;gap:18px}
+.com-problem{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:30px;overflow:hidden}
+.com-problem>div{padding:38px 40px}
+.com-problem-ask{position:relative}
+.com-problem-ask .num{display:block;font-size:13px;font-weight:700;color:var(--rose);margin-bottom:14px}
+.com-problem h3{font-size:clamp(22px,2.3vw,30px);line-height:1.14;letter-spacing:-.03em;margin:6px 0 12px}
+.com-problem p{font-size:14.5px;line-height:1.65;color:var(--muted)}
+.com-tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.com-problem-fix{background:var(--pink)}
+.com-problem:nth-child(2) .com-problem-fix{background:var(--blue)}
+.com-problem:nth-child(3) .com-problem-fix{background:var(--mint)}
+.com-problem-fix p{color:#4a464c}
+.com-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.com-stats span{background:#ffffffb8;border-radius:14px;padding:10px 13px;font-size:11.5px;line-height:1.3;color:#4a464c}
+.com-stats b{display:block;font-size:20px;letter-spacing:-.03em;color:var(--ink)}
+
+.com-wa{background:var(--sage)}
+.com-wa-grid{display:grid;grid-template-columns:1fr minmax(0,420px);gap:64px;align-items:center}
+.com-wa-copy>p:not(.eyebrow){font-size:15px;line-height:1.7;color:var(--muted);margin-top:18px;max-width:50ch}
+.com-wa-list{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.com-wa-list span{background:#fff;border-radius:999px;padding:9px 14px;font-size:12.5px;font-weight:600}
+.com-phone{background:#e9f2e2;border:8px solid #28252a;border-radius:34px;padding:18px 14px 22px;display:grid;gap:10px}
+.com-phone small{justify-self:center;font-size:10.5px;font-weight:600;color:var(--muted);background:#ffffffb8;border-radius:999px;padding:3px 10px}
+.com-bubble{background:#fff;border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:13px;line-height:1.45;max-width:90%}
+.com-bubble.me{justify-self:end;background:#d6f2c9;border-radius:14px 14px 4px 14px}
+.com-bubble.owner{background:#28252a;color:#fff}
+.com-bubble span{display:block;font-size:10px;font-weight:700;opacity:.65;margin-bottom:2px}
+
+.com-pros{background:#fff}
+.com-pro-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.com-pro-grid article{border-radius:26px;padding:24px 22px 26px;background:var(--sage)}
+.com-pro-grid article:nth-child(4n+2){background:var(--blue)}
+.com-pro-grid article:nth-child(4n+3){background:var(--lilac)}
+.com-pro-grid article:nth-child(4n){background:var(--yellow)}
+.com-pro-grid article:nth-child(n+5):nth-child(odd){background:var(--pink)}
+.com-pro-grid .icon{width:24px;height:24px;margin-bottom:26px}
+.com-pro-grid h3{font-size:17px;line-height:1.25;letter-spacing:-.02em;margin-bottom:8px}
+.com-pro-grid p{font-size:13.5px;line-height:1.6;color:#4a464c}
+
+.com-consumo{background:#f8f6f3;scroll-margin-top:90px}
+.com-consumo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.com-consumo-grid article{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px}
+.com-consumo-grid .com-tag{color:var(--rose)}
+.com-consumo-grid h3{font-size:24px;letter-spacing:-.03em;line-height:1.15;margin:8px 0 12px}
+.com-consumo-grid p{font-size:14.5px;line-height:1.65;color:var(--muted)}
+.com-consumo-note{margin-top:20px;font-size:13px;line-height:1.6;color:var(--muted)}
+.com-consumo-note strong{color:var(--ink)}
+
+@media(max-width:1100px){.com-pro-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.com-wa-grid{gap:40px}}
+@media(max-width:860px){.com-problem,.com-consumo-grid,.com-wa-grid{grid-template-columns:1fr}.com-problem>div{padding:28px 24px}.com-banner{align-items:flex-end;padding-bottom:96px}.com-banner h1{font-size:clamp(44px,11vw,72px)}.com-lead{max-width:40ch}.com-banner img{object-position:44% 50%}.com-banner:after{background:linear-gradient(180deg,rgba(14,10,20,.55) 0%,rgba(14,10,20,.2) 30%,rgba(14,10,20,.9) 74%)}}
+@media(max-width:520px){.com-pro-grid{grid-template-columns:1fr}}
+
+/* Il banner si scioglie nella pagina: la foto sfuma, il fondo scende verso il bianco */
+.com-banner{--fade:32vh;min-height:calc(100vh + var(--fade));min-height:calc(100svh + var(--fade));background:#fff}
+.com-banner img{height:100vh;height:100svh;inset:0 0 auto;-webkit-mask-image:linear-gradient(180deg,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,#000 86%,transparent 100%)}
+.com-banner:before{content:"";position:absolute;left:0;right:0;bottom:0;top:calc(100svh - 15vh);z-index:-3;background:linear-gradient(180deg,#241110 0%,#241110 28%,#3a1d20 38%,#7b4f57 54%,#b98f98 68%,#e3ccd2 81%,#f7eef0 91%,#fff 100%)}
+.com-banner:after{inset:0 0 auto;height:100vh;height:100svh;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 96%);mask-image:linear-gradient(180deg,#000 70%,transparent 96%)}
+#problemi .yz-head{margin-bottom:40px;padding-top:24px}
+@media(max-width:860px){.com-banner{--fade:18vh;padding-bottom:calc(var(--fade) + 36px)}}
+.com-banner h1 em{font-weight:inherit;letter-spacing:inherit}

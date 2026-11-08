@@ -1,0 +1,445 @@
+/* Schede dei tre problemi, come su youzen.it, con i colori della home */
+#problemi{--accent:#de0750;--accent-400:#f0749f;--accent-600:#bc0644;--accent-50:#fdeaf1;--muted:#625e65;--muted-strong:#625e65;--muted-weak:#726e75;--line:rgba(40,37,42,.13);--line-strong:rgba(40,37,42,.16);--font-display:Inter,system-ui,sans-serif;--font-brand:Manrope,Inter,system-ui,sans-serif}
+/* Quattro fasce larghe quanto la finestra, una per problema, con la foto che cambia
+   lato a ogni riga. Prende il posto del bento: li' i quattro riquadri stavano in una
+   griglia sbilanciata e due problemi avevano piu' spazio degli altri, qui pesano uguale
+   e ognuno ha la riga per la sua svolta. Chiude il pannello, come prima.
+   Classi prefissate pb- perche' nomi come .card o .dato sono troppo comuni per un file
+   da settemila righe. I token sono quelli del sito, qui non si ridefinisce niente. */
+.pb-anchor{ display: block; height: 0; }
+#sec-problemi-head .title-problem, #sec-problemi-head .title-solution{ white-space: normal; }
+#sec-problemi-head .section-head{ max-width: 1040px; }
+/* L'azzeramento del padding sotto serviva quando dopo la sezione veniva il banner
+   arancione. Tolto quello, la sezione va a sbattere contro "una giornata tipo":
+   qui torna il padding standard di .section, cosi lo stacco e uguale a quello
+   fra tutte le altre sezioni (96 sotto + 96 sopra la successiva). */
+
+.pb-fasce{ display: flex; flex-direction: column; gap: 16px; margin-top: 52px; }
+
+.pb-fascia{
+  position: relative; width: 100%; overflow: hidden; isolation: isolate;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #fffefa 0%, #fffefa 100%);
+  transition: background .45s ease;
+}
+/* l'alone sta in uno strato suo, cosi' si accende senza toccare il fondo della fascia */
+.pb-fascia::before{
+  content: ''; position: absolute; inset: 0; z-index: -2; opacity: 0;
+  background: radial-gradient(60% 130% at 82% 50%, rgba(222,7,80,.30) 0%, rgba(222,7,80,0) 74%);
+  transition: opacity .45s ease;
+}
+.pb-fascia:hover::before{ opacity: 1; }
+
+.pb-dentro{
+  max-width: 1240px; margin: 0 auto; padding: 32px 24px;
+  display: grid; grid-template-columns: minmax(0,1fr) 300px; align-items: center; gap: 48px;
+  min-height: 230px;
+}
+
+.pb-occhio{
+  display: block; font-family: var(--font-brand); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 13px;
+}
+/* i titoli seguono la grammatica del sito: font display e arancione pieno come
+   .title-solution, non il corsivo serif che si portava dietro il vecchio bento */
+.pb-fascia h3{
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em;
+  font-size: clamp(25px,2.8vw,36px); line-height: 1.1; margin: 0 0 12px; max-width: 24ch;
+  color: #292c2d;
+}
+.pb-fascia h3 em{ font-style: normal; color: var(--accent); }
+.pb-fascia p{ margin: 0; color: var(--muted); font-size: 16px; line-height: 1.58; max-width: 52ch; }
+.pb-fascia p b{ color: #292c2d; font-weight: 600; }
+.pb-svolta{
+  margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(222,7,80,.22);
+  color: var(--muted-strong); font-size: 15.5px;
+}
+.pb-svolta b{ color: var(--accent); font-weight: 600; }
+
+.pb-media{ position: relative; }
+.pb-foto{
+  position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--line); background: #fffefa;
+}
+.pb-foto img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: .55; filter: saturate(.7);
+  transition: opacity .5s ease, filter .5s ease, transform .9s cubic-bezier(.16,1,.3,1);
+}
+.pb-fascia:hover .pb-foto img{ opacity: .9; filter: saturate(1); transform: scale(1.03); }
+
+/* il dato si appoggia all'angolo della foto, dalla parte del testo */
+.pb-dato{
+  position: absolute; bottom: -16px; left: -20px; z-index: 2;
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding: 13px 19px; border-radius: 16px; background: rgba(255, 254, 250, 0.92);
+  border: 1px solid rgba(222,7,80,.20); backdrop-filter: blur(10px); white-space: nowrap;
+  transition: border-color .45s ease, box-shadow .45s ease;
+}
+.pb-fascia:hover .pb-dato{ border-color: rgba(222,7,80,.45); box-shadow: 0 0 26px -10px rgba(222,7,80,.7); }
+.pb-dato b{ font-size: 27px; font-weight: 800; color: var(--accent); letter-spacing: -.03em; line-height: 1; }
+.pb-dato span{ font-family: var(--font-brand); font-size: 9px; letter-spacing: .10em;
+  text-transform: uppercase; color: #625f58; }
+
+/* il quinto box, grande, con il pannello disegnato invece che fotografato */
+.pb-pannello{
+  position: relative; width: 100%; overflow: hidden;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #fffefa 0%, #fffefa 100%);
+}
+.pb-pannello::before{
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(60% 120% at 88% 50%, rgba(222,7,80,.14) 0%, rgba(222,7,80,0) 70%);
+}
+.pb-pn-dentro{
+  position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 36px 24px;
+  display: grid; grid-template-columns: minmax(0,1fr) 440px; gap: 44px; align-items: center;
+}
+.pb-pannello h3{
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em;
+  font-size: clamp(26px,2.9vw,38px); line-height: 1.1; margin: 0 0 12px; max-width: 20ch;
+  color: #292c2d;
+}
+.pb-pannello h3 em{ font-style: normal; color: var(--accent); }
+.pb-pannello p{ margin: 0; color: var(--muted); font-size: 16px; line-height: 1.58; max-width: 48ch; }
+.pb-pannello p b{ color: #292c2d; font-weight: 600; }
+
+.pb-dash{
+  position: relative; border: 1px solid var(--line-strong); border-radius: 16px; overflow: hidden;
+  background: linear-gradient(180deg,#fffefa 0%, #fffefa 100%);
+  box-shadow: 0 30px 60px -30px rgba(80, 59, 35, 0.15);
+}
+.pb-dash-testa{ display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+  border-bottom: 1px solid var(--line); background: rgba(65, 54, 40, 0.02); }
+.pb-punti{ display: flex; gap: 5px; }
+.pb-punti i{ width: 8px; height: 8px; border-radius: 999px; background: rgba(65, 54, 40, 0.1); }
+.pb-dash-nome{ font-family: var(--font-brand); font-size: 9.5px; letter-spacing: .10em;
+  text-transform: uppercase; color: var(--muted-weak); }
+.pb-dash-oggi{ margin-left: auto; font-size: 11px; color: var(--muted-weak); }
+.pb-dash-oggi b{ color: var(--accent); font-weight: 600; }
+.pb-dash-numeri{ display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-bottom: 1px solid var(--line); }
+.pb-dash-numeri div{ padding: 14px 16px; border-right: 1px solid var(--line); }
+.pb-dash-numeri div:last-child{ border-right: 0; }
+.pb-dash-numeri b{ display: block; font-size: 24px; font-weight: 800; letter-spacing: -.03em; line-height: 1; color: #292c2d; }
+.pb-dash-numeri .pb-buono b{ color: var(--accent); }
+.pb-dash-numeri span{ display: block; margin-top: 6px; font-family: var(--font-brand);
+  font-size: 8.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-weak); }
+.pb-dash-righe{ padding: 6px 0; }
+.pb-dash-riga{ display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center;
+  padding: 9px 16px; font-size: 12.5px; }
+.pb-dash-riga + .pb-dash-riga{ border-top: 1px solid rgba(65, 54, 40, 0.13); }
+.pb-ora{ color: var(--muted-weak); font-variant-numeric: tabular-nums; font-size: 11.5px; }
+.pb-chi b{ display: block; font-weight: 600; font-size: 13px; color: #292c2d; }
+.pb-chi span{ color: var(--muted-weak); }
+.pb-tag{ font-family: var(--font-brand); font-size: 8px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 999px; white-space: nowrap;
+  background: rgba(222,7,80,.12); border: 1px solid rgba(222,7,80,.30); color: var(--accent); }
+.pb-tag.pb-neutro{ background: rgba(65, 54, 40, 0.05); border-color: var(--line-strong); color: var(--muted); }
+
+.pb-coda{ max-width: 1240px; margin: 0 auto; padding: 44px 24px 0;
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.pb-vedi{ color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15.5px; }
+.pb-vedi:hover{ text-decoration: underline; }
+
+@media (max-width:980px){
+  .pb-dentro{ grid-template-columns: 1fr; gap: 28px; padding: 28px 20px 36px; min-height: 0; }
+  .pb-media{ max-width: 400px; }
+  /* in colonna singola il badge non ha piu' la foto accanto: torna dentro il suo angolo */
+  .pb-dato{ left: auto; right: 14px; bottom: -14px; padding: 11px 16px; }
+  .pb-dato b{ font-size: 23px; }
+  .pb-pn-dentro{ grid-template-columns: 1fr; padding: 30px 20px; gap: 26px; }
+  .pb-dash-numeri div{ padding: 12px 6px; }
+  /* Michroma e' troppo larga per tre colonne da 90px: "appuntamenti" sfora
+     nella colonna accanto. Qui sotto le etichette passano alla font di sistema. */
+  .pb-dash-numeri span{ font-family: system-ui,-apple-system,sans-serif; letter-spacing: .05em; }
+}
+@media (prefers-reduced-motion:reduce){
+  .pb-fascia, .pb-fascia::before, .pb-foto img{ transition: none; }
+}
+
+/* === Schedario ======================================================
+   Le fasce non sono piu bande impilate ma schede che si incollano una
+   sopra l'altra, ognuna 22px piu in basso della precedente: restano
+   fuori le linguette di quelle gia lette e si vede che sono cinque.
+   Sta in fondo al blocco perche deve vincere sulle media query sopra.
+
+   Le altezze vanno tenute uguali: una scheda piu bassa di quella sotto
+   la lascerebbe spuntare dal fondo invece di coprirla. */
+.pb-fasce{
+  display: flex; flex-direction: column; gap: 0;
+  margin-top: 52px;
+  /* Niente padding qui sotto: il respiro dell'ultima scheda glielo da gia il suo
+     margine, uguale a quello di tutte le altre. Il 46vh che c'era prima serviva
+     quando l'ultima scheda aveva margine zero, e aggiungeva mezza schermata di
+     scorrimento vuoto prima di "una giornata tipo": lo stacco fra le due sezioni
+     risultava il triplo di quello fra due sezioni qualsiasi. */
+  padding-bottom: 0;
+}
+/* Il LED della scheda in cima alla pila: sotto la scheda gira un quadrato con un
+   gradiente conico, e .pb-dentro lo copre tutto tranne i 2px di padding. Di quel
+   quadrato si vede quindi solo la luce che corre lungo il perimetro. */
+.pb-fascia, .pb-pannello{
+  position: sticky;
+  top: calc(96px + var(--i,0) * 22px);
+  z-index: var(--i,0);
+  height: clamp(430px, calc(100vh - 240px), 640px);
+  width: min(1240px, 100% - 40px);
+  margin: 0 auto 26vh;
+  padding: 2px;
+  background: #fffefa;
+  border: 1px solid rgba(65, 54, 40, 0.13);
+  border-radius: 26px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 40px 90px -50px rgba(80, 59, 35, 0.15);
+  transition: box-shadow .45s ease;
+}
+.pb-fascia::before, .pb-pannello::before{
+  content: ''; position: absolute; z-index: 0;
+  top: 50%; left: 50%; width: 150%; aspect-ratio: 1;
+  transform: translate(-50%,-50%) rotate(0deg);
+  background: conic-gradient(from 0deg,
+    transparent 0 64%, rgba(240,116,159,.18) 72%,
+    var(--accent-400) 84%, var(--accent) 92%, transparent 100%);
+  opacity: 0; transition: opacity .5s ease;
+}
+.pb-fascia.attiva::before, .pb-pannello.attiva::before{
+  opacity: 1; animation: pbGiro 4.5s linear infinite;
+}
+.pb-fascia.attiva, .pb-pannello.attiva{ box-shadow: 0 0 70px -20px rgba(222,7,80,.55); }
+@keyframes pbGiro{ to{ transform: translate(-50%,-50%) rotate(360deg) } }
+
+.pb-dentro, .pb-pn-dentro{
+  position: relative; z-index: 1; height: 100%;
+  max-width: none; margin: 0; padding: 0; gap: 0; min-height: 0;
+  border-radius: 24px; overflow: hidden;
+  background: linear-gradient(180deg,#fffefa 0%,#fffefa 100%);
+  /* 1.1 e non 1: con la colonna piu stretta il titolo della scheda 4,
+     "Un messaggio non ti obbliga", andava su due righe bianche a qualunque
+     larghezza di finestra e rompeva lo schema una bianca / una arancione. */
+  display: grid; grid-template-columns: 1.1fr 1.25fr; align-items: stretch;
+}
+.pb-pn-dentro{ grid-template-columns: 1fr 1fr; }
+.pb-testo{ position: relative; z-index: 2; align-self: center; padding: clamp(28px,3.2vw,54px); }
+/* Il titolo su due righe nette: la parte bianca sopra, quella arancione sotto e
+   tutta di seguito. Senza, l'arancione comincia a meta della riga bianca e si
+   spezza dove capita. */
+.pb-fascia h3 em, .pb-pannello h3 em{ display: block; }
+
+/* Il numero di fondo sta dentro .pb-dentro: il fondo opaco che maschera il
+   quadrato rotante coprirebbe qualunque cosa gli stia sotto, numero compreso. */
+.pb-num{
+  position: absolute; z-index: 0; left: -2%; bottom: -14%;
+  pointer-events: none; user-select: none;
+  font-family: var(--font-brand); font-weight: 400; line-height: .72;
+  font-size: clamp(300px,40vw,620px);
+  color: rgba(222,7,80,.34); filter: blur(7px);
+}
+
+.pb-media{ position: relative; overflow: hidden; max-width: none; }
+/* La foto passa da riquadro con bordo a fondo pieno della colonna. La maschera
+   che la sfuma dentro il testo sta sul contenitore e non sull'immagine: se
+   stesse sull'immagine si sposterebbe insieme a lei, e spostare la foto non
+   servirebbe piu a tirarla fuori dalla sfumatura. */
+.pb-foto{
+  position: absolute; inset: 0; width: auto; aspect-ratio: auto;
+  border: 0; border-radius: 0; background: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 13%,
+                                     rgba(0,0,0,.60) 28%, #000 48%);
+          mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 13%,
+                                     rgba(0,0,0,.60) 28%, #000 48%);
+}
+.pb-foto img, .pb-fascia:hover .pb-foto img{ opacity: 1; filter: none; transform: none; }
+/* l'agenda finiva per un terzo dentro la sfumatura */
+.pb-fascia--agenda .pb-foto img,
+.pb-fascia--agenda:hover .pb-foto img{ transform: translateX(12%); }
+
+.pb-dato{ left: auto; right: 20px; bottom: 20px; z-index: 3; }
+.pb-dato--sinistra{ left: clamp(28px,3.2vw,54px); right: auto; bottom: 20px; }
+.pb-pn-dentro .pb-dash{ align-self: center; margin: clamp(16px,2vw,28px); }
+
+/* Sotto i 980px la pila si smonta e le schede tornano normali: su schermo
+   stretto una sezione agganciata per sei schermate e piu una trappola che un
+   effetto, e la foto a fondo pieno non ha larghezza per respirare. */
+@media (max-width:980px){
+  .pb-fasce{ gap: 16px; padding-bottom: 0; }
+  .pb-fascia, .pb-pannello{
+    position: static; height: auto; margin: 0 auto; border-radius: 20px; padding: 0;
+  }
+  .pb-fascia::before, .pb-pannello::before{ display: none; }
+  .pb-dentro, .pb-pn-dentro{
+    height: auto; grid-template-columns: 1fr; gap: 28px; padding: 28px 20px 36px;
+    border-radius: 20px;
+  }
+  .pb-testo{ padding: 0; }
+  .pb-num{ display: none; }
+  .pb-media{ max-width: 400px; }
+  .pb-foto{
+    position: relative; inset: auto; width: 100%; aspect-ratio: 4/3;
+    border: 1px solid var(--line); border-radius: 18px;
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .pb-fascia--agenda .pb-foto img,
+  .pb-fascia--agenda:hover .pb-foto img{ transform: none; }
+  .pb-dato{ left: auto; right: 14px; bottom: -14px; }
+  .pb-dato--sinistra{ display: none; }
+  .pb-pn-dentro .pb-dash{ margin: 0; }
+}
+@media (prefers-reduced-motion:reduce){
+  .pb-fascia.attiva::before, .pb-pannello.attiva::before{ animation: none; opacity: 1; }
+  .pb-fascia, .pb-pannello{ transition: none; }
+}
+
+/* La soluzione di ogni problema e' una scheda a se', subito dopo quella
+   del problema, nella stessa pila e con la stessa identica animazione
+   delle altre: niente overlay, niente scroll custom. */
+
+/* Box di prova dentro il testo della soluzione, al posto (o accanto) della
+   riga di svolta: due colonne, l'ultimo puo' allargarsi a tutta larghezza
+   con .pb-box--altro per fare da raccolta finale ("+ tanto altro"). */
+.pb-box-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; max-width: 44ch; }
+.pb-box{
+  padding: 20px 22px; border-radius: 18px; background: rgba(255, 254, 250, 0.92);
+  border: 1px solid rgba(222,7,80,.20); backdrop-filter: blur(10px);
+  transition: border-color .45s ease, box-shadow .45s ease;
+}
+.pb-fascia:hover .pb-box{ border-color: rgba(222,7,80,.45); box-shadow: 0 0 26px -10px rgba(222,7,80,.7); }
+.pb-box b{ display: block; font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 6px; }
+.pb-box span{ display: block; font-family: var(--font-brand); font-size: 10px; letter-spacing: .10em; text-transform: uppercase; color: #625f58; line-height: 1.3; }
+.pb-box--altro{ grid-column: 1/-1; text-align: center; background: transparent; border-style: dashed; }
+
+/* Indice delle schede, fisso sulla destra: un trattino per scheda, quello
+   della scheda attiva si allunga e si accende. Riusa la classe "attiva"
+   che lo script della pila gia' assegna, non ne serve un secondo. */
+.pb-indice{
+  position: fixed; right: 22px; top: 50%; transform: translateY(-50%); z-index: 40;
+  display: flex; flex-direction: column; gap: 9px;
+  opacity: 0; pointer-events: none; transition: opacity .4s ease;
+}
+.pb-indice.visibile{ opacity: 1; }
+.pb-indice-voce{ width: 10px; height: 3px; border-radius: 2px; background: rgba(65, 54, 40, 0.1); transition: width .3s ease, background .3s ease; }
+.pb-indice-voce.attiva{ width: 22px; background: var(--accent); }
+@media (max-width:980px){ .pb-indice{ display: none; } }
+
+/* === Schede film: problema e soluzione sono la stessa scheda ====================
+   L'immagine passa da problema a soluzione mentre si scorre (un film su canvas) e il
+   testo cambia con lei. La scheda resta incollata per tutta la corsa del film
+   (--film-corsa) piu' una sosta sulla soluzione (--film-sosta), poi la scheda dopo le
+   scivola sopra come in tutta la pila. Vale anche sul telefono: li' la prima versione
+   non incollava niente e il film correva con la posizione della scheda, ma l'immagine
+   sta sopra e il testo sotto, e quando si arrivava al testo il film era gia' finito
+   (si leggeva solo la soluzione) e passava in poche centinaia di pixel di scroll.
+   La corsa non e' un margine della scheda ma un distanziatore, la sentinella messa subito
+   prima di ogni scheda tranne la prima: una scheda incollata resta ferma finche' nel
+   contenitore c'e' spazio dopo di lei, e il suo margine conta come ingombro. Con i margini
+   ogni scheda si staccava appena arrivava l'ultima e le linguette della pila sparivano;
+   con i distanziatori restano tutte incollate fino alla fine. Un ultimo distanziatore, in
+   fondo alla pila, da' una sosta al pannello (l'ultima scheda) prima che la pila scorra via.
+   Le due fasi del testo stanno una sopra l'altra nella stessa cella, cosi' l'altezza non
+   cambia al passaggio. Senza il JS (o prima che parta) restano una sotto l'altra e si
+   leggono tutte e due: la classe .pb-film-attiva la mette il JS, e solo allora i
+   distanziatori prendono altezza. */
+.pb-fasce{ --film-corsa: 100vh; --film-sosta: 40vh; }
+.pb-film-ancora{ display: block; height: 0; }
+.pb-fasce.pb-film-attiva{ gap: 0; }
+.pb-fasce.pb-film-attiva > .pb-film-ancora{ height: calc(var(--film-corsa) + var(--film-sosta)); }
+.pb-fasce.pb-film-attiva > .pb-film-ancora:first-child{ height: 0; }
+.pb-fasce.pb-film-attiva::after{ content: ''; display: block; flex: none; height: var(--film-sosta); }
+.pb-fascia--film, .pb-pannello{ margin-bottom: 0; }
+/* Il numero di fondo e' tagliato dal bordo in basso (bottom:-14%), e va bene per le
+   cifre, ma del "!" resterebbe solo l'asta e senza il punto non si legge. */
+.pb-pannello .pb-num{ bottom: 4%; }
+.pb-fase + .pb-fase{ margin-top: 26px; padding-top: 26px; border-top: 1px solid rgba(222,7,80,.22); }
+.pb-film-on .pb-film-testi{ display: grid; }
+.pb-film-on .pb-fase{ grid-area: 1/1; align-self: center; margin: 0; padding: 0; border: 0;
+  will-change: opacity,transform; }
+.pb-film-on .pb-fase--soluzione{ opacity: 0; }
+.pb-film-on .pb-film-dato{ opacity: 0; }
+/* i box entrano animati e il fondo e' gia' al 92%: il blur dietro non si vede e a ogni fotogramma si ricalcola */
+.pb-film-on .pb-box{ -webkit-backdrop-filter: none; backdrop-filter: none; }
+/* i due livelli del flipbook (creati dal JS): sopra la foto di partenza, fermi, con l'opacita' scritta dal JS.
+   Il selettore e' lungo perche' .pb-foto img e il suo :hover forzano opacity, transition e transform. */
+.pb-fascia .pb-foto img.pb-frame{ position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+  object-fit: cover; pointer-events: none; transform: none; filter: none; }
+/* la seconda foto serve solo a chi ha chiesto meno animazioni: la sceglie lo stato, non il film.
+   Selettori lunghi di proposito: .pb-foto img e il suo :hover forzano opacity:1 e vincerebbero. */
+.pb-fascia.pb-fascia--film .pb-foto img.pb-foto-fine{ position: absolute; inset: 0; opacity: 0;
+  transition: opacity .35s ease; }
+.pb-fascia.pb-film-fermo.pb-film-sol .pb-foto img.pb-foto-fine{ opacity: 1; }
+/* meno animazioni: niente film, solo il passaggio fra due stati. La corsa si accorcia
+   perche' non c'e' niente da guardare mentre scorre. */
+.pb-film-fermo{ --film-corsa: 40vh; --film-sosta: 20vh; }
+.pb-film-fermo .pb-fase{ transition: opacity .35s ease; }
+.pb-film-fermo.pb-film-sol .pb-fase--problema{ opacity: 0; }
+.pb-film-fermo.pb-film-sol .pb-fase--soluzione{ opacity: 1; }
+.pb-film-fermo .pb-film-dato{ transition: opacity .35s ease; }
+.pb-film-fermo.pb-film-sol .pb-film-dato{ opacity: 1; }
+/* senza JS la scheda non si incolla e non ha un'altezza fissa: le due fasi si leggono una sotto l'altra */
+.pb-fascia--film:not(.pb-film-on){ position: static; height: auto; margin-bottom: 26px; }
+.pb-fascia--film:not(.pb-film-on) .pb-media{ min-height: 360px; }
+@media (max-width:980px){
+  /* Telefono e tablet in verticale: le schede film si incollano come sul desktop. L'altezza
+     comune (--film-h) e il lato dell'immagine (--film-img) li misura il JS, perche' immagine
+     e testo stiano insieme nello schermo e le tre schede, uguali, si coprano del tutto. */
+  .pb-fasce{ --film-corsa: 85vh; --film-sosta: 25vh; }
+  .pb-fascia--film.pb-film-on{ position: sticky; top: 84px; z-index: var(--i,0);
+    height: var(--film-h, calc(100svh - 100px)); overflow: hidden; }
+  .pb-fascia--film.pb-film-on .pb-dentro{ height: 100%; align-content: start; }
+  /* sul telefono l'immagine che si anima sta sopra, il testo cambia sotto di lei */
+  .pb-fascia--film .pb-media{ order: -1; width: var(--film-img, 240px); height: var(--film-img, 240px);
+    max-width: 100%; margin: 0 auto; }
+  .pb-fascia--film .pb-foto{ aspect-ratio: auto; width: 100%; height: 100%; }
+  .pb-fascia--film:not(.pb-film-on) .pb-media{ min-height: 0; width: 100%; max-width: 360px; height: auto; }
+  .pb-fascia--film:not(.pb-film-on) .pb-foto{ aspect-ratio: 1/1; height: auto; }
+  /* il pannello e' in flusso: deve passare sopra le schede ancora incollate */
+  .pb-pannello{ position: relative; z-index: 20; }
+  /* il testo e i box della soluzione, compatti: tutto deve stare in uno schermo */
+  .pb-fascia--film .pb-dentro{ gap: 16px; padding: 18px 18px 18px; }
+  .pb-fascia--film h3{ font-size: clamp(22px,6.4vw,27px); margin-bottom: 8px; }
+  .pb-fascia--film .pb-svolta{ margin-top: 10px; padding-top: 10px; font-size: 14px; line-height: 1.45; }
+  .pb-fascia--film p{ font-size: 14.5px; line-height: 1.5; }
+  .pb-fascia--film .pb-occhio{ margin-bottom: 8px; }
+  .pb-fascia--film .pb-box-grid{ gap: 8px; margin-top: 12px; }
+  .pb-fascia--film .pb-box{ padding: 10px 12px; border-radius: 12px; }
+  .pb-fascia--film .pb-box b{ font-size: 21px; margin-bottom: 3px; white-space: nowrap; }
+  .pb-fascia--film .pb-box span{ font-size: 8.5px; }
+}
+/* La scheda ha altezza fissa (al massimo 640px) e la soluzione di WhatsApp, con tre
+   righe di box, toccava il fondo anche sugli schermi grandi e usciva fino a 150px su
+   quelli bassi. Il box "+ tanto altro" smette di essere a tutta larghezza: i quattro
+   box stanno in due righe, e "Prenotazioni" non resta piu' solo con una cella vuota. */
+.pb-fascia--film .pb-box--altro{ grid-column: auto; text-align: left; }
+/* Schermi bassi (portatili): in piu' si stringono i margini. Misurato a 1280x720,
+   1366x768 e 1536x864. */
+@media (min-width:981px) and (max-height:900px){
+  .pb-fascia--film .pb-testo{ padding: 28px clamp(28px,3.2vw,44px); }
+  .pb-fascia--film h3{ font-size: clamp(24px,2.5vw,32px); margin-bottom: 8px; }
+  .pb-fascia--film .pb-svolta{ margin-top: 10px; padding-top: 10px; font-size: 14.5px; line-height: 1.5; }
+  .pb-fascia--film .pb-box-grid{ gap: 10px; margin-top: 12px; }
+  .pb-fascia--film .pb-box{ padding: 12px 16px; border-radius: 14px; }
+  .pb-fascia--film .pb-box b{ font-size: 24px; margin-bottom: 3px; }
+}
+
+/* Il pannello "agenda al pc" della fascia Appuntamenti saltati: uno
+   schermo disegnato, come il pannello del box 6, non una foto. */
+.pb-agenda-pc{
+  position: relative; align-self: center; margin: clamp(16px,2vw,28px);
+  border-radius: 14px; overflow: hidden; border: 1px solid var(--line-strong);
+  background: linear-gradient(180deg,#fffefa 0%,#fffefa 100%);
+  box-shadow: 0 30px 60px -30px rgba(80, 59, 35, 0.15);
+}
+.pb-agenda-barra{ display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+  border-bottom: 1px solid var(--line); background: rgba(65, 54, 40, 0.02); }
+.pb-agenda-titolo{ font-family: var(--font-brand); font-size: 9.5px; letter-spacing: .10em;
+  text-transform: uppercase; color: var(--muted-weak); }
+.pb-agenda-griglia{ padding: 8px 0; }
+.pb-agenda-riga{ display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; padding: 10px 16px; }
+.pb-agenda-riga + .pb-agenda-riga{ border-top: 1px solid rgba(65, 54, 40, 0.13); }
+.pb-agenda-ora{ color: var(--muted-weak); font-variant-numeric: tabular-nums; font-size: 12px; }
+.pb-agenda-app{ padding: 8px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: #292c2d;
+  background: rgba(222,7,80,.10); border-left: 3px solid var(--accent); }
+.pb-agenda-app span{ display: block; margin-top: 2px; font-weight: 400; font-size: 11px; color: var(--muted-weak); }
+
+@media (max-width:980px){
+  .pb-agenda-pc{ margin: 0; }
+}

@@ -1,0 +1,21 @@
+/* "Prima vedi come funziona" dentro la sezione CRM omnicanale */
+.crm-demo{position:relative;margin:28px 0 22px;padding:clamp(24px,3.4vw,44px);border-radius:34px;background:#fff8f1;border:1px solid #f1e3d5;scroll-margin-top:100px}
+.crm-demo:before{content:"";position:absolute;left:50%;top:-29px;height:28px;border-left:2px dashed #e0b896}
+.crm-demo-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:28px}
+.crm-demo-step{display:grid;place-items:center;flex:none;width:48px;height:48px;border-radius:50%;background:#c4560f;color:#fff}
+.crm-demo-step .icon{width:20px;height:20px}
+.crm-demo-head .eyebrow{margin-bottom:8px;color:#c4560f}
+.crm-demo-head .eyebrow:before{display:none}
+.crm-demo-head h3{margin:0;font-size:clamp(24px,2.6vw,36px);line-height:1.1;letter-spacing:-.03em;font-weight:600;color:#28252a}
+.crm-demo-head p:not(.eyebrow){margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--muted);max-width:62ch}
+.crm-demo .demo-live-grid{gap:clamp(24px,4vw,48px)}
+.crm-demo .demo-chat{border-color:#efe6dc}
+.crm-demo .demo-chips button[aria-pressed=true]{background:#c4560f}
+.crm-demo .demo-msg.customer{background:#fde3cf}
+.crm-demo .demo-form-box{padding:clamp(20px,2.4vw,30px);border-radius:28px;background:#fff;border:1px solid #efe6dc}
+.crm-demo .demo-form-box h3{font-size:clamp(24px,2.2vw,30px)}
+.crm-demo .demo-form input:focus-visible,.crm-demo .demo-form select:focus-visible{outline-color:#c4560f}
+.crm-demo .demo-form .button-primary{background:#c4560f;border-color:#c4560f}
+.crm-demo .demo-form .button-primary:hover{background:#a64709;border-color:#a64709}
+.crm-demo .demo-status{background:#e6f5ec}
+@media(max-width:767px){.crm-demo{border-radius:26px}.crm-demo-head{flex-direction:column;gap:12px}.crm-demo-step{display:none}.crm-demo:before{display:none}}

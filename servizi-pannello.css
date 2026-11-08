@@ -1,0 +1,53 @@
+/* Schede servizi della home (#strumenti), variante E "Foto + pannello" scelta da Jarreth l'8/11.
+   La foto resta a tutto box; il testo va in un pannello bianco con bordo sottile e checklist,
+   le card dell'illustrazione diventano bianche. Stile preso dall'app Claude.
+   Si appoggia sul design "immersiva": per tornare indietro basta togliere il <link> in index.html. */
+.homepage-service-slides[data-service-design=immersiva]{--pn-line:#e7e4dc;--pn-line-2:#d8d4c9;--pn-ink:#1f1e1d;--pn-ink-2:#5f5d58;--pn-ink-3:#8f8c85;--pn-tick:#87847c;--pn-sand:#f1efe8;--pn-paper:#faf9f5;--pn-lilac:#eceaf9;--pn-lilac-ink:#5d53b8}
+
+/* scheda: niente anello grigio spesso, bordo sottile e foto meno scura */
+.homepage-service-slides[data-service-design=immersiva] .service-slide{border-radius:24px;box-shadow:0 0 0 1px var(--pn-line),0 1px 2px #1f1e1d0a,0 -12px 40px #1f1e1d14}
+.homepage-service-slides[data-service-design=immersiva] .service-slide:before{background:linear-gradient(90deg,#24201a2e,#24201a59)}
+
+/* pannello bianco del testo */
+.homepage-service-slides[data-service-design=immersiva] .slide-copy{margin:14px;background:#fff;border:1px solid var(--pn-line);border-radius:16px;padding:28px 28px 18px;color:var(--pn-ink);box-shadow:0 20px 50px -20px #00000059}
+.homepage-service-slides[data-service-design=immersiva] .copy-top{align-items:center}
+.homepage-service-slides[data-service-design=immersiva] .copy-top>p{color:var(--pn-ink-2);font-size:13.5px;font-weight:500;max-width:none}
+.homepage-service-slides[data-service-design=immersiva] .copy-top>span{font:500 12px/1 ui-monospace,"SFMono-Regular",Consolas,monospace;background:var(--pn-lilac);color:var(--pn-lilac-ink);border-radius:6px;padding:5px 7px;white-space:nowrap}
+.homepage-service-slides[data-service-design=immersiva] .slide-copy h2{color:var(--pn-ink);font-size:clamp(30px,2.8vw,40px);font-weight:500;letter-spacing:-.045em;line-height:1.1;margin:30px 0 14px}
+.homepage-service-slides[data-service-design=immersiva] .service-description{color:var(--pn-ink-2);font-size:15px;line-height:1.7;max-width:none}
+
+/* elenco = card checklist con pallini grigi pieni */
+.homepage-service-slides[data-service-design=immersiva] .slide-copy ul{margin:22px 0 26px;padding:6px 16px;border:1px solid var(--pn-line);border-radius:12px;background:#fff}
+.homepage-service-slides[data-service-design=immersiva] .slide-copy li{align-items:center;gap:11px;margin:0;padding:8px 0;font-size:14.5px;line-height:1.4;color:var(--pn-ink-2)}
+.homepage-service-slides[data-service-design=immersiva] .slide-copy li>.icon{width:17px;height:17px;margin:0;padding:3.5px;border-radius:50%;background:var(--pn-tick);color:#fff;stroke-width:3}
+
+/* piede: etichetta come chip e freccia rotonda */
+.homepage-service-slides[data-service-design=immersiva] .copy-bottom{border-color:var(--pn-line);padding-top:18px}
+.homepage-service-slides[data-service-design=immersiva] .copy-bottom>span{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--pn-line);border-radius:10px;padding:9px 14px;font-size:13.5px;line-height:1.35;color:var(--pn-ink);background:#fff;min-width:0}
+.homepage-service-slides[data-service-design=immersiva] .copy-bottom>span:before{content:"";width:11px;height:11px;border-radius:50%;border:1.5px solid var(--pn-ink-3);flex:none}
+.homepage-service-slides[data-service-design=immersiva] .copy-bottom>a{width:40px;height:40px;font-size:18px;color:var(--pn-ink);border-color:var(--pn-line-2)}
+.homepage-service-slides[data-service-design=immersiva] .copy-bottom>a:hover{background:var(--pn-paper);color:var(--pn-ink)}
+
+/* illustrazioni: le card interne diventano bianche col bordo */
+.homepage-service-slides[data-service-design=immersiva] .voice-console,.homepage-service-slides[data-service-design=immersiva] .booking-browser,.homepage-service-slides[data-service-design=immersiva] .agenda-window,.homepage-service-slides[data-service-design=immersiva] .client-card{background:#fff;border:1px solid var(--pn-line);box-shadow:0 18px 40px -20px #3b352a59}
+.homepage-service-slides[data-service-design=immersiva] .digital-receipt{background:#fff;border:1px solid var(--pn-line);border-radius:10px;box-shadow:0 18px 40px -20px #3b352a59}
+.homepage-service-slides[data-service-design=immersiva] .transcript{background:var(--pn-sand)}
+.homepage-service-slides[data-service-design=immersiva] .floating-note{background:#fff;color:var(--pn-ink);border:1px solid var(--pn-line);border-radius:10px;font-size:11px;box-shadow:0 10px 26px -14px #3b352a66}
+.homepage-service-slides[data-service-design=immersiva] .floating-note .icon{width:17px;height:17px;padding:3.5px;border-radius:50%;background:var(--pn-tick);color:#fff;stroke-width:3}
+.homepage-service-slides[data-service-design=immersiva] .visual-example{color:#fffc}
+.homepage-service-slides[data-service-design=immersiva] .fiscal-note,.homepage-service-slides[data-service-design=immersiva] .art-caption{color:#fffffff2;text-shadow:0 1px 8px #00000080}
+
+@media(max-width:900px){
+  .homepage-service-slides[data-service-design=immersiva] .service-slide:before{background:linear-gradient(180deg,#24201a1f,#24201a59)}
+  .homepage-service-slides[data-service-design=immersiva] .slide-copy{margin:10px;padding:26px 22px 16px}
+  .homepage-service-slides[data-service-design=immersiva] .service-description{font-size:15px}
+  .homepage-service-slides[data-service-design=immersiva] .slide-copy li{font-size:14px}
+  .homepage-service-slides[data-service-design=immersiva] .copy-top>p{font-size:13px}
+}
+@media(max-width:600px){
+  .homepage-service-slides[data-service-design=immersiva] .slide-copy{padding:22px 18px 14px}
+  .homepage-service-slides[data-service-design=immersiva] .slide-copy h2{font-size:32px;margin-top:24px}
+  .homepage-service-slides[data-service-design=immersiva] .service-description{font-size:14.5px}
+  .homepage-service-slides[data-service-design=immersiva] .copy-bottom>span{font-size:13px;padding:8px 12px}
+  .homepage-service-slides[data-service-design=immersiva] .floating-note{left:16px;right:16px;bottom:24px}
+}

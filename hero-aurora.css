@@ -1,0 +1,73 @@
+/* Hero Aurora della home: notte, nuvole di colore in movimento e schede di vetro.
+   Portata dal mockup 06 della galleria "Homepage YouZen, 10 direzioni". */
+.hero-aurora{--aurora-bg:#0e0a14;--aurora-muted:rgba(255,255,255,.76);--aurora-pink:#d9175b;position:relative;isolation:isolate;overflow:hidden;background:var(--aurora-bg);color:#fff;padding:0 0 56px;font-family:Manrope,Inter,system-ui,sans-serif}
+.aurora-sky{position:absolute;inset:0;z-index:-2;overflow:hidden;filter:blur(70px) saturate(130%)}
+.aurora-sky i{position:absolute;border-radius:50%;mix-blend-mode:screen;opacity:.85}
+.aurora-sky .b1{width:60vw;height:60vw;background:#d9175b;left:-10vw;top:-20vw;animation:auroraOne 18s ease-in-out infinite alternate}
+.aurora-sky .b2{width:50vw;height:50vw;background:#5b8def;right:-12vw;top:5vh;animation:auroraTwo 22s ease-in-out infinite alternate}
+.aurora-sky .b3{width:42vw;height:42vw;background:#f6c85f;left:30vw;bottom:-25vw;animation:auroraThree 20s ease-in-out infinite alternate}
+.aurora-sky .b4{width:30vw;height:30vw;background:#9e7bff;left:10vw;bottom:0;animation:auroraTwo 16s ease-in-out infinite alternate-reverse}
+@keyframes auroraOne{to{transform:translate(20vw,15vh) scale(1.2)}}
+@keyframes auroraTwo{to{transform:translate(-18vw,20vh) scale(.85)}}
+@keyframes auroraThree{to{transform:translate(-10vw,-20vh) scale(1.15)}}
+.aurora-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.25;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.aurora-glass{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 60px -30px rgba(0,0,0,.6)}
+
+.aurora-stage{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:130px 16px 64px}
+.aurora-eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500;margin:0 0 28px;color:#fff}
+.aurora-eyebrow i{width:8px;height:8px;border-radius:50%;background:#7cffb2;box-shadow:0 0 12px #7cffb2}
+.hero-aurora h1{font-family:inherit;font-weight:800;font-size:clamp(46px,7.6vw,128px);line-height:.92;letter-spacing:-.06em;max-width:12ch;margin:0 auto;color:#fff}
+.hero-aurora h1 em{font-family:inherit;font-weight:400;font-style:normal;letter-spacing:-.02em}
+.aurora-lead{font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--aurora-muted);max-width:40ch;margin:26px auto 34px}
+.aurora-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.aurora-btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font-family:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.aurora-btn .icon{width:16px;height:16px}
+.aurora-btn:hover{transform:translateY(-2px)}
+.aurora-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.aurora-btn-solid{background:#fff;color:#d9175b;border:0}
+.aurora-btn-solid:hover{box-shadow:0 0 0 6px rgba(255,255,255,.15)}
+.aurora-btn-glass{color:#fff}
+
+.aurora-card{position:absolute;min-width:250px;border-radius:22px;padding:16px 18px;text-align:left;font-size:14px;color:#fff;animation:auroraFloat 7s ease-in-out infinite}
+.aurora-card b{display:block;font-size:15px;margin-bottom:2px}
+.aurora-card small{color:var(--aurora-muted);font-size:12.5px}
+.aurora-card .ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.18);float:left;margin-right:12px}
+.aurora-card .ex{position:absolute;top:-9px;right:14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.5);padding:2px 8px;border-radius:999px}
+.aurora-card.f1{left:5vw;top:20%;rotate:-6deg}
+.aurora-card.f2{right:5vw;top:25%;rotate:5deg;animation-delay:1.5s}
+.aurora-card.f3{left:9vw;bottom:14%;rotate:4deg;animation-delay:3s}
+.aurora-card.f4{right:8vw;bottom:12%;rotate:-4deg;animation-delay:2s}
+@keyframes auroraFloat{50%{translate:0 -14px}}
+
+/* I quattro vantaggi restano nella hero, in vetro */
+.hero-aurora .benefits{margin-top:0}
+.hero-aurora .benefits article{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);color:#fff}
+.hero-aurora .benefits h2{color:#fff}
+.hero-aurora .benefits p{color:var(--aurora-muted)}
+.hero-aurora .benefits article .benefit-icon{color:#fff!important}
+
+/* Menu sopra la notte; da scorrimento torna quello bianco di sempre */
+.site-header--aurora:not(.is-scrolled) .brand,.site-header--aurora:not(.is-scrolled) .desktop-nav>a,.site-header--aurora:not(.is-scrolled) .nav-dropdown summary{color:#fff}
+.site-header--aurora:not(.is-scrolled) .desktop-nav>a:hover,.site-header--aurora:not(.is-scrolled) .nav-dropdown summary:hover{color:rgba(255,255,255,.72)}
+.site-header--aurora:not(.is-scrolled) .brand-period{color:#fff}
+.site-header--aurora:not(.is-scrolled) .nav-actions .button-primary{background:#fff;color:#d9175b}
+.site-header--aurora:not(.is-scrolled) .menu-toggle{color:#fff;border-color:rgba(255,255,255,.4)}
+
+@media(max-width:1100px){.aurora-card{display:none}}
+@media(max-width:767px){.hero-aurora{padding-bottom:40px}.aurora-stage{padding:112px 16px 48px}.aurora-sky{filter:blur(48px) saturate(130%)}}
+
+/* Hero e vantaggi stanno insieme nella prima schermata */
+.hero-aurora{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding:0 0 clamp(16px,3vh,32px)}
+.aurora-stage{flex:1;min-height:0;padding:clamp(92px,12vh,116px) 16px clamp(16px,3vh,32px)}
+.aurora-eyebrow{margin-bottom:clamp(12px,2.4vh,22px)}
+.hero-aurora h1{font-size:clamp(44px,min(6.6vw,11.5vh),112px);max-width:13ch}
+.aurora-lead{max-width:50ch;font-size:clamp(15px,min(1.4vw,2.3vh),20px);margin:clamp(12px,2.4vh,22px) auto clamp(16px,2.8vh,26px)}
+.aurora-card.f1{top:17%}.aurora-card.f2{top:20%}.aurora-card.f3{bottom:8%}.aurora-card.f4{bottom:6%}
+.hero-aurora .benefits{flex:none;gap:12px}
+.hero-aurora .benefits article{padding:14px 18px;border-radius:20px;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
+.hero-aurora .benefits .benefit-icon{width:22px;height:22px;margin:0;grid-row:span 2}
+.hero-aurora .benefits h2{font-size:13.5px;margin:0;line-height:1.3}
+.hero-aurora .benefits p{font-size:11.5px;line-height:1.4;max-width:none}
+@media(max-width:1023px){.hero-aurora .benefits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.hero-aurora{padding-bottom:92px}.aurora-stage{padding:92px 16px 18px}.hero-aurora h1{font-size:clamp(40px,12vw,52px)}.aurora-lead{font-size:15px}.aurora-btn{min-height:46px;font-size:14px;padding:0 18px}.hero-aurora .benefits{gap:8px}.hero-aurora .benefits article{padding:10px 12px;border-radius:16px;column-gap:9px}.hero-aurora .benefits .benefit-icon{width:18px;height:18px;grid-row:auto}.hero-aurora .benefits h2{font-size:12px}.hero-aurora .benefits p{display:none}}
+.hero-aurora h1 em{font-weight:inherit;letter-spacing:inherit}

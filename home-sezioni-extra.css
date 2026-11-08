@@ -1,0 +1,101 @@
+/* FAQ di youzen.it dentro #domande: stessa lista, anti-FAQ, demo e chiusura */
+.yz-head{max-width:760px;margin:0 0 48px}
+.yz-head h2 em{font-style:normal;color:var(--rose)}
+.yz-head>p:last-child{margin-top:18px;font-size:15px;line-height:1.7;color:var(--muted);max-width:56ch}
+.yz-steps strong{color:var(--rose)}
+
+
+.demo-live{scroll-margin-top:90px}
+.demo-live-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.demo-chat{background:#fff;border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 24px 50px -38px #372e3766}
+.demo-chat-top{display:flex;justify-content:space-between;gap:12px;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:18px}
+.demo-chat h3{font-size:21px;letter-spacing:-.02em;margin-bottom:4px}
+.demo-chat-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+.demo-chips{display:inline-flex;gap:3px;padding:3px;background:#f4f3f1;border-radius:999px;margin-bottom:18px}
+.demo-chips button{font:inherit;font-size:12px;font-weight:600;padding:7px 14px;border:0;border-radius:999px;background:none;color:var(--muted);cursor:pointer}
+.demo-chips button[aria-pressed=true]{background:var(--ink);color:#fff}
+.demo-stage{height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:9px;padding-right:4px}
+.demo-msg{max-width:88%;padding:11px 14px;border-radius:14px;font-size:13px;line-height:1.5;flex-shrink:0}
+.demo-msg span{display:block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.6;margin-bottom:2px}
+.demo-msg.assistant{background:#f4f3f1;align-self:flex-start;border-bottom-left-radius:4px}
+.demo-msg.customer{background:var(--pink);align-self:flex-end;border-bottom-right-radius:4px}
+.demo-hint{margin:auto;font-size:12px;color:var(--muted)}
+.demo-chat-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.demo-chat-foot button{font:inherit;font-size:12px;font-weight:600;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.demo-chat-foot span{font-size:11px;color:var(--muted)}
+.demo-form-box h3{font-size:32px;line-height:1.12;letter-spacing:-.03em;margin:6px 0 10px}
+.demo-form-box>p{font-size:14px;line-height:1.6;color:var(--muted)}
+.demo-form-box .tiny{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.demo-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.demo-form label{display:grid;gap:6px;font-size:12px;font-weight:600}
+.demo-form input:not([type=checkbox]),.demo-form select{width:100%;min-height:48px;padding:0 14px;border:1px solid #d5d3d6;border-radius:12px;background:#fff;font:inherit;font-size:14px;font-weight:400;color:var(--ink)}
+.demo-form input:focus-visible,.demo-form select:focus-visible{outline:2px solid var(--rose);outline-offset:1px}
+.demo-phone{display:flex;align-items:center;gap:8px}
+.demo-phone b{font-size:14px;font-weight:600;color:var(--muted)}
+.demo-form .demo-privacy{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-weight:400;line-height:1.5;color:var(--muted)}
+.demo-privacy a{text-decoration:underline}
+.demo-form button{grid-column:1/-1;justify-self:start}
+.demo-trust{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:11px;font-weight:600;color:var(--muted)}
+.demo-status{grid-column:1/-1;padding:12px 14px;border-radius:12px;background:var(--mint);font-size:13px;line-height:1.5}
+
+.book-demo{position:relative;isolation:isolate;overflow:hidden;background:#0e0a14;color:#fff;text-align:center;padding:120px 0;font-family:Manrope,Inter,system-ui,sans-serif}
+.book-demo .eyebrow{color:rgba(255,255,255,.76)}
+.book-demo h2{font-family:inherit;font-weight:800;font-size:clamp(38px,5.6vw,84px);line-height:.98;letter-spacing:-.05em;color:#fff}
+.book-demo h2 em{font-family:inherit;font-weight:400;font-style:normal;letter-spacing:-.02em}
+.book-demo-lead{font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:rgba(255,255,255,.76);max-width:50ch;margin:22px auto 30px}
+.book-contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.book-contacts a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;font-size:13px;font-weight:600;color:#fff}
+.book-small{margin:12px 0 0;font-size:13px;color:rgba(255,255,255,.76)}
+.book-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:26px;font-size:12px;font-weight:600;color:rgba(255,255,255,.76)}
+
+@media(max-width:480px){.demo-form{grid-template-columns:1fr}.demo-chat{padding:20px}.demo-chips button{padding:7px 11px}}
+
+/* Settori: Due porte */
+/* 1 Due porte */
+.doors{display:flex;gap:12px;height:640px}
+.door{position:relative;flex:1;min-width:0;overflow:hidden;border-radius:34px;color:#fff;transition:flex .6s cubic-bezier(.2,.8,.2,1)}
+.door.is-open{flex:2.3}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.door:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0e0a1400 25%,#0e0a14d9 78%)}
+.door-hit{position:absolute;inset:0;z-index:2;background:none;border:0;cursor:pointer}
+.door.is-open .door-hit{display:none}
+.door-hit:focus-visible{outline:3px solid #fff;outline-offset:-6px;border-radius:34px}
+.door-body{position:absolute;left:30px;right:30px;bottom:26px;z-index:1}
+.door-name{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;background:#ffffff2e;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.door-name .icon{width:16px;height:16px}
+.door h3{font-size:clamp(24px,2.6vw,36px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 0;color:#fff}
+.door-more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .5s,opacity .4s}
+.door-more>*{min-height:0}
+.door.is-open .door-more{display:block;opacity:1}
+.door:not(.is-open) .door-more{display:none}
+.door-more>p{font-size:14px;line-height:1.55;margin:10px 0 16px;max-width:56ch;color:#ffffffd9}
+.door-more .v-feats{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.door-more .v-feats li{grid-template-columns:1fr;gap:2px}
+.door-more .v-feats h4{color:#fff;font-size:14px}
+.door-more .v-feats p{color:#ffffffc7;font-size:12px}
+.door-more .v-link{color:#fff;margin-top:6px}
+
+.v-link{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600;color:var(--rose)}
+.v-link.is-light{color:#fff}
+.v-feats{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.v-feats li{display:grid;grid-template-columns:28px 1fr;gap:8px}
+.v-feats span{font-size:12px;font-weight:700;opacity:.65;padding-top:2px}
+.v-feats h4{font-size:15px;font-weight:600;letter-spacing:-.01em;margin-bottom:3px}
+.v-feats p{font-size:13px;line-height:1.55}
+@media(max-width:1023px){.door-more .v-feats{grid-template-columns:1fr;gap:8px}.door-more .v-feats p{display:none}}
+@media(max-width:767px){.doors{flex-direction:column;height:auto}.door{flex:none;height:210px;transition:none}.door.is-open{flex:none;height:560px}.door-body{left:20px;right:20px;bottom:16px}.door-more .v-feats p{display:block}}
+@media(prefers-reduced-motion:reduce){.door{transition:none}}
+
+/* CRM: stesse due porte, foto dell'assistente AI */
+.crm-doors{margin-bottom:28px}
+.crm-doors .door img{object-position:50% 12%}
+.door-example{max-width:520px;margin-bottom:6px;padding:12px 14px;border-radius:16px;background:#ffffff24;border:1px solid #ffffff3d;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font-size:13px;line-height:1.5;color:#fff}
+.door-example span{display:block;font-size:10.5px;font-weight:600;opacity:.75;margin-bottom:3px}
+
+@media(max-width:900px){.demo-live-grid{grid-template-columns:1fr;gap:40px}.book-demo{padding:84px 0}}
+.book-demo h2 em{font-weight:inherit;letter-spacing:inherit}
+
+/* Box delle info sotto la hero, nello stile Crema della sezione "Diamo spazio" */
+.hero .benefits article{background:linear-gradient(180deg,#fff 30%,#fff3e8 100%);box-shadow:0 0 0 4px #f6e6d6,inset 0 0 0 1px #efd9c4}
+.hero .benefits .benefit-icon,.hero .benefits article:nth-child(n) .benefit-icon{color:#d98a4e!important}
+.hero .benefits article:hover{box-shadow:0 0 0 4px #f2dcc6,inset 0 0 0 1px #e9cdb2,0 24px 40px -30px #9a5a2c55}

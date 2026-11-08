@@ -1,0 +1,66 @@
+/* Hero Respiro della home: cerchi che respirano, box delle conversazioni, arancione */
+.hero-respiro{--sun:#c4560f;--sun-dark:#a64709;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:100vh;min-height:100svh;padding:0 0 clamp(14px,2.6vh,28px);background:#fff8f1}
+.site-header--sun .nav-actions .button-primary{background:#c4560f;color:#fff}
+.site-header--sun .nav-actions .button-primary:hover{background:#a64709}
+.site-header--sun .brand-period{color:#c4560f}
+.rs-stage{position:relative;flex:1;min-height:0;display:grid;place-items:center;text-align:center;padding:clamp(92px,12vh,116px) 16px clamp(12px,2.4vh,24px)}
+.rs-breath{position:absolute;left:50%;top:52%;z-index:-1;width:0;height:0}
+.rs-breath i{position:absolute;width:min(70vh,86vw);aspect-ratio:1;margin-left:calc(min(70vh,86vw)/-2);margin-top:calc(min(70vh,86vw)/-2);border-radius:50%;background:#fde4cf;animation:rsBreath 9s ease-in-out infinite}
+.rs-breath i:nth-child(2){background:#feeee0;animation-name:rsBreathIn;animation-delay:.25s}
+@keyframes rsBreath{0%,100%{transform:scale(.82)}45%{transform:scale(1.14)}}
+@keyframes rsBreathIn{0%,100%{transform:scale(.62)}45%{transform:scale(.94)}}
+.rs-copy{position:relative;z-index:1;max-width:640px}
+.rs-eye{font-size:13px;font-weight:600;color:#6b5a4d;margin-bottom:clamp(8px,1.6vh,14px)}
+.hero-respiro h1{font-size:clamp(42px,min(5.4vw,9.6vh),84px);line-height:1;letter-spacing:-.04em;font-weight:600;color:#28252a;margin:0}
+.hero-respiro h1 em{font-family:inherit;font-style:normal;font-weight:500;letter-spacing:-.02em;color:var(--sun)}
+.rs-lead{max-width:52ch;margin:clamp(10px,2vh,18px) auto clamp(14px,2.4vh,24px);font-size:clamp(15px,min(1.25vw,2.1vh),18px);line-height:1.5;color:#5c5249}
+.rs-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.rs-btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 22px;border:1px solid var(--sun);border-radius:999px;background:var(--sun);color:#fff;font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s,transform .2s}
+.rs-btn:hover{background:var(--sun-dark);transform:translateY(-1px)}
+.rs-btn .icon{width:16px;height:16px}
+.rs-btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.rs-btn-line{background:none;color:#28252a;border-color:#28252a33}
+.rs-btn-line:hover{background:#fff}
+.rs-note{margin-top:10px;font-size:12px;color:#6b5a4d}
+.rs-cards{position:absolute;inset:0;z-index:0;pointer-events:none}
+.rs-card{position:absolute;width:250px;padding:13px 15px;text-align:left;border-radius:18px;background:#fff;box-shadow:0 18px 40px -20px #6b3a1059,0 2px 6px #6b3a1014;animation:rsBob 7s ease-in-out infinite}
+.rs-card:nth-child(1){left:6%;top:24%;rotate:-3deg}
+.rs-card:nth-child(2){right:6%;top:22%;rotate:3deg;animation-delay:-2s}
+.rs-card:nth-child(3){left:6%;bottom:12%;rotate:2deg;animation-delay:-4s}
+.rs-card:nth-child(4){right:6%;bottom:12%;rotate:-2deg;animation-delay:-1s}
+@keyframes rsBob{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.rs-card header{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#6b5a4d}
+.rs-card .icon{width:14px;height:14px;color:var(--sun)}
+.rs-card time{margin-left:auto;font-weight:500}
+.rs-card p{margin:6px 0 8px;font-size:13.5px;line-height:1.35;font-weight:500;color:#28252a}
+.rs-st{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:600}
+.rs-st.ok{background:#dcebd2;color:#2c5a1f}.rs-st.info{background:#fde4cf;color:#7a3a08}.rs-st.warn{background:#fbf1bf;color:#6b5400}
+.hero-respiro .benefits{flex:none;margin-top:0;gap:12px}
+.hero-respiro .benefits article{padding:13px 16px;border-radius:18px;background:#ffffffd9;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
+.hero-respiro .benefits .benefit-icon{width:22px;height:22px;margin:0;grid-row:span 2;color:var(--sun)!important}
+.hero-respiro .benefits h2{font-size:13.5px;margin:0;line-height:1.3}
+.hero-respiro .benefits p{font-size:11.5px;line-height:1.4;max-width:none}
+@media(max-width:1280px){.rs-card{width:215px}.rs-card:nth-child(n){left:auto;right:auto}.rs-card:nth-child(odd){left:2%}.rs-card:nth-child(even){right:2%}}
+@media(max-width:1023px){
+  .rs-stage{display:block}
+  .rs-cards{position:static;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .rs-card:nth-child(n){position:static;width:auto;rotate:none;animation:none}
+  .rs-card:nth-child(n+3){display:none}
+  .rs-breath{top:34%}
+  .hero-respiro .benefits{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:767px){
+  .rs-stage{padding:92px 16px 14px}
+  .rs-cards{grid-template-columns:1fr}
+  .rs-btn{min-height:46px;font-size:14px;padding:0 18px}
+  .hero-respiro{padding-bottom:92px}
+  .hero-respiro .benefits{gap:8px}
+  .hero-respiro .benefits article{padding:10px 12px;border-radius:16px;column-gap:9px}
+  .hero-respiro .benefits .benefit-icon{width:18px;height:18px;grid-row:auto}
+  .hero-respiro .benefits h2{font-size:12px}
+  .hero-respiro .benefits p{display:none}
+}
+@media(prefers-reduced-motion:reduce){.rs-breath i,.rs-card{animation:none}}
+.hero-respiro h1 em{font-weight:inherit;letter-spacing:inherit}
+/* Nessuno stacco col resto della pagina: la hero sfuma nel bianco */
+.hero-respiro{background:linear-gradient(180deg,#fff8f1 0%,#fff8f1 62%,#fff 100%)}

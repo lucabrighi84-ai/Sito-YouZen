@@ -1,0 +1,26 @@
+/* Sezione "Prenota una demo" uguale a youzen.it (tema chiaro), su tutte le pagine sopra il footer */
+.yzd{--a:#a74f24;--a6:#8c3d19;--muted:#625f58;--strong:#484842;--weak:#716a60;--line:#ddd8ce;padding:72px 20px 60px;background:#f7f6f2;border-top:1px solid var(--line);font-family:Inter,system-ui,sans-serif;color:#292c2d;scroll-margin-top:80px}
+.yzd *{box-sizing:border-box}
+.yzd a{text-decoration:none;color:inherit}
+.yzd-in{max-width:680px;margin:0 auto}
+.yzd-eye{display:inline-flex;align-items:center;gap:8px;margin:0 0 24px;padding:6px 12px;border:1px solid rgba(167,79,36,.24);border-radius:999px;background:rgba(167,79,36,.06);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--a)}
+.yzd-eye:before{content:"";width:6px;height:6px;border-radius:999px;background:var(--a)}
+.yzd h2{margin:0 0 24px;font-size:clamp(36px,4.4vw,60px);font-weight:700;letter-spacing:-.03em;line-height:1.1;color:#292c2d}
+.yzd h2 span{display:block;white-space:nowrap}
+.yzd h2 .yzd-sol{color:var(--a)}
+.yzd-lead{margin:0 0 32px;font-size:clamp(17.6px,1.6vw,21.6px);line-height:1.5;color:var(--muted)}
+.yzd-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:28px 0 22px}
+.yzd-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 32px;border-radius:16px;background:var(--a);color:#fff!important;font-weight:600;font-size:16.8px;letter-spacing:-.01em;white-space:nowrap;box-shadow:0 6px 16px -8px rgba(110,61,31,.3);transition:transform .2s,background .2s,box-shadow .2s}
+.yzd-btn:hover{transform:translateY(-2px);background:var(--a6);box-shadow:0 9px 20px -8px rgba(110,61,31,.35)}
+.yzd-or{font-size:14.7px;color:var(--muted)}
+.yzd-row{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:32px}
+.yzd-pill{display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(65,54,40,.04);border:1px solid var(--line);border-radius:14px;font-size:14.4px;transition:border-color .2s,background .2s,transform .2s}
+.yzd-pill:hover{border-color:rgba(167,79,36,.4);background:rgba(65,54,40,.06);transform:translateY(-1px)}
+.yzd-pill svg{color:var(--a);flex-shrink:0}
+.yzd-pill span{display:flex;flex-direction:column;line-height:1.25;text-align:left}
+.yzd-pill small{font-size:10.6px;letter-spacing:.04em;text-transform:uppercase;color:var(--weak)}
+.yzd-trust{display:flex;flex-wrap:wrap;gap:12px}
+.yzd-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(65,54,40,.03);border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--strong)}
+.yzd a:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+@media(max-width:560px){.yzd h2 span{white-space:normal}.yzd-btn{width:100%}.yzd-row{gap:10px}.yzd-pill{width:100%}}
+@media(prefers-reduced-motion:reduce){.yzd-btn,.yzd-pill{transition:none}}

@@ -1,0 +1,10 @@
+/* Logo e scritta come su youzen.it: icona del logo, "You" + "Zen" in Michroma */
+@font-face{font-family:'Michroma';font-style:normal;font-weight:400;font-display:swap;src:url('./media/michroma-latin.woff2') format('woff2')}
+.brand{display:inline-flex;align-items:center;gap:8px;font-family:'Michroma',system-ui,sans-serif!important;font-size:22px!important;font-weight:400!important;letter-spacing:0!important;line-height:1;white-space:nowrap}
+.brand-logo,.brand img{display:block;width:32px;height:32px;flex:none;transition:transform .2s ease}
+.brand:hover .brand-logo,.brand:hover img{transform:rotate(-6deg) scale(1.05)}
+.brand-you{color:inherit}
+.brand-zen{color:#d98a4e!important}
+.brand .brand-you+.brand-zen{margin-left:-8px}
+@media(max-width:767px){.brand{font-size:19px!important;gap:8px}.brand-logo,.brand img{width:28px;height:28px}}
+@media(prefers-reduced-motion:reduce){.brand-logo,.brand img{transition:none}}
