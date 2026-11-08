@@ -64,3 +64,9 @@
 .hero-respiro h1 em{font-weight:inherit;letter-spacing:inherit}
 /* Nessuno stacco col resto della pagina: la hero sfuma nel bianco */
 .hero-respiro{background:linear-gradient(180deg,#fff8f1 0%,#fff8f1 62%,#fff 100%)}
+
+/* Titolo con le parole chiave, slogan sopra */
+.hero-respiro h1{font-size:clamp(34px,min(4.5vw,8.2vh),70px);line-height:1.04}
+.rs-slogan{font-size:clamp(16px,min(1.5vw,2.6vh),22px);font-weight:600;letter-spacing:-.01em}
+.hero-respiro h1{font-size:clamp(34px,min(3.9vw,8.2vh),70px)}
+@media(min-width:1024px){.hero-respiro .rs-copy{max-width:min(920px,calc(100vw - 720px));width:100%}}
