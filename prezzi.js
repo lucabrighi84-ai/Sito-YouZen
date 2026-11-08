@@ -167,11 +167,9 @@
     const c = conto();
     const nome = form.elements.nome.value.trim();
     const telefono = form.elements.telefono.value.trim();
-    // Mockup: la mail vera parte solo quando c'è un servizio di invio collegato.
-    q('[data-mail]').textContent = [
-      'A: info@youzen.it',
-      `Oggetto: Da richiamare: ${nome}`,
-      '',
+    // Nessun servizio di invio sul sito statico: la richiesta parte da WhatsApp, già scritta.
+    const testo = [
+      'Ciao, vorrei essere richiamato.',
       `Nome: ${nome}`,
       `Telefono: ${telefono}`,
       `Settore: ${c.sector}`,
@@ -180,10 +178,10 @@
       ...(c.month ? [`Totale al mese: ${euro(c.month)}`] : []),
       ...(c.year ? [`Totale all’anno: ${euro(c.year)}`] : []),
       `Totale una tantum: ${euro(c.once)}`,
-      '',
-      'Da richiamare entro poche ore.',
-      'Non chiediamo nessun setup per il CRM, e nemmeno per la voce se sceglie il gestionale con la formula annuale. Il cliente che vuole può usare la nostra demo.',
     ].join('\n');
+    const wa = `https://wa.me/393883681715?text=${encodeURIComponent(testo)}`;
+    q('[data-wa]').href = wa;
+    window.open(wa, '_blank', 'noopener');
     step('done');
     form.reset();
   });
