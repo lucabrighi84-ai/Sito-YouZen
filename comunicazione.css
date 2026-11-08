@@ -97,3 +97,7 @@
   .com-banner{--fade:0px;padding-bottom:56px}
   .com-banner:after{background:linear-gradient(180deg,#f7f6f200 18%,#f7f6f2e6 46%,#f7f6f2 62%)}
 }
+/* Nessuno stacco fra hero e sezione dopo: la hero finisce nel bianco */
+.com-banner{background:#fff}
+.com-banner:after{background:linear-gradient(180deg,#fff0 68%,#ffffffd9 90%,#fff 100%),linear-gradient(90deg,#f7f6f2 0%,#f7f6f2f0 30%,#f7f6f299 44%,#f7f6f200 62%)}
+@media(max-width:860px){.com-banner:after{background:linear-gradient(180deg,#fff0 18%,#ffffffe6 46%,#fff 62%)}}
