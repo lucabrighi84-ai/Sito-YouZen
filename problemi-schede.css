@@ -1,5 +1,5 @@
 /* Schede dei tre problemi, come su youzen.it, con i colori della home */
-#problemi{--accent:#de0750;--accent-400:#f0749f;--accent-600:#bc0644;--accent-50:#fdeaf1;--muted:#625e65;--muted-strong:#625e65;--muted-weak:#726e75;--line:rgba(40,37,42,.13);--line-strong:rgba(40,37,42,.16);--font-display:Inter,system-ui,sans-serif;--font-brand:Manrope,Inter,system-ui,sans-serif}
+#problemi{--accent:#a74f24;--accent-400:#bd6435;--accent-600:#8c3d19;--accent-50:#faeee4;--muted:#625e65;--muted-strong:#625e65;--muted-weak:#726e75;--line:rgba(40,37,42,.13);--line-strong:rgba(40,37,42,.16);--font-display:Inter,system-ui,sans-serif;--font-brand:Manrope,Inter,system-ui,sans-serif}
 /* Quattro fasce larghe quanto la finestra, una per problema, con la foto che cambia
    lato a ogni riga. Prende il posto del bento: li' i quattro riquadri stavano in una
    griglia sbilanciata e due problemi avevano piu' spazio degli altri, qui pesano uguale
@@ -25,7 +25,7 @@
 /* l'alone sta in uno strato suo, cosi' si accende senza toccare il fondo della fascia */
 .pb-fascia::before{
   content: ''; position: absolute; inset: 0; z-index: -2; opacity: 0;
-  background: radial-gradient(60% 130% at 82% 50%, rgba(222,7,80,.30) 0%, rgba(222,7,80,0) 74%);
+  background: radial-gradient(60% 130% at 82% 50%, rgba(167,79,36,.30) 0%, rgba(167,79,36,0) 74%);
   transition: opacity .45s ease;
 }
 .pb-fascia:hover::before{ opacity: 1; }
@@ -51,7 +51,7 @@
 .pb-fascia p{ margin: 0; color: var(--muted); font-size: 16px; line-height: 1.58; max-width: 52ch; }
 .pb-fascia p b{ color: #292c2d; font-weight: 600; }
 .pb-svolta{
-  margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(222,7,80,.22);
+  margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(167,79,36,.22);
   color: var(--muted-strong); font-size: 15.5px;
 }
 .pb-svolta b{ color: var(--accent); font-weight: 600; }
@@ -73,10 +73,10 @@
   position: absolute; bottom: -16px; left: -20px; z-index: 2;
   display: inline-flex; flex-direction: column; align-items: flex-start; gap: 4px;
   padding: 13px 19px; border-radius: 16px; background: rgba(255, 254, 250, 0.92);
-  border: 1px solid rgba(222,7,80,.20); backdrop-filter: blur(10px); white-space: nowrap;
+  border: 1px solid rgba(167,79,36,.20); backdrop-filter: blur(10px); white-space: nowrap;
   transition: border-color .45s ease, box-shadow .45s ease;
 }
-.pb-fascia:hover .pb-dato{ border-color: rgba(222,7,80,.45); box-shadow: 0 0 26px -10px rgba(222,7,80,.7); }
+.pb-fascia:hover .pb-dato{ border-color: rgba(167,79,36,.45); box-shadow: 0 0 26px -10px rgba(167,79,36,.7); }
 .pb-dato b{ font-size: 27px; font-weight: 800; color: var(--accent); letter-spacing: -.03em; line-height: 1; }
 .pb-dato span{ font-family: var(--font-brand); font-size: 9px; letter-spacing: .10em;
   text-transform: uppercase; color: #625f58; }
@@ -89,7 +89,7 @@
 }
 .pb-pannello::before{
   content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(60% 120% at 88% 50%, rgba(222,7,80,.14) 0%, rgba(222,7,80,0) 70%);
+  background: radial-gradient(60% 120% at 88% 50%, rgba(167,79,36,.14) 0%, rgba(167,79,36,0) 70%);
 }
 .pb-pn-dentro{
   position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 36px 24px;
@@ -133,7 +133,7 @@
 .pb-chi span{ color: var(--muted-weak); }
 .pb-tag{ font-family: var(--font-brand); font-size: 8px; letter-spacing: .08em; text-transform: uppercase;
   padding: 4px 8px; border-radius: 999px; white-space: nowrap;
-  background: rgba(222,7,80,.12); border: 1px solid rgba(222,7,80,.30); color: var(--accent); }
+  background: rgba(167,79,36,.12); border: 1px solid rgba(167,79,36,.30); color: var(--accent); }
 .pb-tag.pb-neutro{ background: rgba(65, 54, 40, 0.05); border-color: var(--line-strong); color: var(--muted); }
 
 .pb-coda{ max-width: 1240px; margin: 0 auto; padding: 44px 24px 0;
@@ -199,14 +199,14 @@
   top: 50%; left: 50%; width: 150%; aspect-ratio: 1;
   transform: translate(-50%,-50%) rotate(0deg);
   background: conic-gradient(from 0deg,
-    transparent 0 64%, rgba(240,116,159,.18) 72%,
+    transparent 0 64%, rgba(189,100,53,.18) 72%,
     var(--accent-400) 84%, var(--accent) 92%, transparent 100%);
   opacity: 0; transition: opacity .5s ease;
 }
 .pb-fascia.attiva::before, .pb-pannello.attiva::before{
   opacity: 1; animation: pbGiro 4.5s linear infinite;
 }
-.pb-fascia.attiva, .pb-pannello.attiva{ box-shadow: 0 0 70px -20px rgba(222,7,80,.55); }
+.pb-fascia.attiva, .pb-pannello.attiva{ box-shadow: 0 0 70px -20px rgba(167,79,36,.55); }
 @keyframes pbGiro{ to{ transform: translate(-50%,-50%) rotate(360deg) } }
 
 .pb-dentro, .pb-pn-dentro{
@@ -233,7 +233,7 @@
   pointer-events: none; user-select: none;
   font-family: var(--font-brand); font-weight: 400; line-height: .72;
   font-size: clamp(300px,40vw,620px);
-  color: rgba(222,7,80,.34); filter: blur(7px);
+  color: rgba(167,79,36,.34); filter: blur(7px);
 }
 
 .pb-media{ position: relative; overflow: hidden; max-width: none; }
@@ -300,10 +300,10 @@
 .pb-box-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; max-width: 44ch; }
 .pb-box{
   padding: 20px 22px; border-radius: 18px; background: rgba(255, 254, 250, 0.92);
-  border: 1px solid rgba(222,7,80,.20); backdrop-filter: blur(10px);
+  border: 1px solid rgba(167,79,36,.20); backdrop-filter: blur(10px);
   transition: border-color .45s ease, box-shadow .45s ease;
 }
-.pb-fascia:hover .pb-box{ border-color: rgba(222,7,80,.45); box-shadow: 0 0 26px -10px rgba(222,7,80,.7); }
+.pb-fascia:hover .pb-box{ border-color: rgba(167,79,36,.45); box-shadow: 0 0 26px -10px rgba(167,79,36,.7); }
 .pb-box b{ display: block; font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 6px; }
 .pb-box span{ display: block; font-family: var(--font-brand); font-size: 10px; letter-spacing: .10em; text-transform: uppercase; color: #625f58; line-height: 1.3; }
 .pb-box--altro{ grid-column: 1/-1; text-align: center; background: transparent; border-style: dashed; }
@@ -349,7 +349,7 @@
 /* Il numero di fondo e' tagliato dal bordo in basso (bottom:-14%), e va bene per le
    cifre, ma del "!" resterebbe solo l'asta e senza il punto non si legge. */
 .pb-pannello .pb-num{ bottom: 4%; }
-.pb-fase + .pb-fase{ margin-top: 26px; padding-top: 26px; border-top: 1px solid rgba(222,7,80,.22); }
+.pb-fase + .pb-fase{ margin-top: 26px; padding-top: 26px; border-top: 1px solid rgba(167,79,36,.22); }
 .pb-film-on .pb-film-testi{ display: grid; }
 .pb-film-on .pb-fase{ grid-area: 1/1; align-self: center; margin: 0; padding: 0; border: 0;
   will-change: opacity,transform; }
@@ -437,7 +437,7 @@
 .pb-agenda-riga + .pb-agenda-riga{ border-top: 1px solid rgba(65, 54, 40, 0.13); }
 .pb-agenda-ora{ color: var(--muted-weak); font-variant-numeric: tabular-nums; font-size: 12px; }
 .pb-agenda-app{ padding: 8px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: #292c2d;
-  background: rgba(222,7,80,.10); border-left: 3px solid var(--accent); }
+  background: rgba(167,79,36,.10); border-left: 3px solid var(--accent); }
 .pb-agenda-app span{ display: block; margin-top: 2px; font-weight: 400; font-size: 11px; color: var(--muted-weak); }
 
 @media (max-width:980px){

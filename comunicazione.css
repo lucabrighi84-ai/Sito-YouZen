@@ -70,3 +70,30 @@
 #problemi .yz-head{margin-bottom:40px;padding-top:24px}
 @media(max-width:860px){.com-banner{--fade:18vh;padding-bottom:calc(var(--fade) + 36px)}}
 .com-banner h1 em{font-weight:inherit;letter-spacing:inherit}
+
+/* Tema chiaro YouZen: stessa crema e stesso arancio della home e delle pagine gestionale */
+:root{--rose:#a74f24;--rose-hover:#8c3d19;--pink:#fbf0e3;--blue:#fbf0e3;--mint:#fbf0e3;--lilac:#fbf0e3;--yellow:#fbf0e3;--sage:#fff8f1}
+.site-header .nav-shell{background:#fff;padding:0 22px;box-shadow:0 4px 25px #372e3714}
+.com-banner{--fade:0px;min-height:100vh;min-height:100svh;background:#f7f6f2;color:#28252a;font-family:inherit}
+.com-banner:before{display:none}
+.com-banner img{-webkit-mask-image:none;mask-image:none}
+.com-banner:after{height:100%;-webkit-mask-image:none;mask-image:none;background:linear-gradient(90deg,#f7f6f2 0%,#f7f6f2f0 30%,#f7f6f299 44%,#f7f6f200 62%),linear-gradient(180deg,#f7f6f200 72%,#f7f6f2 100%)}
+.com-banner h1{color:#28252a;font-weight:600;letter-spacing:-.045em}
+.com-banner h1 em{color:#a74f24}
+.com-lead{color:#625f58}
+.com-lead strong{color:#28252a}
+.com-banner .aurora-eyebrow{background:rgba(167,79,36,.06);border:1px solid rgba(167,79,36,.24);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;color:#a74f24}
+.com-banner .aurora-eyebrow i{background:#a74f24;box-shadow:none}
+.com-banner .aurora-btn-solid{background:#a74f24;color:#fff}
+.com-banner .aurora-btn-solid:hover{background:#8c3d19;box-shadow:0 9px 20px -8px rgba(110,61,31,.35)}
+.com-banner .aurora-btn-glass{background:#fff;border:1px solid #ddd8ce;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;color:#28252a}
+.com-banner .aurora-btn:focus-visible{outline-color:#a74f24}
+.com-wa{background:#f7f6f2}
+.com-consumo{background:#f7f6f2}
+.com-pro-grid article,.com-pro-grid article:nth-child(n){background:linear-gradient(180deg,#fff 30%,#fff3e8 100%)!important;box-shadow:0 0 0 4px #f6e6d6,inset 0 0 0 1px #efd9c4}
+.com-pro-grid .icon{color:#a74f24}
+.com-pro-grid{gap:20px}
+@media(max-width:860px){
+  .com-banner{--fade:0px;padding-bottom:56px}
+  .com-banner:after{background:linear-gradient(180deg,#f7f6f200 18%,#f7f6f2e6 46%,#f7f6f2 62%)}
+}
