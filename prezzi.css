@@ -163,6 +163,17 @@
 .pr-more{padding-top:12px}
 .pr-note.container{margin-top:20px}
 
+/* Modulo fiscale opzionale */
+.pr-fiscal{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:20px 24px;border:1px solid #e4e0d9;border-radius:18px;background:#fffdf8;color:#161516;scroll-margin-top:96px}
+.pr-fiscal h2{font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0 0 6px}
+.pr-fiscal p{font-size:13px;line-height:1.45;margin:4px 0}
+.pr-fiscal-billing{font-weight:700}
+.pr-fiscal-note{color:#5d5a56}
+.pr-fiscal .pr-btn{padding:0 16px;white-space:nowrap}
+.pr-fiscal .pr-btn:disabled{cursor:not-allowed;opacity:.55}
+.pr-table-addon{font-weight:600;text-decoration:underline;text-underline-offset:.15em}
+@media(max-width:600px){.pr-fiscal{grid-template-columns:1fr;padding:16px;gap:12px}}
+
 /* 2 Pagina unica */
 [data-layout="2"]{gap:0;padding:0;border-radius:24px;overflow:hidden;background:#fff;border:1px solid #e4e0d9}
 [data-layout="2"] .pr-band{gap:0;grid-template-columns:84px minmax(0,1fr)}

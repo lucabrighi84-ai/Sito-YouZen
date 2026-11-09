@@ -4,7 +4,8 @@
   const qa = (s) => [...document.querySelectorAll(s)];
   const euro = (n) => '€' + n.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
   const steps = [300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
-  const state = { sector: 'r', plan: 'all', voice: 'notte', pack: '100', billing: 3, crmBilling: 3, custom: 500, extras: new Set() };
+  const fiscalButton = q('[data-fiscal]');
+  const state = { sector: 'r', plan: 'all', fiscal: false, voice: 'notte', pack: '100', billing: 3, crmBilling: 3, custom: 500, extras: new Set() };
   // Stessa tariffa di youzen.it; lo sconto annuale vale sui minuti.
   const tariffa = (min) => (min >= 4000 ? 0.20 : min >= 1500 || state.billing === 12 ? 0.25 : 0.30);
   const prezzoMinuti = (min) => Math.round(min * tariffa(min) * 100) / 100;
@@ -15,11 +16,17 @@
     return `${part('year')}-${part('month')}-${part('day')}` <= '2026-12-31' ? 500 : 1000;
   }
 
+  function prezzoFiscale() {
+    return Number(state.plan === 'all' && state.crmBilling === 12
+      ? fiscalButton.dataset.annual : fiscalButton.dataset.price);
+  }
+
   function conto() {
     const plan = q(`[data-plan="${state.plan}"]`);
     const voice = state.voice ? q(`[data-voice="${state.voice}"]`) : null;
     const pack = state.pack ? q(`[data-pack="${state.pack}"]`) : null;
     const planPrice = plan ? Number(state.crmBilling === 12 ? plan.dataset.annual : plan.dataset.price) : 0;
+    const fiscalPrice = plan && state.fiscal ? prezzoFiscale() : 0;
     const minutes = voice ? (state.voice === 'misura' ? state.custom : Number(voice.dataset.min)) : 0;
     const voicePrice = voice ? prezzoMinuti(minutes) : 0;
     const packPrice = pack ? Number(pack.dataset.price) : 0;
@@ -31,6 +38,7 @@
       sector: state.sector === 'r' ? 'Ristoranti' : 'Saloni',
       plan: plan ? plan.dataset.name : '',
       planPrice,
+      fiscalPrice,
       voice: voice ? voice.dataset.name : '',
       minutes,
       bundle: Boolean(voice && plan && state.crmBilling === 12),
@@ -39,8 +47,8 @@
       packPrice,
       setup,
       extras,
-      month: Math.round(((state.crmBilling === 12 ? 0 : planPrice) + (state.billing === 12 ? 0 : voicePrice) + extrasPrice) * 100) / 100,
-      year: Math.round(((state.crmBilling === 12 ? planPrice : 0) + (state.billing === 12 ? voicePrice : 0)) * 12 * 100) / 100,
+      month: Math.round(((state.crmBilling === 12 ? 0 : planPrice + fiscalPrice) + (state.billing === 12 ? 0 : voicePrice) + extrasPrice) * 100) / 100,
+      year: Math.round(((state.crmBilling === 12 ? planPrice + fiscalPrice : 0) + (state.billing === 12 ? voicePrice : 0)) * 12 * 100) / 100,
       once: setup + packPrice,
     };
   }
@@ -48,6 +56,10 @@
   function righe(c) {
     const out = [];
     if (c.plan) out.push(state.crmBilling === 12 ? `Gestionale ${c.plan}, annuale: ${euro(c.planPrice * 12)}/anno` : `Gestionale ${c.plan}, trimestrale: ${euro(c.planPrice)}/mese`);
+    if (c.fiscalPrice) {
+      const billing = state.crmBilling === 12 ? 'all’anno' : 'a trimestre';
+      out.push(`Modulo fiscale per partita IVA: ${euro(c.fiscalPrice * state.crmBilling)} ${billing} (pari a ${euro(c.fiscalPrice)}/mese)`);
+    }
     if (c.voice) out.push(`Voce ${c.voice}, ${c.minutes.toLocaleString('it-IT', { useGrouping: 'always' })} minuti${state.billing === 12 ? `, annuale: ${euro(c.voicePrice * 12)}/anno` : `: ${euro(c.voicePrice)}/mese`}`);
     if (c.voice) out.push(c.bundle ? 'Attivazione voce: gratis con il gestionale annuale' : `Attivazione voce: ${euro(c.setup)} una tantum`);
     c.extras.forEach((e) => out.push(`${e.name}: ${euro(e.price)}/mese`));
@@ -75,6 +87,13 @@
       b.setAttribute('aria-pressed', String(on));
       b.textContent = on ? `${b.dataset.name} scelto` : `Scegli ${b.dataset.name}`;
     });
+    if (fiscalButton) {
+      fiscalButton.disabled = !state.plan;
+      fiscalButton.setAttribute('aria-pressed', String(Boolean(c.fiscalPrice)));
+      const fiscalRate = prezzoFiscale();
+      const fiscalBilling = state.crmBilling === 12 ? 'l’anno' : 'a trimestre';
+      q('[data-fiscal-billing]').textContent = `${euro(fiscalRate * state.crmBilling)} ${fiscalBilling}, pari a ${euro(fiscalRate)}/mese + IVA per partita IVA.`;
+    }
     qa('[data-card]').forEach((card) => card.classList.toggle('is-on', card.dataset.card === state.plan));
     qa('[data-voice]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.voice === state.voice)));
     qa('[data-pack]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.pack === state.pack)));
@@ -122,7 +141,16 @@
   }
 
   qa('[data-sector]').forEach((b) => b.addEventListener('click', () => { state.sector = b.dataset.sector; render(); }));
-  qa('[data-plan]').forEach((b) => b.addEventListener('click', () => { state.plan = state.plan === b.dataset.plan ? null : b.dataset.plan; render(); }));
+  qa('[data-plan]').forEach((b) => b.addEventListener('click', () => {
+    state.plan = state.plan === b.dataset.plan ? null : b.dataset.plan;
+    if (!state.plan) state.fiscal = false;
+    render();
+  }));
+  fiscalButton?.addEventListener('click', () => {
+    if (!state.plan) return;
+    state.fiscal = !state.fiscal;
+    render();
+  });
   qa('[data-voice]').forEach((b) => b.addEventListener('click', () => { state.voice = state.voice === b.dataset.voice ? null : b.dataset.voice; render(); }));
   qa('[data-extra]').forEach((b) => b.addEventListener('click', () => {
     if (state.extras.has(b.dataset.extra)) state.extras.delete(b.dataset.extra); else state.extras.add(b.dataset.extra);
