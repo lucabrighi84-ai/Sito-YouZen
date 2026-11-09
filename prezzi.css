@@ -308,3 +308,50 @@
 @media(max-width:900px){.prh{min-height:0;display:block;padding:110px 0 64px}.prh-photo{height:400px;min-height:0}}
 .pr-dialog [data-wa]{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin:12px 0 8px;padding:0 22px;border-radius:999px;background:#1f9d55;color:#fff;font-weight:600}
 .pr-dialog [data-wa]:hover{background:#178547}
+/* Tre schede coordinate. Il configuratore resta separato dal confronto dei piani. */
+.pr-plans .pr-cards{align-items:stretch}
+.pr-plans .pr-card{padding:26px clamp(18px,2.2vw,30px);border:1px solid #dcd5ca}
+.pr-plans .pr-card.is-dark{border-color:#161516}
+.pr-plans .pr-card:not(.is-dark):hover{background:#efece6;color:var(--ink)}
+.pr-plans .pr-card:not(.is-dark):hover .pr-tag,
+.pr-plans .pr-card:not(.is-dark):hover .pr-inc{color:#5d5a56}
+.pr-plans .pr-card:not(.is-dark):hover .ok{background:#161516;color:#fff}
+.pr-plans .pr-card:not(.is-dark):hover .pr-btn:not([aria-pressed=true]){background:#161516;color:#fff}
+.pr-plans .pr-card:hover{transform:none}
+.pr-plans .pr-card[data-card].is-on{box-shadow:0 0 0 2px var(--rose)}
+.pr-plans .pr-kicker{font-size:12px;font-weight:700;color:#784317;margin-bottom:5px}
+.pr-plans .is-dark .pr-kicker{color:#ffd9b2}
+.pr-plans .pr-card h2{font-size:24px}
+.pr-plans .pr-price b{font-variant-numeric:tabular-nums}
+.pr-plans .pr-card ul{flex:1}
+.pr-plans .pr-card-note{margin:0 0 12px;font-size:12.5px;line-height:1.45;min-height:2.9em}
+.pr-plans .is-dark .pr-card-note{color:#ffffffc4}
+.pr-card-note a{text-decoration:underline;text-underline-offset:3px}
+.pr-plans .pr-ai-card{background:#fff8ef}
+.pr-plans .pr-ai-card:hover{background:#fff8ef}
+.pr-ai-card .pr-price span{font-size:12px}
+.pr-ai-details,.pr-plans .pr-fiscal{scroll-margin-top:96px;border:1px solid #dcd5ca;border-radius:18px;background:#fffcf7}
+.pr-ai-details summary{cursor:pointer;padding:17px 20px;font-size:15px;font-weight:700}
+.pr-ai-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 12px 12px}
+.pr-ai-controls .pr-blk{border:1px solid #e6e0d7;background:#f6f3ee}
+.pr-ai-controls .pr-blk:hover{transform:none}
+.pr-ai-controls .pr-blk .pr-opts button,.pr-ai-controls .pr-packs button,.pr-ai-controls .pr-extras button{background:#fff}
+.pr-ai-controls .pr-scale div{background:#fff;border-color:#ccc2b6}
+.pr-ai-controls .pr-scale .is-on{border-color:var(--rose)}
+.pr-ai-controls .pr-scale em{position:static;display:inline-block;padding:2px 0;background:none}
+.pr-ai-controls .pr-opts .pr-price b{font-size:clamp(20px,3.5vw,30px)}
+.pr-plans .pr-fiscal{display:flex;justify-content:space-between;align-items:center;gap:14px 24px;padding:18px 20px}
+.pr-plans .pr-fiscal h2{font-size:17px;margin:0 0 4px}
+.pr-plans .pr-fiscal p{font-size:13px;line-height:1.5;color:#5d5a56}
+.pr-plans .pr-fiscal-billing{margin-top:6px;font-weight:700}
+.pr-plans .pr-fiscal .pr-btn{width:auto;flex:none;padding:0 16px}
+.pr-plans :focus-visible{outline:2px solid #c4560f;outline-offset:3px}
+@media(max-width:1023px){
+  .pr-plans .pr-cards{max-width:none;width:100%}
+  .pr-plans .pr-card-note{min-height:0}
+}
+@media(max-width:767px){
+  .pr-ai-controls{grid-template-columns:minmax(0,1fr)}
+  .pr-plans .pr-fiscal{flex-direction:column;align-items:stretch}
+  .pr-plans .pr-fiscal .pr-btn{width:100%}
+}

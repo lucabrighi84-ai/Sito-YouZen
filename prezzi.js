@@ -5,7 +5,7 @@
   const euro = (n) => '€' + n.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
   const steps = [300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
   const fiscalButton = q('[data-fiscal]');
-  const state = { sector: 'r', plan: 'all', fiscal: false, voice: 'notte', pack: '100', billing: 3, crmBilling: 3, custom: 500, extras: new Set() };
+  const state = { sector: 'r', plan: 'all', fiscal: false, voice: null, pack: null, billing: 3, crmBilling: 3, custom: 500, extras: new Set() };
   // Stessa tariffa di youzen.it; lo sconto annuale vale sui minuti.
   const tariffa = (min) => (min >= 4000 ? 0.20 : min >= 1500 || state.billing === 12 ? 0.25 : 0.30);
   const prezzoMinuti = (min) => Math.round(min * tariffa(min) * 100) / 100;
@@ -16,17 +16,12 @@
     return `${part('year')}-${part('month')}-${part('day')}` <= '2026-12-31' ? 500 : 1000;
   }
 
-  function prezzoFiscale() {
-    return Number(state.plan === 'all' && state.crmBilling === 12
-      ? fiscalButton.dataset.annual : fiscalButton.dataset.price);
-  }
-
   function conto() {
     const plan = q(`[data-plan="${state.plan}"]`);
     const voice = state.voice ? q(`[data-voice="${state.voice}"]`) : null;
     const pack = state.pack ? q(`[data-pack="${state.pack}"]`) : null;
     const planPrice = plan ? Number(state.crmBilling === 12 ? plan.dataset.annual : plan.dataset.price) : 0;
-    const fiscalPrice = plan && state.fiscal ? prezzoFiscale() : 0;
+    const fiscalPrice = state.plan === 'start' && state.fiscal ? Number(fiscalButton.dataset.price) : 0;
     const minutes = voice ? (state.voice === 'misura' ? state.custom : Number(voice.dataset.min)) : 0;
     const voicePrice = voice ? prezzoMinuti(minutes) : 0;
     const packPrice = pack ? Number(pack.dataset.price) : 0;
@@ -55,7 +50,11 @@
 
   function righe(c) {
     const out = [];
-    if (c.plan) out.push(state.crmBilling === 12 ? `Gestionale ${c.plan}, annuale: ${euro(c.planPrice * 12)}/anno` : `Gestionale ${c.plan}, trimestrale: ${euro(c.planPrice)}/mese`);
+    if (c.plan) {
+      const billing = state.crmBilling === 12 ? 'l’anno' : 'ogni 3 mesi';
+      out.push(`Gestionale ${c.plan}: ${euro(c.planPrice * state.crmBilling)} ${billing} (pari a ${euro(c.planPrice)}/mese)`);
+    }
+    if (state.plan === 'all') out.push('Modulo fiscale incluso');
     if (c.fiscalPrice) {
       const billing = state.crmBilling === 12 ? 'all’anno' : 'a trimestre';
       out.push(`Modulo fiscale per partita IVA: ${euro(c.fiscalPrice * state.crmBilling)} ${billing} (pari a ${euro(c.fiscalPrice)}/mese)`);
@@ -75,25 +74,23 @@
       const year = Number(e.dataset.annual);
       const box = e.previousElementSibling;
       const annual = state.crmBilling === 12;
-      box.querySelector('b').textContent = euro(annual ? year * 12 : price);
-      box.querySelector('span').textContent = annual ? '/anno' : '/mese';
+      box.querySelector('b').textContent = euro(annual ? year : price);
       const was = box.querySelector('.pr-was');
       was.hidden = !(annual && year < price);
-      was.textContent = euro(price * 12);
-      e.textContent = annual ? `pari a ${euro(year)} al mese` : `${euro(price * 3)} ogni 3 mesi`;
+      was.textContent = euro(price);
+      e.textContent = annual ? `${euro(year * 12)} l’anno` : `${euro(price * 3)} ogni 3 mesi`;
     });
     qa('[data-plan]').forEach((b) => {
       const on = b.dataset.plan === state.plan;
       b.setAttribute('aria-pressed', String(on));
       b.textContent = on ? `${b.dataset.name} scelto` : `Scegli ${b.dataset.name}`;
     });
-    if (fiscalButton) {
-      fiscalButton.disabled = !state.plan;
-      fiscalButton.setAttribute('aria-pressed', String(Boolean(c.fiscalPrice)));
-      const fiscalRate = prezzoFiscale();
-      const fiscalBilling = state.crmBilling === 12 ? 'l’anno' : 'a trimestre';
-      q('[data-fiscal-billing]').textContent = `${euro(fiscalRate * state.crmBilling)} ${fiscalBilling}, pari a ${euro(fiscalRate)}/mese + IVA per partita IVA.`;
-    }
+    fiscalButton.setAttribute('aria-pressed', String(Boolean(c.fiscalPrice)));
+    fiscalButton.textContent = state.plan !== 'start' ? 'Scegli Base con modulo fiscale'
+      : c.fiscalPrice ? 'Rimuovi il modulo fiscale' : 'Aggiungi il modulo fiscale';
+    const fiscalRate = Number(fiscalButton.dataset.price);
+    const fiscalBilling = state.crmBilling === 12 ? 'l’anno' : 'a trimestre';
+    q('[data-fiscal-billing]').textContent = `${euro(fiscalRate * state.crmBilling)} ${fiscalBilling}, pari a ${euro(fiscalRate)}/mese + IVA per partita IVA.`;
     qa('[data-card]').forEach((card) => card.classList.toggle('is-on', card.dataset.card === state.plan));
     qa('[data-voice]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.voice === state.voice)));
     qa('[data-pack]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.pack === state.pack)));
@@ -134,8 +131,9 @@
     q('[data-month]').textContent = euro(c.month);
     q('[data-once]').textContent = euro(c.once);
     q('[data-year]').textContent = euro(c.year);
+    q('[data-once-box]').hidden = !c.once;
     q('[data-year-box]').hidden = !c.year;
-    q('[data-month-box]').hidden = !c.month && Boolean(c.year);
+    q('[data-month-box]').hidden = !c.month;
     q('[data-lines]').textContent = righe(c).join(' · ') || 'Scegli un piano, i minuti o i messaggi.';
     q('[data-call]').disabled = !c.month && !c.year && !c.once;
   }
@@ -146,9 +144,9 @@
     if (!state.plan) state.fiscal = false;
     render();
   }));
-  fiscalButton?.addEventListener('click', () => {
-    if (!state.plan) return;
-    state.fiscal = !state.fiscal;
+  fiscalButton.addEventListener('click', () => {
+    state.fiscal = state.plan !== 'start' || !state.fiscal;
+    state.plan = 'start';
     render();
   });
   qa('[data-voice]').forEach((b) => b.addEventListener('click', () => { state.voice = state.voice === b.dataset.voice ? null : b.dataset.voice; render(); }));
@@ -156,16 +154,9 @@
     if (state.extras.has(b.dataset.extra)) state.extras.delete(b.dataset.extra); else state.extras.add(b.dataset.extra);
     render();
   }));
-  function layout(n) {
-    q('.pr-board').dataset.layout = n;
-    qa('[data-layout-pick]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.layoutPick === n)));
-  }
-  qa('[data-layout-pick]').forEach((b) => b.addEventListener('click', () => {
-    layout(b.dataset.layoutPick);
-    history.replaceState(null, '', `?mockup=${b.dataset.layoutPick}`);
-  }));
-  const asked = new URLSearchParams(location.search).get('mockup');
-  if (/^[1-5]$/.test(asked || '')) layout(asked);
+  const aiDetails = q('#ai-consumo');
+  q('[data-open-ai]').addEventListener('click', () => { aiDetails.open = true; });
+  if (location.hash === '#ai-consumo') aiDetails.open = true;
   qa('[data-bill]').forEach((b) => b.addEventListener('click', () => { state.billing = Number(b.dataset.bill); render(); }));
   qa('[data-crm-bill]').forEach((b) => b.addEventListener('click', () => { state.crmBilling = Number(b.dataset.crmBill); render(); }));
   q('[data-range]').addEventListener('input', (event) => { state.custom = steps[Number(event.target.value)]; render(); });
@@ -184,7 +175,7 @@
   }
   q('[data-call]').addEventListener('click', () => {
     const c = conto();
-    q('[data-recap]').innerHTML = `<strong>${[c.month ? `Al mese ${euro(c.month)}` : '', c.year ? `All’anno ${euro(c.year)}` : '', `Una tantum ${euro(c.once)}`].filter(Boolean).join(' · ')}</strong><br>${righe(c).join('<br>')}`;
+    q('[data-recap]').innerHTML = `<strong>${[c.month ? `Al mese ${euro(c.month)}` : '', c.year ? `All’anno ${euro(c.year)}` : '', c.once ? `Una tantum ${euro(c.once)}` : ''].filter(Boolean).join(' · ')}</strong><br>${righe(c).join('<br>')}`;
     step('form');
     dialog.showModal();
   });
@@ -205,7 +196,7 @@
       ...righe(c),
       ...(c.month ? [`Totale al mese: ${euro(c.month)}`] : []),
       ...(c.year ? [`Totale all’anno: ${euro(c.year)}`] : []),
-      `Totale una tantum: ${euro(c.once)}`,
+      ...(c.once ? [`Totale una tantum: ${euro(c.once)}`] : []),
     ].join('\n');
     const wa = `https://wa.me/393883681715?text=${encodeURIComponent(testo)}`;
     q('[data-wa]').href = wa;
