@@ -308,50 +308,150 @@
 @media(max-width:900px){.prh{min-height:0;display:block;padding:110px 0 64px}.prh-photo{height:400px;min-height:0}}
 .pr-dialog [data-wa]{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin:12px 0 8px;padding:0 22px;border-radius:999px;background:#1f9d55;color:#fff;font-weight:600}
 .pr-dialog [data-wa]:hover{background:#178547}
-/* Tre schede coordinate. Il configuratore resta separato dal confronto dei piani. */
-.pr-plans .pr-cards{align-items:stretch}
-.pr-plans .pr-card{padding:26px clamp(18px,2.2vw,30px);border:1px solid #dcd5ca}
-.pr-plans .pr-card.is-dark{border-color:#161516}
-.pr-plans .pr-card:not(.is-dark):hover{background:#efece6;color:var(--ink)}
-.pr-plans .pr-card:not(.is-dark):hover .pr-tag,
-.pr-plans .pr-card:not(.is-dark):hover .pr-inc{color:#5d5a56}
-.pr-plans .pr-card:not(.is-dark):hover .ok{background:#161516;color:#fff}
-.pr-plans .pr-card:not(.is-dark):hover .pr-btn:not([aria-pressed=true]){background:#161516;color:#fff}
-.pr-plans .pr-card:hover{transform:none}
-.pr-plans .pr-card[data-card].is-on{box-shadow:0 0 0 2px var(--rose)}
-.pr-plans .pr-kicker{font-size:12px;font-weight:700;color:#784317;margin-bottom:5px}
-.pr-plans .is-dark .pr-kicker{color:#ffd9b2}
-.pr-plans .pr-card h2{font-size:24px}
-.pr-plans .pr-price b{font-variant-numeric:tabular-nums}
-.pr-plans .pr-card ul{flex:1}
-.pr-plans .pr-card-note{margin:0 0 12px;font-size:12.5px;line-height:1.45;min-height:2.9em}
-.pr-plans .is-dark .pr-card-note{color:#ffffffc4}
-.pr-card-note a{text-decoration:underline;text-underline-offset:3px}
-.pr-plans .pr-ai-card{background:#fff8ef}
-.pr-plans .pr-ai-card:hover{background:#fff8ef}
-.pr-ai-card .pr-price span{font-size:12px}
-.pr-ai-details,.pr-plans .pr-fiscal{scroll-margin-top:96px;border:1px solid #dcd5ca;border-radius:18px;background:#fffcf7}
-.pr-ai-details summary{cursor:pointer;padding:17px 20px;font-size:15px;font-weight:700}
-.pr-ai-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 12px 12px}
-.pr-ai-controls .pr-blk{border:1px solid #e6e0d7;background:#f6f3ee}
-.pr-ai-controls .pr-blk:hover{transform:none}
-.pr-ai-controls .pr-blk .pr-opts button,.pr-ai-controls .pr-packs button,.pr-ai-controls .pr-extras button{background:#fff}
-.pr-ai-controls .pr-scale div{background:#fff;border-color:#ccc2b6}
-.pr-ai-controls .pr-scale .is-on{border-color:var(--rose)}
-.pr-ai-controls .pr-scale em{position:static;display:inline-block;padding:2px 0;background:none}
-.pr-ai-controls .pr-opts .pr-price b{font-size:clamp(20px,3.5vw,30px)}
-.pr-plans .pr-fiscal{display:flex;justify-content:space-between;align-items:center;gap:14px 24px;padding:18px 20px}
-.pr-plans .pr-fiscal h2{font-size:17px;margin:0 0 4px}
-.pr-plans .pr-fiscal p{font-size:13px;line-height:1.5;color:#5d5a56}
-.pr-plans .pr-fiscal-billing{margin-top:6px;font-weight:700}
-.pr-plans .pr-fiscal .pr-btn{width:auto;flex:none;padding:0 16px}
-.pr-plans :focus-visible{outline:2px solid #c4560f;outline-offset:3px}
-@media(max-width:1023px){
-  .pr-plans .pr-cards{max-width:none;width:100%}
-  .pr-plans .pr-card-note{min-height:0}
+/* Confronto rapido: gestionale, pacchetti voce e ricariche su righe separate. */
+.pr-plans{
+  --pr-paper:#fffcf7;
+  --pr-line:#e1d7cb;
+  --pr-peach:#fbebdf;
+  --pr-accent:#9f3d14;
+  --pr-ink:#25211e;
+  --pr-muted:#60564e;
+  gap:22px;
+  color:var(--pr-ink);
 }
+.pr-plans .pr-cards{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+  max-width:none;
+}
+.pr-plans .pr-card{
+  padding:26px clamp(18px,2.2vw,30px);
+  border:1px solid var(--pr-line);
+  border-radius:16px;
+  background:var(--pr-paper);
+  color:var(--pr-ink);
+}
+.pr-plans .pr-card-pro{border-color:#ce9b7a;background:var(--pr-peach)}
+.pr-plans .pr-card:not(.is-dark):hover{
+  transform:none;
+  box-shadow:0 18px 35px -28px #4b382a66;
+  background:var(--pr-paper);
+  color:var(--pr-ink);
+}
+.pr-plans .pr-card-pro:not(.is-dark):hover{background:var(--pr-peach)}
+.pr-plans .pr-card[data-card].is-on{box-shadow:inset 0 0 0 1px var(--pr-accent);border-color:var(--pr-accent)}
+.pr-plans .pr-kicker{
+  margin:0 0 5px;
+  color:var(--pr-accent);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.pr-plans .pr-card h3{margin:0;font-size:24px;line-height:1.2}
+.pr-plans .pr-price b{font-variant-numeric:tabular-nums}
+.pr-plans .pr-card ul{flex:1;gap:8px 18px;margin-bottom:16px}
+.pr-plans .pr-card:hover .pr-tag,
+.pr-plans .pr-card:hover .pr-inc{color:var(--pr-muted)}
+.pr-plans .pr-card .ok,.pr-plans .pr-card:hover .ok{color:var(--pr-accent);background:#f3dfd0}
+.pr-plans .pr-card .pr-btn,.pr-plans .pr-card:hover .pr-btn:not([aria-pressed=true]){
+  background:transparent;
+  border:1px solid #ba9d87;
+  color:var(--pr-ink);
+}
+.pr-plans .pr-card-pro .pr-btn,.pr-plans .pr-card .pr-btn[aria-pressed=true],
+.pr-plans .pr-card-pro:hover .pr-btn:not([aria-pressed=true]){
+  background:var(--pr-accent);
+  border-color:var(--pr-accent);
+  color:#fff;
+}
+.pr-card-note{margin:0 0 12px;font-size:13px;line-height:1.4}
+.pr-card-note a,.pr-fiscal a{color:var(--pr-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.pr-annual{
+  display:grid;
+  gap:3px;
+  min-height:64px;
+  padding:10px 12px;
+  margin:8px 0 0;
+  border-radius:10px;
+  background:#f1eae0;
+  color:var(--pr-muted);
+  font-size:13px;
+  line-height:1.4;
+}
+.pr-card-pro .pr-annual{background:#f4dece;color:#793511}
+.pr-annual strong{font-size:15px;color:var(--pr-ink)}
+.pr-annual [hidden]{display:none}
+.pr-section-heading,.pr-plans .pr-fiscal{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px 24px;
+}
+.pr-section-heading{margin:0 0 16px}
+.pr-section-heading h2{font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-.035em}
+.pr-section-heading p:not(.pr-kicker){margin:6px 0 0;color:var(--pr-muted);font-size:14px}
+.pr-plans .pr-bill{background:#eee6db}
+.pr-plans .pr-bill button{min-height:40px;padding:0 14px;color:var(--pr-ink);font-size:13px}
+.pr-plans .pr-bill button[aria-pressed=true]{background:var(--pr-accent);color:#fff}
+.pr-plans .pr-fiscal,.pr-ai-details{scroll-margin-top:96px;border:1px solid var(--pr-line);border-radius:16px}
+.pr-plans .pr-fiscal{padding:16px 20px;background:#f2ebe0}
+.pr-plans .pr-fiscal h3{margin:0;font-size:16px}
+.pr-plans .pr-fiscal p:not(.pr-kicker){margin:4px 0 0;font-size:13px;line-height:1.5;color:var(--pr-muted)}
+.pr-fiscal a{font-size:13px}
+.pr-ai-details{padding:clamp(16px,3vw,28px);background:#f2ebe0}
+.pr-ai-details .pr-section-heading{padding-bottom:16px;border-bottom:1px solid var(--pr-line)}
+.pr-ai-details .pr-blk-h h3{margin:0;font-size:18px}
+.pr-ai-details .pr-opts,.pr-ai-details .pr-packs{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pr-ai-details :is(.pr-voice-card,.pr-packs button){
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+  padding:16px;
+  border:1px solid var(--pr-line);
+  border-radius:14px;
+  background:var(--pr-paper);
+  color:var(--pr-ink);
+  box-shadow:none;
+}
+.pr-ai-details :is(.pr-voice-card,.pr-packs button):hover{
+  border-color:#ce9b7a;
+  box-shadow:0 14px 25px -20px #4b382a66;
+  transform:none;
+}
+.pr-ai-details :is(.pr-voice-card,.pr-packs button)[aria-pressed=true]{border-color:var(--pr-accent);box-shadow:inset 0 0 0 1px var(--pr-accent);background:#fff6ed}
+.pr-ai-details .pr-opts .pr-kicker{font-size:11px}
+.pr-option-title{font-size:17px;font-weight:700}
+.pr-ai-details .pr-price{margin:8px 0 0}
+.pr-ai-details .pr-price b{font-size:clamp(26px,3vw,34px);letter-spacing:-.035em}
+.pr-ai-details .pr-price i{font-size:12px;font-style:normal;color:var(--pr-muted);opacity:1}
+.pr-ai-details .pr-price s{color:var(--pr-muted);opacity:1}
+.pr-ai-details .pr-rate{margin-top:0;color:var(--pr-muted)}
+.pr-choice{align-self:stretch;margin-top:auto;padding-top:9px;font-size:12px;font-weight:700;color:var(--pr-accent)}
+.pr-choice .pr-chosen,[aria-pressed=true] .pr-choice .pr-choose{display:none}
+[aria-pressed=true] .pr-choice .pr-chosen{display:inline}
+.pr-ai-details .pr-range{background:var(--pr-paper);border:1px solid var(--pr-line)}
+.pr-ai-details .pr-range output{color:var(--pr-accent)}
+.pr-ai-details .pr-range input{accent-color:var(--pr-accent)}
+.pr-voice-info{margin-top:14px}
+.pr-voice-info .pr-scale{margin-bottom:6px}
+.pr-plans .pr-voice-info .pr-scale div{background:transparent;border-color:#cbb9a8}
+.pr-plans .pr-voice-info .pr-scale .is-on{border-color:var(--pr-accent);background:#fffcf7}
+.pr-voice-info .pr-scale em{position:static;display:inline-block;padding:2px 0;background:none;color:var(--pr-accent)}
+.pr-voice-info .pr-save{background:none;color:var(--pr-accent);padding:0;margin:6px 0}
+.pr-voice-info .pr-small{margin-top:0;color:var(--pr-muted)}
+.pr-wa-section{margin-top:18px;padding-top:18px;border-top:1px solid var(--pr-line)}
+.pr-wa-section .pr-blk-h p{margin:0;font-size:13px;color:var(--pr-muted)}
+.pr-ai-extras{margin-top:16px;font-size:13px}
+.pr-ai-extras summary{cursor:pointer;color:var(--pr-accent);font-weight:600;padding:6px 0}
+.pr-ai-extras .pr-extras{margin:8px 0}
+.pr-ai-extras .pr-more{display:inline-block;padding-top:0}
+.pr-plans :focus-visible{outline:2px solid var(--pr-accent);outline-offset:3px}
+.pr-body .pr-bar-btn{background:#ad4419}
+@media(min-width:1080px){.pr-plans .pr-card ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767px){
-  .pr-ai-controls{grid-template-columns:minmax(0,1fr)}
-  .pr-plans .pr-fiscal{flex-direction:column;align-items:stretch}
-  .pr-plans .pr-fiscal .pr-btn{width:100%}
+  .pr-plans .pr-cards,.pr-ai-details .pr-opts,.pr-ai-details .pr-packs{grid-template-columns:minmax(0,1fr)}
+  .pr-annual{min-height:0}
 }

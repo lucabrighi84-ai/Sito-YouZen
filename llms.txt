@@ -45,7 +45,7 @@ Il [listino YouZen](https://youzen.it/gestionale-prezzi/) è uguale per ristoran
 
 - **Base** a 40 €/mese, pagati 120 € a trimestre oppure 480 € l’anno. Include prenotazioni online, agenda o gestione tavoli, CRM e storico clienti. Comprende la chiusura del conto del tavolo o dell’appuntamento e la registrazione dell’incasso.
 - **Pro** a 100 €/mese con pagamento trimestrale (300 € ogni tre mesi), oppure 80 €/mese con pagamento annuale (960 € l’anno). Include tutte le funzioni di Base, con gestione operativa avanzata, analisi e marketing.
-- **Modulo fiscale** per ristoranti e saloni, incluso in Pro con pagamento trimestrale e annuale. Comprende cassa digitale, scontrini, fatture elettroniche e invio dei corrispettivi all’Agenzia delle Entrate. Con Base è opzionale e costa 15 €/mese per partita IVA, pagati 45 € a trimestre o 180 € l’anno. Puoi mantenere il POS che usi già o integrare un modello compatibile.
+- **Modulo fiscale** per ristoranti e saloni, incluso in Base e Pro con pagamento trimestrale e annuale. Comprende cassa digitale, scontrini, fatture elettroniche e invio dei corrispettivi all’Agenzia delle Entrate. Puoi mantenere il POS che usi già o integrare un modello compatibile.
 - **Voce AI:** 0,30 €/min, 0,25 €/min da 1.500 minuti al mese o con formula annuale, 0,20 €/min da 4.000 minuti al mese. I minuti extra costano 0,35 €/min.
 - **Attivazione Voce AI:** 500 € una tantum fino al 31 dicembre 2026, poi 1.000 €. Inclusa se abbinata al gestionale annuale.
 - **WhatsApp:** pacchetti una tantum da 100 messaggi a 5 €, 400 a 15 € o 1.000 a 30 €. I crediti non scadono.
