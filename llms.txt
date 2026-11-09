@@ -1,31 +1,23 @@
 # YouZen
 
-> Segreteria AI italiana per professionisti e PMI. Risponde alle chiamate, gestisce
-> WhatsApp e i messaggi diretti di Instagram e Facebook, e prende gli appuntamenti 24
-> ore su 24, sincronizzandoli con il calendario che il cliente già usa. Attiva su tutto
-> il territorio italiano, con sede a Rimini.
+> YouZen è un gestionale cloud per ristoranti e parrucchieri. Collega prenotazioni, agenda, CRM, cassa e documenti fiscali. Voce AI e WhatsApp sono disponibili a consumo. YouZen ha sede a Rimini e opera in tutta Italia.
 
-## Che cos'è YouZen
+## Che cos’è YouZen
 
-YouZen è un assistente telefonico con intelligenza artificiale per le piccole imprese.
-Risponde alle chiamate, ai messaggi WhatsApp e ai messaggi diretti che arrivano sulle
-pagine Instagram e Facebook dell'attività, al posto del titolare. Riconosce chi
-chiama, fissa gli appuntamenti e li scrive sul calendario collegato. Ogni chiamata
-viene trascritta, con nome e numero salvati, incluse quelle arrivate a studio chiuso.
-Il numero di telefono resta quello dell'attività: si può collegare il numero esistente
-tramite portabilità oppure usare un numero VoIP dedicato.
+YouZen riunisce le prenotazioni online, i dati dei clienti e la gestione quotidiana.
+Nei ristoranti collega tavoli, comande e cucina. Nei saloni organizza agenda,
+appuntamenti e disponibilità dei professionisti. La segretaria AI può rispondere
+al numero dell’attività, fissare appuntamenti e avvisare i clienti su WhatsApp.
 
 ## Pagine principali
 
-- [Homepage](https://youzen.it/): che cosa fa YouZen, prezzi, domande frequenti
-- [Problemi e soluzioni](https://youzen.it/problemi-e-soluzioni.html): i quattro problemi che risolve, uno per uno
-- [Saloni e SPA](https://youzen.it/settori/saloni.html): parrucchieri, estetica, centri benessere
-- [Ristoranti e food](https://youzen.it/settori/food.html): prenotazione tavoli e ordini
-- [Professionisti](https://youzen.it/settori/professionisti.html): consulenti, commercialisti, partite IVA
-- [Ambulatori](https://youzen.it/settori/ambulatori.html): chiamate, appuntamenti, spostamenti e promemoria WhatsApp per lo studio
-- [Agenzie immobiliari](https://youzen.it/settori/immobiliare.html): richieste di visita e lead
-- [Studi legali](https://youzen.it/settori/studio-legale.html): filtro chiamate e primo contatto
-- [Segreteria telefonica AI a Rimini e in Romagna](https://youzen.it/segreteria-telefonica-ai-rimini-romagna/): siamo nati a Rimini, il servizio si attiva in tutta Italia
+- [Homepage](https://youzen.it/) — panoramica del gestionale e domande frequenti.
+- [Prezzi del gestionale](https://youzen.it/gestionale-prezzi/) — listino, caratteristiche per settore e preventivo.
+- [Gestionale per ristoranti](https://youzen.it/gestionale-ristorante/) — prenotazioni, tavoli, comande, cucina e cassa.
+- [Gestionale per parrucchieri](https://youzen.it/gestionale-parrucchiere/) — prenotazioni, agenda, schede cliente e team.
+- [Segretaria AI e WhatsApp](https://youzen.it/segretaria-ai/) — risposta alle chiamate, appuntamenti e notifiche.
+- [Cassa e fatturazione elettronica](https://youzen.it/fatturazione-elettronica/) — scontrini, fatture tramite SdI e corrispettivi telematici.
+- [Segreteria telefonica AI a Rimini e in Romagna](https://youzen.it/segreteria-telefonica-ai-rimini-romagna/) — servizio disponibile in tutta Italia.
 - [Privacy](https://youzen.it/privacy/) · [GDPR](https://youzen.it/GDPR/) · [Termini](https://youzen.it/termini/)
 
 <!-- blog:inizio -->
@@ -49,15 +41,14 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 
 ## Prezzi
 
-- Tariffa: 0,30 euro al minuto sotto 1.500 minuti al mese; da 1.500 minuti, 0,25 euro su tutti i minuti del pacchetto
-- Minuti extra oltre il pacchetto: 0,35 euro al minuto per tutti i pacchetti, anche con pagamento annuale
-- Pacchetti: 300 minuti a 90 euro/mese; 1.500 minuti a 375 euro/mese; pacchetti su misura disponibili
-- Formula standard o annuale con il 10 per cento di sconto sul canone base
-- Attivazione separata: 500 euro una tantum fino al 31 dicembre 2026, poi 1.000 euro
-- Centralino opzionale: 25 euro/mese
-- Crediti messaggi separati, senza scadenza: 140 a 5 euro, 560 a 15 euro, 1.400 a 30 euro
-- Opzione messaggi diretti di Instagram e Facebook: 5 euro/mese (4,50 euro/mese con pagamento annuale e sconto del 10%)
-- Nessun contratto pluriennale, preavviso di trenta giorni per disdire
+Il [listino YouZen](https://youzen.it/gestionale-prezzi/) è uguale per ristoranti e saloni. I prezzi sono IVA esclusa.
+
+- **Start:** 40 €/mese, pagati 120 € a trimestre oppure 480 € l’anno. Include prenotazioni online, agenda o gestione tavoli, CRM e storico clienti.
+- **All Inclusive:** 100 €/mese con pagamento trimestrale (300 € ogni tre mesi), oppure 80 €/mese con pagamento annuale (960 € l’anno). Include cassa con scontrino digitale, fatture elettroniche e invio dei corrispettivi all’Agenzia delle Entrate, secondo la configurazione attiva.
+- **Voce AI:** 0,30 €/min, 0,25 €/min da 1.500 minuti al mese o con formula annuale, 0,20 €/min da 4.000 minuti al mese. I minuti extra costano 0,35 €/min.
+- **Attivazione Voce AI:** 500 € una tantum fino al 31 dicembre 2026, poi 1.000 €. Inclusa se abbinata al gestionale annuale.
+- **WhatsApp:** pacchetti una tantum da 100 messaggi a 5 €, 400 a 15 € o 1.000 a 30 €. I crediti non scadono.
+- **Opzioni Voce AI:** centralino a 25 €/mese e messaggi diretti Instagram e Facebook a 5 €/mese.
 
 ## Fatti utili
 
@@ -70,4 +61,4 @@ Dall'ottavo giorno l'assistente risponde da solo, weekend e festivi compresi.
 - Ragione sociale: YouZen di Luca Brighi, partita IVA IT04855440402, Via del Pino 13, 47923 Rimini
 - Contatti: +39 0541 172 6297, info@youzen.it
 
-Ultimo aggiornamento: 2026-10-25
+Ultimo aggiornamento: 2026-11-09
