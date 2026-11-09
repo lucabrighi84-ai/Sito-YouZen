@@ -4,7 +4,7 @@
   const qa = (s) => [...document.querySelectorAll(s)];
   const euro = (n) => '€' + n.toLocaleString('it-IT', { useGrouping: 'always', minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
   const steps = [300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 7500, 10000];
-  const state = { sector: 'r', plan: 'all', voice: null, pack: null, billing: 3, crmBilling: 3, custom: 500, extras: new Set() };
+  const state = { sector: 'r', plan: 'all', voice: null, pack: null, billing: 3, crmBilling: 12, custom: 500, extras: new Set() };
   // Stessa tariffa di youzen.it; lo sconto annuale vale sui minuti.
   const tariffa = (min) => (min >= 4000 ? 0.20 : min >= 1500 || state.billing === 12 ? 0.25 : 0.30);
   const prezzoMinuti = (min) => Math.round(min * tariffa(min) * 100) / 100;
