@@ -100,3 +100,10 @@ body.hx-sopra .site-header .desktop-nav>a:hover,body.hx-sopra .site-header .nav-
 body.hx-sopra .site-header .menu-toggle{border-color:rgba(255,255,255,.35)}
 @media(max-width:1023px){body:has(.hx-show) .site-header .nav-shell{height:62px;padding-inline:15px}}
 @media(max-width:767px){body:has(.hx-show) .site-header,body:has(.hx-show) .site-header.is-scrolled{padding-top:8px}body:has(.hx-show) .site-header .nav-shell{height:57px;width:calc(100% - 22px);padding-inline:15px}}
+/* Prima scrollata: il titolo sale, la chiamata si avvicina, il sottotitolo sfuma */
+.hx-titoli h1{transform:translateY(calc(var(--p1,0) * -24px)) scale(calc(1 - var(--p1,0) * .06));transform-origin:50% 0}
+.hx-squillo .hx-pill{transform:scale(calc(1 + var(--p1,0) * .12));transition:transform .2s linear}
+.hx-sotto{opacity:calc(1 - var(--p1,0))}
+.hx-show{height:400vh}
+/* Fine hero: sfuma nel bianco della sezione dopo, nessuno stacco */
+.hx-sfuma{position:absolute;inset:0;z-index:7;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.85) 55%,#fff 78%);opacity:var(--sf,0)}

@@ -12,18 +12,22 @@
   function progresso() {
     const r = show.getBoundingClientRect();
     p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
-    const nuovo = p < .3 ? 1 : p < .64 ? 2 : 3;
+    // atto 1 breve: la prima scrollata cambia gia' qualcosa
+    const nuovo = p < .1 ? 1 : p < .5 ? 2 : 3;
+    palco.style.setProperty("--p1", Math.min(1, p / .1));
+    // ultimo tratto: la hero sfuma nel bianco della sezione dopo
+    palco.style.setProperty("--sf", Math.max(0, Math.min(1, (p - .84) / .16)));
     if (nuovo !== atto) {
       titoli.forEach(t => { const n = +t.dataset.attoT; t.classList.toggle("on", n === nuovo); t.classList.toggle("via", n < nuovo); if (n > nuovo) t.classList.remove("via"); });
       atti.forEach(a => a.classList.toggle("on", +a.dataset.i === nuovo));
       atto = nuovo; palco.dataset.atto = nuovo;
     }
-    bolle.forEach(b => b.classList.toggle("on", p >= +b.dataset.soglia && p < .66));
-    const rr = Math.max(0, Math.min(1, (p - .64) / .22));
+    bolle.forEach(b => b.classList.toggle("on", p >= +b.dataset.soglia && p < .52));
+    const rr = Math.max(0, Math.min(1, (p - .5) / .2));
     foto.style.setProperty("--r", (rr * 85) + "%");
     alone.style.setProperty("--glow", atto === 2 ? 1 : atto === 3 ? .35 : .75);
-    agenda.classList.toggle("atterrato", p > .72);
-    document.body.classList.toggle("hx-sopra", r.bottom > 90);
+    agenda.classList.toggle("atterrato", p > .6);
+    document.body.classList.toggle("hx-sopra", r.bottom > 90 && p < .92);
   }
   let raf = 0;
   addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; progresso(); }); }, { passive: true });
